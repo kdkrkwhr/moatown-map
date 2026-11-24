@@ -28,7 +28,7 @@ test('combined search returns the matching zone without siblings or duplicate pa
 });
 
 test('unrecorded zone stages, unrecorded management plans and cancellation history retain their scope',()=>{
-  assert.equal(search({plan:'unknown'}).length,79);
+  assert.equal(search({plan:'unknown'}).length,towns.filter(t=>!t.management_plan_stage&&!t.management_plan_notices?.length).length);
   assert.ok(search({plan:'unknown'}).every(row=>!row.zone && row.town));
   assert.ok(search({progress:'unknown'}).every(row=>row.zone && (!row.zone.stage || row.zone.stage==='미확인')));
   assert.deepEqual(search({plan:'canceled'}),search({query:'취소'}));
@@ -38,8 +38,8 @@ test('unrecorded zone stages, unrecorded management plans and cancellation histo
 
 test('published management intervals only compare a single dated notice to its own selection month',()=>{
   const stats=planIntervals(towns);
-  assert.equal(stats.months.size,58);
-  assert.equal(Math.round(stats.mean*10)/10,24.6);
+  assert.equal(stats.months.size,67);
+  assert.equal(Math.round(stats.mean*10)/10,24.2);
   assert.ok(!stats.months.has(towns.find(t=>t.management_plan_notices?.length===2).id));
   assert.deepEqual(planIntervals([{id:'a',selected_date:'2024-01',management_plan_notices:[{notice_date:'2023-12-31'}]}]),{months:new Map(),mean:null});
 });

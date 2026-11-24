@@ -40,7 +40,7 @@ export function createProjectMap(m,container,{townById,zoneById,boundaries,distr
   const map=new m.Map(container,{center:ll([126.978,37.565]),zoom:11,minZoom:7,maxZoom:21,keyboardShortcuts:true,
     mapTypeId:mapSettings(location.search).hybrid?m.MapTypeId.HYBRID:m.MapTypeId.NORMAL});
   const cadastral=new m.CadastralLayer();
-  const shapes=new Map(),pins=new Map(),districts=[];
+  const shapes=new Map(),pins=new Map(),zonePins=new Map(),mappedChildren=new Set(),districts=[];
   const on=(target,event,handler)=>m.Event.addListener(target,event,handler);
   const setVisible=(overlay,visible)=>{if(Boolean(overlay.getMap())!==visible)overlay.setMap(visible?map:null);};
   const marker=(position,content,zIndex,title,clickable=false)=>new m.Marker({position,title,zIndex,clickable,icon:{content,anchor:new m.Point(0,0)}});
@@ -63,14 +63,28 @@ export function createProjectMap(m,container,{townById,zoneById,boundaries,distr
       polygons.push(polygon);
     }
     const stage=isTown?null:zoneStage(record.stage);
-    const label=markerText(record.name,isTown?'town-caption':'zone-caption');
+    const label=markerText(record.drawing_code??record.name,isTown?'town-caption':'zone-caption');
     if(stage){
       label.style.setProperty('--stage-ink',stage.ink);
       label.append(node('small','',stage.short));
     }
-    const pin=marker(bounds.getCenter(),label,isTown?80:90,record.name,true);
+    const point=isTown?null:record.representative_point;
+    const position=point?.type==='Point' && point.coordinates?.length===2 && point.coordinates.every(Number.isFinite)?ll(point.coordinates):bounds.getCenter();
+    const pin=marker(position,label,isTown?80:90,record.name,true);
     on(pin,'click',e=>{if(measuring)measure(e.coord??pin.getPosition());else selectLayer(townId,isTown?null:id);});
     shapes.set(id,{isTown,townId,polygons,bounds,stage,pin});
+    if(!isTown)mappedChildren.add(townId);
+  }
+  for(const zone of zoneById.values()){
+    const point=zone.representative_point;
+    if(shapes.has(zone.id) || point?.type!=='Point' || !point.coordinates?.every(Number.isFinite) || point.coordinates.length!==2)continue;
+    const stage=zoneStage(zone.stage);
+    const label=markerText(zone.drawing_code??zone.name,'zone-point-caption');
+    label.style.setProperty('--stage-ink',stage.ink);
+    label.append(node('small','','대표 지번'));
+    const pin=marker(ll(point.coordinates),label,110,zone.name+' · '+zone.registered_address,true);
+    on(pin,'click',e=>{if(measuring)measure(e.coord??pin.getPosition());else selectLayer(zone.town_id,zone.id);});
+    zonePins.set(zone.id,pin);mappedChildren.add(zone.town_id);
   }
   for(const town of townById.values()){
     if(!town.representative_point || shapes.has(town.id))continue;
@@ -115,7 +129,7 @@ export function createProjectMap(m,container,{townById,zoneById,boundaries,distr
     for(const [id,shape] of shapes){
       const {isTown,townId,stage}=shape;
       const hit=addressIds.has(id);
-      const show=hit || (isTown?visible.has(id):visibleZones.has(id)||townHits.has(townId));
+      const show=hit || (isTown?visible.has(id):visibleZones.has(id)||townHits.has(townId)||current.townId===townId);
       const selected=id===(current.zoneId??current.townId);
       const style={strokeColor:stage?.ink??'#345b75',fillColor:stage?.fill??'#a3c9dc',
         fillOpacity:wide?0:isTown?.14:selected?.65:.44,strokeWeight:wide?1:selected||hit?3:1.6,
@@ -125,9 +139,16 @@ export function createProjectMap(m,container,{townById,zoneById,boundaries,distr
         if(show)poly.setStyles(style);
       }
       shape.pin.setZIndex(selected?140:isTown?80:90);
-      setVisible(shape.pin,show && !wide && (!isTown || selected || ![...zoneById.values()].some(z=>z.town_id===id)));
+      setVisible(shape.pin,show && !wide && (!isTown || !mappedChildren.has(id)));
     }
-    for(const [id,pin] of pins)setVisible(pin,current.townId===id && visible.has(id));
+    for(const [id,pin] of pins)setVisible(pin,current.townId===id && visible.has(id) && !mappedChildren.has(id));
+    for(const [id,pin] of zonePins){
+      const selected=current.zoneId===id;
+      const townId=zoneById.get(id).town_id;
+      const show=visibleZones.has(id) || townHits.has(townId) || current.townId===townId;
+      pin.setZIndex(selected?150:110);
+      setVisible(pin,!wide && show);
+    }
   }
   function fit(){
     const {current,rows,filtered}=view();
@@ -136,10 +157,16 @@ export function createProjectMap(m,container,{townById,zoneById,boundaries,distr
     function include(id){
       const shape=shapes.get(id);
       if(shape)points.push(shape.bounds.getSW(),shape.bounds.getNE());
+      else if(zonePins.has(id))points.push(zonePins.get(id).getPosition());
       else if(pins.has(id))points.push(pins.get(id).getPosition());
     }
-    if(current.townId)include(shapes.has(current.zoneId)?current.zoneId:current.townId);
-    else if(filtered)for(const {town,zone} of rows){if(town)include(shapes.has(zone?.id)?zone.id:town.id);}
+    if(current.townId){
+      if(shapes.has(current.zoneId) || zonePins.has(current.zoneId))include(current.zoneId);
+      else {
+        include(current.townId);
+        for(const zone of zoneById.values())if(zone.town_id===current.townId)include(zone.id);
+      }
+    }else if(filtered)for(const {town,zone} of rows){if(town)include(shapes.has(zone?.id) || zonePins.has(zone?.id)?zone.id:town.id);}
     const all=!points.length;
     if(all)points.push(ll([126.76,37.425]),ll([127.184,37.702]));
     const opts=fitPadding(container.getBoundingClientRect(),$('explorer').getBoundingClientRect());

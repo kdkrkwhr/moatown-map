@@ -76,7 +76,12 @@
           ]
         }
       }
-    }
+    },
+    "sub_areas": [
+      "mz-seoul-11000uq120ps202503310030",
+      "mz-seoul-11000uq120ps202503310031",
+      "mz-seoul-11000uq120ps202503310029"
+    ]
   },
   {
     "id": "mt-202603-public-002",
@@ -146,7 +151,12 @@
           ]
         }
       }
-    }
+    },
+    "sub_areas": [
+      "mz-seoul-11500uq120ps202603130001",
+      "mz-seoul-11500uq120ps202603130002",
+      "mz-seoul-11500uq120ps202603130003"
+    ]
   },
   {
     "id": "mt-202603-public-003",
@@ -223,8 +233,22 @@
             "11000UQ111PS201912153319"
           ]
         }
+      },
+      "sub_area_plan": {
+        "kind": "management_plan_notice",
+        "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=584449",
+        "source_as_of": "2023-12-28",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 고시 제2023-592호",
+        "pdf_page": 5,
+        "table": "임대주택 공급 및 인수 계획"
       }
-    }
+    },
+    "sub_areas": [
+      "mz-plan-584449-a3-1",
+      "mz-plan-584449-a3-2",
+      "mz-plan-584449-a3-3"
+    ]
   },
   {
     "id": "mt-202603-public-004",
@@ -292,7 +316,8 @@
           ]
         }
       }
-    }
+    },
+    "sub_areas": []
   },
   {
     "id": "mt-202603-public-005",
@@ -381,7 +406,12 @@
           ]
         }
       }
-    }
+    },
+    "sub_areas": [
+      "mz-seoul-11000uq120ps202503310014",
+      "mz-seoul-11000uq120ps202503310013",
+      "mz-seoul-11000uq120ps202503310012"
+    ]
   },
   {
     "id": "mt-202603-public-006",
@@ -455,7 +485,10 @@
           ]
         }
       }
-    }
+    },
+    "sub_areas": [
+      "mz-seoul-11000uq120ps202411014070"
+    ]
   },
   {
     "id": "mt-202603-public-007",
@@ -529,7 +562,12 @@
           ]
         }
       }
-    }
+    },
+    "sub_areas": [
+      "mz-seoul-11000uq120ps202503310025",
+      "mz-seoul-11000uq120ps202503310023",
+      "mz-seoul-11000uq120ps202503310024"
+    ]
   },
   {
     "id": "mt-202603-public-008",
@@ -635,8 +673,24 @@
             "11000UQ111PS201912150351"
           ]
         }
+      },
+      "sub_area_plan": {
+        "kind": "management_plan_notice",
+        "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=615059",
+        "source_as_of": "2025-07-17",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 고시 제2025-388호",
+        "pdf_page": 12,
+        "table": "임대주택 공급 및 인수 계획"
       }
-    }
+    },
+    "sub_areas": [
+      "mz-plan-615059-a1",
+      "mz-plan-615059-a2",
+      "mz-plan-615059-a3",
+      "mz-plan-615059-a4",
+      "mz-plan-615059-a5"
+    ]
   },
   {
     "id": "mt-202603-public-009",
@@ -679,7 +733,8 @@
         "evidence": "official_rights_extension",
         "checked_on": "2026-11-24"
       }
-    ]
+    ],
+    "sub_areas": []
   },
   {
     "id": "mt-202603-public-010",
@@ -753,7 +808,13 @@
           ]
         }
       }
-    }
+    },
+    "sub_areas": [
+      "mz-seoul-11000uq120ps202505310161",
+      "mz-seoul-11000uq120ps202505310439",
+      "mz-seoul-11000uq120ps202505310440",
+      "mz-seoul-11000uq120ps202505310160"
+    ]
   },
   {
     "id": "mt-202603-public-011",
@@ -831,7 +892,8 @@
           ]
         }
       }
-    }
+    },
+    "sub_areas": []
   },
   {
     "id": "mt-202603-public-012",
@@ -906,7 +968,14 @@
           ]
         }
       }
-    }
+    },
+    "sub_areas": [
+      "mz-seoul-11000uq120ps202505310448",
+      "mz-seoul-11000uq120ps202505310449",
+      "mz-seoul-11260uq120ps202603060001",
+      "mz-seoul-11000uq120ps202505310446",
+      "mz-seoul-11000uq120ps202505310447"
+    ]
   },
   {
     "id": "mt-202603-public-013",
@@ -980,7 +1049,8 @@
           ]
         }
       }
-    }
+    },
+    "sub_areas": []
   },
   {
     "id": "mt-202603-public-014",
@@ -1054,7 +1124,8 @@
           ]
         }
       }
-    }
+    },
+    "sub_areas": []
   },
   {
     "id": "mt-202603-public-015",
@@ -1161,7 +1232,10 @@
           ]
         }
       }
-    }
+    },
+    "sub_areas": [
+      "mz-seoul-11000uq120ps202505310462"
+    ]
   },
   {
     "id": "mt-202603-public-016",
@@ -1271,8 +1345,23 @@
             "11000UQ111PS201912150588"
           ]
         }
+      },
+      "sub_area_plan": {
+        "kind": "management_plan_notice",
+        "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=613956",
+        "source_as_of": "2025-06-26",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 고시 제2025-346호",
+        "pdf_page": 9,
+        "table": "임대주택 공급 및 인수 계획"
       }
-    }
+    },
+    "sub_areas": [
+      "mz-plan-613956-1126010100100640014",
+      "mz-plan-613956-1126010100100650002",
+      "mz-plan-613956-1126010100101130079",
+      "mz-plan-613956-1126010100101100036"
+    ]
   },
   {
     "id": "mt-202603-public-017",
@@ -1283,7 +1372,7 @@
     "selected_date": "2023-08",
     "selected_date_precision": "month",
     "area_m2": 66389,
-    "management_plan_stage": null,
+    "management_plan_stage": "관리계획 승인고시",
     "representative_point": {
       "type": "Point",
       "coordinates": [
@@ -1339,8 +1428,37 @@
             "11000UQ111PS201912151464"
           ]
         }
+      },
+      "sub_area_plan": {
+        "kind": "management_plan_notice",
+        "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=628523",
+        "source_as_of": "2025-12-26",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 고시 제2025-735호",
+        "pdf_page": 8,
+        "table": "임대주택 공급 및 인수 계획"
       }
-    }
+    },
+    "sub_areas": [
+      "mz-plan-628523-a-1",
+      "mz-plan-628523-a-2",
+      "mz-plan-628523-a-3"
+    ],
+    "management_plan_notices": [
+      {
+        "kind": "management_plan_notice",
+        "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=628523",
+        "source_as_of": "2025-12-26",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 고시 제2025-735호",
+        "pdf_page": 8,
+        "table": "임대주택 공급 및 인수 계획",
+        "site": "망우본동 354-2",
+        "notice_date": "2025-12-26",
+        "zone_count": null,
+        "archive_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=628523"
+      }
+    ]
   },
   {
     "id": "mt-202603-public-018",
@@ -1422,7 +1540,13 @@
           ]
         }
       }
-    }
+    },
+    "sub_areas": [
+      "mz-seoul-11000uq120ps202505310477",
+      "mz-junghwa-2-2",
+      "mz-junghwa-2-3",
+      "mz-junghwa-2-5"
+    ]
   },
   {
     "id": "mt-202603-public-019",
@@ -1433,7 +1557,7 @@
     "selected_date": "2023-11",
     "selected_date_precision": "month",
     "area_m2": 81648,
-    "management_plan_stage": null,
+    "management_plan_stage": "관리계획 승인고시",
     "representative_point": {
       "type": "Point",
       "coordinates": [
@@ -1486,8 +1610,38 @@
             "11000UQ111PS201912152579"
           ]
         }
+      },
+      "sub_area_plan": {
+        "kind": "management_plan_notice",
+        "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=628097",
+        "source_as_of": "2025-12-26",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 고시 제2025-755호",
+        "pdf_page": 10,
+        "table": "임대주택 공급 및 인수 계획"
       }
-    }
+    },
+    "sub_areas": [
+      "mz-plan-628097-a1",
+      "mz-plan-628097-a2",
+      "mz-plan-628097-a3",
+      "mz-plan-628097-a4"
+    ],
+    "management_plan_notices": [
+      {
+        "kind": "management_plan_notice",
+        "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=628097",
+        "source_as_of": "2025-12-26",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 고시 제2025-755호",
+        "pdf_page": 10,
+        "table": "임대주택 공급 및 인수 계획",
+        "site": "망우3동 474-29",
+        "notice_date": "2025-12-26",
+        "zone_count": null,
+        "archive_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=628097"
+      }
+    ]
   },
   {
     "id": "mt-202603-public-020",
@@ -1551,7 +1705,8 @@
           ]
         }
       }
-    }
+    },
+    "sub_areas": []
   },
   {
     "id": "mt-202603-public-021",
@@ -1621,7 +1776,8 @@
           ]
         }
       }
-    }
+    },
+    "sub_areas": []
   },
   {
     "id": "mt-202603-public-022",
@@ -1685,7 +1841,10 @@
           ]
         }
       }
-    }
+    },
+    "sub_areas": [
+      "mz-seoul-11000uq120ps202505310485"
+    ]
   },
   {
     "id": "mt-202603-public-023",
@@ -1749,7 +1908,8 @@
           ]
         }
       }
-    }
+    },
+    "sub_areas": []
   },
   {
     "id": "mt-202603-public-024",
@@ -1829,7 +1989,10 @@
           ]
         }
       }
-    }
+    },
+    "sub_areas": [
+      "mz-seoul-11000uq120ps202505310212"
+    ]
   },
   {
     "id": "mt-202603-public-025",
@@ -1907,7 +2070,10 @@
           ]
         }
       }
-    }
+    },
+    "sub_areas": [
+      "mz-seoul-11545uq120ps202604200002"
+    ]
   },
   {
     "id": "mt-202603-public-026",
@@ -1974,7 +2140,8 @@
           ]
         }
       }
-    }
+    },
+    "sub_areas": []
   },
   {
     "id": "mt-202603-public-027",
@@ -2051,8 +2218,24 @@
             "11000UQ111PS201912154799"
           ]
         }
+      },
+      "sub_area_plan": {
+        "kind": "management_plan_notice",
+        "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=601822",
+        "source_as_of": "2024-12-05",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 고시 제2024-588호",
+        "pdf_page": 11,
+        "table": "임대주택 공급 및 인수 계획"
       }
-    }
+    },
+    "sub_areas": [
+      "mz-plan-601822-a-1",
+      "mz-plan-601822-a-2",
+      "mz-plan-601822-a-3",
+      "mz-plan-601822-a-4",
+      "mz-plan-601822-a-5"
+    ]
   },
   {
     "id": "mt-202603-public-028",
@@ -2126,8 +2309,24 @@
             "11000UQ111PS201912151539"
           ]
         }
+      },
+      "sub_area_plan": {
+        "kind": "management_plan_notice",
+        "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=594346",
+        "source_as_of": "2024-09-19",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 고시 제2024-443호",
+        "pdf_page": 11,
+        "table": "임대주택 공급 및 인수 계획"
       }
-    }
+    },
+    "sub_areas": [
+      "mz-plan-594346-a-1",
+      "mz-plan-594346-a-2",
+      "mz-plan-594346-a-3",
+      "mz-plan-594346-a-4",
+      "mz-plan-594346-a-5"
+    ]
   },
   {
     "id": "mt-202603-public-029",
@@ -2138,7 +2337,7 @@
     "selected_date": "2021-11",
     "selected_date_precision": "month",
     "area_m2": 19602,
-    "management_plan_stage": null,
+    "management_plan_stage": "관리계획 승인고시",
     "representative_point": {
       "type": "Point",
       "coordinates": [
@@ -2194,8 +2393,35 @@
             "11000UQ111PS201912152924"
           ]
         }
+      },
+      "sub_area_plan": {
+        "kind": "management_plan_notice",
+        "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=584564",
+        "source_as_of": "2024-03-14",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 고시 제2024-130호",
+        "pdf_page": 6,
+        "table": "임대주택 공급 및 인수 계획"
       }
-    }
+    },
+    "sub_areas": [
+      "mz-plan-584564-1144010800105350002"
+    ],
+    "management_plan_notices": [
+      {
+        "kind": "management_plan_notice",
+        "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=584564",
+        "source_as_of": "2024-03-14",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 고시 제2024-130호",
+        "pdf_page": 6,
+        "table": "임대주택 공급 및 인수 계획",
+        "site": "대흥동 535-2",
+        "notice_date": "2024-03-14",
+        "zone_count": null,
+        "archive_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=584564"
+      }
+    ]
   },
   {
     "id": "mt-202603-public-030",
@@ -2272,8 +2498,23 @@
             "11000UQ111PS201912150345"
           ]
         }
+      },
+      "sub_area_plan": {
+        "kind": "management_plan_notice",
+        "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=584518",
+        "source_as_of": "2024-02-22",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 고시 제2024-95호",
+        "pdf_page": 8,
+        "table": "임대주택 공급 및 인수 계획"
       }
-    }
+    },
+    "sub_areas": [
+      "mz-plan-584518-a-1",
+      "mz-plan-584518-a-2",
+      "mz-plan-584518-a-3",
+      "mz-plan-584518-a-4"
+    ]
   },
   {
     "id": "mt-202603-public-031",
@@ -2348,8 +2589,27 @@
             "11440UQ111PS202406040002"
           ]
         }
+      },
+      "sub_area_plan": {
+        "kind": "management_plan_notice",
+        "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=587121",
+        "source_as_of": "2024-05-02",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 고시 제2024-225호",
+        "pdf_page": 6,
+        "table": "임대주택 공급 및 인수 계획"
       }
-    }
+    },
+    "sub_areas": [
+      "mz-plan-587121-a-1",
+      "mz-plan-587121-a-2",
+      "mz-plan-587121-a-3",
+      "mz-plan-587121-a-4",
+      "mz-plan-587121-a-5",
+      "mz-plan-587121-a-6",
+      "mz-plan-587121-a-7",
+      "mz-plan-587121-a-8"
+    ]
   },
   {
     "id": "mt-202603-public-032",
@@ -2520,6 +2780,12 @@
           "notice_number": "서울특별시 고시 제2024-488호"
         }
       }
+    ],
+    "sub_areas": [
+      "mz-mapohapjeong-2026-111-a1",
+      "mz-mapohapjeong-2026-111-a2",
+      "mz-mapohapjeong-2026-111-a3",
+      "mz-mapohapjeong-2026-111-a4"
     ]
   },
   {
@@ -2646,7 +2912,10 @@
           ]
         }
       }
-    }
+    },
+    "sub_areas": [
+      "mz-seoul-11000uq120ps202505310585"
+    ]
   },
   {
     "id": "mt-202603-public-034",
@@ -2746,7 +3015,14 @@
           ]
         }
       }
-    }
+    },
+    "sub_areas": [
+      "mz-info-305900000750u59",
+      "mz-seoul-11000uq120ps202505310171",
+      "mz-seoul-11000uq120ps202505310172",
+      "mz-seoul-11000uq120ps202505310173",
+      "mz-seoul-11000uq120ps202505310174"
+    ]
   },
   {
     "id": "mt-202603-public-035",
@@ -2825,7 +3101,12 @@
           ]
         }
       }
-    }
+    },
+    "sub_areas": [
+      "mz-seoul-11000uq120ps202505310290",
+      "mz-seoul-11000uq120ps202505310308",
+      "mz-seoul-11000uq120ps202505310289"
+    ]
   },
   {
     "id": "mt-202603-public-036",
@@ -2903,7 +3184,8 @@
           ]
         }
       }
-    }
+    },
+    "sub_areas": []
   },
   {
     "id": "mt-202603-public-037",
@@ -2981,7 +3263,8 @@
           ]
         }
       }
-    }
+    },
+    "sub_areas": []
   },
   {
     "id": "mt-202603-public-038",
@@ -3049,7 +3332,8 @@
           ]
         }
       }
-    }
+    },
+    "sub_areas": []
   },
   {
     "id": "mt-202603-public-039",
@@ -3137,7 +3421,8 @@
         "evidence": "municipal_permit_notice",
         "checked_on": "2026-11-24"
       }
-    ]
+    ],
+    "sub_areas": []
   },
   {
     "id": "mt-202603-public-040",
@@ -3225,7 +3510,8 @@
         "evidence": "municipal_permit_notice",
         "checked_on": "2026-11-24"
       }
-    ]
+    ],
+    "sub_areas": []
   },
   {
     "id": "mt-202603-public-041",
@@ -3316,7 +3602,8 @@
         "evidence": "municipal_permit_notice",
         "checked_on": "2026-11-24"
       }
-    ]
+    ],
+    "sub_areas": []
   },
   {
     "id": "mt-202603-public-042",
@@ -3397,8 +3684,25 @@
             "11000UQ111PS201912155007"
           ]
         }
+      },
+      "sub_area_plan": {
+        "kind": "management_plan_notice",
+        "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=607655",
+        "source_as_of": "2024-12-26",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 고시 제2024-642호",
+        "pdf_page": 13,
+        "table": "임대주택 공급 및 인수 계획"
       }
-    }
+    },
+    "sub_areas": [
+      "mz-plan-607655-a1",
+      "mz-plan-607655-a2",
+      "mz-plan-607655-a3",
+      "mz-plan-607655-a4",
+      "mz-plan-607655-a5",
+      "mz-plan-607655-a6"
+    ]
   },
   {
     "id": "mt-202603-public-043",
@@ -3482,7 +3786,8 @@
           ]
         }
       }
-    }
+    },
+    "sub_areas": []
   },
   {
     "id": "mt-202603-public-044",
@@ -3597,8 +3902,27 @@
             "11000UQ111PS201912150536"
           ]
         }
+      },
+      "sub_area_plan": {
+        "kind": "management_plan_notice",
+        "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=601972",
+        "source_as_of": "2024-12-26",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 고시 제2024-672호",
+        "pdf_page": 16,
+        "table": "임대주택 공급 및 인수 계획"
       }
-    }
+    },
+    "sub_areas": [
+      "mz-plan-601972-a-1",
+      "mz-plan-601972-a-2",
+      "mz-plan-601972-a-3",
+      "mz-plan-601972-a-4",
+      "mz-plan-601972-a-5",
+      "mz-plan-601972-a-6",
+      "mz-plan-601972-a-7",
+      "mz-plan-601972-a-8"
+    ]
   },
   {
     "id": "mt-202603-public-045",
@@ -3671,8 +3995,22 @@
             "11000UQ111PS201912151347"
           ]
         }
+      },
+      "sub_area_plan": {
+        "kind": "management_plan_notice",
+        "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=602403",
+        "source_as_of": "2024-12-26",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 고시 제2024-671호",
+        "pdf_page": 12,
+        "table": "임대주택 공급 및 인수 계획"
       }
-    }
+    },
+    "sub_areas": [
+      "mz-plan-602403-a-1",
+      "mz-plan-602403-a-2",
+      "mz-plan-602403-a-3"
+    ]
   },
   {
     "id": "mt-202603-public-046",
@@ -3779,7 +4117,8 @@
           ]
         }
       }
-    }
+    },
+    "sub_areas": []
   },
   {
     "id": "mt-202603-public-047",
@@ -3854,7 +4193,10 @@
           ]
         }
       }
-    }
+    },
+    "sub_areas": [
+      "mz-seoul-11530uq120ps202607230001"
+    ]
   },
   {
     "id": "mt-202603-public-048",
@@ -3950,7 +4292,8 @@
         "evidence": "municipal_permit_notice",
         "checked_on": "2026-11-24"
       }
-    ]
+    ],
+    "sub_areas": []
   },
   {
     "id": "mt-202603-public-049",
@@ -4027,8 +4370,24 @@
             "11000UQ111PS201912151705"
           ]
         }
+      },
+      "sub_area_plan": {
+        "kind": "management_plan_notice",
+        "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=584823",
+        "source_as_of": "2024-02-29",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 고시 제2024-111호",
+        "pdf_page": 7,
+        "table": "임대주택 공급 및 인수 계획"
       }
-    }
+    },
+    "sub_areas": [
+      "mz-plan-584823-b1",
+      "mz-plan-584823-b2",
+      "mz-plan-584823-b3",
+      "mz-plan-584823-b4",
+      "mz-plan-584823-b5"
+    ]
   },
   {
     "id": "mt-202603-public-050",
@@ -4134,8 +4493,21 @@
             "11000UQ111PS201912153384"
           ]
         }
+      },
+      "sub_area_plan": {
+        "kind": "management_plan_notice",
+        "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=612838",
+        "source_as_of": "2025-06-26",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 고시 제2025-342호",
+        "pdf_page": 8,
+        "table": "임대주택 공급 및 인수 계획"
       }
-    }
+    },
+    "sub_areas": [
+      "mz-plan-612838-1135010200105340117",
+      "mz-plan-612838-1135010200105340004"
+    ]
   },
   {
     "id": "mt-202603-public-051",
@@ -4209,7 +4581,8 @@
           ]
         }
       }
-    }
+    },
+    "sub_areas": []
   },
   {
     "id": "mt-202603-public-052",
@@ -4279,7 +4652,8 @@
           ]
         }
       }
-    }
+    },
+    "sub_areas": []
   },
   {
     "id": "mt-202603-public-053",
@@ -4348,8 +4722,24 @@
             "11000UQ111PS201912152938"
           ]
         }
+      },
+      "sub_area_plan": {
+        "kind": "management_plan_notice",
+        "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=610807",
+        "source_as_of": "2025-05-01",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 고시 제2025-238호",
+        "pdf_page": 7,
+        "table": "임대주택 공급 및 인수 계획"
       }
-    }
+    },
+    "sub_areas": [
+      "mz-plan-610807-a-1",
+      "mz-plan-610807-a-2",
+      "mz-plan-610807-a-3",
+      "mz-plan-610807-a-4",
+      "mz-plan-610807-a-5"
+    ]
   },
   {
     "id": "mt-202603-public-054",
@@ -4409,7 +4799,8 @@
           ]
         }
       }
-    }
+    },
+    "sub_areas": []
   },
   {
     "id": "mt-202603-public-055",
@@ -4479,7 +4870,10 @@
           ]
         }
       }
-    }
+    },
+    "sub_areas": [
+      "mz-seoul-11000uq120ps202505310551"
+    ]
   },
   {
     "id": "mt-202603-public-056",
@@ -4553,7 +4947,8 @@
           ]
         }
       }
-    }
+    },
+    "sub_areas": []
   },
   {
     "id": "mt-202603-public-057",
@@ -4641,7 +5036,8 @@
           ]
         }
       }
-    }
+    },
+    "sub_areas": []
   },
   {
     "id": "mt-202603-public-058",
@@ -4744,8 +5140,20 @@
             "11000UQ111PS202207280004"
           ]
         }
+      },
+      "sub_area_plan": {
+        "kind": "management_plan_notice",
+        "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=628093",
+        "source_as_of": "2025-12-26",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 고시 제2025-737호",
+        "pdf_page": 7,
+        "table": "임대주택 공급 및 인수 계획"
       }
-    }
+    },
+    "sub_areas": [
+      "mz-plan-628093-a-1"
+    ]
   },
   {
     "id": "mt-202603-public-059",
@@ -4811,7 +5219,8 @@
           ]
         }
       }
-    }
+    },
+    "sub_areas": []
   },
   {
     "id": "mt-202603-public-060",
@@ -4880,8 +5289,22 @@
             "11000UQ111PS201912150696"
           ]
         }
+      },
+      "sub_area_plan": {
+        "kind": "management_plan_notice",
+        "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=614691",
+        "source_as_of": "2025-06-19",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 고시 제2025-317호",
+        "pdf_page": 8,
+        "table": "임대주택 공급 및 인수 계획"
       }
-    }
+    },
+    "sub_areas": [
+      "mz-plan-614691-a-1",
+      "mz-plan-614691-a-2",
+      "mz-plan-614691-a-3"
+    ]
   },
   {
     "id": "mt-202603-public-061",
@@ -4945,7 +5368,8 @@
           ]
         }
       }
-    }
+    },
+    "sub_areas": []
   },
   {
     "id": "mt-202603-public-062",
@@ -5018,8 +5442,21 @@
             "11000UQ111PS201912151932"
           ]
         }
+      },
+      "sub_area_plan": {
+        "kind": "management_plan_notice",
+        "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=586349",
+        "source_as_of": "2024-04-18",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 고시 제2024-201호",
+        "pdf_page": 8,
+        "table": "임대주택 공급 및 인수 계획"
       }
-    }
+    },
+    "sub_areas": [
+      "mz-plan-586349-a-1",
+      "mz-plan-586349-a-2"
+    ]
   },
   {
     "id": "mt-202603-public-063",
@@ -5100,7 +5537,8 @@
           ]
         }
       }
-    }
+    },
+    "sub_areas": []
   },
   {
     "id": "mt-202603-public-064",
@@ -5173,8 +5611,24 @@
             "11000UQ111PS201912152011"
           ]
         }
+      },
+      "sub_area_plan": {
+        "kind": "management_plan_notice",
+        "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=607900",
+        "source_as_of": "2025-03-20",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 고시 제2025-143호",
+        "pdf_page": 10,
+        "table": "임대주택 공급 및 인수 계획"
       }
-    }
+    },
+    "sub_areas": [
+      "mz-seoul-11000uq120ps202505310741",
+      "mz-plan-607900-a2",
+      "mz-plan-607900-a3",
+      "mz-plan-607900-a4",
+      "mz-plan-607900-a5"
+    ]
   },
   {
     "id": "mt-202603-public-065",
@@ -5243,8 +5697,21 @@
             "11000UQ111PS201912152011"
           ]
         }
+      },
+      "sub_area_plan": {
+        "kind": "management_plan_notice",
+        "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=607899",
+        "source_as_of": "2025-03-20",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 고시 제2025-144호",
+        "pdf_page": 9,
+        "table": "임대주택 공급 및 인수 계획"
       }
-    }
+    },
+    "sub_areas": [
+      "mz-plan-607899-c1",
+      "mz-plan-607899-c2"
+    ]
   },
   {
     "id": "mt-202603-public-066",
@@ -5325,8 +5792,23 @@
             "11000UQ111PS201912154561"
           ]
         }
+      },
+      "sub_area_plan": {
+        "kind": "management_plan_notice",
+        "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=594579",
+        "source_as_of": "2024-04-25",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 고시 제2024-205호",
+        "pdf_page": 10,
+        "table": "임대주택 공급 및 인수 계획"
       }
-    }
+    },
+    "sub_areas": [
+      "mz-plan-594579-a1",
+      "mz-plan-594579-a2",
+      "mz-plan-594579-a3",
+      "mz-plan-594579-a4"
+    ]
   },
   {
     "id": "mt-202603-public-067",
@@ -5403,8 +5885,23 @@
             "11000UQ111PS201912150691"
           ]
         }
+      },
+      "sub_area_plan": {
+        "kind": "management_plan_notice",
+        "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=584443",
+        "source_as_of": "2023-12-28",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 고시 제2023-606호",
+        "pdf_page": 7,
+        "table": "임대주택 공급 및 인수 계획"
       }
-    }
+    },
+    "sub_areas": [
+      "mz-plan-584443-a1",
+      "mz-plan-584443-a2",
+      "mz-plan-584443-a3",
+      "mz-plan-584443-a4"
+    ]
   },
   {
     "id": "mt-202603-public-068",
@@ -5465,7 +5962,8 @@
           ]
         }
       }
-    }
+    },
+    "sub_areas": []
   },
   {
     "id": "mt-202603-public-069",
@@ -5553,7 +6051,8 @@
         "evidence": "municipal_permit_notice",
         "checked_on": "2026-11-24"
       }
-    ]
+    ],
+    "sub_areas": []
   },
   {
     "id": "mt-202603-public-070",
@@ -5661,7 +6160,10 @@
           ]
         }
       }
-    }
+    },
+    "sub_areas": [
+      "mz-seoul-11000uq120ps202505310382"
+    ]
   },
   {
     "id": "mt-202603-public-071",
@@ -5735,7 +6237,8 @@
           ]
         }
       }
-    }
+    },
+    "sub_areas": []
   },
   {
     "id": "mt-202603-public-072",
@@ -5804,8 +6307,22 @@
             "11000UQ111PS201912150283"
           ]
         }
+      },
+      "sub_area_plan": {
+        "kind": "management_plan_notice",
+        "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=601717",
+        "source_as_of": "2024-12-26",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 고시 제2024-640호",
+        "pdf_page": 9,
+        "table": "임대주택 공급 및 인수 계획"
       }
-    }
+    },
+    "sub_areas": [
+      "mz-plan-601717-a1",
+      "mz-plan-601717-a2",
+      "mz-plan-601717-a3"
+    ]
   },
   {
     "id": "mt-202603-public-073",
@@ -5874,7 +6391,8 @@
           ]
         }
       }
-    }
+    },
+    "sub_areas": []
   },
   {
     "id": "mt-202603-public-074",
@@ -5952,7 +6470,8 @@
           ]
         }
       }
-    }
+    },
+    "sub_areas": []
   },
   {
     "id": "mt-202603-public-075",
@@ -6016,7 +6535,8 @@
           ]
         }
       }
-    }
+    },
+    "sub_areas": []
   },
   {
     "id": "mt-202603-public-076",
@@ -6080,7 +6600,8 @@
           ]
         }
       }
-    }
+    },
+    "sub_areas": []
   },
   {
     "id": "mt-202603-public-077",
@@ -6091,7 +6612,7 @@
     "selected_date": "2024-07",
     "selected_date_precision": "month",
     "area_m2": 41935,
-    "management_plan_stage": null,
+    "management_plan_stage": "관리계획 승인고시",
     "representative_point": {
       "type": "Point",
       "coordinates": [
@@ -6143,8 +6664,36 @@
             "11000UQ111PS201912150178"
           ]
         }
+      },
+      "sub_area_plan": {
+        "kind": "management_plan_notice",
+        "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=641915",
+        "source_as_of": "2026-01-08",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 고시 제2026-17호",
+        "pdf_page": 9,
+        "table": "임대주택 공급 및 인수 계획"
       }
-    }
+    },
+    "sub_areas": [
+      "mz-plan-641915-a1",
+      "mz-plan-641915-a2"
+    ],
+    "management_plan_notices": [
+      {
+        "kind": "management_plan_notice",
+        "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=641915",
+        "source_as_of": "2026-01-08",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 고시 제2026-17호",
+        "pdf_page": 9,
+        "table": "임대주택 공급 및 인수 계획",
+        "site": "난곡동 697-20",
+        "notice_date": "2026-01-08",
+        "zone_count": null,
+        "archive_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=641915"
+      }
+    ]
   },
   {
     "id": "mt-202603-public-078",
@@ -6212,7 +6761,8 @@
           ]
         }
       }
-    }
+    },
+    "sub_areas": []
   },
   {
     "id": "mt-202603-public-079",
@@ -6223,7 +6773,7 @@
     "selected_date": "2024-08",
     "selected_date_precision": "month",
     "area_m2": 88762,
-    "management_plan_stage": null,
+    "management_plan_stage": "관리계획 승인고시",
     "representative_point": {
       "type": "Point",
       "coordinates": [
@@ -6298,6 +6848,15 @@
             "11000UQ111PS201912155437"
           ]
         }
+      },
+      "sub_area_plan": {
+        "kind": "management_plan_notice",
+        "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=639882",
+        "source_as_of": "2026-04-30",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 고시 제2026-239호",
+        "pdf_page": 16,
+        "table": "임대주택 공급 및 인수 계획"
       }
     },
     "official_links": [
@@ -6307,6 +6866,28 @@
         "date": "2025-02-13",
         "evidence": "municipal_permit_notice",
         "checked_on": "2026-11-24"
+      }
+    ],
+    "sub_areas": [
+      "mz-plan-639882-1121510500106520000",
+      "mz-plan-639882-1121510500106370000",
+      "mz-plan-639882-1121510500106480000",
+      "mz-plan-639882-1121510500106460000",
+      "mz-plan-639882-1121510500106400000"
+    ],
+    "management_plan_notices": [
+      {
+        "kind": "management_plan_notice",
+        "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=639882",
+        "source_as_of": "2026-04-30",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 고시 제2026-239호",
+        "pdf_page": 16,
+        "table": "임대주택 공급 및 인수 계획",
+        "site": "자양2동 649",
+        "notice_date": "2026-04-30",
+        "zone_count": null,
+        "archive_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=639882"
       }
     ]
   },
@@ -6352,7 +6933,21 @@
     ],
     "rights_cutoff_date": null,
     "land_transaction_permit": null,
-    "zoning": null
+    "zoning": null,
+    "sub_areas": [
+      "mz-plan-584797-1165010100109770000"
+    ],
+    "field_evidence": {
+      "sub_area_plan": {
+        "kind": "management_plan_notice",
+        "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=584797",
+        "source_as_of": "2023-12-14",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 고시 제2023-550호",
+        "pdf_page": 4,
+        "table": "임대주택 공급 및 인수 계획"
+      }
+    }
   },
   {
     "id": "mt-202603-public-081",
@@ -6422,7 +7017,8 @@
           ]
         }
       }
-    }
+    },
+    "sub_areas": []
   },
   {
     "id": "mt-202603-public-082",
@@ -6482,7 +7078,8 @@
           ]
         }
       }
-    }
+    },
+    "sub_areas": []
   },
   {
     "id": "mt-202603-public-083",
@@ -6566,6 +7163,15 @@
             "11000UQ111PS201912152099"
           ]
         }
+      },
+      "sub_area_plan": {
+        "kind": "management_plan_notice",
+        "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=606937",
+        "source_as_of": "2025-03-13",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 고시 제2025-135호",
+        "pdf_page": 7,
+        "table": "임대주택 공급 및 인수 계획"
       }
     },
     "official_links": [
@@ -6576,6 +7182,9 @@
         "evidence": "municipal_permit_notice",
         "checked_on": "2026-11-24"
       }
+    ],
+    "sub_areas": [
+      "mz-plan-606937-a-1"
     ]
   },
   {
@@ -6649,8 +7258,20 @@
             "11000UQ111PS201912152135"
           ]
         }
+      },
+      "sub_area_plan": {
+        "kind": "management_plan_notice",
+        "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=630320",
+        "source_as_of": "2025-12-26",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 고시 제2025-743호",
+        "pdf_page": 7,
+        "table": "임대주택 공급 및 인수 계획"
       }
-    }
+    },
+    "sub_areas": [
+      "mz-plan-630320-1141011100103220000"
+    ]
   },
   {
     "id": "mt-202603-public-085",
@@ -6752,8 +7373,20 @@
             "11000UQ111PS201912152341"
           ]
         }
+      },
+      "sub_area_plan": {
+        "kind": "management_plan_notice",
+        "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=616239",
+        "source_as_of": "2025-07-31",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 고시 제2025-421호",
+        "pdf_page": 8,
+        "table": "임대주택 공급 및 인수 계획"
       }
-    }
+    },
+    "sub_areas": [
+      "mz-plan-616239-1117011800100710000"
+    ]
   },
   {
     "id": "mt-202603-public-086",
@@ -6826,8 +7459,21 @@
             "11000UQ111PS201912150880"
           ]
         }
+      },
+      "sub_area_plan": {
+        "kind": "management_plan_notice",
+        "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=625571",
+        "source_as_of": "2025-12-18",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 고시 제2025-717호",
+        "pdf_page": 5,
+        "table": "임대주택 공급 및 인수 계획"
       }
-    }
+    },
+    "sub_areas": [
+      "mz-plan-625571-a1",
+      "mz-plan-625571-a2"
+    ]
   },
   {
     "id": "mt-202603-public-087",
@@ -6870,7 +7516,8 @@
         "evidence": "official_rights_extension",
         "checked_on": "2026-11-24"
       }
-    ]
+    ],
+    "sub_areas": []
   },
   {
     "id": "mt-202603-public-088",
@@ -6930,7 +7577,8 @@
           ]
         }
       }
-    }
+    },
+    "sub_areas": []
   },
   {
     "id": "mt-202603-resident-001",
@@ -7018,7 +7666,8 @@
         "evidence": "municipal_permit_notice",
         "checked_on": "2026-11-24"
       }
-    ]
+    ],
+    "sub_areas": []
   },
   {
     "id": "mt-202603-resident-002",
@@ -7083,7 +7732,10 @@
           ]
         }
       }
-    }
+    },
+    "sub_areas": [
+      "mz-seoul-11000uq120ps202411014068"
+    ]
   },
   {
     "id": "mt-202603-resident-003",
@@ -7167,7 +7819,8 @@
           ]
         }
       }
-    }
+    },
+    "sub_areas": []
   },
   {
     "id": "mt-202603-resident-005",
@@ -7178,7 +7831,7 @@
     "selected_date": "2024-11",
     "selected_date_precision": "month",
     "area_m2": 42315,
-    "management_plan_stage": null,
+    "management_plan_stage": "관리계획 승인고시",
     "representative_point": {
       "type": "Point",
       "coordinates": [
@@ -7245,6 +7898,15 @@
             "11000UQ111PS201912150302"
           ]
         }
+      },
+      "sub_area_plan": {
+        "kind": "management_plan_notice",
+        "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=640709",
+        "source_as_of": "2026-07-30",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 고시 제2026-437호",
+        "pdf_page": 11,
+        "table": "임대주택 공급 및 인수 계획"
       }
     },
     "official_links": [
@@ -7254,6 +7916,25 @@
         "date": "2025-02-13",
         "evidence": "municipal_permit_notice",
         "checked_on": "2026-11-24"
+      }
+    ],
+    "sub_areas": [
+      "mz-plan-640709-a-1",
+      "mz-plan-640709-a-2"
+    ],
+    "management_plan_notices": [
+      {
+        "kind": "management_plan_notice",
+        "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=640709",
+        "source_as_of": "2026-07-30",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 고시 제2026-437호",
+        "pdf_page": 11,
+        "table": "임대주택 공급 및 인수 계획",
+        "site": "자양1동 772-1",
+        "notice_date": "2026-07-30",
+        "zone_count": null,
+        "archive_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=640709"
       }
     ]
   },
@@ -7266,7 +7947,7 @@
     "selected_date": "2025-04",
     "selected_date_precision": "month",
     "area_m2": 19836,
-    "management_plan_stage": null,
+    "management_plan_stage": "관리계획 승인고시",
     "representative_point": {
       "type": "Point",
       "coordinates": [
@@ -7333,6 +8014,15 @@
             "11000UQ111PS201912150302"
           ]
         }
+      },
+      "sub_area_plan": {
+        "kind": "management_plan_notice",
+        "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=640708",
+        "source_as_of": "2026-07-30",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 고시 제2026-438호",
+        "pdf_page": 10,
+        "table": "임대주택 공급 및 인수 계획"
       }
     },
     "official_links": [
@@ -7342,6 +8032,24 @@
         "date": "2025-08-28",
         "evidence": "municipal_permit_notice",
         "checked_on": "2026-11-24"
+      }
+    ],
+    "sub_areas": [
+      "mz-plan-640708-a-3"
+    ],
+    "management_plan_notices": [
+      {
+        "kind": "management_plan_notice",
+        "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=640708",
+        "source_as_of": "2026-07-30",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 고시 제2026-438호",
+        "pdf_page": 10,
+        "table": "임대주택 공급 및 인수 계획",
+        "site": "자양1동 226-1",
+        "notice_date": "2026-07-30",
+        "zone_count": null,
+        "archive_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=640708"
       }
     ]
   },
@@ -7410,7 +8118,8 @@
         "evidence": "municipal_permit_notice",
         "checked_on": "2026-11-24"
       }
-    ]
+    ],
+    "sub_areas": []
   },
   {
     "id": "mt-202603-resident-008",
@@ -7477,7 +8186,8 @@
           ]
         }
       }
-    }
+    },
+    "sub_areas": []
   },
   {
     "id": "mt-202603-resident-009",
@@ -7488,7 +8198,7 @@
     "selected_date": "2024-08",
     "selected_date_precision": "month",
     "area_m2": 33876,
-    "management_plan_stage": null,
+    "management_plan_stage": "관리계획 승인고시",
     "representative_point": {
       "type": "Point",
       "coordinates": [
@@ -7551,6 +8261,15 @@
             "11000UQ111PS201912150777"
           ]
         }
+      },
+      "sub_area_plan": {
+        "kind": "management_plan_notice",
+        "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=638669",
+        "source_as_of": "2026-04-30",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 고시 제2026-244호",
+        "pdf_page": 10,
+        "table": "임대주택 공급 및 인수 계획"
       }
     },
     "official_links": [
@@ -7560,6 +8279,25 @@
         "date": "2025-02-13",
         "evidence": "municipal_permit_notice",
         "checked_on": "2026-11-24"
+      }
+    ],
+    "sub_areas": [
+      "mz-plan-638669-a1",
+      "mz-plan-638669-a2"
+    ],
+    "management_plan_notices": [
+      {
+        "kind": "management_plan_notice",
+        "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=638669",
+        "source_as_of": "2026-04-30",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 고시 제2026-244호",
+        "pdf_page": 10,
+        "table": "임대주택 공급 및 인수 계획",
+        "site": "신내동 493-13",
+        "notice_date": "2026-04-30",
+        "zone_count": null,
+        "archive_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=638669"
       }
     ]
   },
@@ -7606,7 +8344,8 @@
         "evidence": "municipal_permit_notice",
         "checked_on": "2026-11-24"
       }
-    ]
+    ],
+    "sub_areas": []
   },
   {
     "id": "mt-202603-resident-011",
@@ -7670,7 +8409,10 @@
           ]
         }
       }
-    }
+    },
+    "sub_areas": [
+      "mz-seoul-11000uq120ps202505310709"
+    ]
   },
   {
     "id": "mt-202603-resident-012",
@@ -7681,7 +8423,7 @@
     "selected_date": "2024-07",
     "selected_date_precision": "month",
     "area_m2": 13825,
-    "management_plan_stage": null,
+    "management_plan_stage": "관리계획 승인고시",
     "representative_point": {
       "type": "Point",
       "coordinates": [
@@ -7729,8 +8471,35 @@
             "11000UQ111PS201912153495"
           ]
         }
+      },
+      "sub_area_plan": {
+        "kind": "management_plan_notice",
+        "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=645471",
+        "source_as_of": "2026-04-30",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 고시 제2026-236호",
+        "pdf_page": 7,
+        "table": "임대주택 공급 및 인수 계획"
       }
-    }
+    },
+    "sub_areas": [
+      "mz-plan-645471-a-1"
+    ],
+    "management_plan_notices": [
+      {
+        "kind": "management_plan_notice",
+        "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=645471",
+        "source_as_of": "2026-04-30",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 고시 제2026-236호",
+        "pdf_page": 7,
+        "table": "임대주택 공급 및 인수 계획",
+        "site": "정릉동 559-43",
+        "notice_date": "2026-04-30",
+        "zone_count": null,
+        "archive_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=645471"
+      }
+    ]
   },
   {
     "id": "mt-202603-resident-013",
@@ -7822,7 +8591,8 @@
         "evidence": "municipal_permit_notice",
         "checked_on": "2026-11-24"
       }
-    ]
+    ],
+    "sub_areas": []
   },
   {
     "id": "mt-202603-resident-014",
@@ -7913,7 +8683,8 @@
         "evidence": "municipal_permit_notice",
         "checked_on": "2026-11-24"
       }
-    ]
+    ],
+    "sub_areas": []
   },
   {
     "id": "mt-202603-resident-015",
@@ -8004,7 +8775,8 @@
         "evidence": "municipal_permit_notice",
         "checked_on": "2026-11-24"
       }
-    ]
+    ],
+    "sub_areas": []
   },
   {
     "id": "mt-202603-resident-016",
@@ -8107,7 +8879,10 @@
           ]
         }
       }
-    }
+    },
+    "sub_areas": [
+      "mz-seoul-11410uq120ps202607270001"
+    ]
   },
   {
     "id": "mt-202603-resident-017",
@@ -8191,6 +8966,15 @@
             "11000UQ111PS201912151710"
           ]
         }
+      },
+      "sub_area_plan": {
+        "kind": "management_plan_notice",
+        "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=626249",
+        "source_as_of": "2025-12-04",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 고시 제2025-666호",
+        "pdf_page": 6,
+        "table": "임대주택 공급 및 인수 계획"
       }
     },
     "official_links": [
@@ -8201,6 +8985,9 @@
         "evidence": "municipal_permit_notice",
         "checked_on": "2026-11-24"
       }
+    ],
+    "sub_areas": [
+      "mz-plan-626249-a-1"
     ]
   },
   {
@@ -8285,6 +9072,9 @@
         "evidence": "municipal_permit_notice",
         "checked_on": "2026-11-24"
       }
+    ],
+    "sub_areas": [
+      "mz-seoul-11000uq120ps202505310435"
     ]
   },
   {
@@ -8304,7 +9094,8 @@
     ],
     "rights_cutoff_date": null,
     "land_transaction_permit": null,
-    "zoning": null
+    "zoning": null,
+    "sub_areas": []
   },
   {
     "id": "mt-202603-resident-020",
@@ -8401,6 +9192,9 @@
         "evidence": "municipal_permit_notice",
         "checked_on": "2026-11-24"
       }
+    ],
+    "sub_areas": [
+      "mz-seoul-11000uq120ps202505310397"
     ]
   },
   {
@@ -8484,7 +9278,8 @@
         "evidence": "municipal_permit_notice",
         "checked_on": "2026-11-24"
       }
-    ]
+    ],
+    "sub_areas": []
   },
   {
     "id": "mt-202603-resident-022",
@@ -8576,7 +9371,8 @@
         "evidence": "municipal_permit_notice",
         "checked_on": "2026-11-24"
       }
-    ]
+    ],
+    "sub_areas": []
   },
   {
     "id": "mt-202603-resident-023",
@@ -8636,7 +9432,8 @@
           ]
         }
       }
-    }
+    },
+    "sub_areas": []
   },
   {
     "id": "mt-202603-resident-024",
@@ -8727,7 +9524,8 @@
         "evidence": "municipal_permit_notice",
         "checked_on": "2026-11-24"
       }
-    ]
+    ],
+    "sub_areas": []
   },
   {
     "id": "mt-202603-resident-025",
@@ -8801,7 +9599,10 @@
           ]
         }
       }
-    }
+    },
+    "sub_areas": [
+      "mz-seoul-11000uq120ps202505310654"
+    ]
   },
   {
     "id": "mt-202603-resident-026",
@@ -8885,7 +9686,8 @@
         "evidence": "municipal_permit_notice",
         "checked_on": "2026-11-24"
       }
-    ]
+    ],
+    "sub_areas": []
   },
   {
     "id": "mt-202603-resident-027",
@@ -8970,7 +9772,8 @@
         "evidence": "municipal_permit_notice",
         "checked_on": "2026-11-24"
       }
-    ]
+    ],
+    "sub_areas": []
   },
   {
     "id": "mt-202603-resident-028",
@@ -9068,7 +9871,8 @@
         "evidence": "municipal_permit_notice",
         "checked_on": "2026-11-24"
       }
-    ]
+    ],
+    "sub_areas": []
   },
   {
     "id": "mt-202603-resident-029",
@@ -9166,7 +9970,8 @@
         "evidence": "municipal_permit_notice",
         "checked_on": "2026-11-24"
       }
-    ]
+    ],
+    "sub_areas": []
   },
   {
     "id": "mt-202603-resident-030",
@@ -9264,7 +10069,8 @@
         "evidence": "municipal_permit_notice",
         "checked_on": "2026-11-24"
       }
-    ]
+    ],
+    "sub_areas": []
   },
   {
     "id": "mt-202603-resident-031",
@@ -9355,7 +10161,8 @@
         "evidence": "municipal_permit_notice",
         "checked_on": "2026-11-24"
       }
-    ]
+    ],
+    "sub_areas": []
   },
   {
     "id": "mt-202603-resident-032",
@@ -9446,7 +10253,8 @@
         "evidence": "municipal_permit_notice",
         "checked_on": "2026-11-24"
       }
-    ]
+    ],
+    "sub_areas": []
   },
   {
     "id": "mt-202603-resident-033",
@@ -9537,7 +10345,8 @@
         "evidence": "municipal_permit_notice",
         "checked_on": "2026-11-24"
       }
-    ]
+    ],
+    "sub_areas": []
   },
   {
     "id": "mt-202603-resident-034",
@@ -9628,7 +10437,8 @@
         "evidence": "municipal_permit_notice",
         "checked_on": "2026-11-24"
       }
-    ]
+    ],
+    "sub_areas": []
   },
   {
     "id": "mt-202603-resident-035",
@@ -9695,7 +10505,8 @@
         "evidence": "municipal_permit_notice",
         "checked_on": "2026-11-24"
       }
-    ]
+    ],
+    "sub_areas": []
   },
   {
     "id": "mt-202603-resident-036",
@@ -9786,7 +10597,8 @@
         "evidence": "municipal_permit_notice",
         "checked_on": "2026-11-24"
       }
-    ]
+    ],
+    "sub_areas": []
   },
   {
     "id": "mt-202603-resident-037",
@@ -9831,7 +10643,8 @@
         "evidence": "municipal_permit_notice",
         "checked_on": "2026-11-24"
       }
-    ]
+    ],
+    "sub_areas": []
   },
   {
     "id": "mt-202603-resident-038",
@@ -9922,7 +10735,8 @@
         "evidence": "municipal_permit_notice",
         "checked_on": "2026-11-24"
       }
-    ]
+    ],
+    "sub_areas": []
   },
   {
     "id": "mt-202603-resident-039",
@@ -10013,7 +10827,8 @@
         "evidence": "municipal_permit_notice",
         "checked_on": "2026-11-24"
       }
-    ]
+    ],
+    "sub_areas": []
   },
   {
     "id": "mt-202603-resident-040",
@@ -10104,7 +10919,8 @@
         "evidence": "municipal_permit_notice",
         "checked_on": "2026-11-24"
       }
-    ]
+    ],
+    "sub_areas": []
   },
   {
     "id": "mt-202603-resident-041",
@@ -10149,7 +10965,8 @@
         "evidence": "municipal_permit_notice",
         "checked_on": "2026-11-24"
       }
-    ]
+    ],
+    "sub_areas": []
   },
   {
     "id": "mt-202603-resident-042",
@@ -10194,7 +11011,8 @@
         "evidence": "municipal_permit_notice",
         "checked_on": "2026-11-24"
       }
-    ]
+    ],
+    "sub_areas": []
   },
   {
     "id": "mt-202603-resident-043",
@@ -10285,7 +11103,8 @@
         "evidence": "municipal_permit_notice",
         "checked_on": "2026-11-24"
       }
-    ]
+    ],
+    "sub_areas": []
   },
   {
     "id": "mt-202603-resident-044",
@@ -10376,7 +11195,8 @@
         "evidence": "municipal_permit_notice",
         "checked_on": "2026-11-24"
       }
-    ]
+    ],
+    "sub_areas": []
   },
   {
     "id": "mt-2026-extra-001",
@@ -10470,7 +11290,8 @@
         "evidence": "municipal_permit_notice",
         "checked_on": "2026-11-24"
       }
-    ]
+    ],
+    "sub_areas": []
   },
   {
     "id": "mt-2026-extra-002",
@@ -10563,7 +11384,8 @@
         "evidence": "municipal_permit_notice",
         "checked_on": "2026-11-24"
       }
-    ]
+    ],
+    "sub_areas": []
   },
   {
     "id": "mt-2026-extra-003",
@@ -10665,7 +11487,8 @@
         "evidence": "municipal_permit_notice",
         "checked_on": "2026-11-24"
       }
-    ]
+    ],
+    "sub_areas": []
   },
   {
     "id": "mt-2026-extra-004",
@@ -10759,7 +11582,8 @@
         "evidence": "municipal_permit_notice",
         "checked_on": "2026-11-24"
       }
-    ]
+    ],
+    "sub_areas": []
   },
   {
     "id": "mt-2026-extra-005",
@@ -10852,7 +11676,8 @@
         "evidence": "municipal_permit_notice",
         "checked_on": "2026-11-24"
       }
-    ]
+    ],
+    "sub_areas": []
   },
   {
     "id": "mt-2026-extra-006",
@@ -10945,7 +11770,8 @@
         "evidence": "municipal_permit_notice",
         "checked_on": "2026-11-24"
       }
-    ]
+    ],
+    "sub_areas": []
   },
   {
     "id": "mt-2026-extra-007",
@@ -11014,6 +11840,7 @@
         "evidence": "municipal_permit_notice",
         "checked_on": "2026-11-24"
       }
-    ]
+    ],
+    "sub_areas": []
   }
 ]

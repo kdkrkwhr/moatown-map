@@ -1,6 +1,8 @@
-import {loadMaps,createProjectMap} from './map-engine.mjs?v=seoul-parcels-1';
+import {renderProjectDetail} from './detail-view.mjs?v=detail-1';
+import {formatValue} from './detail-format.mjs?v=detail-1';
+import {loadMaps,createProjectMap} from './map-engine.mjs?v=sub-areas-1';
 import {loadNews,matchNews,newsCard,sourceLabels} from './news.mjs?v=atlas-1';
-import {searchProjects,managementFilters,progressFilters} from './project-search.mjs?v=seoul-parcels-1';
+import {searchProjects,managementFilters,progressFilters} from './project-search.mjs?v=sub-areas-1';
 import {mountAddressLookup} from './address-reference.mjs?v=seoul-parcels-1';
 export function filterTowns(towns, query, district) {
   return searchProjects(towns,new Map(),[],{query,district}).map(row=>row.town);
@@ -38,64 +40,14 @@ const el=(tag,text,cls)=>{
 };
 const unknown='미확인';
 const shown=v=>v===null || v===undefined || v==='' ? unknown : String(v);
-const numeric=(v,suffix)=>Number.isFinite(v) ? v.toLocaleString('ko-KR')+suffix : unknown;
+
 function sourceLink(url,label='출처') {
   if(!url) return null;
   try { if(new URL(url).protocol!=='https:') return null; } catch { return null; }
   const link=el('a',label,'source-link');
   link.href=url; link.target='_blank'; link.rel='noopener noreferrer';return link;
 }
-function field(list,label,value){
-  const row=el('div');
-  row.append(el('dt',label),el('dd',shown(value)));
-  list.append(row);return row;
-}
-function displayDate(value){
-  return value ? value.split('-').join('.') : unknown;
-}
-const area=value=>Number.isFinite(value)?numeric(value,'㎡')+' · 약 '+numeric(Math.round(value/3.305785),'평'):unknown;
-function optionalMetrics(record,grid,{town=false,approved=false}={}){
-  const m=record.metrics??{};
-  const surface=m.area_sqm??record.area_sqm??(town?record.area_m2:record.project_area_m2);
-  if(Number.isFinite(surface))field(grid,town?'대상지 면적':'사업구역 면적',area(surface));
-  const aging=m.aging_ratio??record.aging_ratio;
-  if(Number.isFinite(aging) && aging>=0 && aging<=100){
-    const cell=field(grid,'노후도',numeric(aging,'%')),bar=el('div',undefined,'aging-meter');
-    const progress=el('progress');progress.max=100;progress.value=aging;progress.setAttribute('aria-label','노후도');
-    bar.append(progress);cell.append(bar,el('small','비교선 50%'));
-  }
-  for(const [key,label,unit] of [['public_land_ratio','국공유지 비율','%'],['owner_count','토지등소유자','명'],['parcel_count','필지 수','필지']]){
-    const value=m[key]??record[key];
-    if(Number.isFinite(value))field(grid,label,numeric(value,unit));
-  }
-  const planned=m.planned_units??record.planned_units??record.planned_units_total;
-  const existing=m.existing_units??record.existing_units;
-  if(Number.isFinite(existing) && Number.isFinite(planned)){
-    const cell=field(grid,'세대수 변화',numeric(existing,'세대')+' → '+numeric(planned,'세대'));
-    const delta=planned-existing;
-    cell.append(el('small',(delta>0?'순증 ':delta<0?'순감 ':'증감 ')+numeric(Math.abs(delta),'세대')));
-  }else if(Number.isFinite(planned))field(grid,approved?'인가 당시 세대수':'계획 세대수',numeric(planned,'세대'));
-  else if(Number.isFinite(existing))field(grid,'기존 세대수',numeric(existing,'세대'));
-  const owners=m.owner_count??record.owner_count;
-  const samePlan=record.field_evidence?.metrics?.source_url && record.field_evidence.metrics.source_url===record.field_evidence?.plan?.source_url;
-  if(Number.isFinite(planned) && owners>0 && Number.isFinite(owners) && (Number.isFinite(m.planned_units)||samePlan))
-    field(grid,'소유자 1명당 계획 세대수',numeric(Number((planned/owners).toFixed(2)),'세대'));
-  const {before,after}=record.zoning??{};
-  if(before && after)field(grid,'용도지역 변경',before+' → '+after);
-  else if(before||after)field(grid,before?'기존 용도지역':'계획 용도지역',before||after);
-}
-function evidenceSection(entries){
-  const section=el('details',undefined,'provenance');
-  section.append(el('summary','출처와 자료 기준일'));
-  for(const [label,evidence] of entries){
-    const link=sourceLink(evidence?.source_url,label);
-    if(!link)continue;
-    const row=el('p',undefined,'evidence-row');
-    row.append(link,el('small',['자료 기준 '+(evidence.source_as_of ?? '미상'),evidence.checked_on && '확인 '+evidence.checked_on].filter(Boolean).join(' · ')));
-    section.append(row);
-  }
-  return section;
-}
+const displayDate=value=>formatValue(value,'date');
 const stages=[
   {label:'조합설립 진행 중',short:'조합설립 중',ink:'#6746a3',fill:'#aa8bd9',shape:'circle',description:'주민들이 사업을 추진할 조합을 설립하는 단계입니다.'},
   {label:'조합설립인가',short:'조합설립인가',ink:'#523394',fill:'#9572ce',shape:'circle',description:'관할 구청이 조합 설립을 인가했습니다.'},
@@ -111,7 +63,7 @@ export function zoneStage(value){
 }
 function stageBadge(value,short=false){
   const stage=zoneStage(value);
-  const badge=el('span',short?stage.short:shown(value),'stage-badge');
+  const badge=el('span',value==null?'확인 중':short?stage.short:shown(value),'stage-badge');
   badge.dataset.shape=stage.shape;
   badge.style.setProperty('--stage-ink',stage.ink);
   return badge;
@@ -140,6 +92,13 @@ export function showReferencePin(id,selectedId,visible,polygons){
   return id===selectedId && visible.has(id) && !polygons.has(id);
 }
 
+export function groupSubAreas(towns,zones){
+  const byId=new Map(zones.map(z=>[z.id,z]));
+  const groups=new Map(towns.map(t=>[t.id,new Set((t.sub_areas??[]).map(id=>byId.get(id)).filter(z=>z?.town_id===t.id))]));
+  for(const zone of zones)groups.get(zone.town_id)?.add(zone);
+  return new Map([...groups].map(([id,children])=>[id,[...children]]));
+}
+
 export function mount({manifest,towns,zones,boundaries,excluded=[]},sdk){
   const get=id=>document.getElementById(id);
   const list=get('town-list'),detail=get('town-detail'),search=get('search-input'),district=get('district-filter');
@@ -154,13 +113,17 @@ export function mount({manifest,towns,zones,boundaries,excluded=[]},sdk){
     if(guide){guide.open=false;guide.querySelector('summary').focus();}
   });
   const townById=new Map(towns.map(t=>[t.id,t]));
+  const cancellations=new Map(excluded.map(r=>[r.address_raw,{
+    ...r,name:r.name_raw,address:r.address_raw,management_plan_stage:'선정 취소',risk_info:{is_canceled:true},
+    timeline:[{stage:'대상지 선정',date:r.selected_date},{stage:'선정 취소',date:r.cancellation_date,source_url:r.source_url}],
+    sources:[r.source_url],official_links:[{title:'서울시 대상지 취소현황',url:r.source_url}]
+  }]));
   const zoneById=new Map(zones.map(z=>[z.id,z]));
   const planStats=planIntervals(towns);
   let newsItems=[];
   const newsCounts=new Map();
   get('map-totals').textContent=new Set(towns.map(town=>town.district)).size+'개 자치구 · 선정 대상지 '+towns.length+'곳';
-  const groups=new Map(towns.map(t=>[t.id,[]]));
-  for(const zone of zones) groups.get(zone.town_id)?.push(zone);
+  const groups=groupSubAreas(towns,zones);
   const districtCounts=new Map();
   for(const town of towns) districtCounts.set(town.district,(districtCounts.get(town.district) ?? 0)+1);
   const districtStages=new Map();
@@ -213,6 +176,9 @@ export function mount({manifest,towns,zones,boundaries,excluded=[]},sdk){
     }
     if(chosen.plan==='canceled')chosen.progress='';
     current=resolveSelection(location.search,townById,zoneById);
+    if(!current.townId && cancellations.has(params.get('cancellation'))){
+      current.cancellation=params.get('cancellation');chosen.plan='canceled';chosen.progress='';
+    }
     if(current.townId && !results().some(row=>row.town?.id===current.townId && (!current.zoneId || !row.zone || row.zone.id===current.zoneId))){
       search.value='';district.value='';chosen.plan='';chosen.progress='';
     }
@@ -220,7 +186,7 @@ export function mount({manifest,towns,zones,boundaries,excluded=[]},sdk){
   readUrl();
   function writeUrl(replace=false){
     const url=new URL(location.href);
-    for(const [key,value] of [['town',current.townId],['zone',current.zoneId],['q',search.value],['district',district.value],...Object.entries(chosen)]){
+    for(const [key,value] of [['town',current.townId],['zone',current.zoneId],['cancellation',current.cancellation],['q',search.value],['district',district.value],...Object.entries(chosen)]){
       if(value)url.searchParams.set(key,value);else url.searchParams.delete(key);
     }
     if(url.href!==location.href) history[replace?'replaceState':'pushState'](null,'',url);
@@ -280,7 +246,10 @@ export function mount({manifest,towns,zones,boundaries,excluded=[]},sdk){
     for(const {town,zone,excluded:archived} of rows){
       if(archived){
         const entry=el('article',undefined,'archive-item');
-        entry.append(el('strong',archived.name_raw),el('small','대상지 취소 · '+displayDate(archived.cancellation_date)));
+        const button=el('button',archived.name_raw,'archive-detail');
+        button.type='button';button.dataset.cancellation=archived.address_raw;
+        button.addEventListener('click',()=>select(null,null,archived.address_raw));
+        entry.append(button,el('small','대상지 취소 · '+displayDate(archived.cancellation_date)));
         const link=sourceLink(archived.source_url,'취소 원문');if(link)entry.append(link);
         fragment.append(entry);continue;
       }
@@ -318,123 +287,8 @@ export function mount({manifest,towns,zones,boundaries,excluded=[]},sdk){
     list.replaceChildren(fragment);
     list.scrollTop=0;
   }
-  function renderTown(town){
-    const children=groups.get(town.id).filter(z=>townHits.has(town.id) || visibleZones.has(z.id));
-    const metrics=el('dl',undefined,'metrics');
-    field(metrics,'선정일',displayDate(town.selected_date));
-    optionalMetrics(town,metrics,{town:true});
-    const management=el('div',undefined,'zone-status');
-    management.append(el('strong',town.management_plan_stage || (town.management_plan_notices?.length?'관리계획 승인고시':'관리계획 미확인')));
-    if(town.source_as_of)management.append(el('small','선정 명부 기준 '+displayDate(town.source_as_of)));
-    detail.append(management);
-    detail.append(metrics);
-    const notices=town.management_plan_notices ?? [];
-    if(notices.length){
-      detail.append(el('h3','관리계획 승인고시'));
-      for(const notice of notices){
-        const row=el('p',undefined,'plan-notice');
-        row.append(el('strong',notice.site),el('span',displayDate(notice.notice_date)+' 고시 · 서울시 수록 사업구역 '+notice.zone_count+'곳'));
-        const link=sourceLink(notice.archive_url,'대상지별 서울시 자료');
-        if(link)row.append(link);
-        detail.append(row);
-      }
-    }
-    if(planStats.months.has(town.id)){
-      const interval=planStats.months.get(town.id);
-      const mean=Math.round(planStats.mean*10)/10;
-      const delta=Number((interval-mean).toFixed(1));
-      const box=el('section',undefined,'interval-card');
-      box.append(el('h3','선정부터 관리계획 승인고시까지'),el('strong',interval+'개월'));
-      if(planStats.months.size>1){
-        box.append(el('span',delta===0?'표본 평균과 같음':'평균보다 '+Math.abs(delta)+'개월 '+(delta<0?'짧음':'김'),delta<0?'shorter':delta>0?'longer':''));
-        box.append(el('p','선정월과 한 건의 승인고시가 확인된 수록 대상지 '+planStats.months.size+'곳 평균 '+mean+'개월 · 달력 월 기준'));
-      }
-      detail.append(box);
-    }
-    detail.append(el('h3',children.length?(townHits.has(town.id)?'연결된 사업구역 ':'검색 조건에 맞는 사업구역 ')+children.length+'곳':'세부 사업구역'));
-    for(const zone of children){
-      const button=el('button',undefined,'zone-item');
-      button.append(el('strong',zone.name),stageBadge(zone.stage,true));
-      button.type='button';button.dataset.zone=zone.id;
-      button.addEventListener('click',()=>select(town.id,zone.id));
-      detail.append(button);
-    }
-    if(!children.length)detail.append(el('p','이 대상지에 연결된 세부 사업구역 자료는 아직 미확인입니다.','notice'));
-    const facts=el('dl',undefined,'facts');
-    field(facts,'선정 방식',town.selection_track);
-    field(facts,'지도 위치',town.representative_point?'대표 위치 확인':'미확인');
-    const boundary=boundaryProps.get(town.id);
-    field(facts,'대상지 경계',boundary ? (boundary.boundary_status==='legal'?'법정 경계':'참고 경계') : unknown);
-    const sources=(town.sources ?? []).map((url,i)=>[i?'추가 원문 '+i:'선정 명부 · 선정일 및 면적',{source_url:url,source_as_of:town.source_as_of}]);
-    if(notices.length)sources.push(['서울시 권역별 승인고시일 · 사업구역 수',notices[0]]);
-    detail.append(facts,evidenceSection([...sources,['사업 규모 지표',town.field_evidence?.metrics],['대표 위치',town.representative_point_evidence],['대상지 경계',boundary]]));
-  }
-  function renderZone(zone){
-    const plan=zone.field_evidence?.plan,stage=zone.field_evidence?.stage,contractor=zone.field_evidence?.selected_contractor;
-    const metrics=el('dl',undefined,'metrics');
-    const approved=plan?.state==='approved_project_plan';
-    optionalMetrics(zone,metrics,{approved});
-    const scope=zone.contract_scope;
-    const floors=zone.max_floors_above_ground??scope?.floors_above_ground;
-    if(Number.isFinite(floors))field(metrics,zone.max_floors_above_ground==null?'계약 당시 지상 층수':'최고 지상 층수',numeric(floors,'층'));
-    const status=el('div',undefined,'zone-status');
-    status.append(stageBadge(zone.stage));
-    if(stage?.approval_date)status.append(el('small',displayDate(stage.approval_date)+' 인가'));
-    else if(stage?.source_as_of)status.append(el('small','자료 기준 '+displayDate(stage.source_as_of)));
-    else if(stage?.checked_on)status.append(el('small','자료 확인 '+displayDate(stage.checked_on)));
-    detail.append(status,metrics);
-    if(plan?.state?.includes('not_latest')){
-      detail.append(el('p','공개 당시의 계획값입니다. 최신 인가·분양계획과 차이가 있을 수 있습니다.','notice'));
-    }
-    const facts=el('dl',undefined,'facts');
-    const contractorLabel=contractor?.state==='contractor_reported'?'시공사 수주 발표':contractor?.state==='disclosed_contract'?'공시 당시 시공사':'시공사';
-    field(facts,contractorLabel,zone.selected_contractor);
-    if(contractor?.contract_date)field(facts,'공사 계약일',displayDate(contractor.contract_date));
-    else if(contractor?.source_as_of)field(facts,'수주 발표일',displayDate(contractor.source_as_of));
-    if(scope)field(facts,'계약 당시 공사 규모',[[scope.units,'','세대'],[scope.floors_above_ground,'지상 ','층'],[scope.floors_below_ground,'지하 ','층']].filter(([n])=>Number.isFinite(n)).map(([n,prefix,suffix])=>prefix+numeric(n,suffix)).join(' · '));
-    if(!scope || zone.floors_below_ground!=null)field(facts,'지하 층수',numeric(zone.floors_below_ground,'층'));
-    for(const [key,label,suffix] of [['height_m','최고 높이','m'],['building_coverage_pct','건폐율','%'],['floor_area_ratio_pct','용적률','%']]){
-      if(Number.isFinite(zone[key]))field(facts,label,numeric(zone[key],suffix));
-    }
-    const bands=zone.published_private_area_bands ?? [];
-    for(const kind of new Set(bands.map(row=>row.type))){
-      const total=bands.filter(row=>row.type===kind).reduce((sum,row)=>sum+row.units,0);
-      field(facts,kind+' 계획',numeric(total,'세대'));
-    }
-    if(zone.approved_allocation){
-      const {member,general,reserve}=zone.approved_allocation;
-      field(facts,'인가 당시 분양계획','조합원 '+numeric(member,'세대')+' · 일반분양 '+numeric(general,'세대')+' · 보류지 '+numeric(reserve,'세대'));
-    }
-    const exact=Array.isArray(zone.unit_types) && zone.unit_types[0]?.private_area_m2!==undefined;
-    if(!exact && zone.unit_types?.length){
-      field(facts,'세부 주택형',Array.isArray(zone.unit_types)?zone.unit_types.join(', '):zone.unit_types);
-    }
-    const boundary=boundaryProps.get(zone.id);
-    field(facts,'사업구역 경계',boundary ? (boundary.boundary_status==='legal'?'법정 경계':'참고 경계') : unknown);
-    detail.append(facts);
-    if(exact || bands.length){
-      const types=el('details',undefined,'housing-table');
-      const table=el('table'),header=table.createTHead().insertRow(),body=table.createTBody();
-      types.append(el('summary',exact?'인가 주택형 '+zone.unit_types.length+'종':'공개 전용면적 구간별 세대수'));
-      for(const label of [exact?'주택형':'공급 구분','전용면적 (㎡)','세대수']){
-        const th=el('th',label);th.scope='col';header.append(th);
-      }
-      for(const row of exact?zone.unit_types:bands){
-        const tr=body.insertRow();
-        for(const value of [row.type,exact?row.private_area_m2:row.privateAreaBandM2,numeric(row.units,'')])tr.append(el('td',value));
-      }
-      types.append(table);detail.append(types);
-    }
-    const allocation=zone.housing_allocation;
-    if(allocation){
-      for(const [key,label] of [['sale_total','분양 합계'],['rental','계획 임대'],['members','계획 조합원 분양'],['general','계획 일반분양']]){
-        if(Number.isFinite(allocation[key]) && !(zone.approved_allocation && ['members','general'].includes(key)))field(facts,label,numeric(allocation[key],'세대'));
-      }
-    }
-    detail.append(evidenceSection([[approved?'사업시행계획인가 고시 · 첨부 주택형표':'구역별 공개 계획',plan],['규모 지표 · 토지등소유자',zone.field_evidence?.metrics],['공급 구분',zone.field_evidence?.housing_allocation],['용도지역',zone.field_evidence?.zoning],['등록 지번',zone.field_evidence?.registered_address],...(approved?[]:[['추진 단계',stage]]),[scope?'시공사 · 공사 규모 계약 공시':'시공사 근거',contractor],['사업구역 경계',boundary]]));
-  }
   function renderPanel(){
-    const town=townById.get(current.townId),zone=zoneById.get(current.zoneId);
+    const town=townById.get(current.townId)??cancellations.get(current.cancellation),zone=zoneById.get(current.zoneId);
     get('list-view').hidden=Boolean(town);get('detail-view').hidden=!town;
     get('sheet-label').textContent=zone?'사업구역 상세':town?'대상지 상세':'주소·사업 단계 검색';
     detail.replaceChildren();
@@ -445,107 +299,15 @@ export function mount({manifest,towns,zones,boundaries,excluded=[]},sdk){
     const title=el('h2',zone?.name ?? town.name);
     title.tabIndex=-1;
     detail.append(el('span',town.district,'detail-district'),title,el('p',zone?[town.name+' 모아타운',zone.registered_address].filter(Boolean).join(' · '):town.address,'address'));
-    const record=zone ?? town;
-    if(record.risk_info?.is_canceled===true)detail.append(el('p',['취소·철회 확인',record.risk_info.cancel_reason].filter(Boolean).join(' · '),'cancel-notice'));
-    if(record.last_verified_at)detail.append(el('small','최종 확인 '+displayDate(record.last_verified_at)));
-    const cutoff=record.field_evidence?.rights_cutoff_date;
-    if(typeof record.rights_cutoff_date==='string' && record.rights_cutoff_date.trim()){
-      const label='권리산정기준일 '+displayDate(record.rights_cutoff_date);
-      const badge=sourceLink(cutoff?.source_url,label)??el('span',label);badge.classList.add('cutoff');detail.append(badge);
-    }
-    if(zone)renderZone(zone);else renderTown(town);
-    const registryNote=zone?.field_evidence?.registered_address?.note;
-    if(registryNote)detail.insertBefore(el('p',registryNote,'notice'),detail.querySelector('.facts'));
-    const references=el('section',undefined,'regulatory');
-    const permit=record.land_transaction_permit;
-    if(permit && typeof permit.designated==='boolean'){
-      references.append(el('h3','토지거래허가구역'),el('strong',permit.designated?'공고상 지정 · '+permit.scope:'지정 해제'),
-        el('p',[permit.start_date,permit.end_date].filter(Boolean).map(displayDate).join(' ~ ')));
-      const source=sourceLink(record.field_evidence?.land_transaction_permit?.source_url,permit.notice_number);
-      if(source)references.append(source);
-    }
-    if(!zone && manifest.seoul_road_permit){
-      const city=manifest.seoul_road_permit;
-      const info=el('details',undefined,'city-road-rule');
-      info.append(el('summary','서울 전역 도로에 적용되는 토지거래허가 공고'),el('p',city.scope+' · '+displayDate(city.start_date)+' ~ '+displayDate(city.end_date)));
-      const link=sourceLink(city.evidence?.source_url,city.evidence?.notice_number);
-      if(link)info.append(link);
-      references.append(info);
-    }
-    const cutoffs=Array.isArray(record.rights_cutoff_history)?record.rights_cutoff_history:[];
-    if(cutoffs.length){
-      references.append(el('h3','고시별 권리산정기준일'));
-      for(const entry of cutoffs){
-        const row=el('p');
-        row.append(el('strong',entry.scope+' · '+displayDate(entry.date)),el('small',entry.status+' · '+entry.condition));
-        const source=sourceLink(entry.evidence?.source_url,entry.evidence?.notice_number);
-        if(source)row.append(source);
-        references.append(row);
-      }
-    }
-    if(Array.isArray(record.zoning?.areas) && record.zoning.areas.length){
-      references.append(el('h3','용도지역별 면적 변경 계획'),el('small',record.zoning.condition));
-      for(const part of record.zoning.areas){
-        references.append(el('p',part.label+' · '+numeric(part.before_sqm,'㎡')+' → '+numeric(part.planned_sqm,'㎡')));
-      }
-      const source=sourceLink(record.field_evidence?.zoning?.source_url,'관리계획 원문');
-      if(source)references.append(source);
-    }
-    const observed=record.zoning?.observed;
-    if(Array.isArray(observed?.names) && observed.names.length){
-      references.append(el('h3',observed.scope==='representative_point'?'대표 위치의 용도지역':'참고 외곽 내부에서 확인한 용도지역'),
-        el('p',observed.names.join(' · ')));
-      const evidence=record.field_evidence?.observed_zoning;
-      const source=sourceLink(evidence?.source_url,'서울시 용도지역도 · '+displayDate(evidence?.source_as_of));
-      if(source)references.append(source);
-    }
-    if(references.childElementCount)detail.insertBefore(references,detail.querySelector('.metrics')?.nextSibling??null);
-    if(record.risk_info?.notes)detail.append(el('p',record.risk_info.notes,'notice'));
-    const links=el('div',undefined,'official-docs');
-    for(const entry of Array.isArray(record.official_links)?record.official_links:[]){
-      const link=sourceLink(entry?.url,[entry?.title,entry?.date && displayDate(entry.date)].filter(Boolean).join(' · '));
-      if(link?.textContent)links.append(link);
-    }
-    if(links.childElementCount)detail.append(el('h3','고시·공고 원문'),links);
-    const history=town.published_timeline;
-    const events=(record.timeline ?? []).filter(event=>event?.date && event?.stage);
-    const approval=zone?.field_evidence?.stage;
-    if(!events.length && approval?.state==='approved_project_plan' && approval.approval_date && approval.source_as_of){
-      events.push({date:approval.approval_date,stage:'사업시행계획인가'},
-        {date:approval.source_as_of,stage:'인가 고시',source_url:approval.source_url});
-    }
-    if(events.length){
-      const section=el('section',undefined,'project-timeline'),timeline=el('ol');
-      section.append(el('h3','공개된 사업 이력'));
-      for(const [index,event] of events.entries()){
-        const item=el('li');
-        item.append(el('time',displayDate(event.date)),el('strong',event.stage));
-        if(index && Number.isFinite(event.days_taken) && event.days_taken>=0)item.append(el('small','앞 단계에서 '+event.days_taken+'일'));
-        const source=sourceLink(event.source_url,'이력 원문');
-        if(source)item.append(source);
-        timeline.append(item);
-      }
-      section.append(timeline);detail.insertBefore(section,detail.querySelector('.facts'));
-    }else if(history?.events?.length && (!zone || history.zone_ids?.includes(zone.id))){
-      const section=el('section',undefined,'project-timeline');
-      section.append(el('h3','단계 사이 소요 기간'),el('p',history.scope+' · 연월 기준','notice'));
-      const timeline=el('ol');
-      history.events.forEach((event,index)=>{
-        const item=el('li');
-        item.append(el('time',displayDate(event.month)),el('strong',event.label));
-        if(index){
-          const months=elapsedMonths(history.events[index-1].month,event.month);
-          if(months!==null)item.append(el('small','앞 단계에서 '+months+'개월'));
-        }
-        timeline.append(item);
-      });
-      section.append(timeline);
-      const source=sourceLink(history.source_url,'서울시 발표 · '+displayDate(history.source_as_of));
-      if(source)section.append(source);
-      detail.insertBefore(section,detail.querySelector('.facts'));
-    }else if(zone){
-      detail.insertBefore(el('p','단계 사이 소요 기간은 자료 미확인입니다.','notice'),detail.querySelector('.provenance'));
-    }
+    const children=groups.get(town.id)??[];
+    const jump=el('a','세부 사업구역 '+children.length+'곳 보기','sub-area-jump');
+    jump.href='#sub-area-heading';
+    jump.addEventListener('click',e=>{
+      e.preventDefault();
+      const heading=detail.querySelector('#sub-area-heading');heading.tabIndex=-1;heading.focus({preventScroll:true});heading.scrollIntoView({block:'start'});
+    });
+    if(children.length)detail.append(jump);
+    renderProjectDetail(detail,{town,zone,children,boundaries:boundaryProps,snapshot:manifest.snapshot_date,cityRule:current.cancellation?null:manifest.seoul_road_permit,stats:planStats,select,badge:stageBadge});
     renderRelatedNews();
     detail.scrollTop=0;
   }
@@ -566,20 +328,19 @@ export function mount({manifest,towns,zones,boundaries,excluded=[]},sdk){
       head.append(el('h3',title),more);section.append(head);
       for(const item of items.slice(0,2))section.append(newsCard(item,{compact:true}));
     }
-    const metrics=detail.querySelector('.metrics');
-    const anchor=metrics?.nextElementSibling?.matches('.notice')?metrics.nextElementSibling:metrics;
-    if(section.childElementCount)detail.insertBefore(section,anchor?.nextSibling ?? null);
+    if(section.childElementCount)detail.querySelector('.detail-sources')?.before(section);
   }
-  function select(townId,zoneId){
+  function select(townId,zoneId,cancellation=null){
     clearAddress();
-    current={townId,zoneId};
+    current={townId,zoneId,cancellation};
     expandSheet(true);writeUrl();renderPanel();renderLayers();fitView();
     detail.querySelector('h2')?.focus({preventScroll:true});
   }
   get('back-results').addEventListener('click',()=>{
-    const {townId,zoneId}=current;
+    const {townId,zoneId,cancellation}=current;
     const direct=zoneId && visibleZones.has(zoneId);
     select(zoneId && !direct?townId:null,null);
+    if(cancellation){list.querySelector('[data-cancellation="'+CSS.escape(cancellation)+'"]')?.focus();return;}
     const target=zoneId ? (direct?list:detail).querySelector('[data-zone="'+CSS.escape(zoneId)+'"]') : list.querySelector('[data-town="'+CSS.escape(townId)+'"]');
     target?.focus();
   });

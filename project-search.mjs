@@ -42,7 +42,8 @@ export function searchProjects(towns,groups,excluded,{query='',district='',plan=
       const stage=zone.stage || '미확인';
       const def=progressFilters.find(([,label])=>label===stage);
       if(progress && progress!==def?.[0])continue;
-      const zoneFields=[zone.name,zone.registered_address,stage,def?.[2]];
+      const code=zone.drawing_code?.replace(/^([A-Z])-?(?=\d)/,'$1');
+      const zoneFields=[zone.name,zone.registered_address,zone.drawing_code,code,code?.replace(/^([A-Z])(?=\d)/,'$1-'),stage,def?.[2]];
       if(def && def[0]!=='unknown')zoneFields.push(stage+' 단계');
       if(stage==='사업시행계획인가')zoneFields.push('사업시행계획인가 완료','사업시행인가 완료');
       if(stage==='사업시행계획인가 진행 중')zoneFields.push('사업시행인가 진행 중');

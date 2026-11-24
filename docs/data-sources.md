@@ -84,3 +84,11 @@
 - 용도지역은 2026년 9월 11일 배포된 서울시 `UPIS_C_UQ111`을 사용했습니다. 참고 외곽이 있는 대상지는 경계 안쪽과 용도지역 도형의 교집합에서 내부 여유 5m를 확인한 명칭을 표시합니다. 대표점만 있는 대상지는 용도지역 경계와 5m를 초과해 떨어진 점을 대조하고 단일 명칭일 때만 표시합니다. 가장자리의 좁은 부분은 누락될 수 있습니다. 종상향은 별도의 관리계획 근거를 기록하며, 합정동은 기존·계획 면적과 개별 사업시행인가 시 결정된다는 조건을 함께 표시합니다. [서울시 용도지역 공간정보](https://data.seoul.go.kr/dataList/OA-21136/F/1/datasetView.do) · [합정동 관리계획 고시 제2026-111호](https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=631937)
 
 필드 출처는 `field_evidence`, 지번 색인은 파일 단위 `evidence`, 범위별 고시는 이력 항목의 `evidence`에 있습니다. 원자료 작성일을 확인할 수 없는 실시간 서비스는 `source_as_of: null`로 두고 `checked_on`에 실제 열람일을 기록합니다. [보강 결과 및 수동 검수 대상](./data-enrichment-2026-11-24.md)
+
+## 세부 사업구역 및 대표 필지
+
+2026년 11월 24일 스냅샷에 61개 대상지의 세부 구역 167개를 연결했습니다. 대상지의 `sub_areas`는 같은 스냅샷 `zones.json`의 ID 목록입니다. 고시의 도면 표시번호, 대표 지번, 면적, 세대수는 개별 행에 연결합니다. 세대수의 관리계획 기준일과 실제 추진단계의 근거일은 각각 기록합니다. 분리안과 개별시행안이 함께 수록된 경우 적용한 시나리오를 기록했습니다. [대상지별 고시와 검수 결과](./sub-area-review-2026-11-24.md)
+
+신월동 102-33의 A1~A4는 서울시 고시 제2023-606호 추진계획표와 임대주택 공급계획표에서 확인했습니다. A1의 세대수는 2026년 11월 심의에서 바뀌었습니다. A2와 A3는 조합 인가 고시의 필지 목록과 면적으로 대조했습니다. A4의 단계에는 확인한 구의회 회의일을 표시합니다. [관리계획 고시](https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=584443) · [서울시 통합심의 발표](https://www.seoul.go.kr/news/news_report.do?nttNo=470317) · [A2 인가 고시](https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=644883) · [A3 인가 고시](https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=640660) · [양천구의회 회의록](https://www.ycc.go.kr/record/main?code=E010&uid=8618&view=full_view)
+
+대표 지번 핀은 자치구·법정동·본번·부번이 일치하는 서울시 지적 필지의 내부점입니다. 고시 지번이 색인에 없으면 구역 카드는 유지합니다. 공간자료의 위치, 대표 필지와 사업 면적까지 대조된 구역은 참고 경계를 별도로 제공합니다. [서울 부동산정보광장](https://land.seoul.go.kr/land/map/land/map.do) · [서울시 사업지 공간자료](https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do)
