@@ -38,8 +38,8 @@ test('unrecorded zone stages, unrecorded management plans and cancellation histo
 
 test('published management intervals only compare a single dated notice to its own selection month',()=>{
   const stats=planIntervals(towns);
-  assert.equal(stats.months.size,67);
-  assert.equal(Math.round(stats.mean*10)/10,24.2);
+  assert.equal(stats.months.size,57);
+  assert.equal(Math.round(stats.mean*10)/10,24.1);
   assert.ok(!stats.months.has(towns.find(t=>t.management_plan_notices?.length===2).id));
   assert.deepEqual(planIntervals([{id:'a',selected_date:'2024-01',management_plan_notices:[{notice_date:'2023-12-31'}]}]),{months:new Map(),mean:null});
 });

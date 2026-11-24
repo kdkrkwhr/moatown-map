@@ -36,11 +36,24 @@
         "zone_count": 3,
         "source_url": "https://news.seoul.go.kr/citybuild/moa-housing-town/archive/seoul-southwest",
         "archive_url": "https://news.seoul.go.kr/citybuild/archives/538350",
-        "checked_on": "2026-11-24"
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 고시 제2023-593호",
+        "notice_kind": "신규",
+        "notice_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=584446"
       }
     ],
     "rights_cutoff_date": null,
-    "land_transaction_permit": null,
+    "land_transaction_permit": {
+      "designated": true,
+      "start_date": "2024-09-10",
+      "end_date": "2029-09-09",
+      "scope": "화곡동 등 모아타운 및 인근지역 내 지목이 도로인 토지",
+      "roads_only": true,
+      "designation_level": "legal_dong",
+      "as_of": "2026-11-24",
+      "notice_number": "서울특별시 공고 제2024-2557호",
+      "legal_dong": "화곡동"
+    },
     "zoning": {
       "before": null,
       "after": null,
@@ -75,6 +88,15 @@
             "11000UQ111PS201912150501"
           ]
         }
+      },
+      "land_transaction_permit": {
+        "kind": "municipal_permit_notice_legal_dong_scope",
+        "source_url": "https://land.seoul.go.kr/land/other/appointStatusSeoul.do",
+        "source_document": "https://land.seoul.go.kr/land/other/downloadAppointPbancFile.do?fileUuid=59d9172df7b50038e063621d0f8d00381085122",
+        "source_as_of": "2024-09-05",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 공고 제2024-2557호",
+        "notes": "공고문 표의 강서구 화곡동 이 법정동 단위로 지정범위에 열거되어 있습니다. 사업지 개별 공고가 아니라 법정동 단위 지정이며, 대상은 지목이 도로인 토지에 한정됩니다."
       }
     },
     "sub_areas": [
@@ -120,11 +142,34 @@
         "zone_count": 5,
         "source_url": "https://news.seoul.go.kr/citybuild/moa-housing-town/archive/seoul-southwest",
         "archive_url": "https://news.seoul.go.kr/citybuild/archives/538366",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 고시 제2023-591호",
+        "notice_kind": "신규",
+        "notice_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=584450"
+      },
+      {
+        "site": "화곡1동 354번지 일대",
+        "notice_date": "2026-04-30",
+        "zone_count": null,
+        "notice_number": "서울특별시 고시 제2026-233호",
+        "notice_kind": "변경",
+        "notice_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=645315",
+        "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=645315",
         "checked_on": "2026-11-24"
       }
     ],
     "rights_cutoff_date": null,
-    "land_transaction_permit": null,
+    "land_transaction_permit": {
+      "designated": true,
+      "start_date": "2024-09-10",
+      "end_date": "2029-09-09",
+      "scope": "화곡동 등 모아타운 및 인근지역 내 지목이 도로인 토지",
+      "roads_only": true,
+      "designation_level": "legal_dong",
+      "as_of": "2026-11-24",
+      "notice_number": "서울특별시 공고 제2024-2557호",
+      "legal_dong": "화곡동"
+    },
     "zoning": {
       "before": null,
       "after": null,
@@ -150,6 +195,15 @@
             "11000UQ111PS201912153319"
           ]
         }
+      },
+      "land_transaction_permit": {
+        "kind": "municipal_permit_notice_legal_dong_scope",
+        "source_url": "https://land.seoul.go.kr/land/other/appointStatusSeoul.do",
+        "source_document": "https://land.seoul.go.kr/land/other/downloadAppointPbancFile.do?fileUuid=59d9172df7b50038e063621d0f8d00381085122",
+        "source_as_of": "2024-09-05",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 공고 제2024-2557호",
+        "notes": "공고문 표의 강서구 화곡동 이 법정동 단위로 지정범위에 열거되어 있습니다. 사업지 개별 공고가 아니라 법정동 단위 지정이며, 대상은 지목이 도로인 토지에 한정됩니다."
       }
     },
     "sub_areas": [
@@ -195,11 +249,24 @@
         "zone_count": 3,
         "source_url": "https://news.seoul.go.kr/citybuild/moa-housing-town/archive/seoul-southwest",
         "archive_url": "https://news.seoul.go.kr/citybuild/archives/538386",
-        "checked_on": "2026-11-24"
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 고시 제2023-592호",
+        "notice_kind": "신규",
+        "notice_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=584449"
       }
     ],
     "rights_cutoff_date": null,
-    "land_transaction_permit": null,
+    "land_transaction_permit": {
+      "designated": true,
+      "start_date": "2024-09-10",
+      "end_date": "2029-09-09",
+      "scope": "화곡동 등 모아타운 및 인근지역 내 지목이 도로인 토지",
+      "roads_only": true,
+      "designation_level": "legal_dong",
+      "as_of": "2026-11-24",
+      "notice_number": "서울특별시 공고 제2024-2557호",
+      "legal_dong": "화곡동"
+    },
     "zoning": {
       "before": null,
       "after": null,
@@ -242,6 +309,15 @@
         "notice_number": "서울특별시 고시 제2023-592호",
         "pdf_page": 5,
         "table": "임대주택 공급 및 인수 계획"
+      },
+      "land_transaction_permit": {
+        "kind": "municipal_permit_notice_legal_dong_scope",
+        "source_url": "https://land.seoul.go.kr/land/other/appointStatusSeoul.do",
+        "source_document": "https://land.seoul.go.kr/land/other/downloadAppointPbancFile.do?fileUuid=59d9172df7b50038e063621d0f8d00381085122",
+        "source_as_of": "2024-09-05",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 공고 제2024-2557호",
+        "notes": "공고문 표의 강서구 화곡동 이 법정동 단위로 지정범위에 열거되어 있습니다. 사업지 개별 공고가 아니라 법정동 단위 지정이며, 대상은 지목이 도로인 토지에 한정됩니다."
       }
     },
     "sub_areas": [
@@ -281,7 +357,17 @@
       "match_method": "exact_district_and_site_label"
     },
     "rights_cutoff_date": null,
-    "land_transaction_permit": null,
+    "land_transaction_permit": {
+      "designated": true,
+      "start_date": "2024-09-10",
+      "end_date": "2029-09-09",
+      "scope": "화곡동 등 모아타운 및 인근지역 내 지목이 도로인 토지",
+      "roads_only": true,
+      "designation_level": "legal_dong",
+      "as_of": "2026-11-24",
+      "notice_number": "서울특별시 공고 제2024-2557호",
+      "legal_dong": "화곡동"
+    },
     "zoning": {
       "before": null,
       "after": null,
@@ -315,6 +401,15 @@
             "11000UQ111PS201912153319"
           ]
         }
+      },
+      "land_transaction_permit": {
+        "kind": "municipal_permit_notice_legal_dong_scope",
+        "source_url": "https://land.seoul.go.kr/land/other/appointStatusSeoul.do",
+        "source_document": "https://land.seoul.go.kr/land/other/downloadAppointPbancFile.do?fileUuid=59d9172df7b50038e063621d0f8d00381085122",
+        "source_as_of": "2024-09-05",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 공고 제2024-2557호",
+        "notes": "공고문 표의 강서구 화곡동 이 법정동 단위로 지정범위에 열거되어 있습니다. 사업지 개별 공고가 아니라 법정동 단위 지정이며, 대상은 지목이 도로인 토지에 한정됩니다."
       }
     },
     "sub_areas": []
@@ -375,7 +470,17 @@
       }
     ],
     "rights_cutoff_date": null,
-    "land_transaction_permit": null,
+    "land_transaction_permit": {
+      "designated": true,
+      "start_date": "2024-09-10",
+      "end_date": "2029-09-09",
+      "scope": "등촌동 등 모아타운 및 인근지역 내 지목이 도로인 토지",
+      "roads_only": true,
+      "designation_level": "legal_dong",
+      "as_of": "2026-11-24",
+      "notice_number": "서울특별시 공고 제2024-2557호",
+      "legal_dong": "등촌동"
+    },
     "zoning": {
       "before": null,
       "after": null,
@@ -405,6 +510,15 @@
             "11000UQ111PS201912150872"
           ]
         }
+      },
+      "land_transaction_permit": {
+        "kind": "municipal_permit_notice_legal_dong_scope",
+        "source_url": "https://land.seoul.go.kr/land/other/appointStatusSeoul.do",
+        "source_document": "https://land.seoul.go.kr/land/other/downloadAppointPbancFile.do?fileUuid=59d9172df7b50038e063621d0f8d00381085122",
+        "source_as_of": "2024-09-05",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 공고 제2024-2557호",
+        "notes": "공고문 표의 강서구 등촌동 이 법정동 단위로 지정범위에 열거되어 있습니다. 사업지 개별 공고가 아니라 법정동 단위 지정이며, 대상은 지목이 도로인 토지에 한정됩니다."
       }
     },
     "sub_areas": [
@@ -454,7 +568,17 @@
       }
     ],
     "rights_cutoff_date": null,
-    "land_transaction_permit": null,
+    "land_transaction_permit": {
+      "designated": true,
+      "start_date": "2024-09-10",
+      "end_date": "2029-09-09",
+      "scope": "화곡동 등 모아타운 및 인근지역 내 지목이 도로인 토지",
+      "roads_only": true,
+      "designation_level": "legal_dong",
+      "as_of": "2026-11-24",
+      "notice_number": "서울특별시 공고 제2024-2557호",
+      "legal_dong": "화곡동"
+    },
     "zoning": {
       "before": null,
       "after": null,
@@ -484,6 +608,15 @@
             "11000UQ111PS201912151857"
           ]
         }
+      },
+      "land_transaction_permit": {
+        "kind": "municipal_permit_notice_legal_dong_scope",
+        "source_url": "https://land.seoul.go.kr/land/other/appointStatusSeoul.do",
+        "source_document": "https://land.seoul.go.kr/land/other/downloadAppointPbancFile.do?fileUuid=59d9172df7b50038e063621d0f8d00381085122",
+        "source_as_of": "2024-09-05",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 공고 제2024-2557호",
+        "notes": "공고문 표의 강서구 화곡동 이 법정동 단위로 지정범위에 열거되어 있습니다. 사업지 개별 공고가 아니라 법정동 단위 지정이며, 대상은 지목이 도로인 토지에 한정됩니다."
       }
     },
     "sub_areas": [
@@ -527,11 +660,24 @@
         "zone_count": 5,
         "source_url": "https://news.seoul.go.kr/citybuild/moa-housing-town/archive/seoul-southwest",
         "archive_url": "https://news.seoul.go.kr/citybuild/archives/538441",
-        "checked_on": "2026-11-24"
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 고시 제2024-266호",
+        "notice_kind": "신규",
+        "notice_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=594582"
       }
     ],
     "rights_cutoff_date": null,
-    "land_transaction_permit": null,
+    "land_transaction_permit": {
+      "designated": true,
+      "start_date": "2024-09-10",
+      "end_date": "2029-09-09",
+      "scope": "방화동 등 모아타운 및 인근지역 내 지목이 도로인 토지",
+      "roads_only": true,
+      "designation_level": "legal_dong",
+      "as_of": "2026-11-24",
+      "notice_number": "서울특별시 공고 제2024-2557호",
+      "legal_dong": "방화동"
+    },
     "zoning": {
       "before": null,
       "after": null,
@@ -561,6 +707,15 @@
             "11000UQ111PS201912151420"
           ]
         }
+      },
+      "land_transaction_permit": {
+        "kind": "municipal_permit_notice_legal_dong_scope",
+        "source_url": "https://land.seoul.go.kr/land/other/appointStatusSeoul.do",
+        "source_document": "https://land.seoul.go.kr/land/other/downloadAppointPbancFile.do?fileUuid=59d9172df7b50038e063621d0f8d00381085122",
+        "source_as_of": "2024-09-05",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 공고 제2024-2557호",
+        "notes": "공고문 표의 강서구 방화동 이 법정동 단위로 지정범위에 열거되어 있습니다. 사업지 개별 공고가 아니라 법정동 단위 지정이며, 대상은 지목이 도로인 토지에 한정됩니다."
       }
     },
     "sub_areas": [
@@ -606,11 +761,24 @@
         "zone_count": 5,
         "source_url": "https://news.seoul.go.kr/citybuild/moa-housing-town/archive/seoul-southwest",
         "archive_url": "https://news.seoul.go.kr/citybuild/archives/538456",
-        "checked_on": "2026-11-24"
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 고시 제2025-388호",
+        "notice_kind": "신규",
+        "notice_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=615059"
       }
     ],
     "rights_cutoff_date": "2022-10-27",
-    "land_transaction_permit": null,
+    "land_transaction_permit": {
+      "designated": true,
+      "start_date": "2024-09-10",
+      "end_date": "2029-09-09",
+      "scope": "공항동 등 모아타운 및 인근지역 내 지목이 도로인 토지",
+      "roads_only": true,
+      "designation_level": "legal_dong",
+      "as_of": "2026-11-24",
+      "notice_number": "서울특별시 공고 제2024-2557호",
+      "legal_dong": "공항동"
+    },
     "zoning": {
       "before": null,
       "after": null,
@@ -682,6 +850,15 @@
         "notice_number": "서울특별시 고시 제2025-388호",
         "pdf_page": 12,
         "table": "임대주택 공급 및 인수 계획"
+      },
+      "land_transaction_permit": {
+        "kind": "municipal_permit_notice_legal_dong_scope",
+        "source_url": "https://land.seoul.go.kr/land/other/appointStatusSeoul.do",
+        "source_document": "https://land.seoul.go.kr/land/other/downloadAppointPbancFile.do?fileUuid=59d9172df7b50038e063621d0f8d00381085122",
+        "source_as_of": "2024-09-05",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 공고 제2024-2557호",
+        "notes": "공고문 표의 강서구 공항동 이 법정동 단위로 지정범위에 열거되어 있습니다. 사업지 개별 공고가 아니라 법정동 단위 지정이며, 대상은 지목이 도로인 토지에 한정됩니다."
       }
     },
     "sub_areas": [
@@ -701,14 +878,30 @@
     "selected_date": "2022-10",
     "selected_date_precision": "month",
     "area_m2": 94080,
-    "management_plan_stage": null,
-    "representative_point": null,
+    "management_plan_stage": "관리계획 승인고시",
+    "representative_point": {
+      "type": "Point",
+      "coordinates": [
+        126.8519117,
+        37.5486488
+      ]
+    },
     "source_as_of": "2026-03-31",
     "sources": [
       "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
     ],
     "rights_cutoff_date": null,
-    "land_transaction_permit": null,
+    "land_transaction_permit": {
+      "designated": true,
+      "start_date": "2024-09-10",
+      "end_date": "2029-09-09",
+      "scope": "화곡동 등 모아타운 및 인근지역 내 지목이 도로인 토지",
+      "roads_only": true,
+      "designation_level": "legal_dong",
+      "as_of": "2026-11-24",
+      "notice_number": "서울특별시 공고 제2024-2557호",
+      "legal_dong": "화곡동"
+    },
     "zoning": null,
     "rights_cutoff_history": [
       {
@@ -734,7 +927,50 @@
         "checked_on": "2026-11-24"
       }
     ],
-    "sub_areas": []
+    "sub_areas": [],
+    "management_plan_notices": [
+      {
+        "site": "화곡6동 957-1 일대",
+        "notice_date": "2025-06-26",
+        "zone_count": null,
+        "notice_number": "서울특별시 고시 제2025-343호",
+        "notice_kind": "신규",
+        "notice_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=614147",
+        "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=614147",
+        "checked_on": "2026-11-24"
+      }
+    ],
+    "field_evidence": {
+      "management_plan_stage": {
+        "kind": "official_management_plan_notice",
+        "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=614147",
+        "source_as_of": "2025-06-26",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 고시 제2025-343호"
+      },
+      "land_transaction_permit": {
+        "kind": "municipal_permit_notice_legal_dong_scope",
+        "source_url": "https://land.seoul.go.kr/land/other/appointStatusSeoul.do",
+        "source_document": "https://land.seoul.go.kr/land/other/downloadAppointPbancFile.do?fileUuid=59d9172df7b50038e063621d0f8d00381085122",
+        "source_as_of": "2024-09-05",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 공고 제2024-2557호",
+        "notes": "공고문 표의 강서구 화곡동 이 법정동 단위로 지정범위에 열거되어 있습니다. 사업지 개별 공고가 아니라 법정동 단위 지정이며, 대상은 지목이 도로인 토지에 한정됩니다."
+      }
+    },
+    "representative_point_evidence": {
+      "kind": "official_project_geometry_reference_point",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+      "source_as_of": "2026-09-10",
+      "source_crs": "EPSG:5174",
+      "source_feature_id": "11500UQ120PS202607020002",
+      "source_label": "화곡6동 957-1 일대",
+      "match_method": "same_district_geometry_area_equals_published_area",
+      "geometry_area_m2": 94080.0,
+      "published_area_m2": 94080,
+      "checked_on": "2026-11-24",
+      "notes": "공고·명부의 사업 면적과 도형 면적이 일치하는 단일 피처를 연결했습니다. 명부 지번(본번만)은 지적도에 단독 필지가 없어 필지 내부점을 만들 수 없습니다. 이 점은 서울시 공간자료 도형의 내부 대표점이며 사업구역 중심점이 아닙니다."
+    }
   },
   {
     "id": "mt-202603-public-010",
@@ -848,12 +1084,25 @@
     },
     "management_plan_notices": [
       {
+        "site": "면목38동 44-6 일대",
+        "notice_date": "2023-08-10",
+        "zone_count": null,
+        "notice_number": "서울특별시 고시 제2023-337호",
+        "notice_kind": "신규",
+        "notice_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=584257",
+        "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=584257",
+        "checked_on": "2026-11-24"
+      },
+      {
         "site": "면목3·8동 44-6",
         "notice_date": "2025-01-16",
         "zone_count": 1,
         "source_url": "https://news.seoul.go.kr/citybuild/moa-housing-town/archive/seoul-northeast",
         "archive_url": "https://news.seoul.go.kr/citybuild/archives/538669",
-        "checked_on": "2026-11-24"
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 고시 제2025-24호",
+        "notice_kind": "변경",
+        "notice_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=604352"
       }
     ],
     "rights_cutoff_date": null,
@@ -927,16 +1176,39 @@
     },
     "management_plan_notices": [
       {
+        "site": "면목본동 297-28 일대",
+        "notice_date": "2023-08-10",
+        "zone_count": null,
+        "notice_number": "서울특별시 고시 제2023-338호",
+        "notice_kind": "신규",
+        "notice_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=584259",
+        "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=584259",
+        "checked_on": "2026-11-24"
+      },
+      {
         "site": "면목본동 297-28",
         "notice_date": "2024-06-20",
         "zone_count": 4,
         "source_url": "https://news.seoul.go.kr/citybuild/moa-housing-town/archive/seoul-northeast",
         "archive_url": "https://news.seoul.go.kr/citybuild/archives/538733",
-        "checked_on": "2026-11-24"
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 고시 제2024-294호",
+        "notice_kind": "변경",
+        "notice_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=590037"
       }
     ],
     "rights_cutoff_date": null,
-    "land_transaction_permit": null,
+    "land_transaction_permit": {
+      "designated": true,
+      "start_date": "2024-09-10",
+      "end_date": "2029-09-09",
+      "scope": "면목동 등 모아타운 및 인근지역 내 지목이 도로인 토지",
+      "roads_only": true,
+      "designation_level": "legal_dong",
+      "as_of": "2026-11-24",
+      "notice_number": "서울특별시 공고 제2024-2557호",
+      "legal_dong": "면목동"
+    },
     "zoning": {
       "before": null,
       "after": null,
@@ -967,6 +1239,15 @@
             "11000UQ111PS201912152307"
           ]
         }
+      },
+      "land_transaction_permit": {
+        "kind": "municipal_permit_notice_legal_dong_scope",
+        "source_url": "https://land.seoul.go.kr/land/other/appointStatusSeoul.do",
+        "source_document": "https://land.seoul.go.kr/land/other/downloadAppointPbancFile.do?fileUuid=59d9172df7b50038e063621d0f8d00381085122",
+        "source_as_of": "2024-09-05",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 공고 제2024-2557호",
+        "notes": "공고문 표의 중랑구 면목동 이 법정동 단위로 지정범위에 열거되어 있습니다. 사업지 개별 공고가 아니라 법정동 단위 지정이며, 대상은 지목이 도로인 토지에 한정됩니다."
       }
     },
     "sub_areas": [
@@ -1010,15 +1291,38 @@
     "management_plan_notices": [
       {
         "site": "중화1동 4-30",
+        "notice_date": "2023-08-10",
+        "zone_count": null,
+        "notice_number": "서울특별시 고시 제2023-339호",
+        "notice_kind": "신규",
+        "notice_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=584260",
+        "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=584260",
+        "checked_on": "2026-11-24"
+      },
+      {
+        "site": "중화1동 4-30",
         "notice_date": "2024-03-14",
         "zone_count": 4,
         "source_url": "https://news.seoul.go.kr/citybuild/moa-housing-town/archive/seoul-northeast",
         "archive_url": "https://news.seoul.go.kr/citybuild/archives/538746",
-        "checked_on": "2026-11-24"
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 고시 제2024-131호",
+        "notice_kind": "신규",
+        "notice_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=587169"
       }
     ],
     "rights_cutoff_date": null,
-    "land_transaction_permit": null,
+    "land_transaction_permit": {
+      "designated": true,
+      "start_date": "2024-09-10",
+      "end_date": "2029-09-09",
+      "scope": "중화동 등 모아타운 및 인근지역 내 지목이 도로인 토지",
+      "roads_only": true,
+      "designation_level": "legal_dong",
+      "as_of": "2026-11-24",
+      "notice_number": "서울특별시 공고 제2024-2557호",
+      "legal_dong": "중화동"
+    },
     "zoning": {
       "before": null,
       "after": null,
@@ -1048,6 +1352,15 @@
             "11000UQ111PS201912152809"
           ]
         }
+      },
+      "land_transaction_permit": {
+        "kind": "municipal_permit_notice_legal_dong_scope",
+        "source_url": "https://land.seoul.go.kr/land/other/appointStatusSeoul.do",
+        "source_document": "https://land.seoul.go.kr/land/other/downloadAppointPbancFile.do?fileUuid=59d9172df7b50038e063621d0f8d00381085122",
+        "source_as_of": "2024-09-05",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 공고 제2024-2557호",
+        "notes": "공고문 표의 중랑구 중화동 이 법정동 단위로 지정범위에 열거되어 있습니다. 사업지 개별 공고가 아니라 법정동 단위 지정이며, 대상은 지목이 도로인 토지에 한정됩니다."
       }
     },
     "sub_areas": []
@@ -1084,16 +1397,39 @@
     },
     "management_plan_notices": [
       {
+        "site": "망우3동 427-5번지 일대",
+        "notice_date": "2023-08-10",
+        "zone_count": null,
+        "notice_number": "서울특별시 고시 제2023-336호",
+        "notice_kind": "신규",
+        "notice_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=584256",
+        "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=584256",
+        "checked_on": "2026-11-24"
+      },
+      {
         "site": "망우3동 427-5",
         "notice_date": "2024-03-14",
         "zone_count": 7,
         "source_url": "https://news.seoul.go.kr/citybuild/moa-housing-town/archive/seoul-northeast",
         "archive_url": "https://news.seoul.go.kr/citybuild/archives/538758",
-        "checked_on": "2026-11-24"
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 고시 제2024-132호",
+        "notice_kind": "변경",
+        "notice_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=584263"
       }
     ],
     "rights_cutoff_date": null,
-    "land_transaction_permit": null,
+    "land_transaction_permit": {
+      "designated": true,
+      "start_date": "2024-09-10",
+      "end_date": "2029-09-09",
+      "scope": "망우동 등 모아타운 및 인근지역 내 지목이 도로인 토지",
+      "roads_only": true,
+      "designation_level": "legal_dong",
+      "as_of": "2026-11-24",
+      "notice_number": "서울특별시 공고 제2024-2557호",
+      "legal_dong": "망우동"
+    },
     "zoning": {
       "before": null,
       "after": null,
@@ -1123,6 +1459,15 @@
             "11000UQ111PS201912150876"
           ]
         }
+      },
+      "land_transaction_permit": {
+        "kind": "municipal_permit_notice_legal_dong_scope",
+        "source_url": "https://land.seoul.go.kr/land/other/appointStatusSeoul.do",
+        "source_document": "https://land.seoul.go.kr/land/other/downloadAppointPbancFile.do?fileUuid=59d9172df7b50038e063621d0f8d00381085122",
+        "source_as_of": "2024-09-05",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 공고 제2024-2557호",
+        "notes": "공고문 표의 중랑구 망우동 이 법정동 단위로 지정범위에 열거되어 있습니다. 사업지 개별 공고가 아니라 법정동 단위 지정이며, 대상은 지목이 도로인 토지에 한정됩니다."
       }
     },
     "sub_areas": []
@@ -1164,11 +1509,24 @@
         "zone_count": 5,
         "source_url": "https://news.seoul.go.kr/citybuild/moa-housing-town/archive/seoul-northeast",
         "archive_url": "https://news.seoul.go.kr/citybuild/archives/538769",
-        "checked_on": "2026-11-24"
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 고시 제2025-44호",
+        "notice_kind": "신규",
+        "notice_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=605445"
       }
     ],
     "rights_cutoff_date": "2022-10-27",
-    "land_transaction_permit": null,
+    "land_transaction_permit": {
+      "designated": true,
+      "start_date": "2024-09-10",
+      "end_date": "2029-09-09",
+      "scope": "면목동 등 모아타운 및 인근지역 내 지목이 도로인 토지",
+      "roads_only": true,
+      "designation_level": "legal_dong",
+      "as_of": "2026-11-24",
+      "notice_number": "서울특별시 공고 제2024-2557호",
+      "legal_dong": "면목동"
+    },
     "zoning": {
       "before": null,
       "after": null,
@@ -1231,6 +1589,15 @@
             "11000UQ111PS201912152832"
           ]
         }
+      },
+      "land_transaction_permit": {
+        "kind": "municipal_permit_notice_legal_dong_scope",
+        "source_url": "https://land.seoul.go.kr/land/other/appointStatusSeoul.do",
+        "source_document": "https://land.seoul.go.kr/land/other/downloadAppointPbancFile.do?fileUuid=59d9172df7b50038e063621d0f8d00381085122",
+        "source_as_of": "2024-09-05",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 공고 제2024-2557호",
+        "notes": "공고문 표의 중랑구 면목동 이 법정동 단위로 지정범위에 열거되어 있습니다. 사업지 개별 공고가 아니라 법정동 단위 지정이며, 대상은 지목이 도로인 토지에 한정됩니다."
       }
     },
     "sub_areas": [
@@ -1278,7 +1645,17 @@
       }
     ],
     "rights_cutoff_date": "2022-10-27",
-    "land_transaction_permit": null,
+    "land_transaction_permit": {
+      "designated": true,
+      "start_date": "2024-09-10",
+      "end_date": "2029-09-09",
+      "scope": "면목동 등 모아타운 및 인근지역 내 지목이 도로인 토지",
+      "roads_only": true,
+      "designation_level": "legal_dong",
+      "as_of": "2026-11-24",
+      "notice_number": "서울특별시 공고 제2024-2557호",
+      "legal_dong": "면목동"
+    },
     "zoning": {
       "before": null,
       "after": null,
@@ -1354,6 +1731,15 @@
         "notice_number": "서울특별시 고시 제2025-346호",
         "pdf_page": 9,
         "table": "임대주택 공급 및 인수 계획"
+      },
+      "land_transaction_permit": {
+        "kind": "municipal_permit_notice_legal_dong_scope",
+        "source_url": "https://land.seoul.go.kr/land/other/appointStatusSeoul.do",
+        "source_document": "https://land.seoul.go.kr/land/other/downloadAppointPbancFile.do?fileUuid=59d9172df7b50038e063621d0f8d00381085122",
+        "source_as_of": "2024-09-05",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 공고 제2024-2557호",
+        "notes": "공고문 표의 중랑구 면목동 이 법정동 단위로 지정범위에 열거되어 있습니다. 사업지 개별 공고가 아니라 법정동 단위 지정이며, 대상은 지목이 도로인 토지에 한정됩니다."
       }
     },
     "sub_areas": [
@@ -1394,7 +1780,17 @@
       "match_method": "exact_district_and_site_label"
     },
     "rights_cutoff_date": null,
-    "land_transaction_permit": null,
+    "land_transaction_permit": {
+      "designated": true,
+      "start_date": "2024-09-10",
+      "end_date": "2029-09-09",
+      "scope": "망우동 등 모아타운 및 인근지역 내 지목이 도로인 토지",
+      "roads_only": true,
+      "designation_level": "legal_dong",
+      "as_of": "2026-11-24",
+      "notice_number": "서울특별시 공고 제2024-2557호",
+      "legal_dong": "망우동"
+    },
     "zoning": {
       "before": null,
       "after": null,
@@ -1437,6 +1833,15 @@
         "notice_number": "서울특별시 고시 제2025-735호",
         "pdf_page": 8,
         "table": "임대주택 공급 및 인수 계획"
+      },
+      "land_transaction_permit": {
+        "kind": "municipal_permit_notice_legal_dong_scope",
+        "source_url": "https://land.seoul.go.kr/land/other/appointStatusSeoul.do",
+        "source_document": "https://land.seoul.go.kr/land/other/downloadAppointPbancFile.do?fileUuid=59d9172df7b50038e063621d0f8d00381085122",
+        "source_as_of": "2024-09-05",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 공고 제2024-2557호",
+        "notes": "공고문 표의 중랑구 망우동 이 법정동 단위로 지정범위에 열거되어 있습니다. 사업지 개별 공고가 아니라 법정동 단위 지정이며, 대상은 지목이 도로인 토지에 한정됩니다."
       }
     },
     "sub_areas": [
@@ -1492,16 +1897,39 @@
     },
     "management_plan_notices": [
       {
+        "site": "중화동 329-38번지 일대",
+        "notice_date": "2024-11-14",
+        "zone_count": null,
+        "notice_number": "서울특별시 고시 제2024-552호",
+        "notice_kind": "신규",
+        "notice_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=599186",
+        "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=599186",
+        "checked_on": "2026-11-24"
+      },
+      {
         "site": "중화동 329-38",
         "notice_date": "2025-09-04",
         "zone_count": 6,
         "source_url": "https://news.seoul.go.kr/citybuild/moa-housing-town/archive/seoul-northeast",
         "archive_url": "https://news.seoul.go.kr/citybuild/archives/538794",
-        "checked_on": "2026-11-24"
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 고시 제2025-490호",
+        "notice_kind": "변경",
+        "notice_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=618072"
       }
     ],
     "rights_cutoff_date": null,
-    "land_transaction_permit": null,
+    "land_transaction_permit": {
+      "designated": true,
+      "start_date": "2024-09-10",
+      "end_date": "2029-09-09",
+      "scope": "중화동 등 모아타운 및 인근지역 내 지목이 도로인 토지",
+      "roads_only": true,
+      "designation_level": "legal_dong",
+      "as_of": "2026-11-24",
+      "notice_number": "서울특별시 공고 제2024-2557호",
+      "legal_dong": "중화동"
+    },
     "zoning": {
       "before": null,
       "after": null,
@@ -1539,6 +1967,15 @@
             "11000UQ111PS202012230003"
           ]
         }
+      },
+      "land_transaction_permit": {
+        "kind": "municipal_permit_notice_legal_dong_scope",
+        "source_url": "https://land.seoul.go.kr/land/other/appointStatusSeoul.do",
+        "source_document": "https://land.seoul.go.kr/land/other/downloadAppointPbancFile.do?fileUuid=59d9172df7b50038e063621d0f8d00381085122",
+        "source_as_of": "2024-09-05",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 공고 제2024-2557호",
+        "notes": "공고문 표의 중랑구 중화동 이 법정동 단위로 지정범위에 열거되어 있습니다. 사업지 개별 공고가 아니라 법정동 단위 지정이며, 대상은 지목이 도로인 토지에 한정됩니다."
       }
     },
     "sub_areas": [
@@ -1579,7 +2016,17 @@
       "match_method": "unique_same_district_and_lot_with_normalized_dong_or_label"
     },
     "rights_cutoff_date": null,
-    "land_transaction_permit": null,
+    "land_transaction_permit": {
+      "designated": true,
+      "start_date": "2024-09-10",
+      "end_date": "2029-09-09",
+      "scope": "망우동 등 모아타운 및 인근지역 내 지목이 도로인 토지",
+      "roads_only": true,
+      "designation_level": "legal_dong",
+      "as_of": "2026-11-24",
+      "notice_number": "서울특별시 공고 제2024-2557호",
+      "legal_dong": "망우동"
+    },
     "zoning": {
       "before": null,
       "after": null,
@@ -1619,6 +2066,15 @@
         "notice_number": "서울특별시 고시 제2025-755호",
         "pdf_page": 10,
         "table": "임대주택 공급 및 인수 계획"
+      },
+      "land_transaction_permit": {
+        "kind": "municipal_permit_notice_legal_dong_scope",
+        "source_url": "https://land.seoul.go.kr/land/other/appointStatusSeoul.do",
+        "source_document": "https://land.seoul.go.kr/land/other/downloadAppointPbancFile.do?fileUuid=59d9172df7b50038e063621d0f8d00381085122",
+        "source_as_of": "2024-09-05",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 공고 제2024-2557호",
+        "notes": "공고문 표의 중랑구 망우동 이 법정동 단위로 지정범위에 열거되어 있습니다. 사업지 개별 공고가 아니라 법정동 단위 지정이며, 대상은 지목이 도로인 토지에 한정됩니다."
       }
     },
     "sub_areas": [
@@ -1674,7 +2130,17 @@
       "match_method": "exact_district_and_site_label"
     },
     "rights_cutoff_date": null,
-    "land_transaction_permit": null,
+    "land_transaction_permit": {
+      "designated": true,
+      "start_date": "2024-09-10",
+      "end_date": "2029-09-09",
+      "scope": "묵동 등 모아타운 및 인근지역 내 지목이 도로인 토지",
+      "roads_only": true,
+      "designation_level": "legal_dong",
+      "as_of": "2026-11-24",
+      "notice_number": "서울특별시 공고 제2024-2557호",
+      "legal_dong": "묵동"
+    },
     "zoning": {
       "before": null,
       "after": null,
@@ -1704,6 +2170,15 @@
             "11000UQ111PS201912152641"
           ]
         }
+      },
+      "land_transaction_permit": {
+        "kind": "municipal_permit_notice_legal_dong_scope",
+        "source_url": "https://land.seoul.go.kr/land/other/appointStatusSeoul.do",
+        "source_document": "https://land.seoul.go.kr/land/other/downloadAppointPbancFile.do?fileUuid=59d9172df7b50038e063621d0f8d00381085122",
+        "source_as_of": "2024-09-05",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 공고 제2024-2557호",
+        "notes": "공고문 표의 중랑구 묵동 이 법정동 단위로 지정범위에 열거되어 있습니다. 사업지 개별 공고가 아니라 법정동 단위 지정이며, 대상은 지목이 도로인 토지에 한정됩니다."
       }
     },
     "sub_areas": []
@@ -1739,7 +2214,17 @@
       "match_method": "unique_same_district_and_lot_with_normalized_dong_or_label"
     },
     "rights_cutoff_date": null,
-    "land_transaction_permit": null,
+    "land_transaction_permit": {
+      "designated": true,
+      "start_date": "2024-09-10",
+      "end_date": "2029-09-09",
+      "scope": "중화동 등 모아타운 및 인근지역 내 지목이 도로인 토지",
+      "roads_only": true,
+      "designation_level": "legal_dong",
+      "as_of": "2026-11-24",
+      "notice_number": "서울특별시 공고 제2024-2557호",
+      "legal_dong": "중화동"
+    },
     "zoning": {
       "before": null,
       "after": null,
@@ -1775,6 +2260,15 @@
             "11000UQ111PS202012230003"
           ]
         }
+      },
+      "land_transaction_permit": {
+        "kind": "municipal_permit_notice_legal_dong_scope",
+        "source_url": "https://land.seoul.go.kr/land/other/appointStatusSeoul.do",
+        "source_document": "https://land.seoul.go.kr/land/other/downloadAppointPbancFile.do?fileUuid=59d9172df7b50038e063621d0f8d00381085122",
+        "source_as_of": "2024-09-05",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 공고 제2024-2557호",
+        "notes": "공고문 표의 중랑구 중화동 이 법정동 단위로 지정범위에 열거되어 있습니다. 사업지 개별 공고가 아니라 법정동 단위 지정이며, 대상은 지목이 도로인 토지에 한정됩니다."
       }
     },
     "sub_areas": []
@@ -1810,7 +2304,17 @@
       "match_method": "unique_same_district_and_lot_with_normalized_dong_or_label"
     },
     "rights_cutoff_date": null,
-    "land_transaction_permit": null,
+    "land_transaction_permit": {
+      "designated": true,
+      "start_date": "2024-09-10",
+      "end_date": "2029-09-09",
+      "scope": "면목동 등 모아타운 및 인근지역 내 지목이 도로인 토지",
+      "roads_only": true,
+      "designation_level": "legal_dong",
+      "as_of": "2026-11-24",
+      "notice_number": "서울특별시 공고 제2024-2557호",
+      "legal_dong": "면목동"
+    },
     "zoning": {
       "before": null,
       "after": null,
@@ -1840,6 +2344,15 @@
             "11000UQ111PS201912150251"
           ]
         }
+      },
+      "land_transaction_permit": {
+        "kind": "municipal_permit_notice_legal_dong_scope",
+        "source_url": "https://land.seoul.go.kr/land/other/appointStatusSeoul.do",
+        "source_document": "https://land.seoul.go.kr/land/other/downloadAppointPbancFile.do?fileUuid=59d9172df7b50038e063621d0f8d00381085122",
+        "source_as_of": "2024-09-05",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 공고 제2024-2557호",
+        "notes": "공고문 표의 중랑구 면목동 이 법정동 단위로 지정범위에 열거되어 있습니다. 사업지 개별 공고가 아니라 법정동 단위 지정이며, 대상은 지목이 도로인 토지에 한정됩니다."
       }
     },
     "sub_areas": [
@@ -1855,7 +2368,7 @@
     "selected_date": "2024-05",
     "selected_date_precision": "month",
     "area_m2": 68303,
-    "management_plan_stage": null,
+    "management_plan_stage": "관리계획 승인고시",
     "representative_point": {
       "type": "Point",
       "coordinates": [
@@ -1907,9 +2420,28 @@
             "11000UQ111PS201912150588"
           ]
         }
+      },
+      "management_plan_stage": {
+        "kind": "official_management_plan_notice",
+        "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=645351",
+        "source_as_of": "2026-08-06",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 고시 제2026-453호"
       }
     },
-    "sub_areas": []
+    "sub_areas": [],
+    "management_plan_notices": [
+      {
+        "site": "면목3·8동 453-1번지 일대",
+        "notice_date": "2026-08-06",
+        "zone_count": null,
+        "notice_number": "서울특별시 고시 제2026-453호",
+        "notice_kind": "신규",
+        "notice_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=645351",
+        "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=645351",
+        "checked_on": "2026-11-24"
+      }
+    ]
   },
   {
     "id": "mt-202603-public-024",
@@ -1948,11 +2480,34 @@
         "zone_count": 5,
         "source_url": "https://news.seoul.go.kr/citybuild/moa-housing-town/archive/seoul-southwest",
         "archive_url": "https://news.seoul.go.kr/citybuild/archives/538539",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 고시 제2022-519호",
+        "notice_kind": "신규",
+        "notice_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=560541"
+      },
+      {
+        "site": "시흥3동 1005번지 일대",
+        "notice_date": "2024-03-07",
+        "zone_count": null,
+        "notice_number": "서울특별시 고시 제2024-118호",
+        "notice_kind": "신규",
+        "notice_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=584437",
+        "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=584437",
         "checked_on": "2026-11-24"
       }
     ],
     "rights_cutoff_date": null,
-    "land_transaction_permit": null,
+    "land_transaction_permit": {
+      "designated": true,
+      "start_date": "2024-09-10",
+      "end_date": "2029-09-09",
+      "scope": "시흥동 등 모아타운 및 인근지역 내 지목이 도로인 토지",
+      "roads_only": true,
+      "designation_level": "legal_dong",
+      "as_of": "2026-11-24",
+      "notice_number": "서울특별시 공고 제2024-2557호",
+      "legal_dong": "시흥동"
+    },
     "zoning": {
       "before": null,
       "after": null,
@@ -1988,6 +2543,15 @@
             "11545UQ111PS202404240001"
           ]
         }
+      },
+      "land_transaction_permit": {
+        "kind": "municipal_permit_notice_legal_dong_scope",
+        "source_url": "https://land.seoul.go.kr/land/other/appointStatusSeoul.do",
+        "source_document": "https://land.seoul.go.kr/land/other/downloadAppointPbancFile.do?fileUuid=59d9172df7b50038e063621d0f8d00381085122",
+        "source_as_of": "2024-09-05",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 공고 제2024-2557호",
+        "notes": "공고문 표의 금천구 시흥동 이 법정동 단위로 지정범위에 열거되어 있습니다. 사업지 개별 공고가 아니라 법정동 단위 지정이며, 대상은 지목이 도로인 토지에 한정됩니다."
       }
     },
     "sub_areas": [
@@ -2031,11 +2595,34 @@
         "zone_count": 1,
         "source_url": "https://news.seoul.go.kr/citybuild/moa-housing-town/archive/seoul-southwest",
         "archive_url": "https://news.seoul.go.kr/citybuild/archives/538550",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 고시 제2023-162호",
+        "notice_kind": "신규",
+        "notice_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=571863"
+      },
+      {
+        "site": "시흥4동 817번지 일대",
+        "notice_date": "2025-12-18",
+        "zone_count": null,
+        "notice_number": "서울특별시 고시 제2025-708호",
+        "notice_kind": "변경",
+        "notice_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=631492",
+        "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=631492",
         "checked_on": "2026-11-24"
       }
     ],
     "rights_cutoff_date": null,
-    "land_transaction_permit": null,
+    "land_transaction_permit": {
+      "designated": true,
+      "start_date": "2024-09-10",
+      "end_date": "2029-09-09",
+      "scope": "시흥동 등 모아타운 및 인근지역 내 지목이 도로인 토지",
+      "roads_only": true,
+      "designation_level": "legal_dong",
+      "as_of": "2026-11-24",
+      "notice_number": "서울특별시 공고 제2024-2557호",
+      "legal_dong": "시흥동"
+    },
     "zoning": {
       "before": null,
       "after": null,
@@ -2069,6 +2656,15 @@
             "11000UQ111PS201912154799"
           ]
         }
+      },
+      "land_transaction_permit": {
+        "kind": "municipal_permit_notice_legal_dong_scope",
+        "source_url": "https://land.seoul.go.kr/land/other/appointStatusSeoul.do",
+        "source_document": "https://land.seoul.go.kr/land/other/downloadAppointPbancFile.do?fileUuid=59d9172df7b50038e063621d0f8d00381085122",
+        "source_as_of": "2024-09-05",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 공고 제2024-2557호",
+        "notes": "공고문 표의 금천구 시흥동 이 법정동 단위로 지정범위에 열거되어 있습니다. 사업지 개별 공고가 아니라 법정동 단위 지정이며, 대상은 지목이 도로인 토지에 한정됩니다."
       }
     },
     "sub_areas": [
@@ -2113,7 +2709,17 @@
       "match_method": "exact_district_legal_dong_lot_and_unique_pnu"
     },
     "rights_cutoff_date": null,
-    "land_transaction_permit": null,
+    "land_transaction_permit": {
+      "designated": true,
+      "start_date": "2024-09-10",
+      "end_date": "2029-09-09",
+      "scope": "시흥동 등 모아타운 및 인근지역 내 지목이 도로인 토지",
+      "roads_only": true,
+      "designation_level": "legal_dong",
+      "as_of": "2026-11-24",
+      "notice_number": "서울특별시 공고 제2024-2557호",
+      "legal_dong": "시흥동"
+    },
     "zoning": {
       "before": null,
       "after": null,
@@ -2139,6 +2745,15 @@
             "11000UQ111PS202005206624"
           ]
         }
+      },
+      "land_transaction_permit": {
+        "kind": "municipal_permit_notice_legal_dong_scope",
+        "source_url": "https://land.seoul.go.kr/land/other/appointStatusSeoul.do",
+        "source_document": "https://land.seoul.go.kr/land/other/downloadAppointPbancFile.do?fileUuid=59d9172df7b50038e063621d0f8d00381085122",
+        "source_as_of": "2024-09-05",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 공고 제2024-2557호",
+        "notes": "공고문 표의 금천구 시흥동 이 법정동 단위로 지정범위에 열거되어 있습니다. 사업지 개별 공고가 아니라 법정동 단위 지정이며, 대상은 지목이 도로인 토지에 한정됩니다."
       }
     },
     "sub_areas": []
@@ -2175,16 +2790,39 @@
     },
     "management_plan_notices": [
       {
+        "site": "시흥1동 864번지 일대",
+        "notice_date": "2023-11-23",
+        "zone_count": null,
+        "notice_number": "서울특별시 고시 제2023-502호",
+        "notice_kind": "신규",
+        "notice_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=584430",
+        "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=584430",
+        "checked_on": "2026-11-24"
+      },
+      {
         "site": "시흥1동 864",
         "notice_date": "2024-12-05",
         "zone_count": 4,
         "source_url": "https://news.seoul.go.kr/citybuild/moa-housing-town/archive/seoul-southwest",
         "archive_url": "https://news.seoul.go.kr/citybuild/archives/538575",
-        "checked_on": "2026-11-24"
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 고시 제2024-588호",
+        "notice_kind": "변경",
+        "notice_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=601822"
       }
     ],
     "rights_cutoff_date": null,
-    "land_transaction_permit": null,
+    "land_transaction_permit": {
+      "designated": true,
+      "start_date": "2024-09-10",
+      "end_date": "2029-09-09",
+      "scope": "시흥동 등 모아타운 및 인근지역 내 지목이 도로인 토지",
+      "roads_only": true,
+      "designation_level": "legal_dong",
+      "as_of": "2026-11-24",
+      "notice_number": "서울특별시 공고 제2024-2557호",
+      "legal_dong": "시흥동"
+    },
     "zoning": {
       "before": null,
       "after": null,
@@ -2227,6 +2865,15 @@
         "notice_number": "서울특별시 고시 제2024-588호",
         "pdf_page": 11,
         "table": "임대주택 공급 및 인수 계획"
+      },
+      "land_transaction_permit": {
+        "kind": "municipal_permit_notice_legal_dong_scope",
+        "source_url": "https://land.seoul.go.kr/land/other/appointStatusSeoul.do",
+        "source_document": "https://land.seoul.go.kr/land/other/downloadAppointPbancFile.do?fileUuid=59d9172df7b50038e063621d0f8d00381085122",
+        "source_as_of": "2024-09-05",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 공고 제2024-2557호",
+        "notes": "공고문 표의 금천구 시흥동 이 법정동 단위로 지정범위에 열거되어 있습니다. 사업지 개별 공고가 아니라 법정동 단위 지정이며, 대상은 지목이 도로인 토지에 한정됩니다."
       }
     },
     "sub_areas": [
@@ -2269,16 +2916,39 @@
     },
     "management_plan_notices": [
       {
+        "site": "시흥3동 950번지 일대",
+        "notice_date": "2023-11-23",
+        "zone_count": null,
+        "notice_number": "서울특별시 고시 제2023-503호",
+        "notice_kind": "신규",
+        "notice_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=584429",
+        "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=584429",
+        "checked_on": "2026-11-24"
+      },
+      {
         "site": "시흥3동 950",
         "notice_date": "2024-09-19",
         "zone_count": 5,
         "source_url": "https://news.seoul.go.kr/citybuild/moa-housing-town/archive/seoul-southwest",
         "archive_url": "https://news.seoul.go.kr/citybuild/archives/538586",
-        "checked_on": "2026-11-24"
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 고시 제2024-443호",
+        "notice_kind": "변경",
+        "notice_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=594346"
       }
     ],
     "rights_cutoff_date": null,
-    "land_transaction_permit": null,
+    "land_transaction_permit": {
+      "designated": true,
+      "start_date": "2024-09-10",
+      "end_date": "2029-09-09",
+      "scope": "시흥동 등 모아타운 및 인근지역 내 지목이 도로인 토지",
+      "roads_only": true,
+      "designation_level": "legal_dong",
+      "as_of": "2026-11-24",
+      "notice_number": "서울특별시 공고 제2024-2557호",
+      "legal_dong": "시흥동"
+    },
     "zoning": {
       "before": null,
       "after": null,
@@ -2318,6 +2988,15 @@
         "notice_number": "서울특별시 고시 제2024-443호",
         "pdf_page": 11,
         "table": "임대주택 공급 및 인수 계획"
+      },
+      "land_transaction_permit": {
+        "kind": "municipal_permit_notice_legal_dong_scope",
+        "source_url": "https://land.seoul.go.kr/land/other/appointStatusSeoul.do",
+        "source_document": "https://land.seoul.go.kr/land/other/downloadAppointPbancFile.do?fileUuid=59d9172df7b50038e063621d0f8d00381085122",
+        "source_as_of": "2024-09-05",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 공고 제2024-2557호",
+        "notes": "공고문 표의 금천구 시흥동 이 법정동 단위로 지정범위에 열거되어 있습니다. 사업지 개별 공고가 아니라 법정동 단위 지정이며, 대상은 지목이 도로인 토지에 한정됩니다."
       }
     },
     "sub_areas": [
@@ -2358,7 +3037,17 @@
       "parcel_pnu": "1144010800105350002"
     },
     "rights_cutoff_date": null,
-    "land_transaction_permit": null,
+    "land_transaction_permit": {
+      "designated": true,
+      "start_date": "2024-09-10",
+      "end_date": "2029-09-09",
+      "scope": "대흥동 등 모아타운 및 인근지역 내 지목이 도로인 토지",
+      "roads_only": true,
+      "designation_level": "legal_dong",
+      "as_of": "2026-11-24",
+      "notice_number": "서울특별시 공고 제2024-2557호",
+      "legal_dong": "대흥동"
+    },
     "zoning": {
       "before": null,
       "after": null,
@@ -2402,6 +3091,15 @@
         "notice_number": "서울특별시 고시 제2024-130호",
         "pdf_page": 6,
         "table": "임대주택 공급 및 인수 계획"
+      },
+      "land_transaction_permit": {
+        "kind": "municipal_permit_notice_legal_dong_scope",
+        "source_url": "https://land.seoul.go.kr/land/other/appointStatusSeoul.do",
+        "source_document": "https://land.seoul.go.kr/land/other/downloadAppointPbancFile.do?fileUuid=59d9172df7b50038e063621d0f8d00381085122",
+        "source_as_of": "2024-09-05",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 공고 제2024-2557호",
+        "notes": "공고문 표의 마포구 대흥동 이 법정동 단위로 지정범위에 열거되어 있습니다. 사업지 개별 공고가 아니라 법정동 단위 지정이며, 대상은 지목이 도로인 토지에 한정됩니다."
       }
     },
     "sub_areas": [
@@ -2459,11 +3157,24 @@
         "zone_count": 4,
         "source_url": "https://news.seoul.go.kr/citybuild/moa-housing-town/archive/seoul-northwest",
         "archive_url": "https://news.seoul.go.kr/citybuild/archives/538805",
-        "checked_on": "2026-11-24"
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 고시 제2024-95호",
+        "notice_kind": "신규",
+        "notice_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=584518"
       }
     ],
     "rights_cutoff_date": null,
-    "land_transaction_permit": null,
+    "land_transaction_permit": {
+      "designated": true,
+      "start_date": "2024-09-10",
+      "end_date": "2029-09-09",
+      "scope": "성산동 등 모아타운 및 인근지역 내 지목이 도로인 토지",
+      "roads_only": true,
+      "designation_level": "legal_dong",
+      "as_of": "2026-11-24",
+      "notice_number": "서울특별시 공고 제2024-2557호",
+      "legal_dong": "성산동"
+    },
     "zoning": {
       "before": null,
       "after": null,
@@ -2507,6 +3218,15 @@
         "notice_number": "서울특별시 고시 제2024-95호",
         "pdf_page": 8,
         "table": "임대주택 공급 및 인수 계획"
+      },
+      "land_transaction_permit": {
+        "kind": "municipal_permit_notice_legal_dong_scope",
+        "source_url": "https://land.seoul.go.kr/land/other/appointStatusSeoul.do",
+        "source_document": "https://land.seoul.go.kr/land/other/downloadAppointPbancFile.do?fileUuid=59d9172df7b50038e063621d0f8d00381085122",
+        "source_as_of": "2024-09-05",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 공고 제2024-2557호",
+        "notes": "공고문 표의 마포구 성산동 이 법정동 단위로 지정범위에 열거되어 있습니다. 사업지 개별 공고가 아니라 법정동 단위 지정이며, 대상은 지목이 도로인 토지에 한정됩니다."
       }
     },
     "sub_areas": [
@@ -2552,11 +3272,24 @@
         "zone_count": 8,
         "source_url": "https://news.seoul.go.kr/citybuild/moa-housing-town/archive/seoul-northwest",
         "archive_url": "https://news.seoul.go.kr/citybuild/archives/538816",
-        "checked_on": "2026-11-24"
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 고시 제2024-225호",
+        "notice_kind": "신규",
+        "notice_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=588911"
       }
     ],
     "rights_cutoff_date": null,
-    "land_transaction_permit": null,
+    "land_transaction_permit": {
+      "designated": true,
+      "start_date": "2024-09-10",
+      "end_date": "2029-09-09",
+      "scope": "망원동 등 모아타운 및 인근지역 내 지목이 도로인 토지",
+      "roads_only": true,
+      "designation_level": "legal_dong",
+      "as_of": "2026-11-24",
+      "notice_number": "서울특별시 공고 제2024-2557호",
+      "legal_dong": "망원동"
+    },
     "zoning": {
       "before": null,
       "after": null,
@@ -2598,6 +3331,15 @@
         "notice_number": "서울특별시 고시 제2024-225호",
         "pdf_page": 6,
         "table": "임대주택 공급 및 인수 계획"
+      },
+      "land_transaction_permit": {
+        "kind": "municipal_permit_notice_legal_dong_scope",
+        "source_url": "https://land.seoul.go.kr/land/other/appointStatusSeoul.do",
+        "source_document": "https://land.seoul.go.kr/land/other/downloadAppointPbancFile.do?fileUuid=59d9172df7b50038e063621d0f8d00381085122",
+        "source_as_of": "2024-09-05",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 공고 제2024-2557호",
+        "notes": "공고문 표의 마포구 망원동 이 법정동 단위로 지정범위에 열거되어 있습니다. 사업지 개별 공고가 아니라 법정동 단위 지정이며, 대상은 지목이 도로인 토지에 한정됩니다."
       }
     },
     "sub_areas": [
@@ -2620,7 +3362,7 @@
     "selected_date": "2022-10",
     "selected_date_precision": "month",
     "area_m2": 97717,
-    "management_plan_stage": null,
+    "management_plan_stage": "관리계획 승인고시",
     "representative_point": {
       "type": "Point",
       "coordinates": [
@@ -2700,6 +3442,22 @@
             "11000UQ111PS201912151703"
           ]
         }
+      },
+      "management_plan_stage": {
+        "kind": "official_management_plan_notice",
+        "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=631937",
+        "source_as_of": "2026-03-05",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 고시 제2026-111호"
+      },
+      "land_transaction_permit": {
+        "kind": "municipal_permit_notice_legal_dong_scope",
+        "source_url": "https://land.seoul.go.kr/land/other/appointStatusSeoul.do",
+        "source_document": "https://land.seoul.go.kr/land/other/downloadAppointPbancFile.do?fileUuid=59d9172df7b50038e063621d0f8d00381085122",
+        "source_as_of": "2024-09-05",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 공고 제2024-2557호",
+        "notes": "공고문 표의 마포구 합정동 이 법정동 단위로 지정범위에 열거되어 있습니다. 사업지 개별 공고가 아니라 법정동 단위 지정이며, 대상은 지목이 도로인 토지에 한정됩니다."
       }
     },
     "official_links": [
@@ -2726,7 +3484,17 @@
       }
     ],
     "rights_cutoff_date": null,
-    "land_transaction_permit": null,
+    "land_transaction_permit": {
+      "designated": true,
+      "start_date": "2024-09-10",
+      "end_date": "2029-09-09",
+      "scope": "합정동 등 모아타운 및 인근지역 내 지목이 도로인 토지",
+      "roads_only": true,
+      "designation_level": "legal_dong",
+      "as_of": "2026-11-24",
+      "notice_number": "서울특별시 공고 제2024-2557호",
+      "legal_dong": "합정동"
+    },
     "rights_cutoff_history": [
       {
         "scope": "기존 구역",
@@ -2786,6 +3554,18 @@
       "mz-mapohapjeong-2026-111-a2",
       "mz-mapohapjeong-2026-111-a3",
       "mz-mapohapjeong-2026-111-a4"
+    ],
+    "management_plan_notices": [
+      {
+        "site": "마포구 합정동 369번지 일대",
+        "notice_date": "2026-03-05",
+        "zone_count": null,
+        "notice_number": "서울특별시 고시 제2026-111호",
+        "notice_kind": "신규",
+        "notice_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=631937",
+        "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=631937",
+        "checked_on": "2026-11-24"
+      }
     ]
   },
   {
@@ -2825,10 +3605,30 @@
         "source_url": "https://news.seoul.go.kr/citybuild/moa-housing-town/archive/seoul-northwest",
         "archive_url": "https://news.seoul.go.kr/citybuild/archives/538836",
         "checked_on": "2026-11-24"
+      },
+      {
+        "site": "중동 78번지 일대",
+        "notice_date": "2025-04-24",
+        "zone_count": null,
+        "notice_number": "서울특별시 고시 제2025-224호",
+        "notice_kind": "신규",
+        "notice_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=611308",
+        "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=611308",
+        "checked_on": "2026-11-24"
       }
     ],
     "rights_cutoff_date": null,
-    "land_transaction_permit": null,
+    "land_transaction_permit": {
+      "designated": true,
+      "start_date": "2024-09-10",
+      "end_date": "2029-09-09",
+      "scope": "중동 등 모아타운 및 인근지역 내 지목이 도로인 토지",
+      "roads_only": true,
+      "designation_level": "legal_dong",
+      "as_of": "2026-11-24",
+      "notice_number": "서울특별시 공고 제2024-2557호",
+      "legal_dong": "중동"
+    },
     "zoning": {
       "before": null,
       "after": null,
@@ -2911,6 +3711,15 @@
             "11000UQ111PS201912152176"
           ]
         }
+      },
+      "land_transaction_permit": {
+        "kind": "municipal_permit_notice_legal_dong_scope",
+        "source_url": "https://land.seoul.go.kr/land/other/appointStatusSeoul.do",
+        "source_document": "https://land.seoul.go.kr/land/other/downloadAppointPbancFile.do?fileUuid=59d9172df7b50038e063621d0f8d00381085122",
+        "source_as_of": "2024-09-05",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 공고 제2024-2557호",
+        "notes": "공고문 표의 마포구 중동 이 법정동 단위로 지정범위에 열거되어 있습니다. 사업지 개별 공고가 아니라 법정동 단위 지정이며, 대상은 지목이 도로인 토지에 한정됩니다."
       }
     },
     "sub_areas": [
@@ -2984,7 +3793,17 @@
       }
     ],
     "rights_cutoff_date": null,
-    "land_transaction_permit": null,
+    "land_transaction_permit": {
+      "designated": true,
+      "start_date": "2024-09-10",
+      "end_date": "2029-09-09",
+      "scope": "번동 등 모아타운 및 인근지역 내 지목이 도로인 토지",
+      "roads_only": true,
+      "designation_level": "legal_dong",
+      "as_of": "2026-11-24",
+      "notice_number": "서울특별시 공고 제2024-2557호",
+      "legal_dong": "번동"
+    },
     "zoning": {
       "before": null,
       "after": null,
@@ -3014,6 +3833,15 @@
             "11000UQ111PS201912155550"
           ]
         }
+      },
+      "land_transaction_permit": {
+        "kind": "municipal_permit_notice_legal_dong_scope",
+        "source_url": "https://land.seoul.go.kr/land/other/appointStatusSeoul.do",
+        "source_document": "https://land.seoul.go.kr/land/other/downloadAppointPbancFile.do?fileUuid=59d9172df7b50038e063621d0f8d00381085122",
+        "source_as_of": "2024-09-05",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 공고 제2024-2557호",
+        "notes": "공고문 표의 강북구 번동 이 법정동 단위로 지정범위에 열거되어 있습니다. 사업지 개별 공고가 아니라 법정동 단위 지정이며, 대상은 지목이 도로인 토지에 한정됩니다."
       }
     },
     "sub_areas": [
@@ -3066,7 +3894,17 @@
       }
     ],
     "rights_cutoff_date": null,
-    "land_transaction_permit": null,
+    "land_transaction_permit": {
+      "designated": true,
+      "start_date": "2024-09-10",
+      "end_date": "2029-09-09",
+      "scope": "번동 등 모아타운 및 인근지역 내 지목이 도로인 토지",
+      "roads_only": true,
+      "designation_level": "legal_dong",
+      "as_of": "2026-11-24",
+      "notice_number": "서울특별시 공고 제2024-2557호",
+      "legal_dong": "번동"
+    },
     "zoning": {
       "before": null,
       "after": null,
@@ -3100,6 +3938,15 @@
             "11000UQ111PS201912151066"
           ]
         }
+      },
+      "land_transaction_permit": {
+        "kind": "municipal_permit_notice_legal_dong_scope",
+        "source_url": "https://land.seoul.go.kr/land/other/appointStatusSeoul.do",
+        "source_document": "https://land.seoul.go.kr/land/other/downloadAppointPbancFile.do?fileUuid=59d9172df7b50038e063621d0f8d00381085122",
+        "source_as_of": "2024-09-05",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 공고 제2024-2557호",
+        "notes": "공고문 표의 강북구 번동 이 법정동 단위로 지정범위에 열거되어 있습니다. 사업지 개별 공고가 아니라 법정동 단위 지정이며, 대상은 지목이 도로인 토지에 한정됩니다."
       }
     },
     "sub_areas": [
@@ -3149,7 +3996,17 @@
       }
     ],
     "rights_cutoff_date": null,
-    "land_transaction_permit": null,
+    "land_transaction_permit": {
+      "designated": true,
+      "start_date": "2024-09-10",
+      "end_date": "2029-09-09",
+      "scope": "번동 등 모아타운 및 인근지역 내 지목이 도로인 토지",
+      "roads_only": true,
+      "designation_level": "legal_dong",
+      "as_of": "2026-11-24",
+      "notice_number": "서울특별시 공고 제2024-2557호",
+      "legal_dong": "번동"
+    },
     "zoning": {
       "before": null,
       "after": null,
@@ -3183,6 +4040,15 @@
             "11000UQ111PS201912155550"
           ]
         }
+      },
+      "land_transaction_permit": {
+        "kind": "municipal_permit_notice_legal_dong_scope",
+        "source_url": "https://land.seoul.go.kr/land/other/appointStatusSeoul.do",
+        "source_document": "https://land.seoul.go.kr/land/other/downloadAppointPbancFile.do?fileUuid=59d9172df7b50038e063621d0f8d00381085122",
+        "source_as_of": "2024-09-05",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 공고 제2024-2557호",
+        "notes": "공고문 표의 강북구 번동 이 법정동 단위로 지정범위에 열거되어 있습니다. 사업지 개별 공고가 아니라 법정동 단위 지정이며, 대상은 지목이 도로인 토지에 한정됩니다."
       }
     },
     "sub_areas": []
@@ -3224,11 +4090,24 @@
         "zone_count": 7,
         "source_url": "https://news.seoul.go.kr/citybuild/moa-housing-town/archive/seoul-northeast",
         "archive_url": "https://news.seoul.go.kr/citybuild/archives/538992",
-        "checked_on": "2026-11-24"
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 고시 제2025-527호",
+        "notice_kind": "변경",
+        "notice_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=619723"
       }
     ],
     "rights_cutoff_date": null,
-    "land_transaction_permit": null,
+    "land_transaction_permit": {
+      "designated": true,
+      "start_date": "2024-09-10",
+      "end_date": "2029-09-09",
+      "scope": "수유동 등 모아타운 및 인근지역 내 지목이 도로인 토지",
+      "roads_only": true,
+      "designation_level": "legal_dong",
+      "as_of": "2026-11-24",
+      "notice_number": "서울특별시 공고 제2024-2557호",
+      "legal_dong": "수유동"
+    },
     "zoning": {
       "before": null,
       "after": null,
@@ -3262,6 +4141,15 @@
             "11000UQ111PS201912150651"
           ]
         }
+      },
+      "land_transaction_permit": {
+        "kind": "municipal_permit_notice_legal_dong_scope",
+        "source_url": "https://land.seoul.go.kr/land/other/appointStatusSeoul.do",
+        "source_document": "https://land.seoul.go.kr/land/other/downloadAppointPbancFile.do?fileUuid=59d9172df7b50038e063621d0f8d00381085122",
+        "source_as_of": "2024-09-05",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 공고 제2024-2557호",
+        "notes": "공고문 표의 강북구 수유동 이 법정동 단위로 지정범위에 열거되어 있습니다. 사업지 개별 공고가 아니라 법정동 단위 지정이며, 대상은 지목이 도로인 토지에 한정됩니다."
       }
     },
     "sub_areas": []
@@ -3297,7 +4185,17 @@
       "match_method": "exact_district_and_site_label"
     },
     "rights_cutoff_date": null,
-    "land_transaction_permit": null,
+    "land_transaction_permit": {
+      "designated": true,
+      "start_date": "2024-09-10",
+      "end_date": "2029-09-09",
+      "scope": "수유동 등 모아타운 및 인근지역 내 지목이 도로인 토지",
+      "roads_only": true,
+      "designation_level": "legal_dong",
+      "as_of": "2026-11-24",
+      "notice_number": "서울특별시 공고 제2024-2557호",
+      "legal_dong": "수유동"
+    },
     "zoning": {
       "before": null,
       "after": null,
@@ -3331,6 +4229,15 @@
             "11000UQ111PS201912155107"
           ]
         }
+      },
+      "land_transaction_permit": {
+        "kind": "municipal_permit_notice_legal_dong_scope",
+        "source_url": "https://land.seoul.go.kr/land/other/appointStatusSeoul.do",
+        "source_document": "https://land.seoul.go.kr/land/other/downloadAppointPbancFile.do?fileUuid=59d9172df7b50038e063621d0f8d00381085122",
+        "source_as_of": "2024-09-05",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 공고 제2024-2557호",
+        "notes": "공고문 표의 강북구 수유동 이 법정동 단위로 지정범위에 열거되어 있습니다. 사업지 개별 공고가 아니라 법정동 단위 지정이며, 대상은 지목이 도로인 토지에 한정됩니다."
       }
     },
     "sub_areas": []
@@ -3642,11 +4549,24 @@
         "zone_count": 5,
         "source_url": "https://news.seoul.go.kr/citybuild/moa-housing-town/archive/seoul-northeast",
         "archive_url": "https://news.seoul.go.kr/citybuild/archives/538948",
-        "checked_on": "2026-11-24"
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 고시 제2024-642호",
+        "notice_kind": "신규",
+        "notice_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=607655"
       }
     ],
     "rights_cutoff_date": null,
-    "land_transaction_permit": null,
+    "land_transaction_permit": {
+      "designated": true,
+      "start_date": "2024-09-10",
+      "end_date": "2029-09-09",
+      "scope": "마장동 등 모아타운 및 인근지역 내 지목이 도로인 토지",
+      "roads_only": true,
+      "designation_level": "legal_dong",
+      "as_of": "2026-11-24",
+      "notice_number": "서울특별시 공고 제2024-2557호",
+      "legal_dong": "마장동"
+    },
     "zoning": {
       "before": null,
       "after": null,
@@ -3693,6 +4613,15 @@
         "notice_number": "서울특별시 고시 제2024-642호",
         "pdf_page": 13,
         "table": "임대주택 공급 및 인수 계획"
+      },
+      "land_transaction_permit": {
+        "kind": "municipal_permit_notice_legal_dong_scope",
+        "source_url": "https://land.seoul.go.kr/land/other/appointStatusSeoul.do",
+        "source_document": "https://land.seoul.go.kr/land/other/downloadAppointPbancFile.do?fileUuid=59d9172df7b50038e063621d0f8d00381085122",
+        "source_as_of": "2024-09-05",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 공고 제2024-2557호",
+        "notes": "공고문 표의 성동구 마장동 이 법정동 단위로 지정범위에 열거되어 있습니다. 사업지 개별 공고가 아니라 법정동 단위 지정이며, 대상은 지목이 도로인 토지에 한정됩니다."
       }
     },
     "sub_areas": [
@@ -3826,11 +4755,24 @@
         "zone_count": 8,
         "source_url": "https://news.seoul.go.kr/citybuild/moa-housing-town/archive/seoul-southwest",
         "archive_url": "https://news.seoul.go.kr/citybuild/archives/538599",
-        "checked_on": "2026-11-24"
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 고시 제2024-672호",
+        "notice_kind": "신규",
+        "notice_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=601972"
       }
     ],
     "rights_cutoff_date": null,
-    "land_transaction_permit": null,
+    "land_transaction_permit": {
+      "designated": true,
+      "start_date": "2024-09-10",
+      "end_date": "2029-09-09",
+      "scope": "고척동 등 모아타운 및 인근지역 내 지목이 도로인 토지",
+      "roads_only": true,
+      "designation_level": "legal_dong",
+      "as_of": "2026-11-24",
+      "notice_number": "서울특별시 공고 제2024-2557호",
+      "legal_dong": "고척동"
+    },
     "zoning": {
       "before": null,
       "after": null,
@@ -3911,6 +4853,15 @@
         "notice_number": "서울특별시 고시 제2024-672호",
         "pdf_page": 16,
         "table": "임대주택 공급 및 인수 계획"
+      },
+      "land_transaction_permit": {
+        "kind": "municipal_permit_notice_legal_dong_scope",
+        "source_url": "https://land.seoul.go.kr/land/other/appointStatusSeoul.do",
+        "source_document": "https://land.seoul.go.kr/land/other/downloadAppointPbancFile.do?fileUuid=59d9172df7b50038e063621d0f8d00381085122",
+        "source_as_of": "2024-09-05",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 공고 제2024-2557호",
+        "notes": "공고문 표의 구로구 고척동 이 법정동 단위로 지정범위에 열거되어 있습니다. 사업지 개별 공고가 아니라 법정동 단위 지정이며, 대상은 지목이 도로인 토지에 한정됩니다."
       }
     },
     "sub_areas": [
@@ -3961,11 +4912,24 @@
         "zone_count": 3,
         "source_url": "https://news.seoul.go.kr/citybuild/moa-housing-town/archive/seoul-southwest",
         "archive_url": "https://news.seoul.go.kr/citybuild/archives/538610",
-        "checked_on": "2026-11-24"
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 고시 제2024-671호",
+        "notice_kind": "신규",
+        "notice_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=602403"
       }
     ],
     "rights_cutoff_date": null,
-    "land_transaction_permit": null,
+    "land_transaction_permit": {
+      "designated": true,
+      "start_date": "2024-09-10",
+      "end_date": "2029-09-09",
+      "scope": "구로동 등 모아타운 및 인근지역 내 지목이 도로인 토지",
+      "roads_only": true,
+      "designation_level": "legal_dong",
+      "as_of": "2026-11-24",
+      "notice_number": "서울특별시 공고 제2024-2557호",
+      "legal_dong": "구로동"
+    },
     "zoning": {
       "before": null,
       "after": null,
@@ -4004,6 +4968,15 @@
         "notice_number": "서울특별시 고시 제2024-671호",
         "pdf_page": 12,
         "table": "임대주택 공급 및 인수 계획"
+      },
+      "land_transaction_permit": {
+        "kind": "municipal_permit_notice_legal_dong_scope",
+        "source_url": "https://land.seoul.go.kr/land/other/appointStatusSeoul.do",
+        "source_document": "https://land.seoul.go.kr/land/other/downloadAppointPbancFile.do?fileUuid=59d9172df7b50038e063621d0f8d00381085122",
+        "source_as_of": "2024-09-05",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 공고 제2024-2557호",
+        "notes": "공고문 표의 구로구 구로동 이 법정동 단위로 지정범위에 열거되어 있습니다. 사업지 개별 공고가 아니라 법정동 단위 지정이며, 대상은 지목이 도로인 토지에 한정됩니다."
       }
     },
     "sub_areas": [
@@ -4053,7 +5026,17 @@
       }
     ],
     "rights_cutoff_date": "2022-10-27",
-    "land_transaction_permit": null,
+    "land_transaction_permit": {
+      "designated": true,
+      "start_date": "2024-09-10",
+      "end_date": "2029-09-09",
+      "scope": "개봉동 등 모아타운 및 인근지역 내 지목이 도로인 토지",
+      "roads_only": true,
+      "designation_level": "legal_dong",
+      "as_of": "2026-11-24",
+      "notice_number": "서울특별시 공고 제2024-2557호",
+      "legal_dong": "개봉동"
+    },
     "zoning": {
       "before": null,
       "after": null,
@@ -4116,6 +5099,15 @@
             "11000UQ111PS201912151556"
           ]
         }
+      },
+      "land_transaction_permit": {
+        "kind": "municipal_permit_notice_legal_dong_scope",
+        "source_url": "https://land.seoul.go.kr/land/other/appointStatusSeoul.do",
+        "source_document": "https://land.seoul.go.kr/land/other/downloadAppointPbancFile.do?fileUuid=59d9172df7b50038e063621d0f8d00381085122",
+        "source_as_of": "2024-09-05",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 공고 제2024-2557호",
+        "notes": "공고문 표의 구로구 개봉동 이 법정동 단위로 지정범위에 열거되어 있습니다. 사업지 개별 공고가 아니라 법정동 단위 지정이며, 대상은 지목이 도로인 토지에 한정됩니다."
       }
     },
     "sub_areas": []
@@ -4157,11 +5149,24 @@
         "zone_count": 4,
         "source_url": "https://news.seoul.go.kr/citybuild/moa-housing-town/archive/seoul-southwest",
         "archive_url": "https://news.seoul.go.kr/citybuild/archives/538637",
-        "checked_on": "2026-11-24"
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 고시 제2025-687호",
+        "notice_kind": "신규",
+        "notice_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=628525"
       }
     ],
     "rights_cutoff_date": null,
-    "land_transaction_permit": null,
+    "land_transaction_permit": {
+      "designated": true,
+      "start_date": "2024-09-10",
+      "end_date": "2029-09-09",
+      "scope": "구로동 등 모아타운 및 인근지역 내 지목이 도로인 토지",
+      "roads_only": true,
+      "designation_level": "legal_dong",
+      "as_of": "2026-11-24",
+      "notice_number": "서울특별시 공고 제2024-2557호",
+      "legal_dong": "구로동"
+    },
     "zoning": {
       "before": null,
       "after": null,
@@ -4192,6 +5197,15 @@
             "11000UQ111PS201912151791"
           ]
         }
+      },
+      "land_transaction_permit": {
+        "kind": "municipal_permit_notice_legal_dong_scope",
+        "source_url": "https://land.seoul.go.kr/land/other/appointStatusSeoul.do",
+        "source_document": "https://land.seoul.go.kr/land/other/downloadAppointPbancFile.do?fileUuid=59d9172df7b50038e063621d0f8d00381085122",
+        "source_as_of": "2024-09-05",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 공고 제2024-2557호",
+        "notes": "공고문 표의 구로구 구로동 이 법정동 단위로 지정범위에 열거되어 있습니다. 사업지 개별 공고가 아니라 법정동 단위 지정이며, 대상은 지목이 도로인 토지에 한정됩니다."
       }
     },
     "sub_areas": [
@@ -4332,11 +5346,24 @@
         "zone_count": 5,
         "source_url": "https://news.seoul.go.kr/citybuild/moa-housing-town/archive/seoul-northeast",
         "archive_url": "https://news.seoul.go.kr/citybuild/archives/538087",
-        "checked_on": "2026-11-24"
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 고시 제2024-111호",
+        "notice_kind": "신규",
+        "notice_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=584823"
       }
     ],
     "rights_cutoff_date": null,
-    "land_transaction_permit": null,
+    "land_transaction_permit": {
+      "designated": true,
+      "start_date": "2024-09-10",
+      "end_date": "2029-09-09",
+      "scope": "상계동 등 모아타운 및 인근지역 내 지목이 도로인 토지",
+      "roads_only": true,
+      "designation_level": "legal_dong",
+      "as_of": "2026-11-24",
+      "notice_number": "서울특별시 공고 제2024-2557호",
+      "legal_dong": "상계동"
+    },
     "zoning": {
       "before": null,
       "after": null,
@@ -4379,6 +5406,15 @@
         "notice_number": "서울특별시 고시 제2024-111호",
         "pdf_page": 7,
         "table": "임대주택 공급 및 인수 계획"
+      },
+      "land_transaction_permit": {
+        "kind": "municipal_permit_notice_legal_dong_scope",
+        "source_url": "https://land.seoul.go.kr/land/other/appointStatusSeoul.do",
+        "source_document": "https://land.seoul.go.kr/land/other/downloadAppointPbancFile.do?fileUuid=59d9172df7b50038e063621d0f8d00381085122",
+        "source_as_of": "2024-09-05",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 공고 제2024-2557호",
+        "notes": "공고문 표의 노원구 상계동 이 법정동 단위로 지정범위에 열거되어 있습니다. 사업지 개별 공고가 아니라 법정동 단위 지정이며, 대상은 지목이 도로인 토지에 한정됩니다."
       }
     },
     "sub_areas": [
@@ -4426,11 +5462,24 @@
         "zone_count": 2,
         "source_url": "https://news.seoul.go.kr/citybuild/moa-housing-town/archive/seoul-northeast",
         "archive_url": "https://news.seoul.go.kr/citybuild/archives/538250",
-        "checked_on": "2026-11-24"
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 고시 제2025-342호",
+        "notice_kind": "신규",
+        "notice_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=614146"
       }
     ],
     "rights_cutoff_date": "2022-10-27",
-    "land_transaction_permit": null,
+    "land_transaction_permit": {
+      "designated": true,
+      "start_date": "2024-09-10",
+      "end_date": "2029-09-09",
+      "scope": "월계동 등 모아타운 및 인근지역 내 지목이 도로인 토지",
+      "roads_only": true,
+      "designation_level": "legal_dong",
+      "as_of": "2026-11-24",
+      "notice_number": "서울특별시 공고 제2024-2557호",
+      "legal_dong": "월계동"
+    },
     "zoning": {
       "before": null,
       "after": null,
@@ -4502,6 +5551,15 @@
         "notice_number": "서울특별시 고시 제2025-342호",
         "pdf_page": 8,
         "table": "임대주택 공급 및 인수 계획"
+      },
+      "land_transaction_permit": {
+        "kind": "municipal_permit_notice_legal_dong_scope",
+        "source_url": "https://land.seoul.go.kr/land/other/appointStatusSeoul.do",
+        "source_document": "https://land.seoul.go.kr/land/other/downloadAppointPbancFile.do?fileUuid=59d9172df7b50038e063621d0f8d00381085122",
+        "source_as_of": "2024-09-05",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 공고 제2024-2557호",
+        "notes": "공고문 표의 노원구 월계동 이 법정동 단위로 지정범위에 열거되어 있습니다. 사업지 개별 공고가 아니라 법정동 단위 지정이며, 대상은 지목이 도로인 토지에 한정됩니다."
       }
     },
     "sub_areas": [
@@ -4541,26 +5599,71 @@
     },
     "management_plan_notices": [
       {
+        "site": "쌍문동 524-87번지 일대",
+        "notice_date": "2023-11-16",
+        "zone_count": null,
+        "notice_number": "서울특별시 고시 제2023-496호",
+        "notice_kind": "신규",
+        "notice_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=584507",
+        "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=584507",
+        "checked_on": "2026-11-24"
+      },
+      {
         "site": "쌍문동 524-87",
         "notice_date": "2024-10-17",
         "zone_count": 5,
         "source_url": "https://news.seoul.go.kr/citybuild/moa-housing-town/archive/seoul-northeast",
         "archive_url": "https://news.seoul.go.kr/citybuild/archives/538267",
-        "checked_on": "2026-11-24"
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 고시 제2024-492호",
+        "notice_kind": "변경",
+        "notice_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=596685"
       }
     ],
     "rights_cutoff_date": null,
-    "land_transaction_permit": null,
+    "land_transaction_permit": {
+      "designated": true,
+      "start_date": "2024-09-10",
+      "end_date": "2029-09-09",
+      "scope": "쌍문동 등 모아타운 및 인근지역 내 지목이 도로인 토지",
+      "roads_only": true,
+      "designation_level": "legal_dong",
+      "as_of": "2026-11-24",
+      "notice_number": "서울특별시 공고 제2024-2557호",
+      "legal_dong": "쌍문동"
+    },
     "zoning": {
       "before": null,
       "after": null,
-      "upgrade_planned": null,
+      "upgrade_planned": true,
       "observed": {
         "scope": "reference_boundary_interior",
         "names": [
           "제1종일반주거지역",
           "제2종일반주거지역(7층이하)"
         ]
+      },
+      "condition": "관리계획 고시의 계획(안)이며 사업시행구역 내 개별 사업시행계획인가 시 결정",
+      "areas": [
+        {
+          "label": "제1종일반주거지역",
+          "before_sqm": 15195.6,
+          "planned_sqm": 372.4
+        },
+        {
+          "label": "제2종일반주거지역(7층이하)",
+          "before_sqm": 68330.4,
+          "planned_sqm": 10094.7
+        },
+        {
+          "label": "제2종일반주거지역",
+          "before_sqm": 0.0,
+          "planned_sqm": 73058.9
+        }
+      ],
+      "plan_totals": {
+        "before_sqm": 83526.0,
+        "planned_sqm": 83526.0
       }
     },
     "field_evidence": {
@@ -4580,6 +5683,28 @@
             "11000UQ111PS201912151077"
           ]
         }
+      },
+      "land_transaction_permit": {
+        "kind": "municipal_permit_notice_legal_dong_scope",
+        "source_url": "https://land.seoul.go.kr/land/other/appointStatusSeoul.do",
+        "source_document": "https://land.seoul.go.kr/land/other/downloadAppointPbancFile.do?fileUuid=59d9172df7b50038e063621d0f8d00381085122",
+        "source_as_of": "2024-09-05",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 공고 제2024-2557호",
+        "notes": "공고문 표의 도봉구 쌍문동 이 법정동 단위로 지정범위에 열거되어 있습니다. 사업지 개별 공고가 아니라 법정동 단위 지정이며, 대상은 지목이 도로인 토지에 한정됩니다."
+      },
+      "plan_zoning": {
+        "kind": "official_management_plan_notice",
+        "source_url": "https://event.seoul.go.kr/seoulsibo/fileDownload.do?fileName=seoulsibo_20241017085543_69127.pdf",
+        "source_as_of": "2024-10-17",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 고시 제2024-492호",
+        "pdf_page": 132,
+        "printed_page": 131,
+        "table": "용도지역·용도지구의 지정 및 변경 계획(안)",
+        "notice_project_area_m2": 83526.0,
+        "listed_area_m2": 82630,
+        "notes": "고시 표의 사업구역 면적 83,526.0㎡는 명부 면적 82,630㎡와 차이가 있습니다. 변경 승인 시점의 구역 면적이며, 표의 기정·변경후 면적만 전재했습니다."
       }
     },
     "sub_areas": []
@@ -4616,25 +5741,70 @@
     },
     "management_plan_notices": [
       {
+        "site": "쌍문동 494-22번지 일대",
+        "notice_date": "2023-11-16",
+        "zone_count": null,
+        "notice_number": "서울특별시 고시 제2023-495호",
+        "notice_kind": "신규",
+        "notice_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=584503",
+        "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=584503",
+        "checked_on": "2026-11-24"
+      },
+      {
         "site": "쌍문동 494-22",
         "notice_date": "2024-10-17",
         "zone_count": 2,
         "source_url": "https://news.seoul.go.kr/citybuild/moa-housing-town/archive/seoul-northeast",
         "archive_url": "https://news.seoul.go.kr/citybuild/archives/538267",
-        "checked_on": "2026-11-24"
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 고시 제2024-491호",
+        "notice_kind": "변경",
+        "notice_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=596684"
       }
     ],
     "rights_cutoff_date": null,
-    "land_transaction_permit": null,
+    "land_transaction_permit": {
+      "designated": true,
+      "start_date": "2024-09-10",
+      "end_date": "2029-09-09",
+      "scope": "쌍문동 등 모아타운 및 인근지역 내 지목이 도로인 토지",
+      "roads_only": true,
+      "designation_level": "legal_dong",
+      "as_of": "2026-11-24",
+      "notice_number": "서울특별시 공고 제2024-2557호",
+      "legal_dong": "쌍문동"
+    },
     "zoning": {
       "before": null,
       "after": null,
-      "upgrade_planned": null,
+      "upgrade_planned": true,
       "observed": {
         "scope": "reference_boundary_interior",
         "names": [
           "제2종일반주거지역(7층이하)"
         ]
+      },
+      "condition": "관리계획 고시의 계획(안)이며 사업시행구역 내 개별 사업시행계획인가 시 결정",
+      "areas": [
+        {
+          "label": "제1종일반주거지역",
+          "before_sqm": 2555.2,
+          "planned_sqm": 2555.2
+        },
+        {
+          "label": "제2종일반주거지역(7층이하)",
+          "before_sqm": 34764.6,
+          "planned_sqm": 3818.2
+        },
+        {
+          "label": "제2종일반주거지역",
+          "before_sqm": 0.0,
+          "planned_sqm": 30946.4
+        }
+      ],
+      "plan_totals": {
+        "before_sqm": 37319.8,
+        "planned_sqm": 37319.8
       }
     },
     "field_evidence": {
@@ -4651,6 +5821,28 @@
             "11000UQ111PS201912150873"
           ]
         }
+      },
+      "land_transaction_permit": {
+        "kind": "municipal_permit_notice_legal_dong_scope",
+        "source_url": "https://land.seoul.go.kr/land/other/appointStatusSeoul.do",
+        "source_document": "https://land.seoul.go.kr/land/other/downloadAppointPbancFile.do?fileUuid=59d9172df7b50038e063621d0f8d00381085122",
+        "source_as_of": "2024-09-05",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 공고 제2024-2557호",
+        "notes": "공고문 표의 도봉구 쌍문동 이 법정동 단위로 지정범위에 열거되어 있습니다. 사업지 개별 공고가 아니라 법정동 단위 지정이며, 대상은 지목이 도로인 토지에 한정됩니다."
+      },
+      "plan_zoning": {
+        "kind": "official_management_plan_notice",
+        "source_url": "https://event.seoul.go.kr/seoulsibo/fileDownload.do?fileName=seoulsibo_20241017085543_69127.pdf",
+        "source_as_of": "2024-10-17",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 고시 제2024-491호",
+        "pdf_page": 108,
+        "printed_page": 107,
+        "table": "용도지역·용도지구의 지정 및 변경 계획(안)",
+        "notice_project_area_m2": 37319.8,
+        "listed_area_m2": 31303,
+        "notes": "고시 표의 사업구역 면적 37,319.8㎡는 명부 면적 31,303㎡와 차이가 있습니다. 변경 승인 시점의 구역 면적이며, 표의 기정·변경후 면적만 전재했습니다."
       }
     },
     "sub_areas": []
@@ -4692,11 +5884,24 @@
         "zone_count": 5,
         "source_url": "https://news.seoul.go.kr/citybuild/moa-housing-town/archive/seoul-northeast",
         "archive_url": "https://news.seoul.go.kr/citybuild/archives/538280",
-        "checked_on": "2026-11-24"
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 고시 제2025-238호",
+        "notice_kind": "신규",
+        "notice_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=610807"
       }
     ],
     "rights_cutoff_date": null,
-    "land_transaction_permit": null,
+    "land_transaction_permit": {
+      "designated": true,
+      "start_date": "2024-09-10",
+      "end_date": "2029-09-09",
+      "scope": "방학동 등 모아타운 및 인근지역 내 지목이 도로인 토지",
+      "roads_only": true,
+      "designation_level": "legal_dong",
+      "as_of": "2026-11-24",
+      "notice_number": "서울특별시 공고 제2024-2557호",
+      "legal_dong": "방학동"
+    },
     "zoning": {
       "before": null,
       "after": null,
@@ -4731,6 +5936,15 @@
         "notice_number": "서울특별시 고시 제2025-238호",
         "pdf_page": 7,
         "table": "임대주택 공급 및 인수 계획"
+      },
+      "land_transaction_permit": {
+        "kind": "municipal_permit_notice_legal_dong_scope",
+        "source_url": "https://land.seoul.go.kr/land/other/appointStatusSeoul.do",
+        "source_document": "https://land.seoul.go.kr/land/other/downloadAppointPbancFile.do?fileUuid=59d9172df7b50038e063621d0f8d00381085122",
+        "source_as_of": "2024-09-05",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 공고 제2024-2557호",
+        "notes": "공고문 표의 도봉구 방학동 이 법정동 단위로 지정범위에 열거되어 있습니다. 사업지 개별 공고가 아니라 법정동 단위 지정이며, 대상은 지목이 도로인 토지에 한정됩니다."
       }
     },
     "sub_areas": [
@@ -4750,7 +5964,7 @@
     "selected_date": "2023-09",
     "selected_date_precision": "month",
     "area_m2": 87774,
-    "management_plan_stage": null,
+    "management_plan_stage": "관리계획 승인고시",
     "representative_point": {
       "type": "Point",
       "coordinates": [
@@ -4772,7 +5986,17 @@
       "match_method": "unique_same_district_and_lot_with_normalized_dong_or_label"
     },
     "rights_cutoff_date": null,
-    "land_transaction_permit": null,
+    "land_transaction_permit": {
+      "designated": true,
+      "start_date": "2024-09-10",
+      "end_date": "2029-09-09",
+      "scope": "쌍문동 등 모아타운 및 인근지역 내 지목이 도로인 토지",
+      "roads_only": true,
+      "designation_level": "legal_dong",
+      "as_of": "2026-11-24",
+      "notice_number": "서울특별시 공고 제2024-2557호",
+      "legal_dong": "쌍문동"
+    },
     "zoning": {
       "before": null,
       "after": null,
@@ -4798,9 +6022,37 @@
             "11000UQ111PS201912151077"
           ]
         }
+      },
+      "management_plan_stage": {
+        "kind": "official_management_plan_notice",
+        "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=610051",
+        "source_as_of": "2025-05-08",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 고시 제2025-259호"
+      },
+      "land_transaction_permit": {
+        "kind": "municipal_permit_notice_legal_dong_scope",
+        "source_url": "https://land.seoul.go.kr/land/other/appointStatusSeoul.do",
+        "source_document": "https://land.seoul.go.kr/land/other/downloadAppointPbancFile.do?fileUuid=59d9172df7b50038e063621d0f8d00381085122",
+        "source_as_of": "2024-09-05",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 공고 제2024-2557호",
+        "notes": "공고문 표의 도봉구 쌍문동 이 법정동 단위로 지정범위에 열거되어 있습니다. 사업지 개별 공고가 아니라 법정동 단위 지정이며, 대상은 지목이 도로인 토지에 한정됩니다."
       }
     },
-    "sub_areas": []
+    "sub_areas": [],
+    "management_plan_notices": [
+      {
+        "site": "쌍문동 460번지 일대",
+        "notice_date": "2025-05-08",
+        "zone_count": null,
+        "notice_number": "서울특별시 고시 제2025-259호",
+        "notice_kind": "신규",
+        "notice_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=610051",
+        "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=610051",
+        "checked_on": "2026-11-24"
+      }
+    ]
   },
   {
     "id": "mt-202603-public-055",
@@ -4839,11 +6091,24 @@
         "zone_count": 3,
         "source_url": "https://news.seoul.go.kr/citybuild/moa-housing-town/archive/seoul-northeast",
         "archive_url": "https://news.seoul.go.kr/citybuild/archives/538303",
-        "checked_on": "2026-11-24"
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 고시 제2025-485호",
+        "notice_kind": "신규",
+        "notice_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=618698"
       }
     ],
     "rights_cutoff_date": null,
-    "land_transaction_permit": null,
+    "land_transaction_permit": {
+      "designated": true,
+      "start_date": "2024-09-10",
+      "end_date": "2029-09-09",
+      "scope": "창동 등 모아타운 및 인근지역 내 지목이 도로인 토지",
+      "roads_only": true,
+      "designation_level": "legal_dong",
+      "as_of": "2026-11-24",
+      "notice_number": "서울특별시 공고 제2024-2557호",
+      "legal_dong": "창동"
+    },
     "zoning": {
       "before": null,
       "after": null,
@@ -4869,6 +6134,15 @@
             "11000UQ111PS201912153493"
           ]
         }
+      },
+      "land_transaction_permit": {
+        "kind": "municipal_permit_notice_legal_dong_scope",
+        "source_url": "https://land.seoul.go.kr/land/other/appointStatusSeoul.do",
+        "source_document": "https://land.seoul.go.kr/land/other/downloadAppointPbancFile.do?fileUuid=59d9172df7b50038e063621d0f8d00381085122",
+        "source_as_of": "2024-09-05",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 공고 제2024-2557호",
+        "notes": "공고문 표의 도봉구 창동 이 법정동 단위로 지정범위에 열거되어 있습니다. 사업지 개별 공고가 아니라 법정동 단위 지정이며, 대상은 지목이 도로인 토지에 한정됩니다."
       }
     },
     "sub_areas": [
@@ -4912,11 +6186,24 @@
         "zone_count": 3,
         "source_url": "https://news.seoul.go.kr/citybuild/moa-housing-town/archive/seoul-southeast",
         "archive_url": "https://news.seoul.go.kr/citybuild/archives/538328",
-        "checked_on": "2026-11-24"
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 고시 제2023-605호",
+        "notice_kind": "신규",
+        "notice_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=584798"
       }
     ],
     "rights_cutoff_date": null,
-    "land_transaction_permit": null,
+    "land_transaction_permit": {
+      "designated": true,
+      "start_date": "2024-09-10",
+      "end_date": "2029-09-09",
+      "scope": "둔촌동 등 모아타운 및 인근지역 내 지목이 도로인 토지",
+      "roads_only": true,
+      "designation_level": "legal_dong",
+      "as_of": "2026-11-24",
+      "notice_number": "서울특별시 공고 제2024-2557호",
+      "legal_dong": "둔촌동"
+    },
     "zoning": {
       "before": null,
       "after": null,
@@ -4946,6 +6233,15 @@
             "11000UQ111PS201912153110"
           ]
         }
+      },
+      "land_transaction_permit": {
+        "kind": "municipal_permit_notice_legal_dong_scope",
+        "source_url": "https://land.seoul.go.kr/land/other/appointStatusSeoul.do",
+        "source_document": "https://land.seoul.go.kr/land/other/downloadAppointPbancFile.do?fileUuid=59d9172df7b50038e063621d0f8d00381085122",
+        "source_as_of": "2024-09-05",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 공고 제2024-2557호",
+        "notes": "공고문 표의 강동구 둔촌동 이 법정동 단위로 지정범위에 열거되어 있습니다. 사업지 개별 공고가 아니라 법정동 단위 지정이며, 대상은 지목이 도로인 토지에 한정됩니다."
       }
     },
     "sub_areas": []
@@ -4981,7 +6277,17 @@
       "match_method": "exact_district_and_site_label"
     },
     "rights_cutoff_date": null,
-    "land_transaction_permit": null,
+    "land_transaction_permit": {
+      "designated": true,
+      "start_date": "2024-09-10",
+      "end_date": "2029-09-09",
+      "scope": "천호동 등 모아타운 및 인근지역 내 지목이 도로인 토지",
+      "roads_only": true,
+      "designation_level": "legal_dong",
+      "as_of": "2026-11-24",
+      "notice_number": "서울특별시 공고 제2024-2557호",
+      "legal_dong": "천호동"
+    },
     "zoning": {
       "before": null,
       "after": null,
@@ -5035,6 +6341,15 @@
             "11000UQ111PS201912150310"
           ]
         }
+      },
+      "land_transaction_permit": {
+        "kind": "municipal_permit_notice_legal_dong_scope",
+        "source_url": "https://land.seoul.go.kr/land/other/appointStatusSeoul.do",
+        "source_document": "https://land.seoul.go.kr/land/other/downloadAppointPbancFile.do?fileUuid=59d9172df7b50038e063621d0f8d00381085122",
+        "source_as_of": "2024-09-05",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 공고 제2024-2557호",
+        "notes": "공고문 표의 강동구 천호동 이 법정동 단위로 지정범위에 열거되어 있습니다. 사업지 개별 공고가 아니라 법정동 단위 지정이며, 대상은 지목이 도로인 토지에 한정됩니다."
       }
     },
     "sub_areas": []
@@ -5076,11 +6391,24 @@
         "zone_count": 1,
         "source_url": "https://news.seoul.go.kr/citybuild/moa-housing-town/archive/seoul-southwest",
         "archive_url": "https://news.seoul.go.kr/citybuild/archives/539074",
-        "checked_on": "2026-11-24"
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 고시 제2025-737호",
+        "notice_kind": "신규",
+        "notice_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=628093"
       }
     ],
     "rights_cutoff_date": "2022-10-27",
-    "land_transaction_permit": null,
+    "land_transaction_permit": {
+      "designated": true,
+      "start_date": "2024-09-10",
+      "end_date": "2029-09-09",
+      "scope": "노량진동 등 모아타운 및 인근지역 내 지목이 도로인 토지",
+      "roads_only": true,
+      "designation_level": "legal_dong",
+      "as_of": "2026-11-24",
+      "notice_number": "서울특별시 공고 제2024-2557호",
+      "legal_dong": "노량진동"
+    },
     "zoning": {
       "before": null,
       "after": null,
@@ -5149,6 +6477,15 @@
         "notice_number": "서울특별시 고시 제2025-737호",
         "pdf_page": 7,
         "table": "임대주택 공급 및 인수 계획"
+      },
+      "land_transaction_permit": {
+        "kind": "municipal_permit_notice_legal_dong_scope",
+        "source_url": "https://land.seoul.go.kr/land/other/appointStatusSeoul.do",
+        "source_document": "https://land.seoul.go.kr/land/other/downloadAppointPbancFile.do?fileUuid=59d9172df7b50038e063621d0f8d00381085122",
+        "source_as_of": "2024-09-05",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 공고 제2024-2557호",
+        "notes": "공고문 표의 동작구 노량진동 이 법정동 단위로 지정범위에 열거되어 있습니다. 사업지 개별 공고가 아니라 법정동 단위 지정이며, 대상은 지목이 도로인 토지에 한정됩니다."
       }
     },
     "sub_areas": [
@@ -5164,7 +6501,7 @@
     "selected_date": "2022-10",
     "selected_date_precision": "month",
     "area_m2": 84311,
-    "management_plan_stage": null,
+    "management_plan_stage": "관리계획 승인고시",
     "representative_point": {
       "type": "Point",
       "coordinates": [
@@ -5186,7 +6523,17 @@
       "match_method": "exact_district_and_site_label"
     },
     "rights_cutoff_date": null,
-    "land_transaction_permit": null,
+    "land_transaction_permit": {
+      "designated": true,
+      "start_date": "2024-09-10",
+      "end_date": "2029-09-09",
+      "scope": "사당동 등 모아타운 및 인근지역 내 지목이 도로인 토지",
+      "roads_only": true,
+      "designation_level": "legal_dong",
+      "as_of": "2026-11-24",
+      "notice_number": "서울특별시 공고 제2024-2557호",
+      "legal_dong": "사당동"
+    },
     "zoning": {
       "before": null,
       "after": null,
@@ -5218,9 +6565,57 @@
             "11000UQ111PS201912153529"
           ]
         }
+      },
+      "management_plan_stage": {
+        "kind": "official_management_plan_notice",
+        "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=644417",
+        "source_as_of": "2026-05-21",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 고시 제2026-281호"
+      },
+      "land_transaction_permit": {
+        "kind": "municipal_permit_notice_legal_dong_scope",
+        "source_url": "https://land.seoul.go.kr/land/other/appointStatusSeoul.do",
+        "source_document": "https://land.seoul.go.kr/land/other/downloadAppointPbancFile.do?fileUuid=59d9172df7b50038e063621d0f8d00381085122",
+        "source_as_of": "2024-09-05",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 공고 제2024-2557호",
+        "notes": "공고문 표의 동작구 사당동 이 법정동 단위로 지정범위에 열거되어 있습니다. 사업지 개별 공고가 아니라 법정동 단위 지정이며, 대상은 지목이 도로인 토지에 한정됩니다."
       }
     },
-    "sub_areas": []
+    "sub_areas": [],
+    "management_plan_notices": [
+      {
+        "site": "사당동 202-29번지 일대",
+        "notice_date": "2023-09-21",
+        "zone_count": null,
+        "notice_number": "서울특별시 고시 제2023-412호",
+        "notice_kind": "신규",
+        "notice_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=584434",
+        "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=584434",
+        "checked_on": "2026-11-24"
+      },
+      {
+        "site": "사당동 202-29번지 일대",
+        "notice_date": "2025-11-27",
+        "zone_count": null,
+        "notice_number": "서울특별시 고시 제2025-643호",
+        "notice_kind": "변경",
+        "notice_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=626238",
+        "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=626238",
+        "checked_on": "2026-11-24"
+      },
+      {
+        "site": "사당동 202-29번지 일대",
+        "notice_date": "2026-05-21",
+        "zone_count": null,
+        "notice_number": "서울특별시 고시 제2026-281호",
+        "notice_kind": "변경",
+        "notice_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=644417",
+        "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=644417",
+        "checked_on": "2026-11-24"
+      }
+    ]
   },
   {
     "id": "mt-202603-public-060",
@@ -5259,11 +6654,24 @@
         "zone_count": 3,
         "source_url": "https://news.seoul.go.kr/citybuild/moa-housing-town/archive/seoul-southwest",
         "archive_url": "https://news.seoul.go.kr/citybuild/archives/539085",
-        "checked_on": "2026-11-24"
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 고시 제2025-317호",
+        "notice_kind": "신규",
+        "notice_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=614691"
       }
     ],
     "rights_cutoff_date": null,
-    "land_transaction_permit": null,
+    "land_transaction_permit": {
+      "designated": true,
+      "start_date": "2024-09-10",
+      "end_date": "2029-09-09",
+      "scope": "상도동 등 모아타운 및 인근지역 내 지목이 도로인 토지",
+      "roads_only": true,
+      "designation_level": "legal_dong",
+      "as_of": "2026-11-24",
+      "notice_number": "서울특별시 공고 제2024-2557호",
+      "legal_dong": "상도동"
+    },
     "zoning": {
       "before": null,
       "after": null,
@@ -5298,6 +6706,15 @@
         "notice_number": "서울특별시 고시 제2025-317호",
         "pdf_page": 8,
         "table": "임대주택 공급 및 인수 계획"
+      },
+      "land_transaction_permit": {
+        "kind": "municipal_permit_notice_legal_dong_scope",
+        "source_url": "https://land.seoul.go.kr/land/other/appointStatusSeoul.do",
+        "source_document": "https://land.seoul.go.kr/land/other/downloadAppointPbancFile.do?fileUuid=59d9172df7b50038e063621d0f8d00381085122",
+        "source_as_of": "2024-09-05",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 공고 제2024-2557호",
+        "notes": "공고문 표의 동작구 상도동 이 법정동 단위로 지정범위에 열거되어 있습니다. 사업지 개별 공고가 아니라 법정동 단위 지정이며, 대상은 지목이 도로인 토지에 한정됩니다."
       }
     },
     "sub_areas": [
@@ -5337,7 +6754,17 @@
       "match_method": "exact_district_and_site_label"
     },
     "rights_cutoff_date": null,
-    "land_transaction_permit": null,
+    "land_transaction_permit": {
+      "designated": true,
+      "start_date": "2024-09-10",
+      "end_date": "2029-09-09",
+      "scope": "상도동 등 모아타운 및 인근지역 내 지목이 도로인 토지",
+      "roads_only": true,
+      "designation_level": "legal_dong",
+      "as_of": "2026-11-24",
+      "notice_number": "서울특별시 공고 제2024-2557호",
+      "legal_dong": "상도동"
+    },
     "zoning": {
       "before": null,
       "after": null,
@@ -5367,6 +6794,15 @@
             "11000UQ111PS201912150696"
           ]
         }
+      },
+      "land_transaction_permit": {
+        "kind": "municipal_permit_notice_legal_dong_scope",
+        "source_url": "https://land.seoul.go.kr/land/other/appointStatusSeoul.do",
+        "source_document": "https://land.seoul.go.kr/land/other/downloadAppointPbancFile.do?fileUuid=59d9172df7b50038e063621d0f8d00381085122",
+        "source_as_of": "2024-09-05",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 공고 제2024-2557호",
+        "notes": "공고문 표의 동작구 상도동 이 법정동 단위로 지정범위에 열거되어 있습니다. 사업지 개별 공고가 아니라 법정동 단위 지정이며, 대상은 지목이 도로인 토지에 한정됩니다."
       }
     },
     "sub_areas": []
@@ -5408,11 +6844,24 @@
         "zone_count": 1,
         "source_url": "https://news.seoul.go.kr/citybuild/moa-housing-town/archive/seoul-southeast",
         "archive_url": "https://news.seoul.go.kr/citybuild/archives/538517",
-        "checked_on": "2026-11-24"
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 고시 제2024-201호",
+        "notice_kind": "신규",
+        "notice_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=586349"
       }
     ],
     "rights_cutoff_date": null,
-    "land_transaction_permit": null,
+    "land_transaction_permit": {
+      "designated": true,
+      "start_date": "2024-09-10",
+      "end_date": "2029-09-09",
+      "scope": "풍납동 등 모아타운 및 인근지역 내 지목이 도로인 토지",
+      "roads_only": true,
+      "designation_level": "legal_dong",
+      "as_of": "2026-11-24",
+      "notice_number": "서울특별시 공고 제2024-2557호",
+      "legal_dong": "풍납동"
+    },
     "zoning": {
       "before": null,
       "after": null,
@@ -5451,6 +6900,15 @@
         "notice_number": "서울특별시 고시 제2024-201호",
         "pdf_page": 8,
         "table": "임대주택 공급 및 인수 계획"
+      },
+      "land_transaction_permit": {
+        "kind": "municipal_permit_notice_legal_dong_scope",
+        "source_url": "https://land.seoul.go.kr/land/other/appointStatusSeoul.do",
+        "source_document": "https://land.seoul.go.kr/land/other/downloadAppointPbancFile.do?fileUuid=59d9172df7b50038e063621d0f8d00381085122",
+        "source_as_of": "2024-09-05",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 공고 제2024-2557호",
+        "notes": "공고문 표의 송파구 풍납동 이 법정동 단위로 지정범위에 열거되어 있습니다. 사업지 개별 공고가 아니라 법정동 단위 지정이며, 대상은 지목이 도로인 토지에 한정됩니다."
       }
     },
     "sub_areas": [
@@ -5495,7 +6953,10 @@
         "zone_count": 3,
         "source_url": "https://news.seoul.go.kr/citybuild/moa-housing-town/archive/seoul-southeast",
         "archive_url": "https://news.seoul.go.kr/citybuild/archives/538528",
-        "checked_on": "2026-11-24"
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 고시 제2023-604호",
+        "notice_kind": "신규",
+        "notice_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=584607"
       }
     ],
     "rights_cutoff_date": null,
@@ -5572,16 +7033,39 @@
     },
     "management_plan_notices": [
       {
+        "site": "석관동 334-69번지 일대",
+        "notice_date": "2023-11-23",
+        "zone_count": null,
+        "notice_number": "서울특별시 고시 제2023-505호",
+        "notice_kind": "신규",
+        "notice_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=584515",
+        "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=584515",
+        "checked_on": "2026-11-24"
+      },
+      {
         "site": "석관동 334-69",
         "notice_date": "2025-03-20",
         "zone_count": 5,
         "source_url": "https://news.seoul.go.kr/citybuild/moa-housing-town/archive/seoul-northeast",
         "archive_url": "https://news.seoul.go.kr/citybuild/archives/539033",
-        "checked_on": "2026-11-24"
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 고시 제2025-143호",
+        "notice_kind": "변경",
+        "notice_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=607900"
       }
     ],
     "rights_cutoff_date": null,
-    "land_transaction_permit": null,
+    "land_transaction_permit": {
+      "designated": true,
+      "start_date": "2024-09-10",
+      "end_date": "2029-09-09",
+      "scope": "석관동 등 모아타운 및 인근지역 내 지목이 도로인 토지",
+      "roads_only": true,
+      "designation_level": "legal_dong",
+      "as_of": "2026-11-24",
+      "notice_number": "서울특별시 공고 제2024-2557호",
+      "legal_dong": "석관동"
+    },
     "zoning": {
       "before": null,
       "after": null,
@@ -5620,6 +7104,15 @@
         "notice_number": "서울특별시 고시 제2025-143호",
         "pdf_page": 10,
         "table": "임대주택 공급 및 인수 계획"
+      },
+      "land_transaction_permit": {
+        "kind": "municipal_permit_notice_legal_dong_scope",
+        "source_url": "https://land.seoul.go.kr/land/other/appointStatusSeoul.do",
+        "source_document": "https://land.seoul.go.kr/land/other/downloadAppointPbancFile.do?fileUuid=59d9172df7b50038e063621d0f8d00381085122",
+        "source_as_of": "2024-09-05",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 공고 제2024-2557호",
+        "notes": "공고문 표의 성북구 석관동 이 법정동 단위로 지정범위에 열거되어 있습니다. 사업지 개별 공고가 아니라 법정동 단위 지정이며, 대상은 지목이 도로인 토지에 한정됩니다."
       }
     },
     "sub_areas": [
@@ -5662,16 +7155,39 @@
     },
     "management_plan_notices": [
       {
+        "site": "석관동 261-22번지 일대",
+        "notice_date": "2023-11-23",
+        "zone_count": null,
+        "notice_number": "서울특별시 고시 제2023-506호",
+        "notice_kind": "신규",
+        "notice_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=584516",
+        "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=584516",
+        "checked_on": "2026-11-24"
+      },
+      {
         "site": "석관동 261-22",
         "notice_date": "2025-03-20",
         "zone_count": 2,
         "source_url": "https://news.seoul.go.kr/citybuild/moa-housing-town/archive/seoul-northeast",
         "archive_url": "https://news.seoul.go.kr/citybuild/archives/539044",
-        "checked_on": "2026-11-24"
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 고시 제2025-144호",
+        "notice_kind": "변경",
+        "notice_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=607899"
       }
     ],
     "rights_cutoff_date": null,
-    "land_transaction_permit": null,
+    "land_transaction_permit": {
+      "designated": true,
+      "start_date": "2024-09-10",
+      "end_date": "2029-09-09",
+      "scope": "석관동 등 모아타운 및 인근지역 내 지목이 도로인 토지",
+      "roads_only": true,
+      "designation_level": "legal_dong",
+      "as_of": "2026-11-24",
+      "notice_number": "서울특별시 공고 제2024-2557호",
+      "legal_dong": "석관동"
+    },
     "zoning": {
       "before": null,
       "after": null,
@@ -5706,6 +7222,15 @@
         "notice_number": "서울특별시 고시 제2025-144호",
         "pdf_page": 9,
         "table": "임대주택 공급 및 인수 계획"
+      },
+      "land_transaction_permit": {
+        "kind": "municipal_permit_notice_legal_dong_scope",
+        "source_url": "https://land.seoul.go.kr/land/other/appointStatusSeoul.do",
+        "source_document": "https://land.seoul.go.kr/land/other/downloadAppointPbancFile.do?fileUuid=59d9172df7b50038e063621d0f8d00381085122",
+        "source_as_of": "2024-09-05",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 공고 제2024-2557호",
+        "notes": "공고문 표의 성북구 석관동 이 법정동 단위로 지정범위에 열거되어 있습니다. 사업지 개별 공고가 아니라 법정동 단위 지정이며, 대상은 지목이 도로인 토지에 한정됩니다."
       }
     },
     "sub_areas": [
@@ -5750,11 +7275,34 @@
         "zone_count": 4,
         "source_url": "https://news.seoul.go.kr/citybuild/moa-housing-town/archive/seoul-southwest",
         "archive_url": "https://news.seoul.go.kr/citybuild/archives/538482",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 고시 제2024-150호",
+        "notice_kind": "신규",
+        "notice_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=594578"
+      },
+      {
+        "site": "신월3동 173번지 일대",
+        "notice_date": "2024-04-25",
+        "zone_count": null,
+        "notice_number": "서울특별시 고시 제2024-205호",
+        "notice_kind": "변경",
+        "notice_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=594579",
+        "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=594579",
         "checked_on": "2026-11-24"
       }
     ],
     "rights_cutoff_date": null,
-    "land_transaction_permit": null,
+    "land_transaction_permit": {
+      "designated": true,
+      "start_date": "2024-09-10",
+      "end_date": "2029-09-09",
+      "scope": "신월동 등 모아타운 및 인근지역 내 지목이 도로인 토지",
+      "roads_only": true,
+      "designation_level": "legal_dong",
+      "as_of": "2026-11-24",
+      "notice_number": "서울특별시 공고 제2024-2557호",
+      "legal_dong": "신월동"
+    },
     "zoning": {
       "before": null,
       "after": null,
@@ -5801,6 +7349,15 @@
         "notice_number": "서울특별시 고시 제2024-205호",
         "pdf_page": 10,
         "table": "임대주택 공급 및 인수 계획"
+      },
+      "land_transaction_permit": {
+        "kind": "municipal_permit_notice_legal_dong_scope",
+        "source_url": "https://land.seoul.go.kr/land/other/appointStatusSeoul.do",
+        "source_document": "https://land.seoul.go.kr/land/other/downloadAppointPbancFile.do?fileUuid=59d9172df7b50038e063621d0f8d00381085122",
+        "source_as_of": "2024-09-05",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 공고 제2024-2557호",
+        "notes": "공고문 표의 양천구 신월동 이 법정동 단위로 지정범위에 열거되어 있습니다. 사업지 개별 공고가 아니라 법정동 단위 지정이며, 대상은 지목이 도로인 토지에 한정됩니다."
       }
     },
     "sub_areas": [
@@ -5847,11 +7404,24 @@
         "zone_count": 4,
         "source_url": "https://news.seoul.go.kr/citybuild/moa-housing-town/archive/seoul-southwest",
         "archive_url": "https://news.seoul.go.kr/citybuild/archives/538493",
-        "checked_on": "2026-11-24"
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 고시 제2023-606호",
+        "notice_kind": "신규",
+        "notice_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=584443"
       }
     ],
     "rights_cutoff_date": null,
-    "land_transaction_permit": null,
+    "land_transaction_permit": {
+      "designated": true,
+      "start_date": "2024-09-10",
+      "end_date": "2029-09-09",
+      "scope": "신월동 등 모아타운 및 인근지역 내 지목이 도로인 토지",
+      "roads_only": true,
+      "designation_level": "legal_dong",
+      "as_of": "2026-11-24",
+      "notice_number": "서울특별시 공고 제2024-2557호",
+      "legal_dong": "신월동"
+    },
     "zoning": {
       "before": null,
       "after": null,
@@ -5894,6 +7464,15 @@
         "notice_number": "서울특별시 고시 제2023-606호",
         "pdf_page": 7,
         "table": "임대주택 공급 및 인수 계획"
+      },
+      "land_transaction_permit": {
+        "kind": "municipal_permit_notice_legal_dong_scope",
+        "source_url": "https://land.seoul.go.kr/land/other/appointStatusSeoul.do",
+        "source_document": "https://land.seoul.go.kr/land/other/downloadAppointPbancFile.do?fileUuid=59d9172df7b50038e063621d0f8d00381085122",
+        "source_as_of": "2024-09-05",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 공고 제2024-2557호",
+        "notes": "공고문 표의 양천구 신월동 이 법정동 단위로 지정범위에 열거되어 있습니다. 사업지 개별 공고가 아니라 법정동 단위 지정이며, 대상은 지목이 도로인 토지에 한정됩니다."
       }
     },
     "sub_areas": [
@@ -5935,7 +7514,17 @@
       "match_source_url": "https://mas.smc.seoul.kr/attach/record/SEOUL/appendix/a11/A0069345.pdf?time=20260420102942"
     },
     "rights_cutoff_date": null,
-    "land_transaction_permit": null,
+    "land_transaction_permit": {
+      "designated": true,
+      "start_date": "2024-09-10",
+      "end_date": "2029-09-09",
+      "scope": "목동 등 모아타운 및 인근지역 내 지목이 도로인 토지",
+      "roads_only": true,
+      "designation_level": "legal_dong",
+      "as_of": "2026-11-24",
+      "notice_number": "서울특별시 공고 제2024-2557호",
+      "legal_dong": "목동"
+    },
     "zoning": {
       "before": null,
       "after": null,
@@ -5961,6 +7550,15 @@
             "11000UQ111PS201912150570"
           ]
         }
+      },
+      "land_transaction_permit": {
+        "kind": "municipal_permit_notice_legal_dong_scope",
+        "source_url": "https://land.seoul.go.kr/land/other/appointStatusSeoul.do",
+        "source_document": "https://land.seoul.go.kr/land/other/downloadAppointPbancFile.do?fileUuid=59d9172df7b50038e063621d0f8d00381085122",
+        "source_as_of": "2024-09-05",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 공고 제2024-2557호",
+        "notes": "공고문 표의 양천구 목동 이 법정동 단위로 지정범위에 열거되어 있습니다. 사업지 개별 공고가 아니라 법정동 단위 지정이며, 대상은 지목이 도로인 토지에 한정됩니다."
       }
     },
     "sub_areas": []
@@ -6091,7 +7689,10 @@
         "zone_count": 1,
         "source_url": "https://news.seoul.go.kr/citybuild/moa-housing-town/archive/seoul-southwest",
         "archive_url": "https://news.seoul.go.kr/citybuild/archives/539096",
-        "checked_on": "2026-11-24"
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 고시 제2024-674호",
+        "notice_kind": "신규",
+        "notice_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=601902"
       }
     ],
     "rights_cutoff_date": "2022-10-27",
@@ -6197,16 +7798,39 @@
     },
     "management_plan_notices": [
       {
+        "site": "불광동 170번지 일대",
+        "notice_date": "2023-12-21",
+        "zone_count": null,
+        "notice_number": "서울특별시 고시 제2023-565호",
+        "notice_kind": "신규",
+        "notice_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=584511",
+        "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=584511",
+        "checked_on": "2026-11-24"
+      },
+      {
         "site": "불광동 170",
         "notice_date": "2025-11-06",
         "zone_count": 3,
         "source_url": "https://news.seoul.go.kr/citybuild/moa-housing-town/archive/seoul-northwest",
         "archive_url": "https://news.seoul.go.kr/citybuild/archives/539055",
-        "checked_on": "2026-11-24"
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 고시 제2025-604호",
+        "notice_kind": "변경",
+        "notice_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=623053"
       }
     ],
     "rights_cutoff_date": null,
-    "land_transaction_permit": null,
+    "land_transaction_permit": {
+      "designated": true,
+      "start_date": "2024-09-10",
+      "end_date": "2029-09-09",
+      "scope": "불광동 등 모아타운 및 인근지역 내 지목이 도로인 토지",
+      "roads_only": true,
+      "designation_level": "legal_dong",
+      "as_of": "2026-11-24",
+      "notice_number": "서울특별시 공고 제2024-2557호",
+      "legal_dong": "불광동"
+    },
     "zoning": {
       "before": null,
       "after": null,
@@ -6236,6 +7860,15 @@
             "11000UQ111PS201912150287"
           ]
         }
+      },
+      "land_transaction_permit": {
+        "kind": "municipal_permit_notice_legal_dong_scope",
+        "source_url": "https://land.seoul.go.kr/land/other/appointStatusSeoul.do",
+        "source_document": "https://land.seoul.go.kr/land/other/downloadAppointPbancFile.do?fileUuid=59d9172df7b50038e063621d0f8d00381085122",
+        "source_as_of": "2024-09-05",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 공고 제2024-2557호",
+        "notes": "공고문 표의 은평구 불광동 이 법정동 단위로 지정범위에 열거되어 있습니다. 사업지 개별 공고가 아니라 법정동 단위 지정이며, 대상은 지목이 도로인 토지에 한정됩니다."
       }
     },
     "sub_areas": []
@@ -6272,16 +7905,39 @@
     },
     "management_plan_notices": [
       {
+        "site": "대조동 89번지 일대",
+        "notice_date": "2023-12-21",
+        "zone_count": null,
+        "notice_number": "서울특별시 고시 제2023-566호",
+        "notice_kind": "신규",
+        "notice_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=584512",
+        "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=584512",
+        "checked_on": "2026-11-24"
+      },
+      {
         "site": "대조동 89",
         "notice_date": "2024-12-26",
         "zone_count": 3,
         "source_url": "https://news.seoul.go.kr/citybuild/moa-housing-town/archive/seoul-northwest",
         "archive_url": "https://news.seoul.go.kr/citybuild/archives/539063",
-        "checked_on": "2026-11-24"
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 고시 제2024-640호",
+        "notice_kind": "변경",
+        "notice_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=601717"
       }
     ],
     "rights_cutoff_date": null,
-    "land_transaction_permit": null,
+    "land_transaction_permit": {
+      "designated": true,
+      "start_date": "2024-09-10",
+      "end_date": "2029-09-09",
+      "scope": "대조동 등 모아타운 및 인근지역 내 지목이 도로인 토지",
+      "roads_only": true,
+      "designation_level": "legal_dong",
+      "as_of": "2026-11-24",
+      "notice_number": "서울특별시 공고 제2024-2557호",
+      "legal_dong": "대조동"
+    },
     "zoning": {
       "before": null,
       "after": null,
@@ -6316,6 +7972,15 @@
         "notice_number": "서울특별시 고시 제2024-640호",
         "pdf_page": 9,
         "table": "임대주택 공급 및 인수 계획"
+      },
+      "land_transaction_permit": {
+        "kind": "municipal_permit_notice_legal_dong_scope",
+        "source_url": "https://land.seoul.go.kr/land/other/appointStatusSeoul.do",
+        "source_document": "https://land.seoul.go.kr/land/other/downloadAppointPbancFile.do?fileUuid=59d9172df7b50038e063621d0f8d00381085122",
+        "source_as_of": "2024-09-05",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 공고 제2024-2557호",
+        "notes": "공고문 표의 은평구 대조동 이 법정동 단위로 지정범위에 열거되어 있습니다. 사업지 개별 공고가 아니라 법정동 단위 지정이며, 대상은 지목이 도로인 토지에 한정됩니다."
       }
     },
     "sub_areas": [
@@ -6333,7 +7998,7 @@
     "selected_date": "2022-10",
     "selected_date_precision": "month",
     "area_m2": 92871,
-    "management_plan_stage": null,
+    "management_plan_stage": "관리계획 승인고시",
     "representative_point": {
       "type": "Point",
       "coordinates": [
@@ -6390,9 +8055,38 @@
             "11000UQ111PS201912152591"
           ]
         }
+      },
+      "management_plan_stage": {
+        "kind": "official_management_plan_notice",
+        "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=631139",
+        "source_as_of": "2026-02-05",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 고시 제2026-69호"
       }
     },
-    "sub_areas": []
+    "sub_areas": [],
+    "management_plan_notices": [
+      {
+        "site": "청룡동 1535번지 일대",
+        "notice_date": "2023-12-21",
+        "zone_count": null,
+        "notice_number": "서울특별시 고시 제2023-563호",
+        "notice_kind": "신규",
+        "notice_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=584431",
+        "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=584431",
+        "checked_on": "2026-11-24"
+      },
+      {
+        "site": "청룡동 1535번지 일대",
+        "notice_date": "2026-02-05",
+        "zone_count": null,
+        "notice_number": "서울특별시 고시 제2026-69호",
+        "notice_kind": "변경",
+        "notice_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=631139",
+        "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=631139",
+        "checked_on": "2026-11-24"
+      }
+    ]
   },
   {
     "id": "mt-202603-public-074",
@@ -6704,7 +8398,7 @@
     "selected_date": "2024-07",
     "selected_date_precision": "month",
     "area_m2": 73362,
-    "management_plan_stage": null,
+    "management_plan_stage": "관리계획 승인고시",
     "representative_point": {
       "type": "Point",
       "coordinates": [
@@ -6726,7 +8420,17 @@
       "match_method": "exact_district_and_site_label"
     },
     "rights_cutoff_date": null,
-    "land_transaction_permit": null,
+    "land_transaction_permit": {
+      "designated": true,
+      "start_date": "2024-09-10",
+      "end_date": "2029-09-09",
+      "scope": "자양동 등 모아타운 및 인근지역 내 지목이 도로인 토지",
+      "roads_only": true,
+      "designation_level": "legal_dong",
+      "as_of": "2026-11-24",
+      "notice_number": "서울특별시 공고 제2024-2557호",
+      "legal_dong": "자양동"
+    },
     "zoning": {
       "before": null,
       "after": null,
@@ -6760,9 +8464,37 @@
             "11000UQ111PS201912151296"
           ]
         }
+      },
+      "management_plan_stage": {
+        "kind": "official_management_plan_notice",
+        "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=639881",
+        "source_as_of": "2026-07-09",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 고시 제2026-397호"
+      },
+      "land_transaction_permit": {
+        "kind": "municipal_permit_notice_legal_dong_scope",
+        "source_url": "https://land.seoul.go.kr/land/other/appointStatusSeoul.do",
+        "source_document": "https://land.seoul.go.kr/land/other/downloadAppointPbancFile.do?fileUuid=59d9172df7b50038e063621d0f8d00381085122",
+        "source_as_of": "2024-09-05",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 공고 제2024-2557호",
+        "notes": "공고문 표의 광진구 자양동 이 법정동 단위로 지정범위에 열거되어 있습니다. 사업지 개별 공고가 아니라 법정동 단위 지정이며, 대상은 지목이 도로인 토지에 한정됩니다."
       }
     },
-    "sub_areas": []
+    "sub_areas": [],
+    "management_plan_notices": [
+      {
+        "site": "자양1동 799번지 일대",
+        "notice_date": "2026-07-09",
+        "zone_count": null,
+        "notice_number": "서울특별시 고시 제2026-397호",
+        "notice_kind": "신규",
+        "notice_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=639881",
+        "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=639881",
+        "checked_on": "2026-11-24"
+      }
+    ]
   },
   {
     "id": "mt-202603-public-079",
@@ -6928,7 +8660,10 @@
         "zone_count": 1,
         "source_url": "https://news.seoul.go.kr/citybuild/moa-housing-town/archive/seoul-southeast",
         "archive_url": "https://news.seoul.go.kr/citybuild/archives/538336",
-        "checked_on": "2026-11-24"
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 고시 제2023-550호",
+        "notice_kind": "신규",
+        "notice_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=584797"
       }
     ],
     "rights_cutoff_date": null,
@@ -7118,7 +8853,10 @@
         "zone_count": 1,
         "source_url": "https://news.seoul.go.kr/citybuild/moa-housing-town/archive/seoul-northwest",
         "archive_url": "https://news.seoul.go.kr/citybuild/archives/538896",
-        "checked_on": "2026-11-24"
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 고시 제2025-135호",
+        "notice_kind": "신규",
+        "notice_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=606937"
       }
     ],
     "rights_cutoff_date": null,
@@ -7224,11 +8962,24 @@
         "zone_count": 1,
         "source_url": "https://news.seoul.go.kr/citybuild/moa-housing-town/archive/seoul-northwest",
         "archive_url": "https://news.seoul.go.kr/citybuild/archives/538913",
-        "checked_on": "2026-11-24"
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 고시 제2025-743호",
+        "notice_kind": "신규",
+        "notice_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=630320"
       }
     ],
     "rights_cutoff_date": null,
-    "land_transaction_permit": null,
+    "land_transaction_permit": {
+      "designated": true,
+      "start_date": "2024-09-10",
+      "end_date": "2029-09-09",
+      "scope": "홍제동 등 모아타운 및 인근지역 내 지목이 도로인 토지",
+      "roads_only": true,
+      "designation_level": "legal_dong",
+      "as_of": "2026-11-24",
+      "notice_number": "서울특별시 공고 제2024-2557호",
+      "legal_dong": "홍제동"
+    },
     "zoning": {
       "before": null,
       "after": null,
@@ -7267,6 +9018,15 @@
         "notice_number": "서울특별시 고시 제2025-743호",
         "pdf_page": 7,
         "table": "임대주택 공급 및 인수 계획"
+      },
+      "land_transaction_permit": {
+        "kind": "municipal_permit_notice_legal_dong_scope",
+        "source_url": "https://land.seoul.go.kr/land/other/appointStatusSeoul.do",
+        "source_document": "https://land.seoul.go.kr/land/other/downloadAppointPbancFile.do?fileUuid=59d9172df7b50038e063621d0f8d00381085122",
+        "source_as_of": "2024-09-05",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 공고 제2024-2557호",
+        "notes": "공고문 표의 서대문구 홍제동 이 법정동 단위로 지정범위에 열거되어 있습니다. 사업지 개별 공고가 아니라 법정동 단위 지정이며, 대상은 지목이 도로인 토지에 한정됩니다."
       }
     },
     "sub_areas": [
@@ -7310,11 +9070,24 @@
         "zone_count": 1,
         "source_url": "https://news.seoul.go.kr/citybuild/moa-housing-town/archive/seoul-downtown",
         "archive_url": "https://news.seoul.go.kr/citybuild/archives/538956",
-        "checked_on": "2026-11-24"
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 고시 제2025-421호",
+        "notice_kind": "신규",
+        "notice_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=616239"
       }
     ],
     "rights_cutoff_date": "2022-10-27",
-    "land_transaction_permit": null,
+    "land_transaction_permit": {
+      "designated": true,
+      "start_date": "2024-09-10",
+      "end_date": "2029-09-09",
+      "scope": "원효로4가 등 모아타운 및 인근지역 내 지목이 도로인 토지",
+      "roads_only": true,
+      "designation_level": "legal_dong",
+      "as_of": "2026-11-24",
+      "notice_number": "서울특별시 공고 제2024-2557호",
+      "legal_dong": "원효로4가"
+    },
     "zoning": {
       "before": null,
       "after": null,
@@ -7382,6 +9155,15 @@
         "notice_number": "서울특별시 고시 제2025-421호",
         "pdf_page": 8,
         "table": "임대주택 공급 및 인수 계획"
+      },
+      "land_transaction_permit": {
+        "kind": "municipal_permit_notice_legal_dong_scope",
+        "source_url": "https://land.seoul.go.kr/land/other/appointStatusSeoul.do",
+        "source_document": "https://land.seoul.go.kr/land/other/downloadAppointPbancFile.do?fileUuid=59d9172df7b50038e063621d0f8d00381085122",
+        "source_as_of": "2024-09-05",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 공고 제2024-2557호",
+        "notes": "공고문 표의 용산구 원효로4가 이 법정동 단위로 지정범위에 열거되어 있습니다. 사업지 개별 공고가 아니라 법정동 단위 지정이며, 대상은 지목이 도로인 토지에 한정됩니다."
       }
     },
     "sub_areas": [
@@ -7425,11 +9207,24 @@
         "zone_count": 2,
         "source_url": "https://news.seoul.go.kr/citybuild/moa-housing-town/archive/seoul-downtown",
         "archive_url": "https://news.seoul.go.kr/citybuild/archives/538316",
-        "checked_on": "2026-11-24"
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 고시 제2025-717호",
+        "notice_kind": "신규",
+        "notice_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=630726"
       }
     ],
     "rights_cutoff_date": null,
-    "land_transaction_permit": null,
+    "land_transaction_permit": {
+      "designated": true,
+      "start_date": "2024-09-10",
+      "end_date": "2029-09-09",
+      "scope": "구기동 등 모아타운 및 인근지역 내 지목이 도로인 토지",
+      "roads_only": true,
+      "designation_level": "legal_dong",
+      "as_of": "2026-11-24",
+      "notice_number": "서울특별시 공고 제2024-2557호",
+      "legal_dong": "구기동"
+    },
     "zoning": {
       "before": null,
       "after": null,
@@ -7468,6 +9263,15 @@
         "notice_number": "서울특별시 고시 제2025-717호",
         "pdf_page": 5,
         "table": "임대주택 공급 및 인수 계획"
+      },
+      "land_transaction_permit": {
+        "kind": "municipal_permit_notice_legal_dong_scope",
+        "source_url": "https://land.seoul.go.kr/land/other/appointStatusSeoul.do",
+        "source_document": "https://land.seoul.go.kr/land/other/downloadAppointPbancFile.do?fileUuid=59d9172df7b50038e063621d0f8d00381085122",
+        "source_as_of": "2024-09-05",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 공고 제2024-2557호",
+        "notes": "공고문 표의 종로구 구기동 이 법정동 단위로 지정범위에 열거되어 있습니다. 사업지 개별 공고가 아니라 법정동 단위 지정이며, 대상은 지목이 도로인 토지에 한정됩니다."
       }
     },
     "sub_areas": [
@@ -7485,7 +9289,13 @@
     "selected_date_precision": "month",
     "area_m2": 90992,
     "management_plan_stage": null,
-    "representative_point": null,
+    "representative_point": {
+      "type": "Point",
+      "coordinates": [
+        127.0841548,
+        37.4939264
+      ]
+    },
     "source_as_of": "2026-03-31",
     "sources": [
       "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
@@ -7517,7 +9327,20 @@
         "checked_on": "2026-11-24"
       }
     ],
-    "sub_areas": []
+    "sub_areas": [],
+    "representative_point_evidence": {
+      "kind": "official_project_geometry_reference_point",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+      "source_as_of": "2026-09-10",
+      "source_crs": "EPSG:5174",
+      "source_feature_id": "11000UQ120PS202503070082",
+      "source_label": "일원동 대청마을 북측구역",
+      "match_method": "same_district_geometry_area_equals_published_area",
+      "geometry_area_m2": 90992.0,
+      "published_area_m2": 90992,
+      "checked_on": "2026-11-24",
+      "notes": "공고·명부의 사업 면적과 도형 면적이 일치하는 단일 피처를 연결했습니다. 명부 지번(본번만)은 지적도에 단독 필지가 없어 필지 내부점을 만들 수 없습니다. 이 점은 서울시 공간자료 도형의 내부 대표점이며 사업구역 중심점이 아닙니다."
+    }
   },
   {
     "id": "mt-202603-public-088",
@@ -7528,7 +9351,7 @@
     "selected_date": "2023-12",
     "selected_date_precision": "month",
     "area_m2": 55045,
-    "management_plan_stage": null,
+    "management_plan_stage": "관리계획 승인고시",
     "representative_point": {
       "type": "Point",
       "coordinates": [
@@ -7550,7 +9373,17 @@
       "match_method": "exact_district_and_site_label"
     },
     "rights_cutoff_date": null,
-    "land_transaction_permit": null,
+    "land_transaction_permit": {
+      "designated": true,
+      "start_date": "2024-09-10",
+      "end_date": "2029-09-09",
+      "scope": "답십리동 등 모아타운 및 인근지역 내 지목이 도로인 토지",
+      "roads_only": true,
+      "designation_level": "legal_dong",
+      "as_of": "2026-11-24",
+      "notice_number": "서울특별시 공고 제2024-2557호",
+      "legal_dong": "답십리동"
+    },
     "zoning": {
       "before": null,
       "after": null,
@@ -7576,9 +9409,37 @@
             "11000UQ111PS201912152074"
           ]
         }
+      },
+      "management_plan_stage": {
+        "kind": "official_management_plan_notice",
+        "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=641694",
+        "source_as_of": "2026-05-21",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 고시 제2026-288호"
+      },
+      "land_transaction_permit": {
+        "kind": "municipal_permit_notice_legal_dong_scope",
+        "source_url": "https://land.seoul.go.kr/land/other/appointStatusSeoul.do",
+        "source_document": "https://land.seoul.go.kr/land/other/downloadAppointPbancFile.do?fileUuid=59d9172df7b50038e063621d0f8d00381085122",
+        "source_as_of": "2024-09-05",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 공고 제2024-2557호",
+        "notes": "공고문 표의 동대문구 답십리동 이 법정동 단위로 지정범위에 열거되어 있습니다. 사업지 개별 공고가 아니라 법정동 단위 지정이며, 대상은 지목이 도로인 토지에 한정됩니다."
       }
     },
-    "sub_areas": []
+    "sub_areas": [],
+    "management_plan_notices": [
+      {
+        "site": "답십리동 489번지 일대",
+        "notice_date": "2026-05-21",
+        "zone_count": null,
+        "notice_number": "서울특별시 고시 제2026-288호",
+        "notice_kind": "신규",
+        "notice_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=641694",
+        "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=641694",
+        "checked_on": "2026-11-24"
+      }
+    ]
   },
   {
     "id": "mt-202603-resident-001",
@@ -7589,7 +9450,7 @@
     "selected_date": "2024-11",
     "selected_date_precision": "month",
     "area_m2": 17334,
-    "management_plan_stage": null,
+    "management_plan_stage": "관리계획 승인고시",
     "representative_point": {
       "type": "Point",
       "coordinates": [
@@ -7656,6 +9517,13 @@
             "11000UQ111PS202007196895"
           ]
         }
+      },
+      "management_plan_stage": {
+        "kind": "official_management_plan_notice",
+        "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=639883",
+        "source_as_of": "2026-04-30",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 고시 제2026-238호"
       }
     },
     "official_links": [
@@ -7667,7 +9535,19 @@
         "checked_on": "2026-11-24"
       }
     ],
-    "sub_areas": []
+    "sub_areas": [],
+    "management_plan_notices": [
+      {
+        "site": "숭인동 61번지 일대",
+        "notice_date": "2026-04-30",
+        "zone_count": null,
+        "notice_number": "서울특별시 고시 제2026-238호",
+        "notice_kind": "신규",
+        "notice_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=639883",
+        "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=639883",
+        "checked_on": "2026-11-24"
+      }
+    ]
   },
   {
     "id": "mt-202603-resident-002",
@@ -7700,7 +9580,17 @@
       "match_method": "exact_district_and_site_label"
     },
     "rights_cutoff_date": null,
-    "land_transaction_permit": null,
+    "land_transaction_permit": {
+      "designated": true,
+      "start_date": "2024-09-10",
+      "end_date": "2029-09-09",
+      "scope": "서계동 등 모아타운 및 인근지역 내 지목이 도로인 토지",
+      "roads_only": true,
+      "designation_level": "legal_dong",
+      "as_of": "2026-11-24",
+      "notice_number": "서울특별시 공고 제2024-2557호",
+      "legal_dong": "서계동"
+    },
     "zoning": {
       "before": null,
       "after": null,
@@ -7731,6 +9621,15 @@
             "11000UQ111PS201912153621"
           ]
         }
+      },
+      "land_transaction_permit": {
+        "kind": "municipal_permit_notice_legal_dong_scope",
+        "source_url": "https://land.seoul.go.kr/land/other/appointStatusSeoul.do",
+        "source_document": "https://land.seoul.go.kr/land/other/downloadAppointPbancFile.do?fileUuid=59d9172df7b50038e063621d0f8d00381085122",
+        "source_as_of": "2024-09-05",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 공고 제2024-2557호",
+        "notes": "공고문 표의 용산구 서계동 이 법정동 단위로 지정범위에 열거되어 있습니다. 사업지 개별 공고가 아니라 법정동 단위 지정이며, 대상은 지목이 도로인 토지에 한정됩니다."
       }
     },
     "sub_areas": [
@@ -7768,7 +9667,17 @@
       "match_method": "exact_district_and_site_label"
     },
     "rights_cutoff_date": null,
-    "land_transaction_permit": null,
+    "land_transaction_permit": {
+      "designated": true,
+      "start_date": "2024-09-10",
+      "end_date": "2029-09-09",
+      "scope": "금호동1가 등 모아타운 및 인근지역 내 지목이 도로인 토지",
+      "roads_only": true,
+      "designation_level": "legal_dong",
+      "as_of": "2026-11-24",
+      "notice_number": "서울특별시 공고 제2024-2557호",
+      "legal_dong": "금호동1가"
+    },
     "zoning": {
       "before": null,
       "after": null,
@@ -7818,6 +9727,15 @@
             "11000UQ111PS201912155126"
           ]
         }
+      },
+      "land_transaction_permit": {
+        "kind": "municipal_permit_notice_legal_dong_scope",
+        "source_url": "https://land.seoul.go.kr/land/other/appointStatusSeoul.do",
+        "source_document": "https://land.seoul.go.kr/land/other/downloadAppointPbancFile.do?fileUuid=59d9172df7b50038e063621d0f8d00381085122",
+        "source_as_of": "2024-09-05",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 공고 제2024-2557호",
+        "notes": "공고문 표의 성동구 금호동1가 이 법정동 단위로 지정범위에 열거되어 있습니다. 사업지 개별 공고가 아니라 법정동 단위 지정이며, 대상은 지목이 도로인 토지에 한정됩니다."
       }
     },
     "sub_areas": []
@@ -8130,7 +10048,7 @@
     "selected_date": "2025-07",
     "selected_date_precision": "month",
     "area_m2": 20358,
-    "management_plan_stage": null,
+    "management_plan_stage": "관리계획 승인고시",
     "representative_point": {
       "type": "Point",
       "coordinates": [
@@ -8185,9 +10103,28 @@
             "11000UQ111PS201912152429"
           ]
         }
+      },
+      "management_plan_stage": {
+        "kind": "official_management_plan_notice",
+        "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=644471",
+        "source_as_of": "2026-10-29",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 고시 제2026-601호"
       }
     },
-    "sub_areas": []
+    "sub_areas": [],
+    "management_plan_notices": [
+      {
+        "site": "구의3동 587-58번지 일대",
+        "notice_date": "2026-10-29",
+        "zone_count": null,
+        "notice_number": "서울특별시 고시 제2026-601호",
+        "notice_kind": "신규",
+        "notice_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=644471",
+        "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=644471",
+        "checked_on": "2026-11-24"
+      }
+    ]
   },
   {
     "id": "mt-202603-resident-009",
@@ -8378,7 +10315,17 @@
       "match_method": "exact_district_and_site_label"
     },
     "rights_cutoff_date": null,
-    "land_transaction_permit": null,
+    "land_transaction_permit": {
+      "designated": true,
+      "start_date": "2024-09-10",
+      "end_date": "2029-09-09",
+      "scope": "종암동 등 모아타운 및 인근지역 내 지목이 도로인 토지",
+      "roads_only": true,
+      "designation_level": "legal_dong",
+      "as_of": "2026-11-24",
+      "notice_number": "서울특별시 공고 제2024-2557호",
+      "legal_dong": "종암동"
+    },
     "zoning": {
       "before": null,
       "after": null,
@@ -8408,6 +10355,15 @@
             "11000UQ111PS201912150373"
           ]
         }
+      },
+      "land_transaction_permit": {
+        "kind": "municipal_permit_notice_legal_dong_scope",
+        "source_url": "https://land.seoul.go.kr/land/other/appointStatusSeoul.do",
+        "source_document": "https://land.seoul.go.kr/land/other/downloadAppointPbancFile.do?fileUuid=59d9172df7b50038e063621d0f8d00381085122",
+        "source_as_of": "2024-09-05",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 공고 제2024-2557호",
+        "notes": "공고문 표의 성북구 종암동 이 법정동 단위로 지정범위에 열거되어 있습니다. 사업지 개별 공고가 아니라 법정동 단위 지정이며, 대상은 지목이 도로인 토지에 한정됩니다."
       }
     },
     "sub_areas": [
@@ -8445,7 +10401,17 @@
       "match_method": "exact_district_and_site_label"
     },
     "rights_cutoff_date": null,
-    "land_transaction_permit": null,
+    "land_transaction_permit": {
+      "designated": true,
+      "start_date": "2024-09-10",
+      "end_date": "2029-09-09",
+      "scope": "정릉동 등 모아타운 및 인근지역 내 지목이 도로인 토지",
+      "roads_only": true,
+      "designation_level": "legal_dong",
+      "as_of": "2026-11-24",
+      "notice_number": "서울특별시 공고 제2024-2557호",
+      "legal_dong": "정릉동"
+    },
     "zoning": {
       "before": null,
       "after": null,
@@ -8480,6 +10446,15 @@
         "notice_number": "서울특별시 고시 제2026-236호",
         "pdf_page": 7,
         "table": "임대주택 공급 및 인수 계획"
+      },
+      "land_transaction_permit": {
+        "kind": "municipal_permit_notice_legal_dong_scope",
+        "source_url": "https://land.seoul.go.kr/land/other/appointStatusSeoul.do",
+        "source_document": "https://land.seoul.go.kr/land/other/downloadAppointPbancFile.do?fileUuid=59d9172df7b50038e063621d0f8d00381085122",
+        "source_as_of": "2024-09-05",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 공고 제2024-2557호",
+        "notes": "공고문 표의 성북구 정릉동 이 법정동 단위로 지정범위에 열거되어 있습니다. 사업지 개별 공고가 아니라 법정동 단위 지정이며, 대상은 지목이 도로인 토지에 한정됩니다."
       }
     },
     "sub_areas": [
@@ -8815,11 +10790,24 @@
         "zone_count": 1,
         "source_url": "https://news.seoul.go.kr/citybuild/moa-housing-town/archive/seoul-northwest",
         "archive_url": "https://news.seoul.go.kr/citybuild/archives/538925",
-        "checked_on": "2026-11-24"
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 고시 제2025-322호",
+        "notice_kind": "신규",
+        "notice_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=616203"
       }
     ],
     "rights_cutoff_date": "2024-05-09",
-    "land_transaction_permit": null,
+    "land_transaction_permit": {
+      "designated": true,
+      "start_date": "2024-09-10",
+      "end_date": "2029-09-09",
+      "scope": "현저동 등 모아타운 및 인근지역 내 지목이 도로인 토지",
+      "roads_only": true,
+      "designation_level": "legal_dong",
+      "as_of": "2026-11-24",
+      "notice_number": "서울특별시 공고 제2024-2557호",
+      "legal_dong": "현저동"
+    },
     "zoning": {
       "before": null,
       "after": null,
@@ -8878,6 +10866,15 @@
             "11000UQ111PS201912154125"
           ]
         }
+      },
+      "land_transaction_permit": {
+        "kind": "municipal_permit_notice_legal_dong_scope",
+        "source_url": "https://land.seoul.go.kr/land/other/appointStatusSeoul.do",
+        "source_document": "https://land.seoul.go.kr/land/other/downloadAppointPbancFile.do?fileUuid=59d9172df7b50038e063621d0f8d00381085122",
+        "source_as_of": "2024-09-05",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 공고 제2024-2557호",
+        "notes": "공고문 표의 서대문구 현저동 이 법정동 단위로 지정범위에 열거되어 있습니다. 사업지 개별 공고가 아니라 법정동 단위 지정이며, 대상은 지목이 도로인 토지에 한정됩니다."
       }
     },
     "sub_areas": [
@@ -8921,7 +10918,10 @@
         "zone_count": 1,
         "source_url": "https://news.seoul.go.kr/citybuild/moa-housing-town/archive/seoul-northwest",
         "archive_url": "https://news.seoul.go.kr/citybuild/archives/538936",
-        "checked_on": "2026-11-24"
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 고시 제2025-666호",
+        "notice_kind": "신규",
+        "notice_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=626249"
       }
     ],
     "rights_cutoff_date": null,
@@ -9405,7 +11405,17 @@
       "match_method": "exact_district_and_site_label"
     },
     "rights_cutoff_date": null,
-    "land_transaction_permit": null,
+    "land_transaction_permit": {
+      "designated": true,
+      "start_date": "2024-09-10",
+      "end_date": "2029-09-09",
+      "scope": "시흥동 등 모아타운 및 인근지역 내 지목이 도로인 토지",
+      "roads_only": true,
+      "designation_level": "legal_dong",
+      "as_of": "2026-11-24",
+      "notice_number": "서울특별시 공고 제2024-2557호",
+      "legal_dong": "시흥동"
+    },
     "zoning": {
       "before": null,
       "after": null,
@@ -9431,6 +11441,15 @@
             "11000UQ111PS201912151539"
           ]
         }
+      },
+      "land_transaction_permit": {
+        "kind": "municipal_permit_notice_legal_dong_scope",
+        "source_url": "https://land.seoul.go.kr/land/other/appointStatusSeoul.do",
+        "source_document": "https://land.seoul.go.kr/land/other/downloadAppointPbancFile.do?fileUuid=59d9172df7b50038e063621d0f8d00381085122",
+        "source_as_of": "2024-09-05",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 공고 제2024-2557호",
+        "notes": "공고문 표의 금천구 시흥동 이 법정동 단위로 지정범위에 열거되어 있습니다. 사업지 개별 공고가 아니라 법정동 단위 지정이며, 대상은 지목이 도로인 토지에 한정됩니다."
       }
     },
     "sub_areas": []
@@ -9564,11 +11583,24 @@
         "zone_count": 1,
         "source_url": "https://news.seoul.go.kr/citybuild/moa-housing-town/archive/seoul-southwest",
         "archive_url": "https://news.seoul.go.kr/citybuild/archives/539118",
-        "checked_on": "2026-11-24"
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 고시 제2024-551호",
+        "notice_kind": "신규",
+        "notice_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=599593"
       }
     ],
     "rights_cutoff_date": null,
-    "land_transaction_permit": null,
+    "land_transaction_permit": {
+      "designated": true,
+      "start_date": "2024-09-10",
+      "end_date": "2029-09-09",
+      "scope": "신림동 등 모아타운 및 인근지역 내 지목이 도로인 토지",
+      "roads_only": true,
+      "designation_level": "legal_dong",
+      "as_of": "2026-11-24",
+      "notice_number": "서울특별시 공고 제2024-2557호",
+      "legal_dong": "신림동"
+    },
     "zoning": {
       "before": null,
       "after": null,
@@ -9598,6 +11630,15 @@
             "11000UQ111PS201912150178"
           ]
         }
+      },
+      "land_transaction_permit": {
+        "kind": "municipal_permit_notice_legal_dong_scope",
+        "source_url": "https://land.seoul.go.kr/land/other/appointStatusSeoul.do",
+        "source_document": "https://land.seoul.go.kr/land/other/downloadAppointPbancFile.do?fileUuid=59d9172df7b50038e063621d0f8d00381085122",
+        "source_as_of": "2024-09-05",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 공고 제2024-2557호",
+        "notes": "공고문 표의 관악구 신림동 이 법정동 단위로 지정범위에 열거되어 있습니다. 사업지 개별 공고가 아니라 법정동 단위 지정이며, 대상은 지목이 도로인 토지에 한정됩니다."
       }
     },
     "sub_areas": [

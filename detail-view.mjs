@@ -12,9 +12,9 @@ function link(url,title){
   try{if(new URL(url).protocol!=='https:')return null;}catch{return null;}
   const a=el('a',title,'source-link');a.href=url;a.target='_blank';a.rel='noopener noreferrer';return a;
 }
-function field(list,label,value){
-  const row=el('div'),v=value??pending;
-  row.append(el('dt',label),el('dd',v,[pending,'미고시','고시일 미확인'].includes(v)?'unverified':''));
+function field(list,label,value,absent){
+  const row=el('div'),v=value??(absent||pending);
+  row.append(el('dt',label),el('dd',v,absent&&value==null?'status-note':[pending,'미고시','고시일 미확인'].includes(v)?'unverified':''));
   list.append(row);return row;
 }
 function section(container,id,title){
@@ -24,6 +24,12 @@ function section(container,id,title){
 }
 const notice=(text)=>el('p',text,'notice');
 const listOf=v=>Array.isArray(v)?v:[];
+function plannedZoningLabel(areas){
+  const rows=listOf(areas).filter(a=>Number(a?.planned_sqm)>0).sort((a,b)=>b.planned_sqm-a.planned_sqm);
+  if(!rows.length)return null;
+  const top=rows[0];
+  return top.label+' '+formatValue(top.planned_sqm,'㎡').split(' (')[0]+(rows.length>1?' 외 '+(rows.length-1)+'종':'')+' (고시 계획안)';
+}
 function boundaryLabel(boundary){
   if(!boundary)return null;
   if(boundary.scope==='association_project_area')return '인가 고시도 참고 경계';
@@ -73,8 +79,8 @@ function contractorField(grid,r,children){
     row.append(el('small',children.length+'개 구역 중 '+confirmed.length+'곳 확인'));
     return;
   }
-  const row=field(grid,children.length?'세부 구역 시공사':'시공사',r.selected_contractor??unknown);
-  if(!r.selected_contractor){row.lastChild.classList.add('unverified');return;}
+  const row=field(grid,children.length?'세부 구역 시공사':'시공사',r.selected_contractor??unknown,r.stage==='조합설립 진행 중'?'시공사 선정 전(조합설립 단계)':null);
+  if(!r.selected_contractor){if(!row.lastChild.classList.contains('status-note'))row.lastChild.classList.add('unverified');return;}
   const e=r.field_evidence?.selected_contractor;
   if(!e)return;
   const source=link(e.source_url,e.source_title??'시공사 확인 자료');
@@ -101,8 +107,10 @@ function metrics(card,r,children){
   const ratio=m.planned_units_per_owner??(owners>0 && Number.isFinite(planned) && (sameSource || m.planned_units!=null)?Number((planned/owners).toFixed(2)):null);
   field(grid,'소유자 1명당 계획 세대수',formatValue(ratio,'세대'));
   const zoning=r.zoning??{};
+  const planStage=r.stage??r.management_plan_stage??(r.management_plan_notices?.length?'관리계획 승인고시':null);
+  const plannedZoning=zoning.after??plannedZoningLabel(zoning.areas);
   field(grid,'현재 용도지역',zoning.before??zoning.observed?.names?.join(' · '));
-  field(grid,'계획 용도지역',zoning.after);
+  field(grid,'계획 용도지역',plannedZoning,planStage?'관리계획 미수립':null);
   contractorField(grid,r,children);
   field(grid,'계획 자료 기준일',date(e.plan?.source_as_of));
   card.append(grid);

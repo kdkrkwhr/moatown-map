@@ -13,23 +13,23 @@
     "baseline_rows_removed_by_confirmed_cancellation": 1,
     "zone_records": 167,
     "boundary_features": 165,
-    "representative_points": 131,
+    "representative_points": 133,
     "limitations": [
       "2026-03-31 명부와 확인된 취소 자료에 근거한 초기 자료이며, 현재 전체 명부가 아닙니다.",
       "확인된 후속 공식 선정 일부를 추가했습니다. 최신 전체 선정·정정, 전체 사업구역 상세와 경계는 전수 확인하지 못했습니다.",
       "서울시 공간자료와 고시 도면에서 확인한 참고 경계를 표시합니다. 개별 필지의 법정 구역 포함 여부는 관할 기관의 최신 고시로 확인해야 합니다."
     ],
-    "representative_points_unmatched_or_unchecked": 7,
+    "representative_points_unmatched_or_unchecked": 5,
     "representative_points_by_kind": {
-      "official_project_geometry_reference_point": 98,
+      "official_project_geometry_reference_point": 100,
       "representative_parcel_interior": 33
     },
     "town_reference_boundaries": 103,
     "zone_reference_boundaries": 62,
     "legal_boundary_features": 0,
     "zone_records_with_plan_numbers": 161,
-    "towns_with_management_plan_notices": 68,
-    "management_plan_notice_records": 69,
+    "towns_with_management_plan_notices": 78,
+    "management_plan_notice_records": 100,
     "zones_with_contractor": 42,
     "zones_with_unit_types": 2,
     "indexed_parcels": 896467,
@@ -46,7 +46,11 @@
     "zones_with_planned_units_per_owner": 52,
     "zones_with_member_general_rental": 2,
     "zone_representative_points": 154,
-    "zone_point_only": 98
+    "zone_point_only": 98,
+    "towns_with_permit_legal_dong_notice": 73,
+    "towns_with_permit_record": 121,
+    "towns_with_plan_zoning": 2,
+    "towns_with_permit_site_notice": 48
   },
   "source_urls": {
     "official_baseline": "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status",
@@ -59,7 +63,10 @@
     "seoul_parcels": "https://land.seoul.go.kr/land/map/land/map.do",
     "official_dong_crosswalk": "https://www.mois.go.kr/frt/bbs/type001/commonSelectBoardArticle.do?bbsId=BBSMSTR_000000000052&nttId=130674",
     "small_housing_register": "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
-    "official_project_registry": "https://cleanup.seoul.go.kr/cleanup/bsnssttus/lscrMainIndx.do?cpage=1&pageSize=2000"
+    "official_project_registry": "https://cleanup.seoul.go.kr/cleanup/bsnssttus/lscrMainIndx.do?cpage=1&pageSize=2000",
+    "seoul_land_permit_status": "https://land.seoul.go.kr/land/other/appointStatusSeoul.do",
+    "eum_notice_search": "https://www.eum.go.kr/web/gs/gv/gvGosiList.jsp",
+    "seoul_gazette_4016": "https://event.seoul.go.kr/seoulsibo/fileDownload.do?fileName=seoulsibo_20241017085543_69127.pdf"
   },
   "files": {
     "towns": "snapshots/2026-11-24/towns.json",
@@ -80,5 +87,6 @@
       "checked_on": "2026-11-24",
       "notice_number": "서울특별시 공고 제2026-2810호"
     }
-  }
+  },
+  "checked_on": "2026-11-24"
 }
