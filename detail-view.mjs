@@ -28,7 +28,7 @@ function plannedZoningLabel(areas){
   const rows=listOf(areas).filter(a=>Number(a?.planned_sqm)>0).sort((a,b)=>b.planned_sqm-a.planned_sqm);
   if(!rows.length)return null;
   const top=rows[0];
-  return top.label+' '+formatValue(top.planned_sqm,'㎡').split(' (')[0]+(rows.length>1?' 외 '+(rows.length-1)+'종':'')+' (고시 계획안)';
+  return top.label+' '+formatValue(top.planned_sqm,'㎡').split(' (')[0]+(rows.length>1?' 외 '+(rows.length-1)+'개 용도':'')+' (고시 계획안)';
 }
 function boundaryLabel(boundary){
   if(!boundary)return null;
@@ -110,7 +110,7 @@ function metrics(card,r,children){
   const planStage=r.stage??r.management_plan_stage??(r.management_plan_notices?.length?'관리계획 승인고시':null);
   const plannedZoning=zoning.after??plannedZoningLabel(zoning.areas);
   field(grid,'현재 용도지역',zoning.before??zoning.observed?.names?.join(' · '));
-  field(grid,'계획 용도지역',plannedZoning,planStage?'관리계획 미수립':null);
+  field(grid,'계획 용도지역',plannedZoning,!planStage?'관리계획 미수립':null);
   contractorField(grid,r,children);
   field(grid,'계획 자료 기준일',date(e.plan?.source_as_of));
   card.append(grid);
