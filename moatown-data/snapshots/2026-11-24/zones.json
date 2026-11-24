@@ -51,6 +51,11 @@
         "state": "public_register_displayed_stage",
         "source_url": "https://cleanup.seoul.go.kr/cleanup/bsnssttus/lscrMainIndx.do?cpage=1&pageSize=2000",
         "checked_on": "2026-11-24"
+      },
+      "metrics": {
+        "source_url": "https://cleanup.seoul.go.kr/cafe/mastr-cleanup-bsnsSumry/execute.do?cafeId=305900000750u59&div=sumry&stepSeCode=103",
+        "source_as_of": null,
+        "checked_on": "2026-11-24"
       }
     },
     "limitations": [
@@ -84,7 +89,10 @@
     },
     "building_coverage_pct": 27.0,
     "floor_area_ratio_pct": 300.0,
-    "height_m": 80.0
+    "height_m": 80.0,
+    "metrics": {
+      "owner_count": 40
+    }
   },
   {
     "id": "mz-seoul-11000uq120ps202503310030",
@@ -1087,6 +1095,11 @@
         "source_url": "https://www.kolon.com/kr/media/newsDtl?detailsKey=8301",
         "source_as_of": "2024-12-17",
         "checked_on": "2026-11-24"
+      },
+      "metrics": {
+        "source_url": "https://cleanup.seoul.go.kr/cafe/mastr-cleanup-bsnsSumry/execute.do?cafeId=305900000768h78&div=sumry&stepSeCode=103",
+        "source_as_of": null,
+        "checked_on": "2026-11-24"
       }
     },
     "sources": {
@@ -1132,7 +1145,10 @@
     ],
     "limitations": [
       "구역별 공개 사업개요 기준이며 이후 인가·변경 내역과 차이가 있을 수 있습니다."
-    ]
+    ],
+    "metrics": {
+      "owner_count": 82
+    }
   },
   {
     "id": "mz-seoul-11000uq120ps202505310172",
@@ -1163,6 +1179,11 @@
         "state": "contractor_reported",
         "source_url": "https://www.kolon.com/kr/media/newsDtl?detailsKey=8301",
         "source_as_of": "2024-12-17",
+        "checked_on": "2026-11-24"
+      },
+      "metrics": {
+        "source_url": "https://cleanup.seoul.go.kr/cafe/mastr-cleanup-bsnsSumry/execute.do?cafeId=305900000786L24&div=sumry&stepSeCode=103",
+        "source_as_of": null,
         "checked_on": "2026-11-24"
       }
     },
@@ -1209,7 +1230,10 @@
     ],
     "limitations": [
       "구역별 공개 사업개요 기준이며 이후 인가·변경 내역과 차이가 있을 수 있습니다."
-    ]
+    ],
+    "metrics": {
+      "owner_count": 58
+    }
   },
   {
     "id": "mz-seoul-11000uq120ps202505310173",
@@ -1240,6 +1264,11 @@
         "state": "contractor_reported",
         "source_url": "https://www.kolon.com/kr/media/newsDtl?detailsKey=8301",
         "source_as_of": "2024-12-17",
+        "checked_on": "2026-11-24"
+      },
+      "metrics": {
+        "source_url": "https://cleanup.seoul.go.kr/cafe/mastr-cleanup-bsnsSumry/execute.do?cafeId=305900000788K18&div=sumry&stepSeCode=103",
+        "source_as_of": null,
         "checked_on": "2026-11-24"
       }
     },
@@ -1291,7 +1320,10 @@
     ],
     "limitations": [
       "구역별 공개 사업개요 기준이며 이후 인가·변경 내역과 차이가 있을 수 있습니다."
-    ]
+    ],
+    "metrics": {
+      "owner_count": 93
+    }
   },
   {
     "id": "mz-seoul-11000uq120ps202505310174",
@@ -1322,6 +1354,11 @@
         "state": "contractor_reported",
         "source_url": "https://www.kolon.com/kr/media/newsDtl?detailsKey=8301",
         "source_as_of": "2024-12-17",
+        "checked_on": "2026-11-24"
+      },
+      "metrics": {
+        "source_url": "https://cleanup.seoul.go.kr/cafe/mastr-cleanup-bsnsSumry/execute.do?cafeId=305900000787k48&div=sumry&stepSeCode=103",
+        "source_as_of": null,
         "checked_on": "2026-11-24"
       }
     },
@@ -1368,7 +1405,10 @@
     ],
     "limitations": [
       "구역별 공개 사업개요 기준이며 이후 인가·변경 내역과 차이가 있을 수 있습니다."
-    ]
+    ],
+    "metrics": {
+      "owner_count": 98
+    }
   },
   {
     "id": "mz-seoul-11000uq120ps202505310290",
