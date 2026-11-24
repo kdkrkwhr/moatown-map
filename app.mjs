@@ -1,11 +1,29 @@
-import {renderProjectDetail} from './detail-view.mjs?v=launch-1';
-import {durationSamples,elapsedMonths,formatValue} from './detail-format.mjs?v=launch-1';
+import {renderProjectDetail} from './detail-view.mjs?v=21935ea7588b';
+import {durationSamples,elapsedMonths,formatValue} from './detail-format.mjs?v=21935ea7588b';
 export {elapsedMonths};
-import {loadMaps,createProjectMap} from './map-engine.mjs?v=mobile-map-1';
-import {loadNews,matchNews,newsCard,sourceLabels} from './news.mjs?v=atlas-1';
-import {searchProjects,managementFilters,progressFilters,recentProjectDates} from './project-search.mjs?v=launch-1';
-import {mountAddressLookup} from './address-reference.mjs?v=seoul-parcels-1';
+import {loadMaps,createProjectMap} from './map-engine.mjs?v=21935ea7588b';
+import {loadNews,matchNews,newsCard,sourceLabels} from './news.mjs?v=21935ea7588b';
+import {searchProjects,managementFilters,progressFilters,recentProjectDates} from './project-search.mjs?v=21935ea7588b';
+import {mountAddressLookup} from './address-reference.mjs?v=21935ea7588b';
 const mobileMapQuery='(max-width: 760px) and (orientation: portrait), (max-width: 540px)';
+function initialSheetHeight(selection,hasFilters,mobile){
+  if(!mobile)return 1;
+  if(selection.zoneId)return 2;
+  if(selection.townId || selection.cancellation)return 0;
+  return hasFilters?1:0;
+}
+function sheetLabel(selection,height,count){
+  if(selection.townId || selection.zoneId || selection.cancellation)return height?'지도 보기':'상세 보기';
+  return count?'대상지 목록 · '+count+'건':'대상지 목록';
+}
+function displaySheetHeight(height){
+  const explorer=document.getElementById('explorer'),size=document.getElementById('sheet-size');
+  explorer.classList.toggle('tall',height===2);
+  explorer.classList.toggle('collapsed',height===0);
+  document.getElementById('sheet-toggle').setAttribute('aria-expanded',String(height>0));
+  size.setAttribute('aria-pressed',String(height===2));
+  size.textContent=height===2?'기본 높이':'크게 보기';
+}
 export function filterTowns(towns, query, district) {
   return searchProjects(towns,new Map(),[],{query,district}).map(row=>row.town);
 }
@@ -99,7 +117,7 @@ export function mount({manifest,towns,zones,boundaries,excluded=[]},sdk){
   const defaultTitle=document.title,recentButton=get('recent-filter');
   const explorer=get('explorer'),sheet=get('sheet-toggle'),mapStatus=get('map-status');
   const mobile=matchMedia(mobileMapQuery);
-  const mapGuides=[...document.querySelectorAll('details.stage-guide,details.legend,details.stage-filters')];
+  const mapGuides=[...document.querySelectorAll('details.legend,details.stage-filters')];
   document.addEventListener('click',event=>{
     for(const guide of mapGuides)if(guide.open && !guide.contains(event.target))guide.open=false;
   });
@@ -194,12 +212,7 @@ export function mount({manifest,towns,zones,boundaries,excluded=[]},sdk){
   }
   const sheetSize=get('sheet-size');
   function setSheetHeight(height){
-    const tall=height===2;
-    explorer.classList.toggle('tall',tall);
-    explorer.classList.toggle('collapsed',height===0);
-    sheet.setAttribute('aria-expanded',String(height>0));
-    sheetSize.setAttribute('aria-pressed',String(tall));
-    sheetSize.textContent=tall?'기본 높이':'크게 보기';
+    displaySheetHeight(height);
     updateSheetLabel();
     if(height && mobile.matches){
       const pane=get('pane-areas');
@@ -209,13 +222,10 @@ export function mount({manifest,towns,zones,boundaries,excluded=[]},sdk){
   }
   const currentHeight=()=>explorer.classList.contains('collapsed')?0:explorer.classList.contains('tall')?2:1;
   function updateSheetLabel(){
-    const selected=current.townId || current.cancellation;
-    get('sheet-label').textContent=selected?(currentHeight()?'지도 보기':'상세 보기'):(rows.length?'대상지 목록 · '+rows.length+'건':'대상지 목록');
+    get('sheet-label').textContent=sheetLabel(current,currentHeight(),rows.length);
   }
   function initialHeight(){
-    if(!mobile.matches)return 1;
-    if(current.zoneId)return 2;
-    return current.townId || current.cancellation?0:filtered()?1:0;
+    return initialSheetHeight(current,filtered(),mobile.matches);
   }
   sheetSize.addEventListener('click',()=>setSheetHeight(currentHeight()===2?1:2));
   let dragStart=null,dragged=false;
@@ -349,7 +359,8 @@ export function mount({manifest,towns,zones,boundaries,excluded=[]},sdk){
     get('back-label').textContent=zone && !direct ? town.name : (query?query+' · ':'')+'검색 결과 '+rows.length+'건';
     const children=groups.get(town.id)??[];
     renderProjectDetail(detail,{town,zone,children,boundaries:boundaryProps,snapshot:manifest.snapshot_date,cityRule:current.cancellation?null:manifest.seoul_road_permit,
-      registryUrl:manifest.source_urls?.official_project_registry,stats:planStats,select:(townId,zoneId)=>select(townId,zoneId,null,'areas'),badge:stageBadge,copyLink,initialTab});
+      registryUrl:manifest.source_urls?.official_project_registry,stats:planStats,select:(townId,zoneId,preview)=>select(townId,zoneId,null,preview?undefined:'areas'),
+      expandDetail:()=>{if(mobile.matches)setSheetHeight(2);},badge:stageBadge,copyLink,initialTab});
     renderRelatedNews();
   }
   function renderRelatedNews(){
@@ -500,13 +511,14 @@ function prepareLoading(){
     }
   }
   if(selected.length)$('filter-label').textContent=selected.join(' · ');
-  const isDetail=Boolean(params.get('town')||params.get('zone'));
-  if(matchMedia(mobileMapQuery).matches && !isDetail && !['district','q','recent','plan','progress','cancellation'].some(key=>params.get(key))){
-    $('explorer').classList.add('collapsed');$('sheet-toggle').setAttribute('aria-expanded','false');
-  }
+  const selection={townId:params.get('town'),zoneId:params.get('zone'),cancellation:params.get('cancellation')};
+  const isDetail=Boolean(selection.townId || selection.zoneId || selection.cancellation);
+  const filtered=region || $('search-input').value.trim() || selected.length || params.get('recent')==='1';
+  const height=initialSheetHeight(selection,filtered,matchMedia(mobileMapQuery).matches);
+  displaySheetHeight(height);
+  $('sheet-label').textContent=sheetLabel(selection,height);
   $('back-results').hidden=!isDetail;
   $('detail-view').hidden=!isDetail;$('list-view').hidden=isDetail;
-  if(isDetail)$('sheet-label').textContent=params.get('zone')?'사업구역 상세':'대상지 상세';
   $('search-input').disabled=$('district-filter').disabled=true;
   const guide=$('guide-dialog');
   $('guide-open').onclick=()=>guide.showModal();$('guide-close').onclick=()=>guide.close();
@@ -517,6 +529,8 @@ if(typeof document!=='undefined'){
     .catch(()=>{document.getElementById('map-status').textContent='네이버 지도 연결에 실패했습니다. 목록에서 구역을 확인할 수 있습니다.';return null;});
   loadSnapshot(document.baseURI).then(data=>mount(data,sdk)).catch(error=>{
     document.getElementById('detail-view').hidden=true;document.getElementById('list-view').hidden=false;
+    displaySheetHeight(1);document.getElementById('back-results').hidden=true;
+    document.getElementById('sheet-label').textContent=sheetLabel({},1);
     document.getElementById('result-count').textContent='불러오기 실패';
     const message=el('div','지도 자료를 불러오지 못했습니다.','empty');
     const retry=el('button','다시 불러오기');retry.type='button';retry.onclick=()=>location.reload();message.append(retry);

@@ -476,6 +476,21 @@ body[data-loading=true] .map-loading { display: block; position: absolute; top: 
 .sub-card-head { align-items: center; padding-bottom: 4px; }
 .sub-card-field { display: grid; grid-template-columns: 66px 1fr; gap: 6px; font-size: 12px; }
 .sub-card-field > :first-child { color: var(--sub); }
+.compare-areas { grid-column: 1 / -1; display: flex; width: 100%; align-items: center; justify-content: space-between; gap: 6px; margin-top: 7px; padding: 9px 10px; border-radius: 8px; background: #eaf4f1; color: #165849; text-align: left; font-size: 13px; }
+.compare-areas span { margin-left: auto; font-size: 12px; }
+.compare-areas::after { content: '›'; font-size: 17px; line-height: 1; }
+.zone-comparison { width: 100%; margin: 0 0 14px; border-collapse: collapse; table-layout: fixed; background: white; font-size: 12px; overflow-wrap: anywhere; }
+.zone-comparison caption { padding: 3px 0 8px; text-align: left; color: var(--ink); font-size: 15px; font-weight: 700; }
+.zone-comparison th, .zone-comparison td { border-bottom: 1px solid var(--line); padding: 6px 4px; text-align: left; }
+.zone-comparison th { font-weight: 650; background: #eef3f3; }
+.zone-comparison th:first-child { width: 18%; }
+.zone-comparison th:last-child { width: 29%; }
+.zone-comparison th:last-child, .zone-comparison td:last-child { text-align: right; }
+.zone-comparison button { min-height: 34px; width: 100%; text-align: left; font-weight: 700; color: var(--blue); }
+.zone-comparison .stage-badge { white-space: normal; line-height: 1.4; gap: 3px; }
+.zone-comparison small { display: block; color: var(--sub); font-size: 11px; }
+.zone-comparison tbody tr { cursor: pointer; }
+.zone-comparison tbody tr:hover, .zone-comparison tr:focus-within, .zone-comparison tr.is-current { background: #edf6fa; }
 #share-status:not(:empty) { position: fixed; z-index: 1000; bottom: max(20px, env(safe-area-inset-bottom)); left: 50%; transform: translateX(-50%); padding: 10px 16px; border-radius: 9px; background: #183742; color: white; font-size: 14px; box-shadow: var(--shadow); }
 @media (max-width:760px) {
   .project-summary { padding: 5px 13px 6px; }

@@ -3,13 +3,29 @@ import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import {compareInterval,durationSamples,formatValue,intervalBadge,projectEvents,projectIntervals,unitsChange} from '../detail-format.mjs';
 import {groupSubAreas} from '../app.mjs';
-import {reportIssueUrl} from '../detail-view.mjs';
+import {comparePlans,reportIssueUrl} from '../detail-view.mjs';
 import {searchProjects} from '../project-search.mjs';
 import {positionInGeometry} from '../address-reference.mjs';
 
 const read=file=>JSON.parse(readFileSync(new URL('../moatown-data/'+file,import.meta.url),'utf8'));
 const {files,coverage}=read('latest.json'),towns=read(files.towns),zones=read(files.zones);
 const groups=groupSubAreas(towns,zones);
+
+test('child plan totals require comparable sources for every figure',()=>{
+  const hapjeong=groups.get('mt-202603-public-032'),sinwol=groups.get('mt-202603-public-067');
+  assert.deepEqual(comparePlans(hapjeong),{known:4,total:1113});
+  assert.deepEqual(comparePlans(sinwol),{known:4,total:null});
+  const first=hapjeong[0];
+  const zero={...first,metrics:{planned_units:0}};
+  assert.deepEqual(comparePlans([zero]),{known:1,total:0});
+  assert.deepEqual(comparePlans([]),{known:0,total:null});
+  assert.deepEqual(comparePlans([zero,{}]),{known:1,total:null});
+  for(const other of [
+    {...first,plan_scenario:'대안'},
+    {...first,field_evidence:{}},
+    {...first,field_evidence:{plan:{...first.field_evidence.plan,source_as_of:null}}}
+  ])assert.deepEqual(comparePlans([zero,other]),{known:2,total:null});
+});
 
 test('issue drafts carry the selected identifiers and a clean share link',()=>{
   const town={id:'test-town',name:'가동 & 나동',district:'양천구'};

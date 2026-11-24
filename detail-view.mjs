@@ -1,4 +1,4 @@
-import {formatValue,unitsChange,projectIntervals,compareInterval} from './detail-format.mjs?v=launch-1';
+import {formatValue,unitsChange,projectIntervals,compareInterval} from './detail-format.mjs?v=21935ea7588b';
 
 const pending='미고시';
 const date=v=>formatValue(v,'date');
@@ -195,10 +195,54 @@ function timeline(card,town,zone,snapshot,stats,intervals){
   if(e?.association_site)card.append(el('small','인가 고시 지번 · '+e.association_site,'detail-caption'));
 }
 
+export function comparePlans(children){
+  const known=children.filter(child=>{
+    const n=values(child).planned;
+    return Number.isSafeInteger(n) && n>=0;
+  });
+  const first=known[0],plan=first?.field_evidence?.plan;
+  const samePlan=known.length===children.length && plan?.kind==='management_plan_notice' && !plan.state?.includes('not_latest') &&
+    plan.source_url && plan.source_as_of && plan.notice_number && known.every(child=>{
+      const evidence=child.field_evidence?.plan;
+      return evidence?.kind===plan.kind && evidence.source_url===plan.source_url &&
+        evidence.source_as_of===plan.source_as_of && evidence.notice_number===plan.notice_number &&
+        evidence.table===plan.table && evidence.state===plan.state && child.plan_scenario===first.plan_scenario;
+    });
+  return {known:known.length,total:samePlan?known.reduce((sum,child)=>sum+values(child).planned,0):null};
+}
+
+function comparisonTable(town,children,zone,select,badge){
+  const table=el('table',null,'zone-comparison');
+  table.append(el('caption','세부구역 비교'));
+  const headers=table.createTHead().insertRow();
+  for(const title of ['구역','추진 단계','시공사','계획 세대수·기준일']){
+    const th=el('th',title);th.scope='col';headers.append(th);
+  }
+  const body=table.createTBody();
+  for(const child of children){
+    const row=body.insertRow(),button=el('button',child.drawing_code??child.name);
+    button.type='button';button.setAttribute('aria-label',child.name+' 지도에서 보기');
+    if(child.id===zone?.id){
+      row.className='is-current';button.setAttribute('aria-label',child.name+' 선택됨 · 지도에서 보기');
+    }
+    row.insertCell().append(button);
+    const selectChild=()=>select(town.id,child.id,true);
+    button.addEventListener('click',selectChild);
+    row.addEventListener('click',event=>{if(!event.target.closest('button'))selectChild();});
+    row.insertCell().append(child.stage?badge(child.stage,true):el('span',pending,'unverified'));
+    row.insertCell().append(el('span',child.selected_contractor??pending,child.selected_contractor?'':'unverified'));
+    const n=values(child).planned,asOf=child.field_evidence?.plan?.source_as_of;
+    row.insertCell().append(el('strong',formatValue(n,'세대')),el('small',asOf?date(asOf):'기준일 미고시'));
+  }
+  return table;
+}
+
 function subAreas(panel,town,zone,children,boundaries,select,badge){
   if(!children.length){panel.append(notice(town.risk_info?.is_canceled?'세부 구역 미고시 · 대상지 선정 취소':'대상지 단위 추진 중 (세부 구역 미고시)'));return;}
+  const ordered=[...children].sort((a,b)=>(a.drawing_code??a.name).localeCompare(b.drawing_code??b.name,'ko',{numeric:true}));
+  panel.append(comparisonTable(town,ordered,zone,select,badge));
   const list=el('ul',null,'sub-area-cards');list.setAttribute('aria-label',town.name+' 세부 사업구역');
-  for(const child of [...children].sort((a,b)=>(a.drawing_code??a.name).localeCompare(b.drawing_code??b.name,'ko',{numeric:true}))){
+  for(const child of ordered){
     const item=el('li'),button=el('button'),head=el('span',null,'sub-card-head');
     button.type='button';button.dataset.zone=child.id;button.setAttribute('aria-label',child.name+' 상세 보기');
     if(zone?.id===child.id)button.setAttribute('aria-current','true');
@@ -290,7 +334,7 @@ function sources(card,r,snapshot,boundary,events,registryUrl,reportUrl){
   footer.append(report);card.append(footer);
 }
 
-function summary(town,zone,intervals,badge,copyLink){
+function summary(town,zone,intervals,badge,copyLink,comparison){
   const r=zone??town,header=el('header',null,'project-summary');
   const identity=el('div',null,'summary-identity'),place=el('div'),title=el('h2',r.name);
   title.tabIndex=-1;
@@ -315,7 +359,7 @@ function summary(town,zone,intervals,badge,copyLink){
   const short=full.replace(/^현재 /,'').replace(/ 진행 중$| 소요 \(.*\)$/,'');
   const kpis=el('dl',null,'summary-kpis');
   for(const [label,value,note] of [
-    ['총 면적',formatValue(area,'평')],['계획 세대수',formatValue(planned,'세대'),Number.isFinite(existing)&&Number.isFinite(planned)?unitsChange(existing,planned):null],
+    ['총 면적',formatValue(area,'평')],[planned==null && comparison?.total!=null?'수록 구역 계획 합계':'계획 세대수',formatValue(planned??comparison?.total,'세대'),Number.isFinite(existing)&&Number.isFinite(planned)?unitsChange(existing,planned):null],
     ['단계 경과일',short,full.includes('진행 중')?'진행 중':elapsed?.days!=null?'소요':null]
   ]){
     const card=el('div');card.append(el('dt',label),el('dd',value,value===pending?'unverified':null));
@@ -335,7 +379,7 @@ function detailTabs(container,children,designated){
       panels[button.dataset.tab].hidden=!selected;
     }
     if(key==='areas'){
-      const pane=panels.areas,selected=pane.querySelector('[aria-current="true"]');
+      const pane=panels.areas,selected=pane.querySelector('.sub-area-cards [aria-current="true"]');
       if(selected){
         const card=selected.getBoundingClientRect(),view=pane.getBoundingClientRect();
         if(card.top<view.top || card.height>view.height)pane.scrollTop+=card.top-view.top;
@@ -366,10 +410,18 @@ function detailTabs(container,children,designated){
   return {panels,activate};
 }
 
-export function renderProjectDetail(container,{town,zone,children,boundaries,snapshot,cityRule,registryUrl,stats,select,badge,copyLink,initialTab}){
+export function renderProjectDetail(container,{town,zone,children,boundaries,snapshot,cityRule,registryUrl,stats,select,badge,copyLink,expandDetail,initialTab}){
   const r=zone??town,boundary=boundaries.get(r.id),intervals=projectIntervals(town,zone,snapshot);
-  container.append(summary(town,zone,intervals,badge,copyLink));
+  const comparison=!zone && children.length?comparePlans(children):null;
+  const header=summary(town,zone,intervals,badge,copyLink,comparison);
+  container.append(header);
   const {panels,activate}=detailTabs(container,children,r.land_transaction_permit?.designated===true);
+  if(comparison){
+    const cta=el('button',null,'compare-areas');cta.type='button';cta.setAttribute('aria-controls','pane-areas');
+    cta.append(el('strong','세부구역 '+children.length+'곳 '+(children.length===1?'보기':'비교')),el('span','계획 세대수 '+comparison.known+'곳 확인'));
+    cta.addEventListener('click',()=>{expandDetail?.();activate('areas');panels.areas.scrollTop=0;panels.areas.focus({preventScroll:true});});
+    header.append(cta);
+  }
   const steps=section(panels.schedule,'timeline','추진 타임라인');
   timeline(steps,town,zone,snapshot,stats,intervals);
   section(panels.schedule,'news','사업 소식').append(el('div',null,'related-news'));
