@@ -9,11 +9,26 @@
     "selected_date_precision": "month",
     "area_m2": 60616,
     "management_plan_stage": null,
-    "representative_point": null,
+    "representative_point": {
+      "type": "Point",
+      "coordinates": [
+        126.835524,
+        37.538721
+      ]
+    },
     "source_as_of": "2026-03-31",
     "sources": [
       "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
-    ]
+    ],
+    "representative_point_evidence": {
+      "kind": "official_project_geometry_reference_point",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+      "source_as_of": "2026-09-10",
+      "source_crs": "EPSG:5174",
+      "source_feature_id": "11000UQ120PS202503070106",
+      "source_label": "화곡1동 1087번지 일대",
+      "match_method": "unique_same_district_and_lot_with_normalized_dong_or_label"
+    }
   },
   {
     "id": "mt-202603-public-002",
@@ -25,11 +40,26 @@
     "selected_date_precision": "month",
     "area_m2": 85462,
     "management_plan_stage": null,
-    "representative_point": null,
+    "representative_point": {
+      "type": "Point",
+      "coordinates": [
+        126.840253,
+        37.533969
+      ]
+    },
     "source_as_of": "2026-03-31",
     "sources": [
       "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
-    ]
+    ],
+    "representative_point_evidence": {
+      "kind": "official_project_geometry_reference_point",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+      "source_as_of": "2026-09-10",
+      "source_crs": "EPSG:5174",
+      "source_feature_id": "11000UQ120PS202503070108",
+      "source_label": "화곡1동 354번지 일대",
+      "match_method": "unique_same_district_and_lot_with_normalized_dong_or_label"
+    }
   },
   {
     "id": "mt-202603-public-003",
@@ -41,11 +71,26 @@
     "selected_date_precision": "month",
     "area_m2": 58477,
     "management_plan_stage": null,
-    "representative_point": null,
+    "representative_point": {
+      "type": "Point",
+      "coordinates": [
+        126.838437,
+        37.531798
+      ]
+    },
     "source_as_of": "2026-03-31",
     "sources": [
       "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
-    ]
+    ],
+    "representative_point_evidence": {
+      "kind": "official_project_geometry_reference_point",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+      "source_as_of": "2026-09-10",
+      "source_crs": "EPSG:5174",
+      "source_feature_id": "11000UQ120PS202503070109",
+      "source_label": "화곡1동 359번지 일대",
+      "match_method": "unique_same_district_and_lot_with_normalized_dong_or_label"
+    }
   },
   {
     "id": "mt-202603-public-004",
@@ -57,11 +102,26 @@
     "selected_date_precision": "month",
     "area_m2": 54767,
     "management_plan_stage": null,
-    "representative_point": null,
+    "representative_point": {
+      "type": "Point",
+      "coordinates": [
+        126.841003,
+        37.53135
+      ]
+    },
     "source_as_of": "2026-03-31",
     "sources": [
       "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
-    ]
+    ],
+    "representative_point_evidence": {
+      "kind": "official_project_geometry_reference_point",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+      "source_as_of": "2026-09-10",
+      "source_crs": "EPSG:5174",
+      "source_feature_id": "11000UQ120PS202503070110",
+      "source_label": "화곡동 424",
+      "match_method": "exact_district_and_site_label"
+    }
   },
   {
     "id": "mt-202603-public-005",
@@ -73,7 +133,13 @@
     "selected_date_precision": "month",
     "area_m2": 65498,
     "management_plan_stage": null,
-    "representative_point": null,
+    "representative_point": {
+      "type": "Point",
+      "coordinates": [
+        126.858761,
+        37.546112
+      ]
+    },
     "source_as_of": "2026-03-31",
     "sources": [
       "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
@@ -84,7 +150,16 @@
         "address": "강서구 등촌2동 520-3",
         "area_m2": 64191
       }
-    ]
+    ],
+    "representative_point_evidence": {
+      "kind": "official_project_geometry_reference_point",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+      "source_as_of": "2026-09-10",
+      "source_crs": "EPSG:5174",
+      "source_feature_id": "11000UQ120PS202503070017",
+      "source_label": "등촌동 515-44 일대",
+      "match_method": "unique_same_district_and_lot_with_normalized_dong_or_label"
+    }
   },
   {
     "id": "mt-202603-public-006",
@@ -96,11 +171,26 @@
     "selected_date_precision": "month",
     "area_m2": 67957,
     "management_plan_stage": null,
-    "representative_point": null,
+    "representative_point": {
+      "type": "Point",
+      "coordinates": [
+        126.853743,
+        37.552025
+      ]
+    },
     "source_as_of": "2026-03-31",
     "sources": [
       "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
-    ]
+    ],
+    "representative_point_evidence": {
+      "kind": "official_project_geometry_reference_point",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+      "source_as_of": "2026-09-10",
+      "source_crs": "EPSG:5174",
+      "source_feature_id": "11500UQ120PS202605040001",
+      "source_label": "화곡동 1130-7 일대",
+      "match_method": "unique_same_district_and_lot_with_normalized_dong_or_label"
+    }
   },
   {
     "id": "mt-202603-public-007",
@@ -112,11 +202,26 @@
     "selected_date_precision": "month",
     "area_m2": 66975,
     "management_plan_stage": null,
-    "representative_point": null,
+    "representative_point": {
+      "type": "Point",
+      "coordinates": [
+        126.810673,
+        37.569761
+      ]
+    },
     "source_as_of": "2026-03-31",
     "sources": [
       "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
-    ]
+    ],
+    "representative_point_evidence": {
+      "kind": "official_project_geometry_reference_point",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+      "source_as_of": "2026-09-10",
+      "source_crs": "EPSG:5174",
+      "source_feature_id": "11000UQ120PS202503070037",
+      "source_label": "방화2동 592-1번지 일대",
+      "match_method": "unique_same_district_and_lot_with_normalized_dong_or_label"
+    }
   },
   {
     "id": "mt-202603-public-008",
@@ -128,11 +233,26 @@
     "selected_date_precision": "month",
     "area_m2": 96637,
     "management_plan_stage": null,
-    "representative_point": null,
+    "representative_point": {
+      "type": "Point",
+      "coordinates": [
+        126.813699,
+        37.557614
+      ]
+    },
     "source_as_of": "2026-03-31",
     "sources": [
       "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
-    ]
+    ],
+    "representative_point_evidence": {
+      "kind": "official_project_geometry_reference_point",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+      "source_as_of": "2026-09-10",
+      "source_crs": "EPSG:5174",
+      "source_feature_id": "11500UQ120PS202605060002",
+      "source_label": "공항동 55-327 일대",
+      "match_method": "exact_district_and_site_label"
+    }
   },
   {
     "id": "mt-202603-public-009",
@@ -160,11 +280,26 @@
     "selected_date_precision": "month",
     "area_m2": 96993,
     "management_plan_stage": null,
-    "representative_point": null,
+    "representative_point": {
+      "type": "Point",
+      "coordinates": [
+        127.091667,
+        37.590607
+      ]
+    },
     "source_as_of": "2026-03-31",
     "sources": [
       "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
-    ]
+    ],
+    "representative_point_evidence": {
+      "kind": "official_project_geometry_reference_point",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+      "source_as_of": "2026-09-10",
+      "source_crs": "EPSG:5174",
+      "source_feature_id": "11000UQ120PS202503070029",
+      "source_label": "면목동 86-3번지 일대",
+      "match_method": "unique_same_district_and_lot_with_normalized_dong_or_label"
+    }
   },
   {
     "id": "mt-202603-public-011",
@@ -176,11 +311,26 @@
     "selected_date_precision": "month",
     "area_m2": 76525,
     "management_plan_stage": null,
-    "representative_point": null,
+    "representative_point": {
+      "type": "Point",
+      "coordinates": [
+        127.095156,
+        37.588374
+      ]
+    },
     "source_as_of": "2026-03-31",
     "sources": [
       "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
-    ]
+    ],
+    "representative_point_evidence": {
+      "kind": "official_project_geometry_reference_point",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+      "source_as_of": "2026-09-10",
+      "source_crs": "EPSG:5174",
+      "source_feature_id": "11000UQ120PS202503070024",
+      "source_label": "면목3,8동 44-6번지 일대",
+      "match_method": "unique_same_district_and_lot_with_normalized_dong_or_label"
+    }
   },
   {
     "id": "mt-202603-public-012",
@@ -192,11 +342,26 @@
     "selected_date_precision": "month",
     "area_m2": 53120,
     "management_plan_stage": null,
-    "representative_point": null,
+    "representative_point": {
+      "type": "Point",
+      "coordinates": [
+        127.090356,
+        37.587266
+      ]
+    },
     "source_as_of": "2026-03-31",
     "sources": [
       "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
-    ]
+    ],
+    "representative_point_evidence": {
+      "kind": "official_project_geometry_reference_point",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+      "source_as_of": "2026-09-10",
+      "source_crs": "EPSG:5174",
+      "source_feature_id": "11000UQ120PS202503070030",
+      "source_label": "면목본동 297-28번지 일대",
+      "match_method": "exact_district_and_site_label"
+    }
   },
   {
     "id": "mt-202603-public-013",
@@ -208,11 +373,26 @@
     "selected_date_precision": "month",
     "area_m2": 73625,
     "management_plan_stage": null,
-    "representative_point": null,
+    "representative_point": {
+      "type": "Point",
+      "coordinates": [
+        127.086392,
+        37.600095
+      ]
+    },
     "source_as_of": "2026-03-31",
     "sources": [
       "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
-    ]
+    ],
+    "representative_point_evidence": {
+      "kind": "official_project_geometry_reference_point",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+      "source_as_of": "2026-09-10",
+      "source_crs": "EPSG:5174",
+      "source_feature_id": "11000UQ120PS202503070092",
+      "source_label": "중화1동 4-30번지 일대",
+      "match_method": "exact_district_and_site_label"
+    }
   },
   {
     "id": "mt-202603-public-014",
@@ -224,11 +404,26 @@
     "selected_date_precision": "month",
     "area_m2": 98171,
     "management_plan_stage": null,
-    "representative_point": null,
+    "representative_point": {
+      "type": "Point",
+      "coordinates": [
+        127.10033,
+        37.589455
+      ]
+    },
     "source_as_of": "2026-03-31",
     "sources": [
       "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
-    ]
+    ],
+    "representative_point_evidence": {
+      "kind": "official_project_geometry_reference_point",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+      "source_as_of": "2026-09-10",
+      "source_crs": "EPSG:5174",
+      "source_feature_id": "11000UQ120PS202503070020",
+      "source_label": "망우3동 427-5번지 일대",
+      "match_method": "exact_district_and_site_label"
+    }
   },
   {
     "id": "mt-202603-public-015",
@@ -240,11 +435,26 @@
     "selected_date_precision": "month",
     "area_m2": 88040,
     "management_plan_stage": null,
-    "representative_point": null,
+    "representative_point": {
+      "type": "Point",
+      "coordinates": [
+        127.081931,
+        37.585359
+      ]
+    },
     "source_as_of": "2026-03-31",
     "sources": [
       "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
-    ]
+    ],
+    "representative_point_evidence": {
+      "kind": "official_project_geometry_reference_point",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+      "source_as_of": "2026-09-10",
+      "source_crs": "EPSG:5174",
+      "source_feature_id": "11000UQ120PS202503070026",
+      "source_label": "면목5동 152-1번지 일대",
+      "match_method": "unique_same_district_and_lot_with_normalized_dong_or_label"
+    }
   },
   {
     "id": "mt-202603-public-016",
@@ -256,11 +466,26 @@
     "selected_date_precision": "month",
     "area_m2": 90102,
     "management_plan_stage": null,
-    "representative_point": null,
+    "representative_point": {
+      "type": "Point",
+      "coordinates": [
+        127.091676,
+        37.585219
+      ]
+    },
     "source_as_of": "2026-03-31",
     "sources": [
       "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
-    ]
+    ],
+    "representative_point_evidence": {
+      "kind": "official_project_geometry_reference_point",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+      "source_as_of": "2026-09-10",
+      "source_crs": "EPSG:5174",
+      "source_feature_id": "11000UQ120PS202503070028",
+      "source_label": "면목본동 63-1번지 일대",
+      "match_method": "unique_same_district_and_lot_with_normalized_dong_or_label"
+    }
   },
   {
     "id": "mt-202603-public-017",
@@ -272,11 +497,26 @@
     "selected_date_precision": "month",
     "area_m2": 66389,
     "management_plan_stage": null,
-    "representative_point": null,
+    "representative_point": {
+      "type": "Point",
+      "coordinates": [
+        127.102177,
+        37.602533
+      ]
+    },
     "source_as_of": "2026-03-31",
     "sources": [
       "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
-    ]
+    ],
+    "representative_point_evidence": {
+      "kind": "official_project_geometry_reference_point",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+      "source_as_of": "2026-09-10",
+      "source_crs": "EPSG:5174",
+      "source_feature_id": "11000UQ120PS202503070022",
+      "source_label": "망우본동 354-2",
+      "match_method": "exact_district_and_site_label"
+    }
   },
   {
     "id": "mt-202603-public-018",
@@ -288,11 +528,26 @@
     "selected_date_precision": "month",
     "area_m2": 99931,
     "management_plan_stage": null,
-    "representative_point": null,
+    "representative_point": {
+      "type": "Point",
+      "coordinates": [
+        127.074787,
+        37.599417
+      ]
+    },
     "source_as_of": "2026-03-31",
     "sources": [
       "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
-    ]
+    ],
+    "representative_point_evidence": {
+      "kind": "official_project_geometry_reference_point",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+      "source_as_of": "2026-09-10",
+      "source_crs": "EPSG:5174",
+      "source_feature_id": "11260UQ120PS202604200001",
+      "source_label": "중화동 329-38번지 일대",
+      "match_method": "exact_district_and_site_label"
+    }
   },
   {
     "id": "mt-202603-public-019",
@@ -304,11 +559,26 @@
     "selected_date_precision": "month",
     "area_m2": 81648,
     "management_plan_stage": null,
-    "representative_point": null,
+    "representative_point": {
+      "type": "Point",
+      "coordinates": [
+        127.094694,
+        37.592534
+      ]
+    },
     "source_as_of": "2026-03-31",
     "sources": [
       "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
-    ]
+    ],
+    "representative_point_evidence": {
+      "kind": "official_project_geometry_reference_point",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+      "source_as_of": "2026-09-10",
+      "source_crs": "EPSG:5174",
+      "source_feature_id": "11000UQ120PS202503070021",
+      "source_label": "망우동 474-29",
+      "match_method": "unique_same_district_and_lot_with_normalized_dong_or_label"
+    }
   },
   {
     "id": "mt-202603-public-020",
@@ -320,11 +590,26 @@
     "selected_date_precision": "month",
     "area_m2": 62681,
     "management_plan_stage": null,
-    "representative_point": null,
+    "representative_point": {
+      "type": "Point",
+      "coordinates": [
+        127.074841,
+        37.607945
+      ]
+    },
     "source_as_of": "2026-03-31",
     "sources": [
       "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
-    ]
+    ],
+    "representative_point_evidence": {
+      "kind": "official_project_geometry_reference_point",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+      "source_as_of": "2026-09-10",
+      "source_crs": "EPSG:5174",
+      "source_feature_id": "11000UQ120PS202503070034",
+      "source_label": "묵2동 243-7",
+      "match_method": "exact_district_and_site_label"
+    }
   },
   {
     "id": "mt-202603-public-021",
@@ -336,11 +621,26 @@
     "selected_date_precision": "month",
     "area_m2": 75254,
     "management_plan_stage": null,
-    "representative_point": null,
+    "representative_point": {
+      "type": "Point",
+      "coordinates": [
+        127.078168,
+        37.597734
+      ]
+    },
     "source_as_of": "2026-03-31",
     "sources": [
       "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
-    ]
+    ],
+    "representative_point_evidence": {
+      "kind": "official_project_geometry_reference_point",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+      "source_as_of": "2026-09-10",
+      "source_crs": "EPSG:5174",
+      "source_feature_id": "11000UQ120PS202503070094",
+      "source_label": "중화동 299-8",
+      "match_method": "unique_same_district_and_lot_with_normalized_dong_or_label"
+    }
   },
   {
     "id": "mt-202603-public-022",
@@ -352,11 +652,26 @@
     "selected_date_precision": "month",
     "area_m2": 70868,
     "management_plan_stage": null,
-    "representative_point": null,
+    "representative_point": {
+      "type": "Point",
+      "coordinates": [
+        127.082341,
+        37.589071
+      ]
+    },
     "source_as_of": "2026-03-31",
     "sources": [
       "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
-    ]
+    ],
+    "representative_point_evidence": {
+      "kind": "official_project_geometry_reference_point",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+      "source_as_of": "2026-09-10",
+      "source_crs": "EPSG:5174",
+      "source_feature_id": "11000UQ120PS202503070025",
+      "source_label": "면목동 139-52",
+      "match_method": "unique_same_district_and_lot_with_normalized_dong_or_label"
+    }
   },
   {
     "id": "mt-202603-public-023",
@@ -368,11 +683,26 @@
     "selected_date_precision": "month",
     "area_m2": 68303,
     "management_plan_stage": null,
-    "representative_point": null,
+    "representative_point": {
+      "type": "Point",
+      "coordinates": [
+        127.092231,
+        37.582703
+      ]
+    },
     "source_as_of": "2026-03-31",
     "sources": [
       "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
-    ]
+    ],
+    "representative_point_evidence": {
+      "kind": "official_project_geometry_reference_point",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+      "source_as_of": "2026-09-10",
+      "source_crs": "EPSG:5174",
+      "source_feature_id": "11260UQ120PS202608140002",
+      "source_label": "면목3,8동 453-1번지 일대",
+      "match_method": "unique_same_district_and_lot_with_normalized_dong_or_label"
+    }
   },
   {
     "id": "mt-202603-public-024",
@@ -384,11 +714,26 @@
     "selected_date_precision": "month",
     "area_m2": 86705,
     "management_plan_stage": null,
-    "representative_point": null,
+    "representative_point": {
+      "type": "Point",
+      "coordinates": [
+        126.906135,
+        37.444032
+      ]
+    },
     "source_as_of": "2026-03-31",
     "sources": [
       "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
-    ]
+    ],
+    "representative_point_evidence": {
+      "kind": "official_project_geometry_reference_point",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+      "source_as_of": "2026-09-10",
+      "source_crs": "EPSG:5174",
+      "source_feature_id": "11545UQ120PS202605040001",
+      "source_label": "시흥3동 1005번지 일대",
+      "match_method": "exact_district_and_site_label"
+    }
   },
   {
     "id": "mt-202603-public-025",
@@ -400,11 +745,26 @@
     "selected_date_precision": "month",
     "area_m2": 30430,
     "management_plan_stage": null,
-    "representative_point": null,
+    "representative_point": {
+      "type": "Point",
+      "coordinates": [
+        126.907292,
+        37.45574
+      ]
+    },
     "source_as_of": "2026-03-31",
     "sources": [
       "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
-    ]
+    ],
+    "representative_point_evidence": {
+      "kind": "official_project_geometry_reference_point",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+      "source_as_of": "2026-09-10",
+      "source_crs": "EPSG:5174",
+      "source_feature_id": "11545UQ120PS202604200001",
+      "source_label": "시흥4동 817번지 일대",
+      "match_method": "exact_district_and_site_label"
+    }
   },
   {
     "id": "mt-202603-public-026",
@@ -432,11 +792,26 @@
     "selected_date_precision": "month",
     "area_m2": 81648,
     "management_plan_stage": null,
-    "representative_point": null,
+    "representative_point": {
+      "type": "Point",
+      "coordinates": [
+        126.903025,
+        37.459554
+      ]
+    },
     "source_as_of": "2026-03-31",
     "sources": [
       "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
-    ]
+    ],
+    "representative_point_evidence": {
+      "kind": "official_project_geometry_reference_point",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+      "source_as_of": "2026-09-10",
+      "source_crs": "EPSG:5174",
+      "source_feature_id": "11545UQ120PS202605040002",
+      "source_label": "시흥1동 864번지 일대",
+      "match_method": "exact_district_and_site_label"
+    }
   },
   {
     "id": "mt-202603-public-028",
@@ -448,11 +823,26 @@
     "selected_date_precision": "month",
     "area_m2": 99715,
     "management_plan_stage": null,
-    "representative_point": null,
+    "representative_point": {
+      "type": "Point",
+      "coordinates": [
+        126.905513,
+        37.440452
+      ]
+    },
     "source_as_of": "2026-03-31",
     "sources": [
       "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
-    ]
+    ],
+    "representative_point_evidence": {
+      "kind": "official_project_geometry_reference_point",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+      "source_as_of": "2026-09-10",
+      "source_crs": "EPSG:5174",
+      "source_feature_id": "11000UQ120PS202503070062",
+      "source_label": "시흥3동 950번지 일대",
+      "match_method": "exact_district_and_site_label"
+    }
   },
   {
     "id": "mt-202603-public-029",
@@ -554,12 +944,26 @@
     "selected_date_precision": "month",
     "area_m2": 97717,
     "management_plan_stage": null,
-    "representative_point": null,
+    "representative_point": {
+      "type": "Point",
+      "coordinates": [
+        126.913725,
+        37.545636
+      ]
+    },
     "source_as_of": "2026-03-31",
     "sources": [
       "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
     ],
-    "representative_point_status": "no_exact_parcel_match_in_source"
+    "representative_point_evidence": {
+      "kind": "official_project_geometry_reference_point",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+      "source_as_of": "2026-09-10",
+      "source_crs": "EPSG:5174",
+      "source_feature_id": "11440UQ120PS202603180001",
+      "source_label": "합정동 369",
+      "match_method": "exact_district_and_site_label"
+    }
   },
   {
     "id": "mt-202603-public-033",
@@ -601,11 +1005,26 @@
     "selected_date_precision": "month",
     "area_m2": 55572,
     "management_plan_stage": null,
-    "representative_point": null,
+    "representative_point": {
+      "type": "Point",
+      "coordinates": [
+        127.036149,
+        37.635468
+      ]
+    },
     "source_as_of": "2026-03-31",
     "sources": [
       "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
-    ]
+    ],
+    "representative_point_evidence": {
+      "kind": "official_project_geometry_reference_point",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+      "source_as_of": "2026-09-10",
+      "source_crs": "EPSG:5174",
+      "source_feature_id": "11000UQ120PS202503070039",
+      "source_label": "번동 429-114번지 일대",
+      "match_method": "exact_district_and_site_label"
+    }
   },
   {
     "id": "mt-202603-public-035",
@@ -617,11 +1036,27 @@
     "selected_date_precision": "month",
     "area_m2": 70897,
     "management_plan_stage": null,
-    "representative_point": null,
+    "representative_point": {
+      "type": "Point",
+      "coordinates": [
+        127.033398,
+        37.638485
+      ]
+    },
     "source_as_of": "2026-03-31",
     "sources": [
       "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
-    ]
+    ],
+    "representative_point_evidence": {
+      "kind": "official_project_geometry_reference_point",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+      "source_as_of": "2026-09-10",
+      "source_crs": "EPSG:5174",
+      "source_feature_id": "11000UQ120PS202503070040",
+      "source_label": "번동2지역(번동 454번지 일대)",
+      "match_method": "official_notice_links_representative_lot_to_project_name",
+      "match_source_url": "https://www.seoul.go.kr/news/news_report.do?nttNo=424502"
+    }
   },
   {
     "id": "mt-202603-public-036",
@@ -633,11 +1068,26 @@
     "selected_date_precision": "month",
     "area_m2": 79517,
     "management_plan_stage": null,
-    "representative_point": null,
+    "representative_point": {
+      "type": "Point",
+      "coordinates": [
+        127.028684,
+        37.636509
+      ]
+    },
     "source_as_of": "2026-03-31",
     "sources": [
       "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
-    ]
+    ],
+    "representative_point_evidence": {
+      "kind": "official_project_geometry_reference_point",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+      "source_as_of": "2026-09-10",
+      "source_crs": "EPSG:5174",
+      "source_feature_id": "11000UQ120PS202503070038",
+      "source_label": "번동3지역(번동 411번지 일대)",
+      "match_method": "unique_same_district_and_lot_with_normalized_dong_or_label"
+    }
   },
   {
     "id": "mt-202603-public-037",
@@ -649,11 +1099,26 @@
     "selected_date_precision": "month",
     "area_m2": 72754,
     "management_plan_stage": null,
-    "representative_point": null,
+    "representative_point": {
+      "type": "Point",
+      "coordinates": [
+        127.020222,
+        37.632587
+      ]
+    },
     "source_as_of": "2026-03-31",
     "sources": [
       "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
-    ]
+    ],
+    "representative_point_evidence": {
+      "kind": "official_project_geometry_reference_point",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+      "source_as_of": "2026-09-10",
+      "source_crs": "EPSG:5174",
+      "source_feature_id": "11000UQ120PS202503070058",
+      "source_label": "수유동1지역(수유동 52-1번지 일대)",
+      "match_method": "unique_same_district_and_lot_with_normalized_dong_or_label"
+    }
   },
   {
     "id": "mt-202603-public-038",
@@ -665,11 +1130,26 @@
     "selected_date_precision": "month",
     "area_m2": 86363,
     "management_plan_stage": null,
-    "representative_point": null,
+    "representative_point": {
+      "type": "Point",
+      "coordinates": [
+        127.018625,
+        37.63832
+      ]
+    },
     "source_as_of": "2026-03-31",
     "sources": [
       "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
-    ]
+    ],
+    "representative_point_evidence": {
+      "kind": "official_project_geometry_reference_point",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+      "source_as_of": "2026-09-10",
+      "source_crs": "EPSG:5174",
+      "source_feature_id": "11305UQ120PS202606300001",
+      "source_label": "수유동 392-9",
+      "match_method": "exact_district_and_site_label"
+    }
   },
   {
     "id": "mt-202603-public-039",
@@ -681,11 +1161,26 @@
     "selected_date_precision": "month",
     "area_m2": 73865,
     "management_plan_stage": null,
-    "representative_point": null,
+    "representative_point": {
+      "type": "Point",
+      "coordinates": [
+        127.028466,
+        37.643015
+      ]
+    },
     "source_as_of": "2026-03-31",
     "sources": [
       "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
-    ]
+    ],
+    "representative_point_evidence": {
+      "kind": "official_project_geometry_reference_point",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+      "source_as_of": "2026-09-10",
+      "source_crs": "EPSG:5174",
+      "source_feature_id": "11000UQ120PS202503070055",
+      "source_label": "수유동 141",
+      "match_method": "exact_district_and_site_label"
+    }
   },
   {
     "id": "mt-202603-public-040",
@@ -697,11 +1192,26 @@
     "selected_date_precision": "month",
     "area_m2": 85801,
     "management_plan_stage": null,
-    "representative_point": null,
+    "representative_point": {
+      "type": "Point",
+      "coordinates": [
+        127.030216,
+        37.639466
+      ]
+    },
     "source_as_of": "2026-03-31",
     "sources": [
       "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
-    ]
+    ],
+    "representative_point_evidence": {
+      "kind": "official_project_geometry_reference_point",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+      "source_as_of": "2026-09-10",
+      "source_crs": "EPSG:5174",
+      "source_feature_id": "11000UQ120PS202503070041",
+      "source_label": "번동 469",
+      "match_method": "exact_district_and_site_label"
+    }
   },
   {
     "id": "mt-202603-public-041",
@@ -713,11 +1223,26 @@
     "selected_date_precision": "month",
     "area_m2": 65961,
     "management_plan_stage": null,
-    "representative_point": null,
+    "representative_point": {
+      "type": "Point",
+      "coordinates": [
+        127.020989,
+        37.638468
+      ]
+    },
     "source_as_of": "2026-03-31",
     "sources": [
       "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
-    ]
+    ],
+    "representative_point_evidence": {
+      "kind": "official_project_geometry_reference_point",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+      "source_as_of": "2026-09-10",
+      "source_crs": "EPSG:5174",
+      "source_feature_id": "11000UQ120PS202503070056",
+      "source_label": "수유동 31-10",
+      "match_method": "exact_district_and_site_label"
+    }
   },
   {
     "id": "mt-202603-public-042",
@@ -729,11 +1254,26 @@
     "selected_date_precision": "month",
     "area_m2": 75382,
     "management_plan_stage": null,
-    "representative_point": null,
+    "representative_point": {
+      "type": "Point",
+      "coordinates": [
+        127.035097,
+        37.569992
+      ]
+    },
     "source_as_of": "2026-03-31",
     "sources": [
       "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
-    ]
+    ],
+    "representative_point_evidence": {
+      "kind": "official_project_geometry_reference_point",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+      "source_as_of": "2026-09-10",
+      "source_crs": "EPSG:5174",
+      "source_feature_id": "11200UQ120PS202605060001",
+      "source_label": "마장동 457번지 일대",
+      "match_method": "exact_district_and_site_label"
+    }
   },
   {
     "id": "mt-202603-public-043",
@@ -745,11 +1285,26 @@
     "selected_date_precision": "month",
     "area_m2": 37287,
     "management_plan_stage": null,
-    "representative_point": null,
+    "representative_point": {
+      "type": "Point",
+      "coordinates": [
+        127.030388,
+        37.552687
+      ]
+    },
     "source_as_of": "2026-03-31",
     "sources": [
       "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
-    ]
+    ],
+    "representative_point_evidence": {
+      "kind": "official_project_geometry_reference_point",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+      "source_as_of": "2026-09-10",
+      "source_crs": "EPSG:5174",
+      "source_feature_id": "11000UQ120PS202503070081",
+      "source_label": "응봉동 265",
+      "match_method": "exact_district_and_site_label"
+    }
   },
   {
     "id": "mt-202603-public-044",
@@ -761,11 +1316,26 @@
     "selected_date_precision": "month",
     "area_m2": 98735,
     "management_plan_stage": null,
-    "representative_point": null,
+    "representative_point": {
+      "type": "Point",
+      "coordinates": [
+        126.84773,
+        37.506438
+      ]
+    },
     "source_as_of": "2026-03-31",
     "sources": [
       "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
-    ]
+    ],
+    "representative_point_evidence": {
+      "kind": "official_project_geometry_reference_point",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+      "source_as_of": "2026-09-10",
+      "source_crs": "EPSG:5174",
+      "source_feature_id": "11530UQ120PS202605040001",
+      "source_label": "고척동 241번지 일대",
+      "match_method": "exact_district_and_site_label"
+    }
   },
   {
     "id": "mt-202603-public-045",
@@ -777,11 +1347,26 @@
     "selected_date_precision": "month",
     "area_m2": 64151,
     "management_plan_stage": null,
-    "representative_point": null,
+    "representative_point": {
+      "type": "Point",
+      "coordinates": [
+        126.882713,
+        37.48939
+      ]
+    },
     "source_as_of": "2026-03-31",
     "sources": [
       "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
-    ]
+    ],
+    "representative_point_evidence": {
+      "kind": "official_project_geometry_reference_point",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+      "source_as_of": "2026-09-10",
+      "source_crs": "EPSG:5174",
+      "source_feature_id": "11530UQ120PS202605040003",
+      "source_label": "구로동 728번지 일대",
+      "match_method": "exact_district_and_site_label"
+    }
   },
   {
     "id": "mt-202603-public-046",
@@ -793,11 +1378,26 @@
     "selected_date_precision": "month",
     "area_m2": 41145,
     "management_plan_stage": null,
-    "representative_point": null,
+    "representative_point": {
+      "type": "Point",
+      "coordinates": [
+        126.851775,
+        37.488891
+      ]
+    },
     "source_as_of": "2026-03-31",
     "sources": [
       "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
-    ]
+    ],
+    "representative_point_evidence": {
+      "kind": "official_project_geometry_reference_point",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+      "source_as_of": "2026-09-10",
+      "source_crs": "EPSG:5174",
+      "source_feature_id": "11530UQ120PS202605040002",
+      "source_label": "개봉동 270-38번지 일대",
+      "match_method": "exact_district_and_site_label"
+    }
   },
   {
     "id": "mt-202603-public-047",
@@ -809,11 +1409,26 @@
     "selected_date_precision": "month",
     "area_m2": 60962,
     "management_plan_stage": null,
-    "representative_point": null,
+    "representative_point": {
+      "type": "Point",
+      "coordinates": [
+        126.884234,
+        37.496539
+      ]
+    },
     "source_as_of": "2026-03-31",
     "sources": [
       "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
-    ]
+    ],
+    "representative_point_evidence": {
+      "kind": "official_project_geometry_reference_point",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+      "source_as_of": "2026-09-10",
+      "source_crs": "EPSG:5174",
+      "source_feature_id": "11000UQ120PS202503070008",
+      "source_label": "구로동 511번지 일대",
+      "match_method": "exact_district_and_site_label"
+    }
   },
   {
     "id": "mt-202603-public-048",
@@ -825,11 +1440,26 @@
     "selected_date_precision": "month",
     "area_m2": 61717,
     "management_plan_stage": null,
-    "representative_point": null,
+    "representative_point": {
+      "type": "Point",
+      "coordinates": [
+        126.843422,
+        37.503544
+      ]
+    },
     "source_as_of": "2026-03-31",
     "sources": [
       "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
-    ]
+    ],
+    "representative_point_evidence": {
+      "kind": "official_project_geometry_reference_point",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+      "source_as_of": "2026-09-10",
+      "source_crs": "EPSG:5174",
+      "source_feature_id": "11000UQ120PS202503070001",
+      "source_label": "개봉동 20",
+      "match_method": "exact_district_and_site_label"
+    }
   },
   {
     "id": "mt-202603-public-049",
@@ -841,11 +1471,26 @@
     "selected_date_precision": "month",
     "area_m2": 96468,
     "management_plan_stage": null,
-    "representative_point": null,
+    "representative_point": {
+      "type": "Point",
+      "coordinates": [
+        127.069338,
+        37.656287
+      ]
+    },
     "source_as_of": "2026-03-31",
     "sources": [
       "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
-    ]
+    ],
+    "representative_point_evidence": {
+      "kind": "official_project_geometry_reference_point",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+      "source_as_of": "2026-09-10",
+      "source_crs": "EPSG:5174",
+      "source_feature_id": "11000UQ120PS202503070045",
+      "source_label": "상계동 177-66",
+      "match_method": "unique_same_district_and_lot_with_normalized_dong_or_label"
+    }
   },
   {
     "id": "mt-202603-public-050",
@@ -857,11 +1502,26 @@
     "selected_date_precision": "month",
     "area_m2": 51049,
     "management_plan_stage": null,
-    "representative_point": null,
+    "representative_point": {
+      "type": "Point",
+      "coordinates": [
+        127.053787,
+        37.623701
+      ]
+    },
     "source_as_of": "2026-03-31",
     "sources": [
       "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
-    ]
+    ],
+    "representative_point_evidence": {
+      "kind": "official_project_geometry_reference_point",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+      "source_as_of": "2026-09-10",
+      "source_crs": "EPSG:5174",
+      "source_feature_id": "11000UQ120PS202503070078",
+      "source_label": "월계동 534번지 일대",
+      "match_method": "exact_district_and_site_label"
+    }
   },
   {
     "id": "mt-202603-public-051",
@@ -873,11 +1533,26 @@
     "selected_date_precision": "month",
     "area_m2": 82630,
     "management_plan_stage": null,
-    "representative_point": null,
+    "representative_point": {
+      "type": "Point",
+      "coordinates": [
+        127.017318,
+        37.6558
+      ]
+    },
     "source_as_of": "2026-03-31",
     "sources": [
       "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
-    ]
+    ],
+    "representative_point_evidence": {
+      "kind": "official_project_geometry_reference_point",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+      "source_as_of": "2026-09-10",
+      "source_crs": "EPSG:5174",
+      "source_feature_id": "11000UQ120PS202503070073",
+      "source_label": "쌍문동 524-87번지 일대",
+      "match_method": "exact_district_and_site_label"
+    }
   },
   {
     "id": "mt-202603-public-052",
@@ -889,11 +1564,26 @@
     "selected_date_precision": "month",
     "area_m2": 31303,
     "management_plan_stage": null,
-    "representative_point": null,
+    "representative_point": {
+      "type": "Point",
+      "coordinates": [
+        127.015039,
+        37.655717
+      ]
+    },
     "source_as_of": "2026-03-31",
     "sources": [
       "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
-    ]
+    ],
+    "representative_point_evidence": {
+      "kind": "official_project_geometry_reference_point",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+      "source_as_of": "2026-09-10",
+      "source_crs": "EPSG:5174",
+      "source_feature_id": "11000UQ120PS202503070072",
+      "source_label": "쌍문동 494-22번지 일대",
+      "match_method": "exact_district_and_site_label"
+    }
   },
   {
     "id": "mt-202603-public-053",
@@ -905,11 +1595,26 @@
     "selected_date_precision": "month",
     "area_m2": 98115,
     "management_plan_stage": null,
-    "representative_point": null,
+    "representative_point": {
+      "type": "Point",
+      "coordinates": [
+        127.034298,
+        37.665883
+      ]
+    },
     "source_as_of": "2026-03-31",
     "sources": [
       "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
-    ]
+    ],
+    "representative_point_evidence": {
+      "kind": "official_project_geometry_reference_point",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+      "source_as_of": "2026-09-10",
+      "source_crs": "EPSG:5174",
+      "source_feature_id": "11000UQ120PS202503070036",
+      "source_label": "방학동 618번지 일대",
+      "match_method": "exact_district_and_site_label"
+    }
   },
   {
     "id": "mt-202603-public-054",
@@ -921,11 +1626,26 @@
     "selected_date_precision": "month",
     "area_m2": 87774,
     "management_plan_stage": null,
-    "representative_point": null,
+    "representative_point": {
+      "type": "Point",
+      "coordinates": [
+        127.022633,
+        37.651881
+      ]
+    },
     "source_as_of": "2026-03-31",
     "sources": [
       "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
-    ]
+    ],
+    "representative_point_evidence": {
+      "kind": "official_project_geometry_reference_point",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+      "source_as_of": "2026-09-10",
+      "source_crs": "EPSG:5174",
+      "source_feature_id": "11000UQ120PS202503070071",
+      "source_label": "쌍문동 460번지 일대",
+      "match_method": "unique_same_district_and_lot_with_normalized_dong_or_label"
+    }
   },
   {
     "id": "mt-202603-public-055",
@@ -937,11 +1657,26 @@
     "selected_date_precision": "month",
     "area_m2": 44916,
     "management_plan_stage": null,
-    "representative_point": null,
+    "representative_point": {
+      "type": "Point",
+      "coordinates": [
+        127.039664,
+        37.634685
+      ]
+    },
     "source_as_of": "2026-03-31",
     "sources": [
       "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
-    ]
+    ],
+    "representative_point_evidence": {
+      "kind": "official_project_geometry_reference_point",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+      "source_as_of": "2026-09-10",
+      "source_crs": "EPSG:5174",
+      "source_feature_id": "11320UQ120PS202605040001",
+      "source_label": "창3동 501-13번지 일대",
+      "match_method": "exact_district_and_site_label"
+    }
   },
   {
     "id": "mt-202603-public-056",
@@ -953,11 +1688,26 @@
     "selected_date_precision": "month",
     "area_m2": 65326,
     "management_plan_stage": null,
-    "representative_point": null,
+    "representative_point": {
+      "type": "Point",
+      "coordinates": [
+        127.140636,
+        37.530604
+      ]
+    },
     "source_as_of": "2026-03-31",
     "sources": [
       "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
-    ]
+    ],
+    "representative_point_evidence": {
+      "kind": "official_project_geometry_reference_point",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+      "source_as_of": "2026-09-10",
+      "source_crs": "EPSG:5174",
+      "source_feature_id": "11000UQ120PS202503070016",
+      "source_label": "둔촌동 77-41번지 일대",
+      "match_method": "exact_district_and_site_label"
+    }
   },
   {
     "id": "mt-202603-public-057",
@@ -969,11 +1719,26 @@
     "selected_date_precision": "month",
     "area_m2": 55570,
     "management_plan_stage": null,
-    "representative_point": null,
+    "representative_point": {
+      "type": "Point",
+      "coordinates": [
+        127.136041,
+        37.543441
+      ]
+    },
     "source_as_of": "2026-03-31",
     "sources": [
       "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
-    ]
+    ],
+    "representative_point_evidence": {
+      "kind": "official_project_geometry_reference_point",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+      "source_as_of": "2026-09-10",
+      "source_crs": "EPSG:5174",
+      "source_feature_id": "11740UQ120PS202607210001",
+      "source_label": "천호동 113-2번지 일대",
+      "match_method": "exact_district_and_site_label"
+    }
   },
   {
     "id": "mt-202603-public-058",
@@ -985,11 +1750,26 @@
     "selected_date_precision": "month",
     "area_m2": 31783,
     "management_plan_stage": null,
-    "representative_point": null,
+    "representative_point": {
+      "type": "Point",
+      "coordinates": [
+        126.945388,
+        37.508988
+      ]
+    },
     "source_as_of": "2026-03-31",
     "sources": [
       "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
-    ]
+    ],
+    "representative_point_evidence": {
+      "kind": "official_project_geometry_reference_point",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+      "source_as_of": "2026-09-10",
+      "source_crs": "EPSG:5174",
+      "source_feature_id": "11590UQ120PS202605070001",
+      "source_label": "노량진동 221-24번지 일대",
+      "match_method": "exact_district_and_site_label"
+    }
   },
   {
     "id": "mt-202603-public-059",
@@ -1001,11 +1781,26 @@
     "selected_date_precision": "month",
     "area_m2": 84311,
     "management_plan_stage": null,
-    "representative_point": null,
+    "representative_point": {
+      "type": "Point",
+      "coordinates": [
+        126.964933,
+        37.488319
+      ]
+    },
     "source_as_of": "2026-03-31",
     "sources": [
       "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
-    ]
+    ],
+    "representative_point_evidence": {
+      "kind": "official_project_geometry_reference_point",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+      "source_as_of": "2026-09-10",
+      "source_crs": "EPSG:5174",
+      "source_feature_id": "11590UQ120PS202607010001",
+      "source_label": "사당동 202-29",
+      "match_method": "exact_district_and_site_label"
+    }
   },
   {
     "id": "mt-202603-public-060",
@@ -1017,11 +1812,26 @@
     "selected_date_precision": "month",
     "area_m2": 69120,
     "management_plan_stage": null,
-    "representative_point": null,
+    "representative_point": {
+      "type": "Point",
+      "coordinates": [
+        126.933818,
+        37.499831
+      ]
+    },
     "source_as_of": "2026-03-31",
     "sources": [
       "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
-    ]
+    ],
+    "representative_point_evidence": {
+      "kind": "official_project_geometry_reference_point",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+      "source_as_of": "2026-09-10",
+      "source_crs": "EPSG:5174",
+      "source_feature_id": "11590UQ120PS202605070002",
+      "source_label": "상도동 242번지 일대",
+      "match_method": "exact_district_and_site_label"
+    }
   },
   {
     "id": "mt-202603-public-061",
@@ -1033,11 +1843,26 @@
     "selected_date_precision": "month",
     "area_m2": 49155,
     "management_plan_stage": null,
-    "representative_point": null,
+    "representative_point": {
+      "type": "Point",
+      "coordinates": [
+        126.937997,
+        37.495755
+      ]
+    },
     "source_as_of": "2026-03-31",
     "sources": [
       "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
-    ]
+    ],
+    "representative_point_evidence": {
+      "kind": "official_project_geometry_reference_point",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+      "source_as_of": "2026-09-10",
+      "source_crs": "EPSG:5174",
+      "source_feature_id": "11000UQ120PS202503070047",
+      "source_label": "상도동 279",
+      "match_method": "exact_district_and_site_label"
+    }
   },
   {
     "id": "mt-202603-public-062",
@@ -1049,11 +1874,26 @@
     "selected_date_precision": "month",
     "area_m2": 46870,
     "management_plan_stage": null,
-    "representative_point": null,
+    "representative_point": {
+      "type": "Point",
+      "coordinates": [
+        127.12158,
+        37.535708
+      ]
+    },
     "source_as_of": "2026-03-31",
     "sources": [
       "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
-    ]
+    ],
+    "representative_point_evidence": {
+      "kind": "official_project_geometry_reference_point",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+      "source_as_of": "2026-09-10",
+      "source_crs": "EPSG:5174",
+      "source_feature_id": "11000UQ120PS202503070100",
+      "source_label": "풍납동 483-10번지 일대",
+      "match_method": "exact_district_and_site_label"
+    }
   },
   {
     "id": "mt-202603-public-063",
@@ -1065,11 +1905,26 @@
     "selected_date_precision": "month",
     "area_m2": 12615,
     "management_plan_stage": null,
-    "representative_point": null,
+    "representative_point": {
+      "type": "Point",
+      "coordinates": [
+        127.141837,
+        37.493544
+      ]
+    },
     "source_as_of": "2026-03-31",
     "sources": [
       "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
-    ]
+    ],
+    "representative_point_evidence": {
+      "kind": "official_project_geometry_reference_point",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+      "source_as_of": "2026-09-10",
+      "source_crs": "EPSG:5174",
+      "source_feature_id": "11000UQ120PS202503070003",
+      "source_label": "거여동 555번지 일대",
+      "match_method": "exact_district_and_site_label"
+    }
   },
   {
     "id": "mt-202603-public-064",
@@ -1081,11 +1936,26 @@
     "selected_date_precision": "month",
     "area_m2": 76336,
     "management_plan_stage": null,
-    "representative_point": null,
+    "representative_point": {
+      "type": "Point",
+      "coordinates": [
+        127.057926,
+        37.60828
+      ]
+    },
     "source_as_of": "2026-03-31",
     "sources": [
       "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
-    ]
+    ],
+    "representative_point_evidence": {
+      "kind": "official_project_geometry_reference_point",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+      "source_as_of": "2026-09-10",
+      "source_crs": "EPSG:5174",
+      "source_feature_id": "11000UQ120PS202503070051",
+      "source_label": "석관동 334-69번지 일대",
+      "match_method": "exact_district_and_site_label"
+    }
   },
   {
     "id": "mt-202603-public-065",
@@ -1097,11 +1967,26 @@
     "selected_date_precision": "month",
     "area_m2": 52019,
     "management_plan_stage": null,
-    "representative_point": null,
+    "representative_point": {
+      "type": "Point",
+      "coordinates": [
+        127.060332,
+        37.606027
+      ]
+    },
     "source_as_of": "2026-03-31",
     "sources": [
       "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
-    ]
+    ],
+    "representative_point_evidence": {
+      "kind": "official_project_geometry_reference_point",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+      "source_as_of": "2026-09-10",
+      "source_crs": "EPSG:5174",
+      "source_feature_id": "11000UQ120PS202503070050",
+      "source_label": "석관동 261-22번지 일대",
+      "match_method": "exact_district_and_site_label"
+    }
   },
   {
     "id": "mt-202603-public-066",
@@ -1113,11 +1998,26 @@
     "selected_date_precision": "month",
     "area_m2": 80030,
     "management_plan_stage": null,
-    "representative_point": null,
+    "representative_point": {
+      "type": "Point",
+      "coordinates": [
+        126.827675,
+        37.532775
+      ]
+    },
     "source_as_of": "2026-03-31",
     "sources": [
       "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
-    ]
+    ],
+    "representative_point_evidence": {
+      "kind": "official_project_geometry_reference_point",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+      "source_as_of": "2026-09-10",
+      "source_crs": "EPSG:5174",
+      "source_feature_id": "11000UQ120PS202503070070",
+      "source_label": "신월3동 173번지 일대",
+      "match_method": "unique_same_district_and_lot_with_normalized_dong_or_label"
+    }
   },
   {
     "id": "mt-202603-public-067",
@@ -1129,11 +2029,26 @@
     "selected_date_precision": "month",
     "area_m2": 74094,
     "management_plan_stage": null,
-    "representative_point": null,
+    "representative_point": {
+      "type": "Point",
+      "coordinates": [
+        126.83241,
+        37.534094
+      ]
+    },
     "source_as_of": "2026-03-31",
     "sources": [
       "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
-    ]
+    ],
+    "representative_point_evidence": {
+      "kind": "official_project_geometry_reference_point",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+      "source_as_of": "2026-09-10",
+      "source_crs": "EPSG:5174",
+      "source_feature_id": "11000UQ120PS202503070069",
+      "source_label": "신월동 102-33일대",
+      "match_method": "exact_district_and_site_label"
+    }
   },
   {
     "id": "mt-202603-public-068",
@@ -1145,11 +2060,27 @@
     "selected_date_precision": "month",
     "area_m2": 52785,
     "management_plan_stage": null,
-    "representative_point": null,
+    "representative_point": {
+      "type": "Point",
+      "coordinates": [
+        126.86492,
+        37.536858
+      ]
+    },
     "source_as_of": "2026-03-31",
     "sources": [
       "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
-    ]
+    ],
+    "representative_point_evidence": {
+      "kind": "official_project_geometry_reference_point",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+      "source_as_of": "2026-09-10",
+      "source_crs": "EPSG:5174",
+      "source_feature_id": "11470UQ120PS202605040001",
+      "source_label": "목4동 728-1번지 일대",
+      "match_method": "official_document_links_previous_and_changed_representative_lots",
+      "match_source_url": "https://mas.smc.seoul.kr/attach/record/SEOUL/appendix/a11/A0069345.pdf?time=20260420102942"
+    }
   },
   {
     "id": "mt-202603-public-069",
@@ -1161,11 +2092,26 @@
     "selected_date_precision": "month",
     "area_m2": 64474,
     "management_plan_stage": null,
-    "representative_point": null,
+    "representative_point": {
+      "type": "Point",
+      "coordinates": [
+        126.872006,
+        37.540917
+      ]
+    },
     "source_as_of": "2026-03-31",
     "sources": [
       "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
-    ]
+    ],
+    "representative_point_evidence": {
+      "kind": "official_project_geometry_reference_point",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+      "source_as_of": "2026-09-10",
+      "source_crs": "EPSG:5174",
+      "source_feature_id": "11000UQ120PS202503070031",
+      "source_label": "목2동 231-27",
+      "match_method": "exact_district_and_site_label"
+    }
   },
   {
     "id": "mt-202603-public-070",
@@ -1177,11 +2123,26 @@
     "selected_date_precision": "month",
     "area_m2": 24064,
     "management_plan_stage": null,
-    "representative_point": null,
+    "representative_point": {
+      "type": "Point",
+      "coordinates": [
+        126.894736,
+        37.500926
+      ]
+    },
     "source_as_of": "2026-03-31",
     "sources": [
       "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
-    ]
+    ],
+    "representative_point_evidence": {
+      "kind": "official_project_geometry_reference_point",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+      "source_as_of": "2026-09-10",
+      "source_crs": "EPSG:5174",
+      "source_feature_id": "11000UQ120PS202503070013",
+      "source_label": "대림3동 786번지 일대",
+      "match_method": "exact_district_and_site_label"
+    }
   },
   {
     "id": "mt-202603-public-071",
@@ -1193,11 +2154,26 @@
     "selected_date_precision": "month",
     "area_m2": 53915,
     "management_plan_stage": null,
-    "representative_point": null,
+    "representative_point": {
+      "type": "Point",
+      "coordinates": [
+        126.930405,
+        37.624226
+      ]
+    },
     "source_as_of": "2026-03-31",
     "sources": [
       "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
-    ]
+    ],
+    "representative_point_evidence": {
+      "kind": "official_project_geometry_reference_point",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+      "source_as_of": "2026-09-10",
+      "source_crs": "EPSG:5174",
+      "source_feature_id": "11380UQ120PS202605070001",
+      "source_label": "불광동 170번지 일대",
+      "match_method": "exact_district_and_site_label"
+    }
   },
   {
     "id": "mt-202603-public-072",
@@ -1209,11 +2185,26 @@
     "selected_date_precision": "month",
     "area_m2": 42685,
     "management_plan_stage": null,
-    "representative_point": null,
+    "representative_point": {
+      "type": "Point",
+      "coordinates": [
+        126.922865,
+        37.612979
+      ]
+    },
     "source_as_of": "2026-03-31",
     "sources": [
       "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
-    ]
+    ],
+    "representative_point_evidence": {
+      "kind": "official_project_geometry_reference_point",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+      "source_as_of": "2026-09-10",
+      "source_crs": "EPSG:5174",
+      "source_feature_id": "11000UQ120PS202503070014",
+      "source_label": "대조동 89번지 일대",
+      "match_method": "exact_district_and_site_label"
+    }
   },
   {
     "id": "mt-202603-public-073",
@@ -1225,11 +2216,26 @@
     "selected_date_precision": "month",
     "area_m2": 92871,
     "management_plan_stage": null,
-    "representative_point": null,
+    "representative_point": {
+      "type": "Point",
+      "coordinates": [
+        126.940762,
+        37.480076
+      ]
+    },
     "source_as_of": "2026-03-31",
     "sources": [
       "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
-    ]
+    ],
+    "representative_point_evidence": {
+      "kind": "official_project_geometry_reference_point",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+      "source_as_of": "2026-09-10",
+      "source_crs": "EPSG:5174",
+      "source_feature_id": "11620UQ120PS202603110001",
+      "source_label": "청룡동 1535",
+      "match_method": "exact_district_and_site_label"
+    }
   },
   {
     "id": "mt-202603-public-074",
@@ -1241,11 +2247,26 @@
     "selected_date_precision": "month",
     "area_m2": 70948,
     "management_plan_stage": null,
-    "representative_point": null,
+    "representative_point": {
+      "type": "Point",
+      "coordinates": [
+        126.953639,
+        37.488272
+      ]
+    },
     "source_as_of": "2026-03-31",
     "sources": [
       "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
-    ]
+    ],
+    "representative_point_evidence": {
+      "kind": "official_project_geometry_reference_point",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+      "source_as_of": "2026-09-10",
+      "source_crs": "EPSG:5174",
+      "source_feature_id": "11620UQ120PS202605070001",
+      "source_label": "성현동 1021 일대",
+      "match_method": "exact_district_and_site_label"
+    }
   },
   {
     "id": "mt-202603-public-075",
@@ -1257,11 +2278,26 @@
     "selected_date_precision": "month",
     "area_m2": 65070,
     "management_plan_stage": null,
-    "representative_point": null,
+    "representative_point": {
+      "type": "Point",
+      "coordinates": [
+        126.940487,
+        37.489145
+      ]
+    },
     "source_as_of": "2026-03-31",
     "sources": [
       "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
-    ]
+    ],
+    "representative_point_evidence": {
+      "kind": "official_project_geometry_reference_point",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+      "source_as_of": "2026-09-10",
+      "source_crs": "EPSG:5174",
+      "source_feature_id": "11620UQ120PS202604280002",
+      "source_label": "은천동 635-540번지 일대",
+      "match_method": "exact_district_and_site_label"
+    }
   },
   {
     "id": "mt-202603-public-076",
@@ -1273,11 +2309,26 @@
     "selected_date_precision": "month",
     "area_m2": 74515,
     "management_plan_stage": null,
-    "representative_point": null,
+    "representative_point": {
+      "type": "Point",
+      "coordinates": [
+        126.942645,
+        37.488847
+      ]
+    },
     "source_as_of": "2026-03-31",
     "sources": [
       "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
-    ]
+    ],
+    "representative_point_evidence": {
+      "kind": "official_project_geometry_reference_point",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+      "source_as_of": "2026-09-10",
+      "source_crs": "EPSG:5174",
+      "source_feature_id": "11620UQ120PS202604290001",
+      "source_label": "은천동 938-5번지 일대",
+      "match_method": "exact_district_and_site_label"
+    }
   },
   {
     "id": "mt-202603-public-077",
@@ -1289,11 +2340,26 @@
     "selected_date_precision": "month",
     "area_m2": 41935,
     "management_plan_stage": null,
-    "representative_point": null,
+    "representative_point": {
+      "type": "Point",
+      "coordinates": [
+        126.918103,
+        37.46574
+      ]
+    },
     "source_as_of": "2026-03-31",
     "sources": [
       "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
-    ]
+    ],
+    "representative_point_evidence": {
+      "kind": "official_project_geometry_reference_point",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+      "source_as_of": "2026-09-10",
+      "source_crs": "EPSG:5174",
+      "source_feature_id": "11620UQ120PS202602250001",
+      "source_label": "난곡동 697-20 일대",
+      "match_method": "exact_district_and_site_label"
+    }
   },
   {
     "id": "mt-202603-public-078",
@@ -1305,11 +2371,26 @@
     "selected_date_precision": "month",
     "area_m2": 73362,
     "management_plan_stage": null,
-    "representative_point": null,
+    "representative_point": {
+      "type": "Point",
+      "coordinates": [
+        127.07855,
+        37.535516
+      ]
+    },
     "source_as_of": "2026-03-31",
     "sources": [
       "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
-    ]
+    ],
+    "representative_point_evidence": {
+      "kind": "official_project_geometry_reference_point",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+      "source_as_of": "2026-09-10",
+      "source_crs": "EPSG:5174",
+      "source_feature_id": "11000UQ120PS202503070083",
+      "source_label": "자양1동 799",
+      "match_method": "exact_district_and_site_label"
+    }
   },
   {
     "id": "mt-202603-public-079",
@@ -1321,11 +2402,26 @@
     "selected_date_precision": "month",
     "area_m2": 88762,
     "management_plan_stage": null,
-    "representative_point": null,
+    "representative_point": {
+      "type": "Point",
+      "coordinates": [
+        127.080656,
+        37.529848
+      ]
+    },
     "source_as_of": "2026-03-31",
     "sources": [
       "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
-    ]
+    ],
+    "representative_point_evidence": {
+      "kind": "official_project_geometry_reference_point",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+      "source_as_of": "2026-09-10",
+      "source_crs": "EPSG:5174",
+      "source_feature_id": "11215UQ120PS202605070001",
+      "source_label": "자양2동 649번지 일대",
+      "match_method": "exact_district_and_site_label"
+    }
   },
   {
     "id": "mt-202603-public-080",
@@ -1337,11 +2433,26 @@
     "selected_date_precision": "month",
     "area_m2": 7190,
     "management_plan_stage": null,
-    "representative_point": null,
+    "representative_point": {
+      "type": "Point",
+      "coordinates": [
+        126.991907,
+        37.482179
+      ]
+    },
     "source_as_of": "2026-03-31",
     "sources": [
       "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
-    ]
+    ],
+    "representative_point_evidence": {
+      "kind": "official_project_geometry_reference_point",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+      "source_as_of": "2026-09-10",
+      "source_crs": "EPSG:5174",
+      "source_feature_id": "11000UQ120PS202503070035",
+      "source_label": "방배동 977번지 일대",
+      "match_method": "exact_district_and_site_label"
+    }
   },
   {
     "id": "mt-202603-public-081",
@@ -1353,11 +2464,26 @@
     "selected_date_precision": "month",
     "area_m2": 61289,
     "management_plan_stage": null,
-    "representative_point": null,
+    "representative_point": {
+      "type": "Point",
+      "coordinates": [
+        127.044764,
+        37.470697
+      ]
+    },
     "source_as_of": "2026-03-31",
     "sources": [
       "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
-    ]
+    ],
+    "representative_point_evidence": {
+      "kind": "official_project_geometry_reference_point",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+      "source_as_of": "2026-09-10",
+      "source_crs": "EPSG:5174",
+      "source_feature_id": "11000UQ120PS202503070074",
+      "source_label": "양재동 374",
+      "match_method": "unique_same_district_and_lot_with_normalized_dong_or_label"
+    }
   },
   {
     "id": "mt-202603-public-082",
@@ -1369,11 +2495,26 @@
     "selected_date_precision": "month",
     "area_m2": 68804,
     "management_plan_stage": null,
-    "representative_point": null,
+    "representative_point": {
+      "type": "Point",
+      "coordinates": [
+        127.046496,
+        37.469398
+      ]
+    },
     "source_as_of": "2026-03-31",
     "sources": [
       "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
-    ]
+    ],
+    "representative_point_evidence": {
+      "kind": "official_project_geometry_reference_point",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+      "source_as_of": "2026-09-10",
+      "source_crs": "EPSG:5174",
+      "source_feature_id": "11000UQ120PS202503070075",
+      "source_label": "양재동 382",
+      "match_method": "unique_same_district_and_lot_with_normalized_dong_or_label"
+    }
   },
   {
     "id": "mt-202603-public-083",
@@ -1385,11 +2526,26 @@
     "selected_date_precision": "month",
     "area_m2": 18654,
     "management_plan_stage": null,
-    "representative_point": null,
+    "representative_point": {
+      "type": "Point",
+      "coordinates": [
+        126.960214,
+        37.569211
+      ]
+    },
     "source_as_of": "2026-03-31",
     "sources": [
       "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
-    ]
+    ],
+    "representative_point_evidence": {
+      "kind": "official_project_geometry_reference_point",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+      "source_as_of": "2026-09-10",
+      "source_crs": "EPSG:5174",
+      "source_feature_id": "11410UQ120PS202603190001",
+      "source_label": "천연동 89-16번지 일대",
+      "match_method": "exact_district_and_site_label"
+    }
   },
   {
     "id": "mt-202603-public-084",
@@ -1401,11 +2557,26 @@
     "selected_date_precision": "month",
     "area_m2": 34343,
     "management_plan_stage": null,
-    "representative_point": null,
+    "representative_point": {
+      "type": "Point",
+      "coordinates": [
+        126.94333,
+        37.583076
+      ]
+    },
     "source_as_of": "2026-03-31",
     "sources": [
       "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
-    ]
+    ],
+    "representative_point_evidence": {
+      "kind": "official_project_geometry_reference_point",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+      "source_as_of": "2026-09-10",
+      "source_crs": "EPSG:5174",
+      "source_feature_id": "11410UQ120PS202605060001",
+      "source_label": "홍제동 322번지 일대",
+      "match_method": "exact_district_and_site_label"
+    }
   },
   {
     "id": "mt-202603-public-085",
@@ -1417,11 +2588,26 @@
     "selected_date_precision": "month",
     "area_m2": 26192,
     "management_plan_stage": null,
-    "representative_point": null,
+    "representative_point": {
+      "type": "Point",
+      "coordinates": [
+        126.952596,
+        37.534179
+      ]
+    },
     "source_as_of": "2026-03-31",
     "sources": [
       "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
-    ]
+    ],
+    "representative_point_evidence": {
+      "kind": "official_project_geometry_reference_point",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+      "source_as_of": "2026-09-10",
+      "source_crs": "EPSG:5174",
+      "source_feature_id": "11170UQ120PS202605070001",
+      "source_label": "원효로4가 71번지 일대",
+      "match_method": "exact_district_and_site_label"
+    }
   },
   {
     "id": "mt-202603-public-086",
@@ -1433,11 +2619,26 @@
     "selected_date_precision": "month",
     "area_m2": 64231,
     "management_plan_stage": null,
-    "representative_point": null,
+    "representative_point": {
+      "type": "Point",
+      "coordinates": [
+        126.957064,
+        37.606841
+      ]
+    },
     "source_as_of": "2026-03-31",
     "sources": [
       "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
-    ]
+    ],
+    "representative_point_evidence": {
+      "kind": "official_project_geometry_reference_point",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+      "source_as_of": "2026-09-10",
+      "source_crs": "EPSG:5174",
+      "source_feature_id": "11110UQ120PS202605040001",
+      "source_label": "구기동 100-48번지 일대",
+      "match_method": "exact_district_and_site_label"
+    }
   },
   {
     "id": "mt-202603-public-087",
@@ -1465,11 +2666,26 @@
     "selected_date_precision": "month",
     "area_m2": 55045,
     "management_plan_stage": null,
-    "representative_point": null,
+    "representative_point": {
+      "type": "Point",
+      "coordinates": [
+        127.053779,
+        37.568285
+      ]
+    },
     "source_as_of": "2026-03-31",
     "sources": [
       "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
-    ]
+    ],
+    "representative_point_evidence": {
+      "kind": "official_project_geometry_reference_point",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+      "source_as_of": "2026-09-10",
+      "source_crs": "EPSG:5174",
+      "source_feature_id": "11230UQ120PS202607010001",
+      "source_label": "답십리동 489",
+      "match_method": "exact_district_and_site_label"
+    }
   },
   {
     "id": "mt-202603-resident-001",
@@ -1481,11 +2697,26 @@
     "selected_date_precision": "month",
     "area_m2": 17334,
     "management_plan_stage": null,
-    "representative_point": null,
+    "representative_point": {
+      "type": "Point",
+      "coordinates": [
+        127.016483,
+        37.576031
+      ]
+    },
     "source_as_of": "2026-03-31",
     "sources": [
       "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
-    ]
+    ],
+    "representative_point_evidence": {
+      "kind": "official_project_geometry_reference_point",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+      "source_as_of": "2026-09-10",
+      "source_crs": "EPSG:5174",
+      "source_feature_id": "11110UQ120PS202605070001",
+      "source_label": "숭인동 61번지 일대",
+      "match_method": "exact_district_and_site_label"
+    }
   },
   {
     "id": "mt-202603-resident-002",
@@ -1497,11 +2728,26 @@
     "selected_date_precision": "month",
     "area_m2": 11490,
     "management_plan_stage": null,
-    "representative_point": null,
+    "representative_point": {
+      "type": "Point",
+      "coordinates": [
+        126.968903,
+        37.550932
+      ]
+    },
     "source_as_of": "2026-03-31",
     "sources": [
       "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
-    ]
+    ],
+    "representative_point_evidence": {
+      "kind": "official_project_geometry_reference_point",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+      "source_as_of": "2026-09-10",
+      "source_crs": "EPSG:5174",
+      "source_feature_id": "11000UQ120PS202503070048",
+      "source_label": "서계동 116",
+      "match_method": "exact_district_and_site_label"
+    }
   },
   {
     "id": "mt-202603-resident-003",
@@ -1513,11 +2759,26 @@
     "selected_date_precision": "month",
     "area_m2": 15724,
     "management_plan_stage": null,
-    "representative_point": null,
+    "representative_point": {
+      "type": "Point",
+      "coordinates": [
+        127.024223,
+        37.556778
+      ]
+    },
     "source_as_of": "2026-03-31",
     "sources": [
       "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
-    ]
+    ],
+    "representative_point_evidence": {
+      "kind": "official_project_geometry_reference_point",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+      "source_as_of": "2026-09-10",
+      "source_crs": "EPSG:5174",
+      "source_feature_id": "11000UQ120PS202503070009",
+      "source_label": "금호동1가 129",
+      "match_method": "exact_district_and_site_label"
+    }
   },
   {
     "id": "mt-202603-resident-005",
@@ -1529,11 +2790,26 @@
     "selected_date_precision": "month",
     "area_m2": 42315,
     "management_plan_stage": null,
-    "representative_point": null,
+    "representative_point": {
+      "type": "Point",
+      "coordinates": [
+        127.079784,
+        37.538373
+      ]
+    },
     "source_as_of": "2026-03-31",
     "sources": [
       "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
-    ]
+    ],
+    "representative_point_evidence": {
+      "kind": "official_project_geometry_reference_point",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+      "source_as_of": "2026-09-10",
+      "source_crs": "EPSG:5174",
+      "source_feature_id": "11215UQ120PS202608030001",
+      "source_label": "자양1동 772-1번지 일대",
+      "match_method": "exact_district_and_site_label"
+    }
   },
   {
     "id": "mt-202603-resident-006",
@@ -1545,11 +2821,26 @@
     "selected_date_precision": "month",
     "area_m2": 19836,
     "management_plan_stage": null,
-    "representative_point": null,
+    "representative_point": {
+      "type": "Point",
+      "coordinates": [
+        127.077098,
+        37.538824
+      ]
+    },
     "source_as_of": "2026-03-31",
     "sources": [
       "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
-    ]
+    ],
+    "representative_point_evidence": {
+      "kind": "official_project_geometry_reference_point",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+      "source_as_of": "2026-09-10",
+      "source_crs": "EPSG:5174",
+      "source_feature_id": "11215UQ120PS202608030002",
+      "source_label": "자양1동 226-1번지 일대",
+      "match_method": "exact_district_and_site_label"
+    }
   },
   {
     "id": "mt-202603-resident-007",
@@ -1593,11 +2884,26 @@
     "selected_date_precision": "month",
     "area_m2": 33876,
     "management_plan_stage": null,
-    "representative_point": null,
+    "representative_point": {
+      "type": "Point",
+      "coordinates": [
+        127.098431,
+        37.601054
+      ]
+    },
     "source_as_of": "2026-03-31",
     "sources": [
       "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
-    ]
+    ],
+    "representative_point_evidence": {
+      "kind": "official_project_geometry_reference_point",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+      "source_as_of": "2026-09-10",
+      "source_crs": "EPSG:5174",
+      "source_feature_id": "11260UQ120PS202605080001",
+      "source_label": "신내1동 493-13번지 일대",
+      "match_method": "unique_same_district_and_lot_with_normalized_dong_or_label"
+    }
   },
   {
     "id": "mt-202603-resident-010",
@@ -1625,11 +2931,26 @@
     "selected_date_precision": "month",
     "area_m2": 11755,
     "management_plan_stage": null,
-    "representative_point": null,
+    "representative_point": {
+      "type": "Point",
+      "coordinates": [
+        127.027303,
+        37.599021
+      ]
+    },
     "source_as_of": "2026-03-31",
     "sources": [
       "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
-    ]
+    ],
+    "representative_point_evidence": {
+      "kind": "official_project_geometry_reference_point",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+      "source_as_of": "2026-09-10",
+      "source_crs": "EPSG:5174",
+      "source_feature_id": "11000UQ120PS202503070090",
+      "source_label": "종암동 125-1",
+      "match_method": "exact_district_and_site_label"
+    }
   },
   {
     "id": "mt-202603-resident-012",
@@ -1641,11 +2962,26 @@
     "selected_date_precision": "month",
     "area_m2": 13825,
     "management_plan_stage": null,
-    "representative_point": null,
+    "representative_point": {
+      "type": "Point",
+      "coordinates": [
+        127.010493,
+        37.599282
+      ]
+    },
     "source_as_of": "2026-03-31",
     "sources": [
       "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
-    ]
+    ],
+    "representative_point_evidence": {
+      "kind": "official_project_geometry_reference_point",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+      "source_as_of": "2026-09-10",
+      "source_crs": "EPSG:5174",
+      "source_feature_id": "11290UQ120PS202605070001",
+      "source_label": "정릉동 559-43번지 일대",
+      "match_method": "exact_district_and_site_label"
+    }
   },
   {
     "id": "mt-202603-resident-013",
@@ -1657,7 +2993,13 @@
     "selected_date_precision": "month",
     "area_m2": 27024,
     "management_plan_stage": null,
-    "representative_point": null,
+    "representative_point": {
+      "type": "Point",
+      "coordinates": [
+        127.012911,
+        37.610287
+      ]
+    },
     "source_as_of": "2026-03-31",
     "sources": [
       "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status",
@@ -1665,7 +3007,16 @@
     ],
     "quality_flags": [
       "baseline_district_corrected_by_specific_official_notice"
-    ]
+    ],
+    "representative_point_evidence": {
+      "kind": "official_project_geometry_reference_point",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+      "source_as_of": "2026-09-10",
+      "source_crs": "EPSG:5174",
+      "source_feature_id": "11290UQ120PS202607150003",
+      "source_label": "정릉동 226-1",
+      "match_method": "exact_district_and_site_label"
+    }
   },
   {
     "id": "mt-202603-resident-014",
@@ -1709,11 +3060,26 @@
     "selected_date_precision": "month",
     "area_m2": 15143,
     "management_plan_stage": null,
-    "representative_point": null,
+    "representative_point": {
+      "type": "Point",
+      "coordinates": [
+        126.953751,
+        37.57694
+      ]
+    },
     "source_as_of": "2026-03-31",
     "sources": [
       "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
-    ]
+    ],
+    "representative_point_evidence": {
+      "kind": "official_project_geometry_reference_point",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+      "source_as_of": "2026-09-10",
+      "source_crs": "EPSG:5174",
+      "source_feature_id": "11000UQ120PS202503070102",
+      "source_label": "현저동 1-5번지 일대",
+      "match_method": "exact_district_and_site_label"
+    }
   },
   {
     "id": "mt-202603-resident-017",
@@ -1725,11 +3091,26 @@
     "selected_date_precision": "month",
     "area_m2": 17668,
     "management_plan_stage": null,
-    "representative_point": null,
+    "representative_point": {
+      "type": "Point",
+      "coordinates": [
+        126.94852,
+        37.602237
+      ]
+    },
     "source_as_of": "2026-03-31",
     "sources": [
       "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
-    ]
+    ],
+    "representative_point_evidence": {
+      "kind": "official_project_geometry_reference_point",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+      "source_as_of": "2026-09-10",
+      "source_crs": "EPSG:5174",
+      "source_feature_id": "11410UQ120PS202605070001",
+      "source_label": "홍은동 10-18번지 일대",
+      "match_method": "exact_district_and_site_label"
+    }
   },
   {
     "id": "mt-202603-resident-018",
@@ -1741,11 +3122,26 @@
     "selected_date_precision": "month",
     "area_m2": 11665,
     "management_plan_stage": null,
-    "representative_point": null,
+    "representative_point": {
+      "type": "Point",
+      "coordinates": [
+        126.946796,
+        37.599653
+      ]
+    },
     "source_as_of": "2026-03-31",
     "sources": [
       "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
-    ]
+    ],
+    "representative_point_evidence": {
+      "kind": "official_project_geometry_reference_point",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+      "source_as_of": "2026-09-10",
+      "source_crs": "EPSG:5174",
+      "source_feature_id": "11000UQ120PS202505310766",
+      "source_label": "홍은동 11-360",
+      "match_method": "exact_district_and_site_label"
+    }
   },
   {
     "id": "mt-202603-resident-019",
@@ -1833,11 +3229,26 @@
     "selected_date_precision": "month",
     "area_m2": 22516,
     "management_plan_stage": null,
-    "representative_point": null,
+    "representative_point": {
+      "type": "Point",
+      "coordinates": [
+        126.863594,
+        37.545697
+      ]
+    },
     "source_as_of": "2026-03-31",
     "sources": [
       "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
-    ]
+    ],
+    "representative_point_evidence": {
+      "kind": "official_project_geometry_reference_point",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+      "source_as_of": "2026-09-10",
+      "source_crs": "EPSG:5174",
+      "source_feature_id": "11000UQ120PS202503070033",
+      "source_label": "목동 644-1번지 일대 모아타운 관리계획",
+      "match_method": "unique_same_district_and_lot_with_normalized_dong_or_label"
+    }
   },
   {
     "id": "mt-202603-resident-023",
@@ -1849,11 +3260,26 @@
     "selected_date_precision": "month",
     "area_m2": 24030,
     "management_plan_stage": null,
-    "representative_point": null,
+    "representative_point": {
+      "type": "Point",
+      "coordinates": [
+        126.906355,
+        37.435057
+      ]
+    },
     "source_as_of": "2026-03-31",
     "sources": [
       "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
-    ]
+    ],
+    "representative_point_evidence": {
+      "kind": "official_project_geometry_reference_point",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+      "source_as_of": "2026-09-10",
+      "source_crs": "EPSG:5174",
+      "source_feature_id": "11000UQ120PS202505310765",
+      "source_label": "시흥3동 972",
+      "match_method": "exact_district_and_site_label"
+    }
   },
   {
     "id": "mt-202603-resident-024",
@@ -1881,11 +3307,26 @@
     "selected_date_precision": "month",
     "area_m2": 16137,
     "management_plan_stage": null,
-    "representative_point": null,
+    "representative_point": {
+      "type": "Point",
+      "coordinates": [
+        126.921187,
+        37.46778
+      ]
+    },
     "source_as_of": "2026-03-31",
     "sources": [
       "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
-    ]
+    ],
+    "representative_point_evidence": {
+      "kind": "official_project_geometry_reference_point",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+      "source_as_of": "2026-09-10",
+      "source_crs": "EPSG:5174",
+      "source_feature_id": "11000UQ120PS202503070068",
+      "source_label": "신림동 655-78번지 일대",
+      "match_method": "exact_district_and_site_label"
+    }
   },
   {
     "id": "mt-202603-resident-026",
@@ -1897,11 +3338,26 @@
     "selected_date_precision": "month",
     "area_m2": 40708,
     "management_plan_stage": null,
-    "representative_point": null,
+    "representative_point": {
+      "type": "Point",
+      "coordinates": [
+        127.02573,
+        37.469202
+      ]
+    },
     "source_as_of": "2026-03-31",
     "sources": [
       "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
-    ]
+    ],
+    "representative_point_evidence": {
+      "kind": "official_project_geometry_reference_point",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+      "source_as_of": "2026-09-10",
+      "source_crs": "EPSG:5174",
+      "source_feature_id": "11000UQ120PS202503070076",
+      "source_label": "우면동 2",
+      "match_method": "exact_district_and_site_label"
+    }
   },
   {
     "id": "mt-202603-resident-027",
@@ -1913,11 +3369,26 @@
     "selected_date_precision": "month",
     "area_m2": 20492,
     "management_plan_stage": null,
-    "representative_point": null,
+    "representative_point": {
+      "type": "Point",
+      "coordinates": [
+        127.121547,
+        37.543268
+      ]
+    },
     "source_as_of": "2026-03-31",
     "sources": [
       "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
-    ]
+    ],
+    "representative_point_evidence": {
+      "kind": "official_project_geometry_reference_point",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+      "source_as_of": "2026-09-10",
+      "source_crs": "EPSG:5174",
+      "source_feature_id": "11000UQ120PS202503070098",
+      "source_label": "천호동 338번지 일대",
+      "match_method": "exact_district_and_site_label"
+    }
   },
   {
     "id": "mt-202603-resident-028",

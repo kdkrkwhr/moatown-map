@@ -13,19 +13,25 @@
     "baseline_rows_removed_by_confirmed_cancellation": 1,
     "zone_records": 1,
     "boundary_features": 0,
-    "representative_points": 6,
+    "representative_points": 104,
     "limitations": [
       "2026-03-31 명부와 확인된 취소 자료에 근거한 초기 자료이며, 현재 전체 명부가 아닙니다.",
       "확인된 후속 공식 선정 일부를 추가했습니다. 최신 전체 선정·정정, 전체 사업구역 상세와 경계는 전수 확인하지 못했습니다.",
-      "대표 지번 좌표는 마포구 공개 지적도에서 정확히 대조한 6건만 있으며, 사업구역 경계는 포함하지 않습니다."
+      "대표 위치 79건은 출처 유형을 구분한 지도 표시용 점입니다. 59건은 위치 미확인으로 남아 있으며, 법정 사업구역 경계는 포함하지 않습니다.",
+      "대표 위치 104건은 출처 유형을 구분한 지도 표시용 점입니다. 34건은 위치 미확인으로 남아 있으며, 법정 사업구역 경계는 포함하지 않습니다."
     ],
-    "representative_points_unmatched_or_unchecked": 132
+    "representative_points_unmatched_or_unchecked": 34,
+    "representative_points_by_kind": {
+      "official_project_geometry_reference_point": 98,
+      "representative_parcel_interior": 6
+    }
   },
   "source_urls": {
     "official_baseline": "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status",
     "official_cancellation_list": "https://cleanup.seoul.go.kr/cleanup/view/moaTown.do",
     "official_cancellation_notice_index": "https://cleanup.seoul.go.kr/cleanup/bbs/vscr.do?bbs.bbsSn=3023&bbsClCode=1000&nttSn=176688",
-    "representative_parcel_points_mapo": "https://www.data.go.kr/data/15162460/fileData.do"
+    "representative_parcel_points_mapo": "https://www.data.go.kr/data/15162460/fileData.do",
+    "official_project_reference_points": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do"
   },
   "files": {
     "towns": "snapshots/2026-11-24/towns.json",
