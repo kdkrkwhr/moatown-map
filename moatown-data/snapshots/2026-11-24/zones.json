@@ -3,7 +3,7 @@
     "id": "mz-info-305900000750u59",
     "town_id": "mt-202603-public-034",
     "name": "번동1구역",
-    "stage": null,
+    "stage": "착공",
     "project_type": "가로주택정비",
     "project_area_m2": 4517.7,
     "planned_units_total": 146,
@@ -46,6 +46,11 @@
         "source_url": "https://www.kolon.com/kr/media/newsDtl?detailsKey=8301",
         "source_as_of": null,
         "checked_on": "2026-11-24"
+      },
+      "stage": {
+        "state": "public_register_displayed_stage",
+        "source_url": "https://cleanup.seoul.go.kr/cleanup/bsnssttus/lscrMainIndx.do?cpage=1&pageSize=2000",
+        "checked_on": "2026-11-24"
       }
     },
     "limitations": [
@@ -57,7 +62,1075 @@
     "sources": {
       "projectOverview": "https://cleanup.seoul.go.kr/cafe/mastr-cleanup-bsnsSumry/execute.do?cafeId=305900000750u59&div=sumry&stepSeCode=103",
       "recentDisclosure": "https://cleanup.seoul.go.kr/assc/scrin-bbs/execute.do?cafeId=305900000750u59",
-      "contractor": "https://www.kolon.com/kr/media/newsDtl?detailsKey=8301"
+      "contractor": "https://www.kolon.com/kr/media/newsDtl?detailsKey=8301",
+      "project_overview": "https://cleanup.seoul.go.kr/cafe/mastr-cleanup-bsnsSumry/execute.do?cafeId=305900000750u59&div=sumry&stepSeCode=103"
+    },
+    "boundary_evidence": {
+      "status": "reference_only",
+      "source_feature_id": "11000UQ120PS202505310170",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+      "source_as_of": "2026-09-10",
+      "match_method": "official_publication_and_spatial_containment",
+      "parent_overlap_ratio": 0.999663,
+      "association_sources": [
+        "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+        "https://housing.seoul.go.kr/site/main/content/sh_080003",
+        "https://news.seoul.go.kr/citybuild/archives/539017",
+        "https://mediahub.seoul.go.kr/archives/2012977",
+        "https://www.kolon.com/kr/media/newsDtl?detailsKey=8301",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=424502&tr_code=snews",
+        "https://cleanup.seoul.go.kr/cleanup/bsnssttus/lscrMainIndx.do?cpage=1&pageSize=2000",
+        "https://cleanup.seoul.go.kr/cafe/mastr-cleanup-bsnsSumry/execute.do?cafeId=305900000750u59&div=sumry&stepSeCode=103"
+      ]
+    }
+  },
+  {
+    "id": "mz-seoul-11000uq120ps202503310030",
+    "town_id": "mt-202603-public-001",
+    "name": "A1-2구역",
+    "stage": "조합설립 진행 중",
+    "project_type": "가로주택정비",
+    "project_area_m2": null,
+    "planned_units_total": null,
+    "max_floors_above_ground": null,
+    "floors_below_ground": null,
+    "unit_types": null,
+    "selected_contractor": null,
+    "field_evidence": {
+      "stage": {
+        "state": "published_status_at_source_date",
+        "source_url": "https://www.gangseo.seoul.kr/build/bui070102/322507?srchCtgry=2",
+        "source_as_of": "2026-07-01"
+      }
+    },
+    "sources": {},
+    "boundary_evidence": {
+      "status": "reference_only",
+      "source_feature_id": "11000UQ120PS202503310030",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+      "source_as_of": "2026-09-10",
+      "match_method": "official_publication_and_spatial_containment",
+      "parent_overlap_ratio": 1.0,
+      "association_sources": [
+        "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+        "https://www.gangseo.seoul.kr/build/bui070102/322507?srchCtgry=2"
+      ]
+    }
+  },
+  {
+    "id": "mz-seoul-11000uq120ps202503310031",
+    "town_id": "mt-202603-public-001",
+    "name": "A1-3구역",
+    "stage": "조합설립 진행 중",
+    "project_type": "가로주택정비",
+    "project_area_m2": null,
+    "planned_units_total": null,
+    "max_floors_above_ground": null,
+    "floors_below_ground": null,
+    "unit_types": null,
+    "selected_contractor": null,
+    "field_evidence": {
+      "stage": {
+        "state": "published_status_at_source_date",
+        "source_url": "https://www.gangseo.seoul.kr/build/bui070102/322507?srchCtgry=2",
+        "source_as_of": "2026-07-01"
+      }
+    },
+    "sources": {},
+    "boundary_evidence": {
+      "status": "reference_only",
+      "source_feature_id": "11000UQ120PS202503310031",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+      "source_as_of": "2026-09-10",
+      "match_method": "official_publication_and_spatial_containment",
+      "parent_overlap_ratio": 0.999947,
+      "association_sources": [
+        "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+        "https://www.gangseo.seoul.kr/build/bui070102/322507?srchCtgry=2"
+      ]
+    }
+  },
+  {
+    "id": "mz-seoul-11000uq120ps202503310029",
+    "town_id": "mt-202603-public-001",
+    "name": "A1-1구역",
+    "stage": "조합설립 진행 중",
+    "project_type": "가로주택정비",
+    "project_area_m2": null,
+    "planned_units_total": null,
+    "max_floors_above_ground": null,
+    "floors_below_ground": null,
+    "unit_types": null,
+    "selected_contractor": null,
+    "field_evidence": {
+      "stage": {
+        "state": "published_status_at_source_date",
+        "source_url": "https://www.gangseo.seoul.kr/build/bui070102/322507?srchCtgry=2",
+        "source_as_of": "2026-07-01"
+      }
+    },
+    "sources": {},
+    "boundary_evidence": {
+      "status": "reference_only",
+      "source_feature_id": "11000UQ120PS202503310029",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+      "source_as_of": "2026-09-10",
+      "match_method": "official_publication_and_spatial_containment",
+      "parent_overlap_ratio": 0.999875,
+      "association_sources": [
+        "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+        "https://www.gangseo.seoul.kr/build/bui070102/322507?srchCtgry=2"
+      ]
+    }
+  },
+  {
+    "id": "mz-seoul-11500uq120ps202603130001",
+    "town_id": "mt-202603-public-002",
+    "name": "A2-1구역",
+    "stage": "사업시행계획인가 진행 중",
+    "project_type": "가로주택정비",
+    "project_area_m2": null,
+    "planned_units_total": null,
+    "max_floors_above_ground": null,
+    "floors_below_ground": null,
+    "unit_types": null,
+    "selected_contractor": null,
+    "field_evidence": {
+      "stage": {
+        "state": "published_status_at_source_date",
+        "source_url": "https://www.gangseo.seoul.kr/build/bui070102/322507?srchCtgry=2",
+        "source_as_of": "2026-07-01"
+      }
+    },
+    "sources": {},
+    "boundary_evidence": {
+      "status": "reference_only",
+      "source_feature_id": "11500UQ120PS202603130001",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+      "source_as_of": "2026-09-10",
+      "match_method": "official_publication_and_spatial_containment",
+      "parent_overlap_ratio": 1.0,
+      "association_sources": [
+        "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+        "https://www.gangseo.seoul.kr/build/bui070102/322507?srchCtgry=2"
+      ]
+    }
+  },
+  {
+    "id": "mz-seoul-11500uq120ps202603130002",
+    "town_id": "mt-202603-public-002",
+    "name": "A2-2구역",
+    "stage": "조합설립 진행 중",
+    "project_type": "가로주택정비",
+    "project_area_m2": null,
+    "planned_units_total": null,
+    "max_floors_above_ground": null,
+    "floors_below_ground": null,
+    "unit_types": null,
+    "selected_contractor": null,
+    "field_evidence": {
+      "stage": {
+        "state": "published_status_at_source_date",
+        "source_url": "https://www.gangseo.seoul.kr/build/bui070102/322507?srchCtgry=2",
+        "source_as_of": "2026-07-01"
+      }
+    },
+    "sources": {},
+    "boundary_evidence": {
+      "status": "reference_only",
+      "source_feature_id": "11500UQ120PS202603130002",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+      "source_as_of": "2026-09-10",
+      "match_method": "official_publication_and_spatial_containment",
+      "parent_overlap_ratio": 1.0,
+      "association_sources": [
+        "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+        "https://www.gangseo.seoul.kr/build/bui070102/322507?srchCtgry=2"
+      ]
+    }
+  },
+  {
+    "id": "mz-seoul-11500uq120ps202603130003",
+    "town_id": "mt-202603-public-002",
+    "name": "A2-3구역",
+    "stage": "사업시행계획인가 진행 중",
+    "project_type": "가로주택정비",
+    "project_area_m2": null,
+    "planned_units_total": null,
+    "max_floors_above_ground": null,
+    "floors_below_ground": null,
+    "unit_types": null,
+    "selected_contractor": null,
+    "field_evidence": {
+      "stage": {
+        "state": "published_status_at_source_date",
+        "source_url": "https://www.gangseo.seoul.kr/build/bui070102/322507?srchCtgry=2",
+        "source_as_of": "2026-07-01"
+      }
+    },
+    "sources": {},
+    "boundary_evidence": {
+      "status": "reference_only",
+      "source_feature_id": "11500UQ120PS202603130003",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+      "source_as_of": "2026-09-10",
+      "match_method": "official_publication_and_spatial_containment",
+      "parent_overlap_ratio": 0.999809,
+      "association_sources": [
+        "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+        "https://www.gangseo.seoul.kr/build/bui070102/322507?srchCtgry=2"
+      ]
+    }
+  },
+  {
+    "id": "mz-seoul-11000uq120ps202503310014",
+    "town_id": "mt-202603-public-005",
+    "name": "제1-3구역",
+    "stage": "사업시행계획인가 진행 중",
+    "project_type": "가로주택정비",
+    "project_area_m2": null,
+    "planned_units_total": null,
+    "max_floors_above_ground": null,
+    "floors_below_ground": null,
+    "unit_types": null,
+    "selected_contractor": null,
+    "field_evidence": {
+      "stage": {
+        "state": "published_status_at_source_date",
+        "source_url": "https://www.gangseo.seoul.kr/build/bui070102/322507?srchCtgry=2",
+        "source_as_of": "2026-07-01"
+      }
+    },
+    "sources": {},
+    "boundary_evidence": {
+      "status": "reference_only",
+      "source_feature_id": "11000UQ120PS202503310014",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+      "source_as_of": "2026-09-10",
+      "match_method": "official_publication_and_spatial_containment",
+      "parent_overlap_ratio": 0.999954,
+      "association_sources": [
+        "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+        "https://www.gangseo.seoul.kr/build/bui070102/322507?srchCtgry=2"
+      ]
+    }
+  },
+  {
+    "id": "mz-seoul-11000uq120ps202503310013",
+    "town_id": "mt-202603-public-005",
+    "name": "제1-2구역",
+    "stage": "조합설립 진행 중",
+    "project_type": "가로주택정비",
+    "project_area_m2": null,
+    "planned_units_total": null,
+    "max_floors_above_ground": null,
+    "floors_below_ground": null,
+    "unit_types": null,
+    "selected_contractor": null,
+    "field_evidence": {
+      "stage": {
+        "state": "published_status_at_source_date",
+        "source_url": "https://www.gangseo.seoul.kr/build/bui070102/322507?srchCtgry=2",
+        "source_as_of": "2026-07-01"
+      }
+    },
+    "sources": {},
+    "boundary_evidence": {
+      "status": "reference_only",
+      "source_feature_id": "11000UQ120PS202503310013",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+      "source_as_of": "2026-09-10",
+      "match_method": "official_publication_and_spatial_containment",
+      "parent_overlap_ratio": 0.999838,
+      "association_sources": [
+        "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+        "https://www.gangseo.seoul.kr/build/bui070102/322507?srchCtgry=2"
+      ]
+    }
+  },
+  {
+    "id": "mz-seoul-11000uq120ps202503310012",
+    "town_id": "mt-202603-public-005",
+    "name": "제1-1구역",
+    "stage": "사업시행계획인가 진행 중",
+    "project_type": "가로주택정비",
+    "project_area_m2": null,
+    "planned_units_total": null,
+    "max_floors_above_ground": null,
+    "floors_below_ground": null,
+    "unit_types": null,
+    "selected_contractor": null,
+    "field_evidence": {
+      "stage": {
+        "state": "published_status_at_source_date",
+        "source_url": "https://www.gangseo.seoul.kr/build/bui070102/322507?srchCtgry=2",
+        "source_as_of": "2026-07-01"
+      }
+    },
+    "sources": {},
+    "boundary_evidence": {
+      "status": "reference_only",
+      "source_feature_id": "11000UQ120PS202503310012",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+      "source_as_of": "2026-09-10",
+      "match_method": "official_publication_and_spatial_containment",
+      "parent_overlap_ratio": 0.999421,
+      "association_sources": [
+        "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+        "https://www.gangseo.seoul.kr/build/bui070102/322507?srchCtgry=2"
+      ]
+    }
+  },
+  {
+    "id": "mz-seoul-11000uq120ps202411014070",
+    "town_id": "mt-202603-public-006",
+    "name": "A-3구역",
+    "stage": "사업시행계획인가 진행 중",
+    "project_type": "가로주택정비",
+    "project_area_m2": null,
+    "planned_units_total": null,
+    "max_floors_above_ground": null,
+    "floors_below_ground": null,
+    "unit_types": null,
+    "selected_contractor": null,
+    "field_evidence": {
+      "stage": {
+        "state": "published_status_at_source_date",
+        "source_url": "https://www.gangseo.seoul.kr/build/bui070102/322507?srchCtgry=2",
+        "source_as_of": "2026-07-01"
+      }
+    },
+    "sources": {},
+    "boundary_evidence": {
+      "status": "reference_only",
+      "source_feature_id": "11000UQ120PS202411014070",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+      "source_as_of": "2026-09-10",
+      "match_method": "official_publication_and_spatial_containment",
+      "parent_overlap_ratio": 1.0,
+      "association_sources": [
+        "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+        "https://www.gangseo.seoul.kr/build/bui070102/322507?srchCtgry=2"
+      ]
+    }
+  },
+  {
+    "id": "mz-seoul-11000uq120ps202503310025",
+    "town_id": "mt-202603-public-007",
+    "name": "A-3구역",
+    "stage": "조합설립 진행 중",
+    "project_type": "가로주택정비",
+    "project_area_m2": null,
+    "planned_units_total": null,
+    "max_floors_above_ground": null,
+    "floors_below_ground": null,
+    "unit_types": null,
+    "selected_contractor": null,
+    "field_evidence": {
+      "stage": {
+        "state": "published_status_at_source_date",
+        "source_url": "https://www.gangseo.seoul.kr/build/bui070102/322507?srchCtgry=2",
+        "source_as_of": "2026-07-01"
+      }
+    },
+    "sources": {},
+    "boundary_evidence": {
+      "status": "reference_only",
+      "source_feature_id": "11000UQ120PS202503310025",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+      "source_as_of": "2026-09-10",
+      "match_method": "official_publication_and_spatial_containment",
+      "parent_overlap_ratio": 0.999985,
+      "association_sources": [
+        "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+        "https://www.gangseo.seoul.kr/build/bui070102/322507?srchCtgry=2"
+      ]
+    }
+  },
+  {
+    "id": "mz-seoul-11000uq120ps202503310023",
+    "town_id": "mt-202603-public-007",
+    "name": "A-1구역",
+    "stage": "조합설립 진행 중",
+    "project_type": "가로주택정비",
+    "project_area_m2": null,
+    "planned_units_total": null,
+    "max_floors_above_ground": null,
+    "floors_below_ground": null,
+    "unit_types": null,
+    "selected_contractor": null,
+    "field_evidence": {
+      "stage": {
+        "state": "published_status_at_source_date",
+        "source_url": "https://www.gangseo.seoul.kr/build/bui070102/322507?srchCtgry=2",
+        "source_as_of": "2026-07-01"
+      }
+    },
+    "sources": {},
+    "boundary_evidence": {
+      "status": "reference_only",
+      "source_feature_id": "11000UQ120PS202503310023",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+      "source_as_of": "2026-09-10",
+      "match_method": "official_publication_and_spatial_containment",
+      "parent_overlap_ratio": 0.999944,
+      "association_sources": [
+        "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+        "https://www.gangseo.seoul.kr/build/bui070102/322507?srchCtgry=2"
+      ]
+    }
+  },
+  {
+    "id": "mz-seoul-11000uq120ps202503310024",
+    "town_id": "mt-202603-public-007",
+    "name": "A-2구역",
+    "stage": "조합설립 진행 중",
+    "project_type": "가로주택정비",
+    "project_area_m2": null,
+    "planned_units_total": null,
+    "max_floors_above_ground": null,
+    "floors_below_ground": null,
+    "unit_types": null,
+    "selected_contractor": null,
+    "field_evidence": {
+      "stage": {
+        "state": "published_status_at_source_date",
+        "source_url": "https://www.gangseo.seoul.kr/build/bui070102/322507?srchCtgry=2",
+        "source_as_of": "2026-07-01"
+      }
+    },
+    "sources": {},
+    "boundary_evidence": {
+      "status": "reference_only",
+      "source_feature_id": "11000UQ120PS202503310024",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+      "source_as_of": "2026-09-10",
+      "match_method": "official_publication_and_spatial_containment",
+      "parent_overlap_ratio": 0.999883,
+      "association_sources": [
+        "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+        "https://www.gangseo.seoul.kr/build/bui070102/322507?srchCtgry=2"
+      ]
+    }
+  },
+  {
+    "id": "mz-seoul-11000uq120ps202505310161",
+    "town_id": "mt-202603-public-010",
+    "name": "면목역2구역 가로주택정비사업",
+    "stage": null,
+    "project_type": "가로주택정비",
+    "project_area_m2": null,
+    "planned_units_total": 517,
+    "max_floors_above_ground": null,
+    "floors_below_ground": null,
+    "unit_types": null,
+    "selected_contractor": null,
+    "field_evidence": {
+      "plan": {
+        "state": "historical_published_plan_not_latest_project_approval_verified",
+        "source_url": "https://www.seoul.go.kr/news/news_report.do?nttNo=435853",
+        "source_as_of": null,
+        "display_note": "과거 공개 계획이며 최신 인가 수치나 확정 분양 세대수가 아닙니다."
+      }
+    },
+    "sources": {},
+    "boundary_evidence": {
+      "status": "reference_only",
+      "source_feature_id": "11000UQ120PS202505310161",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+      "source_as_of": "2026-09-10",
+      "match_method": "official_publication_and_spatial_containment",
+      "parent_overlap_ratio": 1.0,
+      "association_sources": [
+        "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=415689&tr_code=snews",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=435853",
+        "https://news.seoul.go.kr/citybuild/archives/538651"
+      ]
+    }
+  },
+  {
+    "id": "mz-seoul-11000uq120ps202505310439",
+    "town_id": "mt-202603-public-010",
+    "name": "면목역 4구역 가로주택정비사업",
+    "stage": null,
+    "project_type": "가로주택정비",
+    "project_area_m2": null,
+    "planned_units_total": null,
+    "max_floors_above_ground": null,
+    "floors_below_ground": null,
+    "unit_types": null,
+    "selected_contractor": null,
+    "field_evidence": {},
+    "sources": {},
+    "boundary_evidence": {
+      "status": "reference_only",
+      "source_feature_id": "11000UQ120PS202505310439",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+      "source_as_of": "2026-09-10",
+      "match_method": "official_publication_and_spatial_containment",
+      "parent_overlap_ratio": 1.0,
+      "association_sources": [
+        "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=415689&tr_code=snews",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=435853",
+        "https://news.seoul.go.kr/citybuild/archives/538651",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=415689"
+      ]
+    }
+  },
+  {
+    "id": "mz-seoul-11000uq120ps202505310440",
+    "town_id": "mt-202603-public-010",
+    "name": "면목역 6구역 가로주택정비사업",
+    "stage": null,
+    "project_type": "가로주택정비",
+    "project_area_m2": null,
+    "planned_units_total": null,
+    "max_floors_above_ground": null,
+    "floors_below_ground": null,
+    "unit_types": null,
+    "selected_contractor": null,
+    "field_evidence": {},
+    "sources": {},
+    "boundary_evidence": {
+      "status": "reference_only",
+      "source_feature_id": "11000UQ120PS202505310440",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+      "source_as_of": "2026-09-10",
+      "match_method": "official_publication_and_spatial_containment",
+      "parent_overlap_ratio": 1.0,
+      "association_sources": [
+        "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=415689&tr_code=snews",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=435853",
+        "https://news.seoul.go.kr/citybuild/archives/538651",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=415689"
+      ]
+    }
+  },
+  {
+    "id": "mz-seoul-11000uq120ps202505310160",
+    "town_id": "mt-202603-public-010",
+    "name": "면목역1구역 가로주택정비사업",
+    "stage": null,
+    "project_type": "가로주택정비",
+    "project_area_m2": null,
+    "planned_units_total": 442,
+    "max_floors_above_ground": null,
+    "floors_below_ground": null,
+    "unit_types": null,
+    "selected_contractor": null,
+    "field_evidence": {
+      "plan": {
+        "state": "historical_published_plan_not_latest_project_approval_verified",
+        "source_url": "https://www.seoul.go.kr/news/news_report.do?nttNo=435853",
+        "source_as_of": null,
+        "display_note": "과거 공개 계획이며 최신 인가 수치나 확정 분양 세대수가 아닙니다."
+      }
+    },
+    "sources": {},
+    "boundary_evidence": {
+      "status": "reference_only",
+      "source_feature_id": "11000UQ120PS202505310160",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+      "source_as_of": "2026-09-10",
+      "match_method": "official_publication_and_spatial_containment",
+      "parent_overlap_ratio": 0.999945,
+      "association_sources": [
+        "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=415689&tr_code=snews",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=435853",
+        "https://news.seoul.go.kr/citybuild/archives/538651",
+        "https://eminwon.jungnang.go.kr/emwp/gov/mogaha/ntis/web/ofr/action/OfrAction.do?context=NTIS&homepage_pbs_yn=Y&jndinm=OfrNotAncmtEJB&method=selectOfrNotAncmt&methodnm=selectOfrNotAncmtRegst&not_ancmt_mgt_no=15505&not_ancmt_se_code=01%2C02%2C04&pageIndex=1&subCheck=Y"
+      ]
+    }
+  },
+  {
+    "id": "mz-seoul-11000uq120ps202505310448",
+    "town_id": "mt-202603-public-012",
+    "name": "면목본동 3구역 가로주택정비사업",
+    "stage": null,
+    "project_type": "가로주택정비",
+    "project_area_m2": null,
+    "planned_units_total": 259,
+    "max_floors_above_ground": null,
+    "floors_below_ground": null,
+    "unit_types": null,
+    "selected_contractor": null,
+    "field_evidence": {
+      "plan": {
+        "state": "historical_published_plan_not_latest_project_approval_verified",
+        "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=589741",
+        "source_as_of": "2024-06-20",
+        "display_note": "과거 공개 계획이며 최신 인가 수치나 확정 분양 세대수가 아닙니다."
+      }
+    },
+    "sources": {},
+    "boundary_evidence": {
+      "status": "reference_only",
+      "source_feature_id": "11000UQ120PS202505310448",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+      "source_as_of": "2026-09-10",
+      "match_method": "official_publication_and_spatial_containment",
+      "parent_overlap_ratio": 1.0,
+      "association_sources": [
+        "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+        "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=589741",
+        "https://news.seoul.go.kr/citybuild/archives/538733"
+      ]
+    }
+  },
+  {
+    "id": "mz-seoul-11000uq120ps202505310449",
+    "town_id": "mt-202603-public-012",
+    "name": "(가칭)면목본동 4구역 가로주택정비사업",
+    "stage": null,
+    "project_type": "가로주택정비",
+    "project_area_m2": null,
+    "planned_units_total": 209,
+    "max_floors_above_ground": null,
+    "floors_below_ground": null,
+    "unit_types": null,
+    "selected_contractor": null,
+    "field_evidence": {
+      "plan": {
+        "state": "historical_published_plan_not_latest_project_approval_verified",
+        "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=589741",
+        "source_as_of": "2024-06-20",
+        "display_note": "과거 공개 계획이며 최신 인가 수치나 확정 분양 세대수가 아닙니다."
+      }
+    },
+    "sources": {},
+    "boundary_evidence": {
+      "status": "reference_only",
+      "source_feature_id": "11000UQ120PS202505310449",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+      "source_as_of": "2026-09-10",
+      "match_method": "official_publication_and_spatial_containment",
+      "parent_overlap_ratio": 1.0,
+      "association_sources": [
+        "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+        "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=589741",
+        "https://news.seoul.go.kr/citybuild/archives/538733"
+      ]
+    }
+  },
+  {
+    "id": "mz-seoul-11260uq120ps202603060001",
+    "town_id": "mt-202603-public-012",
+    "name": "면목본동 5구역 가로주택정비사업",
+    "stage": null,
+    "project_type": "가로주택정비",
+    "project_area_m2": null,
+    "planned_units_total": 298,
+    "max_floors_above_ground": null,
+    "floors_below_ground": null,
+    "unit_types": null,
+    "selected_contractor": null,
+    "field_evidence": {
+      "plan": {
+        "state": "historical_published_plan_not_latest_project_approval_verified",
+        "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=589741",
+        "source_as_of": "2024-06-20",
+        "display_note": "과거 공개 계획이며 최신 인가 수치나 확정 분양 세대수가 아닙니다."
+      }
+    },
+    "sources": {},
+    "boundary_evidence": {
+      "status": "reference_only",
+      "source_feature_id": "11260UQ120PS202603060001",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+      "source_as_of": "2026-09-10",
+      "match_method": "official_publication_and_spatial_containment",
+      "parent_overlap_ratio": 0.99999,
+      "association_sources": [
+        "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+        "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=589741",
+        "https://news.seoul.go.kr/citybuild/archives/538733"
+      ]
+    }
+  },
+  {
+    "id": "mz-seoul-11000uq120ps202505310446",
+    "town_id": "mt-202603-public-012",
+    "name": "(가칭)면목본동 1구역 가로주택정비사업",
+    "stage": null,
+    "project_type": "가로주택정비",
+    "project_area_m2": null,
+    "planned_units_total": 313,
+    "max_floors_above_ground": null,
+    "floors_below_ground": null,
+    "unit_types": null,
+    "selected_contractor": null,
+    "field_evidence": {
+      "plan": {
+        "state": "historical_published_plan_not_latest_project_approval_verified",
+        "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=589741",
+        "source_as_of": "2024-06-20",
+        "display_note": "과거 공개 계획이며 최신 인가 수치나 확정 분양 세대수가 아닙니다."
+      }
+    },
+    "sources": {},
+    "boundary_evidence": {
+      "status": "reference_only",
+      "source_feature_id": "11000UQ120PS202505310446",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+      "source_as_of": "2026-09-10",
+      "match_method": "official_publication_and_spatial_containment",
+      "parent_overlap_ratio": 0.999926,
+      "association_sources": [
+        "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+        "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=589741",
+        "https://news.seoul.go.kr/citybuild/archives/538733"
+      ]
+    }
+  },
+  {
+    "id": "mz-seoul-11000uq120ps202505310447",
+    "town_id": "mt-202603-public-012",
+    "name": "면목본동 2구역 가로주택정비사업",
+    "stage": null,
+    "project_type": "가로주택정비",
+    "project_area_m2": null,
+    "planned_units_total": 302,
+    "max_floors_above_ground": null,
+    "floors_below_ground": null,
+    "unit_types": null,
+    "selected_contractor": null,
+    "field_evidence": {
+      "plan": {
+        "state": "historical_published_plan_not_latest_project_approval_verified",
+        "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=589741",
+        "source_as_of": "2024-06-20",
+        "display_note": "과거 공개 계획이며 최신 인가 수치나 확정 분양 세대수가 아닙니다."
+      }
+    },
+    "sources": {},
+    "boundary_evidence": {
+      "status": "reference_only",
+      "source_feature_id": "11000UQ120PS202505310447",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+      "source_as_of": "2026-09-10",
+      "match_method": "official_publication_and_spatial_containment",
+      "parent_overlap_ratio": 0.999907,
+      "association_sources": [
+        "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+        "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=589741",
+        "https://news.seoul.go.kr/citybuild/archives/538733"
+      ]
+    }
+  },
+  {
+    "id": "mz-seoul-11000uq120ps202505310212",
+    "town_id": "mt-202603-public-024",
+    "name": "시흥동 1005번지 일대 가로주택정비사업(시흥중앙하이츠)",
+    "stage": null,
+    "project_type": "가로주택정비",
+    "project_area_m2": null,
+    "planned_units_total": null,
+    "max_floors_above_ground": null,
+    "floors_below_ground": null,
+    "unit_types": null,
+    "selected_contractor": null,
+    "field_evidence": {},
+    "sources": {},
+    "boundary_evidence": {
+      "status": "reference_only",
+      "source_feature_id": "11000UQ120PS202505310212",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+      "source_as_of": "2026-09-10",
+      "match_method": "official_publication_and_spatial_containment",
+      "parent_overlap_ratio": 0.999965,
+      "association_sources": [
+        "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=447068"
+      ]
+    }
+  },
+  {
+    "id": "mz-seoul-11000uq120ps202505310171",
+    "town_id": "mt-202603-public-034",
+    "name": "번동2구역 가로주택정비사업",
+    "stage": "착공",
+    "project_type": "가로주택정비",
+    "project_area_m2": null,
+    "planned_units_total": null,
+    "max_floors_above_ground": null,
+    "floors_below_ground": null,
+    "unit_types": null,
+    "selected_contractor": null,
+    "field_evidence": {
+      "stage": {
+        "state": "public_register_displayed_stage",
+        "source_url": "https://cleanup.seoul.go.kr/cleanup/bsnssttus/lscrMainIndx.do?cpage=1&pageSize=2000",
+        "checked_on": "2026-11-24"
+      }
+    },
+    "sources": {
+      "project_overview": "https://cleanup.seoul.go.kr/cafe/mastr-cleanup-bsnsSumry/execute.do?cafeId=305900000768h78&div=sumry&stepSeCode=103"
+    },
+    "boundary_evidence": {
+      "status": "reference_only",
+      "source_feature_id": "11000UQ120PS202505310171",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+      "source_as_of": "2026-09-10",
+      "match_method": "official_publication_and_spatial_containment",
+      "parent_overlap_ratio": 1.0,
+      "association_sources": [
+        "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+        "https://housing.seoul.go.kr/site/main/content/sh_080003",
+        "https://news.seoul.go.kr/citybuild/archives/539017",
+        "https://mediahub.seoul.go.kr/archives/2012977",
+        "https://www.kolon.com/kr/media/newsDtl?detailsKey=8301",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=424502&tr_code=snews",
+        "https://cleanup.seoul.go.kr/cleanup/bsnssttus/lscrMainIndx.do?cpage=1&pageSize=2000",
+        "https://cleanup.seoul.go.kr/cafe/mastr-cleanup-bsnsSumry/execute.do?cafeId=305900000768h78&div=sumry&stepSeCode=103"
+      ]
+    }
+  },
+  {
+    "id": "mz-seoul-11000uq120ps202505310172",
+    "town_id": "mt-202603-public-034",
+    "name": "번동3구역 가로주택정비사업",
+    "stage": "착공",
+    "project_type": "가로주택정비",
+    "project_area_m2": null,
+    "planned_units_total": null,
+    "max_floors_above_ground": null,
+    "floors_below_ground": null,
+    "unit_types": null,
+    "selected_contractor": null,
+    "field_evidence": {
+      "stage": {
+        "state": "public_register_displayed_stage",
+        "source_url": "https://cleanup.seoul.go.kr/cleanup/bsnssttus/lscrMainIndx.do?cpage=1&pageSize=2000",
+        "checked_on": "2026-11-24"
+      }
+    },
+    "sources": {
+      "project_overview": "https://cleanup.seoul.go.kr/cafe/mastr-cleanup-bsnsSumry/execute.do?cafeId=305900000786L24&div=sumry&stepSeCode=103"
+    },
+    "boundary_evidence": {
+      "status": "reference_only",
+      "source_feature_id": "11000UQ120PS202505310172",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+      "source_as_of": "2026-09-10",
+      "match_method": "official_publication_and_spatial_containment",
+      "parent_overlap_ratio": 1.0,
+      "association_sources": [
+        "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+        "https://housing.seoul.go.kr/site/main/content/sh_080003",
+        "https://news.seoul.go.kr/citybuild/archives/539017",
+        "https://mediahub.seoul.go.kr/archives/2012977",
+        "https://www.kolon.com/kr/media/newsDtl?detailsKey=8301",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=424502&tr_code=snews",
+        "https://cleanup.seoul.go.kr/cleanup/bsnssttus/lscrMainIndx.do?cpage=1&pageSize=2000",
+        "https://cleanup.seoul.go.kr/cafe/mastr-cleanup-bsnsSumry/execute.do?cafeId=305900000786L24&div=sumry&stepSeCode=103"
+      ]
+    }
+  },
+  {
+    "id": "mz-seoul-11000uq120ps202505310173",
+    "town_id": "mt-202603-public-034",
+    "name": "번동4구역 가로주택정비사업",
+    "stage": "착공",
+    "project_type": "가로주택정비",
+    "project_area_m2": null,
+    "planned_units_total": null,
+    "max_floors_above_ground": null,
+    "floors_below_ground": null,
+    "unit_types": null,
+    "selected_contractor": null,
+    "field_evidence": {
+      "stage": {
+        "state": "public_register_displayed_stage",
+        "source_url": "https://cleanup.seoul.go.kr/cleanup/bsnssttus/lscrMainIndx.do?cpage=1&pageSize=2000",
+        "checked_on": "2026-11-24"
+      }
+    },
+    "sources": {
+      "project_overview": "https://cleanup.seoul.go.kr/cafe/mastr-cleanup-bsnsSumry/execute.do?cafeId=305900000788K18&div=sumry&stepSeCode=103"
+    },
+    "boundary_evidence": {
+      "status": "reference_only",
+      "source_feature_id": "11000UQ120PS202505310173",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+      "source_as_of": "2026-09-10",
+      "match_method": "official_publication_and_spatial_containment",
+      "parent_overlap_ratio": 1.0,
+      "association_sources": [
+        "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+        "https://housing.seoul.go.kr/site/main/content/sh_080003",
+        "https://news.seoul.go.kr/citybuild/archives/539017",
+        "https://mediahub.seoul.go.kr/archives/2012977",
+        "https://www.kolon.com/kr/media/newsDtl?detailsKey=8301",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=424502&tr_code=snews",
+        "https://cleanup.seoul.go.kr/cleanup/bsnssttus/lscrMainIndx.do?cpage=1&pageSize=2000",
+        "https://cleanup.seoul.go.kr/cafe/mastr-cleanup-bsnsSumry/execute.do?cafeId=305900000788K18&div=sumry&stepSeCode=103"
+      ]
+    }
+  },
+  {
+    "id": "mz-seoul-11000uq120ps202505310174",
+    "town_id": "mt-202603-public-034",
+    "name": "번동5구역 가로주택정비사업",
+    "stage": "착공",
+    "project_type": "가로주택정비",
+    "project_area_m2": null,
+    "planned_units_total": null,
+    "max_floors_above_ground": null,
+    "floors_below_ground": null,
+    "unit_types": null,
+    "selected_contractor": null,
+    "field_evidence": {
+      "stage": {
+        "state": "public_register_displayed_stage",
+        "source_url": "https://cleanup.seoul.go.kr/cleanup/bsnssttus/lscrMainIndx.do?cpage=1&pageSize=2000",
+        "checked_on": "2026-11-24"
+      }
+    },
+    "sources": {
+      "project_overview": "https://cleanup.seoul.go.kr/cafe/mastr-cleanup-bsnsSumry/execute.do?cafeId=305900000787k48&div=sumry&stepSeCode=103"
+    },
+    "boundary_evidence": {
+      "status": "reference_only",
+      "source_feature_id": "11000UQ120PS202505310174",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+      "source_as_of": "2026-09-10",
+      "match_method": "official_publication_and_spatial_containment",
+      "parent_overlap_ratio": 1.0,
+      "association_sources": [
+        "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+        "https://housing.seoul.go.kr/site/main/content/sh_080003",
+        "https://news.seoul.go.kr/citybuild/archives/539017",
+        "https://mediahub.seoul.go.kr/archives/2012977",
+        "https://www.kolon.com/kr/media/newsDtl?detailsKey=8301",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=424502&tr_code=snews",
+        "https://cleanup.seoul.go.kr/cleanup/bsnssttus/lscrMainIndx.do?cpage=1&pageSize=2000",
+        "https://cleanup.seoul.go.kr/cafe/mastr-cleanup-bsnsSumry/execute.do?cafeId=305900000787k48&div=sumry&stepSeCode=103"
+      ]
+    }
+  },
+  {
+    "id": "mz-seoul-11000uq120ps202505310290",
+    "town_id": "mt-202603-public-035",
+    "name": "번동2-2구역 가로주택정비사업",
+    "stage": null,
+    "project_type": "가로주택정비",
+    "project_area_m2": null,
+    "planned_units_total": null,
+    "max_floors_above_ground": null,
+    "floors_below_ground": null,
+    "unit_types": null,
+    "selected_contractor": null,
+    "field_evidence": {},
+    "sources": {},
+    "boundary_evidence": {
+      "status": "reference_only",
+      "source_feature_id": "11000UQ120PS202505310290",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+      "source_as_of": "2026-09-10",
+      "match_method": "official_publication_and_spatial_containment",
+      "parent_overlap_ratio": 1.0,
+      "association_sources": [
+        "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=447068",
+        "https://cleanup.seoul.go.kr/assc/scrin-bbs/execute.do?cafeId=305900000966j38"
+      ]
+    }
+  },
+  {
+    "id": "mz-seoul-11000uq120ps202505310308",
+    "town_id": "mt-202603-public-035",
+    "name": "번동2-3구역 가로주택정비사업",
+    "stage": null,
+    "project_type": "가로주택정비",
+    "project_area_m2": null,
+    "planned_units_total": null,
+    "max_floors_above_ground": null,
+    "floors_below_ground": null,
+    "unit_types": null,
+    "selected_contractor": null,
+    "field_evidence": {},
+    "sources": {},
+    "boundary_evidence": {
+      "status": "reference_only",
+      "source_feature_id": "11000UQ120PS202505310308",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+      "source_as_of": "2026-09-10",
+      "match_method": "official_publication_and_spatial_containment",
+      "parent_overlap_ratio": 0.999956,
+      "association_sources": [
+        "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=447068",
+        "https://cleanup.seoul.go.kr/assc/scrin-bbs/execute.do?cafeId=305900001088e64"
+      ]
+    }
+  },
+  {
+    "id": "mz-seoul-11000uq120ps202505310289",
+    "town_id": "mt-202603-public-035",
+    "name": "번동2-1구역 가로주택정비사업",
+    "stage": null,
+    "project_type": "가로주택정비",
+    "project_area_m2": null,
+    "planned_units_total": null,
+    "max_floors_above_ground": null,
+    "floors_below_ground": null,
+    "unit_types": null,
+    "selected_contractor": null,
+    "field_evidence": {},
+    "sources": {},
+    "boundary_evidence": {
+      "status": "reference_only",
+      "source_feature_id": "11000UQ120PS202505310289",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+      "source_as_of": "2026-09-10",
+      "match_method": "official_publication_and_spatial_containment",
+      "parent_overlap_ratio": 0.999955,
+      "association_sources": [
+        "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+        "https://news.seoul.go.kr/citybuild/archives/538967",
+        "https://news.seoul.go.kr/citybuild/moa-housing-town/archive/seoul-northeast",
+        "https://cleanup.seoul.go.kr/assc/scrin-bbs/execute.do?cafeId=305900000911F66"
+      ]
+    }
+  },
+  {
+    "id": "mz-seoul-11410uq120ps202607270001",
+    "town_id": "mt-202603-resident-016",
+    "name": "현저동 1-5번지 일대 가로주택정비사업",
+    "stage": null,
+    "project_type": "가로주택정비",
+    "project_area_m2": null,
+    "planned_units_total": 366,
+    "max_floors_above_ground": null,
+    "floors_below_ground": null,
+    "unit_types": null,
+    "selected_contractor": null,
+    "field_evidence": {
+      "plan": {
+        "state": "historical_published_plan_not_latest_project_approval_verified",
+        "source_url": "https://www.seoul.go.kr/news/news_report.do?nttNo=435853",
+        "source_as_of": null,
+        "display_note": "과거 공개 계획이며 최신 인가 수치나 확정 분양 세대수가 아닙니다."
+      }
+    },
+    "sources": {},
+    "boundary_evidence": {
+      "status": "reference_only",
+      "source_feature_id": "11410UQ120PS202607270001",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+      "source_as_of": "2026-09-10",
+      "match_method": "official_publication_and_spatial_containment",
+      "parent_overlap_ratio": 1.0,
+      "association_sources": [
+        "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=435853",
+        "https://www.sdm.go.kr/news/notice/notice.do?mode=view&sdmBoardSeq=313253",
+        "https://cleanup.seoul.go.kr/cafe/mastr-cleanup-bsnsSumry/execute.do?cafeId=410900001525R28&div=sumry&stepSeCode=103"
+      ]
     }
   }
 ]
