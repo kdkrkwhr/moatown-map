@@ -7,6 +7,13 @@ const read=file=>JSON.parse(readFileSync(new URL('../moatown-data/'+file,import.
 const {files,coverage}=read('latest.json');
 const towns=read(files.towns),zones=read(files.zones),index=read(files.parcel_index);
 
+test('plan zoning coverage counts each town with a published planned area once',()=>{
+  const withPlanAreas=towns.filter(town=>town.zoning?.areas?.some(
+    area=>Number.isFinite(area?.planned_sqm) && area.planned_sqm>=0
+  ));
+  assert.equal(coverage.towns_with_plan_zoning,withPlanAreas.length);
+});
+
 test('each Seoul district can resolve a lot without loading any other district file',()=>{
   assert.equal(new Set(index.districts.map(d=>d.code)).size,25);
   let count=0;
