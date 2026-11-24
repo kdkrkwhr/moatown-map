@@ -31,4 +31,4 @@ GitHub Pages가 `main` 브랜치 루트의 정적 파일을 배포합니다. 브
 1. 원자료를 갱신할 때 적용 범위·출처 URL·기준일과 매칭 보류 사유를 기록합니다. 스냅샷, 최신 포인터, 수록 범위와 사이트맵을 함께 확인합니다.
 2. 화면 파일을 바꾼 뒤 `node scripts/sync-assets.mjs`를 실행합니다. 지도·소식 HTML에서 참조하는 CSS와 하위 모듈까지 같은 콘텐츠 해시를 붙입니다. 생성된 참조도 함께 커밋합니다.
 3. 저장소 루트에서 `node --test`를 실행합니다. 데이터 참조, 주소·지도 로직, 상세 지표, 사이트맵 목록과 배포용 캐시 태그를 검사합니다.
-4. GitHub Pages 배포 후 지도·소식 페이지와 상세 링크를 확인합니다. 검색용 `sitemap.xml`에는 두 페이지와 대상지·세부구역별 대표 URL을 담습니다. 이 프로젝트의 사이트맵은 권한이 있는 계정으로 Google Search Console의 사이트맵 화면에서 제출합니다. [사이트맵 열기](https://kdkrkwhr.github.io/moatown-map/sitemap.xml) · [Search Console](https://search.google.com/search-console/sitemaps?resource_id=https%3A%2F%2Fkdkrkwhr.github.io%2Fmoatown-map%2F)
+4. GitHub Pages 배포 후 지도·소식 페이지와 상세 링크를 확인합니다. 검색용 `sitemap.xml`에는 두 페이지와 대상지·세부구역별 대표 URL을 담습니다. Google Search Console에서는 호스트 속성 `https://kdkrkwhr.github.io/`에 등록한 `moatown-map/sitemap.xml`의 처리 상태를 확인합니다. [사이트맵 열기](https://kdkrkwhr.github.io/moatown-map/sitemap.xml) · [Search Console 사이트맵 보고서](https://search.google.com/search-console/sitemaps?resource_id=https%3A%2F%2Fkdkrkwhr.github.io%2F)
