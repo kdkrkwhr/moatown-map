@@ -16,6 +16,13 @@
 
 서울주거포털의 2026-05-31 기준 요약 집계와 [서울시 2026-08 발표](https://www.seoul.go.kr/news/news_report.do?nttNo=464445)의 ‘추진 중’ 집계는, 각각 시점과 집계 조건이 다를 수 있습니다. 요약 수치만 가지고 최신 명부를 생성하거나 확인되지 않은 대상지 이름을 추정하지 않습니다.
 
+## 2026-11-24 사업 정보 보강
+
+- 서울시 권역별 아카이브 5곳의 승인고시 표를 기존 명부의 자치구·대표 지번과 대조했습니다. 대상지 59곳의 지번별 고시 60건에 고시일, 아카이브에 실린 사업구역 수, 대상지별 원문을 연결했습니다. 공동 선정된 등촌2동 두 지번은 각각 4곳과 2곳으로 기록했습니다. 쌍문동 460, 화곡6동 957-1, 시흥5동 922-16, 목4동 728-1은 명부와 대응이 불명확해 보류했습니다. [동북권](https://news.seoul.go.kr/citybuild/moa-housing-town/archive/seoul-northeast) · [서남권](https://news.seoul.go.kr/citybuild/moa-housing-town/archive/seoul-southwest) · [동남권](https://news.seoul.go.kr/citybuild/moa-housing-town/archive/seoul-southeast) · [서북권](https://news.seoul.go.kr/citybuild/moa-housing-town/archive/seoul-northwest) · [도심권](https://news.seoul.go.kr/citybuild/moa-housing-town/archive/seoul-downtown)
+- 번동 1~5구역은 정비사업 정보몽땅의 구역별 사업개요에서 분양·임대 전용면적 구간별 세대수, 지상·지하 층수, 높이, 건폐율과 용적률을 확인했습니다. 번동1구역 임대는 40㎡ 초과~50㎡ 이하 12세대, 50㎡ 초과 18세대로 바로잡았습니다. 다섯 사업개요의 합계 1,182세대와 2024년 시공사 발표의 그룹 합계 1,242세대는 차이가 있어, 각 사업개요는 공개 당시 계획으로 표기합니다. [번동1구역 사업개요](https://cleanup.seoul.go.kr/cafe/mastr-cleanup-bsnsSumry/execute.do?cafeId=305900000750u59&div=sumry&stepSeCode=103) · [코오롱글로벌 수주 발표](https://www.kolon.com/kr/media/newsDtl?detailsKey=8301)
+- 면목본동 2·3·5구역은 HS화성의 공사계약 공시에서 계약일과 계약상대를 대조했습니다. 시공사명은 해당 계약 공시 기준입니다. [면목본동2구역](https://kind.krx.co.kr/external/2025/05/12/000236/20250508001227/91370.htm) · [3구역](https://kind.krx.co.kr/external/2025/12/22/000410/20251216001458/91370.htm) · [5구역](https://kind.krx.co.kr/external/2025/05/08/000393/20250429001918/91370.htm)
+- 면목역 1·2구역은 중랑구의 2026년 7월 30일 고시와 첨부 주택형표를 대조했습니다. 인가일은 7월 28일입니다. 전용면적 소수점 네 자리와 원문 타입명을 보존하고, 전체 세대수와 별도로 조합원분양·일반분양·보류지 수를 기록했습니다. [면목역1구역 고시](https://eminwon.jungnang.go.kr/emwp/gov/mogaha/ntis/web/ofr/action/OfrAction.do?context=NTIS&homepage_pbs_yn=Y&jndinm=OfrNotAncmtEJB&method=selectOfrNotAncmt&methodnm=selectOfrNotAncmtRegst&not_ancmt_mgt_no=15567&not_ancmt_se_code=01%2C02%2C04&pageIndex=1&subCheck=Y) · [면목역2구역 고시](https://eminwon.jungnang.go.kr/emwp/gov/mogaha/ntis/web/ofr/action/OfrAction.do?context=NTIS&homepage_pbs_yn=Y&jndinm=OfrNotAncmtEJB&method=selectOfrNotAncmt&methodnm=selectOfrNotAncmtRegst&not_ancmt_mgt_no=15568&not_ancmt_se_code=01%2C02%2C04&pageIndex=1&subCheck=Y)
+
 ## 아직 없는 데이터
 
 - 최신 서울시 선정 명부 전수 대조, 이후 취소·분할·명칭 변경 전체 이력.

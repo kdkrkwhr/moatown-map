@@ -23,12 +23,12 @@
       },
       {
         "type": "임대",
-        "privateAreaBandM2": "40 이하",
+        "privateAreaBandM2": "40 초과~50 이하",
         "units": 12
       },
       {
         "type": "임대",
-        "privateAreaBandM2": "40 초과~50 이하",
+        "privateAreaBandM2": "50 초과",
         "units": 18
       }
     ],
@@ -44,7 +44,7 @@
       "selected_contractor": {
         "state": "contractor_reported",
         "source_url": "https://www.kolon.com/kr/media/newsDtl?detailsKey=8301",
-        "source_as_of": null,
+        "source_as_of": "2024-12-17",
         "checked_on": "2026-11-24"
       },
       "stage": {
@@ -56,8 +56,7 @@
     "limitations": [
       "공개 사업개요에 표시된 계획값이며, 최신 인가·고시 또는 확정 분양계획과 동일하다고 확인되지 않았습니다.",
       "2026-11-19 공개자료 목록에 사업시행계획 변경 관련 문서가 있어 개요의 최신성은 별도 확인이 필요합니다.",
-      "전용면적 구간은 공개된 집계 단위이며, 세부 주택형(예: 59A)은 확인하지 않았습니다.",
-      "검증한 벡터 구역 경계가 없어 geometry는 비워 두었습니다."
+      "전용면적 구간은 공개된 집계 단위이며, 세부 주택형(예: 59A)은 확인하지 않았습니다."
     ],
     "sources": {
       "projectOverview": "https://cleanup.seoul.go.kr/cafe/mastr-cleanup-bsnsSumry/execute.do?cafeId=305900000750u59&div=sumry&stepSeCode=103",
@@ -82,7 +81,10 @@
         "https://cleanup.seoul.go.kr/cleanup/bsnssttus/lscrMainIndx.do?cpage=1&pageSize=2000",
         "https://cleanup.seoul.go.kr/cafe/mastr-cleanup-bsnsSumry/execute.do?cafeId=305900000750u59&div=sumry&stepSeCode=103"
       ]
-    }
+    },
+    "building_coverage_pct": 27.0,
+    "floor_area_ratio_pct": 300.0,
+    "height_m": 80.0
   },
   {
     "id": "mz-seoul-11000uq120ps202503310030",
@@ -517,20 +519,100 @@
     "id": "mz-seoul-11000uq120ps202505310161",
     "town_id": "mt-202603-public-010",
     "name": "면목역2구역 가로주택정비사업",
-    "stage": null,
+    "stage": "사업시행계획인가",
     "project_type": "가로주택정비",
-    "project_area_m2": null,
+    "project_area_m2": 16968.5,
     "planned_units_total": 517,
-    "max_floors_above_ground": null,
-    "floors_below_ground": null,
-    "unit_types": null,
+    "max_floors_above_ground": 37,
+    "floors_below_ground": 3,
+    "unit_types": [
+      {
+        "type": "A타입",
+        "private_area_m2": "15.4191",
+        "units": 1
+      },
+      {
+        "type": "B타입",
+        "private_area_m2": "40.9260",
+        "units": 76
+      },
+      {
+        "type": "C타입",
+        "private_area_m2": "51.8983",
+        "units": 26
+      },
+      {
+        "type": "D타입",
+        "private_area_m2": "51.6574",
+        "units": 21
+      },
+      {
+        "type": "E타입",
+        "private_area_m2": "59.7778",
+        "units": 54
+      },
+      {
+        "type": "F타입",
+        "private_area_m2": "59.7721",
+        "units": 85
+      },
+      {
+        "type": "G타입",
+        "private_area_m2": "59.8108",
+        "units": 28
+      },
+      {
+        "type": "H타입",
+        "private_area_m2": "62.7678",
+        "units": 8
+      },
+      {
+        "type": "I타입",
+        "private_area_m2": "84.7916",
+        "units": 76
+      },
+      {
+        "type": "J타입",
+        "private_area_m2": "84.7916",
+        "units": 36
+      },
+      {
+        "type": "K타입",
+        "private_area_m2": "84.6483",
+        "units": 53
+      },
+      {
+        "type": "L타입",
+        "private_area_m2": "84.7759",
+        "units": 49
+      },
+      {
+        "type": "M타입",
+        "private_area_m2": "113.7682",
+        "units": 2
+      },
+      {
+        "type": "N타입",
+        "private_area_m2": "113.4618",
+        "units": 2
+      }
+    ],
     "selected_contractor": null,
     "field_evidence": {
       "plan": {
-        "state": "historical_published_plan_not_latest_project_approval_verified",
-        "source_url": "https://www.seoul.go.kr/news/news_report.do?nttNo=435853",
-        "source_as_of": null,
-        "display_note": "과거 공개 계획이며 최신 인가 수치나 확정 분양 세대수가 아닙니다."
+        "state": "approved_project_plan",
+        "source_url": "https://eminwon.jungnang.go.kr/emwp/gov/mogaha/ntis/web/ofr/action/OfrAction.do?context=NTIS&homepage_pbs_yn=Y&jndinm=OfrNotAncmtEJB&method=selectOfrNotAncmt&methodnm=selectOfrNotAncmtRegst&not_ancmt_mgt_no=15568&not_ancmt_se_code=01%2C02%2C04&pageIndex=1&subCheck=Y",
+        "source_as_of": "2026-07-30",
+        "checked_on": "2026-11-24",
+        "approval_date": "2026-07-28",
+        "attachment_name": "사업시행계획인가 고시문(안)(면목역2구역).hwpx"
+      },
+      "stage": {
+        "state": "approved_project_plan",
+        "source_url": "https://eminwon.jungnang.go.kr/emwp/gov/mogaha/ntis/web/ofr/action/OfrAction.do?context=NTIS&homepage_pbs_yn=Y&jndinm=OfrNotAncmtEJB&method=selectOfrNotAncmt&methodnm=selectOfrNotAncmtRegst&not_ancmt_mgt_no=15568&not_ancmt_se_code=01%2C02%2C04&pageIndex=1&subCheck=Y",
+        "source_as_of": "2026-07-30",
+        "checked_on": "2026-11-24",
+        "approval_date": "2026-07-28"
       }
     },
     "sources": {},
@@ -547,7 +629,15 @@
         "https://www.seoul.go.kr/news/news_report.do?nttNo=435853",
         "https://news.seoul.go.kr/citybuild/archives/538651"
       ]
-    }
+    },
+    "approved_allocation": {
+      "member": 296,
+      "general": 93,
+      "reserve": 5
+    },
+    "floor_area_ratio_pct": 302.02,
+    "building_coverage_pct": 31.28,
+    "height_m": 107.86
   },
   {
     "id": "mz-seoul-11000uq120ps202505310439",
@@ -613,20 +703,95 @@
     "id": "mz-seoul-11000uq120ps202505310160",
     "town_id": "mt-202603-public-010",
     "name": "면목역1구역 가로주택정비사업",
-    "stage": null,
+    "stage": "사업시행계획인가",
     "project_type": "가로주택정비",
-    "project_area_m2": null,
+    "project_area_m2": 14249.5,
     "planned_units_total": 442,
-    "max_floors_above_ground": null,
-    "floors_below_ground": null,
-    "unit_types": null,
+    "max_floors_above_ground": 29,
+    "floors_below_ground": 3,
+    "unit_types": [
+      {
+        "type": "A타입",
+        "private_area_m2": "40.9260",
+        "units": 68
+      },
+      {
+        "type": "B타입",
+        "private_area_m2": "51.8983",
+        "units": 28
+      },
+      {
+        "type": "C타입",
+        "private_area_m2": "51.6574",
+        "units": 5
+      },
+      {
+        "type": "D타입",
+        "private_area_m2": "59.7778",
+        "units": 94
+      },
+      {
+        "type": "E타입",
+        "private_area_m2": "59.7737",
+        "units": 21
+      },
+      {
+        "type": "F타입",
+        "private_area_m2": "62.7678",
+        "units": 25
+      },
+      {
+        "type": "G타입",
+        "private_area_m2": "62.6447",
+        "units": 4
+      },
+      {
+        "type": "H타입",
+        "private_area_m2": "84.7916",
+        "units": 89
+      },
+      {
+        "type": "I타입",
+        "private_area_m2": "84.7916",
+        "units": 38
+      },
+      {
+        "type": "J타입",
+        "private_area_m2": "84.6421",
+        "units": 22
+      },
+      {
+        "type": "K타입",
+        "private_area_m2": "84.7750",
+        "units": 46
+      },
+      {
+        "type": "L타입",
+        "private_area_m2": "113.7682",
+        "units": 1
+      },
+      {
+        "type": "M타입",
+        "private_area_m2": "113.4550",
+        "units": 1
+      }
+    ],
     "selected_contractor": null,
     "field_evidence": {
       "plan": {
-        "state": "historical_published_plan_not_latest_project_approval_verified",
-        "source_url": "https://www.seoul.go.kr/news/news_report.do?nttNo=435853",
-        "source_as_of": null,
-        "display_note": "과거 공개 계획이며 최신 인가 수치나 확정 분양 세대수가 아닙니다."
+        "state": "approved_project_plan",
+        "source_url": "https://eminwon.jungnang.go.kr/emwp/gov/mogaha/ntis/web/ofr/action/OfrAction.do?context=NTIS&homepage_pbs_yn=Y&jndinm=OfrNotAncmtEJB&method=selectOfrNotAncmt&methodnm=selectOfrNotAncmtRegst&not_ancmt_mgt_no=15567&not_ancmt_se_code=01%2C02%2C04&pageIndex=1&subCheck=Y",
+        "source_as_of": "2026-07-30",
+        "checked_on": "2026-11-24",
+        "approval_date": "2026-07-28",
+        "attachment_name": "사업시행계획인가 고시문(안)(면목역1구역).hwpx"
+      },
+      "stage": {
+        "state": "approved_project_plan",
+        "source_url": "https://eminwon.jungnang.go.kr/emwp/gov/mogaha/ntis/web/ofr/action/OfrAction.do?context=NTIS&homepage_pbs_yn=Y&jndinm=OfrNotAncmtEJB&method=selectOfrNotAncmt&methodnm=selectOfrNotAncmtRegst&not_ancmt_mgt_no=15567&not_ancmt_se_code=01%2C02%2C04&pageIndex=1&subCheck=Y",
+        "source_as_of": "2026-07-30",
+        "checked_on": "2026-11-24",
+        "approval_date": "2026-07-28"
       }
     },
     "sources": {},
@@ -644,7 +809,15 @@
         "https://news.seoul.go.kr/citybuild/archives/538651",
         "https://eminwon.jungnang.go.kr/emwp/gov/mogaha/ntis/web/ofr/action/OfrAction.do?context=NTIS&homepage_pbs_yn=Y&jndinm=OfrNotAncmtEJB&method=selectOfrNotAncmt&methodnm=selectOfrNotAncmtRegst&not_ancmt_mgt_no=15505&not_ancmt_se_code=01%2C02%2C04&pageIndex=1&subCheck=Y"
       ]
-    }
+    },
+    "approved_allocation": {
+      "member": 213,
+      "general": 117,
+      "reserve": 4
+    },
+    "floor_area_ratio_pct": 300.48,
+    "building_coverage_pct": 32.68,
+    "height_m": 83.75
   },
   {
     "id": "mz-seoul-11000uq120ps202505310448",
@@ -657,13 +830,20 @@
     "max_floors_above_ground": null,
     "floors_below_ground": null,
     "unit_types": null,
-    "selected_contractor": null,
+    "selected_contractor": "HS화성",
     "field_evidence": {
       "plan": {
         "state": "historical_published_plan_not_latest_project_approval_verified",
         "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=589741",
         "source_as_of": "2024-06-20",
         "display_note": "과거 공개 계획이며 최신 인가 수치나 확정 분양 세대수가 아닙니다."
+      },
+      "selected_contractor": {
+        "state": "disclosed_contract",
+        "contract_date": "2025-12-19",
+        "source_as_of": "2025-12-22",
+        "checked_on": "2026-11-24",
+        "source_url": "https://kind.krx.co.kr/external/2025/12/22/000410/20251216001458/91370.htm"
       }
     },
     "sources": {},
@@ -679,6 +859,11 @@
         "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=589741",
         "https://news.seoul.go.kr/citybuild/archives/538733"
       ]
+    },
+    "contract_scope": {
+      "units": 247,
+      "floors_above_ground": 15,
+      "floors_below_ground": 3
     }
   },
   {
@@ -727,13 +912,20 @@
     "max_floors_above_ground": null,
     "floors_below_ground": null,
     "unit_types": null,
-    "selected_contractor": null,
+    "selected_contractor": "HS화성",
     "field_evidence": {
       "plan": {
         "state": "historical_published_plan_not_latest_project_approval_verified",
         "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=589741",
         "source_as_of": "2024-06-20",
         "display_note": "과거 공개 계획이며 최신 인가 수치나 확정 분양 세대수가 아닙니다."
+      },
+      "selected_contractor": {
+        "state": "disclosed_contract",
+        "contract_date": "2025-05-07",
+        "source_as_of": "2025-05-08",
+        "checked_on": "2026-11-24",
+        "source_url": "https://kind.krx.co.kr/external/2025/05/08/000393/20250429001918/91370.htm"
       }
     },
     "sources": {},
@@ -749,6 +941,11 @@
         "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=589741",
         "https://news.seoul.go.kr/citybuild/archives/538733"
       ]
+    },
+    "contract_scope": {
+      "units": 317,
+      "floors_above_ground": 24,
+      "floors_below_ground": 3
     }
   },
   {
@@ -797,13 +994,20 @@
     "max_floors_above_ground": null,
     "floors_below_ground": null,
     "unit_types": null,
-    "selected_contractor": null,
+    "selected_contractor": "HS화성",
     "field_evidence": {
       "plan": {
         "state": "historical_published_plan_not_latest_project_approval_verified",
         "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=589741",
         "source_as_of": "2024-06-20",
         "display_note": "과거 공개 계획이며 최신 인가 수치나 확정 분양 세대수가 아닙니다."
+      },
+      "selected_contractor": {
+        "state": "disclosed_contract",
+        "contract_date": "2025-05-09",
+        "source_as_of": "2025-05-12",
+        "checked_on": "2026-11-24",
+        "source_url": "https://kind.krx.co.kr/external/2025/05/12/000236/20250508001227/91370.htm"
       }
     },
     "sources": {},
@@ -819,6 +1023,11 @@
         "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=589741",
         "https://news.seoul.go.kr/citybuild/archives/538733"
       ]
+    },
+    "contract_scope": {
+      "units": 321,
+      "floors_above_ground": 25,
+      "floors_below_ground": 3
     }
   },
   {
@@ -854,16 +1063,29 @@
     "name": "번동2구역 가로주택정비사업",
     "stage": "착공",
     "project_type": "가로주택정비",
-    "project_area_m2": null,
-    "planned_units_total": null,
-    "max_floors_above_ground": null,
-    "floors_below_ground": null,
+    "project_area_m2": 7820.9,
+    "planned_units_total": 253,
+    "max_floors_above_ground": 28,
+    "floors_below_ground": 2,
     "unit_types": null,
-    "selected_contractor": null,
+    "selected_contractor": "코오롱글로벌",
     "field_evidence": {
       "stage": {
         "state": "public_register_displayed_stage",
         "source_url": "https://cleanup.seoul.go.kr/cleanup/bsnssttus/lscrMainIndx.do?cpage=1&pageSize=2000",
+        "checked_on": "2026-11-24"
+      },
+      "plan": {
+        "state": "published_plan_not_latest_approval_verified",
+        "source_url": "https://cleanup.seoul.go.kr/cafe/mastr-cleanup-bsnsSumry/execute.do?cafeId=305900000768h78&div=sumry&stepSeCode=103",
+        "source_as_of": null,
+        "checked_on": "2026-11-24",
+        "units_derivation": "분양·임대 공개 면적 구간별 세대수 합계"
+      },
+      "selected_contractor": {
+        "state": "contractor_reported",
+        "source_url": "https://www.kolon.com/kr/media/newsDtl?detailsKey=8301",
+        "source_as_of": "2024-12-17",
         "checked_on": "2026-11-24"
       }
     },
@@ -887,7 +1109,30 @@
         "https://cleanup.seoul.go.kr/cleanup/bsnssttus/lscrMainIndx.do?cpage=1&pageSize=2000",
         "https://cleanup.seoul.go.kr/cafe/mastr-cleanup-bsnsSumry/execute.do?cafeId=305900000768h78&div=sumry&stepSeCode=103"
       ]
-    }
+    },
+    "building_coverage_pct": 32.0,
+    "floor_area_ratio_pct": 308.0,
+    "height_m": 79.0,
+    "published_private_area_bands": [
+      {
+        "type": "분양",
+        "privateAreaBandM2": "60 이하",
+        "units": 122
+      },
+      {
+        "type": "분양",
+        "privateAreaBandM2": "60 초과~85 이하",
+        "units": 87
+      },
+      {
+        "type": "임대",
+        "privateAreaBandM2": "50 초과",
+        "units": 44
+      }
+    ],
+    "limitations": [
+      "구역별 공개 사업개요 기준이며 이후 인가·변경 내역과 차이가 있을 수 있습니다."
+    ]
   },
   {
     "id": "mz-seoul-11000uq120ps202505310172",
@@ -895,16 +1140,29 @@
     "name": "번동3구역 가로주택정비사업",
     "stage": "착공",
     "project_type": "가로주택정비",
-    "project_area_m2": null,
-    "planned_units_total": null,
-    "max_floors_above_ground": null,
-    "floors_below_ground": null,
+    "project_area_m2": 7374.1,
+    "planned_units_total": 167,
+    "max_floors_above_ground": 28,
+    "floors_below_ground": 2,
     "unit_types": null,
-    "selected_contractor": null,
+    "selected_contractor": "코오롱글로벌",
     "field_evidence": {
       "stage": {
         "state": "public_register_displayed_stage",
         "source_url": "https://cleanup.seoul.go.kr/cleanup/bsnssttus/lscrMainIndx.do?cpage=1&pageSize=2000",
+        "checked_on": "2026-11-24"
+      },
+      "plan": {
+        "state": "published_plan_not_latest_approval_verified",
+        "source_url": "https://cleanup.seoul.go.kr/cafe/mastr-cleanup-bsnsSumry/execute.do?cafeId=305900000786L24&div=sumry&stepSeCode=103",
+        "source_as_of": null,
+        "checked_on": "2026-11-24",
+        "units_derivation": "분양·임대 공개 면적 구간별 세대수 합계"
+      },
+      "selected_contractor": {
+        "state": "contractor_reported",
+        "source_url": "https://www.kolon.com/kr/media/newsDtl?detailsKey=8301",
+        "source_as_of": "2024-12-17",
         "checked_on": "2026-11-24"
       }
     },
@@ -928,7 +1186,30 @@
         "https://cleanup.seoul.go.kr/cleanup/bsnssttus/lscrMainIndx.do?cpage=1&pageSize=2000",
         "https://cleanup.seoul.go.kr/cafe/mastr-cleanup-bsnsSumry/execute.do?cafeId=305900000786L24&div=sumry&stepSeCode=103"
       ]
-    }
+    },
+    "building_coverage_pct": 31.0,
+    "floor_area_ratio_pct": 308.0,
+    "height_m": 80.0,
+    "published_private_area_bands": [
+      {
+        "type": "분양",
+        "privateAreaBandM2": "60 이하",
+        "units": 103
+      },
+      {
+        "type": "분양",
+        "privateAreaBandM2": "60 초과~85 이하",
+        "units": 30
+      },
+      {
+        "type": "임대",
+        "privateAreaBandM2": "50 초과",
+        "units": 34
+      }
+    ],
+    "limitations": [
+      "구역별 공개 사업개요 기준이며 이후 인가·변경 내역과 차이가 있을 수 있습니다."
+    ]
   },
   {
     "id": "mz-seoul-11000uq120ps202505310173",
@@ -936,16 +1217,29 @@
     "name": "번동4구역 가로주택정비사업",
     "stage": "착공",
     "project_type": "가로주택정비",
-    "project_area_m2": null,
-    "planned_units_total": null,
-    "max_floors_above_ground": null,
-    "floors_below_ground": null,
+    "project_area_m2": 10311.4,
+    "planned_units_total": 318,
+    "max_floors_above_ground": 35,
+    "floors_below_ground": 2,
     "unit_types": null,
-    "selected_contractor": null,
+    "selected_contractor": "코오롱글로벌",
     "field_evidence": {
       "stage": {
         "state": "public_register_displayed_stage",
         "source_url": "https://cleanup.seoul.go.kr/cleanup/bsnssttus/lscrMainIndx.do?cpage=1&pageSize=2000",
+        "checked_on": "2026-11-24"
+      },
+      "plan": {
+        "state": "published_plan_not_latest_approval_verified",
+        "source_url": "https://cleanup.seoul.go.kr/cafe/mastr-cleanup-bsnsSumry/execute.do?cafeId=305900000788K18&div=sumry&stepSeCode=103",
+        "source_as_of": null,
+        "checked_on": "2026-11-24",
+        "units_derivation": "분양·임대 공개 면적 구간별 세대수 합계"
+      },
+      "selected_contractor": {
+        "state": "contractor_reported",
+        "source_url": "https://www.kolon.com/kr/media/newsDtl?detailsKey=8301",
+        "source_as_of": "2024-12-17",
         "checked_on": "2026-11-24"
       }
     },
@@ -969,7 +1263,35 @@
         "https://cleanup.seoul.go.kr/cleanup/bsnssttus/lscrMainIndx.do?cpage=1&pageSize=2000",
         "https://cleanup.seoul.go.kr/cafe/mastr-cleanup-bsnsSumry/execute.do?cafeId=305900000788K18&div=sumry&stepSeCode=103"
       ]
-    }
+    },
+    "building_coverage_pct": 27.0,
+    "floor_area_ratio_pct": 306.0,
+    "height_m": 100.0,
+    "published_private_area_bands": [
+      {
+        "type": "분양",
+        "privateAreaBandM2": "60 이하",
+        "units": 128
+      },
+      {
+        "type": "분양",
+        "privateAreaBandM2": "60 초과~85 이하",
+        "units": 126
+      },
+      {
+        "type": "임대",
+        "privateAreaBandM2": "40 초과~50 이하",
+        "units": 20
+      },
+      {
+        "type": "임대",
+        "privateAreaBandM2": "50 초과",
+        "units": 44
+      }
+    ],
+    "limitations": [
+      "구역별 공개 사업개요 기준이며 이후 인가·변경 내역과 차이가 있을 수 있습니다."
+    ]
   },
   {
     "id": "mz-seoul-11000uq120ps202505310174",
@@ -977,16 +1299,29 @@
     "name": "번동5구역 가로주택정비사업",
     "stage": "착공",
     "project_type": "가로주택정비",
-    "project_area_m2": null,
-    "planned_units_total": null,
-    "max_floors_above_ground": null,
-    "floors_below_ground": null,
+    "project_area_m2": 10127.0,
+    "planned_units_total": 298,
+    "max_floors_above_ground": 28,
+    "floors_below_ground": 2,
     "unit_types": null,
-    "selected_contractor": null,
+    "selected_contractor": "코오롱글로벌",
     "field_evidence": {
       "stage": {
         "state": "public_register_displayed_stage",
         "source_url": "https://cleanup.seoul.go.kr/cleanup/bsnssttus/lscrMainIndx.do?cpage=1&pageSize=2000",
+        "checked_on": "2026-11-24"
+      },
+      "plan": {
+        "state": "published_plan_not_latest_approval_verified",
+        "source_url": "https://cleanup.seoul.go.kr/cafe/mastr-cleanup-bsnsSumry/execute.do?cafeId=305900000787k48&div=sumry&stepSeCode=103",
+        "source_as_of": null,
+        "checked_on": "2026-11-24",
+        "units_derivation": "분양·임대 공개 면적 구간별 세대수 합계"
+      },
+      "selected_contractor": {
+        "state": "contractor_reported",
+        "source_url": "https://www.kolon.com/kr/media/newsDtl?detailsKey=8301",
+        "source_as_of": "2024-12-17",
         "checked_on": "2026-11-24"
       }
     },
@@ -1010,7 +1345,30 @@
         "https://cleanup.seoul.go.kr/cleanup/bsnssttus/lscrMainIndx.do?cpage=1&pageSize=2000",
         "https://cleanup.seoul.go.kr/cafe/mastr-cleanup-bsnsSumry/execute.do?cafeId=305900000787k48&div=sumry&stepSeCode=103"
       ]
-    }
+    },
+    "building_coverage_pct": 30.0,
+    "floor_area_ratio_pct": 299.0,
+    "height_m": 80.0,
+    "published_private_area_bands": [
+      {
+        "type": "분양",
+        "privateAreaBandM2": "60 이하",
+        "units": 70
+      },
+      {
+        "type": "분양",
+        "privateAreaBandM2": "60 초과~85 이하",
+        "units": 144
+      },
+      {
+        "type": "임대",
+        "privateAreaBandM2": "50 초과",
+        "units": 84
+      }
+    ],
+    "limitations": [
+      "구역별 공개 사업개요 기준이며 이후 인가·변경 내역과 차이가 있을 수 있습니다."
+    ]
   },
   {
     "id": "mz-seoul-11000uq120ps202505310290",

@@ -22,7 +22,7 @@ export function pointLatLng(point) {
 export async function loadSnapshot(base, get=fetch) {
   const manifestUrl=new URL('./moatown-data/latest.json',base);
   async function json(url){
-    const response=await get(url);
+    const response=await get(url,{cache:'no-cache'});
     if(!response.ok) throw Error(`HTTP ${response.status} ${url.pathname}`);
     return response.json();
   }
@@ -85,11 +85,12 @@ const townStyle=(active,legal)=>({
 const stages=[
   {label:'조합설립 진행 중',short:'조합설립 중',ink:'#6746a3',fill:'#aa8bd9',shape:'circle',description:'주민들이 사업을 추진할 조합을 설립하는 단계입니다.'},
   {label:'사업시행계획인가 진행 중',short:'사업인가 진행 중',ink:'#995117',fill:'#edac56',shape:'diamond',description:'사업시행계획의 인가 절차를 진행하는 단계입니다.'},
+  {label:'사업시행계획인가',short:'사업인가 완료',ink:'#265d99',fill:'#80a9dd',shape:'triangle',description:'관할 구청이 사업시행계획을 인가했습니다. 구역 상세에서 인가일과 고시를 확인할 수 있습니다.'},
   {label:'착공',short:'착공',ink:'#006e62',fill:'#4bb8a1',shape:'square',description:'공사를 시작한 것으로 공개 자료에 표시된 단계입니다.'},
   {label:'미확인',short:'미확인',ink:'#586474',fill:'#a4adb8',shape:'ring',description:'해당 구역의 추진 단계를 확인할 공개 자료가 아직 없습니다.'}
 ];
 export function zoneStage(value){
-  return stages.find(stage=>stage.label===value) ?? stages[3];
+  return stages.find(stage=>stage.label===value) ?? stages.at(-1);
 }
 function stageBadge(value,short=false){
   const stage=zoneStage(value);
@@ -307,7 +308,19 @@ export function mount({manifest,towns,zones,boundaries},leaf=globalThis.L){
     const metrics=el('dl',undefined,'metrics');
     field(metrics,'선정일',displayDate(town.selected_date));
     field(metrics,'대상지 면적',numeric(town.area_m2,'㎡'));
-    detail.append(metrics,el('h3',children.length?'세부 사업구역 '+children.length+'곳':'세부 사업구역'));
+    detail.append(metrics);
+    const notices=town.management_plan_notices ?? [];
+    if(notices.length){
+      detail.append(el('h3','관리계획 승인고시'));
+      for(const notice of notices){
+        const row=el('p',undefined,'plan-notice');
+        row.append(el('strong',notice.site),el('span',displayDate(notice.notice_date)+' 고시 · 서울시 수록 사업구역 '+notice.zone_count+'곳'));
+        const link=sourceLink(notice.archive_url,'대상지별 서울시 자료');
+        if(link)row.append(link);
+        detail.append(row);
+      }
+    }
+    detail.append(el('h3',children.length?'지도에 연결된 사업구역 '+children.length+'곳':'세부 사업구역'));
     for(const zone of children){
       const button=el('button',undefined,'zone-item');
       button.append(el('strong',zone.name),stageBadge(zone.stage,true));
@@ -318,36 +331,70 @@ export function mount({manifest,towns,zones,boundaries},leaf=globalThis.L){
     if(!children.length)detail.append(el('p','이 대상지에 연결된 세부 사업구역 자료는 아직 미확인입니다.','notice'));
     const facts=el('dl',undefined,'facts');
     field(facts,'선정 방식',town.selection_track);
-    field(facts,'관리계획 단계',town.management_plan_stage);
+    if(!notices.length)field(facts,'관리계획 단계',town.management_plan_stage);
     field(facts,'지도 위치',town.representative_point?'대표 위치 확인':'미확인');
     const boundary=boundaryProps.get(town.id);
     field(facts,'대상지 경계',boundary ? (boundary.boundary_status==='legal'?'법정 경계':'참고 경계') : unknown);
     const sources=(town.sources ?? []).map((url,i)=>[i?'추가 원문 '+i:'선정 명부 · 선정일 및 면적',{source_url:url,source_as_of:town.source_as_of}]);
+    if(notices.length)sources.push(['서울시 권역별 승인고시일 · 사업구역 수',notices[0]]);
     detail.append(facts,evidenceSection([...sources,['대표 위치',town.representative_point_evidence],['대상지 경계',boundary]]));
   }
   function renderZone(zone){
     const plan=zone.field_evidence?.plan,stage=zone.field_evidence?.stage,contractor=zone.field_evidence?.selected_contractor;
     const metrics=el('dl',undefined,'metrics');
-    field(metrics,'계획 세대수',numeric(zone.planned_units_total,'세대'));
-    field(metrics,'최고 지상 층수',numeric(zone.max_floors_above_ground,'층'));
+    const approved=plan?.state==='approved_project_plan';
+    field(metrics,approved?'인가 당시 세대수':'계획 세대수',numeric(zone.planned_units_total,'세대'));
+    const scope=zone.contract_scope;
+    field(metrics,scope && !zone.max_floors_above_ground?'계약 당시 지상 층수':'최고 지상 층수',numeric(zone.max_floors_above_ground ?? scope?.floors_above_ground,'층'));
     const status=el('div',undefined,'zone-status');
     status.append(stageBadge(zone.stage));
-    if(stage?.source_as_of)status.append(el('small','자료 기준 '+displayDate(stage.source_as_of)));
+    if(stage?.approval_date)status.append(el('small',displayDate(stage.approval_date)+' 인가'));
+    else if(stage?.source_as_of)status.append(el('small','자료 기준 '+displayDate(stage.source_as_of)));
     else if(stage?.checked_on)status.append(el('small','자료 확인 '+displayDate(stage.checked_on)));
     detail.append(status,metrics);
     if(plan?.state?.includes('not_latest')){
       detail.append(el('p','공개 당시의 계획값입니다. 최신 인가·분양계획과 차이가 있을 수 있습니다.','notice'));
     }
     const facts=el('dl',undefined,'facts');
-    field(facts,contractor?.state==='contractor_reported'?'시공사 (시공사 발표)':'선정 시공사',zone.selected_contractor);
-    field(facts,'지하 층수',numeric(zone.floors_below_ground,'층'));
-    field(facts,'세부 주택형',Array.isArray(zone.unit_types)?zone.unit_types.join(', '):zone.unit_types);
-    if(zone.published_private_area_bands?.length){
-      field(facts,'공개 전용면적 구간',zone.published_private_area_bands.map(x=>x.type+' '+x.privateAreaBandM2+'㎡ '+x.units+'세대').join(' · '));
+    const contractorLabel=contractor?.state==='contractor_reported'?'시공사 수주 발표':contractor?.state==='disclosed_contract'?'공시 당시 시공사':'시공사';
+    field(facts,contractorLabel,zone.selected_contractor);
+    if(contractor?.contract_date)field(facts,'공사 계약일',displayDate(contractor.contract_date));
+    else if(contractor?.source_as_of)field(facts,'수주 발표일',displayDate(contractor.source_as_of));
+    if(scope)field(facts,'계약 당시 공사 규모',numeric(scope.units,'세대')+' · 지상 '+scope.floors_above_ground+'층 · 지하 '+scope.floors_below_ground+'층');
+    if(!scope || zone.floors_below_ground!=null)field(facts,'지하 층수',numeric(zone.floors_below_ground,'층'));
+    for(const [key,label,suffix] of [['project_area_m2','사업구역 면적','㎡'],['height_m','최고 높이','m'],['building_coverage_pct','건폐율','%'],['floor_area_ratio_pct','용적률','%']]){
+      if(Number.isFinite(zone[key]))field(facts,label,numeric(zone[key],suffix));
+    }
+    const bands=zone.published_private_area_bands ?? [];
+    for(const kind of new Set(bands.map(row=>row.type))){
+      const total=bands.filter(row=>row.type===kind).reduce((sum,row)=>sum+row.units,0);
+      field(facts,kind+' 계획',numeric(total,'세대'));
+    }
+    if(zone.approved_allocation){
+      const {member,general,reserve}=zone.approved_allocation;
+      field(facts,'인가 당시 분양계획','조합원 '+numeric(member,'세대')+' · 일반분양 '+numeric(general,'세대')+' · 보류지 '+numeric(reserve,'세대'));
+    }
+    const exact=Array.isArray(zone.unit_types) && zone.unit_types[0]?.private_area_m2!==undefined;
+    if(!exact && zone.unit_types?.length){
+      field(facts,'세부 주택형',Array.isArray(zone.unit_types)?zone.unit_types.join(', '):zone.unit_types);
     }
     const boundary=boundaryProps.get(zone.id);
     field(facts,'사업구역 경계',boundary ? (boundary.boundary_status==='legal'?'법정 경계':'참고 경계') : unknown);
-    detail.append(facts,evidenceSection([['계획 세대수 · 층수 · 면적',plan],['추진 단계',stage],['시공사',contractor],['사업구역 경계',boundary]]));
+    detail.append(facts);
+    if(exact || bands.length){
+      const types=el('details',undefined,'housing-table');
+      const table=el('table'),header=table.createTHead().insertRow(),body=table.createTBody();
+      types.append(el('summary',exact?'인가 주택형 '+zone.unit_types.length+'종':'공개 전용면적 구간별 세대수'));
+      for(const label of [exact?'주택형':'공급 구분','전용면적 (㎡)','세대수']){
+        const th=el('th',label);th.scope='col';header.append(th);
+      }
+      for(const row of exact?zone.unit_types:bands){
+        const tr=body.insertRow();
+        for(const value of [row.type,exact?row.private_area_m2:row.privateAreaBandM2,numeric(row.units,'')])tr.append(el('td',value));
+      }
+      types.append(table);detail.append(types);
+    }
+    detail.append(evidenceSection([[approved?'사업시행계획인가 고시 · 첨부 주택형표':'구역별 공개 계획',plan],...(approved?[]:[['추진 단계',stage]]),[scope?'시공사 · 공사 규모 계약 공시':'시공사 근거',contractor],['사업구역 경계',boundary]]));
   }
   function renderPanel(){
     const town=townById.get(current.townId),zone=zoneById.get(current.zoneId);

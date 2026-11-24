@@ -98,6 +98,16 @@ summary::-webkit-details-marker { display: none; }
 .facts { margin: 12px 0; }
 .facts > div { display: grid; grid-template-columns: minmax(76px,.85fr) 1.35fr; gap: 12px; padding: 9px 0; border-bottom: 1px solid var(--line); font-size: 14px; }
 .facts dt { color: var(--sub); }
+.plan-notice { display: grid; gap: 3px; margin: 6px 0; padding: 10px 12px; border-left: 3px solid var(--blue); background: var(--wash); font-size: 13px; }
+.plan-notice a { justify-self: start; }
+.housing-table { margin-top: 14px; }
+.housing-table summary { padding: 11px 0; color: var(--blue); font-size: 14px; font-weight: 700; }
+.housing-table summary::after { content: ' ＋'; }
+.housing-table[open] summary::after { content: ' −'; }
+.housing-table table { width: 100%; border-collapse: collapse; font-size: 13px; font-variant-numeric: tabular-nums; }
+.housing-table :is(th,td) { padding: 6px; text-align: right; border-bottom: 1px solid var(--line); }
+.housing-table :is(th,td):first-child { text-align: left; }
+.housing-table thead { background: var(--wash); }
 .stage-guide { flex: none; position: relative; z-index: 4; background: #fff; border-bottom: 1px solid var(--line); }
 .stage-guide summary { display: flex; align-items: center; gap: 19px; min-height: 45px; padding: 6px var(--gutter); font-size: 13px; }
 .stage-guide summary::after { content: ''; width: 6px; height: 6px; border: solid var(--sub); border-width: 0 1.5px 1.5px 0; transform: rotate(45deg); }
@@ -106,6 +116,7 @@ summary::-webkit-details-marker { display: none; }
 .stage-badge { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; line-height: 1.5; font-weight: 700; color: var(--stage-ink); white-space: nowrap; }
 .stage-badge::before { content: ''; flex: none; width: 9px; height: 9px; background: var(--stage-ink); border-radius: 50%; }
 .stage-badge[data-shape=diamond]::before { border-radius: 1px; transform: rotate(45deg); }
+.stage-badge[data-shape=triangle]::before { border-radius: 0; clip-path: polygon(50% 0,100% 100%,0 100%); }
 .stage-badge[data-shape=square]::before { border-radius: 2px; }
 .stage-badge[data-shape=ring]::before { box-sizing: border-box; border: 2px solid; background: none; }
 .stage-guide-body { position: absolute; top: calc(100% + 1px); left: var(--gutter); width: min(480px,calc(100vw - 2 * var(--gutter))); max-height: 60dvh; overflow: auto; padding: 18px; border: 1px solid var(--line); border-radius: 0 0 14px 14px; background: white; box-shadow: 0 12px 30px #223d4f26; }

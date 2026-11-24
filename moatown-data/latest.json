@@ -17,8 +17,6 @@
     "limitations": [
       "2026-03-31 명부와 확인된 취소 자료에 근거한 초기 자료이며, 현재 전체 명부가 아닙니다.",
       "확인된 후속 공식 선정 일부를 추가했습니다. 최신 전체 선정·정정, 전체 사업구역 상세와 경계는 전수 확인하지 못했습니다.",
-      "수록한 도형은 서울시 공간자료 기준의 참고용 외곽과 사업구역 경계입니다. 고시 지형도면과 대조 완료한 법정 경계는 없습니다. 공간 겹침만 확인된 사업은 미포함입니다.",
-      "수록한 도형은 서울시 공간자료 기준의 참고용 외곽과 사업구역 경계입니다. 고시 지형도면과 대조 완료한 법정 경계는 없습니다. 공간 겹침만 확인된 사업은 미포함입니다.",
       "수록한 도형은 서울시 공간자료 기준의 참고용 외곽과 사업구역 경계입니다. 고시 지형도면과 대조 완료한 법정 경계는 없습니다. 공간 겹침만 확인된 사업은 미포함입니다."
     ],
     "representative_points_unmatched_or_unchecked": 34,
@@ -29,7 +27,11 @@
     "town_reference_boundaries": 103,
     "zone_reference_boundaries": 32,
     "legal_boundary_features": 0,
-    "zone_records_with_plan_numbers": 9
+    "zone_records_with_plan_numbers": 13,
+    "towns_with_management_plan_notices": 59,
+    "management_plan_notice_records": 60,
+    "zones_with_contractor": 8,
+    "zones_with_unit_types": 2
   },
   "source_urls": {
     "official_baseline": "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status",

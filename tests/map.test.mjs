@@ -7,7 +7,36 @@ test('the stage legend covers every published zone stage and keeps missing value
   const manifest=read('../moatown-data/latest.json');
   const zones=read('../moatown-data/'+manifest.files.zones);
   for(const zone of zones)assert.equal(zoneStage(zone.stage).label,zone.stage ?? '미확인');
-  assert.equal(new Set(zones.map(zone=>zoneStage(zone.stage).ink)).size,4);
+  assert.equal(new Set(zones.map(zone=>zoneStage(zone.stage).ink)).size,new Set(zones.map(zone=>zone.stage)).size);
+});
+test('housing breakdowns reconcile with the published plan for their own zone',()=>{
+  const manifest=read('../moatown-data/latest.json');
+  const zones=read('../moatown-data/'+manifest.files.zones);
+  const coverage=manifest.coverage;
+  assert.equal(zones.filter(z=>z.selected_contractor).length,coverage.zones_with_contractor);
+  assert.equal(zones.filter(z=>z.planned_units_total!=null).length,coverage.zone_records_with_plan_numbers);
+  for(const zone of zones){
+    const rows=zone.unit_types ?? zone.published_private_area_bands;
+    if(rows)assert.equal(rows.reduce((sum,row)=>sum+row.units,0),zone.planned_units_total);
+    if(zone.unit_types){
+      assert.ok(zone.unit_types.every(row=>row.type && Number(row.private_area_m2)>0));
+      assert.ok(zone.field_evidence.plan.attachment_name);
+      assert.ok(zone.field_evidence.stage.approval_date<=zone.field_evidence.plan.source_as_of);
+      assert.ok(Object.values(zone.approved_allocation).reduce((a,b)=>a+b,0)<=zone.planned_units_total);
+    }
+    if(zone.selected_contractor)assert.ok(zone.field_evidence.selected_contractor.source_url.startsWith('https://'));
+  }
+  const bun=zones.find(z=>z.name==='번동1구역');
+  assert.deepEqual(bun.published_private_area_bands.filter(row=>row.type==='임대').map(row=>[row.privateAreaBandM2,row.units]),[['40 초과~50 이하',12],['50 초과',18]]);
+});
+test('management notices stay scoped to each address in a joint listing',()=>{
+  const manifest=read('../moatown-data/latest.json');
+  const towns=read('../moatown-data/'+manifest.files.towns);
+  const notices=towns.flatMap(t=>t.management_plan_notices ?? []);
+  assert.equal(notices.length,manifest.coverage.management_plan_notice_records);
+  assert.equal(towns.filter(t=>t.management_plan_notices?.length).length,manifest.coverage.towns_with_management_plan_notices);
+  const joint=towns.find(t=>t.name==='등촌2동 515-44');
+  assert.deepEqual(joint.management_plan_notices.map(n=>[n.site,n.zone_count]),[['등촌2동 515-44',4],['등촌2동 520-3',2]]);
 });
 test('published milestone intervals use calendar months and only apply to the cited project group',()=>{
   const manifest=read('../moatown-data/latest.json');
