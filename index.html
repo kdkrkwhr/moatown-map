@@ -7,12 +7,9 @@
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <title>서울 모아타운 현황지도</title>
   <link rel="stylesheet" href="./vendor/leaflet/leaflet.css">
-  <link rel="stylesheet" href="./vendor/maplibre/maplibre-gl.css">
-  <link rel="stylesheet" href="./styles.css?v=polygon-1">
+  <link rel="stylesheet" href="./styles.css?v=quiet-1">
   <script defer src="./vendor/leaflet/leaflet.js"></script>
-  <script defer src="https://cdn.jsdelivr.net/npm/maplibre-gl@5.24.1/dist/maplibre-gl.js" integrity="sha384-nXMl9YiLoSG5KBPTFgvxVuIqQQcqIvo0bFrvoEaGJC6r7IibIzF1S36Zbf/sKBtL" crossorigin="anonymous"></script>
-  <script defer src="./vendor/maplibre/leaflet-maplibre-gl.js"></script>
-  <script type="module" src="./app.mjs?v=polygon-1"></script>
+  <script type="module" src="./app.mjs?v=quiet-1"></script>
 </head>
 <body class="map-app">
 <a class="skip" href="#search-input">검색으로 바로가기</a>
@@ -29,6 +26,7 @@
       <label for="district-filter"><span class="sr-only">자치구</span><select id="district-filter"><option value="">서울 전체</option></select></label>
     </div>
   </header>
+  <div class="map-style-picker" role="group" aria-label="배경지도 비교"><button type="button" data-map-style="quiet" aria-pressed="false">서울 지도</button><button type="button" data-map-style="detail" aria-pressed="true">기존 지도</button></div>
   <button type="button" id="reset-map" title="서울 전체 보기">서울 전체</button>
   <details id="browse-panel">
     <summary id="browse-toggle"><span>대상지 목록·상세</span><span id="result-count" role="status">확인 중</span></summary>
@@ -55,7 +53,7 @@
     <details class="map-help">
       <summary>참고용 지도 · 갱신 <time id="snapshot-date">확인 중</time></summary>
       <div>
-        <p>참고 외곽을 우선 표시합니다. 경계를 확인하지 못한 대상지도 목록에서 찾을 수 있으며, 확인된 대표 위치가 있으면 선택 시에만 점으로 보입니다. 표시가 없다고 사업이 없다는 뜻은 아닙니다. 필지 포함 여부나 법정 경계는 관할 기관의 최신 고시·공고를 확인하세요.</p>
+        <p>서울 지도는 경계 탐색용 간략 배경입니다. 골목 이름 등은 기존 지도에서 확인하세요.</p><p>참고 외곽을 우선 표시합니다. 경계를 확인하지 못한 대상지도 목록에서 찾을 수 있으며, 확인된 대표 위치가 있으면 선택 시에만 점으로 보입니다. 표시가 없다고 사업이 없다는 뜻은 아닙니다. 필지 포함 여부나 법정 경계는 관할 기관의 최신 고시·공고를 확인하세요.</p>
         <nav aria-label="관련 자료"><a href="./docs/product-spec.html">프로젝트 안내</a><a href="./docs/data-sources.md">데이터 출처</a><a href="./moatown-data/latest.json">최신 데이터</a></nav>
       </div>
     </details>

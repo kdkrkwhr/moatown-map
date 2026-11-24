@@ -150,3 +150,12 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,[t
 @media(max-height:510px) and (orientation:landscape) {
   .map-view .browse-body { max-height:calc(34dvh - 45px); }
 }
+
+/* Same-camera comparison; both modes keep the project overlay separate. */
+#map[data-basemap="quiet"] { background:#f7f7f0; }
+.map-style-picker { position:absolute; z-index:2; right:calc(var(--safe-right) + 5rem); top:var(--safe-top); display:flex; gap:.18rem; padding:.23rem; background:#fff; border:1px solid #cfd7ce; border-radius:.7rem; box-shadow:0 .14rem .7rem #22342924; }
+.map-style-picker button { font:inherit; font-size:.76rem; font-weight:700; border:0; border-radius:.44rem; min-height:44px; padding:.4rem .54rem; background:transparent; color:#405247; cursor:pointer; }
+.map-style-picker button[aria-pressed="true"] { background:#e8eee7; color:#203b2d; }
+.quiet-district { width:max-content; transform-origin:center; pointer-events:none; }
+.quiet-district span { display:block; transform:translate(-50%,-50%); font-size:.71rem; font-weight:680; letter-spacing:.045em; color:#647365; white-space:nowrap; text-shadow:0 0 2px #fff,0 0 4px #fff; }
+@media (max-width:760px){ .map-style-picker { left:var(--safe-left); right:auto; top:calc(var(--safe-top) + 7.25rem); } }

@@ -71,3 +71,58 @@ test('vector start failure leaves map and exposes raster failure without removin
   tileError();
   assert.match(status.textContent,/계속 이용/);
 });
+
+test('quiet preview URL round-trips without disturbing town or zone',async()=>{
+  const {basemapMode,basemapUrl}=await import('../map-engine.mjs');
+  const input=new URL('https://example.org/moatown-map/?town=town-a&zone=zone-a#legend');
+  assert.equal(basemapMode(input.search),'detail');
+  const switched=basemapUrl(input,'quiet');
+  assert.equal(basemapMode(switched.search),'quiet');
+  assert.equal(switched.searchParams.get('town'),'town-a');
+  assert.equal(switched.searchParams.get('zone'),'zone-a');
+  assert.equal(switched.hash,'#legend');
+  assert.equal(basemapUrl(switched,'detail').href,input.href);
+});
+
+test('quiet mode fetches only same-origin context and supersedes delayed detailed startup without moving camera',async()=>{
+  const {basemapSwitcher}=await import('../map-engine.mjs');
+  const seen=[],active=new Set(),container={dataset:{}};
+  let detailedResolve;
+  const layer=()=>({addTo(){active.add(this);},addLayer(){}});
+  const map={createPane:()=>({style:{}}),on(){},getContainer:()=>container,getZoom:()=>11,
+    hasLayer:x=>active.has(x),removeLayer:x=>active.delete(x)};
+  const leaf={layerGroup:layer,geoJSON:layer};
+  const set=basemapSwitcher(leaf,map,{textContent:''},{
+    read:async url=>{seen.push(url.pathname);return {ok:true,json:()=>({type:'FeatureCollection',features:[]})};},
+    loadDetailed:()=>new Promise(r=>{detailedResolve=r;}),
+    startDetailed:()=>{throw Error('superseded startup must never attach');}
+  });
+  await set('quiet');
+  assert.equal(seen.length,1);
+  assert.ok(seen[0].endsWith('/moatown-data/basemap/seoul-context.geojson'));
+  const delayed=set('detail');
+  await set('quiet');detailedResolve();
+  await delayed;
+  assert.equal(container.dataset.basemap,'quiet');
+  assert.equal(seen.length,1);
+  assert.equal(active.size,2);
+});
+
+test('static Seoul context contains all 25 distinct Korean district names and local road/water geometry',()=>{
+  const resource='../moatown-data/basemap/seoul-context.geojson';
+  assert.ok(fs.statSync(new URL(resource,import.meta.url)).size < 350_000,'overview context must stay below 350 KB');
+  const source=read(resource);
+  const byKind=kind=>source.features.filter(f=>f.properties.kind===kind);
+  assert.equal(source.type,'FeatureCollection');
+  assert.equal(byKind('district').length,25);
+  const labels=byKind('label');
+  assert.equal(new Set(labels.map(f=>f.properties.name)).size,25);
+  for(const f of labels){
+    assert.match(f.properties.name,/^[가-힣]+구$/);
+    const [lat,lon]=pointLatLng(f.geometry);
+    assert.ok(lat>37.4 && lat<37.72 && lon>126.7 && lon<127.2);
+  }
+  assert.ok(byKind('road').length);
+  const han=byKind('water').find(f=>f.properties.name==='한강');
+  assert.ok(han && ['Polygon','MultiPolygon'].includes(han.geometry.type),'real named Han River water polygon');
+});

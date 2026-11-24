@@ -1,4 +1,4 @@
-import {attachBasemap} from './map-engine.mjs?v=polygon-1';
+import {basemapMode,basemapUrl,basemapSwitcher} from './map-engine.mjs?v=quiet-1';
 const normalize = value => String(value ?? '').normalize('NFKC').toLowerCase().replace(/\s+/g,'');
 export function filterTowns(towns, query, district) {
   const q=normalize(query);
@@ -102,12 +102,24 @@ export function mount({manifest,towns,zones,boundaries}, leaf=globalThis.L) {
     const option=el('option',value); option.value=value; district.append(option);
   }
 
-  let map=null;
+  let map=null,setBasemap;
+  const mapStyleControls=[...document.querySelectorAll('[data-map-style]')];
+  function refreshBasemap(){
+    const mode=basemapMode(location.search);
+    mapStyleControls.forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.mapStyle===mode)));
+    setBasemap?.(mode);
+  }
   if(leaf && get('map')){
     map=leaf.map(get('map'),{scrollWheelZoom:false});
     map.zoomControl?.setPosition('topright');
     fitSeoul(map);
-    attachBasemap(leaf,map,mapStatus);
+    setBasemap=basemapSwitcher(leaf,map,mapStatus);
+    mapStyleControls.forEach(button=>button.addEventListener('click',()=>{
+      const url=basemapUrl(location.href,button.dataset.mapStyle);
+      if(url.href!==location.href)history.replaceState(null,'',url);
+      refreshBasemap();
+    }));
+    refreshBasemap();
     function boundaryPane(name,zIndex){
       const pane=map.createPane(name); pane.style.zIndex=zIndex;
     }
@@ -252,6 +264,7 @@ export function mount({manifest,towns,zones,boundaries}, leaf=globalThis.L) {
   });
   map?.on('zoomend',()=>render(true));
   window.addEventListener('popstate',()=>{
+    refreshBasemap();
     search.value=''; district.value='';if(statusFilter)statusFilter.value='';
     current=resolveSelection(location.search,townById,zoneById);if(current.townId && browse)browse.open=true;render();fitSelection();
   });
