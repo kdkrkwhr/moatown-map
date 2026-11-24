@@ -1,4 +1,4 @@
-import {basemapMode,basemapUrl,basemapSwitcher} from './map-engine.mjs?v=quiet-1';
+﻿import {basemapMode,basemapUrl,basemapSwitcher} from './map-engine.mjs?v=atlas-1';
 const normalize = value => String(value ?? '').normalize('NFKC').toLowerCase().replace(/\s+/g,'');
 export function filterTowns(towns, query, district) {
   const q=normalize(query);
@@ -46,19 +46,25 @@ function sourceLink(url,label='출처') {
   const link=el('a',label,'source-link');
   link.href=url; link.target='_blank'; link.rel='noopener noreferrer';return link;
 }
-function field(list,label,value,evidence){
-  const row=el('div'),dd=el('dd',shown(value));
-  row.append(el('dt',label),dd);
-  if(evidence?.source_url){
-    const line=el('small',undefined,'field-source');
-    const link=sourceLink(evidence.source_url);
-    if(link) line.append(link);
-    if(evidence.source_as_of) line.append(` · 기준 ${evidence.source_as_of}`);
-    else line.append(' · 자료 기준일 미상');
-    if(evidence.checked_on) line.append(` · 확인 ${evidence.checked_on}`);
-    dd.append(line);
-  }
+function field(list,label,value){
+  const row=el('div');
+  row.append(el('dt',label),el('dd',shown(value)));
   list.append(row);
+}
+function displayDate(value){
+  return value ? value.split('-').join('.') : unknown;
+}
+function evidenceSection(entries){
+  const section=el('details',undefined,'provenance');
+  section.append(el('summary','출처와 자료 기준일'));
+  for(const [label,evidence] of entries){
+    const link=sourceLink(evidence?.source_url,label);
+    if(!link)continue;
+    const row=el('p',undefined,'evidence-row');
+    row.append(link,el('small',['자료 기준 '+(evidence.source_as_of ?? '미상'),evidence.checked_on && '확인 '+evidence.checked_on].filter(Boolean).join(' · ')));
+    section.append(row);
+  }
+  return section;
 }
 const seoulView=[[37.425,126.760],[37.702,127.184]];
 export const mapInteractionOptions={
@@ -72,47 +78,52 @@ export function overviewOptions({x,y}){
   return {paddingTopLeft:[edge,top],paddingBottomRight:[edge,bottom],maxZoom:12,animate:false};
 }
 const fitSeoul=map=>map?.fitBounds(seoulView,overviewOptions(map.getSize()));
-const townStyle=(active,legal)=>({color:active?'#05366c':'#235d91',fillColor:active?'#196ab5':'#4387b7',weight:active?4.5:2.4,dashArray:legal?null:'8 3',fillOpacity:active?.55:.39,opacity:1});
+const townStyle=(active,legal)=>({color:active?'#193b95':'#3558bb',fillColor:active?'#5472db':'#6986e7',weight:active?4.5:2.4,dashArray:legal?null:'8 3',fillOpacity:active?.55:.39,opacity:1});
 const zoneStyle=(active,legal)=>({color:active?'#81370c':'#98501a',fillColor:active?'#df7b21':'#e9ad50',weight:active?3.8:2,dashArray:legal?null:'2 4',fillOpacity:active?.64:.40});
 
 export function showReferencePin(id,selectedId,visible,polygons){
   return id===selectedId && visible.has(id) && !polygons.has(id);
 }
 
-export function mount({manifest,towns,zones,boundaries}, leaf=globalThis.L) {
+export function mount({manifest,towns,zones,boundaries},leaf=globalThis.L){
   const get=id=>document.getElementById(id);
-  const list=get('town-list'), detail=get('town-detail'), search=get('search-input'), district=get('district-filter');
-  const result=get('result-count'), mapStatus=get('map-status');
-  const browse=get('browse-panel'), browseToggle=get('browse-toggle');
+  const list=get('town-list'),detail=get('town-detail'),search=get('search-input'),district=get('district-filter');
+  const explorer=get('explorer'),sheet=get('sheet-toggle'),mapStatus=get('map-status');
   const townById=new Map(towns.map(t=>[t.id,t]));
   const zoneById=new Map(zones.map(z=>[z.id,z]));
   const groups=new Map(towns.map(t=>[t.id,[]]));
-  for(const z of zones) groups.get(z.town_id)?.push(z);
-  const stageValues=new Set(towns.map(t=>t.management_plan_stage).filter(Boolean));
-  const statusFilter=get('status-filter');
-  if(statusFilter && stageValues.size){
-    for(const text of [...stageValues].sort()) statusFilter.append(el('option',text));
-    statusFilter.hidden=false;
+  for(const zone of zones) groups.get(zone.town_id)?.push(zone);
+  const districtCounts=new Map();
+  for(const town of towns) districtCounts.set(town.district,(districtCounts.get(town.district) ?? 0)+1);
+  for(const name of [...districtCounts.keys()].sort((a,b)=>a.localeCompare(b,'ko'))){
+    district.append(new Option(name,name));
   }
   const markers=new Map(),townLayers=new Map(),zoneLayers=new Map();
   const boundaryProps=new Map(boundaries.features.map(({properties:p})=>[p.entity_id,p]));
-  let current=resolveSelection(location.search,townById,zoneById);
-  if(browse){
-    if(current.townId)browse.open=true;
-    else if(window.matchMedia('(max-width: 760px)').matches)browse.open=false;
-    get('browse-close')?.addEventListener('click',()=>{browse.open=false;browseToggle?.focus();});
+  let current,rows=[],visible=new Set(),map,setBasemap;
+  function readUrl(){
+    const params=new URLSearchParams(location.search);
+    search.value=params.get('q') ?? '';
+    const region=params.get('district');
+    district.value=districtCounts.has(region) ? region : '';
+    current=resolveSelection(location.search,townById,zoneById);
+    if(current.townId && !filterTowns([townById.get(current.townId)],search.value,district.value).length){
+      search.value='';district.value='';
+    }
   }
-  function setUrl(replace=false){
+  readUrl();
+  function writeUrl(replace=false){
     const url=new URL(location.href);
-    if(current.townId) url.searchParams.set('town',current.townId); else url.searchParams.delete('town');
-    if(current.zoneId) url.searchParams.set('zone',current.zoneId); else url.searchParams.delete('zone');
+    for(const [key,value] of [['town',current.townId],['zone',current.zoneId],['q',search.value],['district',district.value]]){
+      if(value)url.searchParams.set(key,value);else url.searchParams.delete(key);
+    }
     if(url.href!==location.href) history[replace?'replaceState':'pushState'](null,'',url);
   }
-  for(const value of [...new Set(towns.map(t=>t.district))].sort((a,b)=>a.localeCompare(b,'ko'))){
-    const option=el('option',value); option.value=value; district.append(option);
+  function expandSheet(expanded){
+    explorer.classList.toggle('collapsed',!expanded);
+    sheet.setAttribute('aria-expanded',String(expanded));
   }
-
-  let map=null,setBasemap;
+  sheet.addEventListener('click',()=>expandSheet(explorer.classList.contains('collapsed')));
   const mapStyleControls=[...document.querySelectorAll('[data-map-style]')];
   function refreshBasemap(){
     const mode=basemapMode(location.search);
@@ -123,10 +134,12 @@ export function mount({manifest,towns,zones,boundaries}, leaf=globalThis.L) {
     map=leaf.map(get('map'),mapInteractionOptions);
     map.zoomControl?.setPosition('topright');
     fitSeoul(map);
-    setBasemap=basemapSwitcher(leaf,map,mapStatus);
+    setBasemap=basemapSwitcher(leaf,map,mapStatus,{districtCounts,selectDistrict(name){
+      search.value='';district.value=name;updateFilters();
+    }});
     mapStyleControls.forEach(button=>button.addEventListener('click',()=>{
       const url=basemapUrl(location.href,button.dataset.mapStyle);
-      if(url.href!==location.href)history.replaceState(null,'',url);
+      history.replaceState(null,'',url);
       refreshBasemap();
     }));
     refreshBasemap();
@@ -150,139 +163,183 @@ export function mount({manifest,towns,zones,boundaries}, leaf=globalThis.L) {
     }
     for(const t of towns){
       const coords=pointLatLng(t.representative_point);if(!coords || townLayers.has(t.id)) continue;
-      const layer=leaf.circleMarker(coords,{pane:'pinReference',radius:7,color:'#133a7a',fillColor:'#397ac4',weight:2,fillOpacity:.9});
+      const layer=leaf.circleMarker(coords,{pane:'pinReference',radius:7,color:'#243f8b',fillColor:'#4364c8',weight:2,fillOpacity:.9});
       layer.bindTooltip(el('span',t.name+' · 대표 위치 (경계 미확인)'),{permanent:true,direction:'top',offset:[0,-7]});
       layer.on('click',()=>select(t.id,null));
       markers.set(t.id,layer);
     }
   } else mapStatus.textContent='지도를 사용할 수 없습니다. 목록에서 모든 대상지를 확인할 수 있습니다.';
 
-  function fitSelection(){
-    if(!map) return;
-    const zone=zoneLayers.get(current.zoneId)?.layer,town=townLayers.get(current.townId)?.layer;
-    const shape=zone??town;
-    const pin=markers.get(current.townId)?.getLatLng();
-    const bounds=shape?.getBounds().isValid() ? shape.getBounds() : pin ? leaf.latLngBounds([pin,pin]) : null;
-    if(!bounds){if(current.townId)fitSeoul(map);return;}
-    const size=map.getSize();
-    const narrow=window.matchMedia('(max-width: 760px)').matches;
-    const panel=browse?.open ? browse.getBoundingClientRect() : null;
-    const chrome=get('search-input')?.getBoundingClientRect();
-    const paddingTopLeft=narrow ? [22,Math.min(size.y*.32,(chrome?.bottom ?? 0)+16)] : [Math.min(size.x*.43,(panel?.right ?? 0)+20),36];
-    const paddingBottomRight=narrow ? [22,Math.min(size.y*.51,panel ? size.y-panel.top+16 : 24)] : [45,36];
-    map.fitBounds(bounds,{paddingTopLeft,paddingBottomRight,maxZoom:shape?17:16,animate:false});
-  }
-  function select(townId,zoneId,focus=false){
-    current={townId,zoneId};if(townId && browse)browse.open=true;setUrl();render();fitSelection();
-    if(focus) detail.querySelector(zoneId?'[data-zone-heading]':'h2')?.focus({preventScroll:false});
-  }
-  function renderDetails(){
-    detail.replaceChildren();
-    const town=townById.get(current.townId), zone=zoneById.get(current.zoneId);
-    if(!town){detail.append(el('h2','대상지 상세'),el('p','지도 또는 목록에서 모아타운을 선택하세요.'));return;}
-    const title=el('h2',town.name);title.tabIndex=-1;
-    detail.append(title,el('p',town.address));
-    const townFields=el('dl');
-    const townEvidence={source_url:town.sources?.[0],source_as_of:town.source_as_of};
-    field(townFields,'선정 방식',town.selection_track,townEvidence);
-    field(townFields,'선정일',town.selected_date,townEvidence);
-    field(townFields,'관리계획 단계',town.management_plan_stage,townEvidence);
-    field(townFields,'대상지 면적',numeric(town.area_m2,'㎡'),townEvidence);
-    field(townFields,'지도 위치',town.representative_point?'대표 위치 참고점':'대표 위치 미확인',town.representative_point_evidence);
-    const tp=boundaryProps.get(town.id);
-    field(townFields,'대상지 경계',tp?'참고 경계 (법정 경계 아님)':'미확인',tp);
-    detail.append(townFields);
-    if(town.sources?.length>1){
-      const links=el('p',undefined,'field-source');
-      town.sources.forEach((url,i)=>{const a=sourceLink(url,`원문 ${i+1}`);if(a) links.append(a,' ');});
-      detail.append(links);
-    }
-    detail.append(el('h3','세부 사업구역'));
-    const children=groups.get(town.id) ?? [];
-    if(!children.length){detail.append(el('p','공개 자료에서 연결한 세부 사업구역은 아직 미확인입니다.'));return;}
-    const zoneList=el('div',undefined,'zone-list');
-    for(const z of children){
-      const button=el('button',z.name,'zone-item');button.type='button';
-      button.setAttribute('aria-pressed',z.id===zone?.id);
-      button.addEventListener('click',()=>select(town.id,z.id,true));
-      zoneList.append(button);
-    }
-    detail.append(zoneList);
-    if(!zone){detail.append(el('p','사업구역을 선택하면 계획 수치와 출처를 볼 수 있습니다.'));return;}
-    const zoneTitle=el('h3',zone.name);zoneTitle.tabIndex=-1;zoneTitle.dataset.zoneHeading='';detail.append(zoneTitle);
-    const plan=zone.field_evidence?.plan;
-    const zFields=el('dl');
-    field(zFields,'사업 추진 단계',zone.stage,zone.field_evidence?.stage);
-    field(zFields,'계획 세대수',numeric(zone.planned_units_total,'세대'),plan);
-    field(zFields,'최고 지상 층수',numeric(zone.max_floors_above_ground,'층'),plan);
-    field(zFields,'지하 층수',numeric(zone.floors_below_ground,'층'),plan);
-    field(zFields,'세부 주택형',Array.isArray(zone.unit_types)?zone.unit_types.join(', '):zone.unit_types,plan);
-    if(zone.published_private_area_bands?.length) {
-      field(zFields,'공개 전용면적 구간 (주택형 아님)',zone.published_private_area_bands.map(x=>`${x.type} ${x.privateAreaBandM2}㎡ ${x.units}세대`).join(' · '),plan);
-    }
-    const contractorEvidence=zone.field_evidence?.selected_contractor;
-    field(zFields,contractorEvidence?.state==='contractor_reported'?'선정 시공사 (시공사 발표)':'선정 시공사',zone.selected_contractor,contractorEvidence);
-    const zp=boundaryProps.get(zone.id);
-    field(zFields,'사업구역 경계',zp?'참고 경계 (법정 경계 아님)':'미확인',zp);
-    detail.append(zFields);
-    if(plan?.state?.includes('not_latest')){
-      const label=plan.state.startsWith('historical_')?'과거 공개 계획값':'공개 계획값';
-      detail.append(el('p',`${label}입니다. 최신 인가·확정 분양계획과 동일한지는 확인되지 않았습니다.`));
-    }
-  }
 
-  function render(layersOnly=false){
-    const rows=filterTowns(towns,search.value,district.value)
-      .filter(t=>!statusFilter?.value || t.management_plan_stage===statusFilter.value);
-    const visible=new Set(rows.map(t=>t.id));
-    if(!layersOnly){
-    list.replaceChildren();result.textContent=`${rows.length} / ${towns.length}곳`;
-    if(!rows.length) list.append(el('p','검색 조건에 맞는 대상지가 없습니다.'));
-    for(const t of rows){
-      const button=el('button',undefined,'town-item');
-      button.type='button';button.dataset.town=t.id;
-      button.setAttribute('aria-pressed',t.id===current.townId);
-      button.append(el('strong',t.name),el('span',t.address));
-      if(!boundaryProps.has(t.id)) button.append(el('small',t.representative_point?'경계 미확인 · 대표 위치 있음':'경계·대표 위치 미확인'));
-      button.addEventListener('click',()=>select(t.id,null,true));list.append(button);
-    }
-    }
-    if(map){
-      const show=(layer,yes)=>{ if(yes && !map.hasLayer(layer)) layer.addTo(map); else if(!yes && map.hasLayer(layer)) layer.remove(); };
-      for(const [id,{layer,legal}] of townLayers){show(layer,visible.has(id));layer.setStyle(townStyle(id===current.townId,legal));}
-      for(const [id,{layer,legal}] of zoneLayers){
-        const parent=zoneById.get(id).town_id;
-        show(layer,visible.has(parent) && (map.getZoom()>=14 || current.townId===parent));
-        layer.setStyle(zoneStyle(id===current.zoneId,legal));
+  function fitView(){
+    if(!map)return;
+    const shape=zoneLayers.get(current.zoneId)?.layer ?? townLayers.get(current.townId)?.layer;
+    const pin=markers.get(current.townId)?.getLatLng();
+    const bounds=leaf.latLngBounds([]);
+    if(shape)bounds.extend(shape.getBounds());
+    else if(pin)bounds.extend(pin);
+    else if(!current.townId && (search.value || district.value)){
+      for(const town of rows){
+        const layer=townLayers.get(town.id)?.layer;
+        if(layer)bounds.extend(layer.getBounds());
+        else if(markers.has(town.id))bounds.extend(markers.get(town.id).getLatLng());
       }
-      for(const [id,layer] of markers)show(layer,showReferencePin(id,current.townId,visible,townLayers));
     }
-    if(!layersOnly) renderDetails();
+    if(!bounds.isValid()){fitSeoul(map);return;}
+    const size=map.getSize();
+    const side=Math.min(size.x*.12,55), vertical=Math.min(size.y*.19,72);
+    map.fitBounds(bounds,{paddingTopLeft:[side,vertical],paddingBottomRight:[side,vertical],maxZoom:current.townId?17:15,animate:false});
   }
-  function filterChange(){
-    if(current.townId && !filterTowns(towns,search.value,district.value).some(t=>t.id===current.townId)){
-      current={townId:null,zoneId:null};setUrl(true);
+  function renderLayers(){
+    if(!map)return;
+    const overview=!current.townId && !search.value && !district.value;
+    map.getContainer().classList.toggle('district-overview',overview && map.getZoom()>=9 && map.getZoom()<=12);
+    map.getContainer().classList.toggle('show-totals',overview);
+    const show=(layer,yes)=>{
+      if(yes && !map.hasLayer(layer))layer.addTo(map);
+      else if(!yes && map.hasLayer(layer))layer.remove();
+    };
+    for(const [id,{layer,legal}] of townLayers){
+      show(layer,visible.has(id));
+      const style=townStyle(id===current.townId,legal);
+      if(current.zoneId)style.fillOpacity=.13;
+      layer.setStyle(style);
     }
-    render();
+    for(const [id,{layer,legal}] of zoneLayers){
+      const parent=zoneById.get(id).town_id;
+      show(layer,visible.has(parent) && (map.getZoom()>=14 || current.townId===parent));
+      const style=zoneStyle(id===current.zoneId,legal);
+      if(current.zoneId && id!==current.zoneId)style.fillOpacity=.16;
+      layer.setStyle(style);
+    }
+    zoneLayers.get(current.zoneId)?.layer.bringToFront();
+    for(const [id,layer] of markers)show(layer,showReferencePin(id,current.townId,visible,townLayers));
   }
-  function browseFilter(){if(browse)browse.open=true;filterChange();}
-  search.addEventListener('input',browseFilter);district.addEventListener('change',browseFilter);
-  statusFilter?.addEventListener('change',filterChange);
-  get('reset-map').addEventListener('click',()=>{
-    search.value='';district.value='';if(statusFilter)statusFilter.value='';
-    select(null,null);fitSeoul(map);
+  function renderList(){
+    rows=filterTowns(towns,search.value,district.value);
+    visible=new Set(rows.map(t=>t.id));
+    get('result-count').textContent=rows.length+'곳';
+    const fragment=document.createDocumentFragment();
+    for(const town of rows){
+      const button=el('button',undefined,'town-item');
+      button.type='button';button.dataset.town=town.id;
+      const meta=el('span',undefined,'row-meta');
+      meta.append(el('span',town.district,'district-name'));
+      if(town.selected_date)meta.append(el('span',displayDate(town.selected_date)+' 선정'));
+      const count=groups.get(town.id).length;
+      if(count)meta.append(el('span','세부 '+count+'곳'));
+      button.append(el('strong',town.name),meta);
+      if(!boundaryProps.has(town.id))button.append(el('span',town.representative_point?'대표 위치만 확인':'지도 위치 미확인','location-note'));
+      button.addEventListener('click',()=>select(town.id,null));
+      fragment.append(button);
+    }
+    if(!rows.length){
+      const note=el('div','검색 조건에 맞는 대상지가 없습니다.','empty');
+      const clear=el('button','검색 조건 지우기');
+      clear.type='button';clear.addEventListener('click',reset);
+      note.append(clear);fragment.append(note);
+    }
+    list.replaceChildren(fragment);
+    list.scrollTop=0;
+  }
+  function renderTown(town){
+    const children=groups.get(town.id);
+    const metrics=el('dl',undefined,'metrics');
+    field(metrics,'선정일',displayDate(town.selected_date));
+    field(metrics,'대상지 면적',numeric(town.area_m2,'㎡'));
+    detail.append(metrics,el('h3',children.length?'세부 사업구역 '+children.length+'곳':'세부 사업구역'));
+    for(const zone of children){
+      const button=el('button',zone.name,'zone-item');
+      button.type='button';button.dataset.zone=zone.id;
+      button.addEventListener('click',()=>select(town.id,zone.id));
+      detail.append(button);
+    }
+    if(!children.length)detail.append(el('p','이 대상지에 연결된 세부 사업구역 자료는 아직 미확인입니다.','notice'));
+    const facts=el('dl',undefined,'facts');
+    field(facts,'선정 방식',town.selection_track);
+    field(facts,'관리계획 단계',town.management_plan_stage);
+    field(facts,'지도 위치',town.representative_point?'대표 위치 확인':'미확인');
+    const boundary=boundaryProps.get(town.id);
+    field(facts,'대상지 경계',boundary ? (boundary.boundary_status==='legal'?'법정 경계':'참고 경계') : unknown);
+    const sources=(town.sources ?? []).map((url,i)=>[i?'추가 원문 '+i:'선정 명부 · 선정일 및 면적',{source_url:url,source_as_of:town.source_as_of}]);
+    detail.append(facts,evidenceSection([...sources,['대표 위치',town.representative_point_evidence],['대상지 경계',boundary]]));
+  }
+  function renderZone(zone){
+    const plan=zone.field_evidence?.plan,stage=zone.field_evidence?.stage,contractor=zone.field_evidence?.selected_contractor;
+    const metrics=el('dl',undefined,'metrics');
+    field(metrics,'계획 세대수',numeric(zone.planned_units_total,'세대'));
+    field(metrics,'최고 지상 층수',numeric(zone.max_floors_above_ground,'층'));
+    detail.append(metrics);
+    if(plan?.state?.includes('not_latest')){
+      detail.append(el('p','공개 당시의 계획값입니다. 최신 인가·분양계획과 차이가 있을 수 있습니다.','notice'));
+    }
+    const facts=el('dl',undefined,'facts');
+    field(facts,'추진 단계',zone.stage);
+    field(facts,contractor?.state==='contractor_reported'?'시공사 (시공사 발표)':'선정 시공사',zone.selected_contractor);
+    field(facts,'지하 층수',numeric(zone.floors_below_ground,'층'));
+    field(facts,'세부 주택형',Array.isArray(zone.unit_types)?zone.unit_types.join(', '):zone.unit_types);
+    if(zone.published_private_area_bands?.length){
+      field(facts,'공개 전용면적 구간',zone.published_private_area_bands.map(x=>x.type+' '+x.privateAreaBandM2+'㎡ '+x.units+'세대').join(' · '));
+    }
+    const boundary=boundaryProps.get(zone.id);
+    field(facts,'사업구역 경계',boundary ? (boundary.boundary_status==='legal'?'법정 경계':'참고 경계') : unknown);
+    detail.append(facts,evidenceSection([['계획 세대수 · 층수 · 면적',plan],['추진 단계',stage],['시공사',contractor],['사업구역 경계',boundary]]));
+  }
+  function renderPanel(){
+    const town=townById.get(current.townId),zone=zoneById.get(current.zoneId);
+    get('list-view').hidden=Boolean(town);get('detail-view').hidden=!town;
+    get('sheet-label').textContent=zone?'사업구역 상세':town?'대상지 상세':'대상지 탐색';
+    detail.replaceChildren();
+    if(!town)return;
+    const query=[district.value,search.value.trim()].filter(Boolean).join(' ');
+    get('back-label').textContent=zone ? town.name : (query?query+' · ':'')+'검색 결과 '+rows.length+'곳';
+    const title=el('h2',zone?.name ?? town.name);
+    title.tabIndex=-1;
+    detail.append(el('span',town.district,'detail-district'),title,el('p',zone?town.name+' 모아타운':town.address,'address'));
+    if(zone)renderZone(zone);else renderTown(town);
+    detail.scrollTop=0;
+  }
+  function select(townId,zoneId){
+    current={townId,zoneId};
+    expandSheet(true);writeUrl();renderPanel();renderLayers();fitView();
+    detail.querySelector('h2')?.focus({preventScroll:true});
+  }
+  get('back-results').addEventListener('click',()=>{
+    const {townId,zoneId}=current;
+    select(zoneId?townId:null,null);
+    const target=zoneId ? detail.querySelector('[data-zone="'+CSS.escape(zoneId)+'"]') : list.querySelector('[data-town="'+CSS.escape(townId)+'"]');
+    target?.focus();
   });
-  map?.on('zoomend',()=>render(true));
+  function updateFilters(){
+    current={townId:null,zoneId:null};
+    expandSheet(true);writeUrl(true);renderList();renderPanel();renderLayers();fitView();
+  }
+  function reset(){
+    search.value='';district.value='';
+    updateFilters();
+  }
+  search.addEventListener('input',updateFilters);
+  district.addEventListener('change',updateFilters);
+  get('reset-map').addEventListener('click',reset);
+  map?.on('zoomend',renderLayers);
   window.addEventListener('popstate',()=>{
-    refreshBasemap();
-    search.value=''; district.value='';if(statusFilter)statusFilter.value='';
-    current=resolveSelection(location.search,townById,zoneById);if(current.townId && browse)browse.open=true;render();fitSelection();
+    readUrl();expandSheet(true);refreshBasemap();renderList();renderPanel();renderLayers();fitView();
   });
-  if(get('snapshot-date')) get('snapshot-date').textContent=manifest.snapshot_date;
-  render();fitSelection();
+  const date=get('snapshot-date');
+  date.dateTime=manifest.snapshot_date;date.textContent=displayDate(manifest.snapshot_date);
+  get('coverage-note').textContent=displayDate(manifest.coverage.baseline_as_of)+' 선정 명부와 이후 확인한 변동을 반영했습니다. '+districtCounts.size+'개 자치구의 대상지 '+towns.length+'곳이 수록되어 있습니다.';
+  renderList();renderPanel();renderLayers();fitView();
+  if(map){
+    let lastSize=map.getSize();
+    new ResizeObserver(()=>{
+      map.invalidateSize({pan:false});
+      const next=map.getSize();
+      if(!next.equals(lastSize)){lastSize=next;fitView();}
+    }).observe(get('map'));
+  }
 }
-if(typeof document!=='undefined') loadSnapshot(document.baseURI).then(data=>mount(data)).catch(error=>{
-  document.getElementById('result-count').textContent='자료 불러오기 실패';
-  document.getElementById('town-list').textContent='자료를 불러오지 못했습니다. 페이지를 새로고침해 주세요.';
+if(typeof document!=='undefined')loadSnapshot(document.baseURI).then(data=>mount(data)).catch(error=>{
+  document.getElementById('result-count').textContent='불러오기 실패';
+  document.getElementById('town-list').append(el('p','자료를 불러오지 못했습니다. 페이지를 새로고침해 주세요.','empty'));
   console.error(error);
 });

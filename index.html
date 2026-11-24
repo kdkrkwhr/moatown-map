@@ -1,63 +1,62 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="ko">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <meta name="description" content="서울시 모아타운 공식 선정 대상지와 공개 사업구역 자료를 탐색하세요.">
+  <meta name="description" content="서울시 모아타운 선정 대상지와 공개 사업구역 자료를 지도에서 탐색하세요.">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <title>서울 모아타운 현황지도</title>
   <link rel="stylesheet" href="./vendor/leaflet/leaflet.css">
-  <link rel="stylesheet" href="./styles.css?v=quiet-1">
+  <link rel="stylesheet" href="./styles.css?v=atlas-1">
   <script defer src="./vendor/leaflet/leaflet.js"></script>
-  <script type="module" src="./app.mjs?v=wheel-1"></script>
+  <script type="module" src="./app.mjs?v=atlas-1"></script>
 </head>
-<body class="map-app">
-<a class="skip" href="#search-input">검색으로 바로가기</a>
-<main class="map-view" aria-labelledby="map-heading">
-  <h2 id="map-heading" tabindex="-1" class="sr-only">서울 모아타운 지도</h2>
-  <div id="map" aria-label="서울시 모아타운 위치 지도"></div>
-  <header class="map-search">
-    <div class="masthead">
-      <span class="brand-icon" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none"><path d="m4 10 7-4 10 4 7-4v16l-7 4-10-4-7 4V10Z M11 6v16m10-12v16" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
-      <div class="brand"><p>서울 정비사업 탐색</p><h1>모아타운 현황지도</h1></div>
-    </div>
-    <div class="filters">
-      <label for="search-input"><span class="sr-only">대상지 검색</span><input id="search-input" type="search" placeholder="동 이름, 주소 또는 대상지명" autocomplete="off"></label>
-      <label for="district-filter"><span class="sr-only">자치구</span><select id="district-filter"><option value="">서울 전체</option></select></label>
-    </div>
-  </header>
-  <div class="map-style-picker" role="group" aria-label="배경지도 비교"><button type="button" data-map-style="quiet" aria-pressed="false">서울 지도</button><button type="button" data-map-style="detail" aria-pressed="true">기존 지도</button></div>
-  <button type="button" id="reset-map" title="서울 전체 보기">서울 전체</button>
-  <details id="browse-panel">
-    <summary id="browse-toggle"><span>대상지 목록·상세</span><span id="result-count" role="status">확인 중</span></summary>
-    <div class="browse-body">
-      <div class="browse-toolbar"><span>선택한 대상지와 사업구역</span><button type="button" id="browse-close">닫기</button></div>
-      <section class="list-panel" aria-labelledby="search-heading">
-        <h2 id="search-heading" tabindex="-1" class="sr-only">대상지 목록</h2>
+<body>
+<a class="skip" href="#explorer">대상지 탐색으로 바로가기</a>
+<header class="topbar">
+  <h1><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none"><path d="m4 12 12-7 12 7-12 7z" fill="currentColor"/><path d="m4 17 12 7 12-7M4 22l12 7 12-7" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/></svg></span>모아타운 현황지도</h1>
+  <div class="top-meta"><span class="updated">자료 갱신 <time id="snapshot-date">확인 중</time></span>
+    <details class="guide"><summary>자료 안내</summary><div class="popover">
+      <h2>지도에 수록된 자료</h2><p id="coverage-note">서울시 선정 명부와 이후 확인된 변동을 반영한 부분 자료입니다.</p>
+      <p>사업 외곽과 대표 위치는 참고용입니다. 필지 포함 여부는 관할 기관의 최신 고시·공고를 확인하세요.</p>
+      <nav aria-label="관련 자료"><a href="./docs/product-spec.html">프로젝트 안내</a><a href="./docs/data-sources.md">데이터 출처</a><a href="./moatown-data/latest.json">스냅샷 보기</a></nav>
+    </div></details>
+  </div>
+</header>
+<main class="workspace">
+  <aside id="explorer" aria-label="대상지 탐색" tabindex="-1">
+    <button type="button" id="sheet-toggle" aria-controls="panel-content" aria-expanded="true"><span id="sheet-label">대상지 탐색</span><span class="chevron" aria-hidden="true"></span></button>
+    <div id="panel-content">
+      <section id="list-view" aria-labelledby="list-title">
+        <div class="search-block">
+          <h2 id="list-title">대상지 탐색</h2>
+          <label class="search-box"><span class="search-icon" aria-hidden="true"></span><span class="sr-only">대상지 검색</span><input id="search-input" type="search" placeholder="동 이름 또는 주소 검색" autocomplete="off"></label>
+          <div class="filter-row"><label for="district-filter">자치구</label><select id="district-filter"><option value="">서울 전체</option></select></div>
+        </div>
+        <div class="results-head"><h3>검색 결과</h3><span id="result-count" role="status">불러오는 중</span></div>
         <div id="town-list" aria-label="모아타운 검색 결과"></div>
       </section>
-      <section class="detail-panel" aria-labelledby="detail-heading">
-        <h2 id="detail-heading" tabindex="-1">대상지 상세</h2>
-        <div id="town-detail"><p>지도나 목록에서 대상지를 선택하세요.</p></div>
+      <section id="detail-view" aria-label="선택 상세" hidden>
+        <button type="button" id="back-results" class="back"><span aria-hidden="true">←</span><span id="back-label">검색 결과</span></button>
+        <div id="town-detail"></div>
       </section>
     </div>
-  </details>
-  <p id="map-status" role="status"></p>
-  <noscript><p class="map-note">지도를 보려면 JavaScript를 켜 주세요. <a href="./moatown-data/latest.json">최신 데이터 보기</a></p></noscript>
-  <div class="map-meta">
-    <ul class="legend" aria-label="지도 범례">
-      <li><span class="key key-town"></span>모아타운 참고 외곽</li>
-      <li><span class="key key-project"></span>세부 사업구역 참고 경계</li>
-      <li><span class="key key-point"></span>선택 시 대표 위치</li>
-    </ul>
-    <details class="map-help">
-      <summary>참고용 지도 · 갱신 <time id="snapshot-date">확인 중</time></summary>
-      <div>
-        <p>서울 지도는 경계 탐색용 간략 배경입니다. 골목 이름 등은 기존 지도에서 확인하세요.</p><p>참고 외곽을 우선 표시합니다. 경계를 확인하지 못한 대상지도 목록에서 찾을 수 있으며, 확인된 대표 위치가 있으면 선택 시에만 점으로 보입니다. 표시가 없다고 사업이 없다는 뜻은 아닙니다. 필지 포함 여부나 법정 경계는 관할 기관의 최신 고시·공고를 확인하세요.</p>
-        <nav aria-label="관련 자료"><a href="./docs/product-spec.html">프로젝트 안내</a><a href="./docs/data-sources.md">데이터 출처</a><a href="./moatown-data/latest.json">최신 데이터</a></nav>
-      </div>
-    </details>
-  </div>
+  </aside>
+  <section class="map-stage" aria-label="서울 모아타운 지도">
+    <div id="map" aria-label="대상지 위치 및 참고 경계"></div>
+    <div class="map-style-picker" role="group" aria-label="배경지도 선택">
+      <button type="button" data-map-style="quiet" aria-pressed="true">구역 지도</button><button type="button" data-map-style="detail" aria-pressed="false">도로 지도</button>
+    </div>
+    <button type="button" id="reset-map" title="검색 조건을 지우고 서울 전체 보기">서울 전체 보기</button>
+    <p id="map-status" role="status"></p>
+    <details class="legend"><summary>지도 범례</summary><ul>
+      <li><i class="key district"></i>자치구별 수록 대상지 수</li>
+      <li><i class="key town"></i>모아타운 참고 외곽</li>
+      <li><i class="key zone"></i>세부 사업구역 참고 경계</li>
+      <li><i class="key point"></i>선택한 대상지의 대표 위치</li>
+    </ul></details>
+    <noscript><p class="map-note">지도를 이용하려면 JavaScript를 켜 주세요. <a href="./moatown-data/latest.json">최신 데이터</a></p></noscript>
+  </section>
 </main>
 </body>
 </html>

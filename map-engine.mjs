@@ -44,18 +44,18 @@ export function attachBasemap(leaf,map,status,glLib=globalThis.maplibregl){
 }
 
 export function basemapMode(search){
-  return new URLSearchParams(search).get('map')==='quiet'?'quiet':'detail';
+  return new URLSearchParams(search).get('map')==='detail'?'detail':'quiet';
 }
 export function basemapUrl(input,mode){
   const url=new URL(input);
-  if(mode==='quiet')url.searchParams.set('map','quiet'); else url.searchParams.delete('map');
+  if(mode==='detail')url.searchParams.set('map','detail'); else url.searchParams.delete('map');
   return url;
 }
 
 const contextStyle=p=>{
-  if(p.kind==='water')return {color:'#c6dce5',fillColor:'#c9e0e9',fillOpacity:1,weight:1.2,opacity:.92};
-  if(p.kind==='road')return {color:'#b7b9ad',weight:1,opacity:.62};
-  return {color:'#c6c9bd',weight:1,fillColor:'#eeefe8',fillOpacity:.86};
+  if(p.kind==='water')return {color:'#a3ccd8',fillColor:'#afd7e1',fillOpacity:1,weight:1,opacity:1};
+  if(p.kind==='road')return {color:'#ccd2cf',weight:1,opacity:.75};
+  return {color:'#bcc9c7',weight:1.15,fillColor:'#fbfaf3',fillOpacity:1};
 };
 let detailStack;
 function getDetailStack(){
@@ -80,11 +80,12 @@ function getDetailStack(){
     .then(()=>script(new URL('./vendor/maplibre/leaflet-maplibre-gl.js',import.meta.url))).catch(()=>{});
   return detailStack;
 }
-export function basemapSwitcher(leaf,map,status,{read=fetch,loadDetailed=getDetailStack,startDetailed=attachBasemap}={}){
+export function basemapSwitcher(leaf,map,status,{read=fetch,loadDetailed=getDetailStack,startDetailed=attachBasemap,districtCounts=new Map(),selectDistrict}={}){
   let mode,disposeDetail,quietLayer,labels,version=0;
   let attribution='',attributionActive=false;
   let contextData;
-  for(const [pane,z] of [['contextDistrict',201],['contextRoad',202],['contextWater',203],['contextLabel',399]]){
+  const districtLabels=[];
+  for(const [pane,z] of [['contextDistrict',201],['contextRoad',202],['contextWater',203],['contextLabel',435]]){
     const node=map.createPane(pane);node.style.zIndex=z;node.style.pointerEvents='none';
   }
   function loadContext(){
@@ -99,8 +100,21 @@ export function basemapSwitcher(leaf,map,status,{read=fetch,loadDetailed=getDeta
     const show=map.getZoom()>=9 && map.getZoom()<=14;
     if(show&&!map.hasLayer(labels))labels.addTo(map);
     if(!show&&map.hasLayer(labels))map.removeLayer(labels);
+    if(!show)return;
+    const placed=[];
+    const size=map.getSize?.();
+    for(const {marker,count} of districtLabels){
+      const at=map.latLngToContainerPoint(marker.getLatLng());
+      const onScreen=at.x>=32 && at.x<=size.x-32 && at.y>=12 && at.y<=size.y-12;
+      const clear=onScreen && placed.every(p=>Math.abs(p.x-at.x)>74 || Math.abs(p.y-at.y)>27);
+      if(clear){
+        placed.push(at);
+        if(!labels.hasLayer(marker))labels.addLayer(marker);
+        count.hidden=map.getZoom()>12.5;
+      }else if(labels.hasLayer(marker))labels.removeLayer(marker);
+    }
   }
-  map.on('zoomend',syncLabels);
+  map.on('zoomend moveend resize',syncLabels);
   return async function setMode(next){
     if(mode===next)return;
     const request=++version;
@@ -122,12 +136,35 @@ export function basemapSwitcher(leaf,map,status,{read=fetch,loadDetailed=getDeta
       if(!quietLayer){
         quietLayer=leaf.layerGroup();
         for(const [kind,pane] of [['district','contextDistrict'],['road','contextRoad'],['water','contextWater']]){
-          quietLayer.addLayer(leaf.geoJSON(source,{pane,interactive:false,filter:f=>f.properties?.kind===kind,style:f=>contextStyle(f.properties)}));
+          quietLayer.addLayer(leaf.geoJSON(source,{
+            pane,interactive:kind==='district' && Boolean(selectDistrict),
+            filter:f=>f.properties?.kind===kind,style:f=>contextStyle(f.properties),
+            onEachFeature(f,layer){
+              const name=f.properties.name;
+              if(kind!=='district' || !selectDistrict)return;
+              if(!districtCounts.has(name)){layer.options.interactive=false;return;}
+              layer.on('click',()=>selectDistrict(name));
+              const label=document.createElement('span');
+              label.textContent=name+' · 수록 대상지 '+districtCounts.get(name)+'곳';
+              layer.bindTooltip(label,{sticky:true});
+            }
+          }));
         }
-        labels=leaf.geoJSON(source,{pane:'contextLabel',filter:f=>f.properties?.kind==='label',pointToLayer(f,latLng){
-          const text=document.createElement('span');text.textContent=f.properties.name;
-          return leaf.marker(latLng,{pane:'contextLabel',interactive:false,keyboard:false,icon:leaf.divIcon({className:'quiet-district',html:text,iconSize:null})});
-        }});
+        labels=leaf.layerGroup();
+        const labelFeatures=source.features.filter(f=>f.properties?.kind==='label');
+        labelFeatures.sort((a,b)=>(districtCounts.get(b.properties.name) ?? 0)-(districtCounts.get(a.properties.name) ?? 0));
+        for(const f of labelFeatures){
+          const name=f.properties.name,total=districtCounts.get(name) ?? 0;
+          const text=document.createElement('span');text.className='district-label';text.textContent=name;
+          const count=document.createElement('b');count.textContent=String(total);text.append(count);
+          const interactive=Boolean(selectDistrict && total);
+          const marker=leaf.marker(leaf.GeoJSON.coordsToLatLng(f.geometry.coordinates),{
+            pane:'contextLabel',interactive,keyboard:interactive,autoPanOnFocus:false,title:name+' 수록 대상지 '+total+'곳',
+            icon:leaf.divIcon({className:'quiet-district',html:text,iconSize:[0,0]})
+          });
+          if(interactive)marker.on('click',()=>selectDistrict(name));
+          districtLabels.push({marker,count});
+        }
         const districtCredit=source.districtSource==='seoul'?
           '<a href="https://data.seoul.go.kr/dataList/OA-21184/F/1/datasetView.do">서울특별시</a>' :
           source.districtSource==='sgis'?
@@ -135,6 +172,7 @@ export function basemapSwitcher(leaf,map,status,{read=fetch,loadDetailed=getDeta
         attribution=[districtCredit,OSM].filter(Boolean).join(' · ');
       }
       quietLayer.addTo(map);syncLabels();
+      map.getContainer().dataset.contextReady='true';
       if(attribution){map.attributionControl?.addAttribution(attribution);attributionActive=true;}
     }catch{
       if(request===version)status.textContent='서울 배경을 불러오지 못했습니다. 사업구역과 목록은 계속 이용할 수 있습니다.';

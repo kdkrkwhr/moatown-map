@@ -72,16 +72,17 @@ test('vector start failure leaves map and exposes raster failure without removin
   assert.match(status.textContent,/계속 이용/);
 });
 
-test('quiet preview URL round-trips without disturbing town or zone',async()=>{
+test('default district map and road map round-trip without disturbing town or zone',async()=>{
   const {basemapMode,basemapUrl}=await import('../map-engine.mjs');
   const input=new URL('https://example.org/moatown-map/?town=town-a&zone=zone-a#legend');
-  assert.equal(basemapMode(input.search),'detail');
-  const switched=basemapUrl(input,'quiet');
-  assert.equal(basemapMode(switched.search),'quiet');
+  assert.equal(basemapMode(input.search),'quiet');
+  assert.equal(basemapMode('?map=quiet'),'quiet');
+  const switched=basemapUrl(input,'detail');
+  assert.equal(basemapMode(switched.search),'detail');
   assert.equal(switched.searchParams.get('town'),'town-a');
   assert.equal(switched.searchParams.get('zone'),'zone-a');
   assert.equal(switched.hash,'#legend');
-  assert.equal(basemapUrl(switched,'detail').href,input.href);
+  assert.equal(basemapUrl(switched,'quiet').href,input.href);
 });
 
 test('quiet mode fetches only same-origin context and supersedes delayed detailed startup without moving camera',async()=>{
