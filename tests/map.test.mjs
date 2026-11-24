@@ -31,13 +31,14 @@ test('production snapshot loads from nested project path; all layers are present
  assert.ok(paths.every(x=>x.startsWith('/moatown-map/moatown-data/')));
 });
 
-test('nearby pins across grid edges cluster, filtering and selection split them', async()=>{
-  const {clusterPins}=await import('../map-engine.mjs');
-  const near=[{id:'a',x:63,y:12},{id:'b',x:65,y:12},{id:'c',x:180,y:12}];
-  assert.deepEqual(clusterPins(near,11).map(g=>g.map(p=>p.id)),[['a','b'],['c']]);
-  assert.deepEqual(clusterPins(near,11,'a').map(g=>g.map(p=>p.id)),[['a'],['b'],['c']]);
-  assert.deepEqual(clusterPins(near.slice(1),11).map(g=>g.map(p=>p.id)),[['b'],['c']]);
-  assert.deepEqual(clusterPins(near,14).map(g=>g.map(p=>p.id)),[['a'],['b'],['c']]);
+test('a reference point appears only for selected, visible towns without boundaries',async()=>{
+  const {showReferencePin}=await import('../app.mjs');
+  const visible=new Set(['with-shape','point-only']);
+  const polygons=new Set(['with-shape']);
+  assert.equal(showReferencePin('point-only',null,visible,polygons),false);
+  assert.equal(showReferencePin('with-shape','with-shape',visible,polygons),false);
+  assert.equal(showReferencePin('point-only','point-only',visible,polygons),true);
+  assert.equal(showReferencePin('point-only','point-only',new Set(),polygons),false);
 });
 
 test('vector start failure leaves map and exposes raster failure without removing overlays',async()=>{

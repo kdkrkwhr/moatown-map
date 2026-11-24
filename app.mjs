@@ -1,4 +1,4 @@
-import {attachBasemap,clusterPins} from './map-engine.mjs';
+import {attachBasemap} from './map-engine.mjs?v=polygon-1';
 const normalize = value => String(value ?? '').normalize('NFKC').toLowerCase().replace(/\s+/g,'');
 export function filterTowns(towns, query, district) {
   const q=normalize(query);
@@ -62,8 +62,12 @@ function field(list,label,value,evidence){
 }
 const seoulView=[[37.425,126.760],[37.702,127.184]];
 const fitSeoul=map=>map?.fitBounds(seoulView,{padding:[12,12],maxZoom:11,animate:false});
-const townStyle=(active,legal)=>({color:active?'#0649b1':'#1660a1',weight:active?5:2,dashArray:legal?null:'8 5',fillOpacity:active?.13:.06});
-const zoneStyle=(active,legal)=>({color:active?'#9a370b':'#b45b15',weight:active?5:2.4,dashArray:legal?null:'2 4',fillOpacity:active?.24:.11});
+const townStyle=(active,legal)=>({color:active?'#084085':'#2366a0',fillColor:active?'#2678d1':'#589bc4',weight:active?4:2,dashArray:legal?null:'7 3',fillOpacity:active?.36:.24,opacity:active?1:.92});
+const zoneStyle=(active,legal)=>({color:active?'#8b390c':'#a5561c',fillColor:active?'#df7b21':'#e9ad50',weight:active?3.5:1.8,dashArray:legal?null:'2 4',fillOpacity:active?.55:.30});
+
+export function showReferencePin(id,selectedId,visible,polygons){
+  return id===selectedId && visible.has(id) && !polygons.has(id);
+}
 
 export function mount({manifest,towns,zones,boundaries}, leaf=globalThis.L) {
   const get=id=>document.getElementById(id);
@@ -98,7 +102,7 @@ export function mount({manifest,towns,zones,boundaries}, leaf=globalThis.L) {
     const option=el('option',value); option.value=value; district.append(option);
   }
 
-  let map=null,clusters=null;
+  let map=null;
   if(leaf && get('map')){
     map=leaf.map(get('map'),{scrollWheelZoom:false});
     map.zoomControl?.setPosition('topright');
@@ -107,8 +111,7 @@ export function mount({manifest,towns,zones,boundaries}, leaf=globalThis.L) {
     function boundaryPane(name,zIndex){
       const pane=map.createPane(name); pane.style.zIndex=zIndex;
     }
-    boundaryPane('townReference',410);boundaryPane('zoneReference',420);boundaryPane('pinReference',430);boundaryPane('clusterReference',440);
-    clusters=leaf.layerGroup().addTo(map);
+    boundaryPane('townReference',410);boundaryPane('zoneReference',420);boundaryPane('pinReference',430);
     for(const f of boundaries.features){
       const p=f.properties, town=p.entity_type==='town', zone=zoneById.get(p.entity_id);
       const townId=town?p.entity_id:zone?.town_id;
@@ -124,9 +127,9 @@ export function mount({manifest,towns,zones,boundaries}, leaf=globalThis.L) {
       (town?townLayers:zoneLayers).set(p.entity_id,{layer,legal,props:p});
     }
     for(const t of towns){
-      const coords=pointLatLng(t.representative_point);if(!coords) continue;
-      const layer=leaf.circleMarker(coords,{pane:'pinReference',radius:5,color:'#133a7a',fillColor:'#397ac4',weight:2,fillOpacity:.9});
-      layer.bindTooltip(el('span',t.name+' · 대표 위치'));
+      const coords=pointLatLng(t.representative_point);if(!coords || townLayers.has(t.id)) continue;
+      const layer=leaf.circleMarker(coords,{pane:'pinReference',radius:7,color:'#133a7a',fillColor:'#397ac4',weight:2,fillOpacity:.9});
+      layer.bindTooltip(el('span',t.name+' · 대표 위치 (경계 미확인)'),{permanent:true,direction:'top',offset:[0,-7]});
       layer.on('click',()=>select(t.id,null));
       markers.set(t.id,layer);
     }
@@ -138,7 +141,7 @@ export function mount({manifest,towns,zones,boundaries}, leaf=globalThis.L) {
     const shape=zone??town;
     const pin=markers.get(current.townId)?.getLatLng();
     const bounds=shape?.getBounds().isValid() ? shape.getBounds() : pin ? leaf.latLngBounds([pin,pin]) : null;
-    if(!bounds) return;
+    if(!bounds){if(current.townId)fitSeoul(map);return;}
     const size=map.getSize();
     const narrow=window.matchMedia('(max-width: 760px)').matches;
     const panel=browse?.open ? browse.getBoundingClientRect() : null;
@@ -218,7 +221,7 @@ export function mount({manifest,towns,zones,boundaries}, leaf=globalThis.L) {
       button.type='button';button.dataset.town=t.id;
       button.setAttribute('aria-pressed',t.id===current.townId);
       button.append(el('strong',t.name),el('span',t.address));
-      if(!t.representative_point) button.append(el('small','대표 위치 미확인'));
+      if(!boundaryProps.has(t.id)) button.append(el('small',t.representative_point?'경계 미확인 · 대표 위치 있음':'경계·대표 위치 미확인'));
       button.addEventListener('click',()=>select(t.id,null,true));list.append(button);
     }
     }
@@ -230,30 +233,7 @@ export function mount({manifest,towns,zones,boundaries}, leaf=globalThis.L) {
         show(layer,visible.has(parent) && (map.getZoom()>=14 || current.townId===parent));
         layer.setStyle(zoneStyle(id===current.zoneId,legal));
       }
-      clusters.clearLayers();
-      const points=[];
-      for(const [id,layer] of markers){
-        if(!visible.has(id)){show(layer,false);continue;}
-        const latLng=layer.getLatLng();
-        const {x,y}=map.project(latLng,map.getZoom());
-        points.push({id,x,y,latLng,layer});
-      }
-      for(const group of clusterPins(points,map.getZoom(),current.townId)){
-        if(group.length===1){
-          const [{id,layer}]=group;
-          show(layer,true);layer.setRadius(id===current.townId?8:5);continue;
-        }
-        group.forEach(({layer})=>show(layer,false));
-        const latLngs=group.map(p=>p.latLng);
-        const bounds=leaf.latLngBounds(latLngs);
-        const size=group.length>20?44:group.length>9?38:32;
-        const cluster=leaf.marker(bounds.getCenter(),{
-          pane:'clusterReference',title:`대상지 ${group.length}곳 확대`,
-          icon:leaf.divIcon({className:'moa-cluster',html:`<span class="moa-cluster-count">${group.length}</span>`,iconSize:[size,size]})
-        });
-        cluster.on('click',()=>map.setView(bounds.getCenter(),Math.min(14,Math.max(map.getZoom()+2,map.getBoundsZoom(bounds,false,[80,80]))),{animate:false}));
-        clusters.addLayer(cluster);
-      }
+      for(const [id,layer] of markers)show(layer,showReferencePin(id,current.townId,visible,townLayers));
     }
     if(!layersOnly) renderDetails();
   }

@@ -8,11 +8,11 @@
   <title>서울 모아타운 현황지도</title>
   <link rel="stylesheet" href="./vendor/leaflet/leaflet.css">
   <link rel="stylesheet" href="./vendor/maplibre/maplibre-gl.css">
-  <link rel="stylesheet" href="./styles.css?v=modern-2">
+  <link rel="stylesheet" href="./styles.css?v=polygon-1">
   <script defer src="./vendor/leaflet/leaflet.js"></script>
   <script defer src="https://cdn.jsdelivr.net/npm/maplibre-gl@5.24.1/dist/maplibre-gl.js" integrity="sha384-nXMl9YiLoSG5KBPTFgvxVuIqQQcqIvo0bFrvoEaGJC6r7IibIzF1S36Zbf/sKBtL" crossorigin="anonymous"></script>
   <script defer src="./vendor/maplibre/leaflet-maplibre-gl.js"></script>
-  <script type="module" src="./app.mjs"></script>
+  <script type="module" src="./app.mjs?v=polygon-1"></script>
 </head>
 <body class="map-app">
 <a class="skip" href="#search-input">검색으로 바로가기</a>
@@ -48,14 +48,14 @@
   <noscript><p class="map-note">지도를 보려면 JavaScript를 켜 주세요. <a href="./moatown-data/latest.json">최신 데이터 보기</a></p></noscript>
   <div class="map-meta">
     <ul class="legend" aria-label="지도 범례">
-      <li><span class="key key-town"></span>모아타운 외곽</li>
-      <li><span class="key key-project"></span>세부 사업구역</li>
-      <li><span class="key key-point"></span>확인된 위치점</li>
+      <li><span class="key key-town"></span>모아타운 참고 외곽</li>
+      <li><span class="key key-project"></span>세부 사업구역 참고 경계</li>
+      <li><span class="key key-point"></span>선택 시 대표 위치</li>
     </ul>
     <details class="map-help">
       <summary>참고용 지도 · 갱신 <time id="snapshot-date">확인 중</time></summary>
       <div>
-        <p>공개 자료로 확인된 위치만 표시합니다. 표시가 없다고 사업이 없다는 뜻은 아닙니다. 필지 포함 여부나 법정 경계는 관할 기관의 최신 고시·공고를 확인하세요.</p>
+        <p>참고 외곽을 우선 표시합니다. 경계를 확인하지 못한 대상지도 목록에서 찾을 수 있으며, 확인된 대표 위치가 있으면 선택 시에만 점으로 보입니다. 표시가 없다고 사업이 없다는 뜻은 아닙니다. 필지 포함 여부나 법정 경계는 관할 기관의 최신 고시·공고를 확인하세요.</p>
         <nav aria-label="관련 자료"><a href="./docs/product-spec.html">프로젝트 안내</a><a href="./docs/data-sources.md">데이터 출처</a><a href="./moatown-data/latest.json">최신 데이터</a></nav>
       </div>
     </details>
