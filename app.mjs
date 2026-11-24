@@ -1,3 +1,4 @@
+import {attachBasemap,clusterPins} from './map-engine.mjs';
 const normalize = value => String(value ?? '').normalize('NFKC').toLowerCase().replace(/\s+/g,'');
 export function filterTowns(towns, query, district) {
   const q=normalize(query);
@@ -68,6 +69,7 @@ export function mount({manifest,towns,zones,boundaries}, leaf=globalThis.L) {
   const get=id=>document.getElementById(id);
   const list=get('town-list'), detail=get('town-detail'), search=get('search-input'), district=get('district-filter');
   const result=get('result-count'), mapStatus=get('map-status');
+  const browse=get('browse-panel'), browseToggle=get('browse-toggle');
   const townById=new Map(towns.map(t=>[t.id,t]));
   const zoneById=new Map(zones.map(z=>[z.id,z]));
   const groups=new Map(towns.map(t=>[t.id,[]]));
@@ -81,6 +83,11 @@ export function mount({manifest,towns,zones,boundaries}, leaf=globalThis.L) {
   const markers=new Map(),townLayers=new Map(),zoneLayers=new Map();
   const boundaryProps=new Map(boundaries.features.map(({properties:p})=>[p.entity_id,p]));
   let current=resolveSelection(location.search,townById,zoneById);
+  if(browse){
+    if(current.townId)browse.open=true;
+    else if(window.matchMedia('(max-width: 760px)').matches)browse.open=false;
+    get('browse-close')?.addEventListener('click',()=>{browse.open=false;browseToggle?.focus();});
+  }
   function setUrl(replace=false){
     const url=new URL(location.href);
     if(current.townId) url.searchParams.set('town',current.townId); else url.searchParams.delete('town');
@@ -91,18 +98,17 @@ export function mount({manifest,towns,zones,boundaries}, leaf=globalThis.L) {
     const option=el('option',value); option.value=value; district.append(option);
   }
 
-  let map=null;
+  let map=null,clusters=null;
   if(leaf && get('map')){
     map=leaf.map(get('map'),{scrollWheelZoom:false});
+    map.zoomControl?.setPosition('topright');
     fitSeoul(map);
-    const tiles=leaf.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{
-      maxZoom:19, attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a>'
-    }).addTo(map);
-    tiles.on('tileerror',()=>{mapStatus.textContent='배경지도를 불러오지 못했습니다. 대상지·경계·목록은 계속 이용할 수 있습니다.';});
+    attachBasemap(leaf,map,mapStatus);
     function boundaryPane(name,zIndex){
       const pane=map.createPane(name); pane.style.zIndex=zIndex;
     }
-    boundaryPane('townReference',410);boundaryPane('zoneReference',420);boundaryPane('pinReference',430);
+    boundaryPane('townReference',410);boundaryPane('zoneReference',420);boundaryPane('pinReference',430);boundaryPane('clusterReference',440);
+    clusters=leaf.layerGroup().addTo(map);
     for(const f of boundaries.features){
       const p=f.properties, town=p.entity_type==='town', zone=zoneById.get(p.entity_id);
       const townId=town?p.entity_id:zone?.town_id;
@@ -130,11 +136,19 @@ export function mount({manifest,towns,zones,boundaries}, leaf=globalThis.L) {
     if(!map) return;
     const zone=zoneLayers.get(current.zoneId)?.layer,town=townLayers.get(current.townId)?.layer;
     const shape=zone??town;
-    if(shape?.getBounds().isValid()) map.fitBounds(shape.getBounds(),{padding:[36,36],maxZoom:17,animate:false});
-    else if(markers.has(current.townId)) map.setView(markers.get(current.townId).getLatLng(),16,{animate:false});
+    const pin=markers.get(current.townId)?.getLatLng();
+    const bounds=shape?.getBounds().isValid() ? shape.getBounds() : pin ? leaf.latLngBounds([pin,pin]) : null;
+    if(!bounds) return;
+    const size=map.getSize();
+    const narrow=window.matchMedia('(max-width: 760px)').matches;
+    const panel=browse?.open ? browse.getBoundingClientRect() : null;
+    const chrome=get('search-input')?.getBoundingClientRect();
+    const paddingTopLeft=narrow ? [22,Math.min(size.y*.32,(chrome?.bottom ?? 0)+16)] : [Math.min(size.x*.43,(panel?.right ?? 0)+20),36];
+    const paddingBottomRight=narrow ? [22,Math.min(size.y*.51,panel ? size.y-panel.top+16 : 24)] : [45,36];
+    map.fitBounds(bounds,{paddingTopLeft,paddingBottomRight,maxZoom:shape?17:16,animate:false});
   }
   function select(townId,zoneId,focus=false){
-    current={townId,zoneId};setUrl();render();fitSelection();
+    current={townId,zoneId};if(townId && browse)browse.open=true;setUrl();render();fitSelection();
     if(focus) detail.querySelector(zoneId?'[data-zone-heading]':'h2')?.focus({preventScroll:false});
   }
   function renderDetails(){
@@ -216,8 +230,29 @@ export function mount({manifest,towns,zones,boundaries}, leaf=globalThis.L) {
         show(layer,visible.has(parent) && (map.getZoom()>=14 || current.townId===parent));
         layer.setStyle(zoneStyle(id===current.zoneId,legal));
       }
+      clusters.clearLayers();
+      const points=[];
       for(const [id,layer] of markers){
-        show(layer,visible.has(id));layer.setRadius(id===current.townId?8:5);
+        if(!visible.has(id)){show(layer,false);continue;}
+        const latLng=layer.getLatLng();
+        const {x,y}=map.project(latLng,map.getZoom());
+        points.push({id,x,y,latLng,layer});
+      }
+      for(const group of clusterPins(points,map.getZoom(),current.townId)){
+        if(group.length===1){
+          const [{id,layer}]=group;
+          show(layer,true);layer.setRadius(id===current.townId?8:5);continue;
+        }
+        group.forEach(({layer})=>show(layer,false));
+        const latLngs=group.map(p=>p.latLng);
+        const bounds=leaf.latLngBounds(latLngs);
+        const size=group.length>20?44:group.length>9?38:32;
+        const cluster=leaf.marker(bounds.getCenter(),{
+          pane:'clusterReference',title:`대상지 ${group.length}곳 확대`,
+          icon:leaf.divIcon({className:'moa-cluster',html:`<span class="moa-cluster-count">${group.length}</span>`,iconSize:[size,size]})
+        });
+        cluster.on('click',()=>map.setView(bounds.getCenter(),Math.min(14,Math.max(map.getZoom()+2,map.getBoundsZoom(bounds,false,[80,80]))),{animate:false}));
+        clusters.addLayer(cluster);
       }
     }
     if(!layersOnly) renderDetails();
@@ -228,7 +263,8 @@ export function mount({manifest,towns,zones,boundaries}, leaf=globalThis.L) {
     }
     render();
   }
-  search.addEventListener('input',filterChange);district.addEventListener('change',filterChange);
+  function browseFilter(){if(browse)browse.open=true;filterChange();}
+  search.addEventListener('input',browseFilter);district.addEventListener('change',browseFilter);
   statusFilter?.addEventListener('change',filterChange);
   get('reset-map').addEventListener('click',()=>{
     search.value='';district.value='';if(statusFilter)statusFilter.value='';
@@ -237,7 +273,7 @@ export function mount({manifest,towns,zones,boundaries}, leaf=globalThis.L) {
   map?.on('zoomend',()=>render(true));
   window.addEventListener('popstate',()=>{
     search.value=''; district.value='';if(statusFilter)statusFilter.value='';
-    current=resolveSelection(location.search,townById,zoneById);render();fitSelection();
+    current=resolveSelection(location.search,townById,zoneById);if(current.townId && browse)browse.open=true;render();fitSelection();
   });
   if(get('snapshot-date')) get('snapshot-date').textContent=manifest.snapshot_date;
   render();fitSelection();

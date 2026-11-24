@@ -30,3 +30,43 @@ test('production snapshot loads from nested project path; all layers are present
  assert.equal(data.boundaries.features.filter(f=>f.properties.entity_type==='zone').length,32);
  assert.ok(paths.every(x=>x.startsWith('/moatown-map/moatown-data/')));
 });
+
+test('nearby pins across grid edges cluster, filtering and selection split them', async()=>{
+  const {clusterPins}=await import('../map-engine.mjs');
+  const near=[{id:'a',x:63,y:12},{id:'b',x:65,y:12},{id:'c',x:180,y:12}];
+  assert.deepEqual(clusterPins(near,11).map(g=>g.map(p=>p.id)),[['a','b'],['c']]);
+  assert.deepEqual(clusterPins(near,11,'a').map(g=>g.map(p=>p.id)),[['a'],['b'],['c']]);
+  assert.deepEqual(clusterPins(near.slice(1),11).map(g=>g.map(p=>p.id)),[['b'],['c']]);
+  assert.deepEqual(clusterPins(near,14).map(g=>g.map(p=>p.id)),[['a'],['b'],['c']]);
+});
+
+test('vector start failure leaves map and exposes raster failure without removing overlays',async()=>{
+  const {attachBasemap}=await import('../map-engine.mjs');
+  const status={textContent:''};
+  const seen=[];
+  const overlays=new Set(['local-shape']);
+  let vectorEvent,tileError;
+  const map={hasLayer:layer=>overlays.has(layer),removeLayer:layer=>overlays.delete(layer)};
+  const vector={
+    addTo(){overlays.add(this);},
+    getMaplibreMap(){return {
+      once(){},on(event,fn){if(event==='error')vectorEvent=fn;},
+      getCanvas(){return {addEventListener(){}}}
+    };}
+  };
+  const leaf={
+    maplibreGL(options){seen.push(options);return vector;},
+    tileLayer(url,options){seen.push({url,...options});return {
+      on(_,cb){tileError=cb;},addTo(){overlays.add('raster');}
+    };}
+  };
+  attachBasemap(leaf,map,status,{Map:function(){}});
+  assert.ok(seen[0].style.endsWith('/positron'));
+  assert.match(seen[0].attributionControl.customAttribution,/OpenMapTiles/);
+  vectorEvent({error:new Error('style failed')});
+  assert.equal(seen.length,2);
+  assert.match(seen[1].attribution,/OpenStreetMap/);
+  assert.deepEqual([...overlays],['local-shape','raster']);
+  tileError();
+  assert.match(status.textContent,/계속 이용/);
+});
