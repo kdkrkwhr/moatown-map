@@ -4,6 +4,8 @@ export const managementFilters=[
 ];
 export const progressFilters=[
   ['association','조합설립 진행 중','조합설립 중'],
+  ['association-approved','조합설립인가','조합설립인가 완료'],
+  ['architecture-review','건축심의','건축심의'],['integrated-review','통합심의 완료','통합심의'],
   ['approval-pending','사업시행계획인가 진행 중','사업인가 진행 중'],
   ['approved','사업시행계획인가','사업인가 완료'],
   ['construction','착공','착공'],['unknown','미확인','단계 미확인']
@@ -40,7 +42,7 @@ export function searchProjects(towns,groups,excluded,{query='',district='',plan=
       const stage=zone.stage || '미확인';
       const def=progressFilters.find(([,label])=>label===stage);
       if(progress && progress!==def?.[0])continue;
-      const zoneFields=[zone.name,stage,def?.[2]];
+      const zoneFields=[zone.name,zone.registered_address,stage,def?.[2]];
       if(def && def[0]!=='unknown')zoneFields.push(stage+' 단계');
       if(stage==='사업시행계획인가')zoneFields.push('사업시행계획인가 완료','사업시행인가 완료');
       if(stage==='사업시행계획인가 진행 중')zoneFields.push('사업시행인가 진행 중');

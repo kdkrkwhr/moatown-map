@@ -72,10 +72,12 @@ test('production snapshot loads from nested project path; all layers are present
  const paths=[];
  const get=async u=>{paths.push(new URL(u).pathname);return {ok:true,json:async()=>read('..'+new URL(u).pathname.replace('/moatown-map',''))}};
  const data=await loadSnapshot('https://example.org/moatown-map/',get);
- assert.equal(data.towns.length,138);assert.equal(data.towns.filter(t=>pointLatLng(t.representative_point)).length,104);
- assert.equal(data.zones.length,32);
- assert.equal(data.boundaries.features.filter(f=>f.properties.entity_type==='town').length,103);
- assert.equal(data.boundaries.features.filter(f=>f.properties.entity_type==='zone').length,32);
+ const coverage=data.manifest.coverage;
+ assert.equal(data.towns.length,coverage.town_records);
+ assert.equal(data.towns.filter(t=>pointLatLng(t.representative_point)).length,coverage.representative_points);
+ assert.equal(data.zones.length,coverage.zone_records);
+ assert.equal(data.boundaries.features.filter(f=>f.properties.entity_type==='town').length,coverage.town_reference_boundaries);
+ assert.equal(data.boundaries.features.filter(f=>f.properties.entity_type==='zone').length,coverage.zone_reference_boundaries);
  assert.ok(paths.every(x=>x.startsWith('/moatown-map/moatown-data/')));
 });
 

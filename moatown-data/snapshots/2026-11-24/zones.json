@@ -56,6 +56,41 @@
         "source_url": "https://cleanup.seoul.go.kr/cafe/mastr-cleanup-bsnsSumry/execute.do?cafeId=305900000750u59&div=sumry&stepSeCode=103",
         "source_as_of": null,
         "checked_on": "2026-11-24"
+      },
+      "registered_address": {
+        "kind": "seoul_small_housing_register",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+        "source_as_of": "2026-10-13",
+        "checked_on": "2026-11-24",
+        "row_id": "8058.00",
+        "address": "번동 429-114번지 일원",
+        "source_feature_id": "11000UQ120PS202505310170",
+        "pnu": "1130510200104290114"
+      },
+      "housing_allocation": {
+        "kind": "seoul_small_housing_register",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+        "source_as_of": "2026-10-13",
+        "checked_on": "2026-11-24",
+        "row_id": "8058.00",
+        "address": "번동 429-114번지 일원",
+        "source_feature_id": "11000UQ120PS202505310170",
+        "pnu": "1130510200104290114"
+      },
+      "zoning": {
+        "kind": "project_disclosure",
+        "source_url": "https://cleanup.seoul.go.kr/cafe/mastr-cleanup-bsnsSumry/execute.do?cafeId=305900000750u59&stepSeCode=102&div=sumry",
+        "source_as_of": null,
+        "checked_on": "2026-11-24",
+        "observation_date": "2026-11-24"
+      },
+      "planned_units_per_owner": {
+        "source_url": "https://cleanup.seoul.go.kr/cafe/mastr-cleanup-bsnsSumry/execute.do?cafeId=305900000750u59&div=sumry&stepSeCode=103",
+        "source_as_of": null,
+        "checked_on": "2026-11-24",
+        "kind": "derived_from_same_project_plan",
+        "numerator_planned_units": 146,
+        "denominator_owner_count": 40
       }
     },
     "limitations": [
@@ -91,7 +126,20 @@
     "floor_area_ratio_pct": 300.0,
     "height_m": 80.0,
     "metrics": {
-      "owner_count": 40
+      "owner_count": 40,
+      "planned_units_per_owner": 3.65
+    },
+    "registered_address": "번동 429-114번지 일원",
+    "housing_allocation": {
+      "sale_total": 116,
+      "rental": 30,
+      "members": null,
+      "general": null
+    },
+    "zoning": {
+      "before": "도시지역",
+      "after": null,
+      "upgrade_planned": null
     }
   },
   {
@@ -101,7 +149,7 @@
     "stage": "조합설립 진행 중",
     "project_type": "가로주택정비",
     "project_area_m2": null,
-    "planned_units_total": null,
+    "planned_units_total": 253,
     "max_floors_above_ground": null,
     "floors_below_ground": null,
     "unit_types": null,
@@ -111,6 +159,27 @@
         "state": "published_status_at_source_date",
         "source_url": "https://www.gangseo.seoul.kr/build/bui070102/322507?srchCtgry=2",
         "source_as_of": "2026-07-01"
+      },
+      "registered_address": {
+        "kind": "seoul_small_housing_register",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+        "source_as_of": "2026-10-13",
+        "checked_on": "2026-11-24",
+        "row_id": "8173.00",
+        "address": "화곡동 1087-2 일대",
+        "source_feature_id": "11000UQ120PS202503310030",
+        "pnu": "1150010300110870002"
+      },
+      "plan": {
+        "kind": "seoul_small_housing_register",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+        "source_as_of": "2026-10-13",
+        "checked_on": "2026-11-24",
+        "row_id": "8173.00",
+        "address": "화곡동 1087-2 일대",
+        "source_feature_id": "11000UQ120PS202503310030",
+        "pnu": "1150010300110870002",
+        "state": "published_plan_not_latest_approval_verified"
       }
     },
     "sources": {},
@@ -125,7 +194,14 @@
         "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
         "https://www.gangseo.seoul.kr/build/bui070102/322507?srchCtgry=2"
       ]
-    }
+    },
+    "registered_address": "화곡동 1087-2 일대",
+    "metrics": {
+      "planned_units_per_owner": null,
+      "owner_count": null
+    },
+    "zoning": null,
+    "housing_allocation": null
   },
   {
     "id": "mz-seoul-11000uq120ps202503310031",
@@ -134,7 +210,7 @@
     "stage": "조합설립 진행 중",
     "project_type": "가로주택정비",
     "project_area_m2": null,
-    "planned_units_total": null,
+    "planned_units_total": 286,
     "max_floors_above_ground": null,
     "floors_below_ground": null,
     "unit_types": null,
@@ -144,6 +220,27 @@
         "state": "published_status_at_source_date",
         "source_url": "https://www.gangseo.seoul.kr/build/bui070102/322507?srchCtgry=2",
         "source_as_of": "2026-07-01"
+      },
+      "registered_address": {
+        "kind": "seoul_small_housing_register",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+        "source_as_of": "2026-10-13",
+        "checked_on": "2026-11-24",
+        "row_id": "8174.00",
+        "address": "화곡동 1088 일대",
+        "source_feature_id": "11000UQ120PS202503310031",
+        "pnu": "1150010300110880000"
+      },
+      "plan": {
+        "kind": "seoul_small_housing_register",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+        "source_as_of": "2026-10-13",
+        "checked_on": "2026-11-24",
+        "row_id": "8174.00",
+        "address": "화곡동 1088 일대",
+        "source_feature_id": "11000UQ120PS202503310031",
+        "pnu": "1150010300110880000",
+        "state": "published_plan_not_latest_approval_verified"
       }
     },
     "sources": {},
@@ -158,7 +255,14 @@
         "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
         "https://www.gangseo.seoul.kr/build/bui070102/322507?srchCtgry=2"
       ]
-    }
+    },
+    "registered_address": "화곡동 1088 일대",
+    "metrics": {
+      "planned_units_per_owner": null,
+      "owner_count": null
+    },
+    "zoning": null,
+    "housing_allocation": null
   },
   {
     "id": "mz-seoul-11000uq120ps202503310029",
@@ -191,7 +295,13 @@
         "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
         "https://www.gangseo.seoul.kr/build/bui070102/322507?srchCtgry=2"
       ]
-    }
+    },
+    "metrics": {
+      "planned_units_per_owner": null,
+      "owner_count": null
+    },
+    "zoning": null,
+    "housing_allocation": null
   },
   {
     "id": "mz-seoul-11500uq120ps202603130001",
@@ -200,7 +310,7 @@
     "stage": "사업시행계획인가 진행 중",
     "project_type": "가로주택정비",
     "project_area_m2": null,
-    "planned_units_total": null,
+    "planned_units_total": 420,
     "max_floors_above_ground": null,
     "floors_below_ground": null,
     "unit_types": null,
@@ -210,6 +320,27 @@
         "state": "published_status_at_source_date",
         "source_url": "https://www.gangseo.seoul.kr/build/bui070102/322507?srchCtgry=2",
         "source_as_of": "2026-07-01"
+      },
+      "registered_address": {
+        "kind": "seoul_small_housing_register",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+        "source_as_of": "2026-10-13",
+        "checked_on": "2026-11-24",
+        "row_id": "8161.00",
+        "address": "화곡1동 362-59 일대",
+        "source_feature_id": "11500UQ120PS202603130001",
+        "pnu": "1150010300103620059"
+      },
+      "plan": {
+        "kind": "seoul_small_housing_register",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+        "source_as_of": "2026-10-13",
+        "checked_on": "2026-11-24",
+        "row_id": "8161.00",
+        "address": "화곡1동 362-59 일대",
+        "source_feature_id": "11500UQ120PS202603130001",
+        "pnu": "1150010300103620059",
+        "state": "published_plan_not_latest_approval_verified"
       }
     },
     "sources": {},
@@ -224,25 +355,72 @@
         "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
         "https://www.gangseo.seoul.kr/build/bui070102/322507?srchCtgry=2"
       ]
-    }
+    },
+    "registered_address": "화곡1동 362-59 일대",
+    "metrics": {
+      "planned_units_per_owner": null,
+      "owner_count": null
+    },
+    "zoning": null,
+    "housing_allocation": null
   },
   {
     "id": "mz-seoul-11500uq120ps202603130002",
     "town_id": "mt-202603-public-002",
     "name": "A2-2구역",
-    "stage": "조합설립 진행 중",
+    "stage": "조합설립인가",
     "project_type": "가로주택정비",
     "project_area_m2": null,
-    "planned_units_total": null,
+    "planned_units_total": 407,
     "max_floors_above_ground": null,
     "floors_below_ground": null,
     "unit_types": null,
     "selected_contractor": null,
     "field_evidence": {
       "stage": {
-        "state": "published_status_at_source_date",
-        "source_url": "https://www.gangseo.seoul.kr/build/bui070102/322507?srchCtgry=2",
-        "source_as_of": "2026-07-01"
+        "kind": "project_register_stage",
+        "source_url": "https://cleanup.seoul.go.kr/cleanup/bsnssttus/lscrMainIndx.do?cpage=1&pageSize=2000",
+        "source_as_of": null,
+        "checked_on": "2026-11-24",
+        "observation_date": "2026-11-24",
+        "raw_stage": "조합설립인가",
+        "project_name": "화곡1동 354 일대 모아타운 A2-2구역 가로주택정비사업조합",
+        "address": "화곡동 362-29"
+      },
+      "registered_address": {
+        "kind": "seoul_small_housing_register",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+        "source_as_of": "2026-10-13",
+        "checked_on": "2026-11-24",
+        "row_id": "8162.00",
+        "address": "화곡1동 362-29 일대",
+        "source_feature_id": "11500UQ120PS202603130002",
+        "pnu": "1150010300103620029"
+      },
+      "plan": {
+        "kind": "seoul_small_housing_register",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+        "source_as_of": "2026-10-13",
+        "checked_on": "2026-11-24",
+        "row_id": "8162.00",
+        "address": "화곡1동 362-29 일대",
+        "source_feature_id": "11500UQ120PS202603130002",
+        "pnu": "1150010300103620029",
+        "state": "published_plan_not_latest_approval_verified"
+      },
+      "metrics": {
+        "kind": "project_disclosure",
+        "source_url": "https://cleanup.seoul.go.kr/cafe/mastr-cleanup-bsnsSumry/execute.do?cafeId=500900001447U62&stepSeCode=102&div=sumry",
+        "source_as_of": null,
+        "checked_on": "2026-11-24",
+        "observation_date": "2026-11-24"
+      },
+      "zoning": {
+        "kind": "project_disclosure",
+        "source_url": "https://cleanup.seoul.go.kr/cafe/mastr-cleanup-bsnsSumry/execute.do?cafeId=500900001447U62&stepSeCode=102&div=sumry",
+        "source_as_of": null,
+        "checked_on": "2026-11-24",
+        "observation_date": "2026-11-24"
       }
     },
     "sources": {},
@@ -257,7 +435,18 @@
         "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
         "https://www.gangseo.seoul.kr/build/bui070102/322507?srchCtgry=2"
       ]
-    }
+    },
+    "registered_address": "화곡1동 362-29 일대",
+    "metrics": {
+      "owner_count": 230,
+      "planned_units_per_owner": null
+    },
+    "zoning": {
+      "before": "제2종일반주거지역",
+      "after": null,
+      "upgrade_planned": null
+    },
+    "housing_allocation": null
   },
   {
     "id": "mz-seoul-11500uq120ps202603130003",
@@ -266,7 +455,7 @@
     "stage": "사업시행계획인가 진행 중",
     "project_type": "가로주택정비",
     "project_area_m2": null,
-    "planned_units_total": null,
+    "planned_units_total": 631,
     "max_floors_above_ground": null,
     "floors_below_ground": null,
     "unit_types": null,
@@ -276,6 +465,27 @@
         "state": "published_status_at_source_date",
         "source_url": "https://www.gangseo.seoul.kr/build/bui070102/322507?srchCtgry=2",
         "source_as_of": "2026-07-01"
+      },
+      "registered_address": {
+        "kind": "seoul_small_housing_register",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+        "source_as_of": "2026-10-13",
+        "checked_on": "2026-11-24",
+        "row_id": "8163.00",
+        "address": "화곡1동 366-38 일대",
+        "source_feature_id": "11500UQ120PS202603130003",
+        "pnu": "1150010300103660038"
+      },
+      "plan": {
+        "kind": "seoul_small_housing_register",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+        "source_as_of": "2026-10-13",
+        "checked_on": "2026-11-24",
+        "row_id": "8163.00",
+        "address": "화곡1동 366-38 일대",
+        "source_feature_id": "11500UQ120PS202603130003",
+        "pnu": "1150010300103660038",
+        "state": "published_plan_not_latest_approval_verified"
       }
     },
     "sources": {},
@@ -290,7 +500,14 @@
         "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
         "https://www.gangseo.seoul.kr/build/bui070102/322507?srchCtgry=2"
       ]
-    }
+    },
+    "registered_address": "화곡1동 366-38 일대",
+    "metrics": {
+      "planned_units_per_owner": null,
+      "owner_count": null
+    },
+    "zoning": null,
+    "housing_allocation": null
   },
   {
     "id": "mz-seoul-11000uq120ps202503310014",
@@ -299,7 +516,7 @@
     "stage": "사업시행계획인가 진행 중",
     "project_type": "가로주택정비",
     "project_area_m2": null,
-    "planned_units_total": null,
+    "planned_units_total": 438,
     "max_floors_above_ground": null,
     "floors_below_ground": null,
     "unit_types": null,
@@ -309,6 +526,41 @@
         "state": "published_status_at_source_date",
         "source_url": "https://www.gangseo.seoul.kr/build/bui070102/322507?srchCtgry=2",
         "source_as_of": "2026-07-01"
+      },
+      "registered_address": {
+        "kind": "seoul_small_housing_register",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+        "source_as_of": "2026-10-13",
+        "checked_on": "2026-11-24",
+        "row_id": "8157.00",
+        "address": "등촌2동 515-44 일대",
+        "source_feature_id": "11000UQ120PS202503310014",
+        "pnu": "1150010200105150044"
+      },
+      "plan": {
+        "kind": "seoul_small_housing_register",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+        "source_as_of": "2026-10-13",
+        "checked_on": "2026-11-24",
+        "row_id": "8157.00",
+        "address": "등촌2동 515-44 일대",
+        "source_feature_id": "11000UQ120PS202503310014",
+        "pnu": "1150010200105150044",
+        "state": "published_plan_not_latest_approval_verified"
+      },
+      "metrics": {
+        "kind": "project_disclosure",
+        "source_url": "https://cleanup.seoul.go.kr/cafe/mastr-cleanup-bsnsSumry/execute.do?cafeId=500900001301P17&stepSeCode=102&div=sumry",
+        "source_as_of": null,
+        "checked_on": "2026-11-24",
+        "observation_date": "2026-11-24"
+      },
+      "zoning": {
+        "kind": "project_disclosure",
+        "source_url": "https://cleanup.seoul.go.kr/cafe/mastr-cleanup-bsnsSumry/execute.do?cafeId=500900001301P17&stepSeCode=102&div=sumry",
+        "source_as_of": null,
+        "checked_on": "2026-11-24",
+        "observation_date": "2026-11-24"
       }
     },
     "sources": {},
@@ -323,7 +575,18 @@
         "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
         "https://www.gangseo.seoul.kr/build/bui070102/322507?srchCtgry=2"
       ]
-    }
+    },
+    "registered_address": "등촌2동 515-44 일대",
+    "metrics": {
+      "owner_count": 284,
+      "planned_units_per_owner": null
+    },
+    "zoning": {
+      "before": "제2종일반주거지역",
+      "after": null,
+      "upgrade_planned": null
+    },
+    "housing_allocation": null
   },
   {
     "id": "mz-seoul-11000uq120ps202503310013",
@@ -356,7 +619,13 @@
         "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
         "https://www.gangseo.seoul.kr/build/bui070102/322507?srchCtgry=2"
       ]
-    }
+    },
+    "metrics": {
+      "planned_units_per_owner": null,
+      "owner_count": null
+    },
+    "zoning": null,
+    "housing_allocation": null
   },
   {
     "id": "mz-seoul-11000uq120ps202503310012",
@@ -365,7 +634,7 @@
     "stage": "사업시행계획인가 진행 중",
     "project_type": "가로주택정비",
     "project_area_m2": null,
-    "planned_units_total": null,
+    "planned_units_total": 465,
     "max_floors_above_ground": null,
     "floors_below_ground": null,
     "unit_types": null,
@@ -375,6 +644,41 @@
         "state": "published_status_at_source_date",
         "source_url": "https://www.gangseo.seoul.kr/build/bui070102/322507?srchCtgry=2",
         "source_as_of": "2026-07-01"
+      },
+      "registered_address": {
+        "kind": "seoul_small_housing_register",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+        "source_as_of": "2026-10-13",
+        "checked_on": "2026-11-24",
+        "row_id": "8155.00",
+        "address": "등촌2동 515-8 일대",
+        "source_feature_id": "11000UQ120PS202503310012",
+        "pnu": "1150010200105150008"
+      },
+      "plan": {
+        "kind": "seoul_small_housing_register",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+        "source_as_of": "2026-10-13",
+        "checked_on": "2026-11-24",
+        "row_id": "8155.00",
+        "address": "등촌2동 515-8 일대",
+        "source_feature_id": "11000UQ120PS202503310012",
+        "pnu": "1150010200105150008",
+        "state": "published_plan_not_latest_approval_verified"
+      },
+      "metrics": {
+        "kind": "project_disclosure",
+        "source_url": "https://cleanup.seoul.go.kr/cafe/mastr-cleanup-bsnsSumry/execute.do?cafeId=500900001372z61&stepSeCode=102&div=sumry",
+        "source_as_of": null,
+        "checked_on": "2026-11-24",
+        "observation_date": "2026-11-24"
+      },
+      "zoning": {
+        "kind": "project_disclosure",
+        "source_url": "https://cleanup.seoul.go.kr/cafe/mastr-cleanup-bsnsSumry/execute.do?cafeId=500900001372z61&stepSeCode=102&div=sumry",
+        "source_as_of": null,
+        "checked_on": "2026-11-24",
+        "observation_date": "2026-11-24"
       }
     },
     "sources": {},
@@ -389,7 +693,18 @@
         "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
         "https://www.gangseo.seoul.kr/build/bui070102/322507?srchCtgry=2"
       ]
-    }
+    },
+    "registered_address": "등촌2동 515-8 일대",
+    "metrics": {
+      "owner_count": 369,
+      "planned_units_per_owner": null
+    },
+    "zoning": {
+      "before": "제2종일반주거역(기존제1종일반주거지역 종상향)",
+      "after": null,
+      "upgrade_planned": null
+    },
+    "housing_allocation": null
   },
   {
     "id": "mz-seoul-11000uq120ps202411014070",
@@ -398,16 +713,59 @@
     "stage": "사업시행계획인가 진행 중",
     "project_type": "가로주택정비",
     "project_area_m2": null,
-    "planned_units_total": null,
+    "planned_units_total": 174,
     "max_floors_above_ground": null,
     "floors_below_ground": null,
     "unit_types": null,
-    "selected_contractor": null,
+    "selected_contractor": "일성건설 주식회사",
     "field_evidence": {
       "stage": {
         "state": "published_status_at_source_date",
         "source_url": "https://www.gangseo.seoul.kr/build/bui070102/322507?srchCtgry=2",
         "source_as_of": "2026-07-01"
+      },
+      "registered_address": {
+        "kind": "seoul_small_housing_register",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+        "source_as_of": "2026-10-13",
+        "checked_on": "2026-11-24",
+        "row_id": "8154.00",
+        "address": "화곡동 1130-7 일대",
+        "source_feature_id": "11000UQ120PS202411014070",
+        "pnu": "1150010300111300007"
+      },
+      "plan": {
+        "kind": "seoul_small_housing_register",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+        "source_as_of": "2026-10-13",
+        "checked_on": "2026-11-24",
+        "row_id": "8154.00",
+        "address": "화곡동 1130-7 일대",
+        "source_feature_id": "11000UQ120PS202411014070",
+        "pnu": "1150010300111300007",
+        "state": "published_plan_not_latest_approval_verified"
+      },
+      "metrics": {
+        "kind": "project_disclosure",
+        "source_url": "https://cleanup.seoul.go.kr/cafe/mastr-cleanup-bsnsSumry/execute.do?cafeId=500900001201W11&stepSeCode=102&div=sumry",
+        "source_as_of": null,
+        "checked_on": "2026-11-24",
+        "observation_date": "2026-11-24"
+      },
+      "zoning": {
+        "kind": "project_disclosure",
+        "source_url": "https://cleanup.seoul.go.kr/cafe/mastr-cleanup-bsnsSumry/execute.do?cafeId=500900001201W11&stepSeCode=102&div=sumry",
+        "source_as_of": null,
+        "checked_on": "2026-11-24",
+        "observation_date": "2026-11-24"
+      },
+      "selected_contractor": {
+        "kind": "project_partner_register",
+        "source_url": "https://cleanup.seoul.go.kr/cafe/cleanup-entrpsinfo/execute.do?cafeId=500900001201W11",
+        "source_as_of": null,
+        "checked_on": "2026-11-24",
+        "observation_date": "2026-11-24",
+        "contract_terminated": false
       }
     },
     "sources": {},
@@ -422,7 +780,18 @@
         "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
         "https://www.gangseo.seoul.kr/build/bui070102/322507?srchCtgry=2"
       ]
-    }
+    },
+    "registered_address": "화곡동 1130-7 일대",
+    "metrics": {
+      "owner_count": 174,
+      "planned_units_per_owner": null
+    },
+    "zoning": {
+      "before": "제2종일반주거지역",
+      "after": null,
+      "upgrade_planned": null
+    },
+    "housing_allocation": null
   },
   {
     "id": "mz-seoul-11000uq120ps202503310025",
@@ -455,7 +824,13 @@
         "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
         "https://www.gangseo.seoul.kr/build/bui070102/322507?srchCtgry=2"
       ]
-    }
+    },
+    "metrics": {
+      "planned_units_per_owner": null,
+      "owner_count": null
+    },
+    "zoning": null,
+    "housing_allocation": null
   },
   {
     "id": "mz-seoul-11000uq120ps202503310023",
@@ -488,7 +863,13 @@
         "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
         "https://www.gangseo.seoul.kr/build/bui070102/322507?srchCtgry=2"
       ]
-    }
+    },
+    "metrics": {
+      "planned_units_per_owner": null,
+      "owner_count": null
+    },
+    "zoning": null,
+    "housing_allocation": null
   },
   {
     "id": "mz-seoul-11000uq120ps202503310024",
@@ -521,7 +902,13 @@
         "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
         "https://www.gangseo.seoul.kr/build/bui070102/322507?srchCtgry=2"
       ]
-    }
+    },
+    "metrics": {
+      "planned_units_per_owner": null,
+      "owner_count": null
+    },
+    "zoning": null,
+    "housing_allocation": null
   },
   {
     "id": "mz-seoul-11000uq120ps202505310161",
@@ -605,7 +992,7 @@
         "units": 2
       }
     ],
-    "selected_contractor": null,
+    "selected_contractor": "디엘건설주식회사",
     "field_evidence": {
       "plan": {
         "state": "approved_project_plan",
@@ -621,6 +1008,50 @@
         "source_as_of": "2026-07-30",
         "checked_on": "2026-11-24",
         "approval_date": "2026-07-28"
+      },
+      "registered_address": {
+        "kind": "seoul_small_housing_register",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+        "source_as_of": "2026-10-13",
+        "checked_on": "2026-11-24",
+        "row_id": "8666.00",
+        "address": "면목동 1251-4번지 일대",
+        "source_feature_id": "11000UQ120PS202505310161",
+        "pnu": "1126010100112510004"
+      },
+      "housing_allocation": {
+        "kind": "seoul_small_housing_register",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+        "source_as_of": "2026-10-13",
+        "checked_on": "2026-11-24",
+        "row_id": "8666.00",
+        "address": "면목동 1251-4번지 일대",
+        "source_feature_id": "11000UQ120PS202505310161",
+        "pnu": "1126010100112510004",
+        "approved_split_evidence": {
+          "state": "approved_project_plan",
+          "source_url": "https://eminwon.jungnang.go.kr/emwp/gov/mogaha/ntis/web/ofr/action/OfrAction.do?context=NTIS&homepage_pbs_yn=Y&jndinm=OfrNotAncmtEJB&method=selectOfrNotAncmt&methodnm=selectOfrNotAncmtRegst&not_ancmt_mgt_no=15568&not_ancmt_se_code=01%2C02%2C04&pageIndex=1&subCheck=Y",
+          "source_as_of": "2026-07-30",
+          "checked_on": "2026-11-24",
+          "approval_date": "2026-07-28",
+          "attachment_name": "사업시행계획인가 고시문(안)(면목역2구역).hwpx",
+          "kind": "approved_project_plan"
+        }
+      },
+      "metrics": {
+        "kind": "project_disclosure",
+        "source_url": "https://cleanup.seoul.go.kr/cafe/mastr-cleanup-bsnsSumry/execute.do?cafeId=260900000931J78&stepSeCode=102&div=sumry",
+        "source_as_of": null,
+        "checked_on": "2026-11-24",
+        "observation_date": "2026-11-24"
+      },
+      "selected_contractor": {
+        "kind": "project_partner_register",
+        "source_url": "https://cleanup.seoul.go.kr/cafe/cleanup-entrpsinfo/execute.do?cafeId=260900000931J78",
+        "source_as_of": null,
+        "checked_on": "2026-11-24",
+        "observation_date": "2026-11-24",
+        "contract_terminated": false
       }
     },
     "sources": {},
@@ -645,21 +1076,96 @@
     },
     "floor_area_ratio_pct": 302.02,
     "building_coverage_pct": 31.28,
-    "height_m": 107.86
+    "height_m": 107.86,
+    "registered_address": "면목동 1251-4번지 일대",
+    "housing_allocation": {
+      "sale_total": 394,
+      "rental": 123,
+      "members": 296,
+      "general": 93,
+      "reserve": 5
+    },
+    "metrics": {
+      "owner_count": 292,
+      "planned_units_per_owner": null
+    },
+    "zoning": null
   },
   {
     "id": "mz-seoul-11000uq120ps202505310439",
     "town_id": "mt-202603-public-010",
     "name": "면목역 4구역 가로주택정비사업",
-    "stage": null,
+    "stage": "사업시행계획인가 진행 중",
     "project_type": "가로주택정비",
     "project_area_m2": null,
-    "planned_units_total": null,
+    "planned_units_total": 533,
     "max_floors_above_ground": null,
     "floors_below_ground": null,
     "unit_types": null,
-    "selected_contractor": null,
-    "field_evidence": {},
+    "selected_contractor": "디엘건설주식회사",
+    "field_evidence": {
+      "registered_address": {
+        "kind": "seoul_small_housing_register",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+        "source_as_of": "2026-10-13",
+        "checked_on": "2026-11-24",
+        "row_id": "8667.00",
+        "address": "면목본동 99-41번지 일대",
+        "source_feature_id": "11000UQ120PS202505310439",
+        "pnu": "1126010100100990041"
+      },
+      "stage": {
+        "kind": "district_public_inspection",
+        "source_url": "https://news.seoul.go.kr/citybuild/archives/543800",
+        "source_as_of": "2026-10-29",
+        "checked_on": "2026-11-24",
+        "notice_number": "중랑구 공고 제2026-1505호",
+        "raw_stage": "사업시행계획인가를 위한 주민공람"
+      },
+      "plan": {
+        "kind": "seoul_small_housing_register",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+        "source_as_of": "2026-10-13",
+        "checked_on": "2026-11-24",
+        "row_id": "8667.00",
+        "address": "면목본동 99-41번지 일대",
+        "source_feature_id": "11000UQ120PS202505310439",
+        "pnu": "1126010100100990041",
+        "state": "published_plan_not_latest_approval_verified"
+      },
+      "housing_allocation": {
+        "kind": "seoul_small_housing_register",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+        "source_as_of": "2026-10-13",
+        "checked_on": "2026-11-24",
+        "row_id": "8667.00",
+        "address": "면목본동 99-41번지 일대",
+        "source_feature_id": "11000UQ120PS202505310439",
+        "pnu": "1126010100100990041"
+      },
+      "metrics": {
+        "kind": "project_disclosure",
+        "source_url": "https://cleanup.seoul.go.kr/cafe/mastr-cleanup-bsnsSumry/execute.do?cafeId=260900000986p53&stepSeCode=102&div=sumry",
+        "source_as_of": null,
+        "checked_on": "2026-11-24",
+        "observation_date": "2026-11-24"
+      },
+      "zoning": {
+        "kind": "project_disclosure",
+        "source_url": "https://cleanup.seoul.go.kr/cafe/mastr-cleanup-bsnsSumry/execute.do?cafeId=260900000986p53&stepSeCode=102&div=sumry",
+        "source_as_of": null,
+        "checked_on": "2026-11-24",
+        "observation_date": "2026-11-24"
+      },
+      "selected_contractor": {
+        "kind": "project_partner_register",
+        "source_url": "https://cleanup.seoul.go.kr/cafe/cleanup-entrpsinfo/execute.do?cafeId=260900000986p53",
+        "source_as_of": null,
+        "checked_on": "2026-11-24",
+        "observation_date": "2026-11-24",
+        "contract_terminated": false
+      }
+    },
     "sources": {},
     "boundary_evidence": {
       "status": "reference_only",
@@ -675,21 +1181,108 @@
         "https://news.seoul.go.kr/citybuild/archives/538651",
         "https://www.seoul.go.kr/news/news_report.do?nttNo=415689"
       ]
-    }
+    },
+    "registered_address": "면목본동 99-41번지 일대",
+    "housing_allocation": {
+      "sale_total": 400,
+      "rental": 133,
+      "members": null,
+      "general": null
+    },
+    "metrics": {
+      "owner_count": 226,
+      "planned_units_per_owner": null
+    },
+    "zoning": {
+      "before": "제3종 일반주거지역",
+      "after": null,
+      "upgrade_planned": null
+    },
+    "official_links": [
+      {
+        "title": "중랑구 공고 제2026-1505호",
+        "url": "https://news.seoul.go.kr/citybuild/archives/543800",
+        "date": "2026-10-29",
+        "evidence": "district_public_inspection",
+        "checked_on": "2026-11-24"
+      }
+    ]
   },
   {
     "id": "mz-seoul-11000uq120ps202505310440",
     "town_id": "mt-202603-public-010",
     "name": "면목역 6구역 가로주택정비사업",
-    "stage": null,
+    "stage": "사업시행계획인가 진행 중",
     "project_type": "가로주택정비",
     "project_area_m2": null,
-    "planned_units_total": null,
+    "planned_units_total": 423,
     "max_floors_above_ground": null,
     "floors_below_ground": null,
     "unit_types": null,
-    "selected_contractor": null,
-    "field_evidence": {},
+    "selected_contractor": "디엘건설주식회사",
+    "field_evidence": {
+      "registered_address": {
+        "kind": "seoul_small_housing_register",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+        "source_as_of": "2026-10-13",
+        "checked_on": "2026-11-24",
+        "row_id": "8668.00",
+        "address": "면목본동 86-60번지 일대",
+        "source_feature_id": "11000UQ120PS202505310440",
+        "pnu": "1126010100100860060"
+      },
+      "stage": {
+        "kind": "district_public_inspection",
+        "source_url": "https://news.seoul.go.kr/citybuild/archives/543800",
+        "source_as_of": "2026-10-29",
+        "checked_on": "2026-11-24",
+        "notice_number": "중랑구 공고 제2026-1506호",
+        "raw_stage": "사업시행계획인가를 위한 주민공람"
+      },
+      "plan": {
+        "kind": "seoul_small_housing_register",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+        "source_as_of": "2026-10-13",
+        "checked_on": "2026-11-24",
+        "row_id": "8668.00",
+        "address": "면목본동 86-60번지 일대",
+        "source_feature_id": "11000UQ120PS202505310440",
+        "pnu": "1126010100100860060",
+        "state": "published_plan_not_latest_approval_verified"
+      },
+      "housing_allocation": {
+        "kind": "seoul_small_housing_register",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+        "source_as_of": "2026-10-13",
+        "checked_on": "2026-11-24",
+        "row_id": "8668.00",
+        "address": "면목본동 86-60번지 일대",
+        "source_feature_id": "11000UQ120PS202505310440",
+        "pnu": "1126010100100860060"
+      },
+      "metrics": {
+        "kind": "project_disclosure",
+        "source_url": "https://cleanup.seoul.go.kr/cafe/mastr-cleanup-bsnsSumry/execute.do?cafeId=260900000932H68&stepSeCode=102&div=sumry",
+        "source_as_of": null,
+        "checked_on": "2026-11-24",
+        "observation_date": "2026-11-24"
+      },
+      "zoning": {
+        "kind": "project_disclosure",
+        "source_url": "https://cleanup.seoul.go.kr/cafe/mastr-cleanup-bsnsSumry/execute.do?cafeId=260900000932H68&stepSeCode=102&div=sumry",
+        "source_as_of": null,
+        "checked_on": "2026-11-24",
+        "observation_date": "2026-11-24"
+      },
+      "selected_contractor": {
+        "kind": "project_partner_register",
+        "source_url": "https://cleanup.seoul.go.kr/cafe/cleanup-entrpsinfo/execute.do?cafeId=260900000932H68",
+        "source_as_of": null,
+        "checked_on": "2026-11-24",
+        "observation_date": "2026-11-24",
+        "contract_terminated": false
+      }
+    },
     "sources": {},
     "boundary_evidence": {
       "status": "reference_only",
@@ -705,7 +1298,32 @@
         "https://news.seoul.go.kr/citybuild/archives/538651",
         "https://www.seoul.go.kr/news/news_report.do?nttNo=415689"
       ]
-    }
+    },
+    "registered_address": "면목본동 86-60번지 일대",
+    "housing_allocation": {
+      "sale_total": 335,
+      "rental": 88,
+      "members": null,
+      "general": null
+    },
+    "metrics": {
+      "owner_count": 186,
+      "planned_units_per_owner": null
+    },
+    "zoning": {
+      "before": "제3종 일반주거지역",
+      "after": null,
+      "upgrade_planned": null
+    },
+    "official_links": [
+      {
+        "title": "중랑구 공고 제2026-1506호",
+        "url": "https://news.seoul.go.kr/citybuild/archives/543800",
+        "date": "2026-10-29",
+        "evidence": "district_public_inspection",
+        "checked_on": "2026-11-24"
+      }
+    ]
   },
   {
     "id": "mz-seoul-11000uq120ps202505310160",
@@ -784,7 +1402,7 @@
         "units": 1
       }
     ],
-    "selected_contractor": null,
+    "selected_contractor": "디엘건설 주식회사",
     "field_evidence": {
       "plan": {
         "state": "approved_project_plan",
@@ -800,6 +1418,57 @@
         "source_as_of": "2026-07-30",
         "checked_on": "2026-11-24",
         "approval_date": "2026-07-28"
+      },
+      "registered_address": {
+        "kind": "seoul_small_housing_register",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+        "source_as_of": "2026-10-13",
+        "checked_on": "2026-11-24",
+        "row_id": "8665.00",
+        "address": "면목동 236-6번지 일대",
+        "source_feature_id": "11000UQ120PS202505310160",
+        "pnu": "1126010100102360006"
+      },
+      "housing_allocation": {
+        "kind": "seoul_small_housing_register",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+        "source_as_of": "2026-10-13",
+        "checked_on": "2026-11-24",
+        "row_id": "8665.00",
+        "address": "면목동 236-6번지 일대",
+        "source_feature_id": "11000UQ120PS202505310160",
+        "pnu": "1126010100102360006",
+        "approved_split_evidence": {
+          "state": "approved_project_plan",
+          "source_url": "https://eminwon.jungnang.go.kr/emwp/gov/mogaha/ntis/web/ofr/action/OfrAction.do?context=NTIS&homepage_pbs_yn=Y&jndinm=OfrNotAncmtEJB&method=selectOfrNotAncmt&methodnm=selectOfrNotAncmtRegst&not_ancmt_mgt_no=15567&not_ancmt_se_code=01%2C02%2C04&pageIndex=1&subCheck=Y",
+          "source_as_of": "2026-07-30",
+          "checked_on": "2026-11-24",
+          "approval_date": "2026-07-28",
+          "attachment_name": "사업시행계획인가 고시문(안)(면목역1구역).hwpx",
+          "kind": "approved_project_plan"
+        }
+      },
+      "metrics": {
+        "kind": "project_disclosure",
+        "source_url": "https://cleanup.seoul.go.kr/cafe/mastr-cleanup-bsnsSumry/execute.do?cafeId=260900000985W59&stepSeCode=102&div=sumry",
+        "source_as_of": null,
+        "checked_on": "2026-11-24",
+        "observation_date": "2026-11-24"
+      },
+      "zoning": {
+        "kind": "project_disclosure",
+        "source_url": "https://cleanup.seoul.go.kr/cafe/mastr-cleanup-bsnsSumry/execute.do?cafeId=260900000985W59&stepSeCode=102&div=sumry",
+        "source_as_of": null,
+        "checked_on": "2026-11-24",
+        "observation_date": "2026-11-24"
+      },
+      "selected_contractor": {
+        "kind": "project_partner_register",
+        "source_url": "https://cleanup.seoul.go.kr/cafe/cleanup-entrpsinfo/execute.do?cafeId=260900000985W59",
+        "source_as_of": null,
+        "checked_on": "2026-11-24",
+        "observation_date": "2026-11-24",
+        "contract_terminated": false
       }
     },
     "sources": {},
@@ -825,13 +1494,30 @@
     },
     "floor_area_ratio_pct": 300.48,
     "building_coverage_pct": 32.68,
-    "height_m": 83.75
+    "height_m": 83.75,
+    "registered_address": "면목동 236-6번지 일대",
+    "housing_allocation": {
+      "sale_total": 334,
+      "rental": 108,
+      "members": 213,
+      "general": 117,
+      "reserve": 4
+    },
+    "metrics": {
+      "owner_count": 188,
+      "planned_units_per_owner": null
+    },
+    "zoning": {
+      "before": "제2종일반주거지역(7층이하)",
+      "after": null,
+      "upgrade_planned": null
+    }
   },
   {
     "id": "mz-seoul-11000uq120ps202505310448",
     "town_id": "mt-202603-public-012",
     "name": "면목본동 3구역 가로주택정비사업",
-    "stage": null,
+    "stage": "조합설립인가",
     "project_type": "가로주택정비",
     "project_area_m2": null,
     "planned_units_total": 259,
@@ -852,6 +1538,42 @@
         "source_as_of": "2025-12-22",
         "checked_on": "2026-11-24",
         "source_url": "https://kind.krx.co.kr/external/2025/12/22/000410/20251216001458/91370.htm"
+      },
+      "registered_address": {
+        "kind": "seoul_small_housing_register",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+        "source_as_of": "2026-10-13",
+        "checked_on": "2026-11-24",
+        "row_id": "8677.00",
+        "address": "면목본동 107-33번지 일대",
+        "source_feature_id": "11000UQ120PS202505310448",
+        "pnu": "1126010100101070033"
+      },
+      "stage": {
+        "kind": "seoul_small_housing_register",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+        "source_as_of": "2026-10-13",
+        "checked_on": "2026-11-24",
+        "row_id": "8677.00",
+        "address": "면목본동 107-33번지 일대",
+        "source_feature_id": "11000UQ120PS202505310448",
+        "pnu": "1126010100101070033",
+        "raw_stage": "조합설립인가",
+        "milestone_date": "2024-06-03"
+      },
+      "metrics": {
+        "kind": "project_disclosure",
+        "source_url": "https://cleanup.seoul.go.kr/cafe/mastr-cleanup-bsnsSumry/execute.do?cafeId=260900001271F22&stepSeCode=102&div=sumry",
+        "source_as_of": null,
+        "checked_on": "2026-11-24",
+        "observation_date": "2026-11-24"
+      },
+      "zoning": {
+        "kind": "project_disclosure",
+        "source_url": "https://cleanup.seoul.go.kr/cafe/mastr-cleanup-bsnsSumry/execute.do?cafeId=260900001271F22&stepSeCode=102&div=sumry",
+        "source_as_of": null,
+        "checked_on": "2026-11-24",
+        "observation_date": "2026-11-24"
       }
     },
     "sources": {},
@@ -872,7 +1594,18 @@
       "units": 247,
       "floors_above_ground": 15,
       "floors_below_ground": 3
-    }
+    },
+    "registered_address": "면목본동 107-33번지 일대",
+    "metrics": {
+      "owner_count": 218,
+      "planned_units_per_owner": null
+    },
+    "zoning": {
+      "before": "도시지역 제2종일반주거지역(7층이하)",
+      "after": null,
+      "upgrade_planned": null
+    },
+    "housing_allocation": null
   },
   {
     "id": "mz-seoul-11000uq120ps202505310449",
@@ -907,13 +1640,19 @@
         "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=589741",
         "https://news.seoul.go.kr/citybuild/archives/538733"
       ]
-    }
+    },
+    "metrics": {
+      "planned_units_per_owner": null,
+      "owner_count": null
+    },
+    "zoning": null,
+    "housing_allocation": null
   },
   {
     "id": "mz-seoul-11260uq120ps202603060001",
     "town_id": "mt-202603-public-012",
     "name": "면목본동 5구역 가로주택정비사업",
-    "stage": null,
+    "stage": "조합설립인가",
     "project_type": "가로주택정비",
     "project_area_m2": null,
     "planned_units_total": 298,
@@ -934,6 +1673,42 @@
         "source_as_of": "2025-05-08",
         "checked_on": "2026-11-24",
         "source_url": "https://kind.krx.co.kr/external/2025/05/08/000393/20250429001918/91370.htm"
+      },
+      "registered_address": {
+        "kind": "seoul_small_housing_register",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+        "source_as_of": "2026-10-13",
+        "checked_on": "2026-11-24",
+        "row_id": "8679.00",
+        "address": "면목본동 109-2번지 일대",
+        "source_feature_id": "11260UQ120PS202603060001",
+        "pnu": "1126010100101090002"
+      },
+      "stage": {
+        "kind": "seoul_small_housing_register",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+        "source_as_of": "2026-10-13",
+        "checked_on": "2026-11-24",
+        "row_id": "8679.00",
+        "address": "면목본동 109-2번지 일대",
+        "source_feature_id": "11260UQ120PS202603060001",
+        "pnu": "1126010100101090002",
+        "raw_stage": "조합설립인가",
+        "milestone_date": "2023-07-11"
+      },
+      "metrics": {
+        "kind": "project_disclosure",
+        "source_url": "https://cleanup.seoul.go.kr/cafe/mastr-cleanup-bsnsSumry/execute.do?cafeId=260900001192U68&stepSeCode=102&div=sumry",
+        "source_as_of": null,
+        "checked_on": "2026-11-24",
+        "observation_date": "2026-11-24"
+      },
+      "zoning": {
+        "kind": "project_disclosure",
+        "source_url": "https://cleanup.seoul.go.kr/cafe/mastr-cleanup-bsnsSumry/execute.do?cafeId=260900001192U68&stepSeCode=102&div=sumry",
+        "source_as_of": null,
+        "checked_on": "2026-11-24",
+        "observation_date": "2026-11-24"
       }
     },
     "sources": {},
@@ -954,13 +1729,24 @@
       "units": 317,
       "floors_above_ground": 24,
       "floors_below_ground": 3
-    }
+    },
+    "registered_address": "면목본동 109-2번지 일대",
+    "metrics": {
+      "owner_count": 172,
+      "planned_units_per_owner": null
+    },
+    "zoning": {
+      "before": "제2종 일반주거지역(7층이하)",
+      "after": null,
+      "upgrade_planned": null
+    },
+    "housing_allocation": null
   },
   {
     "id": "mz-seoul-11000uq120ps202505310446",
     "town_id": "mt-202603-public-012",
     "name": "(가칭)면목본동 1구역 가로주택정비사업",
-    "stage": null,
+    "stage": "조합설립 진행 중",
     "project_type": "가로주택정비",
     "project_area_m2": null,
     "planned_units_total": 313,
@@ -974,6 +1760,28 @@
         "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=589741",
         "source_as_of": "2024-06-20",
         "display_note": "과거 공개 계획이며 최신 인가 수치나 확정 분양 세대수가 아닙니다."
+      },
+      "registered_address": {
+        "kind": "seoul_small_housing_register",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+        "source_as_of": "2026-10-13",
+        "checked_on": "2026-11-24",
+        "row_id": "8675.00",
+        "address": "면목본동 1149-1번지 일대",
+        "source_feature_id": "11000UQ120PS202505310446",
+        "pnu": "1126010100111490001"
+      },
+      "stage": {
+        "kind": "seoul_small_housing_register",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+        "source_as_of": "2026-10-13",
+        "checked_on": "2026-11-24",
+        "row_id": "8675.00",
+        "address": "면목본동 1149-1번지 일대",
+        "source_feature_id": "11000UQ120PS202505310446",
+        "pnu": "1126010100111490001",
+        "raw_stage": "조합설립인가 추진중(연번부여)",
+        "milestone_date": "2023-05-08"
       }
     },
     "sources": {},
@@ -989,13 +1797,20 @@
         "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=589741",
         "https://news.seoul.go.kr/citybuild/archives/538733"
       ]
-    }
+    },
+    "registered_address": "면목본동 1149-1번지 일대",
+    "metrics": {
+      "planned_units_per_owner": null,
+      "owner_count": null
+    },
+    "zoning": null,
+    "housing_allocation": null
   },
   {
     "id": "mz-seoul-11000uq120ps202505310447",
     "town_id": "mt-202603-public-012",
     "name": "면목본동 2구역 가로주택정비사업",
-    "stage": null,
+    "stage": "조합설립인가",
     "project_type": "가로주택정비",
     "project_area_m2": null,
     "planned_units_total": 302,
@@ -1016,6 +1831,42 @@
         "source_as_of": "2025-05-12",
         "checked_on": "2026-11-24",
         "source_url": "https://kind.krx.co.kr/external/2025/05/12/000236/20250508001227/91370.htm"
+      },
+      "registered_address": {
+        "kind": "seoul_small_housing_register",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+        "source_as_of": "2026-10-13",
+        "checked_on": "2026-11-24",
+        "row_id": "8676.00",
+        "address": "면목본동 106-5번지 일대",
+        "source_feature_id": "11000UQ120PS202505310447",
+        "pnu": "1126010100101060005"
+      },
+      "stage": {
+        "kind": "seoul_small_housing_register",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+        "source_as_of": "2026-10-13",
+        "checked_on": "2026-11-24",
+        "row_id": "8676.00",
+        "address": "면목본동 106-5번지 일대",
+        "source_feature_id": "11000UQ120PS202505310447",
+        "pnu": "1126010100101060005",
+        "raw_stage": "조합설립인가",
+        "milestone_date": "2023-07-11"
+      },
+      "metrics": {
+        "kind": "project_disclosure",
+        "source_url": "https://cleanup.seoul.go.kr/cafe/mastr-cleanup-bsnsSumry/execute.do?cafeId=260900001267B13&stepSeCode=102&div=sumry",
+        "source_as_of": null,
+        "checked_on": "2026-11-24",
+        "observation_date": "2026-11-24"
+      },
+      "zoning": {
+        "kind": "project_disclosure",
+        "source_url": "https://cleanup.seoul.go.kr/cafe/mastr-cleanup-bsnsSumry/execute.do?cafeId=260900001267B13&stepSeCode=102&div=sumry",
+        "source_as_of": null,
+        "checked_on": "2026-11-24",
+        "observation_date": "2026-11-24"
       }
     },
     "sources": {},
@@ -1036,21 +1887,82 @@
       "units": 321,
       "floors_above_ground": 25,
       "floors_below_ground": 3
-    }
+    },
+    "registered_address": "면목본동 106-5번지 일대",
+    "metrics": {
+      "owner_count": 160,
+      "planned_units_per_owner": null
+    },
+    "zoning": {
+      "before": "제2종일반주거지역(7층이하)",
+      "after": null,
+      "upgrade_planned": null
+    },
+    "housing_allocation": null
   },
   {
     "id": "mz-seoul-11000uq120ps202505310212",
     "town_id": "mt-202603-public-024",
     "name": "시흥동 1005번지 일대 가로주택정비사업(시흥중앙하이츠)",
-    "stage": null,
+    "stage": "통합심의 완료",
     "project_type": "가로주택정비",
     "project_area_m2": null,
-    "planned_units_total": null,
+    "planned_units_total": 477,
     "max_floors_above_ground": null,
     "floors_below_ground": null,
     "unit_types": null,
     "selected_contractor": null,
-    "field_evidence": {},
+    "field_evidence": {
+      "registered_address": {
+        "kind": "seoul_small_housing_register",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+        "source_as_of": "2026-10-13",
+        "checked_on": "2026-11-24",
+        "row_id": "8248.00",
+        "address": "시흥3동 1005",
+        "source_feature_id": "11000UQ120PS202505310212",
+        "pnu": "1154510300110050000"
+      },
+      "stage": {
+        "kind": "district_project_register",
+        "source_url": "https://www.geumcheon.go.kr/portal/rebuildWebView.do?key=4266&rebuildId=28",
+        "source_as_of": "2026-11-05",
+        "checked_on": "2026-11-24",
+        "milestone_date": "2025-11-17"
+      },
+      "plan": {
+        "kind": "district_project_register",
+        "source_url": "https://www.geumcheon.go.kr/portal/rebuildWebView.do?key=4266&rebuildId=28",
+        "source_as_of": "2026-11-05",
+        "checked_on": "2026-11-24"
+      },
+      "housing_allocation": {
+        "kind": "district_project_register",
+        "source_url": "https://www.geumcheon.go.kr/portal/rebuildWebView.do?key=4266&rebuildId=28",
+        "source_as_of": "2026-11-05",
+        "checked_on": "2026-11-24"
+      },
+      "metrics": {
+        "kind": "district_project_register",
+        "source_url": "https://www.geumcheon.go.kr/portal/rebuildWebView.do?key=4266&rebuildId=28",
+        "source_as_of": "2026-11-05",
+        "checked_on": "2026-11-24"
+      },
+      "zoning": {
+        "kind": "district_project_register",
+        "source_url": "https://www.geumcheon.go.kr/portal/rebuildWebView.do?key=4266&rebuildId=28",
+        "source_as_of": "2026-11-05",
+        "checked_on": "2026-11-24"
+      },
+      "planned_units_per_owner": {
+        "kind": "derived_from_same_project_plan",
+        "source_url": "https://www.geumcheon.go.kr/portal/rebuildWebView.do?key=4266&rebuildId=28",
+        "source_as_of": "2026-11-05",
+        "checked_on": "2026-11-24",
+        "numerator_planned_units": 477,
+        "denominator_owner_count": 223
+      }
+    },
     "sources": {},
     "boundary_evidence": {
       "status": "reference_only",
@@ -1063,7 +1975,32 @@
         "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
         "https://www.seoul.go.kr/news/news_report.do?nttNo=447068"
       ]
-    }
+    },
+    "registered_address": "시흥3동 1005",
+    "housing_allocation": {
+      "rental": 96,
+      "members": null,
+      "general": null
+    },
+    "metrics": {
+      "owner_count": 223,
+      "planned_units": 477,
+      "planned_units_per_owner": 2.14
+    },
+    "zoning": {
+      "before": "제2종일반(7층)",
+      "after": null,
+      "upgrade_planned": null
+    },
+    "official_links": [
+      {
+        "title": "금천구 사업 현황",
+        "url": "https://www.geumcheon.go.kr/portal/rebuildWebView.do?key=4266&rebuildId=28",
+        "date": "2026-11-05",
+        "evidence": "district_project_register",
+        "checked_on": "2026-11-24"
+      }
+    ]
   },
   {
     "id": "mz-seoul-11000uq120ps202505310171",
@@ -1100,6 +2037,31 @@
         "source_url": "https://cleanup.seoul.go.kr/cafe/mastr-cleanup-bsnsSumry/execute.do?cafeId=305900000768h78&div=sumry&stepSeCode=103",
         "source_as_of": null,
         "checked_on": "2026-11-24"
+      },
+      "registered_address": {
+        "kind": "seoul_small_housing_register",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+        "source_as_of": "2026-10-13",
+        "checked_on": "2026-11-24",
+        "row_id": "8059.00",
+        "address": "번동 429-97번지 일원",
+        "source_feature_id": "11000UQ120PS202505310171",
+        "pnu": "1130510200104290097"
+      },
+      "zoning": {
+        "kind": "project_disclosure",
+        "source_url": "https://cleanup.seoul.go.kr/cafe/mastr-cleanup-bsnsSumry/execute.do?cafeId=305900000768h78&stepSeCode=102&div=sumry",
+        "source_as_of": null,
+        "checked_on": "2026-11-24",
+        "observation_date": "2026-11-24"
+      },
+      "planned_units_per_owner": {
+        "source_url": "https://cleanup.seoul.go.kr/cafe/mastr-cleanup-bsnsSumry/execute.do?cafeId=305900000768h78&div=sumry&stepSeCode=103",
+        "source_as_of": null,
+        "checked_on": "2026-11-24",
+        "kind": "derived_from_same_project_plan",
+        "numerator_planned_units": 253,
+        "denominator_owner_count": 82
       }
     },
     "sources": {
@@ -1147,8 +2109,16 @@
       "구역별 공개 사업개요 기준이며 이후 인가·변경 내역과 차이가 있을 수 있습니다."
     ],
     "metrics": {
-      "owner_count": 82
-    }
+      "owner_count": 82,
+      "planned_units_per_owner": 3.09
+    },
+    "registered_address": "번동 429-97번지 일원",
+    "zoning": {
+      "before": "도시지역제3종일반주거지역",
+      "after": null,
+      "upgrade_planned": null
+    },
+    "housing_allocation": null
   },
   {
     "id": "mz-seoul-11000uq120ps202505310172",
@@ -1185,6 +2155,31 @@
         "source_url": "https://cleanup.seoul.go.kr/cafe/mastr-cleanup-bsnsSumry/execute.do?cafeId=305900000786L24&div=sumry&stepSeCode=103",
         "source_as_of": null,
         "checked_on": "2026-11-24"
+      },
+      "registered_address": {
+        "kind": "seoul_small_housing_register",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+        "source_as_of": "2026-10-13",
+        "checked_on": "2026-11-24",
+        "row_id": "8060.00",
+        "address": "번동 430-27번지 일원",
+        "source_feature_id": "11000UQ120PS202505310172",
+        "pnu": "1130510200104300027"
+      },
+      "zoning": {
+        "kind": "project_disclosure",
+        "source_url": "https://cleanup.seoul.go.kr/cafe/mastr-cleanup-bsnsSumry/execute.do?cafeId=305900000786L24&stepSeCode=102&div=sumry",
+        "source_as_of": null,
+        "checked_on": "2026-11-24",
+        "observation_date": "2026-11-24"
+      },
+      "planned_units_per_owner": {
+        "source_url": "https://cleanup.seoul.go.kr/cafe/mastr-cleanup-bsnsSumry/execute.do?cafeId=305900000786L24&div=sumry&stepSeCode=103",
+        "source_as_of": null,
+        "checked_on": "2026-11-24",
+        "kind": "derived_from_same_project_plan",
+        "numerator_planned_units": 167,
+        "denominator_owner_count": 58
       }
     },
     "sources": {
@@ -1232,8 +2227,16 @@
       "구역별 공개 사업개요 기준이며 이후 인가·변경 내역과 차이가 있을 수 있습니다."
     ],
     "metrics": {
-      "owner_count": 58
-    }
+      "owner_count": 58,
+      "planned_units_per_owner": 2.88
+    },
+    "registered_address": "번동 430-27번지 일원",
+    "zoning": {
+      "before": "제3종 일반주거지역",
+      "after": null,
+      "upgrade_planned": null
+    },
+    "housing_allocation": null
   },
   {
     "id": "mz-seoul-11000uq120ps202505310173",
@@ -1270,6 +2273,41 @@
         "source_url": "https://cleanup.seoul.go.kr/cafe/mastr-cleanup-bsnsSumry/execute.do?cafeId=305900000788K18&div=sumry&stepSeCode=103",
         "source_as_of": null,
         "checked_on": "2026-11-24"
+      },
+      "registered_address": {
+        "kind": "seoul_small_housing_register",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+        "source_as_of": "2026-10-13",
+        "checked_on": "2026-11-24",
+        "row_id": "8061.00",
+        "address": "번동 428-4번지 일원",
+        "source_feature_id": "11000UQ120PS202505310173",
+        "pnu": "1130510200104280004"
+      },
+      "housing_allocation": {
+        "kind": "seoul_small_housing_register",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+        "source_as_of": "2026-10-13",
+        "checked_on": "2026-11-24",
+        "row_id": "8061.00",
+        "address": "번동 428-4번지 일원",
+        "source_feature_id": "11000UQ120PS202505310173",
+        "pnu": "1130510200104280004"
+      },
+      "zoning": {
+        "kind": "project_disclosure",
+        "source_url": "https://cleanup.seoul.go.kr/cafe/mastr-cleanup-bsnsSumry/execute.do?cafeId=305900000788K18&stepSeCode=102&div=sumry",
+        "source_as_of": null,
+        "checked_on": "2026-11-24",
+        "observation_date": "2026-11-24"
+      },
+      "planned_units_per_owner": {
+        "source_url": "https://cleanup.seoul.go.kr/cafe/mastr-cleanup-bsnsSumry/execute.do?cafeId=305900000788K18&div=sumry&stepSeCode=103",
+        "source_as_of": null,
+        "checked_on": "2026-11-24",
+        "kind": "derived_from_same_project_plan",
+        "numerator_planned_units": 318,
+        "denominator_owner_count": 93
       }
     },
     "sources": {
@@ -1322,7 +2360,20 @@
       "구역별 공개 사업개요 기준이며 이후 인가·변경 내역과 차이가 있을 수 있습니다."
     ],
     "metrics": {
-      "owner_count": 93
+      "owner_count": 93,
+      "planned_units_per_owner": 3.42
+    },
+    "registered_address": "번동 428-4번지 일원",
+    "housing_allocation": {
+      "sale_total": 254,
+      "rental": 64,
+      "members": null,
+      "general": null
+    },
+    "zoning": {
+      "before": "도시지역",
+      "after": null,
+      "upgrade_planned": null
     }
   },
   {
@@ -1360,6 +2411,41 @@
         "source_url": "https://cleanup.seoul.go.kr/cafe/mastr-cleanup-bsnsSumry/execute.do?cafeId=305900000787k48&div=sumry&stepSeCode=103",
         "source_as_of": null,
         "checked_on": "2026-11-24"
+      },
+      "registered_address": {
+        "kind": "seoul_small_housing_register",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+        "source_as_of": "2026-10-13",
+        "checked_on": "2026-11-24",
+        "row_id": "8062.00",
+        "address": "번동 427-63번지 일원",
+        "source_feature_id": "11000UQ120PS202505310174",
+        "pnu": "1130510200104270063"
+      },
+      "housing_allocation": {
+        "kind": "seoul_small_housing_register",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+        "source_as_of": "2026-10-13",
+        "checked_on": "2026-11-24",
+        "row_id": "8062.00",
+        "address": "번동 427-63번지 일원",
+        "source_feature_id": "11000UQ120PS202505310174",
+        "pnu": "1130510200104270063"
+      },
+      "zoning": {
+        "kind": "project_disclosure",
+        "source_url": "https://cleanup.seoul.go.kr/cafe/mastr-cleanup-bsnsSumry/execute.do?cafeId=305900000787k48&stepSeCode=102&div=sumry",
+        "source_as_of": null,
+        "checked_on": "2026-11-24",
+        "observation_date": "2026-11-24"
+      },
+      "planned_units_per_owner": {
+        "source_url": "https://cleanup.seoul.go.kr/cafe/mastr-cleanup-bsnsSumry/execute.do?cafeId=305900000787k48&div=sumry&stepSeCode=103",
+        "source_as_of": null,
+        "checked_on": "2026-11-24",
+        "kind": "derived_from_same_project_plan",
+        "numerator_planned_units": 298,
+        "denominator_owner_count": 98
       }
     },
     "sources": {
@@ -1407,22 +2493,91 @@
       "구역별 공개 사업개요 기준이며 이후 인가·변경 내역과 차이가 있을 수 있습니다."
     ],
     "metrics": {
-      "owner_count": 98
+      "owner_count": 98,
+      "planned_units_per_owner": 3.04
+    },
+    "registered_address": "번동 427-63번지 일원",
+    "housing_allocation": {
+      "sale_total": 206,
+      "rental": 92,
+      "members": null,
+      "general": null
+    },
+    "zoning": {
+      "before": "도시지역 제3종일반주거지역",
+      "after": null,
+      "upgrade_planned": null
     }
   },
   {
     "id": "mz-seoul-11000uq120ps202505310290",
     "town_id": "mt-202603-public-035",
     "name": "번동2-2구역 가로주택정비사업",
-    "stage": null,
+    "stage": "조합설립인가",
     "project_type": "가로주택정비",
     "project_area_m2": null,
-    "planned_units_total": null,
+    "planned_units_total": 165,
     "max_floors_above_ground": null,
     "floors_below_ground": null,
     "unit_types": null,
-    "selected_contractor": null,
-    "field_evidence": {},
+    "selected_contractor": "코오롱글로벌(주)",
+    "field_evidence": {
+      "registered_address": {
+        "kind": "seoul_small_housing_register",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+        "source_as_of": "2026-10-13",
+        "checked_on": "2026-11-24",
+        "row_id": "8064.00",
+        "address": "번동 458-2번지 일원",
+        "source_feature_id": "11000UQ120PS202505310290",
+        "pnu": "1130510200104580002"
+      },
+      "stage": {
+        "kind": "seoul_small_housing_register",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+        "source_as_of": "2026-10-13",
+        "checked_on": "2026-11-24",
+        "row_id": "8064.00",
+        "address": "번동 458-2번지 일원",
+        "source_feature_id": "11000UQ120PS202505310290",
+        "pnu": "1130510200104580002",
+        "raw_stage": "조합설립인가",
+        "milestone_date": "2022-06-16"
+      },
+      "plan": {
+        "kind": "seoul_small_housing_register",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+        "source_as_of": "2026-10-13",
+        "checked_on": "2026-11-24",
+        "row_id": "8064.00",
+        "address": "번동 458-2번지 일원",
+        "source_feature_id": "11000UQ120PS202505310290",
+        "pnu": "1130510200104580002",
+        "state": "published_plan_not_latest_approval_verified"
+      },
+      "metrics": {
+        "kind": "project_disclosure",
+        "source_url": "https://cleanup.seoul.go.kr/cafe/mastr-cleanup-bsnsSumry/execute.do?cafeId=305900000966j38&stepSeCode=102&div=sumry",
+        "source_as_of": null,
+        "checked_on": "2026-11-24",
+        "observation_date": "2026-11-24"
+      },
+      "zoning": {
+        "kind": "project_disclosure",
+        "source_url": "https://cleanup.seoul.go.kr/cafe/mastr-cleanup-bsnsSumry/execute.do?cafeId=305900000966j38&stepSeCode=102&div=sumry",
+        "source_as_of": null,
+        "checked_on": "2026-11-24",
+        "observation_date": "2026-11-24"
+      },
+      "selected_contractor": {
+        "kind": "project_partner_register",
+        "source_url": "https://cleanup.seoul.go.kr/cafe/cleanup-entrpsinfo/execute.do?cafeId=305900000966j38",
+        "source_as_of": null,
+        "checked_on": "2026-11-24",
+        "observation_date": "2026-11-24",
+        "contract_terminated": false
+      }
+    },
     "sources": {},
     "boundary_evidence": {
       "status": "reference_only",
@@ -1436,21 +2591,88 @@
         "https://www.seoul.go.kr/news/news_report.do?nttNo=447068",
         "https://cleanup.seoul.go.kr/assc/scrin-bbs/execute.do?cafeId=305900000966j38"
       ]
-    }
+    },
+    "registered_address": "번동 458-2번지 일원",
+    "metrics": {
+      "owner_count": 220,
+      "planned_units_per_owner": null
+    },
+    "zoning": {
+      "before": "도시지역",
+      "after": null,
+      "upgrade_planned": null
+    },
+    "housing_allocation": null
   },
   {
     "id": "mz-seoul-11000uq120ps202505310308",
     "town_id": "mt-202603-public-035",
     "name": "번동2-3구역 가로주택정비사업",
-    "stage": null,
+    "stage": "조합설립인가",
     "project_type": "가로주택정비",
     "project_area_m2": null,
-    "planned_units_total": null,
+    "planned_units_total": 207,
     "max_floors_above_ground": null,
     "floors_below_ground": null,
     "unit_types": null,
-    "selected_contractor": null,
-    "field_evidence": {},
+    "selected_contractor": "코오롱글로벌(주)",
+    "field_evidence": {
+      "registered_address": {
+        "kind": "seoul_small_housing_register",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+        "source_as_of": "2026-10-13",
+        "checked_on": "2026-11-24",
+        "row_id": "8075.00",
+        "address": "번동 471-118번지 일원",
+        "source_feature_id": "11000UQ120PS202505310308",
+        "pnu": "1130510200104710118"
+      },
+      "stage": {
+        "kind": "seoul_small_housing_register",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+        "source_as_of": "2026-10-13",
+        "checked_on": "2026-11-24",
+        "row_id": "8075.00",
+        "address": "번동 471-118번지 일원",
+        "source_feature_id": "11000UQ120PS202505310308",
+        "pnu": "1130510200104710118",
+        "raw_stage": "조합설립인가",
+        "milestone_date": "2023-03-28"
+      },
+      "plan": {
+        "kind": "seoul_small_housing_register",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+        "source_as_of": "2026-10-13",
+        "checked_on": "2026-11-24",
+        "row_id": "8075.00",
+        "address": "번동 471-118번지 일원",
+        "source_feature_id": "11000UQ120PS202505310308",
+        "pnu": "1130510200104710118",
+        "state": "published_plan_not_latest_approval_verified"
+      },
+      "metrics": {
+        "kind": "project_disclosure",
+        "source_url": "https://cleanup.seoul.go.kr/cafe/mastr-cleanup-bsnsSumry/execute.do?cafeId=305900001088e64&stepSeCode=102&div=sumry",
+        "source_as_of": null,
+        "checked_on": "2026-11-24",
+        "observation_date": "2026-11-24"
+      },
+      "zoning": {
+        "kind": "project_disclosure",
+        "source_url": "https://cleanup.seoul.go.kr/cafe/mastr-cleanup-bsnsSumry/execute.do?cafeId=305900001088e64&stepSeCode=102&div=sumry",
+        "source_as_of": null,
+        "checked_on": "2026-11-24",
+        "observation_date": "2026-11-24"
+      },
+      "selected_contractor": {
+        "kind": "project_partner_register",
+        "source_url": "https://cleanup.seoul.go.kr/cafe/cleanup-entrpsinfo/execute.do?cafeId=305900001088e64",
+        "source_as_of": null,
+        "checked_on": "2026-11-24",
+        "observation_date": "2026-11-24",
+        "contract_terminated": false
+      }
+    },
     "sources": {},
     "boundary_evidence": {
       "status": "reference_only",
@@ -1464,21 +2686,88 @@
         "https://www.seoul.go.kr/news/news_report.do?nttNo=447068",
         "https://cleanup.seoul.go.kr/assc/scrin-bbs/execute.do?cafeId=305900001088e64"
       ]
-    }
+    },
+    "registered_address": "번동 471-118번지 일원",
+    "metrics": {
+      "owner_count": 206,
+      "planned_units_per_owner": null
+    },
+    "zoning": {
+      "before": "도시지역 제3종일반주거지역",
+      "after": null,
+      "upgrade_planned": null
+    },
+    "housing_allocation": null
   },
   {
     "id": "mz-seoul-11000uq120ps202505310289",
     "town_id": "mt-202603-public-035",
     "name": "번동2-1구역 가로주택정비사업",
-    "stage": null,
+    "stage": "조합설립인가",
     "project_type": "가로주택정비",
     "project_area_m2": null,
-    "planned_units_total": null,
+    "planned_units_total": 284,
     "max_floors_above_ground": null,
     "floors_below_ground": null,
     "unit_types": null,
-    "selected_contractor": null,
-    "field_evidence": {},
+    "selected_contractor": "코오롱글로벌주식회사",
+    "field_evidence": {
+      "registered_address": {
+        "kind": "seoul_small_housing_register",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+        "source_as_of": "2026-10-13",
+        "checked_on": "2026-11-24",
+        "row_id": "8063.00",
+        "address": "번동 454-61번지 일원",
+        "source_feature_id": "11000UQ120PS202505310289",
+        "pnu": "1130510200104540061"
+      },
+      "stage": {
+        "kind": "seoul_small_housing_register",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+        "source_as_of": "2026-10-13",
+        "checked_on": "2026-11-24",
+        "row_id": "8063.00",
+        "address": "번동 454-61번지 일원",
+        "source_feature_id": "11000UQ120PS202505310289",
+        "pnu": "1130510200104540061",
+        "raw_stage": "조합설립인가",
+        "milestone_date": "2024-12-05"
+      },
+      "plan": {
+        "kind": "seoul_small_housing_register",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+        "source_as_of": "2026-10-13",
+        "checked_on": "2026-11-24",
+        "row_id": "8063.00",
+        "address": "번동 454-61번지 일원",
+        "source_feature_id": "11000UQ120PS202505310289",
+        "pnu": "1130510200104540061",
+        "state": "published_plan_not_latest_approval_verified"
+      },
+      "metrics": {
+        "kind": "project_disclosure",
+        "source_url": "https://cleanup.seoul.go.kr/cafe/mastr-cleanup-bsnsSumry/execute.do?cafeId=305900000911F66&stepSeCode=102&div=sumry",
+        "source_as_of": null,
+        "checked_on": "2026-11-24",
+        "observation_date": "2026-11-24"
+      },
+      "zoning": {
+        "kind": "project_disclosure",
+        "source_url": "https://cleanup.seoul.go.kr/cafe/mastr-cleanup-bsnsSumry/execute.do?cafeId=305900000911F66&stepSeCode=102&div=sumry",
+        "source_as_of": null,
+        "checked_on": "2026-11-24",
+        "observation_date": "2026-11-24"
+      },
+      "selected_contractor": {
+        "kind": "project_partner_register",
+        "source_url": "https://cleanup.seoul.go.kr/cafe/cleanup-entrpsinfo/execute.do?cafeId=305900000911F66",
+        "source_as_of": null,
+        "checked_on": "2026-11-24",
+        "observation_date": "2026-11-24",
+        "contract_terminated": false
+      }
+    },
     "sources": {},
     "boundary_evidence": {
       "status": "reference_only",
@@ -1493,13 +2782,24 @@
         "https://news.seoul.go.kr/citybuild/moa-housing-town/archive/seoul-northeast",
         "https://cleanup.seoul.go.kr/assc/scrin-bbs/execute.do?cafeId=305900000911F66"
       ]
-    }
+    },
+    "registered_address": "번동 454-61번지 일원",
+    "metrics": {
+      "owner_count": 95,
+      "planned_units_per_owner": null
+    },
+    "zoning": {
+      "before": "도시지역 제3종일반주거지역",
+      "after": null,
+      "upgrade_planned": null
+    },
+    "housing_allocation": null
   },
   {
     "id": "mz-seoul-11410uq120ps202607270001",
     "town_id": "mt-202603-resident-016",
     "name": "현저동 1-5번지 일대 가로주택정비사업",
-    "stage": null,
+    "stage": "조합설립인가",
     "project_type": "가로주택정비",
     "project_area_m2": null,
     "planned_units_total": 366,
@@ -1513,6 +2813,42 @@
         "source_url": "https://www.seoul.go.kr/news/news_report.do?nttNo=435853",
         "source_as_of": null,
         "display_note": "과거 공개 계획이며 최신 인가 수치나 확정 분양 세대수가 아닙니다."
+      },
+      "registered_address": {
+        "kind": "seoul_small_housing_register",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+        "source_as_of": "2026-10-13",
+        "checked_on": "2026-11-24",
+        "row_id": "4737530.00",
+        "address": "현저동 1-5번지 일대",
+        "source_feature_id": "11410UQ120PS202607270001",
+        "pnu": "1141010900100010005"
+      },
+      "stage": {
+        "kind": "seoul_small_housing_register",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+        "source_as_of": "2026-10-13",
+        "checked_on": "2026-11-24",
+        "row_id": "4737530.00",
+        "address": "현저동 1-5번지 일대",
+        "source_feature_id": "11410UQ120PS202607270001",
+        "pnu": "1141010900100010005",
+        "raw_stage": "조합설립인가",
+        "milestone_date": "2026-07-15"
+      },
+      "metrics": {
+        "kind": "project_disclosure",
+        "source_url": "https://cleanup.seoul.go.kr/cafe/mastr-cleanup-bsnsSumry/execute.do?cafeId=410900001525R28&stepSeCode=102&div=sumry",
+        "source_as_of": null,
+        "checked_on": "2026-11-24",
+        "observation_date": "2026-11-24"
+      },
+      "zoning": {
+        "kind": "project_disclosure",
+        "source_url": "https://cleanup.seoul.go.kr/cafe/mastr-cleanup-bsnsSumry/execute.do?cafeId=410900001525R28&stepSeCode=102&div=sumry",
+        "source_as_of": null,
+        "checked_on": "2026-11-24",
+        "observation_date": "2026-11-24"
       }
     },
     "sources": {},
@@ -1529,6 +2865,1817 @@
         "https://www.sdm.go.kr/news/notice/notice.do?mode=view&sdmBoardSeq=313253",
         "https://cleanup.seoul.go.kr/cafe/mastr-cleanup-bsnsSumry/execute.do?cafeId=410900001525R28&div=sumry&stepSeCode=103"
       ]
+    },
+    "registered_address": "현저동 1-5번지 일대",
+    "metrics": {
+      "owner_count": 63,
+      "planned_units_per_owner": null
+    },
+    "zoning": {
+      "before": "도시지역 제2종일반주거지역(7층이하)",
+      "after": null,
+      "upgrade_planned": null
+    },
+    "housing_allocation": null
+  },
+  {
+    "id": "mz-seoul-11000uq120ps202505310462",
+    "town_id": "mt-202603-public-015",
+    "name": "면목역 3의1구역 가로주택정비사업",
+    "project_type": "가로주택정비사업",
+    "stage": "조합설립인가",
+    "planned_units_total": 185,
+    "selected_contractor": null,
+    "unit_types": null,
+    "sources": {},
+    "boundary_evidence": {
+      "kind": "official_project_geometry",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+      "source_as_of": "2026-09-10",
+      "checked_on": "2026-11-24",
+      "status": "reference_only",
+      "source_feature_id": "11000UQ120PS202505310462",
+      "parent_overlap_ratio": 0.99997,
+      "match_method": "exact_registered_town_and_child_pnu_with_containment",
+      "association_sources": [
+        "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status",
+        "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+        "https://cleanup.seoul.go.kr/cleanup/bsnssttus/lscrMainIndx.do?cpage=1&pageSize=2000"
+      ],
+      "pnu": "1126010100101520001",
+      "parcel_source_url": "https://land.seoul.go.kr/land/map/land/map.do",
+      "parcel_observed_on": "2026-11-24"
+    },
+    "field_evidence": {
+      "identity": {
+        "kind": "seoul_project_register",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+        "source_as_of": "2026-10-13",
+        "checked_on": "2026-11-24",
+        "row_id": "8691.00",
+        "address": "면목5동 152-1번지 일대",
+        "pnu": "1126010100101520001"
+      },
+      "registered_address": {
+        "kind": "seoul_small_housing_register",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+        "source_as_of": "2026-10-13",
+        "checked_on": "2026-11-24",
+        "row_id": "8691.00",
+        "address": "면목5동 152-1번지 일대",
+        "source_feature_id": "11000UQ120PS202505310462",
+        "pnu": "1126010100101520001"
+      },
+      "stage": {
+        "kind": "seoul_small_housing_register",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+        "source_as_of": "2026-10-13",
+        "checked_on": "2026-11-24",
+        "row_id": "8691.00",
+        "address": "면목5동 152-1번지 일대",
+        "source_feature_id": "11000UQ120PS202505310462",
+        "pnu": "1126010100101520001",
+        "raw_stage": "조합설립인가",
+        "milestone_date": "2022-09-07"
+      },
+      "plan": {
+        "kind": "seoul_small_housing_register",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+        "source_as_of": "2026-10-13",
+        "checked_on": "2026-11-24",
+        "row_id": "8691.00",
+        "address": "면목5동 152-1번지 일대",
+        "source_feature_id": "11000UQ120PS202505310462",
+        "pnu": "1126010100101520001",
+        "state": "published_plan_not_latest_approval_verified"
+      },
+      "housing_allocation": {
+        "kind": "seoul_small_housing_register",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+        "source_as_of": "2026-10-13",
+        "checked_on": "2026-11-24",
+        "row_id": "8691.00",
+        "address": "면목5동 152-1번지 일대",
+        "source_feature_id": "11000UQ120PS202505310462",
+        "pnu": "1126010100101520001"
+      }
+    },
+    "registered_address": "면목5동 152-1번지 일대",
+    "housing_allocation": {
+      "sale_total": 165,
+      "rental": 20,
+      "members": null,
+      "general": null
+    },
+    "metrics": {
+      "planned_units_per_owner": null,
+      "owner_count": null
+    },
+    "zoning": null
+  },
+  {
+    "id": "mz-seoul-11000uq120ps202505310741",
+    "town_id": "mt-202603-public-064",
+    "name": "석관1-1구역",
+    "project_type": "가로주택정비사업",
+    "stage": "조합설립인가",
+    "planned_units_total": 494,
+    "selected_contractor": null,
+    "unit_types": null,
+    "sources": {},
+    "boundary_evidence": {
+      "kind": "official_project_geometry",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+      "source_as_of": "2026-09-10",
+      "checked_on": "2026-11-24",
+      "status": "reference_only",
+      "source_feature_id": "11000UQ120PS202505310741",
+      "parent_overlap_ratio": 0.99993,
+      "match_method": "exact_registered_town_and_child_pnu_with_containment",
+      "association_sources": [
+        "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status",
+        "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+        "https://cleanup.seoul.go.kr/cleanup/bsnssttus/lscrMainIndx.do?cpage=1&pageSize=2000"
+      ],
+      "pnu": "1129013900103340069",
+      "parcel_source_url": "https://land.seoul.go.kr/land/map/land/map.do",
+      "parcel_observed_on": "2026-11-24"
+    },
+    "field_evidence": {
+      "identity": {
+        "kind": "seoul_project_register",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+        "source_as_of": "2026-10-13",
+        "checked_on": "2026-11-24",
+        "row_id": "8549.00",
+        "address": "석관동 334-69번지 일대",
+        "pnu": "1129013900103340069"
+      },
+      "registered_address": {
+        "kind": "seoul_small_housing_register",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+        "source_as_of": "2026-10-13",
+        "checked_on": "2026-11-24",
+        "row_id": "8549.00",
+        "address": "석관동 334-69번지 일대",
+        "source_feature_id": "11000UQ120PS202505310741",
+        "pnu": "1129013900103340069"
+      },
+      "stage": {
+        "kind": "project_register_stage",
+        "source_url": "https://cleanup.seoul.go.kr/cleanup/bsnssttus/lscrMainIndx.do?cpage=1&pageSize=2000",
+        "source_as_of": null,
+        "checked_on": "2026-11-24",
+        "observation_date": "2026-11-24",
+        "raw_stage": "조합설립인가",
+        "project_name": "석관1의1구역 가로주택정비사업",
+        "address": "석관동 334-69"
+      },
+      "plan": {
+        "kind": "seoul_small_housing_register",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+        "source_as_of": "2026-10-13",
+        "checked_on": "2026-11-24",
+        "row_id": "8549.00",
+        "address": "석관동 334-69번지 일대",
+        "source_feature_id": "11000UQ120PS202505310741",
+        "pnu": "1129013900103340069",
+        "state": "published_plan_not_latest_approval_verified"
+      }
+    },
+    "registered_address": "석관동 334-69번지 일대",
+    "metrics": {
+      "planned_units_per_owner": null,
+      "owner_count": null
+    },
+    "zoning": null,
+    "housing_allocation": null
+  },
+  {
+    "id": "mz-seoul-11000uq120ps202505310435",
+    "town_id": "mt-202603-resident-018",
+    "name": "홍은동 11-360 일대 가로주택정비사업",
+    "project_type": "가로주택정비사업",
+    "stage": "조합설립인가",
+    "planned_units_total": 246,
+    "selected_contractor": "두산건설 주식회사",
+    "unit_types": null,
+    "sources": {},
+    "boundary_evidence": {
+      "kind": "official_project_geometry",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+      "source_as_of": "2026-09-10",
+      "checked_on": "2026-11-24",
+      "status": "reference_only",
+      "source_feature_id": "11000UQ120PS202505310435",
+      "parent_overlap_ratio": 0.99743,
+      "match_method": "exact_registered_town_and_child_pnu_with_containment",
+      "association_sources": [
+        "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status",
+        "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+        "https://cleanup.seoul.go.kr/cleanup/bsnssttus/lscrMainIndx.do?cpage=1&pageSize=2000"
+      ],
+      "pnu": "1141011800100110360",
+      "parcel_source_url": "https://land.seoul.go.kr/land/map/land/map.do",
+      "parcel_observed_on": "2026-11-24"
+    },
+    "field_evidence": {
+      "identity": {
+        "kind": "seoul_project_register",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+        "source_as_of": "2026-10-13",
+        "checked_on": "2026-11-24",
+        "row_id": "8426.00",
+        "address": "홍은동 11-360 일대",
+        "pnu": "1141011800100110360"
+      },
+      "registered_address": {
+        "kind": "seoul_small_housing_register",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+        "source_as_of": "2026-10-13",
+        "checked_on": "2026-11-24",
+        "row_id": "8426.00",
+        "address": "홍은동 11-360 일대",
+        "source_feature_id": "11000UQ120PS202505310435",
+        "pnu": "1141011800100110360"
+      },
+      "stage": {
+        "kind": "seoul_small_housing_register",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+        "source_as_of": "2026-10-13",
+        "checked_on": "2026-11-24",
+        "row_id": "8426.00",
+        "address": "홍은동 11-360 일대",
+        "source_feature_id": "11000UQ120PS202505310435",
+        "pnu": "1141011800100110360",
+        "raw_stage": "조합설립인가",
+        "milestone_date": "2022-11-10"
+      },
+      "plan": {
+        "kind": "seoul_small_housing_register",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+        "source_as_of": "2026-10-13",
+        "checked_on": "2026-11-24",
+        "row_id": "8426.00",
+        "address": "홍은동 11-360 일대",
+        "source_feature_id": "11000UQ120PS202505310435",
+        "pnu": "1141011800100110360",
+        "state": "published_plan_not_latest_approval_verified"
+      },
+      "metrics": {
+        "kind": "project_disclosure",
+        "source_url": "https://cleanup.seoul.go.kr/cafe/mastr-cleanup-bsnsSumry/execute.do?cafeId=410900000979r02&stepSeCode=102&div=sumry",
+        "source_as_of": null,
+        "checked_on": "2026-11-24",
+        "observation_date": "2026-11-24"
+      },
+      "zoning": {
+        "kind": "project_disclosure",
+        "source_url": "https://cleanup.seoul.go.kr/cafe/mastr-cleanup-bsnsSumry/execute.do?cafeId=410900000979r02&stepSeCode=102&div=sumry",
+        "source_as_of": null,
+        "checked_on": "2026-11-24",
+        "observation_date": "2026-11-24"
+      },
+      "selected_contractor": {
+        "kind": "project_partner_register",
+        "source_url": "https://cleanup.seoul.go.kr/cafe/cleanup-entrpsinfo/execute.do?cafeId=410900000979r02",
+        "source_as_of": null,
+        "checked_on": "2026-11-24",
+        "observation_date": "2026-11-24",
+        "contract_terminated": false
+      },
+      "owner_plan_ratio": {
+        "kind": "project_disclosure",
+        "source_url": "https://cleanup.seoul.go.kr/cafe/mastr-cleanup-bsnsSumry/execute.do?cafeId=410900000979r02&stepSeCode=102&div=sumry",
+        "source_as_of": null,
+        "checked_on": "2026-11-24",
+        "observation_date": "2026-11-24"
+      },
+      "planned_units_per_owner": {
+        "kind": "derived_from_same_project_plan",
+        "source_url": "https://cleanup.seoul.go.kr/cafe/mastr-cleanup-bsnsSumry/execute.do?cafeId=410900000979r02&stepSeCode=102&div=sumry",
+        "source_as_of": null,
+        "checked_on": "2026-11-24",
+        "observation_date": "2026-11-24",
+        "numerator_planned_units": 246,
+        "denominator_owner_count": 130
+      }
+    },
+    "registered_address": "홍은동 11-360 일대",
+    "metrics": {
+      "owner_count": 130,
+      "planned_units": 246,
+      "planned_units_per_owner": 1.89
+    },
+    "zoning": {
+      "before": "도시지역제2종일반주거지역대공방어협조구역",
+      "after": null,
+      "upgrade_planned": null
+    },
+    "housing_allocation": null
+  },
+  {
+    "id": "mz-seoul-11000uq120ps202505310397",
+    "town_id": "mt-202603-resident-020",
+    "name": "창전동 46-1번지 일대 가로주택정비사업",
+    "project_type": "가로주택정비사업",
+    "stage": "조합설립인가",
+    "planned_units_total": 199,
+    "selected_contractor": "쌍용건설 (주)",
+    "unit_types": null,
+    "sources": {},
+    "boundary_evidence": {
+      "kind": "official_project_geometry",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+      "source_as_of": "2026-09-10",
+      "checked_on": "2026-11-24",
+      "status": "reference_only",
+      "source_feature_id": "11000UQ120PS202505310397",
+      "parent_overlap_ratio": 0.99993,
+      "match_method": "exact_registered_town_and_child_pnu_with_containment",
+      "association_sources": [
+        "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status",
+        "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+        "https://cleanup.seoul.go.kr/cleanup/bsnssttus/lscrMainIndx.do?cpage=1&pageSize=2000"
+      ],
+      "pnu": "1144011400100460001",
+      "parcel_source_url": "https://land.seoul.go.kr/land/map/land/map.do",
+      "parcel_observed_on": "2026-11-24"
+    },
+    "field_evidence": {
+      "identity": {
+        "kind": "seoul_project_register",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+        "source_as_of": "2026-10-13",
+        "checked_on": "2026-11-24",
+        "row_id": "8418.00",
+        "address": "창전동 46-1번지 일대",
+        "pnu": "1144011400100460001"
+      },
+      "registered_address": {
+        "kind": "seoul_small_housing_register",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+        "source_as_of": "2026-10-13",
+        "checked_on": "2026-11-24",
+        "row_id": "8418.00",
+        "address": "창전동 46-1번지 일대",
+        "source_feature_id": "11000UQ120PS202505310397",
+        "pnu": "1144011400100460001"
+      },
+      "stage": {
+        "kind": "seoul_small_housing_register",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+        "source_as_of": "2026-10-13",
+        "checked_on": "2026-11-24",
+        "row_id": "8418.00",
+        "address": "창전동 46-1번지 일대",
+        "source_feature_id": "11000UQ120PS202505310397",
+        "pnu": "1144011400100460001",
+        "raw_stage": "조합설립인가",
+        "milestone_date": "2024-04-04"
+      },
+      "plan": {
+        "kind": "seoul_small_housing_register",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+        "source_as_of": "2026-10-13",
+        "checked_on": "2026-11-24",
+        "row_id": "8418.00",
+        "address": "창전동 46-1번지 일대",
+        "source_feature_id": "11000UQ120PS202505310397",
+        "pnu": "1144011400100460001",
+        "state": "published_plan_not_latest_approval_verified"
+      },
+      "metrics": {
+        "kind": "project_disclosure",
+        "source_url": "https://cleanup.seoul.go.kr/cafe/mastr-cleanup-bsnsSumry/execute.do?cafeId=440900001470u43&stepSeCode=102&div=sumry",
+        "source_as_of": null,
+        "checked_on": "2026-11-24",
+        "observation_date": "2026-11-24"
+      },
+      "zoning": {
+        "kind": "project_disclosure",
+        "source_url": "https://cleanup.seoul.go.kr/cafe/mastr-cleanup-bsnsSumry/execute.do?cafeId=440900001470u43&stepSeCode=102&div=sumry",
+        "source_as_of": null,
+        "checked_on": "2026-11-24",
+        "observation_date": "2026-11-24"
+      },
+      "selected_contractor": {
+        "kind": "project_partner_register",
+        "source_url": "https://cleanup.seoul.go.kr/cafe/cleanup-entrpsinfo/execute.do?cafeId=440900001470u43",
+        "source_as_of": null,
+        "checked_on": "2026-11-24",
+        "observation_date": "2026-11-24",
+        "contract_terminated": false
+      }
+    },
+    "registered_address": "창전동 46-1번지 일대",
+    "metrics": {
+      "owner_count": 172,
+      "planned_units_per_owner": null
+    },
+    "zoning": {
+      "before": "제3종일반주거지역",
+      "after": null,
+      "upgrade_planned": null
+    },
+    "housing_allocation": null
+  },
+  {
+    "id": "mz-seoul-11000uq120ps202505310585",
+    "town_id": "mt-202603-public-033",
+    "name": "중동 78번지일대 가로주택정비사업",
+    "project_type": "가로주택정비사업",
+    "stage": "조합설립인가",
+    "planned_units_total": 136,
+    "selected_contractor": "(주)대우건설",
+    "unit_types": null,
+    "sources": {},
+    "boundary_evidence": {
+      "kind": "official_project_geometry",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+      "source_as_of": "2026-09-10",
+      "checked_on": "2026-11-24",
+      "status": "reference_only",
+      "source_feature_id": "11000UQ120PS202505310585",
+      "parent_overlap_ratio": 0.99971,
+      "match_method": "exact_registered_town_and_child_pnu_with_containment",
+      "association_sources": [
+        "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status",
+        "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+        "https://cleanup.seoul.go.kr/cleanup/bsnssttus/lscrMainIndx.do?cpage=1&pageSize=2000"
+      ],
+      "pnu": "1144012600100780000",
+      "parcel_source_url": "https://land.seoul.go.kr/land/map/land/map.do",
+      "parcel_observed_on": "2026-11-24"
+    },
+    "field_evidence": {
+      "identity": {
+        "kind": "seoul_project_register",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+        "source_as_of": "2026-10-13",
+        "checked_on": "2026-11-24",
+        "row_id": "8390.00",
+        "address": "중동 78번지 일대",
+        "pnu": "1144012600100780000"
+      },
+      "registered_address": {
+        "kind": "seoul_small_housing_register",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+        "source_as_of": "2026-10-13",
+        "checked_on": "2026-11-24",
+        "row_id": "8390.00",
+        "address": "중동 78번지 일대",
+        "source_feature_id": "11000UQ120PS202505310585",
+        "pnu": "1144012600100780000"
+      },
+      "stage": {
+        "kind": "project_register_stage",
+        "source_url": "https://cleanup.seoul.go.kr/cleanup/bsnssttus/lscrMainIndx.do?cpage=1&pageSize=2000",
+        "source_as_of": null,
+        "checked_on": "2026-11-24",
+        "observation_date": "2026-11-24",
+        "raw_stage": "조합설립인가",
+        "project_name": "중동78번지일원 가로주택정비사업",
+        "address": "중동 78"
+      },
+      "plan": {
+        "kind": "seoul_small_housing_register",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+        "source_as_of": "2026-10-13",
+        "checked_on": "2026-11-24",
+        "row_id": "8390.00",
+        "address": "중동 78번지 일대",
+        "source_feature_id": "11000UQ120PS202505310585",
+        "pnu": "1144012600100780000",
+        "state": "published_plan_not_latest_approval_verified"
+      },
+      "zoning": {
+        "kind": "project_disclosure",
+        "source_url": "https://cleanup.seoul.go.kr/cafe/mastr-cleanup-bsnsSumry/execute.do?cafeId=440900001321W99&stepSeCode=102&div=sumry",
+        "source_as_of": null,
+        "checked_on": "2026-11-24",
+        "observation_date": "2026-11-24"
+      },
+      "selected_contractor": {
+        "kind": "project_partner_register",
+        "source_url": "https://cleanup.seoul.go.kr/cafe/cleanup-entrpsinfo/execute.do?cafeId=440900001321W99",
+        "source_as_of": null,
+        "checked_on": "2026-11-24",
+        "observation_date": "2026-11-24",
+        "contract_terminated": false
+      }
+    },
+    "registered_address": "중동 78번지 일대",
+    "zoning": {
+      "before": "도시지역",
+      "after": null,
+      "upgrade_planned": null
+    },
+    "metrics": {
+      "planned_units_per_owner": null,
+      "owner_count": null
+    },
+    "housing_allocation": null
+  },
+  {
+    "id": "mz-seoul-11545uq120ps202604200002",
+    "town_id": "mt-202603-public-025",
+    "name": "시흥동 817번지 일대 가로주택정비사업",
+    "project_type": "가로주택정비사업",
+    "stage": "사업시행계획인가",
+    "planned_units_total": 817,
+    "selected_contractor": "두산건설 주식회사",
+    "unit_types": null,
+    "sources": {},
+    "boundary_evidence": {
+      "kind": "official_project_geometry",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+      "source_as_of": "2026-09-10",
+      "checked_on": "2026-11-24",
+      "status": "reference_only",
+      "source_feature_id": "11545UQ120PS202604200002",
+      "parent_overlap_ratio": 0.99995,
+      "match_method": "exact_registered_town_and_child_pnu_with_containment",
+      "association_sources": [
+        "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status",
+        "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+        "https://cleanup.seoul.go.kr/cleanup/bsnssttus/lscrMainIndx.do?cpage=1&pageSize=2000"
+      ],
+      "pnu": "1154510300108170000",
+      "parcel_source_url": "https://land.seoul.go.kr/land/map/land/map.do",
+      "parcel_observed_on": "2026-11-24"
+    },
+    "field_evidence": {
+      "identity": {
+        "kind": "seoul_project_register",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+        "source_as_of": "2026-10-13",
+        "checked_on": "2026-11-24",
+        "row_id": "8257.00",
+        "address": "시흥4동 817번지 일대",
+        "pnu": "1154510300108170000"
+      },
+      "registered_address": {
+        "kind": "seoul_small_housing_register",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+        "source_as_of": "2026-10-13",
+        "checked_on": "2026-11-24",
+        "row_id": "8257.00",
+        "address": "시흥4동 817번지 일대",
+        "source_feature_id": "11545UQ120PS202604200002",
+        "pnu": "1154510300108170000"
+      },
+      "stage": {
+        "kind": "seoul_small_housing_register",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+        "source_as_of": "2026-10-13",
+        "checked_on": "2026-11-24",
+        "row_id": "8257.00",
+        "address": "시흥4동 817번지 일대",
+        "source_feature_id": "11545UQ120PS202604200002",
+        "pnu": "1154510300108170000",
+        "raw_stage": "사업시행인가",
+        "milestone_date": "2026-04-16"
+      },
+      "plan": {
+        "kind": "seoul_small_housing_register",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+        "source_as_of": "2026-10-13",
+        "checked_on": "2026-11-24",
+        "row_id": "8257.00",
+        "address": "시흥4동 817번지 일대",
+        "source_feature_id": "11545UQ120PS202604200002",
+        "pnu": "1154510300108170000",
+        "state": "published_plan_not_latest_approval_verified"
+      },
+      "housing_allocation": {
+        "kind": "seoul_small_housing_register",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+        "source_as_of": "2026-10-13",
+        "checked_on": "2026-11-24",
+        "row_id": "8257.00",
+        "address": "시흥4동 817번지 일대",
+        "source_feature_id": "11545UQ120PS202604200002",
+        "pnu": "1154510300108170000"
+      },
+      "metrics": {
+        "kind": "project_disclosure",
+        "source_url": "https://cleanup.seoul.go.kr/cafe/mastr-cleanup-bsnsSumry/execute.do?cafeId=545900000883e52&stepSeCode=102&div=sumry",
+        "source_as_of": null,
+        "checked_on": "2026-11-24",
+        "observation_date": "2026-11-24"
+      },
+      "zoning": {
+        "kind": "project_disclosure",
+        "source_url": "https://cleanup.seoul.go.kr/cafe/mastr-cleanup-bsnsSumry/execute.do?cafeId=545900000883e52&stepSeCode=102&div=sumry",
+        "source_as_of": null,
+        "checked_on": "2026-11-24",
+        "observation_date": "2026-11-24"
+      },
+      "selected_contractor": {
+        "kind": "project_partner_register",
+        "source_url": "https://cleanup.seoul.go.kr/cafe/cleanup-entrpsinfo/execute.do?cafeId=545900000883e52",
+        "source_as_of": null,
+        "checked_on": "2026-11-24",
+        "observation_date": "2026-11-24",
+        "contract_terminated": false
+      },
+      "owner_plan_ratio": {
+        "kind": "project_disclosure",
+        "source_url": "https://cleanup.seoul.go.kr/cafe/mastr-cleanup-bsnsSumry/execute.do?cafeId=545900000883e52&stepSeCode=102&div=sumry",
+        "source_as_of": null,
+        "checked_on": "2026-11-24",
+        "observation_date": "2026-11-24"
+      },
+      "planned_units_per_owner": {
+        "kind": "derived_from_same_project_plan",
+        "source_url": "https://cleanup.seoul.go.kr/cafe/mastr-cleanup-bsnsSumry/execute.do?cafeId=545900000883e52&stepSeCode=102&div=sumry",
+        "source_as_of": null,
+        "checked_on": "2026-11-24",
+        "observation_date": "2026-11-24",
+        "numerator_planned_units": 817,
+        "denominator_owner_count": 398
+      }
+    },
+    "registered_address": "시흥4동 817번지 일대",
+    "housing_allocation": {
+      "sale_total": 599,
+      "rental": 218,
+      "members": null,
+      "general": null
+    },
+    "metrics": {
+      "owner_count": 398,
+      "planned_units": 817,
+      "planned_units_per_owner": 2.05
+    },
+    "zoning": {
+      "before": "시흥4동 817번지 일대(공동주택 및 부대복리시설)",
+      "after": null,
+      "upgrade_planned": null
     }
+  },
+  {
+    "id": "mz-seoul-11000uq120ps202505310709",
+    "town_id": "mt-202603-resident-011",
+    "name": "종암동 125번지 일원 LH참여형 가로주택정비사업",
+    "project_type": "가로주택정비사업",
+    "stage": "조합설립인가",
+    "planned_units_total": 252,
+    "selected_contractor": null,
+    "unit_types": null,
+    "sources": {},
+    "boundary_evidence": {
+      "kind": "official_project_geometry",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+      "source_as_of": "2026-09-10",
+      "checked_on": "2026-11-24",
+      "status": "reference_only",
+      "source_feature_id": "11000UQ120PS202505310709",
+      "parent_overlap_ratio": 0.98546,
+      "match_method": "exact_registered_town_and_child_pnu_with_containment",
+      "association_sources": [
+        "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status",
+        "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+        "https://cleanup.seoul.go.kr/cleanup/bsnssttus/lscrMainIndx.do?cpage=1&pageSize=2000"
+      ],
+      "pnu": "1129013500101250001",
+      "parcel_source_url": "https://land.seoul.go.kr/land/map/land/map.do",
+      "parcel_observed_on": "2026-11-24"
+    },
+    "field_evidence": {
+      "identity": {
+        "kind": "seoul_project_register",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+        "source_as_of": "2026-10-13",
+        "checked_on": "2026-11-24",
+        "row_id": "8502.00",
+        "address": "종암동 125-1번지 일원",
+        "pnu": "1129013500101250001"
+      },
+      "registered_address": {
+        "kind": "seoul_small_housing_register",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+        "source_as_of": "2026-10-13",
+        "checked_on": "2026-11-24",
+        "row_id": "8502.00",
+        "address": "종암동 125-1번지 일원",
+        "source_feature_id": "11000UQ120PS202505310709",
+        "pnu": "1129013500101250001"
+      },
+      "stage": {
+        "kind": "seoul_small_housing_register",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+        "source_as_of": "2026-10-13",
+        "checked_on": "2026-11-24",
+        "row_id": "8502.00",
+        "address": "종암동 125-1번지 일원",
+        "source_feature_id": "11000UQ120PS202505310709",
+        "pnu": "1129013500101250001",
+        "raw_stage": "조합설립인가",
+        "milestone_date": "2022-11-08"
+      },
+      "plan": {
+        "kind": "seoul_small_housing_register",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+        "source_as_of": "2026-10-13",
+        "checked_on": "2026-11-24",
+        "row_id": "8502.00",
+        "address": "종암동 125-1번지 일원",
+        "source_feature_id": "11000UQ120PS202505310709",
+        "pnu": "1129013500101250001",
+        "state": "published_plan_not_latest_approval_verified"
+      },
+      "housing_allocation": {
+        "kind": "seoul_small_housing_register",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+        "source_as_of": "2026-10-13",
+        "checked_on": "2026-11-24",
+        "row_id": "8502.00",
+        "address": "종암동 125-1번지 일원",
+        "source_feature_id": "11000UQ120PS202505310709",
+        "pnu": "1129013500101250001"
+      }
+    },
+    "registered_address": "종암동 125-1번지 일원",
+    "housing_allocation": {
+      "sale_total": 201,
+      "rental": 51,
+      "members": null,
+      "general": null
+    },
+    "metrics": {
+      "planned_units_per_owner": null,
+      "owner_count": null
+    },
+    "zoning": null
+  },
+  {
+    "id": "mz-seoul-11000uq120ps202505310551",
+    "town_id": "mt-202603-public-055",
+    "name": "창동 501-13번지 일대 가로주택정비사업",
+    "project_type": "가로주택정비사업",
+    "stage": "조합설립인가",
+    "planned_units_total": 189,
+    "selected_contractor": "(주)대우건설",
+    "unit_types": null,
+    "sources": {},
+    "boundary_evidence": {
+      "kind": "official_project_geometry",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+      "source_as_of": "2026-09-10",
+      "checked_on": "2026-11-24",
+      "status": "reference_only",
+      "source_feature_id": "11000UQ120PS202505310551",
+      "parent_overlap_ratio": 1.0,
+      "match_method": "exact_registered_town_and_child_pnu_with_containment",
+      "association_sources": [
+        "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status",
+        "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+        "https://cleanup.seoul.go.kr/cleanup/bsnssttus/lscrMainIndx.do?cpage=1&pageSize=2000"
+      ],
+      "pnu": "1132010700105010013",
+      "parcel_source_url": "https://land.seoul.go.kr/land/map/land/map.do",
+      "parcel_observed_on": "2026-11-24"
+    },
+    "field_evidence": {
+      "identity": {
+        "kind": "seoul_project_register",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+        "source_as_of": "2026-10-13",
+        "checked_on": "2026-11-24",
+        "row_id": "8309.00",
+        "address": "창동 501-13번지 일대",
+        "pnu": "1132010700105010013"
+      },
+      "registered_address": {
+        "kind": "seoul_small_housing_register",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+        "source_as_of": "2026-10-13",
+        "checked_on": "2026-11-24",
+        "row_id": "8309.00",
+        "address": "창동 501-13번지 일대",
+        "source_feature_id": "11000UQ120PS202505310551",
+        "pnu": "1132010700105010013"
+      },
+      "stage": {
+        "kind": "seoul_small_housing_register",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+        "source_as_of": "2026-10-13",
+        "checked_on": "2026-11-24",
+        "row_id": "8309.00",
+        "address": "창동 501-13번지 일대",
+        "source_feature_id": "11000UQ120PS202505310551",
+        "pnu": "1132010700105010013",
+        "raw_stage": "조합설립인가",
+        "milestone_date": "2021-12-31"
+      },
+      "plan": {
+        "kind": "seoul_small_housing_register",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+        "source_as_of": "2026-10-13",
+        "checked_on": "2026-11-24",
+        "row_id": "8309.00",
+        "address": "창동 501-13번지 일대",
+        "source_feature_id": "11000UQ120PS202505310551",
+        "pnu": "1132010700105010013",
+        "state": "published_plan_not_latest_approval_verified"
+      },
+      "metrics": {
+        "kind": "project_disclosure",
+        "source_url": "https://cleanup.seoul.go.kr/cafe/mastr-cleanup-bsnsSumry/execute.do?cafeId=320900000937Q31&stepSeCode=102&div=sumry",
+        "source_as_of": null,
+        "checked_on": "2026-11-24",
+        "observation_date": "2026-11-24"
+      },
+      "zoning": {
+        "kind": "project_disclosure",
+        "source_url": "https://cleanup.seoul.go.kr/cafe/mastr-cleanup-bsnsSumry/execute.do?cafeId=320900000937Q31&stepSeCode=102&div=sumry",
+        "source_as_of": null,
+        "checked_on": "2026-11-24",
+        "observation_date": "2026-11-24"
+      },
+      "selected_contractor": {
+        "kind": "project_partner_register",
+        "source_url": "https://cleanup.seoul.go.kr/cafe/cleanup-entrpsinfo/execute.do?cafeId=320900000937Q31",
+        "source_as_of": null,
+        "checked_on": "2026-11-24",
+        "observation_date": "2026-11-24",
+        "contract_terminated": false
+      }
+    },
+    "registered_address": "창동 501-13번지 일대",
+    "metrics": {
+      "owner_count": 102,
+      "planned_units_per_owner": null
+    },
+    "zoning": {
+      "before": "도시지역  제2종일반주거지역(7층이하)  대공방어협조구역",
+      "after": null,
+      "upgrade_planned": null
+    },
+    "housing_allocation": null
+  },
+  {
+    "id": "mz-seoul-11000uq120ps202505310654",
+    "town_id": "mt-202603-resident-025",
+    "name": "신림동 655-78번지 일원 가로주택정비사업",
+    "project_type": "가로주택정비사업",
+    "stage": "조합설립인가",
+    "planned_units_total": 472,
+    "selected_contractor": "두산건설 주식회사",
+    "unit_types": null,
+    "sources": {},
+    "boundary_evidence": {
+      "kind": "official_project_geometry",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+      "source_as_of": "2026-09-10",
+      "checked_on": "2026-11-24",
+      "status": "reference_only",
+      "source_feature_id": "11000UQ120PS202505310654",
+      "parent_overlap_ratio": 0.99977,
+      "match_method": "exact_registered_town_and_child_pnu_with_containment",
+      "association_sources": [
+        "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status",
+        "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+        "https://cleanup.seoul.go.kr/cleanup/bsnssttus/lscrMainIndx.do?cpage=1&pageSize=2000"
+      ],
+      "pnu": "1162010200106550078",
+      "parcel_source_url": "https://land.seoul.go.kr/land/map/land/map.do",
+      "parcel_observed_on": "2026-11-24"
+    },
+    "field_evidence": {
+      "identity": {
+        "kind": "seoul_project_register",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+        "source_as_of": "2026-10-13",
+        "checked_on": "2026-11-24",
+        "row_id": "8179.00",
+        "address": "신림동 655-78 일대",
+        "pnu": "1162010200106550078"
+      },
+      "registered_address": {
+        "kind": "seoul_small_housing_register",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+        "source_as_of": "2026-10-13",
+        "checked_on": "2026-11-24",
+        "row_id": "8179.00",
+        "address": "신림동 655-78 일대",
+        "source_feature_id": "11000UQ120PS202505310654",
+        "pnu": "1162010200106550078"
+      },
+      "stage": {
+        "kind": "seoul_small_housing_register",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+        "source_as_of": "2026-10-13",
+        "checked_on": "2026-11-24",
+        "row_id": "8179.00",
+        "address": "신림동 655-78 일대",
+        "source_feature_id": "11000UQ120PS202505310654",
+        "pnu": "1162010200106550078",
+        "raw_stage": "조합설립인가",
+        "milestone_date": "2023-02-22"
+      },
+      "plan": {
+        "kind": "seoul_small_housing_register",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+        "source_as_of": "2026-10-13",
+        "checked_on": "2026-11-24",
+        "row_id": "8179.00",
+        "address": "신림동 655-78 일대",
+        "source_feature_id": "11000UQ120PS202505310654",
+        "pnu": "1162010200106550078",
+        "state": "published_plan_not_latest_approval_verified"
+      },
+      "metrics": {
+        "kind": "project_disclosure",
+        "source_url": "https://cleanup.seoul.go.kr/cafe/mastr-cleanup-bsnsSumry/execute.do?cafeId=620900001085p85&stepSeCode=102&div=sumry",
+        "source_as_of": null,
+        "checked_on": "2026-11-24",
+        "observation_date": "2026-11-24"
+      },
+      "zoning": {
+        "kind": "project_disclosure",
+        "source_url": "https://cleanup.seoul.go.kr/cafe/mastr-cleanup-bsnsSumry/execute.do?cafeId=620900001085p85&stepSeCode=102&div=sumry",
+        "source_as_of": null,
+        "checked_on": "2026-11-24",
+        "observation_date": "2026-11-24"
+      },
+      "selected_contractor": {
+        "kind": "project_partner_register",
+        "source_url": "https://cleanup.seoul.go.kr/cafe/cleanup-entrpsinfo/execute.do?cafeId=620900001085p85",
+        "source_as_of": null,
+        "checked_on": "2026-11-24",
+        "observation_date": "2026-11-24",
+        "contract_terminated": false
+      }
+    },
+    "registered_address": "신림동 655-78 일대",
+    "metrics": {
+      "owner_count": 102,
+      "planned_units_per_owner": null
+    },
+    "zoning": {
+      "before": "도시지역",
+      "after": null,
+      "upgrade_planned": null
+    },
+    "housing_allocation": null
+  },
+  {
+    "id": "mz-seoul-11000uq120ps202505310477",
+    "town_id": "mt-202603-public-018",
+    "name": "중화역 2의1구역 가로주택정비사업",
+    "project_type": "가로주택정비사업",
+    "stage": "조합설립인가",
+    "planned_units_total": 490,
+    "selected_contractor": null,
+    "unit_types": null,
+    "sources": {},
+    "boundary_evidence": {
+      "kind": "official_project_geometry",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+      "source_as_of": "2026-09-10",
+      "checked_on": "2026-11-24",
+      "status": "reference_only",
+      "source_feature_id": "11000UQ120PS202505310477",
+      "parent_overlap_ratio": 0.99999,
+      "match_method": "exact_registered_town_and_child_pnu_with_containment",
+      "association_sources": [
+        "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status",
+        "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+        "https://cleanup.seoul.go.kr/cleanup/bsnssttus/lscrMainIndx.do?cpage=1&pageSize=2000"
+      ],
+      "pnu": "1126010300103290038",
+      "parcel_source_url": "https://land.seoul.go.kr/land/map/land/map.do",
+      "parcel_observed_on": "2026-11-24"
+    },
+    "field_evidence": {
+      "identity": {
+        "kind": "seoul_project_register",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+        "source_as_of": "2026-10-13",
+        "checked_on": "2026-11-24",
+        "row_id": "8704.00",
+        "address": "중화2동 329-38번지 일대",
+        "pnu": "1126010300103290038"
+      },
+      "registered_address": {
+        "kind": "seoul_small_housing_register",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+        "source_as_of": "2026-10-13",
+        "checked_on": "2026-11-24",
+        "row_id": "8704.00",
+        "address": "중화2동 329-38번지 일대",
+        "source_feature_id": "11000UQ120PS202505310477",
+        "pnu": "1126010300103290038"
+      },
+      "stage": {
+        "kind": "seoul_small_housing_register",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+        "source_as_of": "2026-10-13",
+        "checked_on": "2026-11-24",
+        "row_id": "8704.00",
+        "address": "중화2동 329-38번지 일대",
+        "source_feature_id": "11000UQ120PS202505310477",
+        "pnu": "1126010300103290038",
+        "raw_stage": "조합설립인가",
+        "milestone_date": "2022-01-17"
+      },
+      "plan": {
+        "kind": "seoul_small_housing_register",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+        "source_as_of": "2026-10-13",
+        "checked_on": "2026-11-24",
+        "row_id": "8704.00",
+        "address": "중화2동 329-38번지 일대",
+        "source_feature_id": "11000UQ120PS202505310477",
+        "pnu": "1126010300103290038",
+        "state": "published_plan_not_latest_approval_verified"
+      },
+      "housing_allocation": {
+        "kind": "seoul_small_housing_register",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+        "source_as_of": "2026-10-13",
+        "checked_on": "2026-11-24",
+        "row_id": "8704.00",
+        "address": "중화2동 329-38번지 일대",
+        "source_feature_id": "11000UQ120PS202505310477",
+        "pnu": "1126010300103290038"
+      }
+    },
+    "registered_address": "중화2동 329-38번지 일대",
+    "housing_allocation": {
+      "sale_total": 424,
+      "rental": 66,
+      "members": null,
+      "general": null
+    },
+    "metrics": {
+      "planned_units_per_owner": null,
+      "owner_count": null
+    },
+    "zoning": null
+  },
+  {
+    "id": "mz-seoul-11000uq120ps202505310485",
+    "town_id": "mt-202603-public-022",
+    "name": "면목역 2의1구역 가로주택정비사업",
+    "project_type": "가로주택정비사업",
+    "stage": "조합설립인가",
+    "planned_units_total": 266,
+    "selected_contractor": null,
+    "unit_types": null,
+    "sources": {},
+    "boundary_evidence": {
+      "kind": "official_project_geometry",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+      "source_as_of": "2026-09-10",
+      "checked_on": "2026-11-24",
+      "status": "reference_only",
+      "source_feature_id": "11000UQ120PS202505310485",
+      "parent_overlap_ratio": 0.99995,
+      "match_method": "exact_registered_town_and_child_pnu_with_containment",
+      "association_sources": [
+        "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status",
+        "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+        "https://cleanup.seoul.go.kr/cleanup/bsnssttus/lscrMainIndx.do?cpage=1&pageSize=2000"
+      ],
+      "pnu": "1126010100101390052",
+      "parcel_source_url": "https://land.seoul.go.kr/land/map/land/map.do",
+      "parcel_observed_on": "2026-11-24"
+    },
+    "field_evidence": {
+      "identity": {
+        "kind": "seoul_project_register",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+        "source_as_of": "2026-10-13",
+        "checked_on": "2026-11-24",
+        "row_id": "8714.00",
+        "address": "면목2동 139-52번지 일대",
+        "pnu": "1126010100101390052"
+      },
+      "registered_address": {
+        "kind": "seoul_small_housing_register",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+        "source_as_of": "2026-10-13",
+        "checked_on": "2026-11-24",
+        "row_id": "8714.00",
+        "address": "면목2동 139-52번지 일대",
+        "source_feature_id": "11000UQ120PS202505310485",
+        "pnu": "1126010100101390052"
+      },
+      "stage": {
+        "kind": "seoul_small_housing_register",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+        "source_as_of": "2026-10-13",
+        "checked_on": "2026-11-24",
+        "row_id": "8714.00",
+        "address": "면목2동 139-52번지 일대",
+        "source_feature_id": "11000UQ120PS202505310485",
+        "pnu": "1126010100101390052",
+        "raw_stage": "조합설립인가",
+        "milestone_date": "2024-05-16"
+      },
+      "plan": {
+        "kind": "seoul_small_housing_register",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+        "source_as_of": "2026-10-13",
+        "checked_on": "2026-11-24",
+        "row_id": "8714.00",
+        "address": "면목2동 139-52번지 일대",
+        "source_feature_id": "11000UQ120PS202505310485",
+        "pnu": "1126010100101390052",
+        "state": "published_plan_not_latest_approval_verified"
+      },
+      "housing_allocation": {
+        "kind": "seoul_small_housing_register",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+        "source_as_of": "2026-10-13",
+        "checked_on": "2026-11-24",
+        "row_id": "8714.00",
+        "address": "면목2동 139-52번지 일대",
+        "source_feature_id": "11000UQ120PS202505310485",
+        "pnu": "1126010100101390052"
+      }
+    },
+    "registered_address": "면목2동 139-52번지 일대",
+    "housing_allocation": {
+      "sale_total": 212,
+      "rental": 54,
+      "members": null,
+      "general": null
+    },
+    "metrics": {
+      "planned_units_per_owner": null,
+      "owner_count": null
+    },
+    "zoning": null
+  },
+  {
+    "id": "mz-seoul-11000uq120ps202411014068",
+    "town_id": "mt-202603-resident-002",
+    "name": "서계동 116번지 일대 가로주택정비사업",
+    "project_type": "가로주택정비사업",
+    "stage": "조합설립인가",
+    "planned_units_total": 316,
+    "selected_contractor": null,
+    "unit_types": null,
+    "sources": {},
+    "boundary_evidence": {
+      "kind": "official_project_geometry",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+      "source_as_of": "2026-09-10",
+      "checked_on": "2026-11-24",
+      "status": "reference_only",
+      "source_feature_id": "11000UQ120PS202411014068",
+      "parent_overlap_ratio": 0.99991,
+      "match_method": "exact_registered_town_and_child_pnu_with_containment",
+      "association_sources": [
+        "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status",
+        "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+        "https://cleanup.seoul.go.kr/cleanup/bsnssttus/lscrMainIndx.do?cpage=1&pageSize=2000"
+      ],
+      "pnu": "1117010800101160000",
+      "parcel_source_url": "https://land.seoul.go.kr/land/map/land/map.do",
+      "parcel_observed_on": "2026-11-24"
+    },
+    "field_evidence": {
+      "identity": {
+        "kind": "seoul_project_register",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+        "source_as_of": "2026-10-13",
+        "checked_on": "2026-11-24",
+        "row_id": "8620.00",
+        "address": "서계동 116 일대",
+        "pnu": "1117010800101160000"
+      },
+      "registered_address": {
+        "kind": "seoul_small_housing_register",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+        "source_as_of": "2026-10-13",
+        "checked_on": "2026-11-24",
+        "row_id": "8620.00",
+        "address": "서계동 116 일대",
+        "source_feature_id": "11000UQ120PS202411014068",
+        "pnu": "1117010800101160000"
+      },
+      "stage": {
+        "kind": "seoul_small_housing_register",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+        "source_as_of": "2026-10-13",
+        "checked_on": "2026-11-24",
+        "row_id": "8620.00",
+        "address": "서계동 116 일대",
+        "source_feature_id": "11000UQ120PS202411014068",
+        "pnu": "1117010800101160000",
+        "raw_stage": "조합설립인가",
+        "milestone_date": "2023-11-16"
+      },
+      "plan": {
+        "kind": "seoul_small_housing_register",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+        "source_as_of": "2026-10-13",
+        "checked_on": "2026-11-24",
+        "row_id": "8620.00",
+        "address": "서계동 116 일대",
+        "source_feature_id": "11000UQ120PS202411014068",
+        "pnu": "1117010800101160000",
+        "state": "published_plan_not_latest_approval_verified"
+      },
+      "housing_allocation": {
+        "kind": "seoul_small_housing_register",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+        "source_as_of": "2026-10-13",
+        "checked_on": "2026-11-24",
+        "row_id": "8620.00",
+        "address": "서계동 116 일대",
+        "source_feature_id": "11000UQ120PS202411014068",
+        "pnu": "1117010800101160000"
+      },
+      "metrics": {
+        "kind": "project_disclosure",
+        "source_url": "https://cleanup.seoul.go.kr/cafe/mastr-cleanup-bsnsSumry/execute.do?cafeId=170900000837A91&stepSeCode=102&div=sumry",
+        "source_as_of": null,
+        "checked_on": "2026-11-24",
+        "observation_date": "2026-11-24"
+      },
+      "zoning": {
+        "kind": "project_disclosure",
+        "source_url": "https://cleanup.seoul.go.kr/cafe/mastr-cleanup-bsnsSumry/execute.do?cafeId=170900000837A91&stepSeCode=102&div=sumry",
+        "source_as_of": null,
+        "checked_on": "2026-11-24",
+        "observation_date": "2026-11-24"
+      }
+    },
+    "registered_address": "서계동 116 일대",
+    "housing_allocation": {
+      "sale_total": 248,
+      "rental": 68,
+      "members": null,
+      "general": null
+    },
+    "metrics": {
+      "owner_count": 107,
+      "planned_units_per_owner": null
+    },
+    "zoning": {
+      "before": "관리계획 수립 중",
+      "after": null,
+      "upgrade_planned": null
+    }
+  },
+  {
+    "id": "mz-seoul-11000uq120ps202505310382",
+    "town_id": "mt-202603-public-070",
+    "name": "보령,금강연립 가로주택정비사업(대림동 모아타운 1구역)",
+    "project_type": "가로주택정비사업",
+    "stage": "조합설립인가",
+    "planned_units_total": 620,
+    "selected_contractor": null,
+    "unit_types": null,
+    "sources": {},
+    "boundary_evidence": {
+      "kind": "official_project_geometry",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+      "source_as_of": "2026-09-10",
+      "checked_on": "2026-11-24",
+      "status": "reference_only",
+      "source_feature_id": "11000UQ120PS202505310382",
+      "parent_overlap_ratio": 0.98552,
+      "match_method": "exact_registered_town_and_child_pnu_with_containment",
+      "association_sources": [
+        "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status",
+        "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+        "https://cleanup.seoul.go.kr/cleanup/bsnssttus/lscrMainIndx.do?cpage=1&pageSize=2000"
+      ],
+      "pnu": "1156013300107860000",
+      "parcel_source_url": "https://land.seoul.go.kr/land/map/land/map.do",
+      "parcel_observed_on": "2026-11-24"
+    },
+    "field_evidence": {
+      "identity": {
+        "kind": "seoul_project_register",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+        "source_as_of": "2026-10-13",
+        "checked_on": "2026-11-24",
+        "row_id": "8630.00",
+        "address": "대림동 786 일대",
+        "pnu": "1156013300107860000"
+      },
+      "registered_address": {
+        "kind": "seoul_small_housing_register",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+        "source_as_of": "2026-10-13",
+        "checked_on": "2026-11-24",
+        "row_id": "8630.00",
+        "address": "대림동 786 일대",
+        "source_feature_id": "11000UQ120PS202505310382",
+        "pnu": "1156013300107860000"
+      },
+      "stage": {
+        "kind": "project_register_stage",
+        "source_url": "https://cleanup.seoul.go.kr/cleanup/bsnssttus/lscrMainIndx.do?cpage=1&pageSize=2000",
+        "source_as_of": null,
+        "checked_on": "2026-11-24",
+        "observation_date": "2026-11-24",
+        "raw_stage": "조합설립인가",
+        "project_name": "보령금강연립 가로주택정비사업",
+        "address": "대림동 786"
+      },
+      "plan": {
+        "kind": "seoul_small_housing_register",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+        "source_as_of": "2026-10-13",
+        "checked_on": "2026-11-24",
+        "row_id": "8630.00",
+        "address": "대림동 786 일대",
+        "source_feature_id": "11000UQ120PS202505310382",
+        "pnu": "1156013300107860000",
+        "state": "published_plan_not_latest_approval_verified"
+      },
+      "housing_allocation": {
+        "kind": "seoul_small_housing_register",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+        "source_as_of": "2026-10-13",
+        "checked_on": "2026-11-24",
+        "row_id": "8630.00",
+        "address": "대림동 786 일대",
+        "source_feature_id": "11000UQ120PS202505310382",
+        "pnu": "1156013300107860000"
+      }
+    },
+    "registered_address": "대림동 786 일대",
+    "housing_allocation": {
+      "sale_total": 437,
+      "rental": 183,
+      "members": null,
+      "general": null
+    },
+    "metrics": {
+      "planned_units_per_owner": null,
+      "owner_count": null
+    },
+    "zoning": null
+  },
+  {
+    "id": "mz-seoul-11530uq120ps202607230001",
+    "town_id": "mt-202603-public-047",
+    "name": "구로동 511번지 일원 가로주택정비사업",
+    "project_type": "가로주택정비사업",
+    "stage": "조합설립인가",
+    "planned_units_total": null,
+    "selected_contractor": null,
+    "unit_types": null,
+    "sources": {},
+    "boundary_evidence": {
+      "kind": "official_project_geometry",
+      "source_url": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+      "source_as_of": "2026-09-10",
+      "checked_on": "2026-11-24",
+      "status": "reference_only",
+      "source_feature_id": "11530UQ120PS202607230001",
+      "parent_overlap_ratio": 0.99979,
+      "match_method": "exact_registered_town_and_child_pnu_with_containment",
+      "association_sources": [
+        "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status",
+        "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+        "https://cleanup.seoul.go.kr/cleanup/bsnssttus/lscrMainIndx.do?cpage=1&pageSize=2000"
+      ],
+      "pnu": "1153010200105110000",
+      "parcel_source_url": "https://land.seoul.go.kr/land/map/land/map.do",
+      "parcel_observed_on": "2026-11-24"
+    },
+    "field_evidence": {
+      "identity": {
+        "kind": "seoul_project_register",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+        "source_as_of": "2026-10-13",
+        "checked_on": "2026-11-24",
+        "row_id": "8237.00",
+        "address": "구로동 511번지 일원",
+        "pnu": "1153010200105110000"
+      },
+      "registered_address": {
+        "kind": "seoul_small_housing_register",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+        "source_as_of": "2026-10-13",
+        "checked_on": "2026-11-24",
+        "row_id": "8237.00",
+        "address": "구로동 511번지 일원",
+        "source_feature_id": "11530UQ120PS202607230001",
+        "pnu": "1153010200105110000"
+      },
+      "stage": {
+        "kind": "seoul_small_housing_register",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+        "source_as_of": "2026-10-13",
+        "checked_on": "2026-11-24",
+        "row_id": "8237.00",
+        "address": "구로동 511번지 일원",
+        "source_feature_id": "11530UQ120PS202607230001",
+        "pnu": "1153010200105110000",
+        "raw_stage": "조합설립인가",
+        "milestone_date": "2026-07-09"
+      },
+      "metrics": {
+        "kind": "project_disclosure",
+        "source_url": "https://cleanup.seoul.go.kr/cafe/mastr-cleanup-bsnsSumry/execute.do?cafeId=530900001520w58&stepSeCode=102&div=sumry",
+        "source_as_of": null,
+        "checked_on": "2026-11-24",
+        "observation_date": "2026-11-24"
+      },
+      "zoning": {
+        "kind": "project_disclosure",
+        "source_url": "https://cleanup.seoul.go.kr/cafe/mastr-cleanup-bsnsSumry/execute.do?cafeId=530900001520w58&stepSeCode=102&div=sumry",
+        "source_as_of": null,
+        "checked_on": "2026-11-24",
+        "observation_date": "2026-11-24"
+      }
+    },
+    "registered_address": "구로동 511번지 일원",
+    "metrics": {
+      "owner_count": 111,
+      "planned_units_per_owner": null
+    },
+    "zoning": {
+      "before": "제3종 일반주거지역",
+      "after": null,
+      "upgrade_planned": null
+    },
+    "housing_allocation": null
+  },
+  {
+    "id": "mz-mapohapjeong-2026-111-a1",
+    "town_id": "mt-202603-public-032",
+    "name": "합정동 사업시행구역 A-1",
+    "project_type": "가로주택정비",
+    "stage": "조합설립 진행 중",
+    "registered_address": "합정동 370",
+    "metrics": {
+      "owner_count": 260,
+      "existing_units": 211,
+      "planned_units": 281,
+      "planned_units_per_owner": 1.08
+    },
+    "planned_units_total": 281,
+    "housing_allocation": {
+      "rental": 29,
+      "members": null,
+      "general": null
+    },
+    "selected_contractor": null,
+    "unit_types": null,
+    "sources": {},
+    "field_evidence": {
+      "identity": {
+        "kind": "management_plan_notice",
+        "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=631937",
+        "source_as_of": "2026-03-05",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 고시 제2026-111호",
+        "table": "마. 소규모주택정비사업에 대한 추진계획(안)"
+      },
+      "registered_address": {
+        "kind": "management_plan_notice",
+        "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=631937",
+        "source_as_of": "2026-03-05",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 고시 제2026-111호",
+        "table": "마. 추진계획(안) 위치",
+        "note": "추진계획 표는 합정동 370, 임대주택 공급표는 합정동 370-8로 기재. 동일한 A-1 도면번호를 사용하며 개별 도형 연결은 보류."
+      },
+      "metrics": {
+        "kind": "management_plan_notice",
+        "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=631937",
+        "source_as_of": "2026-03-05",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 고시 제2026-111호",
+        "table": "마. 추진계획(안) / 자. 임대주택 공급 및 인수 계획(안)"
+      },
+      "plan": {
+        "kind": "management_plan_notice",
+        "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=631937",
+        "source_as_of": "2026-03-05",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 고시 제2026-111호",
+        "table": "자. 임대주택 공급 및 인수 계획(안)"
+      },
+      "housing_allocation": {
+        "kind": "management_plan_notice",
+        "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=631937",
+        "source_as_of": "2026-03-05",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 고시 제2026-111호",
+        "table": "자. 임대주택 공급 및 인수 계획(안)"
+      },
+      "stage": {
+        "kind": "management_plan_notice",
+        "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=631937",
+        "source_as_of": "2026-03-05",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 고시 제2026-111호",
+        "table": "마. 추진계획(안) · 조합 예정 / 동의서 징구 중"
+      },
+      "planned_units_per_owner": {
+        "kind": "derived_from_same_project_plan",
+        "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=631937",
+        "source_as_of": "2026-03-05",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 고시 제2026-111호",
+        "table": "마. 추진계획(안) / 자. 임대주택 공급 및 인수 계획(안)",
+        "numerator_planned_units": 281,
+        "denominator_owner_count": 260
+      }
+    },
+    "official_links": [
+      {
+        "title": "서울특별시 고시 제2026-111호",
+        "url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=631937",
+        "date": "2026-03-05",
+        "evidence": "management_plan_notice",
+        "checked_on": "2026-11-24"
+      }
+    ],
+    "zoning": null
+  },
+  {
+    "id": "mz-mapohapjeong-2026-111-a2",
+    "town_id": "mt-202603-public-032",
+    "name": "합정동 사업시행구역 A-2",
+    "project_type": "가로주택정비",
+    "stage": "조합설립 진행 중",
+    "registered_address": "합정동 361-9",
+    "metrics": {
+      "owner_count": 317,
+      "existing_units": 274,
+      "planned_units": 268,
+      "planned_units_per_owner": 0.85
+    },
+    "planned_units_total": 268,
+    "housing_allocation": {
+      "rental": 27,
+      "members": null,
+      "general": null
+    },
+    "selected_contractor": null,
+    "unit_types": null,
+    "sources": {},
+    "field_evidence": {
+      "identity": {
+        "kind": "management_plan_notice",
+        "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=631937",
+        "source_as_of": "2026-03-05",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 고시 제2026-111호",
+        "table": "마. 소규모주택정비사업에 대한 추진계획(안)"
+      },
+      "registered_address": {
+        "kind": "management_plan_notice",
+        "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=631937",
+        "source_as_of": "2026-03-05",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 고시 제2026-111호",
+        "table": "마. 추진계획(안) 위치"
+      },
+      "metrics": {
+        "kind": "management_plan_notice",
+        "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=631937",
+        "source_as_of": "2026-03-05",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 고시 제2026-111호",
+        "table": "마. 추진계획(안) / 자. 임대주택 공급 및 인수 계획(안)"
+      },
+      "plan": {
+        "kind": "management_plan_notice",
+        "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=631937",
+        "source_as_of": "2026-03-05",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 고시 제2026-111호",
+        "table": "자. 임대주택 공급 및 인수 계획(안)"
+      },
+      "housing_allocation": {
+        "kind": "management_plan_notice",
+        "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=631937",
+        "source_as_of": "2026-03-05",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 고시 제2026-111호",
+        "table": "자. 임대주택 공급 및 인수 계획(안)"
+      },
+      "stage": {
+        "kind": "management_plan_notice",
+        "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=631937",
+        "source_as_of": "2026-03-05",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 고시 제2026-111호",
+        "table": "마. 추진계획(안) · 조합 예정 / 동의서 징구 중"
+      },
+      "planned_units_per_owner": {
+        "kind": "derived_from_same_project_plan",
+        "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=631937",
+        "source_as_of": "2026-03-05",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 고시 제2026-111호",
+        "table": "마. 추진계획(안) / 자. 임대주택 공급 및 인수 계획(안)",
+        "numerator_planned_units": 268,
+        "denominator_owner_count": 317
+      }
+    },
+    "official_links": [
+      {
+        "title": "서울특별시 고시 제2026-111호",
+        "url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=631937",
+        "date": "2026-03-05",
+        "evidence": "management_plan_notice",
+        "checked_on": "2026-11-24"
+      }
+    ],
+    "zoning": null
+  },
+  {
+    "id": "mz-mapohapjeong-2026-111-a3",
+    "town_id": "mt-202603-public-032",
+    "name": "합정동 사업시행구역 A-3",
+    "project_type": "가로주택정비",
+    "stage": "조합설립 진행 중",
+    "registered_address": "합정동 91-50",
+    "metrics": {
+      "owner_count": 239,
+      "existing_units": 260,
+      "planned_units": 290,
+      "planned_units_per_owner": 1.21
+    },
+    "planned_units_total": 290,
+    "housing_allocation": {
+      "rental": 29,
+      "members": null,
+      "general": null
+    },
+    "selected_contractor": null,
+    "unit_types": null,
+    "sources": {},
+    "field_evidence": {
+      "identity": {
+        "kind": "management_plan_notice",
+        "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=631937",
+        "source_as_of": "2026-03-05",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 고시 제2026-111호",
+        "table": "마. 소규모주택정비사업에 대한 추진계획(안)"
+      },
+      "registered_address": {
+        "kind": "management_plan_notice",
+        "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=631937",
+        "source_as_of": "2026-03-05",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 고시 제2026-111호",
+        "table": "마. 추진계획(안) 위치"
+      },
+      "metrics": {
+        "kind": "management_plan_notice",
+        "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=631937",
+        "source_as_of": "2026-03-05",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 고시 제2026-111호",
+        "table": "마. 추진계획(안) / 자. 임대주택 공급 및 인수 계획(안)"
+      },
+      "plan": {
+        "kind": "management_plan_notice",
+        "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=631937",
+        "source_as_of": "2026-03-05",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 고시 제2026-111호",
+        "table": "자. 임대주택 공급 및 인수 계획(안)"
+      },
+      "housing_allocation": {
+        "kind": "management_plan_notice",
+        "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=631937",
+        "source_as_of": "2026-03-05",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 고시 제2026-111호",
+        "table": "자. 임대주택 공급 및 인수 계획(안)"
+      },
+      "stage": {
+        "kind": "management_plan_notice",
+        "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=631937",
+        "source_as_of": "2026-03-05",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 고시 제2026-111호",
+        "table": "마. 추진계획(안) · 조합 예정 / 동의서 징구 중"
+      },
+      "planned_units_per_owner": {
+        "kind": "derived_from_same_project_plan",
+        "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=631937",
+        "source_as_of": "2026-03-05",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 고시 제2026-111호",
+        "table": "마. 추진계획(안) / 자. 임대주택 공급 및 인수 계획(안)",
+        "numerator_planned_units": 290,
+        "denominator_owner_count": 239
+      }
+    },
+    "official_links": [
+      {
+        "title": "서울특별시 고시 제2026-111호",
+        "url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=631937",
+        "date": "2026-03-05",
+        "evidence": "management_plan_notice",
+        "checked_on": "2026-11-24"
+      }
+    ],
+    "zoning": null
+  },
+  {
+    "id": "mz-mapohapjeong-2026-111-a4",
+    "town_id": "mt-202603-public-032",
+    "name": "합정동 사업시행구역 A-4",
+    "project_type": "가로주택정비",
+    "stage": "조합설립 진행 중",
+    "registered_address": "합정동 81-26",
+    "metrics": {
+      "owner_count": 191,
+      "existing_units": 177,
+      "planned_units": 274,
+      "planned_units_per_owner": 1.43
+    },
+    "planned_units_total": 274,
+    "housing_allocation": {
+      "rental": 44,
+      "members": null,
+      "general": null
+    },
+    "selected_contractor": null,
+    "unit_types": null,
+    "sources": {},
+    "field_evidence": {
+      "identity": {
+        "kind": "management_plan_notice",
+        "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=631937",
+        "source_as_of": "2026-03-05",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 고시 제2026-111호",
+        "table": "마. 소규모주택정비사업에 대한 추진계획(안)"
+      },
+      "registered_address": {
+        "kind": "management_plan_notice",
+        "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=631937",
+        "source_as_of": "2026-03-05",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 고시 제2026-111호",
+        "table": "마. 추진계획(안) 위치"
+      },
+      "metrics": {
+        "kind": "management_plan_notice",
+        "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=631937",
+        "source_as_of": "2026-03-05",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 고시 제2026-111호",
+        "table": "마. 추진계획(안) / 자. 임대주택 공급 및 인수 계획(안)"
+      },
+      "plan": {
+        "kind": "management_plan_notice",
+        "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=631937",
+        "source_as_of": "2026-03-05",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 고시 제2026-111호",
+        "table": "자. 임대주택 공급 및 인수 계획(안)"
+      },
+      "housing_allocation": {
+        "kind": "management_plan_notice",
+        "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=631937",
+        "source_as_of": "2026-03-05",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 고시 제2026-111호",
+        "table": "자. 임대주택 공급 및 인수 계획(안)"
+      },
+      "stage": {
+        "kind": "management_plan_notice",
+        "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=631937",
+        "source_as_of": "2026-03-05",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 고시 제2026-111호",
+        "table": "마. 추진계획(안) · 조합 예정 / 동의서 징구 중"
+      },
+      "planned_units_per_owner": {
+        "kind": "derived_from_same_project_plan",
+        "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=631937",
+        "source_as_of": "2026-03-05",
+        "checked_on": "2026-11-24",
+        "notice_number": "서울특별시 고시 제2026-111호",
+        "table": "마. 추진계획(안) / 자. 임대주택 공급 및 인수 계획(안)",
+        "numerator_planned_units": 274,
+        "denominator_owner_count": 191
+      }
+    },
+    "official_links": [
+      {
+        "title": "서울특별시 고시 제2026-111호",
+        "url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=631937",
+        "date": "2026-03-05",
+        "evidence": "management_plan_notice",
+        "checked_on": "2026-11-24"
+      }
+    ],
+    "zoning": null
   }
 ]

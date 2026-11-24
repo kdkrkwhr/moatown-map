@@ -381,4 +381,11 @@ body[data-loading=true] .map-loading { display: block; position: absolute; top: 
 .address-caption,.point-caption,.ruler-caption { border-color: var(--blue); margin-top: -7px; }
 .address-caption::after,.point-caption::after,.ruler-caption::after { content: ''; position: absolute; bottom: -12px; left: calc(50% - 5px); width: 10px; height: 10px; border: 2px solid white; border-radius: 50%; background: var(--blue); }
 #map.measuring { cursor: crosshair; }
+.regulatory { margin-block: 1rem; padding: 0 1rem 1rem; border: 1px solid #d9e3df; border-radius: 12px; background: #f7faf8; }
+.regulatory h3 { margin: 1rem 0 .4rem; }
+.regulatory p { margin: .45rem 0; line-height: 1.55; overflow-wrap: anywhere; }
+.regulatory small, .regulatory p a { display: block; }
+.regulatory small { color: #425652; }
+.city-road-rule { margin-top: .8rem; font-size: .85rem; }
+.city-road-rule summary { cursor: pointer; line-height: 1.5; }
 @media(max-width:760px) { .map-tools { top: 10px; right: 10px; } #cadastral { top: 59px; left: 10px; } }

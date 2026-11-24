@@ -138,8 +138,8 @@ export function createProjectMap(m,container,{townById,zoneById,boundaries,distr
       if(shape)points.push(shape.bounds.getSW(),shape.bounds.getNE());
       else if(pins.has(id))points.push(pins.get(id).getPosition());
     }
-    if(current.townId)include(current.zoneId??current.townId);
-    else if(filtered)for(const {town,zone} of rows){if(town)include(zone?.id??town.id);}
+    if(current.townId)include(shapes.has(current.zoneId)?current.zoneId:current.townId);
+    else if(filtered)for(const {town,zone} of rows){if(town)include(shapes.has(zone?.id)?zone.id:town.id);}
     const all=!points.length;
     if(all)points.push(ll([126.76,37.425]),ll([127.184,37.702]));
     const opts=fitPadding(container.getBoundingClientRect(),$('explorer').getBoundingClientRect());

@@ -1,7 +1,7 @@
-import {loadMaps,createProjectMap} from './map-engine.mjs?v=naver-1';
+import {loadMaps,createProjectMap} from './map-engine.mjs?v=seoul-parcels-1';
 import {loadNews,matchNews,newsCard,sourceLabels} from './news.mjs?v=atlas-1';
-import {searchProjects,managementFilters,progressFilters} from './project-search.mjs';
-import {mountAddressLookup} from './address-reference.mjs?v=seoul-2';
+import {searchProjects,managementFilters,progressFilters} from './project-search.mjs?v=seoul-parcels-1';
+import {mountAddressLookup} from './address-reference.mjs?v=seoul-parcels-1';
 export function filterTowns(towns, query, district) {
   return searchProjects(towns,new Map(),[],{query,district}).map(row=>row.town);
 }
@@ -98,6 +98,9 @@ function evidenceSection(entries){
 }
 const stages=[
   {label:'조합설립 진행 중',short:'조합설립 중',ink:'#6746a3',fill:'#aa8bd9',shape:'circle',description:'주민들이 사업을 추진할 조합을 설립하는 단계입니다.'},
+  {label:'조합설립인가',short:'조합설립인가',ink:'#523394',fill:'#9572ce',shape:'circle',description:'관할 구청이 조합 설립을 인가했습니다.'},
+  {label:'건축심의',short:'건축심의',ink:'#87582a',fill:'#e8bd87',shape:'diamond',description:'공개 사업 현황에 건축심의 단계로 기록되어 있습니다.'},
+  {label:'통합심의 완료',short:'통합심의 완료',ink:'#915421',fill:'#d5a369',shape:'diamond',description:'관련 사항에 대한 통합심의를 마쳤습니다.'},
   {label:'사업시행계획인가 진행 중',short:'사업인가 진행 중',ink:'#995117',fill:'#edac56',shape:'diamond',description:'사업시행계획의 인가 절차를 진행하는 단계입니다.'},
   {label:'사업시행계획인가',short:'사업인가 완료',ink:'#265d99',fill:'#80a9dd',shape:'triangle',description:'관할 구청이 사업시행계획을 인가했습니다. 구역 상세에서 인가일과 고시를 확인할 수 있습니다.'},
   {label:'착공',short:'착공',ink:'#006e62',fill:'#4bb8a1',shape:'square',description:'공사를 시작한 것으로 공개 자료에 표시된 단계입니다.'},
@@ -422,7 +425,13 @@ export function mount({manifest,towns,zones,boundaries,excluded=[]},sdk){
       }
       types.append(table);detail.append(types);
     }
-    detail.append(evidenceSection([[approved?'사업시행계획인가 고시 · 첨부 주택형표':'구역별 공개 계획',plan],['규모 지표 · 토지등소유자',zone.field_evidence?.metrics],...(approved?[]:[['추진 단계',stage]]),[scope?'시공사 · 공사 규모 계약 공시':'시공사 근거',contractor],['사업구역 경계',boundary]]));
+    const allocation=zone.housing_allocation;
+    if(allocation){
+      for(const [key,label] of [['sale_total','분양 합계'],['rental','계획 임대'],['members','계획 조합원 분양'],['general','계획 일반분양']]){
+        if(Number.isFinite(allocation[key]) && !(zone.approved_allocation && ['members','general'].includes(key)))field(facts,label,numeric(allocation[key],'세대'));
+      }
+    }
+    detail.append(evidenceSection([[approved?'사업시행계획인가 고시 · 첨부 주택형표':'구역별 공개 계획',plan],['규모 지표 · 토지등소유자',zone.field_evidence?.metrics],['공급 구분',zone.field_evidence?.housing_allocation],['용도지역',zone.field_evidence?.zoning],['등록 지번',zone.field_evidence?.registered_address],...(approved?[]:[['추진 단계',stage]]),[scope?'시공사 · 공사 규모 계약 공시':'시공사 근거',contractor],['사업구역 경계',boundary]]));
   }
   function renderPanel(){
     const town=townById.get(current.townId),zone=zoneById.get(current.zoneId);
@@ -435,7 +444,7 @@ export function mount({manifest,towns,zones,boundaries,excluded=[]},sdk){
     get('back-label').textContent=zone && !direct ? town.name : (query?query+' · ':'')+'검색 결과 '+rows.length+'건';
     const title=el('h2',zone?.name ?? town.name);
     title.tabIndex=-1;
-    detail.append(el('span',town.district,'detail-district'),title,el('p',zone?town.name+' 모아타운':town.address,'address'));
+    detail.append(el('span',town.district,'detail-district'),title,el('p',zone?[town.name+' 모아타운',zone.registered_address].filter(Boolean).join(' · '):town.address,'address'));
     const record=zone ?? town;
     if(record.risk_info?.is_canceled===true)detail.append(el('p',['취소·철회 확인',record.risk_info.cancel_reason].filter(Boolean).join(' · '),'cancel-notice'));
     if(record.last_verified_at)detail.append(el('small','최종 확인 '+displayDate(record.last_verified_at)));
@@ -445,6 +454,52 @@ export function mount({manifest,towns,zones,boundaries,excluded=[]},sdk){
       const badge=sourceLink(cutoff?.source_url,label)??el('span',label);badge.classList.add('cutoff');detail.append(badge);
     }
     if(zone)renderZone(zone);else renderTown(town);
+    const registryNote=zone?.field_evidence?.registered_address?.note;
+    if(registryNote)detail.insertBefore(el('p',registryNote,'notice'),detail.querySelector('.facts'));
+    const references=el('section',undefined,'regulatory');
+    const permit=record.land_transaction_permit;
+    if(permit && typeof permit.designated==='boolean'){
+      references.append(el('h3','토지거래허가구역'),el('strong',permit.designated?'공고상 지정 · '+permit.scope:'지정 해제'),
+        el('p',[permit.start_date,permit.end_date].filter(Boolean).map(displayDate).join(' ~ ')));
+      const source=sourceLink(record.field_evidence?.land_transaction_permit?.source_url,permit.notice_number);
+      if(source)references.append(source);
+    }
+    if(!zone && manifest.seoul_road_permit){
+      const city=manifest.seoul_road_permit;
+      const info=el('details',undefined,'city-road-rule');
+      info.append(el('summary','서울 전역 도로에 적용되는 토지거래허가 공고'),el('p',city.scope+' · '+displayDate(city.start_date)+' ~ '+displayDate(city.end_date)));
+      const link=sourceLink(city.evidence?.source_url,city.evidence?.notice_number);
+      if(link)info.append(link);
+      references.append(info);
+    }
+    const cutoffs=Array.isArray(record.rights_cutoff_history)?record.rights_cutoff_history:[];
+    if(cutoffs.length){
+      references.append(el('h3','고시별 권리산정기준일'));
+      for(const entry of cutoffs){
+        const row=el('p');
+        row.append(el('strong',entry.scope+' · '+displayDate(entry.date)),el('small',entry.status+' · '+entry.condition));
+        const source=sourceLink(entry.evidence?.source_url,entry.evidence?.notice_number);
+        if(source)row.append(source);
+        references.append(row);
+      }
+    }
+    if(Array.isArray(record.zoning?.areas) && record.zoning.areas.length){
+      references.append(el('h3','용도지역별 면적 변경 계획'),el('small',record.zoning.condition));
+      for(const part of record.zoning.areas){
+        references.append(el('p',part.label+' · '+numeric(part.before_sqm,'㎡')+' → '+numeric(part.planned_sqm,'㎡')));
+      }
+      const source=sourceLink(record.field_evidence?.zoning?.source_url,'관리계획 원문');
+      if(source)references.append(source);
+    }
+    const observed=record.zoning?.observed;
+    if(Array.isArray(observed?.names) && observed.names.length){
+      references.append(el('h3',observed.scope==='representative_point'?'대표 위치의 용도지역':'참고 외곽 내부에서 확인한 용도지역'),
+        el('p',observed.names.join(' · ')));
+      const evidence=record.field_evidence?.observed_zoning;
+      const source=sourceLink(evidence?.source_url,'서울시 용도지역도 · '+displayDate(evidence?.source_as_of));
+      if(source)references.append(source);
+    }
+    if(references.childElementCount)detail.insertBefore(references,detail.querySelector('.metrics')?.nextSibling??null);
     if(record.risk_info?.notes)detail.append(el('p',record.risk_info.notes,'notice'));
     const links=el('div',undefined,'official-docs');
     for(const entry of Array.isArray(record.official_links)?record.official_links:[]){

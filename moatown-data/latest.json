@@ -11,27 +11,40 @@
     "districts_with_records": 24,
     "official_cancellations_reviewed": 11,
     "baseline_rows_removed_by_confirmed_cancellation": 1,
-    "zone_records": 32,
-    "boundary_features": 135,
-    "representative_points": 104,
+    "zone_records": 50,
+    "boundary_features": 149,
+    "representative_points": 131,
     "limitations": [
       "2026-03-31 명부와 확인된 취소 자료에 근거한 초기 자료이며, 현재 전체 명부가 아닙니다.",
       "확인된 후속 공식 선정 일부를 추가했습니다. 최신 전체 선정·정정, 전체 사업구역 상세와 경계는 전수 확인하지 못했습니다.",
-      "수록한 도형은 서울시 공간자료 기준의 참고용 외곽과 사업구역 경계입니다. 고시 지형도면과 대조 완료한 법정 경계는 없습니다. 공간 겹침만 확인된 사업은 미포함입니다."
+      "서울시 공간자료에서 대조한 참고 외곽과 사업구역 경계를 표시합니다. 고시 지형도면과 필지 단위 대조를 마친 법정 경계는 없습니다."
     ],
-    "representative_points_unmatched_or_unchecked": 34,
+    "representative_points_unmatched_or_unchecked": 7,
     "representative_points_by_kind": {
       "official_project_geometry_reference_point": 98,
-      "representative_parcel_interior": 6
+      "representative_parcel_interior": 33
     },
     "town_reference_boundaries": 103,
-    "zone_reference_boundaries": 32,
+    "zone_reference_boundaries": 46,
     "legal_boundary_features": 0,
-    "zone_records_with_plan_numbers": 13,
+    "zone_records_with_plan_numbers": 44,
     "towns_with_management_plan_notices": 59,
     "management_plan_notice_records": 60,
-    "zones_with_contractor": 8,
-    "zones_with_unit_types": 2
+    "zones_with_contractor": 22,
+    "zones_with_unit_types": 2,
+    "indexed_parcels": 896467,
+    "indexed_districts": 25,
+    "towns_with_linked_zones": 26,
+    "zones_with_stage": 49,
+    "zones_with_owner_count": 32,
+    "towns_with_cutoff_history": 17,
+    "towns_with_single_cutoff_date": 9,
+    "towns_with_permit_notice": 48,
+    "towns_with_zoning": 127,
+    "zones_with_zoning": 28,
+    "zones_with_allocation": 19,
+    "zones_with_planned_units_per_owner": 12,
+    "zones_with_member_general_rental": 2
   },
   "source_urls": {
     "official_baseline": "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status",
@@ -39,12 +52,31 @@
     "official_cancellation_notice_index": "https://cleanup.seoul.go.kr/cleanup/bbs/vscr.do?bbs.bbsSn=3023&bbsClCode=1000&nttSn=176688",
     "representative_parcel_points_mapo": "https://www.data.go.kr/data/15162460/fileData.do",
     "official_project_reference_points": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
-    "reference_boundaries": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do"
+    "reference_boundaries": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+    "official_zoning_geometry": "https://data.seoul.go.kr/dataList/OA-21136/F/1/datasetView.do",
+    "seoul_parcels": "https://land.seoul.go.kr/land/map/land/map.do",
+    "official_dong_crosswalk": "https://www.mois.go.kr/frt/bbs/type001/commonSelectBoardArticle.do?bbsId=BBSMSTR_000000000052&nttId=130674",
+    "small_housing_register": "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+    "official_project_registry": "https://cleanup.seoul.go.kr/cleanup/bsnssttus/lscrMainIndx.do?cpage=1&pageSize=2000"
   },
   "files": {
     "towns": "snapshots/2026-11-24/towns.json",
     "zones": "snapshots/2026-11-24/zones.json",
     "boundaries": "snapshots/2026-11-24/boundaries.geojson",
-    "excluded": "snapshots/2026-11-24/excluded.json"
+    "excluded": "snapshots/2026-11-24/excluded.json",
+    "parcel_index": "addresses/index.json",
+    "review": "snapshots/2026-11-24/review.json"
+  },
+  "seoul_road_permit": {
+    "scope": "서울 25개 자치구 지목 도로",
+    "start_date": "2026-10-17",
+    "end_date": "2027-10-16",
+    "evidence": {
+      "kind": "municipal_permit_notice",
+      "source_url": "https://land.seoul.go.kr/land/other/downloadAppointPbancFile.do?fileUuid=1ba6a29be61949aaa8982f60088d7dd11086386",
+      "source_as_of": "2026-10-12",
+      "checked_on": "2026-11-24",
+      "notice_number": "서울특별시 공고 제2026-2810호"
+    }
   }
 }
