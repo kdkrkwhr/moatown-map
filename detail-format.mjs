@@ -1,6 +1,6 @@
 const dayMs=86400000;
 const monthsInDays=365.2425/12;
-const missing='확인 중';
+const missing='미고시';
 const number=new Intl.NumberFormat('ko-KR',{maximumFractionDigits:4});
 const percent=new Intl.NumberFormat('ko-KR',{minimumFractionDigits:1,maximumFractionDigits:1});
 const approximate=new Intl.NumberFormat('ko-KR',{maximumFractionDigits:1});
@@ -17,9 +17,10 @@ export function formatValue(value,unit=''){
   if(unit==='date'){
     if(dayNumber(value)!==null)return value.replaceAll('-','.');
     const month=/^(\d{4})[-.](0[1-9]|1[0-2])$/.exec(value??'');
-    return month?month[1]+'년 '+Number(month[2])+'월 (일자 확인 중)':missing;
+    return month?month[1]+'년 '+Number(month[2])+'월 (일자 미고시)':missing;
   }
   if(!Number.isFinite(value))return missing;
+  if(unit==='평')return number.format(Math.round(value/3.305785))+'평';
   if(unit==='㎡')return number.format(value)+'㎡ (약 '+number.format(Math.round(value/3.305785))+'평)';
   return (unit==='%'?percent:number).format(value)+unit;
 }
@@ -33,7 +34,7 @@ export function unitsChange(existing,planned){
 
 export function intervalBadge(start,end,snapshot,{ongoing=false,terminal=false}={}){
   const first=dayNumber(start),last=dayNumber(end);
-  if(first===null)return '고시일 미확인';
+  if(first===null)return missing;
   if(last!==null && last>=first){
     const days=last-first;
     return formatValue(days,'일')+' 소요 (약 '+approximate.format(days/monthsInDays)+'개월)';
@@ -41,7 +42,60 @@ export function intervalBadge(start,end,snapshot,{ongoing=false,terminal=false}=
   if(terminal)return '사업 종료';
   const asOf=dayNumber(snapshot);
   if(ongoing && !end && asOf!==null && asOf>=first)return '현재 '+formatValue(asOf-first+1,'일째')+' 진행 중';
-  return '고시일 미확인';
+  return missing;
+}
+
+export function elapsedMonths(start,end){
+  const monthIndex=date=>{
+    const match=/^(\d{4})-(0[1-9]|1[0-2])$/.exec(date);
+    return match?Number(match[1])*12+Number(match[2]):NaN;
+  };
+  const duration=monthIndex(end)-monthIndex(start);
+  return duration>=0?duration:null;
+}
+
+export function projectIntervals(town,zone,snapshot){
+  const events=projectEvents(town,zone);
+  return events.map((event,i)=>{
+    const next=events[i+1];
+    const reached=next && (next.date || next.reached || next.completed || events.slice(i+2).some(e=>e.date));
+    const terminal=!next && ((zone??town).risk_info?.is_canceled===true || /준공|사업종료|취소|철회/.test(event.stage));
+    let label=intervalBadge(event.date,next?.date,snapshot,{ongoing:!reached,terminal});
+    const monthOf=date=>date?.length===7 || dayNumber(date)!==null?date.slice(0,7):null;
+    if(label===missing && (event.date?.length===7 || next?.date?.length===7)){
+      const months=elapsedMonths(monthOf(event.date),monthOf(next?.date));
+      if(months!==null)label=formatValue(months,'개월')+' 소요 (공개 연월 기준)';
+    }
+    const start=dayNumber(event.date),end=dayNumber(next?.date);
+    const days=start!==null && end!==null && end>=start?end-start:null;
+    return {event,next,label,days,terminal};
+  });
+}
+
+// Keep parent and child transitions in separate cohorts. Month-only dates
+// cannot be used to measure an interval in days.
+export function durationSamples(towns,zones,snapshot){
+  const samples=new Map(),parents=new Map(towns.map(t=>[t.id,t]));
+  function collect(town,zone){
+    for(const {event,next,days} of projectIntervals(town,zone,snapshot)){
+      if(days===null)continue;
+      const key=JSON.stringify([zone?'zone':'town',event.stage,next.stage]);
+      if(!samples.has(key))samples.set(key,new Map());
+      samples.get(key).set((zone??town).id,days);
+    }
+  }
+  for(const town of towns)collect(town,null);
+  for(const zone of zones)if(parents.has(zone.town_id))collect(parents.get(zone.town_id),zone);
+  return samples;
+}
+
+export function compareInterval({event,next,days},town,zone,samples){
+  if(days===null || !next)return null;
+  const cohort=samples.get(JSON.stringify([zone?'zone':'town',event.stage,next.stage]));
+  const others=[...(cohort??[])].filter(([id])=>id!==(zone??town).id);
+  if(!others.length)return null;
+  const mean=others.reduce((sum,[,duration])=>sum+duration,0)/others.length;
+  return {difference:Math.round(days-mean),count:others.length};
 }
 
 export function projectEvents(town,zone){
@@ -64,8 +118,14 @@ export function projectEvents(town,zone){
   const events=[{stage:'대상지 선정',date:town.selected_date_precision==='month'?town.selected_date?.slice(0,7):town.selected_date,source_url:town.sources?.[0]}];
   const notices=town.management_plan_notices??[];
   // Separate addresses in a joint notice do not form sequential milestones.
-  if(notices.length===1)events.push({stage:'관리계획 승인고시',date:notices[0].notice_date,source_url:notices[0].source_url});
+  if(notices.length===1)events.push({stage:notices[0].notice_kind==='변경'?'관리계획 변경고시':'관리계획 승인고시',date:notices[0].notice_date,source_url:notices[0].notice_url??notices[0].source_url});
   else if(notices.length && notices.every(n=>n.notice_date===notices[0].notice_date))events.push({stage:'관리계획 공동 승인고시',date:notices[0].notice_date,source_url:notices[0].source_url});
+  else if(notices.length>1){
+    const ordered=[...notices].sort((a,b)=>(a.notice_date??'').localeCompare(b.notice_date??''));
+    if(ordered[0].notice_kind==='신규' && ordered.slice(1).every(n=>n.notice_kind==='변경')){
+      for(const n of ordered)events.push({stage:n.notice_kind==='신규'?'관리계획 승인고시':'관리계획 변경고시',date:n.notice_date,source_url:n.notice_url??n.source_url});
+    }else events.push({stage:'관리계획 고시',date:null,reached:true,scope:'구역별 고시일은 각 고시 원문에서 확인하세요.'});
+  }
   if(shared){
     for(const v of history.events)events.push({stage:v.label,date:v.month,source_url:history.source_url,scope:history.scope});
     if(events.every(e=>e.date))events.sort((a,b)=>a.date.localeCompare(b.date));

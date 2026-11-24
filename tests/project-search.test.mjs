@@ -38,8 +38,11 @@ test('unrecorded zone stages, unrecorded management plans and cancellation histo
 
 test('published management intervals only compare a single dated notice to its own selection month',()=>{
   const stats=planIntervals(towns);
-  assert.equal(stats.months.size,57);
-  assert.equal(Math.round(stats.mean*10)/10,24.1);
+  assert.equal(stats.months.size,56);
+  assert.equal(Math.round(stats.mean*10)/10,23.9);
+  const amended=towns.find(t=>t.name==='수유동 52-1');
+  assert.equal(amended.management_plan_notices[0].notice_kind,'변경');
+  assert.ok(!stats.months.has(amended.id));
   assert.ok(!stats.months.has(towns.find(t=>t.management_plan_notices?.length===2).id));
   assert.deepEqual(planIntervals([{id:'a',selected_date:'2024-01',management_plan_notices:[{notice_date:'2023-12-31'}]}]),{months:new Map(),mean:null});
 });

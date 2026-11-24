@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
-import {formatValue,intervalBadge,projectEvents,unitsChange} from '../detail-format.mjs';
+import {compareInterval,durationSamples,formatValue,intervalBadge,projectEvents,projectIntervals,unitsChange} from '../detail-format.mjs';
 import {groupSubAreas} from '../app.mjs';
 import {searchProjects} from '../project-search.mjs';
 import {positionInGeometry} from '../address-reference.mjs';
@@ -12,12 +12,13 @@ const groups=groupSubAreas(towns,zones);
 
 test('published figures preserve units, a valid zero, and date precision',()=>{
   assert.equal(formatValue(85420,'㎡'),'85,420㎡ (약 25,840평)');
+  assert.equal(formatValue(85420,'평'),'25,840평');
   assert.equal(formatValue(50,'%'),'50.0%');
-  assert.equal(formatValue(null,'%'),'확인 중');
+  assert.equal(formatValue(null,'%'),'미고시');
   assert.equal(formatValue(0,'명'),'0명');
   assert.equal(formatValue('2024-02-29','date'),'2024.02.29');
-  assert.equal(formatValue('2023-02-29','date'),'확인 중');
-  assert.equal(formatValue('2026-11','date'),'2026년 11월 (일자 확인 중)');
+  assert.equal(formatValue('2023-02-29','date'),'미고시');
+  assert.equal(formatValue('2026-11','date'),'2026년 11월 (일자 미고시)');
   assert.equal(unitsChange(980,1650),'(+670세대 순증)');
   assert.equal(unitsChange(10,9),'(−1세대 순감)');
 });
@@ -26,10 +27,28 @@ test('exact intervals use calendar days and ongoing intervals count the starting
   assert.equal(intervalBadge('2024-02-28','2024-03-01','2026-11-24'),'2일 소요 (약 0.1개월)');
   assert.equal(intervalBadge('2026-11-24',null,'2026-11-24',{ongoing:true}),'현재 1일째 진행 중');
   assert.equal(intervalBadge('2026-08-13',null,'2026-11-24',{ongoing:true}),'현재 104일째 진행 중');
-  assert.equal(intervalBadge('2026-11','2026-11-23','2026-11-24'),'고시일 미확인');
-  assert.equal(intervalBadge('2026-12-01',null,'2026-11-24',{ongoing:true}),'고시일 미확인');
+  assert.equal(intervalBadge('2026-11','2026-11-23','2026-11-24'),'미고시');
+  assert.equal(intervalBadge('2026-12-01',null,'2026-11-24',{ongoing:true}),'미고시');
   assert.equal(intervalBadge('2026-11-13',null,'2026-11-24',{terminal:true}),'사업 종료');
   assert.equal(projectEvents({}, {stage:'착공',field_evidence:{stage:{source_as_of:'2026-11-24'}}})[0].date,null);
+});
+
+test('speed compares other projects at the same level with the same dated transition',()=>{
+  const asOf='2026-11-24';
+  const record=(id,start,end,stage='승인')=>({id,timeline:[{stage:'선정',date:start},{stage,date:end}]});
+  const a=record('a','2025-01-01','2025-01-11'),b=record('b','2025-01-01','2025-01-21');
+  const monthOnly=record('c','2025-01','2025-03-02');
+  const different=record('d','2025-01-01','2025-01-03','착공');
+  const zone={...record('z','2025-01-01','2025-01-04'),town_id:'a'};
+  const samples=durationSamples([a,b,monthOnly,different],[zone],asOf);
+  const steps=projectIntervals(a,null,asOf);
+  assert.deepEqual(compareInterval(steps[0],a,null,samples),{difference:-10,count:1});
+  assert.equal(compareInterval(steps[1],a,null,samples),null);
+  assert.equal(compareInterval(projectIntervals(a,zone,asOf)[0],a,zone,samples),null);
+  assert.equal(projectIntervals(monthOnly,null,asOf)[0].label,'2개월 소요 (공개 연월 기준)');
+  const undated=record('e','2025-01-01',null);
+  undated.timeline[1].reached=true;
+  assert.equal(projectIntervals(undated,null,asOf)[0].label,'미고시');
 });
 
 test('every linked area has one parent and parcel pins resolve to the published cadastral index',()=>{
