@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>모아타운 현황지도 | MVP 상세 기획서</title>
+<style>
+:root{--bg:#eef2f1;--paper:#fff;--ink:#152d30;--muted:#476064;--line:#d6e2df;--accent:#006756;--soft:#e6f4ef;--dark:#0e302e;--warm:#faeed8}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Pretendard","Noto Sans KR","Malgun Gothic",system-ui,sans-serif;line-height:1.65;overflow-wrap:anywhere}
+a{color:var(--accent);text-underline-offset:3px}
+a:focus-visible,summary:focus-visible{outline:3px solid #b36216;outline-offset:4px}
+.wrap{max-width:1100px;margin:auto;padding:0 28px}
+header{padding:56px 0 46px;background:var(--dark);color:white;border-bottom:5px solid #62c6a9}
+header h1{font-size:clamp(36px,7vw,68px);line-height:1.1;letter-spacing:-.06em;margin:12px 0 19px}
+header p{max-width:650px;font-size:clamp(16px,2.4vw,20px);color:#e3f1ed;margin:0 0 24px}
+.eyebrow,.number{font-weight:800;font-size:13px;letter-spacing:.09em}
+.eyebrow{color:#9be1c9}
+.tags,.flow{display:flex;flex-wrap:wrap;gap:8px}
+.tag{border:1px solid #709791;padding:4px 11px;border-radius:50px;font-size:13px}
+nav{background:white;border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;flex-wrap:wrap;gap:6px 18px;padding-block:12px}
+nav a{font-weight:750;text-decoration:none;padding:4px 0}
+main.wrap{padding-block:30px 44px}
+section{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:clamp(17px,4vw,32px);margin-bottom:18px}
+h2,h3,p{margin-top:0}h2{letter-spacing:-.045em;font-size:clamp(24px,4vw,32px);margin-bottom:12px}h3{font-size:18px;margin-bottom:5px}
+p:last-child,ul:last-child{margin-bottom:0}
+.number{color:var(--accent);display:block}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin-block:14px}
+.card{border:1px solid var(--line);border-radius:12px;padding:15px 16px;min-width:0} .card p{color:var(--muted)}
+.callout{border-left:4px solid var(--accent);background:var(--soft);padding:12px 16px;margin-block:14px 0}
+.info{color:var(--muted);font-size:14px}
+figure{margin:16px 0 6px}figcaption{font-size:13px;color:var(--muted);margin-top:8px}
+.mock{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);background:#f4f8f7;border:1px solid var(--line);border-radius:13px;overflow:hidden}
+.mock svg{display:block;width:100%;height:auto;align-self:center} .mock aside{background:white;border-left:1px solid var(--line);padding:18px}
+dl{margin:10px 0 0} .stats div{display:grid;grid-template-columns:1fr 1.22fr;gap:8px;border-top:1px solid var(--line);padding:7px 0} dd{margin:0;font-weight:700}
+.chip{background:var(--warm);color:#634613;border-radius:6px;padding:2px 6px;font-size:12px;font-weight:700}
+.step{background:var(--soft);border-radius:8px;padding:6px 10px;font-size:14px;font-weight:700}
+.list{padding-left:1.25em}.list li{padding:4px 0}
+.spec{margin-top:8px}.spec div{display:grid;grid-template-columns:minmax(115px,1fr) minmax(0,3fr);gap:12px;padding:10px 0;border-bottom:1px solid var(--line)}.spec dt{font-weight:800}.spec dd{font-weight:400;color:var(--muted)}
+code,pre{font-family:ui-monospace,Consolas,monospace}
+pre{background:var(--dark);border-radius:10px;color:#f2fffa;padding:14px 16px;font-size:13px;white-space:pre-wrap;overflow-wrap:anywhere;margin:0}
+footer{padding:0 0 30px;color:var(--muted);font-size:13px}
+@media(max-width:650px){.wrap{padding-inline:14px}.grid,.mock{grid-template-columns:1fr}.mock aside{border-left:0;border-top:1px solid var(--line)}header{padding-block:34px} .spec div{grid-template-columns:1fr;gap:2px}}
+@media print{body{background:white}header{background:white;color:var(--ink);padding:12px 0;border-color:var(--accent)}header p,.eyebrow{color:var(--ink)}nav{display:none}main.wrap{padding-top:12px}section{padding:14px;border-radius:0}h2,h3{break-after:avoid}figure,.card,pre{break-inside:avoid}pre{background:white;color:var(--ink);border:1px solid var(--line)}}
+</style>
+</head>
+<body>
+<header id="top"><div class="wrap">
+<div class="eyebrow">PRODUCT SPEC · MVP · 2026.11.24</div>
+<h1>모아타운 현황지도</h1>
+<p>서울시가 공식 선정한 모아타운을 지도에서 찾고, 구역별 진행 상황과 계획을 원문 출처까지 확인하는 공개 서비스.</p>
+<div class="tags"><span class="tag">서울 전역</span><span class="tag">공식 선정 대상지</span><span class="tag">로그인 없는 지도</span><span class="tag">GitHub Pages</span></div>
+</div></header>
+<nav aria-label="기획서 목차"><div class="wrap"><a href="#concept">배경과 타겟</a><a href="#menu">메뉴와 기능</a><a href="#map">지도와 구역 상세</a><a href="#data">데이터 운영</a><a href="#release">공개 기준</a></div></nav>
+<main class="wrap">
+<section id="concept">
+<span class="number">01 / CONCEPT</span>
+<h2>왜 만드는가</h2>
+<p>주민이 알고 싶은 건 “우리 동네가 어디에 속하고, 지금 어디까지 왔는가”입니다. 지역별 자료를 개별적으로 찾아야 할 때, 전체 대상지와 그 안의 사업구역을 구분하고 최신 계획의 근거를 비교하기 어렵습니다. 이 서비스는 자료를 대신 확정하지 않고, <strong>지도에서 찾기 쉬운 형태로 연결</strong>합니다.</p>
+<div class="grid">
+<div class="card"><h3>주 타겟 · 해당 지역 주민과 소유주</h3><p>관심 지역이 대상인지, 내가 관심 있는 세부 구역의 경계와 사업 단계는 무엇인지 확인합니다.</p></div>
+<div class="card"><h3>보조 타겟 · 서울시 전역을 보는 일반 이용자</h3><p>자치구별 공식 선정 대상지를 찾고, 여러 구역의 공개 계획을 살펴봅니다.</p></div>
+</div>
+<div class="callout"><strong>서비스 범위:</strong> 서울 전역을 대상으로 하되, 신청만 한 지역은 표시하지 않습니다. 공식 선정은 관리계획 승인이나 착공 확정을 뜻하지 않습니다. <a href="https://news.seoul.go.kr/citybuild/moa-housing-town/policy/overview">서울시 정책 소개</a></div>
+</section>
+
+<section id="menu">
+<span class="number">02 / NAVIGATION</span>
+<h2>메뉴와 기능</h2>
+<dl class="spec">
+<div><dt>지도 <small>기본 화면</small></dt><dd>서울 전역에서 시작합니다. 자치구·단계로 좁히고, 대상지를 선택하면 경계와 내부 사업구역을 표시합니다.</dd></div>
+<div><dt>대상지 목록</dt><dd>대상지명·자치구·공식 자료에 나온 주소로 검색합니다. 지도와 같은 필터를 쓰고, 위치가 확인된 항목은 선택 시 해당 위치로 이동합니다. 위치 미확인 항목도 목록에서 상세를 볼 수 있습니다.</dd></div>
+<div><dt>자료 안내</dt><dd>선정 대상 기준, 경계·진행 단계 읽는 법, 갱신일과 공식 자료 기준일의 차이를 설명합니다. 서울시·자치구 고시 등 참고 출처를 연결합니다.</dd></div>
+<div><dt>구역 상세 <small>하위 화면</small></dt><dd>지도나 목록에서 대상을 선택해 엽니다. 메뉴를 따로 늘리지 않고, 현재 보는 대상지와 사업구역을 구분해 표시합니다.</dd></div>
+</dl>
+<p class="info">주소 검색은 첫 버전에서 데이터에 수록된 주소 텍스트를 찾는 기능입니다. 개별 필지의 구역 포함 여부를 판정하지 않습니다.</p>
+</section>
+
+<section id="map">
+<span class="number">03 / MAP EXPERIENCE</span>
+<h2>경계부터 보이고, 상세는 선택해서</h2>
+<div class="flow" aria-label="지도 탐색 흐름"><span class="step">서울 전체</span><span class="step">자치구·단계 필터</span><span class="step">모아타운 선택</span><span class="step">세부 사업구역 상세</span></div>
+<figure>
+<div class="mock">
+<svg viewBox="0 0 570 283" role="img" aria-labelledby="diag-title diag-desc" xmlns="http://www.w3.org/2000/svg">
+<title id="diag-title">가상 대상지의 경계 구분 예시</title><desc id="diag-desc">굵은 외곽선 안에 1구역과 2구역이 있으며 선택된 2구역이 강조되어 있다.</desc>
+<rect width="570" height="283" fill="#e8eeea"/>
+<path d="M-20 88L591 49 M-8 236L571 198 M112 0L90 283 M452 0L433 283 M524 0L506 283" stroke="#fff" stroke-width="9"/>
+<path d="M152 93L394 78L421 211L145 220Z" fill="#d4e2dc" stroke="#1c3836" stroke-width="6" stroke-linejoin="round"/>
+<path d="M165 108L267 101L254 203L158 205Z" fill="#c2dfd6" stroke="#426e66" stroke-width="2"/>
+<path d="M276 101L381 94L403 197L265 202Z" fill="#88cde0" stroke="#165367" stroke-width="4"/>
+<g font-family="sans-serif" fill="#102f30" font-weight="700"><text x="152" y="68" font-size="18">모아타운 외곽선</text><text x="185" y="159" font-size="20">1구역</text><text x="305" y="157" font-size="20">2구역</text><text x="28" y="258" font-size="15">개념도 · 실제 경계 아님</text></g>
+</svg>
+<aside aria-label="가상 구역 상세 예시"><span class="chip">가상 예시</span><h3>2구역 · 상세</h3>
+<dl class="stats"><div><dt>진행 단계</dt><dd>조합설립 준비 중</dd></div><div><dt>목표 세대수</dt><dd>320세대 · 계획안</dd></div><div><dt>최고 층수</dt><dd>지상 25층 · 계획안</dd></div><div><dt>주택형</dt><dd>전용 59·84㎡</dd></div><div><dt>시공사</dt><dd>미확인</dd></div></dl>
+</aside></div>
+<figcaption>화면 구성 설명용 개념도입니다. 지역명·경계·수치는 실제 데이터가 아닙니다.</figcaption>
+</figure>
+<ul class="list">
+<li><strong>서울 전체:</strong> 축소 상태에서는 지점이나 묶음으로 위치를 파악합니다. 사업구역의 진행 단계가 아닌 모아타운 상태로 필터링합니다.</li>
+<li><strong>모아타운 확대:</strong> 전체 외곽선은 굵게, 세부 사업구역은 별도 경계선과 공식 명칭으로 구분합니다. 경계가 미확인인 곳은 확인된 대표 위치만 쓰거나 목록에만 둡니다. 초안 경계는 점선과 라벨로 구분합니다.</li>
+<li><strong>선택 상태:</strong> 선택된 구역은 테두리를 강조합니다. 색만으로 상태를 알리지 않고 이름·단계 라벨과 범례를 함께 씁니다. 모바일은 하단 상세 패널, 큰 화면은 사이드 패널을 기본으로 합니다.</li>
+<li><strong>진행 단계:</strong> 모아타운 관리계획과 세부 사업구역의 조합·사업 추진 상태를 별개로 표시합니다. 하나의 진행률이나 자동 완공 예상일로 환산하지 않습니다. <a href="https://www.seoul.go.kr/news/news_report.do?bbsNo=15&amp;nttNo=467904">서울시 모아통합기획 발표</a>에서도 관리계획과 조합설립의 병행 추진을 설명합니다.</li>
+</ul>
+<h3>상세 정보 표기 원칙</h3>
+<dl class="spec">
+<div><dt>세대수·층수</dt><dd>세대수는 공식 자료의 구역별 총 세대수, 층수는 최고 지상 층수를 씁니다. 범위만 공개된 경우 범위 그대로 표기합니다.</dd></div>
+<div><dt>주택형·시공사</dt><dd>주택형은 전용면적 ㎡를 우선 표기하고, 평형명은 출처에 있으면 병기합니다. 시공사는 공식 선정이 확인된 경우에만 선정으로 표시합니다.</dd></div>
+<div><dt>근거와 상태</dt><dd>각 값에 적용 구역, 기준일과 원문을 연결합니다. 계획안·확정·미확인을 구분하고, 원문에 명시된 미선정과 단순 미확인은 다르게 표시합니다. 상위 대상지 수치를 세부 구역에 대신 넣지 않습니다.</dd></div>
+</dl>
+</section>
+
+<section id="data">
+<span class="number">04 / DATA &amp; DELIVERY</span>
+<h2>날짜별 정적 데이터 운영</h2>
+<p>웹은 배포된 정적 파일만 읽습니다. 데이터의 일자별 보관과 공개 화면의 최신 버전 선택을 분리해, 나중에 수집 방식을 바꿔도 지도 구조는 유지합니다. <a href="https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages">GitHub Pages 공식 문서</a></p>
+<div class="grid">
+<div><h3>폴더 구조 제안</h3>
+<pre><code>moatown-data/
+├── latest.json
+└── snapshots/
+    └── YYYY-MM-DD/
+        ├── towns.json
+        ├── zones.json
+        └── boundaries.geojson</code></pre></div>
+<div><h3>각 파일의 역할</h3>
+<ul class="list"><li><code>latest.json</code>: 현재 공개 중인 스냅샷과 갱신일.</li><li><code>towns.json</code>: 선정 대상지, 공식 상태, 위치·출처.</li><li><code>zones.json</code>: 대상지에 연결되는 세부 구역과 항목별 근거.</li><li><code>boundaries.geojson</code>: 확인된 모아타운·사업구역 경계. 각 데이터는 고정 ID로 연결.</li></ul></div>
+</div>
+<dl class="spec">
+<div><dt>출처 우선순위</dt><dd>서울시 공식 선정 발표 또는 공식 현황 자료로 포함 여부를 확인합니다. 구체적 경계·계획·사업 상태는 해당 지역의 서울시·자치구 고시, 공고 및 첨부자료를 우선 확인합니다. 문서 간 차이가 나면 적용 구역·문서의 효력·기준일을 검토하고, 해결되지 않으면 미확인으로 둡니다.</dd></div>
+<div><dt>날짜 구분</dt><dd>한국시간 기준 날짜로 스냅샷을 관리합니다. 사이트 데이터 갱신일과 각 수치·경계의 공식 자료 기준일을 구분합니다. 공식 자료가 바뀌지 않았다면 최신 공식 발표가 나온 것처럼 표시하지 않습니다.</dd></div>
+<div><dt>이번 갱신 방식</dt><dd>공식 원문 확인 → 날짜별 스냅샷 작성 → 대상지·구역 ID, 도형, 출처 검증 → 최신 포인터 갱신 및 배포. 검증에 실패하면 이전 정상 스냅샷을 유지합니다.</dd></div>
+<div><dt>추후 자동화</dt><dd>cron 같은 배치는 나중에 도입합니다. 공개 소식 수집 결과는 먼저 검증하며, 소식만으로 공식 상태나 경계를 덮어쓰지 않습니다. 배포된 정적 데이터를 읽는 지도는 그대로 유지합니다.</dd></div>
+</dl>
+</section>
+
+<section id="release">
+<span class="number">05 / RELEASE CHECK</span>
+<h2>공개 전에 확인할 것</h2>
+<ul class="list">
+<li>서울시 공식 선정 목록과 데이터 포함 범위를 대조합니다. 확인이 덜 되었으면 누락을 숨기지 않고 자료 범위와 기준일을 표시합니다.</li>
+<li>대표 위치만 있는 대상지, 세부 구역이 없는 대상지, 계획안·확정 값이 섞인 구역에서도 잘못된 경계나 숫자를 보여주지 않습니다.</li>
+<li>지도와 목록의 필터가 일치하고, 모바일과 키보드 환경에서도 대상지를 선택하고 원문에 접근할 수 있습니다.</li>
+<li>배경지도·공간자료의 재사용 조건과 출처 표기를 확인합니다. 배경지도를 불러오지 못해도 목록과 구역 상세는 계속 볼 수 있게 합니다.</li>
+<li>GitHub Pages 프로젝트 경로에서 데이터와 링크가 정상 동작하고, 최신 포인터가 존재하는 스냅샷을 가리키는지 확인합니다.</li>
+</ul>
+<div class="callout"><strong>이번 버전에서 제외:</strong> 로그인·운영진 관리·필지별 동의 정보·전자동의·게시판·분담금 계산기·AI 기능·소식 수집 배치. 정적 공개 파일에는 주민 개인정보나 내부 자료를 넣지 않습니다.</div>
+<p class="info" style="margin-top:14px">이 문서는 구현 전 제품 기획서입니다. 실제 대상지 데이터의 수집·권리 확인이나 사이트 배포는 포함하지 않습니다.</p>
+</section>
+</main>
+<footer><div class="wrap">모아타운 현황지도 · <a href="https://github.com/kdkrkwhr/moatown-map">moatown-map 저장소</a> · <a href="#top">맨 위로</a></div></footer>
+</body>
+</html>

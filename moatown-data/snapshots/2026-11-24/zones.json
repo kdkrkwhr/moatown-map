@@ -1,0 +1,63 @@
+[
+  {
+    "id": "mz-info-305900000750u59",
+    "town_id": "mt-202603-public-034",
+    "name": "번동1구역",
+    "stage": null,
+    "project_type": "가로주택정비",
+    "project_area_m2": 4517.7,
+    "planned_units_total": 146,
+    "max_floors_above_ground": 28,
+    "floors_below_ground": 2,
+    "unit_types": null,
+    "published_private_area_bands": [
+      {
+        "type": "분양",
+        "privateAreaBandM2": "60 이하",
+        "units": 68
+      },
+      {
+        "type": "분양",
+        "privateAreaBandM2": "60 초과~85 이하",
+        "units": 48
+      },
+      {
+        "type": "임대",
+        "privateAreaBandM2": "40 이하",
+        "units": 12
+      },
+      {
+        "type": "임대",
+        "privateAreaBandM2": "40 초과~50 이하",
+        "units": 18
+      }
+    ],
+    "selected_contractor": "코오롱글로벌",
+    "field_evidence": {
+      "plan": {
+        "state": "published_plan_not_latest_approval_verified",
+        "source_url": "https://cleanup.seoul.go.kr/cafe/mastr-cleanup-bsnsSumry/execute.do?cafeId=305900000750u59&div=sumry&stepSeCode=103",
+        "source_as_of": null,
+        "checked_on": "2026-11-24",
+        "units_derivation": "분양·임대 공개 면적 구간별 세대수 합계"
+      },
+      "selected_contractor": {
+        "state": "contractor_reported",
+        "source_url": "https://www.kolon.com/kr/media/newsDtl?detailsKey=8301",
+        "source_as_of": null,
+        "checked_on": "2026-11-24"
+      }
+    },
+    "limitations": [
+      "공개 사업개요에 표시된 계획값이며, 최신 인가·고시 또는 확정 분양계획과 동일하다고 확인되지 않았습니다.",
+      "2026-11-19 공개자료 목록에 사업시행계획 변경 관련 문서가 있어 개요의 최신성은 별도 확인이 필요합니다.",
+      "전용면적 구간은 공개된 집계 단위이며, 세부 주택형(예: 59A)은 확인하지 않았습니다.",
+      "검증한 벡터 구역 경계가 없어 geometry는 비워 두었습니다."
+    ],
+    "sources": {
+      "projectOverview": "https://cleanup.seoul.go.kr/cafe/mastr-cleanup-bsnsSumry/execute.do?cafeId=305900000750u59&div=sumry&stepSeCode=103",
+      "recentDisclosure": "https://cleanup.seoul.go.kr/assc/scrin-bbs/execute.do?cafeId=305900000750u59",
+      "contractor": "https://www.kolon.com/kr/media/newsDtl?detailsKey=8301"
+    }
+  }
+]

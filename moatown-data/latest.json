@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "snapshot_date": "2026-11-24",
+  "timezone": "Asia/Seoul",
+  "coverage": {
+    "status": "partial",
+    "baseline_as_of": "2026-03-31",
+    "official_baseline_rows": 132,
+    "town_records": 138,
+    "post_baseline_additions": 7,
+    "districts_with_records": 24,
+    "official_cancellations_reviewed": 11,
+    "baseline_rows_removed_by_confirmed_cancellation": 1,
+    "zone_records": 1,
+    "boundary_features": 0,
+    "representative_points": 0,
+    "limitations": [
+      "2026-03-31 명부와 확인된 취소 자료에 근거한 초기 자료이며, 현재 전체 명부가 아닙니다.",
+      "확인된 후속 공식 선정 일부를 추가했습니다. 최신 전체 선정·정정, 전체 사업구역 상세와 경계는 전수 확인하지 못했습니다."
+    ]
+  },
+  "source_urls": {
+    "official_baseline": "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status",
+    "official_cancellation_list": "https://cleanup.seoul.go.kr/cleanup/view/moaTown.do",
+    "official_cancellation_notice_index": "https://cleanup.seoul.go.kr/cleanup/bbs/vscr.do?bbs.bbsSn=3023&bbsClCode=1000&nttSn=176688"
+  },
+  "files": {
+    "towns": "snapshots/2026-11-24/towns.json",
+    "zones": "snapshots/2026-11-24/zones.json",
+    "boundaries": "snapshots/2026-11-24/boundaries.geojson",
+    "excluded": "snapshots/2026-11-24/excluded.json"
+  }
+}

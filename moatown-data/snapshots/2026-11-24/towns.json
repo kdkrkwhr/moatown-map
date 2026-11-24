@@ -1,0 +1,2237 @@
+[
+  {
+    "id": "mt-202603-public-001",
+    "district": "강서구",
+    "name": "화곡동 1087",
+    "address": "강서구 화곡동 1087",
+    "selection_track": "자치구 공모",
+    "selected_date": "2021-11",
+    "selected_date_precision": "month",
+    "area_m2": 60616,
+    "management_plan_stage": null,
+    "representative_point": null,
+    "source_as_of": "2026-03-31",
+    "sources": [
+      "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
+    ]
+  },
+  {
+    "id": "mt-202603-public-002",
+    "district": "강서구",
+    "name": "화곡동 354",
+    "address": "강서구 화곡동 354",
+    "selection_track": "자치구 공모",
+    "selected_date": "2021-11",
+    "selected_date_precision": "month",
+    "area_m2": 85462,
+    "management_plan_stage": null,
+    "representative_point": null,
+    "source_as_of": "2026-03-31",
+    "sources": [
+      "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
+    ]
+  },
+  {
+    "id": "mt-202603-public-003",
+    "district": "강서구",
+    "name": "화곡동 359",
+    "address": "강서구 화곡동 359",
+    "selection_track": "자치구 공모",
+    "selected_date": "2021-11",
+    "selected_date_precision": "month",
+    "area_m2": 58477,
+    "management_plan_stage": null,
+    "representative_point": null,
+    "source_as_of": "2026-03-31",
+    "sources": [
+      "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
+    ]
+  },
+  {
+    "id": "mt-202603-public-004",
+    "district": "강서구",
+    "name": "화곡동 424",
+    "address": "강서구 화곡동 424",
+    "selection_track": "자치구 공모",
+    "selected_date": "2021-11",
+    "selected_date_precision": "month",
+    "area_m2": 54767,
+    "management_plan_stage": null,
+    "representative_point": null,
+    "source_as_of": "2026-03-31",
+    "sources": [
+      "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
+    ]
+  },
+  {
+    "id": "mt-202603-public-005",
+    "district": "강서구",
+    "name": "등촌2동 515-44",
+    "address": "강서구 등촌2동 515-44",
+    "selection_track": "자치구 공모",
+    "selected_date": "2021-04",
+    "selected_date_precision": "month",
+    "area_m2": 65498,
+    "management_plan_stage": null,
+    "representative_point": null,
+    "source_as_of": "2026-03-31",
+    "sources": [
+      "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
+    ],
+    "alternate_locations": [
+      {
+        "name": "등촌2동 520-3",
+        "address": "강서구 등촌2동 520-3",
+        "area_m2": 64191
+      }
+    ]
+  },
+  {
+    "id": "mt-202603-public-006",
+    "district": "강서구",
+    "name": "화곡6동 1130-7",
+    "address": "강서구 화곡6동 1130-7",
+    "selection_track": "자치구 공모",
+    "selected_date": "2021-11",
+    "selected_date_precision": "month",
+    "area_m2": 67957,
+    "management_plan_stage": null,
+    "representative_point": null,
+    "source_as_of": "2026-03-31",
+    "sources": [
+      "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
+    ]
+  },
+  {
+    "id": "mt-202603-public-007",
+    "district": "강서구",
+    "name": "방화동 592-1",
+    "address": "강서구 방화동 592-1",
+    "selection_track": "자치구 공모",
+    "selected_date": "2022-06",
+    "selected_date_precision": "month",
+    "area_m2": 66975,
+    "management_plan_stage": null,
+    "representative_point": null,
+    "source_as_of": "2026-03-31",
+    "sources": [
+      "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
+    ]
+  },
+  {
+    "id": "mt-202603-public-008",
+    "district": "강서구",
+    "name": "공항동 55-327",
+    "address": "강서구 공항동 55-327",
+    "selection_track": "자치구 공모",
+    "selected_date": "2022-10",
+    "selected_date_precision": "month",
+    "area_m2": 96637,
+    "management_plan_stage": null,
+    "representative_point": null,
+    "source_as_of": "2026-03-31",
+    "sources": [
+      "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
+    ]
+  },
+  {
+    "id": "mt-202603-public-009",
+    "district": "강서구",
+    "name": "화곡6동 957",
+    "address": "강서구 화곡6동 957",
+    "selection_track": "자치구 공모",
+    "selected_date": "2022-10",
+    "selected_date_precision": "month",
+    "area_m2": 94080,
+    "management_plan_stage": null,
+    "representative_point": null,
+    "source_as_of": "2026-03-31",
+    "sources": [
+      "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
+    ]
+  },
+  {
+    "id": "mt-202603-public-010",
+    "district": "중랑구",
+    "name": "(시범2호)면목동 86-3",
+    "address": "중랑구 면목동 86-3",
+    "selection_track": "자치구 공모",
+    "selected_date": "2022-01",
+    "selected_date_precision": "month",
+    "area_m2": 96993,
+    "management_plan_stage": null,
+    "representative_point": null,
+    "source_as_of": "2026-03-31",
+    "sources": [
+      "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
+    ]
+  },
+  {
+    "id": "mt-202603-public-011",
+    "district": "중랑구",
+    "name": "면목3·8동 44-6",
+    "address": "중랑구 면목3·8동 44-6",
+    "selection_track": "자치구 공모",
+    "selected_date": "2022-06",
+    "selected_date_precision": "month",
+    "area_m2": 76525,
+    "management_plan_stage": null,
+    "representative_point": null,
+    "source_as_of": "2026-03-31",
+    "sources": [
+      "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
+    ]
+  },
+  {
+    "id": "mt-202603-public-012",
+    "district": "중랑구",
+    "name": "면목본동 297-28",
+    "address": "중랑구 면목본동 297-28",
+    "selection_track": "자치구 공모",
+    "selected_date": "2022-06",
+    "selected_date_precision": "month",
+    "area_m2": 53120,
+    "management_plan_stage": null,
+    "representative_point": null,
+    "source_as_of": "2026-03-31",
+    "sources": [
+      "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
+    ]
+  },
+  {
+    "id": "mt-202603-public-013",
+    "district": "중랑구",
+    "name": "중화1동 4-30",
+    "address": "중랑구 중화1동 4-30",
+    "selection_track": "자치구 공모",
+    "selected_date": "2022-06",
+    "selected_date_precision": "month",
+    "area_m2": 73625,
+    "management_plan_stage": null,
+    "representative_point": null,
+    "source_as_of": "2026-03-31",
+    "sources": [
+      "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
+    ]
+  },
+  {
+    "id": "mt-202603-public-014",
+    "district": "중랑구",
+    "name": "망우3동 427-5",
+    "address": "중랑구 망우3동 427-5",
+    "selection_track": "자치구 공모",
+    "selected_date": "2022-06",
+    "selected_date_precision": "month",
+    "area_m2": 98171,
+    "management_plan_stage": null,
+    "representative_point": null,
+    "source_as_of": "2026-03-31",
+    "sources": [
+      "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
+    ]
+  },
+  {
+    "id": "mt-202603-public-015",
+    "district": "중랑구",
+    "name": "면목동 152-1",
+    "address": "중랑구 면목동 152-1",
+    "selection_track": "자치구 공모",
+    "selected_date": "2022-10",
+    "selected_date_precision": "month",
+    "area_m2": 88040,
+    "management_plan_stage": null,
+    "representative_point": null,
+    "source_as_of": "2026-03-31",
+    "sources": [
+      "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
+    ]
+  },
+  {
+    "id": "mt-202603-public-016",
+    "district": "중랑구",
+    "name": "면목동 63-1",
+    "address": "중랑구 면목동 63-1",
+    "selection_track": "자치구 공모",
+    "selected_date": "2022-10",
+    "selected_date_precision": "month",
+    "area_m2": 90102,
+    "management_plan_stage": null,
+    "representative_point": null,
+    "source_as_of": "2026-03-31",
+    "sources": [
+      "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
+    ]
+  },
+  {
+    "id": "mt-202603-public-017",
+    "district": "중랑구",
+    "name": "망우본동 354-2",
+    "address": "중랑구 망우본동 354-2",
+    "selection_track": "자치구 공모",
+    "selected_date": "2023-08",
+    "selected_date_precision": "month",
+    "area_m2": 66389,
+    "management_plan_stage": null,
+    "representative_point": null,
+    "source_as_of": "2026-03-31",
+    "sources": [
+      "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
+    ]
+  },
+  {
+    "id": "mt-202603-public-018",
+    "district": "중랑구",
+    "name": "중화동 329-38",
+    "address": "중랑구 중화동 329-38",
+    "selection_track": "자치구 공모",
+    "selected_date": "2023-08",
+    "selected_date_precision": "month",
+    "area_m2": 99931,
+    "management_plan_stage": null,
+    "representative_point": null,
+    "source_as_of": "2026-03-31",
+    "sources": [
+      "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
+    ]
+  },
+  {
+    "id": "mt-202603-public-019",
+    "district": "중랑구",
+    "name": "망우3동 474-29",
+    "address": "중랑구 망우3동 474-29",
+    "selection_track": "자치구 공모",
+    "selected_date": "2023-11",
+    "selected_date_precision": "month",
+    "area_m2": 81648,
+    "management_plan_stage": null,
+    "representative_point": null,
+    "source_as_of": "2026-03-31",
+    "sources": [
+      "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
+    ]
+  },
+  {
+    "id": "mt-202603-public-020",
+    "district": "중랑구",
+    "name": "묵2동 243-7",
+    "address": "중랑구 묵2동 243-7",
+    "selection_track": "자치구 공모",
+    "selected_date": "2023-11",
+    "selected_date_precision": "month",
+    "area_m2": 62681,
+    "management_plan_stage": null,
+    "representative_point": null,
+    "source_as_of": "2026-03-31",
+    "sources": [
+      "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
+    ]
+  },
+  {
+    "id": "mt-202603-public-021",
+    "district": "중랑구",
+    "name": "중화2동 299-8",
+    "address": "중랑구 중화2동 299-8",
+    "selection_track": "자치구 공모",
+    "selected_date": "2024-02",
+    "selected_date_precision": "month",
+    "area_m2": 75254,
+    "management_plan_stage": null,
+    "representative_point": null,
+    "source_as_of": "2026-03-31",
+    "sources": [
+      "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
+    ]
+  },
+  {
+    "id": "mt-202603-public-022",
+    "district": "중랑구",
+    "name": "면목2동 139-52",
+    "address": "중랑구 면목2동 139-52",
+    "selection_track": "자치구 공모",
+    "selected_date": "2024-02",
+    "selected_date_precision": "month",
+    "area_m2": 70868,
+    "management_plan_stage": null,
+    "representative_point": null,
+    "source_as_of": "2026-03-31",
+    "sources": [
+      "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
+    ]
+  },
+  {
+    "id": "mt-202603-public-023",
+    "district": "중랑구",
+    "name": "면목3·8동 453-1",
+    "address": "중랑구 면목3·8동 453-1",
+    "selection_track": "자치구 공모",
+    "selected_date": "2024-05",
+    "selected_date_precision": "month",
+    "area_m2": 68303,
+    "management_plan_stage": null,
+    "representative_point": null,
+    "source_as_of": "2026-03-31",
+    "sources": [
+      "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
+    ]
+  },
+  {
+    "id": "mt-202603-public-024",
+    "district": "금천구",
+    "name": "시흥3동 1005",
+    "address": "금천구 시흥3동 1005",
+    "selection_track": "자치구 공모",
+    "selected_date": "2021-04",
+    "selected_date_precision": "month",
+    "area_m2": 86705,
+    "management_plan_stage": null,
+    "representative_point": null,
+    "source_as_of": "2026-03-31",
+    "sources": [
+      "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
+    ]
+  },
+  {
+    "id": "mt-202603-public-025",
+    "district": "금천구",
+    "name": "시흥4동 817",
+    "address": "금천구 시흥4동 817",
+    "selection_track": "자치구 공모",
+    "selected_date": "2021-04",
+    "selected_date_precision": "month",
+    "area_m2": 30430,
+    "management_plan_stage": null,
+    "representative_point": null,
+    "source_as_of": "2026-03-31",
+    "sources": [
+      "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
+    ]
+  },
+  {
+    "id": "mt-202603-public-026",
+    "district": "금천구",
+    "name": "시흥5동 922-61",
+    "address": "금천구 시흥5동 922-61",
+    "selection_track": "자치구 공모",
+    "selected_date": "2021-04",
+    "selected_date_precision": "month",
+    "area_m2": 89944,
+    "management_plan_stage": null,
+    "representative_point": null,
+    "source_as_of": "2026-03-31",
+    "sources": [
+      "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
+    ]
+  },
+  {
+    "id": "mt-202603-public-027",
+    "district": "금천구",
+    "name": "시흥1동 864",
+    "address": "금천구 시흥1동 864",
+    "selection_track": "자치구 공모",
+    "selected_date": "2022-10",
+    "selected_date_precision": "month",
+    "area_m2": 81648,
+    "management_plan_stage": null,
+    "representative_point": null,
+    "source_as_of": "2026-03-31",
+    "sources": [
+      "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
+    ]
+  },
+  {
+    "id": "mt-202603-public-028",
+    "district": "금천구",
+    "name": "시흥3동 950",
+    "address": "금천구 시흥3동 950",
+    "selection_track": "자치구 공모",
+    "selected_date": "2022-10",
+    "selected_date_precision": "month",
+    "area_m2": 99715,
+    "management_plan_stage": null,
+    "representative_point": null,
+    "source_as_of": "2026-03-31",
+    "sources": [
+      "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
+    ]
+  },
+  {
+    "id": "mt-202603-public-029",
+    "district": "마포구",
+    "name": "대흥동 535-2",
+    "address": "마포구 대흥동 535-2",
+    "selection_track": "자치구 공모",
+    "selected_date": "2021-11",
+    "selected_date_precision": "month",
+    "area_m2": 19602,
+    "management_plan_stage": null,
+    "representative_point": null,
+    "source_as_of": "2026-03-31",
+    "sources": [
+      "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
+    ]
+  },
+  {
+    "id": "mt-202603-public-030",
+    "district": "마포구",
+    "name": "성산동 160-4",
+    "address": "마포구 성산동 160-4",
+    "selection_track": "자치구 공모",
+    "selected_date": "2022-06",
+    "selected_date_precision": "month",
+    "area_m2": 84876,
+    "management_plan_stage": null,
+    "representative_point": null,
+    "source_as_of": "2026-03-31",
+    "sources": [
+      "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
+    ]
+  },
+  {
+    "id": "mt-202603-public-031",
+    "district": "마포구",
+    "name": "망원동 456-6",
+    "address": "마포구 망원동 456-6",
+    "selection_track": "자치구 공모",
+    "selected_date": "2022-06",
+    "selected_date_precision": "month",
+    "area_m2": 77449,
+    "management_plan_stage": null,
+    "representative_point": null,
+    "source_as_of": "2026-03-31",
+    "sources": [
+      "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
+    ]
+  },
+  {
+    "id": "mt-202603-public-032",
+    "district": "마포구",
+    "name": "합정동 369",
+    "address": "마포구 합정동 369",
+    "selection_track": "자치구 공모",
+    "selected_date": "2022-10",
+    "selected_date_precision": "month",
+    "area_m2": 97717,
+    "management_plan_stage": null,
+    "representative_point": null,
+    "source_as_of": "2026-03-31",
+    "sources": [
+      "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
+    ]
+  },
+  {
+    "id": "mt-202603-public-033",
+    "district": "마포구",
+    "name": "중동 78",
+    "address": "마포구 중동 78",
+    "selection_track": "자치구 공모",
+    "selected_date": "2022-10",
+    "selected_date_precision": "month",
+    "area_m2": 18612,
+    "management_plan_stage": null,
+    "representative_point": null,
+    "source_as_of": "2026-03-31",
+    "sources": [
+      "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
+    ]
+  },
+  {
+    "id": "mt-202603-public-034",
+    "district": "강북구",
+    "name": "번동 429-114",
+    "address": "강북구 번동 429-114",
+    "selection_track": "자치구 공모",
+    "selected_date": "2022-01",
+    "selected_date_precision": "month",
+    "area_m2": 55572,
+    "management_plan_stage": null,
+    "representative_point": null,
+    "source_as_of": "2026-03-31",
+    "sources": [
+      "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
+    ]
+  },
+  {
+    "id": "mt-202603-public-035",
+    "district": "강북구",
+    "name": "번동 454-61",
+    "address": "강북구 번동 454-61",
+    "selection_track": "자치구 공모",
+    "selected_date": "2022-06",
+    "selected_date_precision": "month",
+    "area_m2": 70897,
+    "management_plan_stage": null,
+    "representative_point": null,
+    "source_as_of": "2026-03-31",
+    "sources": [
+      "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
+    ]
+  },
+  {
+    "id": "mt-202603-public-036",
+    "district": "강북구",
+    "name": "번동 411",
+    "address": "강북구 번동 411",
+    "selection_track": "자치구 공모",
+    "selected_date": "2022-10",
+    "selected_date_precision": "month",
+    "area_m2": 79517,
+    "management_plan_stage": null,
+    "representative_point": null,
+    "source_as_of": "2026-03-31",
+    "sources": [
+      "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
+    ]
+  },
+  {
+    "id": "mt-202603-public-037",
+    "district": "강북구",
+    "name": "수유동 52-1",
+    "address": "강북구 수유동 52-1",
+    "selection_track": "자치구 공모",
+    "selected_date": "2022-10",
+    "selected_date_precision": "month",
+    "area_m2": 72754,
+    "management_plan_stage": null,
+    "representative_point": null,
+    "source_as_of": "2026-03-31",
+    "sources": [
+      "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
+    ]
+  },
+  {
+    "id": "mt-202603-public-038",
+    "district": "강북구",
+    "name": "수유동 392-9",
+    "address": "강북구 수유동 392-9",
+    "selection_track": "자치구 공모",
+    "selected_date": "2024-07",
+    "selected_date_precision": "month",
+    "area_m2": 86363,
+    "management_plan_stage": null,
+    "representative_point": null,
+    "source_as_of": "2026-03-31",
+    "sources": [
+      "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
+    ]
+  },
+  {
+    "id": "mt-202603-public-039",
+    "district": "강북구",
+    "name": "수유동 141",
+    "address": "강북구 수유동 141",
+    "selection_track": "자치구 공모",
+    "selected_date": "2024-11",
+    "selected_date_precision": "month",
+    "area_m2": 73865,
+    "management_plan_stage": null,
+    "representative_point": null,
+    "source_as_of": "2026-03-31",
+    "sources": [
+      "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
+    ]
+  },
+  {
+    "id": "mt-202603-public-040",
+    "district": "강북구",
+    "name": "번동 469",
+    "address": "강북구 번동 469",
+    "selection_track": "자치구 공모",
+    "selected_date": "2024-11",
+    "selected_date_precision": "month",
+    "area_m2": 85801,
+    "management_plan_stage": null,
+    "representative_point": null,
+    "source_as_of": "2026-03-31",
+    "sources": [
+      "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
+    ]
+  },
+  {
+    "id": "mt-202603-public-041",
+    "district": "강북구",
+    "name": "수유동 31-10",
+    "address": "강북구 수유동 31-10",
+    "selection_track": "자치구 공모",
+    "selected_date": "2024-11",
+    "selected_date_precision": "month",
+    "area_m2": 65961,
+    "management_plan_stage": null,
+    "representative_point": null,
+    "source_as_of": "2026-03-31",
+    "sources": [
+      "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
+    ]
+  },
+  {
+    "id": "mt-202603-public-042",
+    "district": "성동구",
+    "name": "마장동 457",
+    "address": "성동구 마장동 457",
+    "selection_track": "자치구 공모",
+    "selected_date": "2022-06",
+    "selected_date_precision": "month",
+    "area_m2": 75382,
+    "management_plan_stage": null,
+    "representative_point": null,
+    "source_as_of": "2026-03-31",
+    "sources": [
+      "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
+    ]
+  },
+  {
+    "id": "mt-202603-public-043",
+    "district": "성동구",
+    "name": "응봉동 265",
+    "address": "성동구 응봉동 265",
+    "selection_track": "자치구 공모",
+    "selected_date": "2022-10",
+    "selected_date_precision": "month",
+    "area_m2": 37287,
+    "management_plan_stage": null,
+    "representative_point": null,
+    "source_as_of": "2026-03-31",
+    "sources": [
+      "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
+    ]
+  },
+  {
+    "id": "mt-202603-public-044",
+    "district": "구로구",
+    "name": "고척동 241",
+    "address": "구로구 고척동 241",
+    "selection_track": "자치구 공모",
+    "selected_date": "2022-06",
+    "selected_date_precision": "month",
+    "area_m2": 98735,
+    "management_plan_stage": null,
+    "representative_point": null,
+    "source_as_of": "2026-03-31",
+    "sources": [
+      "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
+    ]
+  },
+  {
+    "id": "mt-202603-public-045",
+    "district": "구로구",
+    "name": "구로동 728",
+    "address": "구로구 구로동 728",
+    "selection_track": "자치구 공모",
+    "selected_date": "2022-06",
+    "selected_date_precision": "month",
+    "area_m2": 64151,
+    "management_plan_stage": null,
+    "representative_point": null,
+    "source_as_of": "2026-03-31",
+    "sources": [
+      "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
+    ]
+  },
+  {
+    "id": "mt-202603-public-046",
+    "district": "구로구",
+    "name": "개봉동 270-38",
+    "address": "구로구 개봉동 270-38",
+    "selection_track": "자치구 공모",
+    "selected_date": "2022-10",
+    "selected_date_precision": "month",
+    "area_m2": 41145,
+    "management_plan_stage": null,
+    "representative_point": null,
+    "source_as_of": "2026-03-31",
+    "sources": [
+      "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
+    ]
+  },
+  {
+    "id": "mt-202603-public-047",
+    "district": "구로구",
+    "name": "구로동 511",
+    "address": "구로구 구로동 511",
+    "selection_track": "자치구 공모",
+    "selected_date": "2023-11",
+    "selected_date_precision": "month",
+    "area_m2": 60962,
+    "management_plan_stage": null,
+    "representative_point": null,
+    "source_as_of": "2026-03-31",
+    "sources": [
+      "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
+    ]
+  },
+  {
+    "id": "mt-202603-public-048",
+    "district": "구로구",
+    "name": "개봉동 20",
+    "address": "구로구 개봉동 20",
+    "selection_track": "자치구 공모",
+    "selected_date": "2024-11",
+    "selected_date_precision": "month",
+    "area_m2": 61717,
+    "management_plan_stage": null,
+    "representative_point": null,
+    "source_as_of": "2026-03-31",
+    "sources": [
+      "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
+    ]
+  },
+  {
+    "id": "mt-202603-public-049",
+    "district": "노원구",
+    "name": "상계2동 177-66",
+    "address": "노원구 상계2동 177-66",
+    "selection_track": "자치구 공모",
+    "selected_date": "2022-06",
+    "selected_date_precision": "month",
+    "area_m2": 96468,
+    "management_plan_stage": null,
+    "representative_point": null,
+    "source_as_of": "2026-03-31",
+    "sources": [
+      "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
+    ]
+  },
+  {
+    "id": "mt-202603-public-050",
+    "district": "노원구",
+    "name": "월계동 534",
+    "address": "노원구 월계동 534",
+    "selection_track": "자치구 공모",
+    "selected_date": "2022-10",
+    "selected_date_precision": "month",
+    "area_m2": 51049,
+    "management_plan_stage": null,
+    "representative_point": null,
+    "source_as_of": "2026-03-31",
+    "sources": [
+      "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
+    ]
+  },
+  {
+    "id": "mt-202603-public-051",
+    "district": "도봉구",
+    "name": "쌍문동 524-87",
+    "address": "도봉구 쌍문동 524-87",
+    "selection_track": "자치구 공모",
+    "selected_date": "2022-06",
+    "selected_date_precision": "month",
+    "area_m2": 82630,
+    "management_plan_stage": null,
+    "representative_point": null,
+    "source_as_of": "2026-03-31",
+    "sources": [
+      "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
+    ]
+  },
+  {
+    "id": "mt-202603-public-052",
+    "district": "도봉구",
+    "name": "쌍문동 494-22",
+    "address": "도봉구 쌍문동 494-22",
+    "selection_track": "자치구 공모",
+    "selected_date": "2022-06",
+    "selected_date_precision": "month",
+    "area_m2": 31303,
+    "management_plan_stage": null,
+    "representative_point": null,
+    "source_as_of": "2026-03-31",
+    "sources": [
+      "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
+    ]
+  },
+  {
+    "id": "mt-202603-public-053",
+    "district": "도봉구",
+    "name": "방학동 618",
+    "address": "도봉구 방학동 618",
+    "selection_track": "자치구 공모",
+    "selected_date": "2023-09",
+    "selected_date_precision": "month",
+    "area_m2": 98115,
+    "management_plan_stage": null,
+    "representative_point": null,
+    "source_as_of": "2026-03-31",
+    "sources": [
+      "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
+    ]
+  },
+  {
+    "id": "mt-202603-public-054",
+    "district": "도봉구",
+    "name": "쌍문1동 460",
+    "address": "도봉구 쌍문1동 460",
+    "selection_track": "자치구 공모",
+    "selected_date": "2023-09",
+    "selected_date_precision": "month",
+    "area_m2": 87774,
+    "management_plan_stage": null,
+    "representative_point": null,
+    "source_as_of": "2026-03-31",
+    "sources": [
+      "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
+    ]
+  },
+  {
+    "id": "mt-202603-public-055",
+    "district": "도봉구",
+    "name": "창3동 501-13",
+    "address": "도봉구 창3동 501-13",
+    "selection_track": "자치구 공모",
+    "selected_date": "2024-01",
+    "selected_date_precision": "month",
+    "area_m2": 44916,
+    "management_plan_stage": null,
+    "representative_point": null,
+    "source_as_of": "2026-03-31",
+    "sources": [
+      "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
+    ]
+  },
+  {
+    "id": "mt-202603-public-056",
+    "district": "강동구",
+    "name": "둔촌동 77-41",
+    "address": "강동구 둔촌동 77-41",
+    "selection_track": "자치구 공모",
+    "selected_date": "2021-11",
+    "selected_date_precision": "month",
+    "area_m2": 65326,
+    "management_plan_stage": null,
+    "representative_point": null,
+    "source_as_of": "2026-03-31",
+    "sources": [
+      "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
+    ]
+  },
+  {
+    "id": "mt-202603-public-057",
+    "district": "강동구",
+    "name": "천호동 113-2",
+    "address": "강동구 천호동 113-2",
+    "selection_track": "자치구 공모",
+    "selected_date": "2022-10",
+    "selected_date_precision": "month",
+    "area_m2": 55570,
+    "management_plan_stage": null,
+    "representative_point": null,
+    "source_as_of": "2026-03-31",
+    "sources": [
+      "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
+    ]
+  },
+  {
+    "id": "mt-202603-public-058",
+    "district": "동작구",
+    "name": "노량진동 221-24",
+    "address": "동작구 노량진동 221-24",
+    "selection_track": "자치구 공모",
+    "selected_date": "2022-10",
+    "selected_date_precision": "month",
+    "area_m2": 31783,
+    "management_plan_stage": null,
+    "representative_point": null,
+    "source_as_of": "2026-03-31",
+    "sources": [
+      "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
+    ]
+  },
+  {
+    "id": "mt-202603-public-059",
+    "district": "동작구",
+    "name": "사당동 202-29",
+    "address": "동작구 사당동 202-29",
+    "selection_track": "자치구 공모",
+    "selected_date": "2022-10",
+    "selected_date_precision": "month",
+    "area_m2": 84311,
+    "management_plan_stage": null,
+    "representative_point": null,
+    "source_as_of": "2026-03-31",
+    "sources": [
+      "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
+    ]
+  },
+  {
+    "id": "mt-202603-public-060",
+    "district": "동작구",
+    "name": "상도동 242",
+    "address": "동작구 상도동 242",
+    "selection_track": "자치구 공모",
+    "selected_date": "2023-09",
+    "selected_date_precision": "month",
+    "area_m2": 69120,
+    "management_plan_stage": null,
+    "representative_point": null,
+    "source_as_of": "2026-03-31",
+    "sources": [
+      "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
+    ]
+  },
+  {
+    "id": "mt-202603-public-061",
+    "district": "동작구",
+    "name": "상도동 279",
+    "address": "동작구 상도동 279",
+    "selection_track": "자치구 공모",
+    "selected_date": "2024-02",
+    "selected_date_precision": "month",
+    "area_m2": 49155,
+    "management_plan_stage": null,
+    "representative_point": null,
+    "source_as_of": "2026-03-31",
+    "sources": [
+      "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
+    ]
+  },
+  {
+    "id": "mt-202603-public-062",
+    "district": "송파구",
+    "name": "풍납동 483-10",
+    "address": "송파구 풍납동 483-10",
+    "selection_track": "자치구 공모",
+    "selected_date": "2022-06",
+    "selected_date_precision": "month",
+    "area_m2": 46870,
+    "management_plan_stage": null,
+    "representative_point": null,
+    "source_as_of": "2026-03-31",
+    "sources": [
+      "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
+    ]
+  },
+  {
+    "id": "mt-202603-public-063",
+    "district": "송파구",
+    "name": "거여동 555",
+    "address": "송파구 거여동 555",
+    "selection_track": "자치구 공모",
+    "selected_date": "2022-06",
+    "selected_date_precision": "month",
+    "area_m2": 12615,
+    "management_plan_stage": null,
+    "representative_point": null,
+    "source_as_of": "2026-03-31",
+    "sources": [
+      "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
+    ]
+  },
+  {
+    "id": "mt-202603-public-064",
+    "district": "성북구",
+    "name": "석관동 334-69",
+    "address": "성북구 석관동 334-69",
+    "selection_track": "자치구 공모",
+    "selected_date": "2022-10",
+    "selected_date_precision": "month",
+    "area_m2": 76336,
+    "management_plan_stage": null,
+    "representative_point": null,
+    "source_as_of": "2026-03-31",
+    "sources": [
+      "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
+    ]
+  },
+  {
+    "id": "mt-202603-public-065",
+    "district": "성북구",
+    "name": "석관동 261-22",
+    "address": "성북구 석관동 261-22",
+    "selection_track": "자치구 공모",
+    "selected_date": "2022-10",
+    "selected_date_precision": "month",
+    "area_m2": 52019,
+    "management_plan_stage": null,
+    "representative_point": null,
+    "source_as_of": "2026-03-31",
+    "sources": [
+      "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
+    ]
+  },
+  {
+    "id": "mt-202603-public-066",
+    "district": "양천구",
+    "name": "신월동 173",
+    "address": "양천구 신월동 173",
+    "selection_track": "자치구 공모",
+    "selected_date": "2022-06",
+    "selected_date_precision": "month",
+    "area_m2": 80030,
+    "management_plan_stage": null,
+    "representative_point": null,
+    "source_as_of": "2026-03-31",
+    "sources": [
+      "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
+    ]
+  },
+  {
+    "id": "mt-202603-public-067",
+    "district": "양천구",
+    "name": "신월동 102-33",
+    "address": "양천구 신월동 102-33",
+    "selection_track": "자치구 공모",
+    "selected_date": "2022-06",
+    "selected_date_precision": "month",
+    "area_m2": 74094,
+    "management_plan_stage": null,
+    "representative_point": null,
+    "source_as_of": "2026-03-31",
+    "sources": [
+      "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
+    ]
+  },
+  {
+    "id": "mt-202603-public-068",
+    "district": "양천구",
+    "name": "목4동 724-1",
+    "address": "양천구 목4동 724-1",
+    "selection_track": "자치구 공모",
+    "selected_date": "2023-06",
+    "selected_date_precision": "month",
+    "area_m2": 52785,
+    "management_plan_stage": null,
+    "representative_point": null,
+    "source_as_of": "2026-03-31",
+    "sources": [
+      "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
+    ]
+  },
+  {
+    "id": "mt-202603-public-069",
+    "district": "양천구",
+    "name": "목2동 231-27",
+    "address": "양천구 목2동 231-27",
+    "selection_track": "자치구 공모",
+    "selected_date": "2024-08",
+    "selected_date_precision": "month",
+    "area_m2": 64474,
+    "management_plan_stage": null,
+    "representative_point": null,
+    "source_as_of": "2026-03-31",
+    "sources": [
+      "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
+    ]
+  },
+  {
+    "id": "mt-202603-public-070",
+    "district": "영등포구",
+    "name": "대림3동 786",
+    "address": "영등포구 대림3동 786",
+    "selection_track": "자치구 공모",
+    "selected_date": "2022-10",
+    "selected_date_precision": "month",
+    "area_m2": 24064,
+    "management_plan_stage": null,
+    "representative_point": null,
+    "source_as_of": "2026-03-31",
+    "sources": [
+      "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
+    ]
+  },
+  {
+    "id": "mt-202603-public-071",
+    "district": "은평구",
+    "name": "불광동 170",
+    "address": "은평구 불광동 170",
+    "selection_track": "자치구 공모",
+    "selected_date": "2022-10",
+    "selected_date_precision": "month",
+    "area_m2": 53915,
+    "management_plan_stage": null,
+    "representative_point": null,
+    "source_as_of": "2026-03-31",
+    "sources": [
+      "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
+    ]
+  },
+  {
+    "id": "mt-202603-public-072",
+    "district": "은평구",
+    "name": "대조동 89",
+    "address": "은평구 대조동 89",
+    "selection_track": "자치구 공모",
+    "selected_date": "2022-10",
+    "selected_date_precision": "month",
+    "area_m2": 42685,
+    "management_plan_stage": null,
+    "representative_point": null,
+    "source_as_of": "2026-03-31",
+    "sources": [
+      "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
+    ]
+  },
+  {
+    "id": "mt-202603-public-073",
+    "district": "관악구",
+    "name": "청룡동 1535",
+    "address": "관악구 청룡동 1535",
+    "selection_track": "자치구 공모",
+    "selected_date": "2022-10",
+    "selected_date_precision": "month",
+    "area_m2": 92871,
+    "management_plan_stage": null,
+    "representative_point": null,
+    "source_as_of": "2026-03-31",
+    "sources": [
+      "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
+    ]
+  },
+  {
+    "id": "mt-202603-public-074",
+    "district": "관악구",
+    "name": "성현동 1021",
+    "address": "관악구 성현동 1021",
+    "selection_track": "자치구 공모",
+    "selected_date": "2023-06",
+    "selected_date_precision": "month",
+    "area_m2": 70948,
+    "management_plan_stage": null,
+    "representative_point": null,
+    "source_as_of": "2026-03-31",
+    "sources": [
+      "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
+    ]
+  },
+  {
+    "id": "mt-202603-public-075",
+    "district": "관악구",
+    "name": "은천동 635-540",
+    "address": "관악구 은천동 635-540",
+    "selection_track": "자치구 공모",
+    "selected_date": "2023-09",
+    "selected_date_precision": "month",
+    "area_m2": 65070,
+    "management_plan_stage": null,
+    "representative_point": null,
+    "source_as_of": "2026-03-31",
+    "sources": [
+      "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
+    ]
+  },
+  {
+    "id": "mt-202603-public-076",
+    "district": "관악구",
+    "name": "은천동 938-5",
+    "address": "관악구 은천동 938-5",
+    "selection_track": "자치구 공모",
+    "selected_date": "2023-09",
+    "selected_date_precision": "month",
+    "area_m2": 74515,
+    "management_plan_stage": null,
+    "representative_point": null,
+    "source_as_of": "2026-03-31",
+    "sources": [
+      "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
+    ]
+  },
+  {
+    "id": "mt-202603-public-077",
+    "district": "관악구",
+    "name": "난곡동 697-20",
+    "address": "관악구 난곡동 697-20",
+    "selection_track": "자치구 공모",
+    "selected_date": "2024-07",
+    "selected_date_precision": "month",
+    "area_m2": 41935,
+    "management_plan_stage": null,
+    "representative_point": null,
+    "source_as_of": "2026-03-31",
+    "sources": [
+      "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
+    ]
+  },
+  {
+    "id": "mt-202603-public-078",
+    "district": "광진구",
+    "name": "자양1동 799",
+    "address": "광진구 자양1동 799",
+    "selection_track": "자치구 공모",
+    "selected_date": "2024-07",
+    "selected_date_precision": "month",
+    "area_m2": 73362,
+    "management_plan_stage": null,
+    "representative_point": null,
+    "source_as_of": "2026-03-31",
+    "sources": [
+      "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
+    ]
+  },
+  {
+    "id": "mt-202603-public-079",
+    "district": "광진구",
+    "name": "자양2동 649",
+    "address": "광진구 자양2동 649",
+    "selection_track": "자치구 공모",
+    "selected_date": "2024-08",
+    "selected_date_precision": "month",
+    "area_m2": 88762,
+    "management_plan_stage": null,
+    "representative_point": null,
+    "source_as_of": "2026-03-31",
+    "sources": [
+      "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
+    ]
+  },
+  {
+    "id": "mt-202603-public-080",
+    "district": "서초구",
+    "name": "방배동 977",
+    "address": "서초구 방배동 977",
+    "selection_track": "자치구 공모",
+    "selected_date": "2021-11",
+    "selected_date_precision": "month",
+    "area_m2": 7190,
+    "management_plan_stage": null,
+    "representative_point": null,
+    "source_as_of": "2026-03-31",
+    "sources": [
+      "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
+    ]
+  },
+  {
+    "id": "mt-202603-public-081",
+    "district": "서초구",
+    "name": "양재2동 374",
+    "address": "서초구 양재2동 374",
+    "selection_track": "자치구 공모",
+    "selected_date": "2024-02",
+    "selected_date_precision": "month",
+    "area_m2": 61289,
+    "management_plan_stage": null,
+    "representative_point": null,
+    "source_as_of": "2026-03-31",
+    "sources": [
+      "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
+    ]
+  },
+  {
+    "id": "mt-202603-public-082",
+    "district": "서초구",
+    "name": "양재2동 382",
+    "address": "서초구 양재2동 382",
+    "selection_track": "자치구 공모",
+    "selected_date": "2024-02",
+    "selected_date_precision": "month",
+    "area_m2": 68804,
+    "management_plan_stage": null,
+    "representative_point": null,
+    "source_as_of": "2026-03-31",
+    "sources": [
+      "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
+    ]
+  },
+  {
+    "id": "mt-202603-public-083",
+    "district": "서대문구",
+    "name": "천연동 89-16",
+    "address": "서대문구 천연동 89-16",
+    "selection_track": "자치구 공모",
+    "selected_date": "2022-06",
+    "selected_date_precision": "month",
+    "area_m2": 18654,
+    "management_plan_stage": null,
+    "representative_point": null,
+    "source_as_of": "2026-03-31",
+    "sources": [
+      "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
+    ]
+  },
+  {
+    "id": "mt-202603-public-084",
+    "district": "서대문구",
+    "name": "홍제동 322",
+    "address": "서대문구 홍제동 322",
+    "selection_track": "자치구 공모",
+    "selected_date": "2023-12",
+    "selected_date_precision": "month",
+    "area_m2": 34343,
+    "management_plan_stage": null,
+    "representative_point": null,
+    "source_as_of": "2026-03-31",
+    "sources": [
+      "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
+    ]
+  },
+  {
+    "id": "mt-202603-public-085",
+    "district": "용산구",
+    "name": "원효로4가 71",
+    "address": "용산구 원효로4가 71",
+    "selection_track": "자치구 공모",
+    "selected_date": "2022-10",
+    "selected_date_precision": "month",
+    "area_m2": 26192,
+    "management_plan_stage": null,
+    "representative_point": null,
+    "source_as_of": "2026-03-31",
+    "sources": [
+      "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
+    ]
+  },
+  {
+    "id": "mt-202603-public-086",
+    "district": "종로구",
+    "name": "구기동 100-48",
+    "address": "종로구 구기동 100-48",
+    "selection_track": "자치구 공모",
+    "selected_date": "2022-06",
+    "selected_date_precision": "month",
+    "area_m2": 64231,
+    "management_plan_stage": null,
+    "representative_point": null,
+    "source_as_of": "2026-03-31",
+    "sources": [
+      "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
+    ]
+  },
+  {
+    "id": "mt-202603-public-087",
+    "district": "강남구",
+    "name": "일원동 619-641",
+    "address": "강남구 일원동 619-641",
+    "selection_track": "자치구 공모",
+    "selected_date": "2022-11",
+    "selected_date_precision": "month",
+    "area_m2": 90992,
+    "management_plan_stage": null,
+    "representative_point": null,
+    "source_as_of": "2026-03-31",
+    "sources": [
+      "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
+    ]
+  },
+  {
+    "id": "mt-202603-public-088",
+    "district": "동대문구",
+    "name": "답십리동 489",
+    "address": "동대문구 답십리동 489",
+    "selection_track": "자치구 공모",
+    "selected_date": "2023-12",
+    "selected_date_precision": "month",
+    "area_m2": 55045,
+    "management_plan_stage": null,
+    "representative_point": null,
+    "source_as_of": "2026-03-31",
+    "sources": [
+      "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
+    ]
+  },
+  {
+    "id": "mt-202603-resident-001",
+    "district": "종로구",
+    "name": "숭인동 61",
+    "address": "종로구 숭인동 61",
+    "selection_track": "주민제안",
+    "selected_date": "2024-11",
+    "selected_date_precision": "month",
+    "area_m2": 17334,
+    "management_plan_stage": null,
+    "representative_point": null,
+    "source_as_of": "2026-03-31",
+    "sources": [
+      "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
+    ]
+  },
+  {
+    "id": "mt-202603-resident-002",
+    "district": "용산구",
+    "name": "서계동 116",
+    "address": "용산구 서계동 116",
+    "selection_track": "주민제안",
+    "selected_date": "2024-03",
+    "selected_date_precision": "month",
+    "area_m2": 11490,
+    "management_plan_stage": null,
+    "representative_point": null,
+    "source_as_of": "2026-03-31",
+    "sources": [
+      "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
+    ]
+  },
+  {
+    "id": "mt-202603-resident-003",
+    "district": "성동구",
+    "name": "금호동1가 129",
+    "address": "성동구 금호동1가 129",
+    "selection_track": "주민제안",
+    "selected_date": "2024-06",
+    "selected_date_precision": "month",
+    "area_m2": 15724,
+    "management_plan_stage": null,
+    "representative_point": null,
+    "source_as_of": "2026-03-31",
+    "sources": [
+      "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
+    ]
+  },
+  {
+    "id": "mt-202603-resident-005",
+    "district": "광진구",
+    "name": "자양1동 772-1",
+    "address": "광진구 자양1동 772-1",
+    "selection_track": "주민제안",
+    "selected_date": "2024-11",
+    "selected_date_precision": "month",
+    "area_m2": 42315,
+    "management_plan_stage": null,
+    "representative_point": null,
+    "source_as_of": "2026-03-31",
+    "sources": [
+      "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
+    ]
+  },
+  {
+    "id": "mt-202603-resident-006",
+    "district": "광진구",
+    "name": "자양1동 226-1",
+    "address": "광진구 자양1동 226-1",
+    "selection_track": "주민제안",
+    "selected_date": "2025-04",
+    "selected_date_precision": "month",
+    "area_m2": 19836,
+    "management_plan_stage": null,
+    "representative_point": null,
+    "source_as_of": "2026-03-31",
+    "sources": [
+      "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
+    ]
+  },
+  {
+    "id": "mt-202603-resident-007",
+    "district": "광진구",
+    "name": "광장동 264-1",
+    "address": "광진구 광장동 264-1",
+    "selection_track": "주민제안",
+    "selected_date": "2024-12",
+    "selected_date_precision": "month",
+    "area_m2": 34123,
+    "management_plan_stage": null,
+    "representative_point": null,
+    "source_as_of": "2026-03-31",
+    "sources": [
+      "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
+    ]
+  },
+  {
+    "id": "mt-202603-resident-008",
+    "district": "광진구",
+    "name": "구의3동 587-58",
+    "address": "광진구 구의3동 587-58",
+    "selection_track": "주민제안",
+    "selected_date": "2025-07",
+    "selected_date_precision": "month",
+    "area_m2": 20358,
+    "management_plan_stage": null,
+    "representative_point": null,
+    "source_as_of": "2026-03-31",
+    "sources": [
+      "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
+    ]
+  },
+  {
+    "id": "mt-202603-resident-009",
+    "district": "중랑구",
+    "name": "신내동 493-13",
+    "address": "중랑구 신내동 493-13",
+    "selection_track": "주민제안",
+    "selected_date": "2024-08",
+    "selected_date_precision": "month",
+    "area_m2": 33876,
+    "management_plan_stage": null,
+    "representative_point": null,
+    "source_as_of": "2026-03-31",
+    "sources": [
+      "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
+    ]
+  },
+  {
+    "id": "mt-202603-resident-010",
+    "district": "중랑구",
+    "name": "망우동 509",
+    "address": "중랑구 망우동 509",
+    "selection_track": "주민제안",
+    "selected_date": "2025-09",
+    "selected_date_precision": "month",
+    "area_m2": 14541,
+    "management_plan_stage": null,
+    "representative_point": null,
+    "source_as_of": "2026-03-31",
+    "sources": [
+      "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
+    ]
+  },
+  {
+    "id": "mt-202603-resident-011",
+    "district": "성북구",
+    "name": "종암동 125-1",
+    "address": "성북구 종암동 125-1",
+    "selection_track": "주민제안",
+    "selected_date": "2023-11",
+    "selected_date_precision": "month",
+    "area_m2": 11755,
+    "management_plan_stage": null,
+    "representative_point": null,
+    "source_as_of": "2026-03-31",
+    "sources": [
+      "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
+    ]
+  },
+  {
+    "id": "mt-202603-resident-012",
+    "district": "성북구",
+    "name": "정릉동 559-43",
+    "address": "성북구 정릉동 559-43",
+    "selection_track": "주민제안",
+    "selected_date": "2024-07",
+    "selected_date_precision": "month",
+    "area_m2": 13825,
+    "management_plan_stage": null,
+    "representative_point": null,
+    "source_as_of": "2026-03-31",
+    "sources": [
+      "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
+    ]
+  },
+  {
+    "id": "mt-202603-resident-013",
+    "district": "성북구",
+    "name": "정릉동 226-1",
+    "address": "성북구 정릉동 226-1",
+    "selection_track": "주민제안",
+    "selected_date": "2024-09",
+    "selected_date_precision": "month",
+    "area_m2": 27024,
+    "management_plan_stage": null,
+    "representative_point": null,
+    "source_as_of": "2026-03-31",
+    "sources": [
+      "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status",
+      "https://www.seoul.go.kr/news/news_report.do?nttNo=447946"
+    ],
+    "quality_flags": [
+      "baseline_district_corrected_by_specific_official_notice"
+    ]
+  },
+  {
+    "id": "mt-202603-resident-014",
+    "district": "성북구",
+    "name": "정릉동 199-1",
+    "address": "성북구 정릉동 199-1",
+    "selection_track": "주민제안",
+    "selected_date": "2025-09",
+    "selected_date_precision": "month",
+    "area_m2": 34564,
+    "management_plan_stage": null,
+    "representative_point": null,
+    "source_as_of": "2026-03-31",
+    "sources": [
+      "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
+    ]
+  },
+  {
+    "id": "mt-202603-resident-015",
+    "district": "강북구",
+    "name": "미아동 791-1134",
+    "address": "강북구 미아동 791-1134",
+    "selection_track": "주민제안",
+    "selected_date": "2025-05",
+    "selected_date_precision": "month",
+    "area_m2": 14175,
+    "management_plan_stage": null,
+    "representative_point": null,
+    "source_as_of": "2026-03-31",
+    "sources": [
+      "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
+    ]
+  },
+  {
+    "id": "mt-202603-resident-016",
+    "district": "서대문구",
+    "name": "현저동 1-5",
+    "address": "서대문구 현저동 1-5",
+    "selection_track": "주민제안",
+    "selected_date": "2024-05",
+    "selected_date_precision": "month",
+    "area_m2": 15143,
+    "management_plan_stage": null,
+    "representative_point": null,
+    "source_as_of": "2026-03-31",
+    "sources": [
+      "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
+    ]
+  },
+  {
+    "id": "mt-202603-resident-017",
+    "district": "서대문구",
+    "name": "홍은동 10-18",
+    "address": "서대문구 홍은동 10-18",
+    "selection_track": "주민제안",
+    "selected_date": "2024-11",
+    "selected_date_precision": "month",
+    "area_m2": 17668,
+    "management_plan_stage": null,
+    "representative_point": null,
+    "source_as_of": "2026-03-31",
+    "sources": [
+      "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
+    ]
+  },
+  {
+    "id": "mt-202603-resident-018",
+    "district": "서대문구",
+    "name": "홍은동 11-360",
+    "address": "서대문구 홍은동 11-360",
+    "selection_track": "주민제안",
+    "selected_date": "2025-03",
+    "selected_date_precision": "month",
+    "area_m2": 11665,
+    "management_plan_stage": null,
+    "representative_point": null,
+    "source_as_of": "2026-03-31",
+    "sources": [
+      "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
+    ]
+  },
+  {
+    "id": "mt-202603-resident-019",
+    "district": "서대문구",
+    "name": "연희동 520",
+    "address": "서대문구 연희동 520",
+    "selection_track": "주민제안",
+    "selected_date": "2025-06",
+    "selected_date_precision": "month",
+    "area_m2": 19199,
+    "management_plan_stage": null,
+    "representative_point": null,
+    "source_as_of": "2026-03-31",
+    "sources": [
+      "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
+    ]
+  },
+  {
+    "id": "mt-202603-resident-020",
+    "district": "마포구",
+    "name": "창전동 46-1",
+    "address": "마포구 창전동 46-1",
+    "selection_track": "주민제안",
+    "selected_date": "2024-11",
+    "selected_date_precision": "month",
+    "area_m2": 11551,
+    "management_plan_stage": null,
+    "representative_point": null,
+    "source_as_of": "2026-03-31",
+    "sources": [
+      "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
+    ]
+  },
+  {
+    "id": "mt-202603-resident-021",
+    "district": "마포구",
+    "name": "망원동 464-1",
+    "address": "마포구 망원동 464-1",
+    "selection_track": "주민제안",
+    "selected_date": "2025-10",
+    "selected_date_precision": "month",
+    "area_m2": 14783,
+    "management_plan_stage": null,
+    "representative_point": null,
+    "source_as_of": "2026-03-31",
+    "sources": [
+      "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
+    ]
+  },
+  {
+    "id": "mt-202603-resident-022",
+    "district": "양천구",
+    "name": "목동 644-1",
+    "address": "양천구 목동 644-1",
+    "selection_track": "주민제안",
+    "selected_date": "2024-12",
+    "selected_date_precision": "month",
+    "area_m2": 22516,
+    "management_plan_stage": null,
+    "representative_point": null,
+    "source_as_of": "2026-03-31",
+    "sources": [
+      "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
+    ]
+  },
+  {
+    "id": "mt-202603-resident-023",
+    "district": "금천구",
+    "name": "시흥3동 972",
+    "address": "금천구 시흥3동 972",
+    "selection_track": "주민제안",
+    "selected_date": "2025-03",
+    "selected_date_precision": "month",
+    "area_m2": 24030,
+    "management_plan_stage": null,
+    "representative_point": null,
+    "source_as_of": "2026-03-31",
+    "sources": [
+      "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
+    ]
+  },
+  {
+    "id": "mt-202603-resident-024",
+    "district": "동작구",
+    "name": "동작동 102-8",
+    "address": "동작구 동작동 102-8",
+    "selection_track": "주민제안",
+    "selected_date": "2025-06",
+    "selected_date_precision": "month",
+    "area_m2": 21211,
+    "management_plan_stage": null,
+    "representative_point": null,
+    "source_as_of": "2026-03-31",
+    "sources": [
+      "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
+    ]
+  },
+  {
+    "id": "mt-202603-resident-025",
+    "district": "관악구",
+    "name": "신림동 655-78",
+    "address": "관악구 신림동 655-78",
+    "selection_track": "주민제안",
+    "selected_date": "2024-04",
+    "selected_date_precision": "month",
+    "area_m2": 16137,
+    "management_plan_stage": null,
+    "representative_point": null,
+    "source_as_of": "2026-03-31",
+    "sources": [
+      "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
+    ]
+  },
+  {
+    "id": "mt-202603-resident-026",
+    "district": "서초구",
+    "name": "우면동 2",
+    "address": "서초구 우면동 2",
+    "selection_track": "주민제안",
+    "selected_date": "2024-03",
+    "selected_date_precision": "month",
+    "area_m2": 40708,
+    "management_plan_stage": null,
+    "representative_point": null,
+    "source_as_of": "2026-03-31",
+    "sources": [
+      "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
+    ]
+  },
+  {
+    "id": "mt-202603-resident-027",
+    "district": "강동구",
+    "name": "천호동 338번지",
+    "address": "강동구 천호동 338번지",
+    "selection_track": "주민제안",
+    "selected_date": "2024-05",
+    "selected_date_precision": "month",
+    "area_m2": 20492,
+    "management_plan_stage": null,
+    "representative_point": null,
+    "source_as_of": "2026-03-31",
+    "sources": [
+      "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
+    ]
+  },
+  {
+    "id": "mt-202603-resident-028",
+    "district": "성북구",
+    "name": "하월곡동 40-107",
+    "address": "성북구 하월곡동 40-107",
+    "selection_track": "주민제안",
+    "selected_date": "2025-11",
+    "selected_date_precision": "month",
+    "area_m2": 17450,
+    "management_plan_stage": null,
+    "representative_point": null,
+    "source_as_of": "2026-03-31",
+    "sources": [
+      "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
+    ]
+  },
+  {
+    "id": "mt-202603-resident-029",
+    "district": "성북구",
+    "name": "장위동 219-15",
+    "address": "성북구 장위동 219-15",
+    "selection_track": "주민제안",
+    "selected_date": "2025-11",
+    "selected_date_precision": "month",
+    "area_m2": 23025,
+    "management_plan_stage": null,
+    "representative_point": null,
+    "source_as_of": "2026-03-31",
+    "sources": [
+      "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
+    ]
+  },
+  {
+    "id": "mt-202603-resident-030",
+    "district": "성북구",
+    "name": "삼선동3가 42-7",
+    "address": "성북구 삼선동3가 42-7",
+    "selection_track": "주민제안",
+    "selected_date": "2025-12",
+    "selected_date_precision": "month",
+    "area_m2": 16815,
+    "management_plan_stage": null,
+    "representative_point": null,
+    "source_as_of": "2026-03-31",
+    "sources": [
+      "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
+    ]
+  },
+  {
+    "id": "mt-202603-resident-031",
+    "district": "중랑구",
+    "name": "면목동 127-26",
+    "address": "중랑구 면목동 127-26",
+    "selection_track": "주민제안",
+    "selected_date": "2025-12",
+    "selected_date_precision": "month",
+    "area_m2": 21829,
+    "management_plan_stage": null,
+    "representative_point": null,
+    "source_as_of": "2026-03-31",
+    "sources": [
+      "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
+    ]
+  },
+  {
+    "id": "mt-202603-resident-032",
+    "district": "은평구",
+    "name": "응암동 227",
+    "address": "은평구 응암동 227",
+    "selection_track": "주민제안",
+    "selected_date": "2025-12",
+    "selected_date_precision": "month",
+    "area_m2": 19940,
+    "management_plan_stage": null,
+    "representative_point": null,
+    "source_as_of": "2026-03-31",
+    "sources": [
+      "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
+    ]
+  },
+  {
+    "id": "mt-202603-resident-033",
+    "district": "중랑구",
+    "name": "면목동 377-4",
+    "address": "중랑구 면목동 377-4",
+    "selection_track": "주민제안",
+    "selected_date": "2025-12",
+    "selected_date_precision": "month",
+    "area_m2": 22042,
+    "management_plan_stage": null,
+    "representative_point": null,
+    "source_as_of": "2026-03-31",
+    "sources": [
+      "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
+    ]
+  },
+  {
+    "id": "mt-202603-resident-034",
+    "district": "서초구",
+    "name": "서초동 1506-6",
+    "address": "서초구 서초동 1506-6",
+    "selection_track": "주민제안",
+    "selected_date": "2025-12",
+    "selected_date_precision": "month",
+    "area_m2": 46697,
+    "management_plan_stage": null,
+    "representative_point": null,
+    "source_as_of": "2026-03-31",
+    "sources": [
+      "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
+    ]
+  },
+  {
+    "id": "mt-202603-resident-035",
+    "district": "성북구",
+    "name": "장위동 65-107",
+    "address": "성북구 장위동 65-107",
+    "selection_track": "주민제안",
+    "selected_date": "2026-02",
+    "selected_date_precision": "month",
+    "area_m2": 18915,
+    "management_plan_stage": null,
+    "representative_point": null,
+    "source_as_of": "2026-03-31",
+    "sources": [
+      "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
+    ]
+  },
+  {
+    "id": "mt-202603-resident-036",
+    "district": "광진구",
+    "name": "자양2동 593",
+    "address": "광진구 자양2동 593",
+    "selection_track": "주민제안",
+    "selected_date": "2026-02",
+    "selected_date_precision": "month",
+    "area_m2": 74127,
+    "management_plan_stage": null,
+    "representative_point": null,
+    "source_as_of": "2026-03-31",
+    "sources": [
+      "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
+    ]
+  },
+  {
+    "id": "mt-202603-resident-037",
+    "district": "동작구",
+    "name": "사당동 449",
+    "address": "동작구 사당동 449",
+    "selection_track": "주민제안",
+    "selected_date": "2026-02",
+    "selected_date_precision": "month",
+    "area_m2": 60826,
+    "management_plan_stage": null,
+    "representative_point": null,
+    "source_as_of": "2026-03-31",
+    "sources": [
+      "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
+    ]
+  },
+  {
+    "id": "mt-202603-resident-038",
+    "district": "송파구",
+    "name": "잠실동 329",
+    "address": "송파구 잠실동 329",
+    "selection_track": "주민제안",
+    "selected_date": "2026-02",
+    "selected_date_precision": "month",
+    "area_m2": 36766,
+    "management_plan_stage": null,
+    "representative_point": null,
+    "source_as_of": "2026-03-31",
+    "sources": [
+      "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
+    ]
+  },
+  {
+    "id": "mt-202603-resident-039",
+    "district": "양천구",
+    "name": "신월동 480-1",
+    "address": "양천구 신월동 480-1",
+    "selection_track": "주민제안",
+    "selected_date": "2026-02",
+    "selected_date_precision": "month",
+    "area_m2": 41708,
+    "management_plan_stage": null,
+    "representative_point": null,
+    "source_as_of": "2026-03-31",
+    "sources": [
+      "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
+    ]
+  },
+  {
+    "id": "mt-202603-resident-040",
+    "district": "강남구",
+    "name": "삼성동 84",
+    "address": "강남구 삼성동 84",
+    "selection_track": "주민제안",
+    "selected_date": "2026-02",
+    "selected_date_precision": "month",
+    "area_m2": 34802,
+    "management_plan_stage": null,
+    "representative_point": null,
+    "source_as_of": "2026-03-31",
+    "sources": [
+      "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
+    ]
+  },
+  {
+    "id": "mt-202603-resident-041",
+    "district": "구로구",
+    "name": "개봉2동 304",
+    "address": "구로구 개봉2동 304",
+    "selection_track": "주민제안",
+    "selected_date": "2026-02",
+    "selected_date_precision": "month",
+    "area_m2": 34860,
+    "management_plan_stage": null,
+    "representative_point": null,
+    "source_as_of": "2026-03-31",
+    "sources": [
+      "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
+    ]
+  },
+  {
+    "id": "mt-202603-resident-042",
+    "district": "구로구",
+    "name": "개봉2동 305",
+    "address": "구로구 개봉2동 305",
+    "selection_track": "주민제안",
+    "selected_date": "2026-02",
+    "selected_date_precision": "month",
+    "area_m2": 80712,
+    "management_plan_stage": null,
+    "representative_point": null,
+    "source_as_of": "2026-03-31",
+    "sources": [
+      "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
+    ]
+  },
+  {
+    "id": "mt-202603-resident-043",
+    "district": "광진구",
+    "name": "구의3동 224-54",
+    "address": "광진구 구의3동 224-54",
+    "selection_track": "주민제안",
+    "selected_date": "2026-03",
+    "selected_date_precision": "month",
+    "area_m2": 22240,
+    "management_plan_stage": null,
+    "representative_point": null,
+    "source_as_of": "2026-03-31",
+    "sources": [
+      "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
+    ]
+  },
+  {
+    "id": "mt-202603-resident-044",
+    "district": "광진구",
+    "name": "자양동 663",
+    "address": "광진구 자양동 663",
+    "selection_track": "주민제안",
+    "selected_date": "2026-03",
+    "selected_date_precision": "month",
+    "area_m2": 38525,
+    "management_plan_stage": null,
+    "representative_point": null,
+    "source_as_of": "2026-03-31",
+    "sources": [
+      "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
+    ]
+  },
+  {
+    "id": "mt-2026-extra-001",
+    "district": "서초구",
+    "name": "양재동 77",
+    "address": "서초구 양재동 77",
+    "selection_track": null,
+    "selected_date": null,
+    "selected_date_precision": null,
+    "area_m2": null,
+    "management_plan_stage": null,
+    "representative_point": null,
+    "source_as_of": "2026-06-25",
+    "sources": [
+      "https://www.eum.go.kr/web/cp/hr/hrPeopleHearDet.jsp?chrgorg=&enddt=&gosino=&mobile_yn=&pageNo=6&selSggCd=&select2=&select_3=&seq=5094&startdt=&zonenm=",
+      "https://www.seoul.go.kr/news/news_report.do?nttNo=459950",
+      "https://eminwon.seocho.go.kr/emwp/gov/mogaha/ntis/web/ofr/action/OfrAction.do?context=NTIS&homepage_pbs_yn=Y&jndinm=OfrNotAncmtEJB&method=selectOfrNotAncmt&methodnm=selectOfrNotAncmtRegst&not_ancmt_mgt_no=45122&ofr_pageSize=10&subCheck=Y"
+    ],
+    "selection_evidence": "named_official_notice"
+  },
+  {
+    "id": "mt-2026-extra-002",
+    "district": "용산구",
+    "name": "신창동 76-1",
+    "address": "용산구 신창동 76-1",
+    "selection_track": null,
+    "selected_date": null,
+    "selected_date_precision": null,
+    "area_m2": null,
+    "management_plan_stage": null,
+    "representative_point": null,
+    "source_as_of": "2026-06-25",
+    "sources": [
+      "https://www.eum.go.kr/web/cp/hr/hrPeopleHearDet.jsp?chrgorg=&enddt=&gosino=&mobile_yn=&pageNo=6&selSggCd=&select2=&select_3=&seq=5094&startdt=&zonenm=",
+      "https://www.seoul.go.kr/news/news_report.do?nttNo=459950"
+    ],
+    "selection_evidence": "named_official_notice"
+  },
+  {
+    "id": "mt-2026-extra-003",
+    "district": "동작구",
+    "name": "노량진동 84-24",
+    "address": "동작구 노량진동 84-24",
+    "selection_track": null,
+    "selected_date": null,
+    "selected_date_precision": null,
+    "area_m2": null,
+    "management_plan_stage": null,
+    "representative_point": null,
+    "source_as_of": "2026-06-25",
+    "sources": [
+      "https://www.eum.go.kr/web/cp/hr/hrPeopleHearDet.jsp?chrgorg=&enddt=&gosino=&mobile_yn=&pageNo=6&selSggCd=&select2=&select_3=&seq=5094&startdt=&zonenm=",
+      "https://www.seoul.go.kr/news/news_report.do?nttNo=459950"
+    ],
+    "selection_evidence": "named_official_notice"
+  },
+  {
+    "id": "mt-2026-extra-004",
+    "district": "관악구",
+    "name": "신림동 661-2",
+    "address": "관악구 신림동 661-2",
+    "selection_track": null,
+    "selected_date": null,
+    "selected_date_precision": null,
+    "area_m2": null,
+    "management_plan_stage": null,
+    "representative_point": null,
+    "source_as_of": "2026-06-25",
+    "sources": [
+      "https://www.eum.go.kr/web/cp/hr/hrPeopleHearDet.jsp?chrgorg=&enddt=&gosino=&mobile_yn=&pageNo=6&selSggCd=&select2=&select_3=&seq=5094&startdt=&zonenm=",
+      "https://www.seoul.go.kr/news/news_report.do?nttNo=459950",
+      "https://www.gwanak.go.kr/site/gwanak/ex/bbs/View.do?bcIdx=201694&cbIdx=239"
+    ],
+    "selection_evidence": "named_official_notice"
+  },
+  {
+    "id": "mt-2026-extra-005",
+    "district": "송파구",
+    "name": "방이동 162",
+    "address": "송파구 방이동 162",
+    "selection_track": null,
+    "selected_date": null,
+    "selected_date_precision": null,
+    "area_m2": null,
+    "management_plan_stage": null,
+    "representative_point": null,
+    "source_as_of": "2026-06-25",
+    "sources": [
+      "https://www.eum.go.kr/web/cp/hr/hrPeopleHearDet.jsp?chrgorg=&enddt=&gosino=&mobile_yn=&pageNo=6&selSggCd=&select2=&select_3=&seq=5094&startdt=&zonenm=",
+      "https://www.seoul.go.kr/news/news_report.do?nttNo=459950"
+    ],
+    "selection_evidence": "named_official_notice"
+  },
+  {
+    "id": "mt-2026-extra-006",
+    "district": "성북구",
+    "name": "석관동 207-1",
+    "address": "성북구 석관동 207-1",
+    "selection_track": null,
+    "selected_date": "2026-07-16",
+    "selected_date_precision": "day",
+    "area_m2": null,
+    "management_plan_stage": null,
+    "representative_point": null,
+    "source_as_of": "2026-07-30",
+    "sources": [
+      "https://www.seoul.go.kr/news/news_report.do?nttNo=462973",
+      "https://www.eum.go.kr/web/cp/hr/hrPeopleHearDet.jsp?chrgorg=&enddt=&gosino=&mobile_yn=&pageNo=6&selSggCd=&select2=&select_3=&seq=5302&startdt=&zonenm="
+    ],
+    "selection_evidence": "named_official_notice"
+  },
+  {
+    "id": "mt-2026-extra-007",
+    "district": "강동구",
+    "name": "암사동 495",
+    "address": "강동구 암사동 495",
+    "selection_track": null,
+    "selected_date": "2026-07-16",
+    "selected_date_precision": "day",
+    "area_m2": null,
+    "management_plan_stage": null,
+    "representative_point": null,
+    "source_as_of": "2026-07-30",
+    "sources": [
+      "https://www.seoul.go.kr/news/news_report.do?nttNo=462973",
+      "https://www.eum.go.kr/web/cp/hr/hrPeopleHearDet.jsp?chrgorg=&enddt=&gosino=&mobile_yn=&pageNo=6&selSggCd=&select2=&select_3=&seq=5302&startdt=&zonenm="
+    ],
+    "selection_evidence": "named_official_notice"
+  }
+]
