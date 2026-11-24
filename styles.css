@@ -392,6 +392,7 @@ body[data-loading=true] .map-loading { display: block; position: absolute; top: 
 .detail-section .metrics dd { font-size: 15px; }
 .detail-section .metrics small { display: block; margin-top: 2px; }
 .detail-section .unverified { font-weight: 500; color: #657486; }
+.detail-section .status-note { font-weight: 500; color: #4a5b6d; font-style: normal; opacity: .82; }
 .status-tag { justify-self: start; border-radius: 5px; padding: 2px 7px; background: #ebf2fa; color: #245584; font-weight: 650; }
 .status-tag.unverified { background: #f1f3f5; }
 .detail-extra { margin-top: 8px; }
