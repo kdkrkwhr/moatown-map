@@ -384,6 +384,8 @@ body[data-loading=true] .map-loading { display: block; position: absolute; top: 
 #measure-status:empty { display: none; }
 .map-caption { display: block; position: absolute; transform: translate(-50%,-100%); width: max-content; max-width: min(155px,45vw); white-space: normal; overflow-wrap: anywhere; word-break: keep-all; border-radius: 6px; background: #fffffff2; border: 1px solid #b5c5d3; padding: 3px 6px; box-shadow: 0 2px 5px #1e37481c; color: #233e51; font: 650 12px/1.35 Pretendard,sans-serif; }
 .map-caption small { display: block; color: var(--stage-ink,var(--sub)); font-size: 10px; }
+.map-caption.selected-caption { color: white; background: var(--stage-ink,#205975); border-color: white; box-shadow: 0 0 0 2px var(--stage-ink,#205975),0 3px 8px #23364144; }
+.map-caption.selected-caption small { color: white; }
 .zone-caption { border-left: 3px solid var(--stage-ink); }
 .zone-point-caption { border: 1px solid var(--stage-ink); border-radius: 8px; text-align: center; padding: 3px 7px; transform: translate(-50%,calc(-100% - 5px)); }
 .zone-point-caption::after { content: ''; position: absolute; left: 50%; bottom: -5px; width: 7px; height: 7px; border: 1px solid var(--stage-ink); border-width: 0 1px 1px 0; background: white; transform: translateX(-50%) rotate(45deg); }
@@ -483,6 +485,85 @@ body[data-loading=true] .map-loading { display: block; position: absolute; top: 
   .summary-badges { margin: 5px 0; }
   .detail-pane { padding: 8px 10px; }
 }
-@media (max-width:760px) and (orientation:portrait) {
-  #explorer:has(#detail-view:not([hidden])):not(.collapsed):not(.tall) { height: min(72%, max(480px, 60%)); }
+#map-options { display: contents; }
+#map-search-dock, #layer-open { display: none; }
+
+@media (max-width:760px) and (orientation:portrait), (max-width:540px) {
+  body:has(.workspace) .topbar { height: 42px; padding-inline: 15px; border: 0; }
+  body:has(.workspace) .main-nav a[aria-current] { display: none; }
+  body:has(.workspace) .brand-mark { width: 25px; height: 25px; }
+  .workspace { position: relative; display: block; isolation: isolate; }
+  .workspace > .map-stage { position: absolute; inset: 0; }
+  #map-search-dock { display: block; position: absolute; z-index: 4; inset: 0 0 auto; padding: 9px 12px 4px; pointer-events: none; }
+  #project-search { padding: 0; gap: 8px; background: none; }
+  .search-line, .filter-row > * { pointer-events: auto; }
+  .search-line { display: flex; align-items: center; padding-right: 5px; background: white; border: 1px solid #cad9df; border-radius: 17px; box-shadow: 0 3px 14px #163c5226; }
+  .search-line:focus-within { border-color: #286d91; }
+  .search-line .search-box { flex: 1; min-width: 0; border: 0; background: none; outline: none; padding: 0 13px; gap: 11px; }
+  .search-line input { height: 48px; font-weight: 550; }
+  .search-line #address-open { position: static; flex: none; min-height: 38px; padding: 4px 10px; border: 0; border-radius: 12px; box-shadow: none; background: #eef6f4; color: #145e54; font-size: 12px; }
+  .filter-row { flex-wrap: nowrap; align-items: stretch; gap: 5px; }
+  .filter-row select, .filter-row .stage-filters summary, #recent-filter, #layer-open {
+    box-sizing: border-box; min-height: 38px; border: 1px solid #d2dfe3; border-radius: 20px;
+    padding: 6px 10px; background-color: white; color: #254352; font-size: 12px; font-weight: 650; box-shadow: 0 2px 5px #163c5214;
+  }
+  .filter-row select { max-width: 90px; }
+  .stage-filters { min-width: 0; }
+  .filter-row .stage-filters summary { gap: 6px; }
+  #filter-label { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 22vw; }
+  .filter-row select:has(option:checked:not([value=""])), .stage-filters[open] summary { color: #145e54; border-color: #579584; }
+  #layer-open { display: inline-flex; align-items: center; gap: 6px; margin-left: auto; white-space: nowrap; }
+  .layer-icon { width: 12px; height: 10px; position: relative; }
+  .layer-icon::before, .layer-icon::after { content: ''; position: absolute; left: 1px; top: 0; width: 9px; height: 7px; border: 1.4px solid; transform: rotate(-28deg) skewX(28deg); border-radius: 1px; }
+  .layer-icon::after { top: 3px; border-top: none; border-right: none; }
+  .filter-menu { top: calc(100% + 6px); bottom: auto; max-height: min(56dvh,440px); }
+  #explorer, #explorer:has(#detail-view:not([hidden])) {
+    position: absolute; z-index: 3; inset: auto 8px calc(23px + env(safe-area-inset-bottom)); height: min(42%,340px);
+    padding: 0; border: 1px solid #d7e2e7; border-radius: 21px; background: white; overflow: hidden;
+    box-shadow: 0 5px 25px #183d5233;
+  }
+  #explorer.tall:not(.collapsed), #explorer.tall:has(#detail-view:not([hidden])) {
+    height: min(75%,calc(100% - 132px - env(safe-area-inset-bottom)));
+  }
+  #explorer.collapsed, #explorer.collapsed:has(#detail-view:not([hidden])) { height: auto; }
+  #explorer.collapsed #panel-content { display: none; }
+  #explorer.collapsed:has(#detail-view:not([hidden])) #panel-content { display: flex; flex: none; }
+  #explorer.collapsed .detail-tabs, #explorer.collapsed .detail-pane { display: none; }
+  .sheet-tools { position: relative; gap: 4px; padding: 7px 13px 0; min-height: 43px; touch-action: none; }
+  .sheet-tools::before { content: ''; position: absolute; width: 31px; height: 4px; border-radius: 4px; background: #becdd3; top: 5px; left: calc(50% - 15.5px); pointer-events: none; }
+  #sheet-toggle { min-height: 39px; font-size: 14px; justify-content: space-between; }
+  #sheet-toggle::before { display: none; }
+  #sheet-toggle .chevron { margin-left: 6px; }
+  #explorer:has(#detail-view:not([hidden])) #sheet-toggle { justify-content: flex-end; font-size: 13px; color: #246280; }
+  #explorer:has(#detail-view:not([hidden])) #sheet-size { display: none; }
+  .sheet-tools .back { flex: initial; max-width: 60%; min-height: 36px; padding: 0 3px; border: 0; font-size: 12px; color: #486171; }
+  #explorer.collapsed .project-summary { display: grid; grid-template-columns: auto 1fr; align-items: center; gap: 7px 10px; padding: 0 16px 14px; touch-action: none; }
+  #explorer.collapsed .summary-identity { grid-column: 1 / -1; }
+  #explorer.collapsed .summary-identity h2 { font-size: 21px; }
+  #explorer.collapsed .summary-badges { margin: 0; }
+  #explorer.collapsed .summary-badges .regulation-chip { display: none; }
+  #explorer.collapsed .summary-badges > span { font-size: 12px; }
+  #explorer.collapsed .summary-kpis { display: block; background: none; border: 0; }
+  #explorer.collapsed .summary-kpis > div { display: none; }
+  #explorer.collapsed .summary-kpis > div:nth-child(2) { display: flex; align-items: baseline; flex-wrap: wrap; gap: 4px; padding: 0; border: 0; }
+  #explorer.collapsed .summary-kpis dt { font-size: 12px; }
+  #explorer.collapsed .summary-kpis small { display: none; }
+  #explorer.collapsed .cancel-notice { grid-column: 1 / -1; grid-row: 3; }
+  #explorer.collapsed #town-detail { flex: none; }
+  .map-stage #map-status, .map-stage #measure-status { top: 112px; bottom: auto; }
+  #layer-dialog { margin: auto auto 0; width: min(100%,520px); max-height: 83dvh; border-radius: 22px 22px 0 0; padding: 19px 20px calc(20px + env(safe-area-inset-bottom)); }
+  #layer-dialog #map-options { display: grid; grid-template-columns: minmax(0,1fr); gap: 12px; }
+  #layer-dialog .map-style-picker, #layer-dialog #cadastral, #layer-dialog .map-tools, #layer-dialog .legend, #layer-dialog .legend ul { position: static; box-shadow: none; }
+  #layer-dialog .map-style-picker { display: flex; border-radius: 12px; background: #eff4f6; }
+  #layer-dialog .map-style-picker button { flex: 1; min-height: 42px; }
+  #layer-dialog #cadastral { justify-content: space-between; flex-direction: row-reverse; min-height: 44px; }
+  #layer-dialog .map-tools { display: flex; flex-wrap: wrap; gap: 7px; }
+  #layer-dialog .map-zoom { display: flex; gap: 4px; margin-left: auto; }
+  #layer-dialog .map-tools button { min-height: 42px; }
+  #layer-dialog .legend ul { width: auto; border: 0; border-top: 1px solid var(--line); }
+}
+@media(max-width:355px) {
+  #map-search-dock { padding-inline: 7px; }
+  .filter-row { gap: 3px; }
+  #layer-open, #recent-filter, .filter-row .stage-filters summary { padding-inline: 8px; }
 }

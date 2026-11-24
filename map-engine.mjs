@@ -20,12 +20,13 @@ export function mapSettings(search){
   const params=new URLSearchParams(search);
   return {hybrid:params.get('map')==='hybrid',cadastral:params.get('cadastral')==='1'};
 }
-export function fitPadding(canvas,panel){
-  const edge=Math.min(50,Math.round(Math.min(canvas.width,canvas.height)*.12));
+export function fitPadding(canvas,panel,dock){
   const overlaps=panel && panel.left<canvas.right && panel.right>canvas.left && panel.top<canvas.bottom && panel.bottom>canvas.top;
-  const left=overlaps && panel.height>=canvas.height*.8?Math.max(0,panel.right-canvas.left):0;
+  const left=overlaps && panel.width<canvas.width*.8 && panel.height>=canvas.height*.8?Math.max(0,panel.right-canvas.left):0;
   const bottom=overlaps && !left?Math.max(0,canvas.bottom-panel.top):0;
-  return {top:edge,right:edge,bottom:edge+bottom,left:edge+left};
+  const top=dock?.height && dock.bottom>canvas.top?Math.max(0,dock.bottom-canvas.top):0;
+  const edge=Math.max(0,Math.min(50,Math.round(Math.min(canvas.width-left,canvas.height-top-bottom)*.12)));
+  return {top:edge+top,right:edge,bottom:edge+bottom,left:edge+left};
 }
 export function distanceText(metres){
   const rounded=Math.round(metres);
@@ -72,7 +73,7 @@ export function createProjectMap(m,container,{townById,zoneById,boundaries,distr
     const position=point?.type==='Point' && point.coordinates?.length===2 && point.coordinates.every(Number.isFinite)?ll(point.coordinates):bounds.getCenter();
     const pin=marker(position,label,isTown?80:90,record.name,true);
     on(pin,'click',e=>{if(measuring)measure(e.coord??pin.getPosition());else selectLayer(townId,isTown?null:id);});
-    shapes.set(id,{isTown,townId,polygons,bounds,stage,pin});
+    shapes.set(id,{isTown,townId,polygons,bounds,stage,pin,label});
     if(!isTown)mappedChildren.add(townId);
   }
   for(const zone of zoneById.values()){
@@ -132,14 +133,15 @@ export function createProjectMap(m,container,{townById,zoneById,boundaries,distr
       const show=hit || (isTown?visible.has(id):visibleZones.has(id)||townHits.has(townId)||current.townId===townId);
       const selected=id===(current.zoneId??current.townId);
       const focusedChild=!isTown && current.townId===townId;
-      const style={strokeColor:stage?.ink??'#345b75',fillColor:stage?.fill??'#a3c9dc',
-        fillOpacity:wide?0:isTown?.14:selected?.65:.44,strokeWeight:wide?1:selected||hit?3:focusedChild?2.5:1.6,
+      const style={strokeColor:stage?.ink??(selected?'#155778':'#345b75'),fillColor:stage?.fill??'#a3c9dc',
+        fillOpacity:wide?0:isTown?.14:selected?.65:.44,strokeWeight:wide?1:selected?4:hit?3:focusedChild?2.5:1.6,
         strokeOpacity:wide?.65:1,zIndex:isTown?1:selected?5:3};
       for(const poly of shape.polygons){
         setVisible(poly,show);
         if(show)poly.setStyles(style);
       }
       shape.pin.setZIndex(selected?140:isTown?80:90);
+      shape.label.classList.toggle('selected-caption',selected);
       setVisible(shape.pin,show && !wide && (!isTown || !mappedChildren.has(id)));
     }
     for(const [id,pin] of pins)setVisible(pin,current.townId===id && visible.has(id) && !mappedChildren.has(id));
@@ -148,12 +150,14 @@ export function createProjectMap(m,container,{townById,zoneById,boundaries,distr
       const townId=zoneById.get(id).town_id;
       const show=visibleZones.has(id) || townHits.has(townId) || current.townId===townId;
       pin.setZIndex(selected?150:110);
+      pin.getIcon().content?.classList?.toggle('selected-caption',selected);
       setVisible(pin,!wide && show);
     }
   }
   function fit(){
     const {current,rows,filtered}=view();
-    if(addressPoint){map.setCenter(addressPoint);return;}
+    const opts=fitPadding(container.getBoundingClientRect(),$('explorer').getBoundingClientRect(),$('map-search-dock').getBoundingClientRect());
+    if(addressPoint){map.fitBounds([addressPoint],{...opts,maxZoom:16});return;}
     const points=[];
     function include(id){
       const shape=shapes.get(id);
@@ -170,7 +174,6 @@ export function createProjectMap(m,container,{townById,zoneById,boundaries,distr
     }else if(filtered)for(const {town,zone} of rows){if(town)include(shapes.has(zone?.id) || zonePins.has(zone?.id)?zone.id:town.id);}
     const all=!points.length;
     if(all)points.push(ll([126.76,37.425]),ll([127.184,37.702]));
-    const opts=fitPadding(container.getBoundingClientRect(),$('explorer').getBoundingClientRect());
     map.fitBounds(points,{...opts,maxZoom:all?12:current.townId?17:15});
   }
   function settings(){
@@ -198,7 +201,7 @@ export function createProjectMap(m,container,{townById,zoneById,boundaries,distr
     clearAddress();addressPoint=ll(point);addressIds=new Set(hits.map(h=>h.feature.properties.entity_id));
     const badge=markerText(label,'address-caption');badge.append(node('small','',note));
     addressMarker=marker(addressPoint,badge,160,label);addressMarker.setMap(map);
-    map.setZoom(16,false);map.setCenter(addressPoint);render();
+    fit();render();
   }
   const measureButton=$('measure'),message=$('measure-status');
   function resetMeasure(){
@@ -228,7 +231,12 @@ export function createProjectMap(m,container,{townById,zoneById,boundaries,distr
   $('zoom-in').disabled=$('zoom-out').disabled=false;
   $('zoom-in').onclick=()=>map.setZoom(map.getZoom()+1,true);
   $('zoom-out').onclick=()=>map.setZoom(map.getZoom()-1,true);
-  new ResizeObserver(()=>{map.autoResize();fit();}).observe(container);
+  const resize=new ResizeObserver(entries=>{
+    const canvasChanged=entries.some(entry=>entry.target===container);
+    if(canvasChanged)map.autoResize();
+    if(canvasChanged || $('map-search-dock').offsetHeight)fit();
+  });
+  for(const element of [container,$('explorer'),$('map-search-dock')])resize.observe(element);
   settings();fit();render();
   return {fit,render,settings,clearAddress,showAddress};
 }

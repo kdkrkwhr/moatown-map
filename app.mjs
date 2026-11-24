@@ -1,10 +1,11 @@
 import {renderProjectDetail} from './detail-view.mjs?v=launch-1';
 import {durationSamples,elapsedMonths,formatValue} from './detail-format.mjs?v=launch-1';
 export {elapsedMonths};
-import {loadMaps,createProjectMap} from './map-engine.mjs?v=boundaries-2';
+import {loadMaps,createProjectMap} from './map-engine.mjs?v=mobile-map-1';
 import {loadNews,matchNews,newsCard,sourceLabels} from './news.mjs?v=atlas-1';
 import {searchProjects,managementFilters,progressFilters,recentProjectDates} from './project-search.mjs?v=launch-1';
 import {mountAddressLookup} from './address-reference.mjs?v=seoul-parcels-1';
+const mobileMapQuery='(max-width: 760px) and (orientation: portrait), (max-width: 540px)';
 export function filterTowns(towns, query, district) {
   return searchProjects(towns,new Map(),[],{query,district}).map(row=>row.town);
 }
@@ -97,6 +98,7 @@ export function mount({manifest,towns,zones,boundaries,excluded=[]},sdk){
   const list=get('town-list'),detail=get('town-detail'),search=get('search-input'),district=get('district-filter');
   const defaultTitle=document.title,recentButton=get('recent-filter');
   const explorer=get('explorer'),sheet=get('sheet-toggle'),mapStatus=get('map-status');
+  const mobile=matchMedia(mobileMapQuery);
   const mapGuides=[...document.querySelectorAll('details.stage-guide,details.legend,details.stage-filters')];
   document.addEventListener('click',event=>{
     for(const guide of mapGuides)if(guide.open && !guide.contains(event.target))guide.open=false;
@@ -190,44 +192,72 @@ export function mount({manifest,towns,zones,boundaries,excluded=[]},sdk){
     }
     if(url.href!==location.href) history[replace?'replaceState':'pushState'](null,'',url);
   }
-  function expandSheet(expanded){
-    explorer.classList.toggle('collapsed',!expanded);
-    sheet.setAttribute('aria-expanded',String(expanded));
-  }
   const sheetSize=get('sheet-size');
   function setSheetHeight(height){
     const tall=height===2;
     explorer.classList.toggle('tall',tall);
-    expandSheet(height>0);
+    explorer.classList.toggle('collapsed',height===0);
+    sheet.setAttribute('aria-expanded',String(height>0));
     sheetSize.setAttribute('aria-pressed',String(tall));
     sheetSize.textContent=tall?'기본 높이':'크게 보기';
+    updateSheetLabel();
+    if(height && mobile.matches){
+      const pane=get('pane-areas');
+      const card=pane?.querySelector('[aria-current="true"]');
+      if(card && !pane.hidden)pane.scrollTop+=card.getBoundingClientRect().top-pane.getBoundingClientRect().top-8;
+    }
   }
   const currentHeight=()=>explorer.classList.contains('collapsed')?0:explorer.classList.contains('tall')?2:1;
+  function updateSheetLabel(){
+    const selected=current.townId || current.cancellation;
+    get('sheet-label').textContent=selected?(currentHeight()?'지도 보기':'상세 보기'):(rows.length?'대상지 목록 · '+rows.length+'건':'대상지 목록');
+  }
+  function initialHeight(){
+    if(!mobile.matches)return 1;
+    if(current.zoneId)return 2;
+    return current.townId || current.cancellation?0:filtered()?1:0;
+  }
   sheetSize.addEventListener('click',()=>setSheetHeight(currentHeight()===2?1:2));
   let dragStart=null,dragged=false;
-  sheet.addEventListener('pointerdown',event=>{
+  explorer.addEventListener('pointerdown',event=>{
     if(!event.isPrimary || event.button!==0)return;
-    dragStart=event.clientY;dragged=false;sheet.setPointerCapture(event.pointerId);
+    dragged=false;
+    const handle=event.target.closest('.sheet-tools') || (mobile.matches && !currentHeight() && event.target.closest('.project-summary'));
+    if(!handle || event.target.closest('button:not(#sheet-toggle),a,input'))return;
+    dragStart=event.clientY;event.target.setPointerCapture(event.pointerId);
   });
-  sheet.addEventListener('pointercancel',()=>{dragStart=null;dragged=false;});
-  sheet.addEventListener('pointerup',event=>{
+  explorer.addEventListener('pointercancel',()=>{dragStart=null;dragged=false;});
+  explorer.addEventListener('pointerup',event=>{
     if(dragStart===null)return;
     const distance=dragStart-event.clientY;
     dragStart=null;
     if(Math.abs(distance)<24)return;
-    dragged=true;setSheetHeight(Math.max(0,Math.min(2,currentHeight()+Math.sign(distance))));
+    const selected=current.townId || current.cancellation;
+    dragged=true;setSheetHeight(selected?(distance>0?2:0):Math.max(0,Math.min(2,currentHeight()+Math.sign(distance))));
   });
-  sheet.addEventListener('click',event=>{
-    if(!dragged || event.detail===0)setSheetHeight(currentHeight()?0:1);
-    dragged=false;
+  explorer.addEventListener('click',event=>{
+    if(dragged && event.detail){dragged=false;event.preventDefault();event.stopPropagation();}
+  },true);
+  function toggleSheet(){
+    const selected=current.townId || current.cancellation;
+    setSheetHeight(currentHeight()?0:selected?2:1);
+  }
+  sheet.addEventListener('click',toggleSheet);
+  explorer.addEventListener('click',event=>{
+    if(event.target.matches('.sheet-tools'))toggleSheet();
   });
-  if(matchMedia('(max-width: 760px) and (orientation: portrait)').matches && !filtered() && !current.townId)setSheetHeight(0);
+  setSheetHeight(initialHeight());
+  mobile.addEventListener('change',()=>setSheetHeight(initialHeight()));
   function clearAddress(){map?.clearAddress();}
   function fitView(){map?.fit();}
   function renderLayers(){map?.render();}
-  mountAddressLookup(townById,boundaries,result=>map?.showAddress(result),()=>Boolean(map));
+  mountAddressLookup(townById,boundaries,result=>{
+    if(mobile.matches)setSheetHeight(0);
+    map?.showAddress(result);
+  },()=>Boolean(map));
   function renderList(){
     rows=results();
+    updateSheetLabel();
     recentButton.setAttribute('aria-pressed',String(recentOnly));
     visible=new Set(rows.filter(row=>row.town).map(row=>row.town.id));
     visibleZones=new Set(rows.filter(row=>row.zone).map(row=>row.zone.id));
@@ -310,7 +340,8 @@ export function mount({manifest,towns,zones,boundaries,excluded=[]},sdk){
     const town=townById.get(current.townId)??cancellations.get(current.cancellation),zone=zoneById.get(current.zoneId);
     document.title=town?(zone??town).name+' 모아타운 현황 - '+defaultTitle:defaultTitle;
     get('list-view').hidden=Boolean(town);get('detail-view').hidden=!town;
-    get('sheet-label').textContent=zone?'사업구역 상세':town?'대상지 상세':'주소·사업 단계 검색';
+    get('back-results').hidden=!town;
+    updateSheetLabel();
     detail.replaceChildren();
     if(!town)return;
     const query=[district.value,search.value.trim()].filter(Boolean).join(' ');
@@ -318,7 +349,7 @@ export function mount({manifest,towns,zones,boundaries,excluded=[]},sdk){
     get('back-label').textContent=zone && !direct ? town.name : (query?query+' · ':'')+'검색 결과 '+rows.length+'건';
     const children=groups.get(town.id)??[];
     renderProjectDetail(detail,{town,zone,children,boundaries:boundaryProps,snapshot:manifest.snapshot_date,cityRule:current.cancellation?null:manifest.seoul_road_permit,
-      registryUrl:manifest.source_urls?.official_project_registry,stats:planStats,select,badge:stageBadge,copyLink,initialTab});
+      registryUrl:manifest.source_urls?.official_project_registry,stats:planStats,select:(townId,zoneId)=>select(townId,zoneId,null,'areas'),badge:stageBadge,copyLink,initialTab});
     renderRelatedNews();
   }
   function renderRelatedNews(){
@@ -343,8 +374,11 @@ export function mount({manifest,towns,zones,boundaries,excluded=[]},sdk){
   function select(townId,zoneId,cancellation=null,initialTab){
     clearAddress();
     current={townId,zoneId,cancellation};
-    expandSheet(true);writeUrl();renderPanel(initialTab);renderLayers();fitView();
-    const focusTarget=zoneId?detail.querySelector('#pane-areas [aria-current="true"]'):detail.querySelector('h2');
+    const preview=mobile.matches && (townId || cancellation) && !initialTab;
+    setSheetHeight(preview?0:mobile.matches && initialTab?2:1);
+    if(mobile.matches && (townId || cancellation))search.blur();
+    writeUrl();renderPanel(initialTab);renderLayers();fitView();
+    const focusTarget=zoneId && !preview?detail.querySelector('#pane-areas [aria-current="true"]'):detail.querySelector('h2');
     focusTarget?.focus({preventScroll:true});
   }
   get('back-results').addEventListener('click',()=>{
@@ -358,13 +392,21 @@ export function mount({manifest,towns,zones,boundaries,excluded=[]},sdk){
   function updateFilters(replace=true){
     clearAddress();
     current={townId:null,zoneId:null};
-    expandSheet(true);writeUrl(replace);renderList();renderPanel();renderLayers();fitView();
+    setSheetHeight(mobile.matches && !filtered()?0:1);writeUrl(replace);renderList();renderPanel();renderLayers();fitView();
   }
   function reset(){
     search.value='';district.value='';chosen.plan='';chosen.progress='';recentOnly=false;
     get('stage-filter-box').open=false;updateFilters(false);
   }
   search.addEventListener('input',()=>updateFilters());
+  search.addEventListener('focus',()=>{
+    if(!mobile.matches)return;
+    if(current.townId || current.cancellation)select(null,null);
+    setSheetHeight(1);
+  });
+  search.addEventListener('keydown',event=>{
+    if(event.key==='Enter' && !event.isComposing && mobile.matches){search.blur();setSheetHeight(1);}
+  });
   recentButton.disabled=false;
   recentButton.addEventListener('click',()=>{recentOnly=!recentOnly;updateFilters(false);});
   function refreshRecentDates(){
@@ -380,7 +422,7 @@ export function mount({manifest,towns,zones,boundaries,excluded=[]},sdk){
   get('apply-stage').addEventListener('click',()=>{get('stage-filter-box').open=false;get('stage-filter-box').querySelector('summary').focus();});
   get('reset-map').addEventListener('click',reset);
   window.addEventListener('popstate',()=>{
-    readUrl();expandSheet(true);renderList();renderPanel();
+    readUrl();setSheetHeight(initialHeight());renderList();renderPanel();
     try{
       clearAddress();map?.settings();renderLayers();fitView();
     }catch{
@@ -415,9 +457,34 @@ export function mount({manifest,towns,zones,boundaries,excluded=[]},sdk){
       view:()=>({current,rows,visible,visibleZones,townHits,filtered:filtered()})});
   }).catch(()=>{mapStatus.textContent='네이버 지도를 열 수 없습니다. 검색 결과와 구역 상세는 목록에서 확인하세요.';});
 }
+function placeMobileControls(){
+  const get=id=>document.getElementById(id),mobile=matchMedia(mobileMapQuery);
+  const search=get('project-search'),searchInput=get('search-input'),dock=get('map-search-dock');
+  const options=get('map-options'),dialog=get('layer-dialog'),address=get('address-open'),back=get('back-results');
+  const mapStage=document.querySelector('.map-stage');
+  function place(){
+    if(dialog.open)dialog.close();
+    if(mobile.matches){
+      dock.append(search);search.querySelector('.search-line').append(address);
+      dialog.append(options);document.querySelector('.sheet-tools').prepend(back);
+      searchInput.placeholder='어느 동네·구역을 찾으세요?';address.textContent='주소 판별';
+    }else{
+      document.querySelector('.results-head').before(search);mapStage.append(options,address);
+      get('detail-view').prepend(back);
+      searchInput.placeholder='주소, 구역명 또는 사업 단계';address.textContent='주소 위치 확인';
+    }
+  }
+  mobile.addEventListener('change',place);place();
+  get('layer-open').addEventListener('click',()=>dialog.showModal());
+  get('layer-close').addEventListener('click',()=>dialog.close());
+  options.addEventListener('click',event=>{
+    if(dialog.open && event.target.closest('#measure,#reset-map,#zoom-in,#zoom-out'))dialog.close();
+  });
+}
 function prepareLoading(){
   const $=id=>document.getElementById(id);
   const params=new URLSearchParams(location.search);
+  placeMobileControls();
   $('search-input').value=params.get('q')??'';
   $('recent-filter').setAttribute('aria-pressed',String(params.get('recent')==='1'));
   const region=params.get('district');
@@ -434,6 +501,10 @@ function prepareLoading(){
   }
   if(selected.length)$('filter-label').textContent=selected.join(' · ');
   const isDetail=Boolean(params.get('town')||params.get('zone'));
+  if(matchMedia(mobileMapQuery).matches && !isDetail && !['district','q','recent','plan','progress','cancellation'].some(key=>params.get(key))){
+    $('explorer').classList.add('collapsed');$('sheet-toggle').setAttribute('aria-expanded','false');
+  }
+  $('back-results').hidden=!isDetail;
   $('detail-view').hidden=!isDetail;$('list-view').hidden=isDetail;
   if(isDetail)$('sheet-label').textContent=params.get('zone')?'사업구역 상세':'대상지 상세';
   $('search-input').disabled=$('district-filter').disabled=true;

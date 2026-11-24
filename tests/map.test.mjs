@@ -104,6 +104,11 @@ test('fit padding compensates only the part of the panel that covers the map',as
   assert.deepEqual(fitPadding(map,box(0,60,370,720)),{top:50,right:50,bottom:50,left:420});
   assert.equal(fitPadding(box(370,60,830,720),box(0,60,370,720)).left,50);
   assert.equal(fitPadding(map,box(0,560,1200,220)).bottom,270);
+  const phone=box(0,42,390,802),dock=box(0,42,390,105);
+  assert.deepEqual(fitPadding(phone,box(8,675,374,146),dock),{top:152,right:47,bottom:216,left:47});
+  const tall=fitPadding(phone,box(8,165,374,656),dock);
+  assert.ok(tall.bottom>650 && tall.left<10);
+  assert.ok(phone.height-tall.top-tall.bottom>0);
 });
 test('straight-line distances include a consistently rounded walking estimate',async()=>{
   const {distanceText}=await import('../map-engine.mjs');

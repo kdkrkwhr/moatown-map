@@ -7,8 +7,8 @@
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <title>서울 모아타운 현황지도</title>
   <link rel="sitemap" type="application/xml" href="./sitemap.xml">
-  <link rel="stylesheet" href="./styles.css?v=launch-1">
-  <script type="module" src="./app.mjs?v=launch-1"></script>
+  <link rel="stylesheet" href="./styles.css?v=mobile-map-1">
+  <script type="module" src="./app.mjs?v=mobile-map-1"></script>
 </head>
 <body data-loading="true">
 <a class="skip" href="#explorer">대상지 탐색으로 바로가기</a>
@@ -31,6 +31,7 @@
       <p>‘강북구 착공’처럼 검색하거나 사업 단계 필터를 선택하세요. 관리계획 승인은 대상지 단위, 조합설립·사업인가·착공은 세부 구역 단위입니다.</p></section>
 </dialog>
 <main class="workspace">
+  <div id="map-search-dock"></div>
   <aside id="explorer" aria-label="대상지 탐색" tabindex="-1">
     <div class="sheet-tools">
       <button type="button" id="sheet-toggle" aria-controls="panel-content" aria-expanded="true"><span id="sheet-label">대상지 탐색</span><span class="chevron" aria-hidden="true"></span></button>
@@ -42,8 +43,8 @@
           <div class="cover-copy"><h2 id="list-title">서울 모아타운</h2>
           <p id="map-totals">선정 대상지 현황</p></div>
         </div>
-        <div class="search-block">
-          <label class="search-box"><span class="search-icon" aria-hidden="true"></span><span class="sr-only">주소·구역명·사업 단계 검색</span><input id="search-input" type="search" placeholder="주소, 구역명 또는 사업 단계" autocomplete="off"></label>
+        <div class="search-block" id="project-search">
+          <div class="search-line"><label class="search-box"><span class="search-icon" aria-hidden="true"></span><span class="sr-only">주소·구역명·사업 단계 검색</span><input id="search-input" type="search" placeholder="주소, 구역명 또는 사업 단계" autocomplete="off" enterkeyhint="search"></label></div>
           <div class="filter-row"><label class="sr-only" for="district-filter">자치구</label><select id="district-filter"><option value="">서울 전체</option></select>
             <details class="stage-filters" id="stage-filter-box"><summary><span id="filter-label">사업 단계</span></summary>
               <div class="filter-menu">
@@ -53,6 +54,7 @@
               </div>
             </details>
             <button type="button" id="recent-filter" aria-pressed="false" aria-describedby="recent-help" disabled>최근 변동</button>
+            <button type="button" id="layer-open" aria-haspopup="dialog" aria-controls="layer-dialog"><span class="layer-icon" aria-hidden="true"></span>레이어</button>
           </div>
         </div>
         <div class="results-head"><h3>검색 결과</h3><button type="button" id="clear-filters" hidden>조건 지우기</button><span id="result-count" role="status"></span></div>
@@ -67,6 +69,7 @@
   <section class="map-stage" aria-label="서울 모아타운 지도">
     <div id="map" aria-label="대상지 위치 및 참고 경계"></div>
     <span class="map-loading" role="status" aria-label="지도 로딩"></span>
+    <div id="map-options">
     <div class="map-style-picker" role="group" aria-label="배경지도 선택">
       <button type="button" data-map-style="normal" aria-pressed="true" disabled>일반 지도</button><button type="button" data-map-style="hybrid" aria-pressed="false" disabled>위성 지도</button>
     </div>
@@ -74,10 +77,7 @@
     <div class="map-tools"><button type="button" id="reset-map" title="검색 조건을 지우고 서울 전체 보기">서울 전체</button>
       <button type="button" id="measure" aria-pressed="false" disabled>거리 재기</button>
       <div class="map-zoom"><button id="zoom-in" aria-label="확대" disabled>+</button><button id="zoom-out" aria-label="축소" disabled>−</button></div>
-    </div><p id="measure-status" role="status"></p>
-    <p id="map-status" role="status"></p>
-    <aside id="map-brief" aria-label="최신 사업 소식" hidden></aside>
-    <button type="button" id="address-open" aria-haspopup="dialog">주소 위치 확인</button>
+    </div>
     <details class="legend"><summary>지도 범례</summary><ul>
       <li><i class="key district"></i>자치구별 수록 대상지 수</li>
       <li><i class="key town"></i>모아타운 참고 외곽</li>
@@ -85,10 +85,18 @@
       <li><i class="key point"></i>선택한 대상지의 대표 위치</li>
       <li><i class="key point"></i>세부 구역 핀 · 대표 지번</li>
     </ul></details>
+    </div>
+    <p id="measure-status" role="status"></p>
+    <p id="map-status" role="status"></p>
+    <aside id="map-brief" aria-label="최신 사업 소식" hidden></aside>
+    <button type="button" id="address-open" aria-haspopup="dialog">주소 위치 확인</button>
     <noscript><p class="map-note">지도를 이용하려면 JavaScript를 켜 주세요. <a href="./moatown-data/latest.json">최신 데이터</a></p></noscript>
   </section>
 </main>
 <div id="share-status" role="status" aria-live="polite" aria-atomic="true"></div>
+<dialog id="layer-dialog" aria-labelledby="layer-heading">
+  <div class="dialog-head"><h2 id="layer-heading">지도 레이어·도구</h2><button type="button" id="layer-close">닫기</button></div>
+</dialog>
 <dialog id="address-dialog" aria-labelledby="address-heading">
   <div class="dialog-head"><h2 id="address-heading">주소 위치 확인</h2><button type="button" id="address-close">닫기</button></div>
   <p>서울의 주소 좌표를 수록된 모아타운 참고 외곽과 대조합니다. 필지의 법정 구역 포함 여부는 관할 기관의 고시에서 확인하세요.</p>
