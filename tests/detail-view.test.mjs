@@ -91,3 +91,16 @@ test('both Sinwol towns have four separately selectable reference polygons tied 
     }
   }
 });
+
+test('contractor selections stay tied to named zones and the missing-field report matches the published rows',()=>{
+  const byId=new Map(zones.map(z=>[z.id,z]));
+  const contractors=ids=>ids.map(id=>byId.get(id).selected_contractor);
+  assert.deepEqual(contractors(['a1','a2','a3','a4'].map(c=>'mz-plan-584443-'+c)),['호반건설',null,null,null]);
+  const proof=byId.get('mz-plan-584443-a1').field_evidence.selected_contractor;
+  assert.equal(proof.kind,'reported_selection');
+  assert.equal(proof.selection_date,'2025-08-30');
+  assert.equal(proof.contract_date,undefined);
+  assert.deepEqual(contractors(['mz-seoul-11000uq120ps202505310477','mz-junghwa-2-2','mz-junghwa-2-3','mz-junghwa-2-5']),['DL건설','DL건설','DL건설','계룡건설산업']);
+  assert.equal(byId.get('mz-plan-601972-a-1').selected_contractor,'계룡건설산업');
+  assert.deepEqual(read(files.review).missing_fields.zone_selected_contractor.toSorted(),zones.filter(z=>!z.selected_contractor).map(z=>z.id).toSorted());
+});

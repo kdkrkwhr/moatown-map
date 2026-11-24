@@ -1,4 +1,4 @@
-import {renderProjectDetail} from './detail-view.mjs?v=boundaries-2';
+import {renderProjectDetail} from './detail-view.mjs?v=contractors-1';
 import {formatValue} from './detail-format.mjs?v=detail-1';
 import {loadMaps,createProjectMap} from './map-engine.mjs?v=boundaries-2';
 import {loadNews,matchNews,newsCard,sourceLabels} from './news.mjs?v=atlas-1';

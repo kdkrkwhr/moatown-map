@@ -64,7 +64,25 @@ function regulations(card,r,town,zone,boundary,cityRule,badge){
   if(r.risk_info?.notes)card.append(notice(r.risk_info.notes));
 }
 
-function metrics(card,r){
+function contractorField(grid,r,children){
+  const unknown='선정 자료 미확인';
+  const confirmed=children.filter(child=>child.selected_contractor);
+  if(!r.selected_contractor && confirmed.length){
+    const names=[...new Set(confirmed.map(child=>child.selected_contractor.replace(/주식회사|㈜|\(주\)/g,'').trim()))];
+    const row=field(grid,'세부 구역 시공사',names.join(' · '));
+    row.append(el('small',children.length+'개 구역 중 '+confirmed.length+'곳 확인'));
+    return;
+  }
+  const row=field(grid,children.length?'세부 구역 시공사':'시공사',r.selected_contractor??unknown);
+  if(!r.selected_contractor){row.lastChild.classList.add('unverified');return;}
+  const e=r.field_evidence?.selected_contractor;
+  if(!e)return;
+  const source=link(e.source_url,e.source_title??'시공사 확인 자료');
+  if(e.selection_date)row.append(el('small','선정일 '+date(e.selection_date)));
+  if(source)row.append(source);
+}
+
+function metrics(card,r,children){
   const {area,existing,planned,owners}=values(r),m=r.metrics??{},e=r.field_evidence??{};
   const grid=el('dl',null,'metrics');
   field(grid,'구역 면적',formatValue(area,'㎡'));
@@ -85,7 +103,7 @@ function metrics(card,r){
   const zoning=r.zoning??{};
   field(grid,'현재 용도지역',zoning.before??zoning.observed?.names?.join(' · '));
   field(grid,'계획 용도지역',zoning.after);
-  field(grid,'시공사',r.selected_contractor);
+  contractorField(grid,r,children);
   field(grid,'계획 자료 기준일',date(e.plan?.source_as_of));
   card.append(grid);
   const extra=el('details',null,'detail-extra'),facts=el('dl',null,'facts');
@@ -99,7 +117,10 @@ function metrics(card,r){
     ['보류지',r.approved_allocation?.reserve??r.housing_allocation?.reserve,'세대'],['계약 당시 공사 규모',c.units,'세대']
   ];
   for(const [name,n,unit] of details)field(facts,name,formatValue(n,unit));
-  field(facts,'시공사 계약·발표일',date(contract.contract_date??contract.source_as_of));
+  if(r.selected_contractor){
+    const key=contract.contract_date?'시공사 계약일':contract.source_as_of?'시공사 자료 기준일':'시공사 자료 확인일';
+    field(facts,key,date(contract.contract_date??contract.source_as_of??contract.checked_on));
+  }
   for(const a of listOf(zoning.areas))field(facts,a.label,formatValue(a.before_sqm,'㎡')+' → '+formatValue(a.planned_sqm,'㎡'));
   if(zoning.observed?.names?.length)field(facts,'용도지역 관찰 범위',zoning.observed.scope==='representative_point'?'대표 위치':'참고 외곽 내부');
   field(facts,'계획 조건',zoning.condition??r.plan_scenario);
@@ -156,6 +177,7 @@ function subAreas(card,town,zone,children,boundaries,select,badge){
     const place=boundaryLabel(boundaries.get(child.id))??(child.representative_point?'대표 지번 핀':'위치 확인 중');
     const sizes=values(child);
     button.append(head,el('small',(child.registered_address??'지번 확인 중')+' · '+place),el('span','면적 '+formatValue(sizes.area,'㎡')+' · 계획 '+formatValue(sizes.planned,'세대'),'sub-card-metrics'));
+    if(child.selected_contractor)button.append(el('span','시공사 '+child.selected_contractor,'sub-card-contractor'));
     button.addEventListener('click',()=>select(town.id,child.id));item.append(button);list.append(item);
   }
   card.append(list);
@@ -186,7 +208,8 @@ function sources(card,r,snapshot,boundary,events){
   for(const [key,e] of Object.entries(r.field_evidence??{})){
     if(!e?.source_url)continue;
     const labels={plan:'사업 계획',stage:'추진 단계',metrics:'사업 규모',registered_address:'대표 지번',selected_contractor:'시공사',zoning:'용도지역',observed_zoning:'용도지역도'};
-    add(e.source_url,e.notice_number??labels[key],e.source_as_of);
+    add(e.source_url,e.source_title??e.notice_number??labels[key],e.source_as_of);
+    if(key==='selected_contractor')for(const item of listOf(e.supporting_sources))add(item.url,item.title,null);
     if(e.notice_number)add(e.source_url,e.notice_number,e.source_as_of,docs);
   }
   for(const e of [r.representative_point_evidence,boundary,r.previous_plan?.evidence,...listOf(r.rights_cutoff_history).map(h=>h.evidence)])add(e?.source_url,e?.notice_number,e?.source_as_of);
@@ -217,7 +240,7 @@ export function renderProjectDetail(container,{town,zone,children,boundaries,sna
   if(zone?.field_evidence?.stage?.association_site)status.append(notice('인가 고시 지번 · '+zone.field_evidence.stage.association_site));
   if(r.field_evidence?.registered_address?.note)status.append(notice(r.field_evidence.registered_address.note));
   if(!zone){const facts=el('dl',null,'facts');field(facts,'선정 방식',town.selection_track);status.append(facts);}
-  const size=section(container,'metrics','사업규모·사업성 지표');metrics(size,r);
+  const size=section(container,'metrics','사업규모·사업성 지표');metrics(size,r,zone?[]:children);
   const steps=section(container,'timeline','추진 타임라인 및 소요 기간');timeline(steps,town,zone,snapshot,stats);
   const records=section(container,'records','세부 사업구역 및 출처');
   subAreas(records,town,zone,children,boundaries,select,badge);sources(records,r,snapshot,boundary,projectEvents(town,zone));

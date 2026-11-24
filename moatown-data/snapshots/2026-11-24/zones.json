@@ -459,7 +459,7 @@
     "max_floors_above_ground": null,
     "floors_below_ground": null,
     "unit_types": null,
-    "selected_contractor": null,
+    "selected_contractor": "제일건설",
     "field_evidence": {
       "stage": {
         "kind": "project_register_stage",
@@ -505,6 +505,25 @@
         "source_as_of": null,
         "checked_on": "2026-11-24",
         "observation_date": "2026-11-24"
+      },
+      "selected_contractor": {
+        "kind": "reported_selection",
+        "source_title": "선정총회 보도 · 데일리한국",
+        "source_url": "https://news.nate.com/view/20260824n11563",
+        "source_as_of": "2026-08-24",
+        "checked_on": "2026-11-24",
+        "project_name": "화곡1동 모아타운 제2-2구역",
+        "selection_date": "2026-08-22",
+        "supporting_sources": [
+          {
+            "title": "조합 총회 공개 현황",
+            "url": "https://cleanup.seoul.go.kr/assc/bbs/lscrKyulOpenDataList.do?cafeId=500900001447U62"
+          },
+          {
+            "title": "선정 결과 · 하우징헤럴드",
+            "url": "https://www.housingherald.co.kr/news/articleView.html?idxno=62654"
+          }
+        ]
       }
     },
     "sources": {},
@@ -2268,7 +2287,7 @@
     "max_floors_above_ground": null,
     "floors_below_ground": null,
     "unit_types": null,
-    "selected_contractor": null,
+    "selected_contractor": "한화",
     "field_evidence": {
       "registered_address": {
         "kind": "seoul_small_housing_register",
@@ -2318,6 +2337,15 @@
         "checked_on": "2026-11-24",
         "numerator_planned_units": 477,
         "denominator_owner_count": 223
+      },
+      "selected_contractor": {
+        "kind": "council_report",
+        "source_title": "금천구의회 업무계획 · PDF 76쪽",
+        "source_url": "https://council.geumcheon.go.kr/council/viewer/minutes/pdf.do?group=appendix&uid=5722",
+        "source_as_of": "2025-02",
+        "checked_on": "2026-11-24",
+        "project_name": "시흥3동 1005번지 일대(중앙하이츠)",
+        "pdf_page": 76
       }
     },
     "sources": {},
@@ -3431,7 +3459,7 @@
     "project_type": "가로주택정비사업",
     "stage": "조합설립인가",
     "planned_units_total": 185,
-    "selected_contractor": null,
+    "selected_contractor": "코오롱글로벌",
     "unit_types": null,
     "sources": {},
     "boundary_evidence": {
@@ -3504,6 +3532,22 @@
         "address": "면목5동 152-1번지 일대",
         "source_feature_id": "11000UQ120PS202505310462",
         "pnu": "1126010100101520001"
+      },
+      "selected_contractor": {
+        "kind": "association_selection_register",
+        "source_title": "조합 시공자 선정 기록",
+        "source_url": "https://cleanup.seoul.go.kr/cafe/mainIndx/cleanup-prtnelapse/vscr.do?cafeId=260900000969R96&bsnsPk=11260-900000969",
+        "source_as_of": null,
+        "checked_on": "2026-11-24",
+        "project_name": "면목역 3의1구역 가로주택정비사업조합",
+        "contract_terminated": false,
+        "selection_date": "2023-05-13",
+        "supporting_sources": [
+          {
+            "title": "현재 협력업체 명부",
+            "url": "https://cleanup.seoul.go.kr/cafe/cleanup-entrpsinfo/execute.do?cafeId=260900000969R96"
+          }
+        ]
       }
     },
     "registered_address": "면목5동 152-1번지 일대",
@@ -3547,7 +3591,7 @@
     "project_type": "가로주택정비사업",
     "stage": "조합설립인가",
     "planned_units_total": 494,
-    "selected_contractor": null,
+    "selected_contractor": "㈜한화 건설부문",
     "unit_types": null,
     "sources": {},
     "boundary_evidence": {
@@ -3617,6 +3661,26 @@
         "notice_number": "서울특별시 고시 제2025-143호",
         "pdf_page": 10,
         "table": "임대주택 공급 및 인수 계획"
+      },
+      "selected_contractor": {
+        "kind": "association_selection_register",
+        "source_title": "조합 시공자 선정 기록",
+        "source_url": "https://cleanup.seoul.go.kr/cafe/mainIndx/cleanup-prtnelapse/vscr.do?cafeId=290900000962y86&bsnsPk=11290-900000962",
+        "source_as_of": null,
+        "checked_on": "2026-11-24",
+        "project_name": "석관1의1구역 가로주택정비사업",
+        "contract_terminated": false,
+        "selection_date": "2026-07-04",
+        "supporting_sources": [
+          {
+            "title": "현재 협력업체 명부",
+            "url": "https://cleanup.seoul.go.kr/cafe/cleanup-entrpsinfo/execute.do?cafeId=290900000962y86"
+          },
+          {
+            "title": "시공사 수주 발표",
+            "url": "https://www.hanwha.co.kr/newsroom/media_center/news/news_view.do?seq=16446"
+          }
+        ]
       }
     },
     "registered_address": "석관동 334-69번지 일대",
@@ -4583,7 +4647,7 @@
     "project_type": "가로주택정비사업",
     "stage": "통합심의 완료",
     "planned_units_total": 587,
-    "selected_contractor": null,
+    "selected_contractor": "DL건설",
     "unit_types": null,
     "sources": {},
     "boundary_evidence": {
@@ -4655,6 +4719,14 @@
         "checked_on": "2026-11-24",
         "review_date": "2026-11-12",
         "table": "참고자료 2 사업개요"
+      },
+      "selected_contractor": {
+        "kind": "company_announcement",
+        "source_title": "DL건설 수주 발표",
+        "source_url": "https://dlconstruction.co.kr/mobile/zInformation/sh_news_view.asp?SE_IDX=1483",
+        "source_as_of": "2025-12-10",
+        "checked_on": "2026-11-24",
+        "project_name": "중화2구역 2-1·2-2·2-3 통합 시공"
       }
     },
     "registered_address": "중화2동 329-38번지 일대",
@@ -4721,7 +4793,7 @@
     "project_type": "가로주택정비사업",
     "stage": "조합설립인가",
     "planned_units_total": 266,
-    "selected_contractor": null,
+    "selected_contractor": "BS한양",
     "unit_types": null,
     "sources": {},
     "boundary_evidence": {
@@ -4794,6 +4866,22 @@
         "address": "면목2동 139-52번지 일대",
         "source_feature_id": "11000UQ120PS202505310485",
         "pnu": "1126010100101390052"
+      },
+      "selected_contractor": {
+        "kind": "association_selection_register",
+        "source_title": "조합 시공자 선정 기록",
+        "source_url": "https://cleanup.seoul.go.kr/cafe/mainIndx/cleanup-prtnelapse/vscr.do?cafeId=260900001221s83&bsnsPk=11260-900001221",
+        "source_as_of": null,
+        "checked_on": "2026-11-24",
+        "project_name": "면목역2의1구역 가로주택정비사업",
+        "contract_terminated": false,
+        "selection_date": "2025-01-19",
+        "supporting_sources": [
+          {
+            "title": "현재 협력업체 명부",
+            "url": "https://cleanup.seoul.go.kr/cafe/cleanup-entrpsinfo/execute.do?cafeId=260900001221s83"
+          }
+        ]
       }
     },
     "registered_address": "면목2동 139-52번지 일대",
@@ -5695,7 +5783,7 @@
     "registered_address": "신월동 144-20",
     "project_area_m2": 11478.6,
     "planned_units_total": 354,
-    "selected_contractor": null,
+    "selected_contractor": "호반건설",
     "metrics": {
       "existing_units": 223,
       "owner_count": null
@@ -5753,6 +5841,25 @@
         "source_as_of": "2026-11-13",
         "checked_on": "2026-11-24",
         "review_date": "2026-11-12"
+      },
+      "selected_contractor": {
+        "kind": "reported_selection",
+        "source_title": "선정총회 보도 · 연합뉴스",
+        "source_url": "https://www.yna.co.kr/view/AKR20250831022500003",
+        "source_as_of": "2025-08-31",
+        "checked_on": "2026-11-24",
+        "project_name": "신월동 144-20번지 일원 가로주택정비사업",
+        "selection_date": "2025-08-30",
+        "supporting_sources": [
+          {
+            "title": "호반건설 홍보센터",
+            "url": "https://www.ihoban.co.kr/pr/news-list/web?searchCondition=subject&searchKeyword=%EC%8B%A0%EC%9B%94%EB%8F%99"
+          },
+          {
+            "title": "선정총회 보도 · 뉴시스",
+            "url": "https://www.newsis.com/view/NISX20250831_0003309532"
+          }
+        ]
       }
     },
     "last_verified_at": "2026-11-24",
@@ -9484,7 +9591,7 @@
     "project_area_m2": 13315.1,
     "planned_units_total": 464,
     "geometry": null,
-    "selected_contractor": null,
+    "selected_contractor": "한신공영",
     "metrics": {
       "existing_units": 262,
       "owner_count": 262,
@@ -9555,6 +9662,22 @@
         ],
         "numerator_planned_units": 464,
         "denominator_owner_count": 262
+      },
+      "selected_contractor": {
+        "kind": "association_selection_register",
+        "source_title": "조합 시공자 선정 기록",
+        "source_url": "https://cleanup.seoul.go.kr/cafe/mainIndx/cleanup-prtnelapse/vscr.do?cafeId=380900001231S07&bsnsPk=11380-900001231",
+        "source_as_of": null,
+        "checked_on": "2026-11-24",
+        "project_name": "대조동 A2구역 가로주택정비사업",
+        "contract_terminated": false,
+        "selection_date": "2024-12-14",
+        "supporting_sources": [
+          {
+            "title": "현재 협력업체 명부",
+            "url": "https://cleanup.seoul.go.kr/cafe/cleanup-entrpsinfo/execute.do?cafeId=380900001231S07"
+          }
+        ]
       }
     },
     "last_verified_at": "2026-11-24",
@@ -9605,7 +9728,7 @@
     "project_area_m2": null,
     "planned_units_total": 517,
     "geometry": null,
-    "selected_contractor": null,
+    "selected_contractor": "한신공영",
     "metrics": {
       "existing_units": null,
       "owner_count": null
@@ -9659,6 +9782,22 @@
         "notice_number": "서울특별시 고시 제2024-640호",
         "pdf_page": 9,
         "table": "임대주택 공급 및 인수 계획"
+      },
+      "selected_contractor": {
+        "kind": "association_selection_register",
+        "source_title": "조합 시공자 선정 기록",
+        "source_url": "https://cleanup.seoul.go.kr/cafe/mainIndx/cleanup-prtnelapse/vscr.do?cafeId=380900001330r41&bsnsPk=11380-900001330",
+        "source_as_of": null,
+        "checked_on": "2026-11-24",
+        "project_name": "대조동 A3구역 가로주택정비사업",
+        "contract_terminated": false,
+        "selection_date": "2025-09-27",
+        "supporting_sources": [
+          {
+            "title": "현재 협력업체 명부",
+            "url": "https://cleanup.seoul.go.kr/cafe/cleanup-entrpsinfo/execute.do?cafeId=380900001330r41"
+          }
+        ]
       }
     },
     "last_verified_at": "2026-11-24",
@@ -10355,7 +10494,7 @@
     "project_area_m2": 10634.9,
     "planned_units_total": 328,
     "geometry": null,
-    "selected_contractor": null,
+    "selected_contractor": "계룡건설산업",
     "metrics": {
       "existing_units": 145,
       "owner_count": null
@@ -10410,6 +10549,26 @@
         "notice_number": "서울특별시 고시 제2024-672호",
         "pdf_page": 16,
         "table": "임대주택 공급 및 인수 계획"
+      },
+      "selected_contractor": {
+        "kind": "association_selection_register",
+        "source_title": "조합 시공자 선정 기록",
+        "source_url": "https://cleanup.seoul.go.kr/cafe/mainIndx/cleanup-prtnelapse/vscr.do?cafeId=530900001268L23&bsnsPk=11530-900001268",
+        "source_as_of": null,
+        "checked_on": "2026-11-24",
+        "project_name": "고척동 241-2번지 일대 가로주택정비사업조합",
+        "contract_terminated": false,
+        "selection_date": "2026-05-16",
+        "supporting_sources": [
+          {
+            "title": "현재 협력업체 명부",
+            "url": "https://cleanup.seoul.go.kr/cafe/cleanup-entrpsinfo/execute.do?cafeId=530900001268L23"
+          },
+          {
+            "title": "공사계약 공시",
+            "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260917800214"
+          }
+        ]
       }
     },
     "last_verified_at": "2026-11-24",
@@ -10460,7 +10619,7 @@
     "project_area_m2": 13983.3,
     "planned_units_total": 403,
     "geometry": null,
-    "selected_contractor": null,
+    "selected_contractor": "계룡건설산업",
     "metrics": {
       "existing_units": 240,
       "owner_count": null
@@ -10515,6 +10674,31 @@
         "notice_number": "서울특별시 고시 제2024-672호",
         "pdf_page": 16,
         "table": "임대주택 공급 및 인수 계획"
+      },
+      "selected_contractor": {
+        "kind": "corporate_disclosure",
+        "source_title": "공사계약 공시",
+        "source_url": "https://kind.krx.co.kr/external/2026/02/25/001091/20260225002184/91370.htm",
+        "source_as_of": "2026-02-25",
+        "checked_on": "2026-11-24",
+        "contract_date": "2026-02-25",
+        "project_name": "고척동 241-23번지 일원 가로주택정비사업",
+        "source_feature_id": "11000UQ120PS202505310675",
+        "selection_date": "2025-12-27",
+        "supporting_sources": [
+          {
+            "title": "시공자 선정 공시",
+            "url": "https://kind.krx.co.kr/external/2025/12/29/000154/20251229000064/92008.htm"
+          },
+          {
+            "title": "구로구 고척2구역 조합설립인가",
+            "url": "https://www.guro.go.kr/www/selectBbsNttGosiView.do?bbsNo=663&nttNo=46445"
+          },
+          {
+            "title": "1·2구역 수주 경과 · 뉴스웨이",
+            "url": "https://newsway.co.kr/news/view?ud=2026060815160575958"
+          }
+        ]
       }
     },
     "last_verified_at": "2026-11-24",
@@ -10669,7 +10853,7 @@
     "registered_address": "고척동 241-11",
     "project_area_m2": 8695.8,
     "planned_units_total": 256,
-    "selected_contractor": null,
+    "selected_contractor": "동부건설",
     "metrics": {
       "existing_units": 85,
       "owner_count": null
@@ -10724,6 +10908,23 @@
         "notice_number": "서울특별시 고시 제2024-672호",
         "pdf_page": 16,
         "table": "임대주택 공급 및 인수 계획"
+      },
+      "selected_contractor": {
+        "kind": "corporate_disclosure",
+        "source_title": "공사도급약정 공시",
+        "source_url": "https://kind.krx.co.kr/external/2025/06/30/000586/20250627000569/91370.htm",
+        "source_as_of": "2025-06-30",
+        "checked_on": "2026-11-24",
+        "contract_date": "2025-06-30",
+        "project_name": "고척동 모아타운 4·5·6구역 가로주택정비사업",
+        "agreement_type": "공사도급약정",
+        "selection_date": "2025-04-26",
+        "supporting_sources": [
+          {
+            "title": "시공자 선정 공시",
+            "url": "https://kind.krx.co.kr/external/2025/04/28/000006/20250418001046/92008.htm"
+          }
+        ]
       }
     },
     "last_verified_at": "2026-11-24",
@@ -10788,7 +10989,7 @@
     "project_area_m2": 8083.5,
     "planned_units_total": 201,
     "geometry": null,
-    "selected_contractor": null,
+    "selected_contractor": "동부건설",
     "metrics": {
       "existing_units": 107,
       "owner_count": null
@@ -10843,6 +11044,23 @@
         "notice_number": "서울특별시 고시 제2024-672호",
         "pdf_page": 16,
         "table": "임대주택 공급 및 인수 계획"
+      },
+      "selected_contractor": {
+        "kind": "corporate_disclosure",
+        "source_title": "공사도급약정 공시",
+        "source_url": "https://kind.krx.co.kr/external/2025/06/30/000586/20250627000569/91370.htm",
+        "source_as_of": "2025-06-30",
+        "checked_on": "2026-11-24",
+        "contract_date": "2025-06-30",
+        "project_name": "고척동 모아타운 4·5·6구역 가로주택정비사업",
+        "agreement_type": "공사도급약정",
+        "selection_date": "2025-04-26",
+        "supporting_sources": [
+          {
+            "title": "시공자 선정 공시",
+            "url": "https://kind.krx.co.kr/external/2025/04/28/000006/20250418001046/92008.htm"
+          }
+        ]
       }
     },
     "last_verified_at": "2026-11-24",
@@ -10893,7 +11111,7 @@
     "project_area_m2": 8753.3,
     "planned_units_total": 234,
     "geometry": null,
-    "selected_contractor": null,
+    "selected_contractor": "동부건설",
     "metrics": {
       "existing_units": 176,
       "owner_count": null
@@ -10948,6 +11166,23 @@
         "notice_number": "서울특별시 고시 제2024-672호",
         "pdf_page": 16,
         "table": "임대주택 공급 및 인수 계획"
+      },
+      "selected_contractor": {
+        "kind": "corporate_disclosure",
+        "source_title": "공사도급약정 공시",
+        "source_url": "https://kind.krx.co.kr/external/2025/06/30/000586/20250627000569/91370.htm",
+        "source_as_of": "2025-06-30",
+        "checked_on": "2026-11-24",
+        "contract_date": "2025-06-30",
+        "project_name": "고척동 모아타운 4·5·6구역 가로주택정비사업",
+        "agreement_type": "공사도급약정",
+        "selection_date": "2025-04-26",
+        "supporting_sources": [
+          {
+            "title": "시공자 선정 공시",
+            "url": "https://kind.krx.co.kr/external/2025/04/28/000006/20250418001046/92008.htm"
+          }
+        ]
       }
     },
     "last_verified_at": "2026-11-24",
@@ -17687,7 +17922,7 @@
     "project_area_m2": 18781,
     "planned_units_total": 558,
     "geometry": null,
-    "selected_contractor": null,
+    "selected_contractor": "대우건설",
     "metrics": {
       "existing_units": 333,
       "owner_count": null
@@ -17742,6 +17977,26 @@
         "notice_number": "서울특별시 고시 제2024-95호",
         "pdf_page": 8,
         "table": "임대주택 공급 및 인수 계획"
+      },
+      "selected_contractor": {
+        "kind": "association_selection_register",
+        "source_title": "조합 시공자 선정 기록",
+        "source_url": "https://cleanup.seoul.go.kr/cafe/mainIndx/cleanup-prtnelapse/vscr.do?cafeId=440900001196y80&bsnsPk=11440-900001196",
+        "source_as_of": null,
+        "checked_on": "2026-11-24",
+        "project_name": "성산동 165-72일원 가로주택정비사업",
+        "contract_terminated": false,
+        "selection_date": "2024-07-20",
+        "supporting_sources": [
+          {
+            "title": "현재 협력업체 명부",
+            "url": "https://cleanup.seoul.go.kr/cafe/cleanup-entrpsinfo/execute.do?cafeId=440900001196y80"
+          },
+          {
+            "title": "시공사 수주 발표",
+            "url": "https://www.daewooenc.com/news/news-view?idx=12546"
+          }
+        ]
       }
     },
     "last_verified_at": "2026-11-24",
@@ -17897,7 +18152,7 @@
     "project_area_m2": 16531.15,
     "planned_units_total": 460,
     "geometry": null,
-    "selected_contractor": null,
+    "selected_contractor": "대우건설",
     "metrics": {
       "existing_units": 304,
       "owner_count": null
@@ -17952,6 +18207,26 @@
         "notice_number": "서울특별시 고시 제2024-95호",
         "pdf_page": 8,
         "table": "임대주택 공급 및 인수 계획"
+      },
+      "selected_contractor": {
+        "kind": "association_selection_register",
+        "source_title": "조합 시공자 선정 기록",
+        "source_url": "https://cleanup.seoul.go.kr/cafe/mainIndx/cleanup-prtnelapse/vscr.do?cafeId=440900001365R20&bsnsPk=11440-900001365",
+        "source_as_of": null,
+        "checked_on": "2026-11-24",
+        "project_name": "성산동 200-323일대 가로주택정비사업",
+        "contract_terminated": false,
+        "selection_date": "2026-04-04",
+        "supporting_sources": [
+          {
+            "title": "현재 협력업체 명부",
+            "url": "https://cleanup.seoul.go.kr/cafe/cleanup-entrpsinfo/execute.do?cafeId=440900001365R20"
+          },
+          {
+            "title": "시공사 수주 발표",
+            "url": "https://www.daewooenc.com/news/news-view?idx=14922"
+          }
+        ]
       }
     },
     "last_verified_at": "2026-11-24",
@@ -18002,7 +18277,7 @@
     "project_area_m2": 23574.56,
     "planned_units_total": 704,
     "geometry": null,
-    "selected_contractor": null,
+    "selected_contractor": "대우건설",
     "metrics": {
       "existing_units": 526,
       "owner_count": null
@@ -18057,6 +18332,14 @@
         "notice_number": "서울특별시 고시 제2024-95호",
         "pdf_page": 8,
         "table": "임대주택 공급 및 인수 계획"
+      },
+      "selected_contractor": {
+        "kind": "company_announcement",
+        "source_title": "대우건설 수주 발표",
+        "source_url": "https://www.daewooenc.com/news/news-view?idx=15642",
+        "source_as_of": "2026-11-03",
+        "checked_on": "2026-11-24",
+        "selection_date": "2026-10-31"
       }
     },
     "last_verified_at": "2026-11-24",
@@ -18921,7 +19204,7 @@
     "name": "중화역 2-2구역",
     "registered_address": "중화동 329-28",
     "project_type": "가로주택정비",
-    "selected_contractor": null,
+    "selected_contractor": "DL건설",
     "geometry": null,
     "metrics": {},
     "sources": {},
@@ -18973,6 +19256,14 @@
         "checked_on": "2026-11-24",
         "review_date": "2026-11-12",
         "table": "참고자료 2 사업개요"
+      },
+      "selected_contractor": {
+        "kind": "company_announcement",
+        "source_title": "DL건설 수주 발표",
+        "source_url": "https://dlconstruction.co.kr/mobile/zInformation/sh_news_view.asp?SE_IDX=1483",
+        "source_as_of": "2025-12-10",
+        "checked_on": "2026-11-24",
+        "project_name": "중화2구역 2-1·2-2·2-3 통합 시공"
       }
     },
     "drawing_code": "2-2",
@@ -19021,7 +19312,7 @@
     "name": "중화역 2-3구역",
     "registered_address": "중화동 327-1",
     "project_type": "가로주택정비",
-    "selected_contractor": null,
+    "selected_contractor": "DL건설",
     "geometry": null,
     "metrics": {},
     "sources": {},
@@ -19073,6 +19364,14 @@
         "checked_on": "2026-11-24",
         "review_date": "2026-11-12",
         "table": "참고자료 2 사업개요"
+      },
+      "selected_contractor": {
+        "kind": "company_announcement",
+        "source_title": "DL건설 수주 발표",
+        "source_url": "https://dlconstruction.co.kr/mobile/zInformation/sh_news_view.asp?SE_IDX=1483",
+        "source_as_of": "2025-12-10",
+        "checked_on": "2026-11-24",
+        "project_name": "중화2구역 2-1·2-2·2-3 통합 시공"
       }
     },
     "drawing_code": "2-3",
@@ -19121,7 +19420,7 @@
     "name": "중화역 2-5구역",
     "registered_address": "중화동 317-64",
     "project_type": "가로주택정비",
-    "selected_contractor": null,
+    "selected_contractor": "계룡건설산업",
     "geometry": null,
     "metrics": {},
     "sources": {},
@@ -19173,6 +19472,21 @@
         "checked_on": "2026-11-24",
         "review_date": "2026-11-12",
         "table": "참고자료 2 사업개요"
+      },
+      "selected_contractor": {
+        "kind": "corporate_disclosure",
+        "source_title": "공사계약 공시",
+        "source_url": "https://kind.krx.co.kr/external/2025/03/21/001394/20250320000098/91370.htm",
+        "source_as_of": "2025-03-21",
+        "checked_on": "2026-11-24",
+        "contract_date": "2025-03-21",
+        "project_name": "중화역2의5구역 가로주택정비사업",
+        "supporting_sources": [
+          {
+            "title": "금융감독원 공시 · 계룡건설산업",
+            "url": "https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250321801394"
+          }
+        ]
       }
     },
     "drawing_code": "2-5",

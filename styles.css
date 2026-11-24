@@ -409,6 +409,8 @@ body[data-loading=true] .map-loading { display: block; position: absolute; top: 
 .sub-area-cards button { display: grid; width: 100%; gap: 4px; padding: 10px 12px; background: #f8fafc; border: 1px solid var(--line); border-radius: 10px; text-align: left; }
 .sub-area-cards button:hover, .sub-area-cards button[aria-current] { border-color: #7697c1; background: #eef4fe; }
 .sub-area-cards small, .sub-card-metrics { color: var(--sub); font-size: 12px; }
+.sub-card-contractor { color: var(--ink); font-size: 13px; font-weight: 650; }
+.metrics .source-link { display: block; margin-top: 4px; font-size: 12px; }
 .detail-sources { margin-top: 18px; padding-top: 7px; border-top: 1px solid var(--line); }
 .detail-section .notice { margin: 8px 0; line-height: 1.55; }
 .address-caption,.point-caption,.ruler-caption { border-color: var(--blue); margin-top: -7px; }

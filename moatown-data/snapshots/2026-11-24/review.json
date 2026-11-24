@@ -3250,7 +3250,6 @@
       "mz-seoul-11000uq120ps202503310031",
       "mz-seoul-11000uq120ps202503310029",
       "mz-seoul-11500uq120ps202603130001",
-      "mz-seoul-11500uq120ps202603130002",
       "mz-seoul-11500uq120ps202603130003",
       "mz-seoul-11000uq120ps202503310014",
       "mz-seoul-11000uq120ps202503310013",
@@ -3260,13 +3259,8 @@
       "mz-seoul-11000uq120ps202503310024",
       "mz-seoul-11000uq120ps202505310449",
       "mz-seoul-11000uq120ps202505310446",
-      "mz-seoul-11000uq120ps202505310212",
       "mz-seoul-11410uq120ps202607270001",
-      "mz-seoul-11000uq120ps202505310462",
-      "mz-seoul-11000uq120ps202505310741",
       "mz-seoul-11000uq120ps202505310709",
-      "mz-seoul-11000uq120ps202505310477",
-      "mz-seoul-11000uq120ps202505310485",
       "mz-seoul-11000uq120ps202411014068",
       "mz-seoul-11000uq120ps202505310382",
       "mz-seoul-11530uq120ps202607230001",
@@ -3274,7 +3268,6 @@
       "mz-mapohapjeong-2026-111-a2",
       "mz-mapohapjeong-2026-111-a3",
       "mz-mapohapjeong-2026-111-a4",
-      "mz-plan-584443-a1",
       "mz-plan-584443-a2",
       "mz-plan-584443-a3",
       "mz-plan-584443-a4",
@@ -3304,19 +3297,12 @@
       "mz-plan-594579-a3",
       "mz-plan-594579-a4",
       "mz-plan-601717-a1",
-      "mz-plan-601717-a2",
-      "mz-plan-601717-a3",
       "mz-plan-601822-a-1",
       "mz-plan-601822-a-2",
       "mz-plan-601822-a-3",
       "mz-plan-601822-a-4",
       "mz-plan-601822-a-5",
-      "mz-plan-601972-a-1",
-      "mz-plan-601972-a-2",
       "mz-plan-601972-a-3",
-      "mz-plan-601972-a-4",
-      "mz-plan-601972-a-5",
-      "mz-plan-601972-a-6",
       "mz-plan-601972-a-7",
       "mz-plan-601972-a-8",
       "mz-plan-602403-a-1",
@@ -3376,10 +3362,7 @@
       "mz-plan-641915-a1",
       "mz-plan-641915-a2",
       "mz-plan-645471-a-1",
-      "mz-plan-584518-a-1",
       "mz-plan-584518-a-2",
-      "mz-plan-584518-a-3",
-      "mz-plan-584518-a-4",
       "mz-plan-584449-a3-1",
       "mz-plan-584449-a3-2",
       "mz-plan-584449-a3-3",
@@ -3387,10 +3370,7 @@
       "mz-plan-614691-a-1",
       "mz-plan-614691-a-2",
       "mz-plan-614691-a-3",
-      "mz-plan-628093-a-1",
-      "mz-junghwa-2-2",
-      "mz-junghwa-2-3",
-      "mz-junghwa-2-5"
+      "mz-plan-628093-a-1"
     ],
     "zone_planned_units_total": [
       "mz-seoul-11000uq120ps202503310029",
@@ -4935,6 +4915,36 @@
       "reason": "필지 전체 합산 면적과 인가 면적 불일치",
       "resolution": "인가 고시도에 표시된 사업시행구역을 참고 경계로 수록",
       "boundary_source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=640660"
+    }
+  ],
+  "contractor_scope_review": [
+    {
+      "zone_ids": [
+        "mz-plan-607900-a2",
+        "mz-plan-607900-a3",
+        "mz-plan-607900-a4"
+      ],
+      "project_names": [
+        "석관1-2구역",
+        "석관1-7구역"
+      ],
+      "source_url": "https://www.hanwha.co.kr/newsroom/media_center/news/news_view.do?seq=16446",
+      "source_as_of": "2026-11-19",
+      "checked_on": "2026-11-24",
+      "kind": "company_announcement",
+      "reason": "기존 조합명 기준 한화 수주 확인. 관리계획 변경·통합 후 A2~A4 각각의 계약 적용 범위 대조 필요."
+    },
+    {
+      "zone_ids": [],
+      "town_id": "mt-202603-public-002",
+      "project_names": [
+        "화곡1동 354 모아타운 제2-4구역"
+      ],
+      "source_url": "https://news.nate.com/view/20260824n11563",
+      "source_as_of": "2026-08-24",
+      "checked_on": "2026-11-24",
+      "kind": "reported_selection",
+      "reason": "제일건설 선정 보도 확인. 현 스냅샷의 A2-1~A2-3과 별도의 조합으로 동일한 구역 레코드가 없음."
     }
   ]
 }

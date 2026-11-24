@@ -100,3 +100,21 @@
 신월동 102-33의 A4는 승인고시 9쪽 토지이용계획도에서 B1 공원을 포함하는 사업가능구역선을, 신월동 173의 A1~A4는 정정고시 12쪽 토지이용계획도에서 사업가능구역 색면을 읽었습니다. 같은 쪽 관리지역 결정도의 외곽을 서울시 관리지역 공간자료에 맞추고, 네 구역의 대표 필지점이 각각 하나의 구역에만 들어가는지 확인했습니다. [신월동 102-33 관리계획](https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=584443) · [신월동 173 관리계획 정정고시](https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=594579) · [서울시 공간자료](https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do)
 
 구역별 `boundary_evidence`에는 고시번호·기준일·PDF 쪽수·원본 해시·좌표 변환 계수를 기록했습니다. 도면 계측 면적과 문서상 면적은 별도로 보관하며 사업규모 카드에는 문서상 면적을 표시합니다. [구역별 면적 대조표](./sub-area-review-2026-11-24.md#신월동-경계-대조)
+
+## 시공사 선정자료 대조 (2026.11.24)
+
+세부 구역 167곳 중 시공사를 수록한 곳이 22곳에서 42곳으로 늘었다. 기존 미입력 145곳을 서울시 사업장 목록과 대조하고, 주소 등으로 연결된 후보 37곳의 공개 협력업체·추진경과와 별도 수주 발표·공시·선정총회 보도를 확인했다. 구역별 근거와 원자료 기준일은 `field_evidence.selected_contractor`에, 남은 125곳은 검수 목록에 기록했다. 대상지 화면에는 시공사가 확인된 세부 구역 수와 업체명을 표시한다. [서울시 사업장 목록](https://cleanup.seoul.go.kr/cleanup/bsnssttus/lscrMainIndx.do?cpage=1&pageSize=2000) · [검수 목록](../moatown-data/snapshots/2026-11-24/review.json)
+
+| 대상지 | 이번에 확인한 세부 구역과 시공사 | 대표 근거 |
+|---|---|---|
+| 양천구 신월동 102-33 | A1 호반건설. 2025.08.30 조합총회 선정 | [호반건설 홍보센터](https://www.ihoban.co.kr/pr/news-list/web?searchCondition=subject&searchKeyword=%EC%8B%A0%EC%9B%94%EB%8F%99) · [선정총회 보도](https://www.yna.co.kr/view/AKR20250831022500003) |
+| 중랑구 중화동 329-38 | 2-1·2-2·2-3 DL건설, 2-5 계룡건설산업 | [DL건설 발표](https://dlconstruction.co.kr/mobile/zInformation/sh_news_view.asp?SE_IDX=1483) · [2-5 도급계약](https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20250321801394) |
+| 마포구 성산동 160-4 | A-1·A-3·A-4 대우건설 | [대우건설 발표](https://daewooenc.com/news/news-view?idx=15642) |
+| 구로구 고척동 241 | A-1·A-2 계룡건설산업, A-4·A-5·A-6 동부건설 | [A-1 공시](https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260917800214) · [고척2구역 인가](https://www.guro.go.kr/www/selectBbsNttGosiView.do?bbsNo=663&nttNo=46445) · [4·5·6구역 공사도급약정](https://kind.krx.co.kr/external/2025/06/30/000586/20250627000569/91370.htm) |
+| 은평구 대조동 89 | A2·A3 한신공영 | [A2 선정 이력](https://cleanup.seoul.go.kr/cafe/mainIndx/cleanup-prtnelapse/vscr.do?cafeId=380900001231S07&bsnsPk=11380-900001231) · [A3 선정 이력](https://cleanup.seoul.go.kr/cafe/mainIndx/cleanup-prtnelapse/vscr.do?cafeId=380900001330r41&bsnsPk=11380-900001330) |
+| 중랑구 면목동 152-1 및 139-52 | 면목역 3의1 코오롱글로벌, 면목역 2의1 BS한양 | [3의1 선정 이력](https://cleanup.seoul.go.kr/cafe/mainIndx/cleanup-prtnelapse/vscr.do?cafeId=260900000969R96&bsnsPk=11260-900000969) · [2의1 선정 이력](https://cleanup.seoul.go.kr/cafe/mainIndx/cleanup-prtnelapse/vscr.do?cafeId=260900001221s83&bsnsPk=11260-900001221) |
+| 성북구 석관동 334-69 | 석관1의1 ㈜한화 건설부문. 재선정 업체를 확인 | [조합 선정 이력](https://cleanup.seoul.go.kr/cafe/mainIndx/cleanup-prtnelapse/vscr.do?cafeId=290900000962y86&bsnsPk=11290-900000962) · [한화 발표](https://www.hanwha.co.kr/newsroom/media_center/news/news_view.do?seq=16446) |
+| 강서구 화곡1동 354 | A2-2 제일건설. 2026.08.22 선정총회 | [조합 공개 현황](https://cleanup.seoul.go.kr/assc/bbs/lscrKyulOpenDataList.do?cafeId=500900001447U62) · [선정 결과 보도](https://news.nate.com/view/20260824n11563) |
+| 금천구 시흥3동 1005 | 중앙시흥하이츠 한화. 2025년 2월 업무계획의 업체 표기 기준 | [금천구의회 업무계획 PDF 76쪽](https://council.geumcheon.go.kr/council/viewer/minutes/pdf.do?group=appendix&uid=5722) |
+
+고척 A-2는 구로구 고시의 고척2구역 조합명과 사업 대표 지번(241-23)을 확인하고 관리계획 지번(241-177)의 필지점이 서울시 해당 사업 도형 내부에 있는지 확인했다. 고척 4·5·6구역은 공시 계약명에 세 구역이 명시되어 있다. 석관1-2·1-7의 한화 수주와 화곡 제2-4의 제일건설 선정은 원문 사업장 단위로 확인했으나, 현재 지도 구역번호와 계약 적용 범위를 더 대조해야 하는 건을 `contractor_scope_review`에 남겼다.
