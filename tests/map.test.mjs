@@ -126,3 +126,18 @@ test('static Seoul context contains all 25 distinct Korean district names and lo
   const han=byKind('water').find(f=>f.properties.name==='한강');
   assert.ok(han && ['Polygon','MultiPolygon'].includes(han.geometry.type),'real named Han River water polygon');
 });
+
+test('map wheel zoom is cursor anchored with fractional zoom and responsive fit above old cap',async()=>{
+  const {mapInteractionOptions,overviewOptions}=await import('../app.mjs');
+  assert.equal(mapInteractionOptions.scrollWheelZoom,true);
+  assert.ok(mapInteractionOptions.zoomSnap>0 && mapInteractionOptions.zoomSnap<1);
+  assert.ok(mapInteractionOptions.wheelPxPerZoomLevel>=80);
+  const wide=overviewOptions({x:1363,y:936});
+  assert.ok(wide.maxZoom>11);
+  assert.ok(wide.paddingTopLeft[1]+wide.paddingBottomRight[1]<230);
+  const tall=overviewOptions({x:390,y:760});
+  assert.ok(tall.paddingTopLeft[1]>wide.paddingTopLeft[1]);
+  assert.ok(tall.paddingTopLeft[0]+tall.paddingBottomRight[0]<=48);
+  const short=overviewOptions({x:600,y:300});
+  assert.ok(short.paddingTopLeft[1]+short.paddingBottomRight[1]<150);
+});

@@ -61,9 +61,19 @@ function field(list,label,value,evidence){
   list.append(row);
 }
 const seoulView=[[37.425,126.760],[37.702,127.184]];
-const fitSeoul=map=>map?.fitBounds(seoulView,{padding:[12,12],maxZoom:11,animate:false});
-const townStyle=(active,legal)=>({color:active?'#084085':'#2366a0',fillColor:active?'#2678d1':'#589bc4',weight:active?4:2,dashArray:legal?null:'7 3',fillOpacity:active?.36:.24,opacity:active?1:.92});
-const zoneStyle=(active,legal)=>({color:active?'#8b390c':'#a5561c',fillColor:active?'#df7b21':'#e9ad50',weight:active?3.5:1.8,dashArray:legal?null:'2 4',fillOpacity:active?.55:.30});
+export const mapInteractionOptions={
+  scrollWheelZoom:true, zoomSnap:.25, zoomDelta:.75, wheelPxPerZoomLevel:100, wheelDebounceTime:36
+};
+export function overviewOptions({x,y}){
+  const narrow=x<=760;
+  const edge=narrow?Math.min(18,x*.045):Math.min(40,x*.034);
+  const top=narrow?Math.min(132,y*.22):Math.min(72,y*.10);
+  const bottom=narrow?Math.min(140,y*.20):Math.min(86,y*.11);
+  return {paddingTopLeft:[edge,top],paddingBottomRight:[edge,bottom],maxZoom:12,animate:false};
+}
+const fitSeoul=map=>map?.fitBounds(seoulView,overviewOptions(map.getSize()));
+const townStyle=(active,legal)=>({color:active?'#05366c':'#235d91',fillColor:active?'#196ab5':'#4387b7',weight:active?4.5:2.4,dashArray:legal?null:'8 3',fillOpacity:active?.55:.39,opacity:1});
+const zoneStyle=(active,legal)=>({color:active?'#81370c':'#98501a',fillColor:active?'#df7b21':'#e9ad50',weight:active?3.8:2,dashArray:legal?null:'2 4',fillOpacity:active?.64:.40});
 
 export function showReferencePin(id,selectedId,visible,polygons){
   return id===selectedId && visible.has(id) && !polygons.has(id);
@@ -110,7 +120,7 @@ export function mount({manifest,towns,zones,boundaries}, leaf=globalThis.L) {
     setBasemap?.(mode);
   }
   if(leaf && get('map')){
-    map=leaf.map(get('map'),{scrollWheelZoom:false});
+    map=leaf.map(get('map'),mapInteractionOptions);
     map.zoomControl?.setPosition('topright');
     fitSeoul(map);
     setBasemap=basemapSwitcher(leaf,map,mapStatus);
