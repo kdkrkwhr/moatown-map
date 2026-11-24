@@ -3,64 +3,56 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="모아타운 프로젝트의 제품 설계, 아키텍처, 데이터 준비 현황을 확인하는 페이지입니다.">
-<title>모아타운 프로젝트 · 진행 현황</title>
-<style>
-:root{color-scheme:dark;--bg:#101816;--panel:#182520;--ink:#f1f9f4;--muted:#b9ccc2;--accent:#a8efbb;--line:#355047}
-*{box-sizing:border-box}
-body{margin:0;background:radial-gradient(ellipse at 90% 0%,#203d30 0,transparent 48%),var(--bg);color:var(--ink);font:16px/1.65 system-ui,-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;word-break:keep-all;overflow-wrap:anywhere}
-a{color:inherit}
-a:focus-visible{outline:3px solid var(--accent);outline-offset:4px}
-.wrap{width:min(66rem, calc(100% - 2 * clamp(1rem, 5vw, 3rem)));margin-inline:auto}
-header{padding-block:1.3rem;border-bottom:1px solid var(--line)}
-.brand,.label,.minor{font-size:.82rem;letter-spacing:.08em;font-weight:750}
-.brand{color:var(--accent)}
-.hero{padding-block:clamp(2.5rem,8vw,5.25rem)}
-.badge{display:inline-flex;align-items:center;gap:.55rem;background:#243e31;border:1px solid #538160;color:#c7f7d2;border-radius:2rem;padding:.33rem .86rem;font-weight:700}
-.badge::before{content:"";width:.48rem;height:.48rem;border-radius:50%;background:var(--accent)}
-h1{font-size:clamp(2.55rem,8vw,5rem);line-height:1.06;letter-spacing:-.055em;margin:.8rem 0 1rem}
-.hero p{color:var(--muted);max-width:39rem;margin:0;font-size:clamp(1rem,2vw,1.15rem)}
-.hero p strong{color:var(--ink)}
-h2{font-size:1.5rem;letter-spacing:-.03em;margin:0 0 1rem}
-.cards{list-style:none;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.9rem;margin:0;padding:0}
-.cards li{display:flex;min-width:0}
-.card{display:flex;flex:1;flex-direction:column;min-width:0;padding:1.15rem 1.25rem;border:1px solid var(--line);border-radius:1.05rem;background:var(--panel);text-decoration:none}
-.card:hover{background:#203329;border-color:#73a184}
-.label,.minor{color:var(--accent)}
-.card h3{font-size:1.22rem;margin:.4rem 0 .3rem}
-.card p{color:var(--muted);margin:0 0 1.1rem}
-.card .action{margin-top:auto;font-weight:750}
-.aside{border-left:3px solid var(--line);margin-block:2.25rem;padding:.3rem 1rem;color:var(--muted)}
-.aside h2{font-size:1.05rem;color:var(--ink);margin:0 0 .25rem}
-.aside p{margin:0}
-footer{border-top:1px solid var(--line);color:var(--muted);padding-block:1.1rem;font-size:.84rem}
-@media(max-width:45rem){.cards{grid-template-columns:1fr}.card{padding:1rem}}
-</style>
+<meta name="description" content="서울시 모아타운 공식 선정 대상지와 공개 사업구역 자료를 탐색하세요.">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<title>서울 모아타운 현황지도</title>
+<link rel="stylesheet" href="./vendor/leaflet/leaflet.css">
+<link rel="stylesheet" href="./styles.css">
+<script defer src="./vendor/leaflet/leaflet.js"></script>
+<script type="module" src="./app.mjs"></script>
 </head>
 <body>
-<header><div class="wrap brand">모아타운 프로젝트</div></header>
-<main class="wrap">
-  <section class="hero" aria-labelledby="title">
-    <span class="badge">설계·데이터 준비 단계</span>
-    <h1 id="title">모아타운 프로젝트<br>진행 현황</h1>
-    <p>제품 명세와 아키텍처, 데이터 준비 현황을 모아둔 페이지입니다. <strong>서비스나 지도가 출시된 상태는 아닙니다.</strong></p>
-  </section>
-
-  <section aria-labelledby="links">
-    <h2 id="links">문서와 데이터 확인</h2>
-    <ul class="cards">
-      <li><a class="card" href="./docs/product-spec.html"><span class="label">01 · 제품</span><h3>제품 명세</h3><p>프로젝트가 다룰 문제와 첫 버전의 범위를 확인합니다.</p><span class="action">명세 보기 <span aria-hidden="true">↗</span></span></a></li>
-      <li><a class="card" href="https://github.com/kdkrkwhr/moatown-map/blob/main/docs/architecture.md"><span class="label">02 · 기술</span><h3>아키텍처</h3><p>데이터와 서비스의 구성, 각 단계의 책임을 확인합니다.</p><span class="action">설계 문서 보기 <span aria-hidden="true">↗</span></span></a></li>
-      <li><a class="card" href="./moatown-data/latest.json"><span class="label">03 · 데이터</span><h3>최신 데이터 매니페스트</h3><p>저장소의 데이터 메타데이터를 JSON으로 확인합니다.</p><span class="action">JSON 열기 <span aria-hidden="true">↗</span></span></a></li>
-    </ul>
-  </section>
-
-  <aside class="aside" aria-labelledby="scope">
-    <h2 id="scope">이 페이지의 범위</h2>
-    <p>이곳은 정적 진행 현황 페이지입니다. 제품 기능, 지도, 실시간 조회는 제공하지 않습니다.</p>
-  </aside>
-<p style="margin-top:1.4rem"><a href="https://github.com/kdkrkwhr/moatown-map/blob/main/docs/data-sources.md">데이터 출처와 수집 범위</a> · 이 페이지는 지도 출시 전 진행 현황입니다.</p>
+<a class="skip" href="#search-input">검색으로 바로가기</a>
+<header class="top">
+  <div class="brand-icon" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none"><path d="m4 10 7-4 10 4 7-4v16l-7 4-10-4-7 4V10Z M11 6v16m10-12v16" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+  <div class="brand"><p>서울 정비사업 탐색</p><h1>모아타운 현황지도</h1></div>
+  <a class="docs-link" href="./docs/product-spec.html">프로젝트 안내 ↗</a>
+</header>
+<main class="main">
+  <nav class="quick" aria-label="화면 바로가기"><a href="#map-heading">지도</a><a href="#search-heading">검색·목록</a><a href="#detail-heading">상세</a></nav>
+  <div class="layout">
+    <section class="map-panel" aria-labelledby="map-heading">
+      <div class="map-top"><div><h2 id="map-heading" tabindex="-1">서울 모아타운 지도</h2><p>확인된 위치와 참고 경계를 보여줍니다.</p></div><button type="button" id="reset-map">서울 전체 보기</button></div>
+      <div class="map-frame">
+        <div id="map" aria-label="서울시 모아타운 위치 지도"></div>
+        <p id="map-status" role="status"></p>
+        <noscript><p class="map-note">지도를 보려면 JavaScript를 켜 주세요. 아래 최신 데이터 링크로 원본을 볼 수 있습니다.</p></noscript>
+      </div>
+      <ul class="legend" aria-label="지도 범례">
+        <li><span class="key key-town"></span>모아타운 외곽</li>
+        <li><span class="key key-project"></span>세부 사업구역</li>
+        <li><span class="key key-point"></span>확인된 위치점</li>
+        <li class="snapshot-note">부분 자료 · 갱신 <time id="snapshot-date">확인 중</time></li>
+      </ul>
+    </section>
+    <aside class="sidebar" aria-label="대상지 검색 및 상세 정보">
+      <section class="list-panel" aria-labelledby="search-heading">
+        <h2 id="search-heading" tabindex="-1">대상지 찾기</h2>
+        <div class="filters">
+          <label for="search-input">대상지 검색<input id="search-input" type="search" placeholder="동 이름, 주소 또는 대상지명" autocomplete="off"></label>
+          <label for="district-filter">자치구<select id="district-filter"><option value="">서울 전체</option></select></label>
+        </div>
+        <div class="results-head"><h3>대상지 목록</h3><span id="result-count" role="status">데이터 확인 중</span></div>
+        <div id="town-list" aria-label="모아타운 검색 결과"></div>
+      </section>
+      <section aria-labelledby="detail-heading" class="detail-panel">
+        <h2 id="detail-heading" tabindex="-1">대상지 상세</h2>
+        <div id="town-detail"><p>지도나 목록에서 대상지를 선택하세요.</p></div>
+      </section>
+    </aside>
+  </div>
+  <aside class="notice" aria-label="데이터 이용 유의사항"><strong>참고용 지도</strong><p>서울시와 자치구가 공개한 선정 자료를 바탕으로 만들었습니다. 표시가 없다고 사업이 없다는 뜻은 아닙니다. 필지 포함 여부나 법정 경계는 관할 기관의 최신 고시·공고를 확인하세요.</p></aside>
 </main>
-<footer><div class="wrap">모아타운 프로젝트 · 진행 현황</div></footer>
+<footer class="footer"><a href="./docs/data-sources.md">데이터 출처</a><a href="./moatown-data/latest.json">최신 데이터</a><a href="./docs/project-status.html">이전 진행 기록</a><a href="https://github.com/kdkrkwhr/moatown-map">저장소 ↗</a></footer>
 </body>
 </html>
