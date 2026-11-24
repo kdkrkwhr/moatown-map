@@ -7,9 +7,9 @@
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <title>서울 모아타운 현황지도</title>
   <link rel="stylesheet" href="./vendor/leaflet/leaflet.css">
-  <link rel="stylesheet" href="./styles.css?v=project-data-1">
+  <link rel="stylesheet" href="./styles.css?v=atlas-1">
   <script defer src="./vendor/leaflet/leaflet.js"></script>
-  <script type="module" src="./app.mjs?v=project-data-1"></script>
+  <script type="module" src="./app.mjs?v=atlas-1"></script>
 </head>
 <body>
 <svg width="0" height="0" class="map-patterns" aria-hidden="true" focusable="false">
@@ -23,11 +23,13 @@
 <a class="skip" href="#explorer">대상지 탐색으로 바로가기</a>
 <header class="topbar">
   <h1><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none"><path d="m4 12 12-7 12 7-12 7z" fill="currentColor"/><path d="m4 17 12 7 12-7M4 22l12 7 12-7" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/></svg></span>모아타운 현황지도</h1>
+  <nav class="main-nav" aria-label="주 메뉴"><a href="./" aria-current="page">지도 탐색</a><a href="./news.html">사업 소식</a></nav>
   <div class="top-meta"><span class="updated">자료 갱신 <time id="snapshot-date">확인 중</time></span>
     <details class="guide"><summary>자료 안내</summary><div class="popover">
       <h2>지도에 수록된 자료</h2><p id="coverage-note">서울시 선정 명부와 이후 확인된 변동을 반영한 부분 자료입니다.</p>
       <p>사업 외곽과 대표 위치는 참고용입니다. 필지 포함 여부는 관할 기관의 최신 고시·공고를 확인하세요.</p>
       <nav aria-label="관련 자료"><a href="./docs/product-spec.html">프로젝트 안내</a><a href="./docs/data-sources.md">데이터 출처</a><a href="./moatown-data/latest.json">스냅샷 보기</a></nav>
+      <p class="photo-credit">서울 전경 사진 · <a href="https://commons.wikimedia.org/wiki/File:Seoul_from_Namsan.jpg">kallerna</a> · <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> · 축소 및 WebP 변환</p>
     </div></details>
   </div>
 </header>
@@ -41,15 +43,21 @@
 </details>
 <main class="workspace">
   <aside id="explorer" aria-label="대상지 탐색" tabindex="-1">
-    <button type="button" id="sheet-toggle" aria-controls="panel-content" aria-expanded="true"><span id="sheet-label">대상지 탐색</span><span class="chevron" aria-hidden="true"></span></button>
+    <div class="sheet-tools">
+      <button type="button" id="sheet-toggle" aria-controls="panel-content" aria-expanded="true"><span id="sheet-label">대상지 탐색</span><span class="chevron" aria-hidden="true"></span></button>
+      <button type="button" id="sheet-size" aria-controls="panel-content" aria-pressed="false">크게 보기</button>
+    </div>
     <div id="panel-content">
       <section id="list-view" aria-labelledby="list-title">
+        <div class="area-cover">
+          <div class="cover-copy"><h2 id="list-title">서울 모아타운</h2>
+          <p id="map-totals">선정 대상지 현황</p></div>
+        </div>
         <div class="search-block">
-          <h2 id="list-title">대상지 탐색</h2>
           <label class="search-box"><span class="search-icon" aria-hidden="true"></span><span class="sr-only">대상지 검색</span><input id="search-input" type="search" placeholder="동 이름 또는 주소 검색" autocomplete="off"></label>
           <div class="filter-row"><label for="district-filter">자치구</label><select id="district-filter"><option value="">서울 전체</option></select></div>
         </div>
-        <div class="results-head"><h3>검색 결과</h3><span id="result-count" role="status">불러오는 중</span></div>
+        <div class="results-head"><h3>대상지 목록</h3><span id="result-count" role="status">불러오는 중</span></div>
         <div id="town-list" aria-label="모아타운 검색 결과"></div>
       </section>
       <section id="detail-view" aria-label="선택 상세" hidden>
@@ -65,6 +73,7 @@
     </div>
     <button type="button" id="reset-map" title="검색 조건을 지우고 서울 전체 보기">서울 전체 보기</button>
     <p id="map-status" role="status"></p>
+    <aside id="map-brief" aria-label="최신 사업 소식" hidden></aside>
     <details class="legend"><summary>지도 범례</summary><ul>
       <li><i class="key district"></i>자치구별 수록 대상지 수</li>
       <li><i class="key town"></i>모아타운 참고 외곽</li>

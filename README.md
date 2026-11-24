@@ -3,6 +3,7 @@
 서울시가 공식 선정한 모아타운을 지도에서 탐색하고 구역별 공개 계획과 근거 자료를 확인하는 **공개 지도 MVP**입니다. 기본 구역 지도에서 자치구별 수록 대상지 수를 보고, 자치구를 선택하거나 동 이름·주소로 검색할 수 있습니다. 결과를 선택하면 패널에 선정일·면적과 세부 사업구역이 표시됩니다. 모바일에서는 하단 패널을 접어 지도를 넓게 볼 수 있습니다. 경계가 없는 대상지도 목록에서 찾을 수 있습니다.
 
 - [GitHub Pages 지도](https://kdkrkwhr.github.io/moatown-map/)
+- [공식 자료와 언론 보도](https://kdkrkwhr.github.io/moatown-map/news.html)에서 지역과 출처를 고르거나 관련 대상지의 지도 상세를 열 수 있습니다.
 - [도로 지도 보기](https://kdkrkwhr.github.io/moatown-map/?map=detail)
 - [배경지도 출처 및 표시 원칙](docs/basemap.md)
 - [제품 기획서](docs/product-spec.html)

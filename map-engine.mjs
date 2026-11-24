@@ -53,9 +53,9 @@ export function basemapUrl(input,mode){
 }
 
 const contextStyle=p=>{
-  if(p.kind==='water')return {color:'#8ec9d1',fillColor:'#a1d6db',fillOpacity:1,weight:.9,opacity:1};
-  if(p.kind==='road')return {color:'#c4cec4',weight:1,opacity:.72};
-  return {color:'#bccbc3',weight:1.2,fillColor:'#f7f7ed',fillOpacity:1};
+  if(p.kind==='water')return {color:'#88bdd1',fillColor:'#a2d0df',fillOpacity:1,weight:.8,opacity:1};
+  if(p.kind==='road')return {color:'#c4cfcf',weight:1,opacity:.62};
+  return {color:'#aabdbd',weight:1.2,fillColor:'#f9f8f1',fillOpacity:1};
 };
 let detailStack;
 function getDetailStack(){
