@@ -464,11 +464,25 @@
     "selected_date_precision": "month",
     "area_m2": 19602,
     "management_plan_stage": null,
-    "representative_point": null,
+    "representative_point": {
+      "type": "Point",
+      "coordinates": [
+        126.944265,
+        37.54392
+      ]
+    },
     "source_as_of": "2026-03-31",
     "sources": [
       "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
-    ]
+    ],
+    "representative_point_evidence": {
+      "kind": "representative_parcel_interior",
+      "source_url": "https://www.data.go.kr/data/15162460/fileData.do",
+      "source_as_of": "2026-08-28",
+      "source_crs": "EPSG:5174",
+      "source_crs_verification": "two_independent_spatial_controls",
+      "parcel_pnu": "1144010800105350002"
+    }
   },
   {
     "id": "mt-202603-public-030",
@@ -480,11 +494,25 @@
     "selected_date_precision": "month",
     "area_m2": 84876,
     "management_plan_stage": null,
-    "representative_point": null,
+    "representative_point": {
+      "type": "Point",
+      "coordinates": [
+        126.905713,
+        37.568295
+      ]
+    },
     "source_as_of": "2026-03-31",
     "sources": [
       "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
-    ]
+    ],
+    "representative_point_evidence": {
+      "kind": "representative_parcel_interior",
+      "source_url": "https://www.data.go.kr/data/15162460/fileData.do",
+      "source_as_of": "2026-08-28",
+      "source_crs": "EPSG:5174",
+      "source_crs_verification": "two_independent_spatial_controls",
+      "parcel_pnu": "1144012500101600004"
+    }
   },
   {
     "id": "mt-202603-public-031",
@@ -496,11 +524,25 @@
     "selected_date_precision": "month",
     "area_m2": 77449,
     "management_plan_stage": null,
-    "representative_point": null,
+    "representative_point": {
+      "type": "Point",
+      "coordinates": [
+        126.900889,
+        37.55391
+      ]
+    },
     "source_as_of": "2026-03-31",
     "sources": [
       "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
-    ]
+    ],
+    "representative_point_evidence": {
+      "kind": "representative_parcel_interior",
+      "source_url": "https://www.data.go.kr/data/15162460/fileData.do",
+      "source_as_of": "2026-08-28",
+      "source_crs": "EPSG:5174",
+      "source_crs_verification": "two_independent_spatial_controls",
+      "parcel_pnu": "1144012300104560006"
+    }
   },
   {
     "id": "mt-202603-public-032",
@@ -516,7 +558,8 @@
     "source_as_of": "2026-03-31",
     "sources": [
       "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
-    ]
+    ],
+    "representative_point_status": "no_exact_parcel_match_in_source"
   },
   {
     "id": "mt-202603-public-033",
@@ -528,11 +571,25 @@
     "selected_date_precision": "month",
     "area_m2": 18612,
     "management_plan_stage": null,
-    "representative_point": null,
+    "representative_point": {
+      "type": "Point",
+      "coordinates": [
+        126.902691,
+        37.572891
+      ]
+    },
     "source_as_of": "2026-03-31",
     "sources": [
       "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
-    ]
+    ],
+    "representative_point_evidence": {
+      "kind": "representative_parcel_interior",
+      "source_url": "https://www.data.go.kr/data/15162460/fileData.do",
+      "source_as_of": "2026-08-28",
+      "source_crs": "EPSG:5174",
+      "source_crs_verification": "two_independent_spatial_controls",
+      "parcel_pnu": "1144012600100780000"
+    }
   },
   {
     "id": "mt-202603-public-034",
@@ -1716,11 +1773,25 @@
     "selected_date_precision": "month",
     "area_m2": 11551,
     "management_plan_stage": null,
-    "representative_point": null,
+    "representative_point": {
+      "type": "Point",
+      "coordinates": [
+        126.929682,
+        37.549396
+      ]
+    },
     "source_as_of": "2026-03-31",
     "sources": [
       "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
-    ]
+    ],
+    "representative_point_evidence": {
+      "kind": "representative_parcel_interior",
+      "source_url": "https://www.data.go.kr/data/15162460/fileData.do",
+      "source_as_of": "2026-08-28",
+      "source_crs": "EPSG:5174",
+      "source_crs_verification": "two_independent_spatial_controls",
+      "parcel_pnu": "1144011400100460001"
+    }
   },
   {
     "id": "mt-202603-resident-021",
@@ -1732,11 +1803,25 @@
     "selected_date_precision": "month",
     "area_m2": 14783,
     "management_plan_stage": null,
-    "representative_point": null,
+    "representative_point": {
+      "type": "Point",
+      "coordinates": [
+        126.897404,
+        37.560328
+      ]
+    },
     "source_as_of": "2026-03-31",
     "sources": [
       "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status"
-    ]
+    ],
+    "representative_point_evidence": {
+      "kind": "representative_parcel_interior",
+      "source_url": "https://www.data.go.kr/data/15162460/fileData.do",
+      "source_as_of": "2026-08-28",
+      "source_crs": "EPSG:5174",
+      "source_crs_verification": "two_independent_spatial_controls",
+      "parcel_pnu": "1144012300104640001"
+    }
   },
   {
     "id": "mt-202603-resident-022",
