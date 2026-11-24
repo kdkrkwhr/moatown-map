@@ -1,4 +1,4 @@
-import {formatValue,unitsChange,projectIntervals,compareInterval} from './detail-format.mjs?v=detail-tabs-1';
+import {formatValue,unitsChange,projectIntervals,compareInterval} from './detail-format.mjs?v=launch-1';
 
 const pending='미고시';
 const date=v=>formatValue(v,'date');
@@ -227,7 +227,25 @@ function publisher(url){
   if(h.endsWith('data.go.kr'))return '공공데이터포털';
   return h;
 }
-function sources(card,r,snapshot,boundary,events,registryUrl){
+export function reportIssueUrl(town,zone){
+  const record=zone??town;
+  const map=new URL('https://kdkrkwhr.github.io/moatown-map/');
+  if(town.id)map.searchParams.set('town',town.id);
+  else map.searchParams.set('cancellation',town.address_raw);
+  if(zone)map.searchParams.set('zone',zone.id);
+  const issue=new URL('https://github.com/kdkrkwhr/moatown-map/issues/new');
+  const name=record.name.startsWith(town.district+' ')?record.name:town.district+' '+record.name;
+  issue.searchParams.set('title','[정보 제보] '+name);
+  const context=['대상지명: '+town.name,'자치구: '+town.district];
+  if(town.id || town.matched_baseline_id)context.push('대상지 ID: '+(town.id??town.matched_baseline_id));
+  else context.push('취소 이력 식별 주소: '+town.address_raw);
+  if(zone)context.push('세부 구역명: '+zone.name,'세부 구역 ID: '+zone.id);
+  context.push('지도: '+map.href,'','제보 내용 (오류 또는 현장 소식):','','근거 자료 또는 확인일:');
+  issue.searchParams.set('body',context.join('\n'));
+  return issue.href;
+}
+
+function sources(card,r,snapshot,boundary,events,registryUrl,reportUrl){
   const footer=el('footer',null,'detail-sources');
   const facts=el('dl',null,'facts'),docs=new Map(),refs=new Map();
   function add(url,title,asOf,collection=refs){
@@ -267,7 +285,9 @@ function sources(card,r,snapshot,boundary,events,registryUrl){
   if(registry)footer.append(registry);
   const more=el('details',null,'provenance');more.append(el('summary','항목별 근거 자료'));
   const other=el('div',null,'official-docs');links(other,refs);
-  if(!refs.size)other.append(el('span',pending,'unverified'));more.append(other);footer.append(more);card.append(footer);
+  if(!refs.size)other.append(el('span',pending,'unverified'));more.append(other);footer.append(more);
+  const report=link(reportUrl,'정보 수정 제보');report.classList.add('report-link');
+  footer.append(report);card.append(footer);
 }
 
 function summary(town,zone,intervals,badge,copyLink){
@@ -354,7 +374,7 @@ export function renderProjectDetail(container,{town,zone,children,boundaries,sna
   timeline(steps,town,zone,snapshot,stats,intervals);
   section(panels.schedule,'news','사업 소식').append(el('div',null,'related-news'));
   const records=section(panels.schedule,'sources','출처 및 기준일');
-  sources(records,r,snapshot,boundary,intervals.map(step=>step.event),registryUrl);
+  sources(records,r,snapshot,boundary,intervals.map(step=>step.event),registryUrl,reportIssueUrl(town,zone));
   metrics(panels.business,r,zone?[]:children);
   regulations(section(panels.business,'regulation','거래·규제 상세'),r,town,zone,boundary,cityRule);
   subAreas(panels.areas,town,zone,children,boundaries,select,badge);

@@ -6,8 +6,9 @@
   <meta name="description" content="서울시 모아타운 선정 대상지와 공개 사업구역 자료를 지도에서 탐색하세요.">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <title>서울 모아타운 현황지도</title>
-  <link rel="stylesheet" href="./styles.css?v=detail-tabs-1">
-  <script type="module" src="./app.mjs?v=detail-tabs-1"></script>
+  <link rel="sitemap" type="application/xml" href="./sitemap.xml">
+  <link rel="stylesheet" href="./styles.css?v=launch-1">
+  <script type="module" src="./app.mjs?v=launch-1"></script>
 </head>
 <body data-loading="true">
 <a class="skip" href="#explorer">대상지 탐색으로 바로가기</a>
@@ -15,7 +16,7 @@
   <h1><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none"><path d="m4 12 12-7 12 7-12 7z" fill="currentColor"/><path d="m4 17 12 7 12-7M4 22l12 7 12-7" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/></svg></span>모아타운 현황지도</h1>
   <nav class="main-nav" aria-label="주 메뉴"><a href="./" aria-current="page">지도 탐색</a><a href="./news.html">사업 소식</a></nav>
   <div class="top-meta"><span class="updated">자료 갱신 <time id="snapshot-date">—</time></span>
-    <button type="button" id="guide-open" aria-label="자료 안내" aria-haspopup="dialog">자료 안내</button>
+    <button type="button" id="guide-open" aria-label="자료 안내" aria-haspopup="dialog" aria-controls="guide-dialog">자료 안내</button>
   </div>
 </header>
 <dialog id="guide-dialog" aria-labelledby="guide-heading">
@@ -23,7 +24,8 @@
       <p id="coverage-note">서울시 선정 명부와 이후 확인된 변동을 반영한 부분 자료입니다.</p>
       <p>사업 외곽과 대표 위치는 참고용입니다. 필지 포함 여부는 관할 기관의 최신 고시·공고를 확인하세요.</p>
       <p>상세 화면의 ‘미고시’는 수록 자료에서 값을 확인하지 못했다는 뜻입니다. 추진 속도는 같은 구간을 거친 서울 수록 사업장의 기간과 비교합니다.</p>
-      <nav aria-label="관련 자료"><a href="./docs/product-spec.html">프로젝트 안내</a><a href="./docs/data-sources.md">데이터 출처</a><a href="./moatown-data/latest.json">스냅샷 보기</a></nav>
+      <p id="recent-help">‘최근 갱신’은 오늘을 포함한 최근 7일(서울 기준)에 자료 확인 또는 추진 이력이 기록된 곳입니다. 대상지 카드에는 세부구역의 갱신도 포함합니다.</p>
+      <nav aria-label="관련 자료"><a href="./docs/product-spec.html">프로젝트 안내</a><a href="./docs/data-sources.md">데이터 출처</a><a href="./moatown-data/latest.json">스냅샷 보기</a><a href="./sitemap.xml">사이트맵</a></nav>
       <p class="photo-credit">서울 전경 사진 · <a href="https://commons.wikimedia.org/wiki/File:Seoul_from_Namsan.jpg">kallerna</a> · <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> · 축소 및 WebP 변환</p>
       <section class="guide-stages"><h3>세부 사업구역의 추진 단계</h3><div id="stage-definitions"></div>
       <p>‘강북구 착공’처럼 검색하거나 사업 단계 필터를 선택하세요. 관리계획 승인은 대상지 단위, 조합설립·사업인가·착공은 세부 구역 단위입니다.</p></section>
@@ -50,6 +52,7 @@
                 <button type="button" id="apply-stage">검색 결과 보기</button>
               </div>
             </details>
+            <button type="button" id="recent-filter" aria-pressed="false" aria-describedby="recent-help" disabled>최근 변동</button>
           </div>
         </div>
         <div class="results-head"><h3>검색 결과</h3><button type="button" id="clear-filters" hidden>조건 지우기</button><span id="result-count" role="status"></span></div>

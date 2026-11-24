@@ -5,7 +5,7 @@ const number=new Intl.NumberFormat('ko-KR',{maximumFractionDigits:4});
 const percent=new Intl.NumberFormat('ko-KR',{minimumFractionDigits:1,maximumFractionDigits:1});
 const approximate=new Intl.NumberFormat('ko-KR',{maximumFractionDigits:1});
 
-function dayNumber(value){
+export function dayNumber(value){
   if(typeof value!=='string')return null;
   const iso=value.replaceAll('.','-');
   if(!/^\d{4}-\d{2}-\d{2}$/.test(iso))return null;

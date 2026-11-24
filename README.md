@@ -26,7 +26,7 @@
 - `app.mjs`, `map-engine.mjs`, `styles.css`: 지도 화면과 배경지도·경계 및 선택 동작
 - `vendor/turf/`: 주소 좌표와 참고 외곽의 포함 관계를 판별하는 Turf 모듈과 라이선스
 
-완성된 스냅샷을 검증한 뒤 `moatown-data/latest.json`을 변경합니다. 사이트 갱신일은 공식 자료 기준일과 다릅니다. 공식 고시·공고 확인을 대체하지 않습니다.
+완성된 스냅샷을 검증한 뒤 `moatown-data/latest.json`을 변경합니다. 대상지나 세부 구역 ID가 바뀌면 `node scripts/build-sitemap.mjs`로 사이트맵을 갱신합니다. 사이트 갱신일은 공식 자료 기준일과 다릅니다. 공식 고시·공고 확인을 대체하지 않습니다.
 
 
 ## 로컬 확인

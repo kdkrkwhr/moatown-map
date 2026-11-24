@@ -141,6 +141,12 @@ body[data-loading=true] .map-loading { display: block; position: absolute; top: 
 .row-meta { font-size: 12.5px; color: var(--sub); }
 .row-meta .district-name { color: var(--blue); font-weight: 650; }
 .row-news { font-weight: 700; color: var(--blue); }
+#recent-filter { flex: none; min-height: 40px; padding: 5px 10px; border: 1px solid var(--line); border-radius: 8px; font-size: 13px; font-weight: 650; background: white; }
+#recent-filter[aria-pressed=true] { color: #fff; background: #166653; border-color: #166653; }
+.recent-badge { display: inline-block; width: fit-content; margin-inline-start: 5px; padding: 1px 6px; color: #155c4a; background: #e4f3eb; border-radius: 5px; font-size: 11px; font-weight: 700; }
+.row-meta span.recent-badge::before { content: none; }
+.filter-row { flex-wrap: wrap; }
+.detail-sources .report-link { display: inline-flex; align-items: center; min-height: 40px; margin-top: 10px; padding: 6px 12px; border: 1px solid var(--line); border-radius: 8px; font-weight: 650; }
 .row-meta span + span::before { content: '·'; margin: 0 6px; color: #8090a4; }
 .location-note, .notice { font-size: 13px; color: var(--sub); }
 .empty { margin: 24px var(--gutter); color: var(--sub); line-height: 1.7; }

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /moatown-map/
+
+Sitemap: https://kdkrkwhr.github.io/moatown-map/sitemap.xml

@@ -3,12 +3,38 @@ import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import {compareInterval,durationSamples,formatValue,intervalBadge,projectEvents,projectIntervals,unitsChange} from '../detail-format.mjs';
 import {groupSubAreas} from '../app.mjs';
+import {reportIssueUrl} from '../detail-view.mjs';
 import {searchProjects} from '../project-search.mjs';
 import {positionInGeometry} from '../address-reference.mjs';
 
 const read=file=>JSON.parse(readFileSync(new URL('../moatown-data/'+file,import.meta.url),'utf8'));
 const {files,coverage}=read('latest.json'),towns=read(files.towns),zones=read(files.zones);
 const groups=groupSubAreas(towns,zones);
+
+test('issue drafts carry the selected identifiers and a clean share link',()=>{
+  const town={id:'test-town',name:'가동 & 나동',district:'양천구'};
+  const zone={id:'test-zone',name:'A1 #1'};
+  for(const child of [null,zone]){
+    const url=new URL(reportIssueUrl(town,child));
+    assert.equal(url.origin+url.pathname,'https://github.com/kdkrkwhr/moatown-map/issues/new');
+    assert.ok(url.searchParams.get('title').includes((child??town).name));
+    const body=url.searchParams.get('body'),map=new URL(body.match(/https:\/\/[^\s]+/)[0]);
+    assert.ok(body.includes('대상지 ID: '+town.id));
+    assert.equal(body.includes('세부 구역 ID: '+zone.id),Boolean(child));
+    assert.equal(map.searchParams.get('town'),town.id);
+    assert.equal(map.searchParams.get('zone'),child?.id??null);
+  }
+  const archive=new URL(reportIssueUrl({district:'중구',name:'신당동',address_raw:'중구 신당동 122-3'})).searchParams.get('body');
+  assert.ok(archive.includes('중구 신당동 122-3') && !archive.includes('undefined'));
+});
+
+test('the public sitemap includes one clean URL per town and child',()=>{
+  const root='https://kdkrkwhr.github.io/moatown-map/';
+  const xml=readFileSync(new URL('../sitemap.xml',import.meta.url),'utf8');
+  const urls=Array.from(xml.matchAll(/<loc>([^<]+)<\/loc>/g),m=>m[1].replaceAll('&amp;','&'));
+  const expected=[root,root+'news.html',...towns.map(t=>root+'?town='+t.id),...zones.map(z=>root+'?town='+z.town_id+'&zone='+z.id)];
+  assert.deepEqual(urls.toSorted(),expected.toSorted());
+});
 
 test('published figures preserve units, a valid zero, and date precision',()=>{
   assert.equal(formatValue(85420,'㎡'),'85,420㎡ (약 25,840평)');

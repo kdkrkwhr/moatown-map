@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
-import {searchProjects,progressFilters} from '../project-search.mjs';
+import {searchProjects,progressFilters,recentProjectDates} from '../project-search.mjs';
 import {planIntervals} from '../app.mjs';
 import {parseLot,positionInGeometry} from '../address-reference.mjs';
 
@@ -11,6 +11,23 @@ const snapshot=key=>read('../moatown-data/'+manifest.files[key]);
 const towns=snapshot('towns'),zones=snapshot('zones'),archive=snapshot('excluded');
 const groups=new Map(towns.map(town=>[town.id,zones.filter(zone=>zone.town_id===town.id)]));
 const search=options=>searchProjects(towns,groups,archive,options);
+
+test('recency uses seven calendar dates, rolls child updates up to the parent and composes with filters',()=>{
+  const town={id:'town',district:'양천구',name:'신월동',last_verified_at:'2026-11-17'};
+  const child={id:'child',name:'A1',stage:'착공',timeline:[{stage:'착공',date:'2026-11-18'}]};
+  const sibling={id:'sibling',name:'A2',stage:'착공',last_verified_at:'2026-11-25'};
+  const children=new Map([[town.id,[child,sibling]]]);
+  const other={id:'other',last_verified_at:'2026-11-24'};
+  const invalid={id:'invalid',last_verified_at:'2026-11-31',selected_date:'2026-11',source_as_of:'2026-11-24'};
+  const archived={address_raw:'취소 구역',cancellation_date:'2026-11-22'};
+  const records=[town,other,invalid],dates=recentProjectDates(records,children,[archived],'2026-11-24');
+  assert.deepEqual([...dates.entries()].sort(),[['child','2026-11-18'],['other','2026-11-24'],['town','2026-11-18'],['취소 구역','2026-11-22']].sort());
+  const filter=options=>searchProjects(records,children,[archived],{recentDates:dates,...options});
+  assert.deepEqual(filter({district:'양천구'}),[{town}]);
+  assert.deepEqual(filter({progress:'construction',query:'신월동'}),[{town,zone:child}]);
+  assert.deepEqual(filter({plan:'canceled'}),[{excluded:archived}]);
+  assert.ok(!recentProjectDates(records,children,[],'2026-11-26').has(child.id));
+});
 
 test('combined search returns the matching zone without siblings or duplicate parent results',()=>{
   assert.deepEqual(search({query:'강북구  착공'}),search({district:'강북구',progress:'construction'}));
