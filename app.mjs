@@ -1,4 +1,4 @@
-﻿import {basemapMode,basemapUrl,basemapSwitcher} from './map-engine.mjs?v=atlas-1';
+import {basemapMode,basemapUrl,basemapSwitcher} from './map-engine.mjs?v=stages-1';
 const normalize = value => String(value ?? '').normalize('NFKC').toLowerCase().replace(/\s+/g,'');
 export function filterTowns(towns, query, district) {
   const q=normalize(query);
@@ -78,8 +78,39 @@ export function overviewOptions({x,y}){
   return {paddingTopLeft:[edge,top],paddingBottomRight:[edge,bottom],maxZoom:12,animate:false};
 }
 const fitSeoul=map=>map?.fitBounds(seoulView,overviewOptions(map.getSize()));
-const townStyle=(active,legal)=>({color:active?'#193b95':'#3558bb',fillColor:active?'#5472db':'#6986e7',weight:active?4.5:2.4,dashArray:legal?null:'8 3',fillOpacity:active?.55:.39,opacity:1});
-const zoneStyle=(active,legal)=>({color:active?'#81370c':'#98501a',fillColor:active?'#df7b21':'#e9ad50',weight:active?3.8:2,dashArray:legal?null:'2 4',fillOpacity:active?.64:.40});
+const townStyle=(active,legal)=>({
+  color:active?'#263a56':'#50677c',fillColor:'#adc6d1',weight:active?3:1.7,
+  dashArray:legal?null:'10 3',lineJoin:'round',fillOpacity:active?.21:.28
+});
+const stages=[
+  {label:'조합설립 진행 중',short:'조합설립 중',ink:'#6746a3',fill:'#aa8bd9',shape:'circle',description:'주민들이 사업을 추진할 조합을 설립하는 단계입니다.'},
+  {label:'사업시행계획인가 진행 중',short:'사업인가 진행 중',ink:'#995117',fill:'#edac56',shape:'diamond',description:'사업시행계획의 인가 절차를 진행하는 단계입니다.'},
+  {label:'착공',short:'착공',ink:'#006e62',fill:'#4bb8a1',shape:'square',description:'공사를 시작한 것으로 공개 자료에 표시된 단계입니다.'},
+  {label:'미확인',short:'미확인',ink:'#586474',fill:'#a4adb8',shape:'ring',description:'해당 구역의 추진 단계를 확인할 공개 자료가 아직 없습니다.'}
+];
+export function zoneStage(value){
+  return stages.find(stage=>stage.label===value) ?? stages[3];
+}
+function stageBadge(value,short=false){
+  const stage=zoneStage(value);
+  const badge=el('span',short?stage.short:shown(value),'stage-badge');
+  badge.dataset.shape=stage.shape;
+  badge.style.setProperty('--stage-ink',stage.ink);
+  return badge;
+}
+function zoneStyle(stage,active,legal,muted=false){
+  return {color:stage.ink,fillColor:stage.shape==='ring'?'url(#stage-unverified)':stage.fill,
+    weight:active?3.3:1.8,fillOpacity:active?.74:muted?.24:.5,
+    lineCap:'round',lineJoin:'round',dashArray:legal?null:stage.shape==='ring'?'2 4':'6 2'};
+}
+export function elapsedMonths(start,end){
+  const monthNumber=value=>{
+    const parts=/^(\d{4})-(0[1-9]|1[0-2])$/.exec(value);
+    return parts ? Number(parts[1])*12+Number(parts[2]) : NaN;
+  };
+  const elapsed=monthNumber(end)-monthNumber(start);
+  return elapsed>=0 ? elapsed : null;
+}
 
 export function showReferencePin(id,selectedId,visible,polygons){
   return id===selectedId && visible.has(id) && !polygons.has(id);
@@ -95,12 +126,26 @@ export function mount({manifest,towns,zones,boundaries},leaf=globalThis.L){
   for(const zone of zones) groups.get(zone.town_id)?.push(zone);
   const districtCounts=new Map();
   for(const town of towns) districtCounts.set(town.district,(districtCounts.get(town.district) ?? 0)+1);
+  const districtStages=new Map();
+  for(const zone of zones){
+    const region=townById.get(zone.town_id)?.district;
+    if(!region)continue;
+    if(!districtStages.has(region))districtStages.set(region,new Map(stages.map(stage=>[stage,0])));
+    const totals=districtStages.get(region),stage=zoneStage(zone.stage);
+    totals.set(stage,(totals.get(stage) ?? 0)+1);
+  }
+  for(const stage of stages){
+    get('stage-key').append(stageBadge(stage.label,true));
+    const item=el('div');
+    item.append(stageBadge(stage.label),el('span',stage.description));
+    get('stage-definitions').append(item);
+  }
   for(const name of [...districtCounts.keys()].sort((a,b)=>a.localeCompare(b,'ko'))){
     district.append(new Option(name,name));
   }
   const markers=new Map(),townLayers=new Map(),zoneLayers=new Map();
   const boundaryProps=new Map(boundaries.features.map(({properties:p})=>[p.entity_id,p]));
-  let current,rows=[],visible=new Set(),map,setBasemap;
+  let current,rows=[],visible=new Set(),map,setBasemap,selectedCaption,captionZoneId;
   function readUrl(){
     const params=new URLSearchParams(location.search);
     search.value=params.get('q') ?? '';
@@ -134,7 +179,7 @@ export function mount({manifest,towns,zones,boundaries},leaf=globalThis.L){
     map=leaf.map(get('map'),mapInteractionOptions);
     map.zoomControl?.setPosition('topright');
     fitSeoul(map);
-    setBasemap=basemapSwitcher(leaf,map,mapStatus,{districtCounts,selectDistrict(name){
+    setBasemap=basemapSwitcher(leaf,map,mapStatus,{districtCounts,districtStages,selectDistrict(name){
       search.value='';district.value=name;updateFilters();
     }});
     mapStyleControls.forEach(button=>button.addEventListener('click',()=>{
@@ -154,17 +199,19 @@ export function mount({manifest,towns,zones,boundaries},leaf=globalThis.L){
       const legal=p.boundary_status==='legal';
       const layer=leaf.geoJSON(f,{
         pane:town?'townReference':'zoneReference',
-        style:town?townStyle(false,legal):zoneStyle(false,legal)
+        style:town?townStyle(false,legal):zoneStyle(zoneStage(zone.stage),false,legal)
       });
       layer.on('click',()=>select(townId,town?null:zone.id));
-      const label=el('span',(town?townById.get(townId).name:zone.name)+' · '+(legal?'법정 경계':'참고 경계'));
-      layer.bindTooltip(label);
+      const label=el('span',(town?townById.get(townId).name:zone.name)+' · '+(legal?'법정 경계':'참고 경계'),'boundary-caption');
+      if(!town)label.append(stageBadge(zone.stage));
+      layer.bindTooltip(label,{className:'boundary-tip',direction:'top'});
       (town?townLayers:zoneLayers).set(p.entity_id,{layer,legal,props:p});
     }
     for(const t of towns){
       const coords=pointLatLng(t.representative_point);if(!coords || townLayers.has(t.id)) continue;
-      const layer=leaf.circleMarker(coords,{pane:'pinReference',radius:7,color:'#243f8b',fillColor:'#4364c8',weight:2,fillOpacity:.9});
-      layer.bindTooltip(el('span',t.name+' · 대표 위치 (경계 미확인)'),{permanent:true,direction:'top',offset:[0,-7]});
+      const layer=leaf.marker(coords,{pane:'pinReference',title:t.name+' 대표 위치',
+        icon:leaf.divIcon({className:'reference-pin',iconSize:[38,46],iconAnchor:[19,46]})});
+      layer.bindTooltip(el('span',t.name+' · 대표 위치'),{permanent:true,className:'boundary-tip',direction:'top',offset:[0,-46]});
       layer.on('click',()=>select(t.id,null));
       markers.set(t.id,layer);
     }
@@ -193,8 +240,11 @@ export function mount({manifest,towns,zones,boundaries},leaf=globalThis.L){
   function renderLayers(){
     if(!map)return;
     const overview=!current.townId && !search.value && !district.value;
-    map.getContainer().classList.toggle('district-overview',overview && map.getZoom()>=9 && map.getZoom()<=12);
+    const wasOverview=map.getContainer().classList.contains('district-overview');
+    const isOverview=overview && map.getZoom()>=9 && map.getZoom()<=12;
+    map.getContainer().classList.toggle('district-overview',isOverview);
     map.getContainer().classList.toggle('show-totals',overview);
+    if(wasOverview!==isOverview)map.fire('districtviewchange');
     const show=(layer,yes)=>{
       if(yes && !map.hasLayer(layer))layer.addTo(map);
       else if(!yes && map.hasLayer(layer))layer.remove();
@@ -208,11 +258,21 @@ export function mount({manifest,towns,zones,boundaries},leaf=globalThis.L){
     for(const [id,{layer,legal}] of zoneLayers){
       const parent=zoneById.get(id).town_id;
       show(layer,visible.has(parent) && (map.getZoom()>=14 || current.townId===parent));
-      const style=zoneStyle(id===current.zoneId,legal);
-      if(current.zoneId && id!==current.zoneId)style.fillOpacity=.16;
+      const style=zoneStyle(zoneStage(zoneById.get(id).stage),id===current.zoneId,legal,Boolean(current.zoneId));
       layer.setStyle(style);
     }
     zoneLayers.get(current.zoneId)?.layer.bringToFront();
+    if(captionZoneId!==current.zoneId){
+      selectedCaption?.remove();selectedCaption=null;captionZoneId=current.zoneId;
+      const geometry=zoneLayers.get(current.zoneId)?.layer.getLayers()[0];
+      if(geometry && map.hasLayer(geometry)){
+        const zone=zoneById.get(current.zoneId);
+        const caption=el('span',zone.name,'boundary-caption');
+        caption.append(stageBadge(zone.stage));
+        selectedCaption=leaf.tooltip({className:'boundary-tip',direction:'top',offset:[0,-3],opacity:1})
+          .setLatLng(geometry.getCenter()).setContent(caption).addTo(map);
+      }
+    }
     for(const [id,layer] of markers)show(layer,showReferencePin(id,current.townId,visible,townLayers));
   }
   function renderList(){
@@ -249,7 +309,8 @@ export function mount({manifest,towns,zones,boundaries},leaf=globalThis.L){
     field(metrics,'대상지 면적',numeric(town.area_m2,'㎡'));
     detail.append(metrics,el('h3',children.length?'세부 사업구역 '+children.length+'곳':'세부 사업구역'));
     for(const zone of children){
-      const button=el('button',zone.name,'zone-item');
+      const button=el('button',undefined,'zone-item');
+      button.append(el('strong',zone.name),stageBadge(zone.stage,true));
       button.type='button';button.dataset.zone=zone.id;
       button.addEventListener('click',()=>select(town.id,zone.id));
       detail.append(button);
@@ -269,12 +330,15 @@ export function mount({manifest,towns,zones,boundaries},leaf=globalThis.L){
     const metrics=el('dl',undefined,'metrics');
     field(metrics,'계획 세대수',numeric(zone.planned_units_total,'세대'));
     field(metrics,'최고 지상 층수',numeric(zone.max_floors_above_ground,'층'));
-    detail.append(metrics);
+    const status=el('div',undefined,'zone-status');
+    status.append(stageBadge(zone.stage));
+    if(stage?.source_as_of)status.append(el('small','자료 기준 '+displayDate(stage.source_as_of)));
+    else if(stage?.checked_on)status.append(el('small','자료 확인 '+displayDate(stage.checked_on)));
+    detail.append(status,metrics);
     if(plan?.state?.includes('not_latest')){
       detail.append(el('p','공개 당시의 계획값입니다. 최신 인가·분양계획과 차이가 있을 수 있습니다.','notice'));
     }
     const facts=el('dl',undefined,'facts');
-    field(facts,'추진 단계',zone.stage);
     field(facts,contractor?.state==='contractor_reported'?'시공사 (시공사 발표)':'선정 시공사',zone.selected_contractor);
     field(facts,'지하 층수',numeric(zone.floors_below_ground,'층'));
     field(facts,'세부 주택형',Array.isArray(zone.unit_types)?zone.unit_types.join(', '):zone.unit_types);
@@ -297,6 +361,27 @@ export function mount({manifest,towns,zones,boundaries},leaf=globalThis.L){
     title.tabIndex=-1;
     detail.append(el('span',town.district,'detail-district'),title,el('p',zone?town.name+' 모아타운':town.address,'address'));
     if(zone)renderZone(zone);else renderTown(town);
+    const history=town.published_timeline;
+    if(history && (!zone || history.zone_ids.includes(zone.id))){
+      const section=el('section',undefined,'project-timeline');
+      section.append(el('h3','단계 사이 소요 기간'),el('p',history.scope+' · 연월 기준','notice'));
+      const timeline=el('ol');
+      history.events.forEach((event,index)=>{
+        const item=el('li');
+        item.append(el('time',displayDate(event.month)),el('strong',event.label));
+        if(index){
+          const months=elapsedMonths(history.events[index-1].month,event.month);
+          if(months!==null)item.append(el('small','앞 단계에서 '+months+'개월'));
+        }
+        timeline.append(item);
+      });
+      section.append(timeline);
+      const source=sourceLink(history.source_url,'서울시 발표 · '+displayDate(history.source_as_of));
+      if(source)section.append(source);
+      detail.insertBefore(section,detail.querySelector('.facts'));
+    }else if(zone){
+      detail.insertBefore(el('p','단계 사이 소요 기간은 자료 미확인입니다.','notice'),detail.querySelector('.provenance'));
+    }
     detail.scrollTop=0;
   }
   function select(townId,zoneId){

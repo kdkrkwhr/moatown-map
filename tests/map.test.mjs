@@ -1,8 +1,27 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
-import {filterTowns,resolveSelection,pointLatLng,loadSnapshot} from '../app.mjs';
+import {filterTowns,resolveSelection,pointLatLng,loadSnapshot,zoneStage,elapsedMonths} from '../app.mjs';
 const read=u=>JSON.parse(fs.readFileSync(new URL(u,import.meta.url),'utf8'));
+test('the stage legend covers every published zone stage and keeps missing values distinct',()=>{
+  const manifest=read('../moatown-data/latest.json');
+  const zones=read('../moatown-data/'+manifest.files.zones);
+  for(const zone of zones)assert.equal(zoneStage(zone.stage).label,zone.stage ?? '미확인');
+  assert.equal(new Set(zones.map(zone=>zoneStage(zone.stage).ink)).size,4);
+});
+test('published milestone intervals use calendar months and only apply to the cited project group',()=>{
+  const manifest=read('../moatown-data/latest.json');
+  const towns=read('../moatown-data/'+manifest.files.towns);
+  const zones=read('../moatown-data/'+manifest.files.zones);
+  const group=towns.find(town=>town.id==='mt-202603-public-034');
+  const history=group.published_timeline;
+  assert.equal(history.zone_ids.length,5);
+  assert.ok(history.zone_ids.every(id=>zones.find(z=>z.id===id)?.town_id===group.id));
+  const dates=history.events.map(event=>event.month);
+  assert.deepEqual(dates.slice(1).map((end,i)=>elapsedMonths(dates[i],end)),[15,17]);
+  assert.equal(elapsedMonths(dates[2],dates[1]),null);
+  assert.equal(elapsedMonths(undefined,dates[1]),null);
+});
 test('no-coordinate towns remain discoverable, combined with district filter',()=>{
   const towns=read('../moatown-data/snapshots/2026-11-24/towns.json');
   assert.equal(filterTowns(towns,'','').length,138);

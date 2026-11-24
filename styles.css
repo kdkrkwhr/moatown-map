@@ -98,6 +98,31 @@ summary::-webkit-details-marker { display: none; }
 .facts { margin: 12px 0; }
 .facts > div { display: grid; grid-template-columns: minmax(76px,.85fr) 1.35fr; gap: 12px; padding: 9px 0; border-bottom: 1px solid var(--line); font-size: 14px; }
 .facts dt { color: var(--sub); }
+.stage-guide { flex: none; position: relative; z-index: 4; background: #fff; border-bottom: 1px solid var(--line); }
+.stage-guide summary { display: flex; align-items: center; gap: 19px; min-height: 45px; padding: 6px var(--gutter); font-size: 13px; }
+.stage-guide summary::after { content: ''; width: 6px; height: 6px; border: solid var(--sub); border-width: 0 1.5px 1.5px 0; transform: rotate(45deg); }
+.stage-guide[open] summary::after { transform: rotate(225deg); }
+#stage-key { display: flex; align-items: center; gap: 19px; }
+.stage-badge { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; line-height: 1.5; font-weight: 700; color: var(--stage-ink); white-space: nowrap; }
+.stage-badge::before { content: ''; flex: none; width: 9px; height: 9px; background: var(--stage-ink); border-radius: 50%; }
+.stage-badge[data-shape=diamond]::before { border-radius: 1px; transform: rotate(45deg); }
+.stage-badge[data-shape=square]::before { border-radius: 2px; }
+.stage-badge[data-shape=ring]::before { box-sizing: border-box; border: 2px solid; background: none; }
+.stage-guide-body { position: absolute; top: calc(100% + 1px); left: var(--gutter); width: min(480px,calc(100vw - 2 * var(--gutter))); max-height: 60dvh; overflow: auto; padding: 18px; border: 1px solid var(--line); border-radius: 0 0 14px 14px; background: white; box-shadow: 0 12px 30px #223d4f26; }
+.stage-guide-body h2 { margin-bottom: 10px; font-size: 16px; }
+#stage-definitions > div { display: grid; gap: 2px; padding: 5px 0; }
+#stage-definitions > div > span:last-child, .stage-guide-body p { font-size: 13px; color: var(--sub); }
+.stage-guide-body p { border-top: 1px solid var(--line); padding-top: 10px; margin-top: 8px; }
+.zone-item { grid-template-columns: minmax(0,1fr) auto auto; gap: 8px; }
+.zone-status { display: flex; gap: 10px; align-items: center; margin-top: 14px; flex-wrap: wrap; }
+.zone-status .stage-badge { padding: 4px 9px; border-radius: 6px; background: color-mix(in srgb,var(--stage-ink) 9%,white); }
+.zone-status small, .project-timeline small { color: var(--sub); font-size: 12px; }
+.project-timeline ol { padding: 0; margin: 12px 0; list-style: none; }
+.project-timeline li { position: relative; display: grid; grid-template-columns: 60px 1fr; column-gap: 10px; padding: 5px 0 9px 13px; margin-left: 4px; border-left: 2px solid #cbd9d9; font-size: 13px; }
+.project-timeline li::before { content: ''; position: absolute; left: -4px; top: 11px; width: 6px; height: 6px; border-radius: 50%; background: #33645f; }
+.project-timeline time { color: var(--sub); }
+.project-timeline small { grid-column: 2; }
+.project-timeline a { font-size: 13px; }
 .provenance { margin-top: 20px; border-top: 1px solid var(--line); }
 .provenance summary, .legend summary { display: flex; gap: 12px; align-items: center; justify-content: space-between; }
 .provenance summary { min-height: 46px; font-size: 14px; font-weight: 700; }
@@ -107,8 +132,9 @@ summary::-webkit-details-marker { display: none; }
 .evidence-row small { display: block; color: var(--sub); font-size: 12px; margin-top: 3px; }
 
 .map-stage { position: relative; isolation: isolate; min-width: 0; min-height: 0; overflow: hidden; background: #e8eeec; }
+.map-patterns { position: absolute; pointer-events: none; }
 #map { position: absolute; inset: 0; z-index: 0; background: #eaf0ee; }
-#map[data-basemap=quiet] { background-color: #eaf0ee; background-image: radial-gradient(#cdd8d4 .65px,transparent .8px); background-size: 10px 10px; }
+#map[data-basemap=quiet] { background: radial-gradient(ellipse at 50% 46%, #eff4ed 18%,#dfece6 100%); }
 #map.district-overview[data-basemap=quiet][data-context-ready=true] .leaflet-townReference-pane { visibility: hidden; }
 #map:not(.show-totals) .district-label b { display: none; }
 #map:not(.district-overview) .leaflet-contextDistrict-pane .leaflet-interactive { pointer-events: none; }
@@ -123,10 +149,10 @@ summary::-webkit-details-marker { display: none; }
 .legend ul { list-style: none; position: absolute; left: 0; bottom: calc(100% + 5px); width: max-content; padding: 12px 14px; }
 .legend li { display: flex; align-items: center; gap: 10px; font-size: 13px; padding: 3px; }
 .key { width: 14px; height: 10px; border-radius: 3px; }
-.key.town { border: 2px dashed #3155b3; background: #d0dbfc; }
-.key.zone { border: 2px dotted #a25216; background: #ffe2b9; }
-.key.point, .key.district { width: 10px; height: 10px; border-radius: 50%; background: var(--blue); }
-.key.district { width: 15px; background: var(--navy); }
+.key.town { border: 1.5px dashed #50677c; background: #dce6e7; }
+.key.zone { border: 1px solid #7f8b90; background: linear-gradient(110deg,#aa8bd9 33%,#edac56 33% 66%,#4bb8a1 66%); }
+.key.district, .key.point { width: 18px; height: 18px; background: url('./assets/neighborhood.webp') center/contain no-repeat; }
+.key.point { border: 2px solid #174a48; border-radius: 50% 50% 3px 50%; }
 #map-status, .map-note { position: absolute; z-index: 1; top: 70px; left: 18px; right: 18px; width: fit-content; max-width: 90%; background: white; border-radius: 8px; padding: 8px 12px; box-shadow: var(--shadow); font-size: 13px; }
 #map-status:empty { display: none; }
 .leaflet-container { font-family: inherit; }
@@ -135,14 +161,31 @@ summary::-webkit-details-marker { display: none; }
 .map-stage .leaflet-control-zoom a { width: 38px; height: 38px; line-height: 38px; color: var(--ink); }
 .map-stage .leaflet-control-attribution { font-size: 10px; }
 .quiet-district { background: none; border: 0; }
-.district-label { position: absolute; transform: translate(-50%,-50%); display: flex; align-items: center; gap: 4px; white-space: nowrap; font-size: 12px; font-weight: 700; color: #384a58; text-shadow: 0 1px 3px white; }
-.district-label b { background: var(--navy); color: white; border-radius: 12px; font-size: 11px; min-width: 18px; padding: 1px 4px; text-align: center; text-shadow: none; }
-.district-overview .district-label { padding: 2px 4px 2px 7px; border: 1px solid #d5dedf; border-radius: 20px; background: #fffffff2; box-shadow: 0 1px 3px #1b29400a; }
+.district-label { position: absolute; transform: translate(-50%,-50%); display: grid; justify-items: center; white-space: nowrap; font-size: 12px; font-weight: 750; color: #253d41; text-shadow: 0 1px 2px white; }
+.district-nameplate { display: flex; align-items: center; gap: 4px; line-height: 17px; }
+.district-overview .district-label::before { content: ''; width: 34px; height: 32px; background: url('./assets/neighborhood.webp') center/contain no-repeat; filter: drop-shadow(0 2px 1px #233b381a); }
+.district-overview .empty-district::before { display: none; }
+.district-overview .district-nameplate { background: #fffffff5; border-radius: 5px; box-shadow: 0 1px 4px #173a4724; padding: 1px 5px; }
+.district-label b { color: #245952; font-weight: 800; font-size: 12px; }
+.stage-mix { display: none; }
+.district-overview .stage-mix { display: flex; width: 36px; height: 4px; overflow: hidden; border-radius: 0 0 4px 4px; }
+.district-overview .leaflet-interactive:hover .district-nameplate { background: #223e40; color: white; text-shadow: none; }
+.district-overview .leaflet-interactive:hover .district-nameplate b { color: #a6f3dd; }
+.reference-pin { background: url('./assets/neighborhood.webp') center 1px/32px 34px no-repeat; filter: drop-shadow(0 2px 2px #17333344); }
+.reference-pin::after { content: ''; position: absolute; bottom: 0; left: 14px; width: 10px; height: 10px; background: #005f58; border: 2px solid white; box-sizing: border-box; border-radius: 50%; }
+.boundary-tip { max-width: 210px; white-space: normal; border: 0; border-radius: 8px; padding: 7px 10px; color: var(--ink); font-size: 12px; font-weight: 700; box-shadow: 0 4px 14px #223c4a28; }
+.boundary-caption { display: grid; gap: 2px; }
 .quiet-district:focus-visible .district-label { outline: 3px solid var(--blue); }
 .map-stage .leaflet-tile { filter: saturate(.6); }
 
 @media (max-width: 760px) {
   :root { --gutter: 17px; }
+  .stage-guide summary { display: grid; grid-template-columns: 1fr auto; gap: 3px; padding-block: 5px; }
+  .stage-guide summary::after { grid-column: 2; grid-row: 1; margin-right: 3px; }
+  #stage-key { grid-column: 1/-1; gap: 6px 12px; flex-wrap: wrap; }
+  #stage-key .stage-badge { font-size: 11px; gap: 4px; }
+  .stage-guide-body { left: 8px; width: calc(100vw - 16px); }
+  .district-overview .district-label::before { height: 26px; width: 29px; }
   .topbar { height: 49px; padding-top: env(safe-area-inset-top); box-sizing: content-box; }
   .topbar h1 { font-size: 17px; gap: 8px; }
   .brand-mark svg { width: 27px; height: 27px; }

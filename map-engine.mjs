@@ -53,9 +53,9 @@ export function basemapUrl(input,mode){
 }
 
 const contextStyle=p=>{
-  if(p.kind==='water')return {color:'#a3ccd8',fillColor:'#afd7e1',fillOpacity:1,weight:1,opacity:1};
-  if(p.kind==='road')return {color:'#ccd2cf',weight:1,opacity:.75};
-  return {color:'#bcc9c7',weight:1.15,fillColor:'#fbfaf3',fillOpacity:1};
+  if(p.kind==='water')return {color:'#8ec9d1',fillColor:'#a1d6db',fillOpacity:1,weight:.9,opacity:1};
+  if(p.kind==='road')return {color:'#c4cec4',weight:1,opacity:.72};
+  return {color:'#bccbc3',weight:1.2,fillColor:'#f7f7ed',fillOpacity:1};
 };
 let detailStack;
 function getDetailStack(){
@@ -80,7 +80,7 @@ function getDetailStack(){
     .then(()=>script(new URL('./vendor/maplibre/leaflet-maplibre-gl.js',import.meta.url))).catch(()=>{});
   return detailStack;
 }
-export function basemapSwitcher(leaf,map,status,{read=fetch,loadDetailed=getDetailStack,startDetailed=attachBasemap,districtCounts=new Map(),selectDistrict}={}){
+export function basemapSwitcher(leaf,map,status,{read=fetch,loadDetailed=getDetailStack,startDetailed=attachBasemap,districtCounts=new Map(),districtStages=new Map(),selectDistrict}={}){
   let mode,disposeDetail,quietLayer,labels,version=0;
   let attribution='',attributionActive=false;
   let contextData;
@@ -105,8 +105,10 @@ export function basemapSwitcher(leaf,map,status,{read=fetch,loadDetailed=getDeta
     const size=map.getSize?.();
     for(const {marker,count} of districtLabels){
       const at=map.latLngToContainerPoint(marker.getLatLng());
-      const onScreen=at.x>=32 && at.x<=size.x-32 && at.y>=12 && at.y<=size.y-12;
-      const clear=onScreen && placed.every(p=>Math.abs(p.x-at.x)>74 || Math.abs(p.y-at.y)>27);
+      const overview=map.getContainer().classList.contains('district-overview');
+      const halfWidth=overview?37:26,halfHeight=overview?25:11;
+      const onScreen=at.x>=halfWidth && at.x<=size.x-halfWidth && at.y>=halfHeight && at.y<=size.y-halfHeight;
+      const clear=onScreen && placed.every(p=>Math.abs(p.x-at.x)>2*halfWidth || Math.abs(p.y-at.y)>2*halfHeight);
       if(clear){
         placed.push(at);
         if(!labels.hasLayer(marker))labels.addLayer(marker);
@@ -114,7 +116,7 @@ export function basemapSwitcher(leaf,map,status,{read=fetch,loadDetailed=getDeta
       }else if(labels.hasLayer(marker))labels.removeLayer(marker);
     }
   }
-  map.on('zoomend moveend resize',syncLabels);
+  map.on('zoomend moveend resize districtviewchange',syncLabels);
   return async function setMode(next){
     if(mode===next)return;
     const request=++version;
@@ -155,11 +157,26 @@ export function basemapSwitcher(leaf,map,status,{read=fetch,loadDetailed=getDeta
         labelFeatures.sort((a,b)=>(districtCounts.get(b.properties.name) ?? 0)-(districtCounts.get(a.properties.name) ?? 0));
         for(const f of labelFeatures){
           const name=f.properties.name,total=districtCounts.get(name) ?? 0;
-          const text=document.createElement('span');text.className='district-label';text.textContent=name;
-          const count=document.createElement('b');count.textContent=String(total);text.append(count);
+          const text=document.createElement('span');text.className='district-label';
+          if(!total)text.classList.add('empty-district');
+          const nameplate=document.createElement('span');nameplate.className='district-nameplate';nameplate.textContent=name;
+          const count=document.createElement('b');count.textContent=String(total);nameplate.append(count);text.append(nameplate);
+          const mix=districtStages.get(name);
+          let title=name+' 수록 대상지 '+total+'곳';
+          if(mix?.size){
+            const bar=document.createElement('span');bar.className='stage-mix';bar.setAttribute('aria-hidden','true');
+            const breakdown=[];
+            for(const [stage,n] of mix){
+              if(!n)continue;
+              const segment=document.createElement('i');
+              segment.style.flexGrow=n;segment.style.backgroundColor=stage.ink;bar.append(segment);
+              breakdown.push(stage.short+' '+n+'곳');
+            }
+            text.append(bar);title+=' · 세부 사업구역 '+breakdown.join(', ');
+          }
           const interactive=Boolean(selectDistrict && total);
           const marker=leaf.marker(leaf.GeoJSON.coordsToLatLng(f.geometry.coordinates),{
-            pane:'contextLabel',interactive,keyboard:interactive,autoPanOnFocus:false,title:name+' 수록 대상지 '+total+'곳',
+            pane:'contextLabel',interactive,keyboard:interactive,autoPanOnFocus:false,title,
             icon:leaf.divIcon({className:'quiet-district',html:text,iconSize:[0,0]})
           });
           if(interactive)marker.on('click',()=>selectDistrict(name));

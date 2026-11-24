@@ -997,6 +997,23 @@
   },
   {
     "id": "mt-202603-public-034",
+    "published_timeline": {
+      "scope": "번동 모아주택 1~5구역 공동 이력",
+      "zone_ids": [
+        "mz-info-305900000750u59",
+        "mz-seoul-11000uq120ps202505310171",
+        "mz-seoul-11000uq120ps202505310172",
+        "mz-seoul-11000uq120ps202505310173",
+        "mz-seoul-11000uq120ps202505310174"
+      ],
+      "events": [
+        {"month": "2022-04", "label": "통합심의 통과"},
+        {"month": "2023-07", "label": "사업시행계획인가"},
+        {"month": "2024-12", "label": "착공 행사"}
+      ],
+      "source_url": "https://www.seoul.go.kr/news/news_report.do?nttNo=424981",
+      "source_as_of": "2024-12-16"
+    },
     "district": "강북구",
     "name": "번동 429-114",
     "address": "강북구 번동 429-114",

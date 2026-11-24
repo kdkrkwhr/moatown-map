@@ -7,11 +7,19 @@
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <title>서울 모아타운 현황지도</title>
   <link rel="stylesheet" href="./vendor/leaflet/leaflet.css">
-  <link rel="stylesheet" href="./styles.css?v=atlas-1">
+  <link rel="stylesheet" href="./styles.css?v=stages-1">
   <script defer src="./vendor/leaflet/leaflet.js"></script>
-  <script type="module" src="./app.mjs?v=atlas-1"></script>
+  <script type="module" src="./app.mjs?v=stages-1"></script>
 </head>
 <body>
+<svg width="0" height="0" class="map-patterns" aria-hidden="true" focusable="false">
+  <defs>
+    <pattern id="stage-unverified" width="8" height="8" patternUnits="userSpaceOnUse">
+      <rect width="8" height="8" fill="#c1c8cd"/>
+      <path d="M-2 2 2-2M0 8 8 0M6 10 10 6" fill="none" stroke="#697584" stroke-width="1"/>
+    </pattern>
+  </defs>
+</svg>
 <a class="skip" href="#explorer">대상지 탐색으로 바로가기</a>
 <header class="topbar">
   <h1><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none"><path d="m4 12 12-7 12 7-12 7z" fill="currentColor"/><path d="m4 17 12 7 12-7M4 22l12 7 12-7" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/></svg></span>모아타운 현황지도</h1>
@@ -23,6 +31,14 @@
     </div></details>
   </div>
 </header>
+<details class="stage-guide">
+  <summary><strong>사업 단계 안내</strong><span id="stage-key"></span></summary>
+  <div class="stage-guide-body">
+    <h2>세부 사업구역의 추진 단계</h2>
+    <div id="stage-definitions"></div>
+    <p>구역의 색은 공개 자료에서 확인한 단계입니다. 자치구 마커의 색 띠는 수록된 세부 구역의 단계별 비율을 보여줍니다. 상세 화면에서 확인일과 단계 사이 소요 기간을 살펴볼 수 있습니다.</p>
+  </div>
+</details>
 <main class="workspace">
   <aside id="explorer" aria-label="대상지 탐색" tabindex="-1">
     <button type="button" id="sheet-toggle" aria-controls="panel-content" aria-expanded="true"><span id="sheet-label">대상지 탐색</span><span class="chevron" aria-hidden="true"></span></button>
@@ -52,7 +68,7 @@
     <details class="legend"><summary>지도 범례</summary><ul>
       <li><i class="key district"></i>자치구별 수록 대상지 수</li>
       <li><i class="key town"></i>모아타운 참고 외곽</li>
-      <li><i class="key zone"></i>세부 사업구역 참고 경계</li>
+      <li><i class="key zone"></i>세부 사업구역 · 단계별 색상</li>
       <li><i class="key point"></i>선택한 대상지의 대표 위치</li>
     </ul></details>
     <noscript><p class="map-note">지도를 이용하려면 JavaScript를 켜 주세요. <a href="./moatown-data/latest.json">최신 데이터</a></p></noscript>
