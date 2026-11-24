@@ -126,7 +126,7 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,[t
 .moa-cluster,.moa-cluster-count { display:grid; place-items:center; box-sizing:border-box; border-radius:50%; font-weight:800; color:#fff; }
 .moa-cluster { background:#196649eb; border:2px solid white; box-shadow:0 1px 6px #12372a70; }
 .moa-cluster-count { width:100%; height:100%; }
-.map-view .leaflet-tile-pane { filter:saturate(.72); }
+.map-view .leaflet-tile { filter:saturate(.22) brightness(1.055) contrast(.91); }
 @media(max-width:760px) {
   .map-search { top:var(--safe-top); width:calc(100% - var(--safe-left) - var(--safe-right)); padding:.65rem; }
   .masthead .brand h1 { font-size:1.08rem; }
