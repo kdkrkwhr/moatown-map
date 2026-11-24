@@ -64,7 +64,7 @@
 
 ## 참고용 외곽과 세부 사업구역 경계
 
-`boundaries.geojson`은 서울 열린데이터광장 OA-22712의 2026년 9월 공간자료를 이 프로젝트의 선정 명부에 대조해 만든 결과입니다. 필지 도형이나 도로에만 적용되는 토지거래허가 경계가 아닙니다.
+`boundaries.geojson`에는 서울 열린데이터광장 OA-22712의 2026년 9월 공간자료와 신월동 고시 도면에서 옮긴 참고 경계가 들어 있습니다.
 
 - `entity_type: town`은 모아타운 전체의 참고용 외곽이고, `entity_type: zone`은 개별 사업구역의 참고용 외곽입니다. 개별 구역은 `parent_town_id`로 상위 모아타운을 가리킵니다.
 - 외곽은 선정 명부와 원본 자치구·사업지명·대표 지번이 일치하거나 공식 자료가 같은 사업지임을 확인해 준 곳만 연결했습니다. 전체 명부와 범위가 같지는 않습니다.
@@ -92,3 +92,11 @@
 신월동 102-33의 A1~A4는 서울시 고시 제2023-606호 추진계획표와 임대주택 공급계획표에서 확인했습니다. A1의 세대수는 2026년 11월 심의에서 바뀌었습니다. A2와 A3는 조합 인가 고시의 필지 목록과 면적으로 대조했습니다. A4의 단계에는 확인한 구의회 회의일을 표시합니다. [관리계획 고시](https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=584443) · [서울시 통합심의 발표](https://www.seoul.go.kr/news/news_report.do?nttNo=470317) · [A2 인가 고시](https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=644883) · [A3 인가 고시](https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=640660) · [양천구의회 회의록](https://www.ycc.go.kr/record/main?code=E010&uid=8618&view=full_view)
 
 대표 지번 핀은 자치구·법정동·본번·부번이 일치하는 서울시 지적 필지의 내부점입니다. 고시 지번이 색인에 없으면 구역 카드는 유지합니다. 공간자료의 위치, 대표 필지와 사업 면적까지 대조된 구역은 참고 경계를 별도로 제공합니다. [서울 부동산정보광장](https://land.seoul.go.kr/land/map/land/map.do) · [서울시 사업지 공간자료](https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do)
+
+### 신월동 고시 도면에서 옮긴 경계 7곳
+
+신월동 102-33의 A2·A3는 양천구 조합설립인가 고시 PDF 3쪽의 붉은 사업시행구역선을 따릅니다. 도면 속 지적선을 서울시 지적 필지에 맞춘 뒤, 좌표 맞춤에서 제외한 A2의 16필지와 A3의 29필지로 위치를 점검했습니다. 검사 필지의 선에서 도면 잉크까지 거리의 95백분위는 각각 0.46m와 0.12m입니다. 이 값은 배경 지적선의 정합 지표입니다. [A2 인가 고시](https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=644883) · [A3 인가 고시](https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=640660) · [서울 부동산정보광장](https://land.seoul.go.kr/land/map/land/map.do)
+
+신월동 102-33의 A4는 승인고시 9쪽 토지이용계획도에서 B1 공원을 포함하는 사업가능구역선을, 신월동 173의 A1~A4는 정정고시 12쪽 토지이용계획도에서 사업가능구역 색면을 읽었습니다. 같은 쪽 관리지역 결정도의 외곽을 서울시 관리지역 공간자료에 맞추고, 네 구역의 대표 필지점이 각각 하나의 구역에만 들어가는지 확인했습니다. [신월동 102-33 관리계획](https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=584443) · [신월동 173 관리계획 정정고시](https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=594579) · [서울시 공간자료](https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do)
+
+구역별 `boundary_evidence`에는 고시번호·기준일·PDF 쪽수·원본 해시·좌표 변환 계수를 기록했습니다. 도면 계측 면적과 문서상 면적은 별도로 보관하며 사업규모 카드에는 문서상 면적을 표시합니다. [구역별 면적 대조표](./sub-area-review-2026-11-24.md#신월동-경계-대조)

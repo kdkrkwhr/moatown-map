@@ -131,8 +131,9 @@ export function createProjectMap(m,container,{townById,zoneById,boundaries,distr
       const hit=addressIds.has(id);
       const show=hit || (isTown?visible.has(id):visibleZones.has(id)||townHits.has(townId)||current.townId===townId);
       const selected=id===(current.zoneId??current.townId);
+      const focusedChild=!isTown && current.townId===townId;
       const style={strokeColor:stage?.ink??'#345b75',fillColor:stage?.fill??'#a3c9dc',
-        fillOpacity:wide?0:isTown?.14:selected?.65:.44,strokeWeight:wide?1:selected||hit?3:1.6,
+        fillOpacity:wide?0:isTown?.14:selected?.65:.44,strokeWeight:wide?1:selected||hit?3:focusedChild?2.5:1.6,
         strokeOpacity:wide?.65:1,zIndex:isTown?1:selected?5:3};
       for(const poly of shape.polygons){
         setVisible(poly,show);

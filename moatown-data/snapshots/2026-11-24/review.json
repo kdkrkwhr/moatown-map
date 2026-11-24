@@ -4918,7 +4918,9 @@
       "source_as_of": "2026-10-29",
       "parcel_area_sqm": 15927.2,
       "notice_area_sqm": 13237.5,
-      "reason": "필지 전체 합산 면적과 인가 면적 불일치. 도면 대조 필요"
+      "reason": "필지 전체 합산 면적과 인가 면적 불일치",
+      "resolution": "인가 고시도에 표시된 사업시행구역을 참고 경계로 수록",
+      "boundary_source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=644883"
     },
     {
       "zone_id": "mz-plan-584443-a3",
@@ -4930,7 +4932,9 @@
       "source_as_of": "2026-08-13",
       "parcel_area_sqm": 27661.8,
       "notice_area_sqm": 23770.3,
-      "reason": "필지 전체 합산 면적과 인가 면적 불일치. 도면 대조 필요"
+      "reason": "필지 전체 합산 면적과 인가 면적 불일치",
+      "resolution": "인가 고시도에 표시된 사업시행구역을 참고 경계로 수록",
+      "boundary_source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=640660"
     }
   ]
 }

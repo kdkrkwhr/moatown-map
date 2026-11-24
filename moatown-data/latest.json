@@ -12,12 +12,12 @@
     "official_cancellations_reviewed": 11,
     "baseline_rows_removed_by_confirmed_cancellation": 1,
     "zone_records": 167,
-    "boundary_features": 158,
+    "boundary_features": 165,
     "representative_points": 131,
     "limitations": [
       "2026-03-31 명부와 확인된 취소 자료에 근거한 초기 자료이며, 현재 전체 명부가 아닙니다.",
       "확인된 후속 공식 선정 일부를 추가했습니다. 최신 전체 선정·정정, 전체 사업구역 상세와 경계는 전수 확인하지 못했습니다.",
-      "서울시 공간자료에서 대조한 참고 외곽과 사업구역 경계를 표시합니다. 고시 지형도면과 필지 단위 대조를 마친 법정 경계는 없습니다."
+      "서울시 공간자료와 고시 도면에서 확인한 참고 경계를 표시합니다. 개별 필지의 법정 구역 포함 여부는 관할 기관의 최신 고시로 확인해야 합니다."
     ],
     "representative_points_unmatched_or_unchecked": 7,
     "representative_points_by_kind": {
@@ -25,7 +25,7 @@
       "representative_parcel_interior": 33
     },
     "town_reference_boundaries": 103,
-    "zone_reference_boundaries": 55,
+    "zone_reference_boundaries": 62,
     "legal_boundary_features": 0,
     "zone_records_with_plan_numbers": 161,
     "towns_with_management_plan_notices": 68,
@@ -46,7 +46,7 @@
     "zones_with_planned_units_per_owner": 52,
     "zones_with_member_general_rental": 2,
     "zone_representative_points": 154,
-    "zone_point_only": 105
+    "zone_point_only": 98
   },
   "source_urls": {
     "official_baseline": "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status",

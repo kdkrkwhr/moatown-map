@@ -24,6 +24,12 @@ function section(container,id,title){
 }
 const notice=(text)=>el('p',text,'notice');
 const listOf=v=>Array.isArray(v)?v:[];
+function boundaryLabel(boundary){
+  if(!boundary)return null;
+  if(boundary.scope==='association_project_area')return '인가 고시도 참고 경계';
+  if(boundary.scope==='management_plan_project_area')return '관리계획도 참고 경계';
+  return boundary.boundary_status==='legal'?'법정 경계':'참고 경계';
+}
 const values=r=>({
   area:r.metrics?.area_sqm??r.area_sqm??r.project_area_m2??r.area_m2,
   planned:r.metrics?.planned_units??r.planned_units??r.planned_units_total,
@@ -40,9 +46,15 @@ function regulations(card,r,town,zone,boundary,cityRule,badge){
   field(facts,'권리산정기준일',date(r.rights_cutoff_date)).lastChild.classList.add('status-tag');
   field(facts,'토지거래허가구역',typeof p?.designated==='boolean'?(p.designated?'지정':'해제')+(p.scope?' · '+p.scope:''):null);
   if(p?.start_date || p?.end_date)field(facts,'지정 기간',[p.start_date,p.end_date].map(date).join(' ~ '));
-  field(facts,'구역 경계',boundary?(boundary.boundary_status==='legal'?'법정 경계':'참고 경계'):null);
+  field(facts,'구역 경계',boundaryLabel(boundary));
   field(facts,'대표 위치',r.representative_point?(r.representative_point_evidence?.address??r.registered_address??town.address):null);
   card.append(facts);
+  if(boundary?.kind==='official_notice_drawing'){
+    const box=notice('점선은 고시 도면의 구역선을 지도에 옮긴 것입니다. 개별 필지의 포함 여부는 원문에서 확인하세요.');
+    const source=link(boundary.source_url,boundary.notice_number+' · 도면 '+boundary.pdf_page+'쪽');
+    if(source)box.append(document.createElement('br'),source);
+    card.append(box);
+  }
   for(const h of listOf(r.rights_cutoff_history))card.append(notice([h.scope,date(h.date),h.status,h.condition].filter(Boolean).join(' · ')));
   if(!zone && cityRule){
     const more=el('details',null,'city-road-rule');
@@ -141,7 +153,7 @@ function subAreas(card,town,zone,children,boundaries,select,badge){
     button.type='button';button.dataset.zone=child.id;button.setAttribute('aria-label',child.name+' 상세 보기');
     if(zone?.id===child.id)button.setAttribute('aria-current','true');
     head.append(el('strong',child.drawing_code??child.name),badge(child.stage,true));
-    const place=boundaries.has(child.id)?'경계 표시':child.representative_point?'대표 지번 핀':'위치 확인 중';
+    const place=boundaryLabel(boundaries.get(child.id))??(child.representative_point?'대표 지번 핀':'위치 확인 중');
     const sizes=values(child);
     button.append(head,el('small',(child.registered_address??'지번 확인 중')+' · '+place),el('span','면적 '+formatValue(sizes.area,'㎡')+' · 계획 '+formatValue(sizes.planned,'세대'),'sub-card-metrics'));
     button.addEventListener('click',()=>select(town.id,child.id));item.append(button);list.append(item);
@@ -168,6 +180,7 @@ function sources(card,r,snapshot,boundary,events){
     if(!link(url,'원문'))return;
     if(!collection.has(url))collection.set(url,{name:title||publisher(url),asOf});
   }
+  if(boundary?.kind==='official_notice_drawing')add(boundary.source_url,boundary.notice_number+' · 경계 도면 '+boundary.pdf_page+'쪽',boundary.source_as_of,docs);
   for(const item of listOf(r.official_links))add(item?.url,item?.title,item?.date,docs);
   for(const n of listOf(r.management_plan_notices))add(n.archive_url??n.source_url,n.notice_number??n.site+' 관리계획 자료',n.notice_date,docs);
   for(const [key,e] of Object.entries(r.field_evidence??{})){

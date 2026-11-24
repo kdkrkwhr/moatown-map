@@ -5843,7 +5843,6 @@
     "registered_address": "신월동 137-14",
     "project_area_m2": 13237.5,
     "planned_units_total": 390,
-    "geometry": null,
     "selected_contractor": null,
     "metrics": {
       "existing_units": 196,
@@ -5952,6 +5951,44 @@
       "pnu": "1147010300101370014",
       "legal_dong": "신월동",
       "address_source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=584443"
+    },
+    "boundary_evidence": {
+      "kind": "official_notice_drawing",
+      "status": "reference_only",
+      "scope": "association_project_area",
+      "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=644883",
+      "source_as_of": "2026-10-29",
+      "checked_on": "2026-11-24",
+      "notice_number": "양천구 고시 제2026-99호",
+      "pdf_page": 3,
+      "drawing_title": "사업시행구역 지형도면고시도",
+      "pdf_sha256": "d316bf9e5509d9f8ca037982d5ec52bdfe5c126c69d1c2e9dd9e9a895896f077",
+      "source_feature_id": "eum-644883-p3-a2",
+      "registration": {
+        "crs": "EPSG:5179",
+        "source_url": "https://land.seoul.go.kr/land/map/land/map.do",
+        "layer": "ln_parcel",
+        "source_as_of": null,
+        "training_parcels": 60,
+        "holdout_parcels": 16,
+        "holdout_line_to_ink_p95_m": 0.46,
+        "pixel_to_projected_xy": [
+          [
+            0.856878634,
+            -0.004295971,
+            940719.534631549
+          ],
+          [
+            -0.004818613,
+            -0.857155911,
+            1948705.810997606
+          ]
+        ],
+        "checked_on": "2026-11-24"
+      },
+      "document_area_sqm": 13237.5,
+      "digitized_area_sqm": 14109.3,
+      "parent_overlap_ratio": 0.98108
     }
   },
   {
@@ -5964,7 +6001,6 @@
     "registered_address": "신월동 102-33",
     "project_area_m2": 23770.3,
     "planned_units_total": 592,
-    "geometry": null,
     "selected_contractor": null,
     "metrics": {
       "existing_units": 278,
@@ -6073,6 +6109,44 @@
       "pnu": "1147010300101020033",
       "legal_dong": "신월동",
       "address_source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=584443"
+    },
+    "boundary_evidence": {
+      "kind": "official_notice_drawing",
+      "status": "reference_only",
+      "scope": "association_project_area",
+      "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=640660",
+      "source_as_of": "2026-08-13",
+      "checked_on": "2026-11-24",
+      "notice_number": "양천구 고시 제2026-77호",
+      "pdf_page": 3,
+      "drawing_title": "사업시행구역 지형도면고시도",
+      "pdf_sha256": "d9c31298919fb1b301b94243967867de16fbfc77206f0cadc22d30bb80b048b5",
+      "source_feature_id": "eum-640660-p3-a3",
+      "registration": {
+        "crs": "EPSG:5179",
+        "source_url": "https://land.seoul.go.kr/land/map/land/map.do",
+        "layer": "ln_parcel",
+        "source_as_of": null,
+        "training_parcels": 112,
+        "holdout_parcels": 29,
+        "holdout_line_to_ink_p95_m": 0.12,
+        "pixel_to_projected_xy": [
+          [
+            0.583857064,
+            -0.002550175,
+            940853.353701846
+          ],
+          [
+            -0.003523153,
+            -0.585428666,
+            1948785.613535298
+          ]
+        ],
+        "checked_on": "2026-11-24"
+      },
+      "document_area_sqm": 23770.3,
+      "digitized_area_sqm": 24889.7,
+      "parent_overlap_ratio": 0.9703
     }
   },
   {
@@ -6085,7 +6159,6 @@
     "registered_address": "신월동 108-1",
     "project_area_m2": 20117.4,
     "planned_units_total": 503,
-    "geometry": null,
     "selected_contractor": null,
     "metrics": {
       "existing_units": 317,
@@ -6192,6 +6265,43 @@
       "pnu": "1147010300101080001",
       "legal_dong": "신월동",
       "address_source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=584443"
+    },
+    "boundary_evidence": {
+      "kind": "official_notice_drawing",
+      "status": "reference_only",
+      "scope": "management_plan_project_area",
+      "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=584443",
+      "source_as_of": "2023-12-28",
+      "checked_on": "2026-11-24",
+      "notice_number": "서울특별시 고시 제2023-606호",
+      "pdf_page": 9,
+      "drawing_title": "토지이용계획(안) · 사업가능구역",
+      "pdf_sha256": "46aa9bf004d2227ca0c5472a21a2024214b1b7849c07433fed74a4ff19098b8f",
+      "source_feature_id": "eum-584443-p9-a4",
+      "registration": {
+        "crs": "EPSG:5179",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+        "layer": "UPIS_C_UQ120",
+        "source_as_of": "2026-09-10",
+        "town_outline_to_plan_dash_p95_m": 4.69,
+        "management_sheet_dash_to_town_outline_p95_m": 0.93,
+        "pixel_to_projected_xy": [
+          [
+            0.52520845,
+            -0.002936181,
+            940704.843754739
+          ],
+          [
+            -0.002829982,
+            -0.52549837,
+            1948777.320397833
+          ]
+        ],
+        "checked_on": "2026-11-24"
+      },
+      "document_area_sqm": 20117.4,
+      "digitized_area_sqm": 19237.5,
+      "parent_overlap_ratio": 0.99941
     }
   },
   {
@@ -8668,7 +8778,6 @@
     "registered_address": "신월3동 163-1",
     "project_area_m2": 8648.6,
     "planned_units_total": 241,
-    "geometry": null,
     "selected_contractor": null,
     "metrics": {
       "existing_units": null,
@@ -8761,6 +8870,43 @@
       "pnu": "1147010300101630001",
       "legal_dong": "신월동",
       "address_source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=594579"
+    },
+    "boundary_evidence": {
+      "kind": "official_notice_drawing",
+      "status": "reference_only",
+      "scope": "management_plan_project_area",
+      "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=594579",
+      "source_as_of": "2024-04-25",
+      "checked_on": "2026-11-24",
+      "notice_number": "서울특별시 고시 제2024-205호",
+      "pdf_page": 12,
+      "drawing_title": "토지이용계획(안) · 사업가능구역",
+      "pdf_sha256": "6efb59a0afc01cfbd82efe257f714631433da8f6744f8fb17f34d6705479c243",
+      "source_feature_id": "eum-594579-p12-a1",
+      "registration": {
+        "crs": "EPSG:5179",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+        "layer": "UPIS_C_UQ120",
+        "source_as_of": "2026-09-10",
+        "town_outline_to_plan_dash_p95_m": 2.4,
+        "management_sheet_dash_to_town_outline_p95_m": 0.78,
+        "pixel_to_projected_xy": [
+          [
+            0.255883029,
+            -0.001370177,
+            940175.315165293
+          ],
+          [
+            -0.001351542,
+            -0.255909904,
+            1948651.15877767
+          ]
+        ],
+        "checked_on": "2026-11-24"
+      },
+      "document_area_sqm": 8648.6,
+      "digitized_area_sqm": 8574.4,
+      "parent_overlap_ratio": 1.0
     }
   },
   {
@@ -8773,7 +8919,6 @@
     "registered_address": "신월3동 173-1",
     "project_area_m2": 17211.9,
     "planned_units_total": 481,
-    "geometry": null,
     "selected_contractor": null,
     "metrics": {
       "existing_units": null,
@@ -8876,6 +9021,43 @@
       "pnu": "1147010300101730001",
       "legal_dong": "신월동",
       "address_source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=594579"
+    },
+    "boundary_evidence": {
+      "kind": "official_notice_drawing",
+      "status": "reference_only",
+      "scope": "management_plan_project_area",
+      "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=594579",
+      "source_as_of": "2024-04-25",
+      "checked_on": "2026-11-24",
+      "notice_number": "서울특별시 고시 제2024-205호",
+      "pdf_page": 12,
+      "drawing_title": "토지이용계획(안) · 사업가능구역",
+      "pdf_sha256": "6efb59a0afc01cfbd82efe257f714631433da8f6744f8fb17f34d6705479c243",
+      "source_feature_id": "eum-594579-p12-a2",
+      "registration": {
+        "crs": "EPSG:5179",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+        "layer": "UPIS_C_UQ120",
+        "source_as_of": "2026-09-10",
+        "town_outline_to_plan_dash_p95_m": 2.4,
+        "management_sheet_dash_to_town_outline_p95_m": 0.78,
+        "pixel_to_projected_xy": [
+          [
+            0.255883029,
+            -0.001370177,
+            940175.315165293
+          ],
+          [
+            -0.001351542,
+            -0.255909904,
+            1948651.15877767
+          ]
+        ],
+        "checked_on": "2026-11-24"
+      },
+      "document_area_sqm": 17211.9,
+      "digitized_area_sqm": 17047.8,
+      "parent_overlap_ratio": 1.0
     }
   },
   {
@@ -8888,7 +9070,6 @@
     "registered_address": "신월3동 183-1",
     "project_area_m2": 8693.2,
     "planned_units_total": 250,
-    "geometry": null,
     "selected_contractor": null,
     "metrics": {
       "existing_units": null,
@@ -8981,6 +9162,43 @@
       "pnu": "1147010300101830001",
       "legal_dong": "신월동",
       "address_source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=594579"
+    },
+    "boundary_evidence": {
+      "kind": "official_notice_drawing",
+      "status": "reference_only",
+      "scope": "management_plan_project_area",
+      "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=594579",
+      "source_as_of": "2024-04-25",
+      "checked_on": "2026-11-24",
+      "notice_number": "서울특별시 고시 제2024-205호",
+      "pdf_page": 12,
+      "drawing_title": "토지이용계획(안) · 사업가능구역",
+      "pdf_sha256": "6efb59a0afc01cfbd82efe257f714631433da8f6744f8fb17f34d6705479c243",
+      "source_feature_id": "eum-594579-p12-a3",
+      "registration": {
+        "crs": "EPSG:5179",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+        "layer": "UPIS_C_UQ120",
+        "source_as_of": "2026-09-10",
+        "town_outline_to_plan_dash_p95_m": 2.4,
+        "management_sheet_dash_to_town_outline_p95_m": 0.78,
+        "pixel_to_projected_xy": [
+          [
+            0.255883029,
+            -0.001370177,
+            940175.315165293
+          ],
+          [
+            -0.001351542,
+            -0.255909904,
+            1948651.15877767
+          ]
+        ],
+        "checked_on": "2026-11-24"
+      },
+      "document_area_sqm": 8693.2,
+      "digitized_area_sqm": 8567.5,
+      "parent_overlap_ratio": 1.0
     }
   },
   {
@@ -8993,7 +9211,6 @@
     "registered_address": "신월3동 186-1",
     "project_area_m2": 18345.8,
     "planned_units_total": 522,
-    "geometry": null,
     "selected_contractor": null,
     "metrics": {
       "existing_units": null,
@@ -9096,6 +9313,43 @@
       "pnu": "1147010300101860001",
       "legal_dong": "신월동",
       "address_source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=594579"
+    },
+    "boundary_evidence": {
+      "kind": "official_notice_drawing",
+      "status": "reference_only",
+      "scope": "management_plan_project_area",
+      "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=594579",
+      "source_as_of": "2024-04-25",
+      "checked_on": "2026-11-24",
+      "notice_number": "서울특별시 고시 제2024-205호",
+      "pdf_page": 12,
+      "drawing_title": "토지이용계획(안) · 사업가능구역",
+      "pdf_sha256": "6efb59a0afc01cfbd82efe257f714631433da8f6744f8fb17f34d6705479c243",
+      "source_feature_id": "eum-594579-p12-a4",
+      "registration": {
+        "crs": "EPSG:5179",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+        "layer": "UPIS_C_UQ120",
+        "source_as_of": "2026-09-10",
+        "town_outline_to_plan_dash_p95_m": 2.4,
+        "management_sheet_dash_to_town_outline_p95_m": 0.78,
+        "pixel_to_projected_xy": [
+          [
+            0.255883029,
+            -0.001370177,
+            940175.315165293
+          ],
+          [
+            -0.001351542,
+            -0.255909904,
+            1948651.15877767
+          ]
+        ],
+        "checked_on": "2026-11-24"
+      },
+      "document_area_sqm": 18345.8,
+      "digitized_area_sqm": 18126.7,
+      "parent_overlap_ratio": 1.0
     }
   },
   {

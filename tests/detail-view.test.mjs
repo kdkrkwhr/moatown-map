@@ -4,6 +4,7 @@ import {readFileSync} from 'node:fs';
 import {formatValue,intervalBadge,projectEvents,unitsChange} from '../detail-format.mjs';
 import {groupSubAreas} from '../app.mjs';
 import {searchProjects} from '../project-search.mjs';
+import {positionInGeometry} from '../address-reference.mjs';
 
 const read=file=>JSON.parse(readFileSync(new URL('../moatown-data/'+file,import.meta.url),'utf8'));
 const {files,coverage}=read('latest.json'),towns=read(files.towns),zones=read(files.zones);
@@ -50,14 +51,43 @@ test('every linked area has one parent and parcel pins resolve to the published 
   assert.equal(points,coverage.zone_representative_points);assert.equal(pointOnly,coverage.zone_point_only);
 });
 
-test('Sinwol drawing numbers, superseding review and parcel-only areas remain searchable',()=>{
+test('Sinwol drawing numbers and superseding review remain searchable',()=>{
   const town=towns.find(t=>t.name==='신월동 102-33'),group=groups.get(town.id);
   assert.deepEqual(group.map(z=>[z.drawing_code,z.registered_address,z.planned_units_total]),[
     ['A1','신월동 144-20',354],['A2','신월동 137-14',390],['A3','신월동 102-33',592],['A4','신월동 108-1',503]
   ]);
   assert.equal(group[0].previous_plan.planned_units_total,344);
   assert.equal(group[0].boundary_evidence.status,'reference_only');
-  assert.ok(group.slice(1).every(z=>z.geometry===null && z.representative_point?.type==='Point'));
   assert.deepEqual(searchProjects(towns,groups,[],{query:'신월동 102-33 A-3'}).map(r=>r.zone.id),[group[2].id]);
   assert.deepEqual(groupSubAreas([{id:'legacy'}],[{id:'old',town_id:'legacy'}]).get('legacy').map(z=>z.id),['old']);
+});
+
+test('both Sinwol towns have four separately selectable reference polygons tied to their official sources',()=>{
+  const features=read(files.boundaries).features;
+  const bounds=new Map(features.map(f=>[f.properties.entity_id,f]));
+  assert.equal(bounds.size,coverage.boundary_features);
+  assert.equal(features.filter(f=>f.properties.entity_type==='zone').length,coverage.zone_reference_boundaries);
+  for(const [townId,notices] of [
+    ['mt-202603-public-067',[null,'644883','640660','584443']],
+    ['mt-202603-public-066',['594579','594579','594579','594579']]
+  ]){
+    const children=groups.get(townId);
+    assert.equal(children.length,4);
+    for(const [i,zone] of children.entries()){
+      const feature=bounds.get(zone.id),p=feature.properties;
+      assert.equal(p.parent_town_id,townId);
+      assert.equal(p.boundary_status,'reference_only');
+      assert.equal(zone.drawing_code,'A'+(i+1));
+      for(const child of children){
+        assert.equal(positionInGeometry(child.representative_point.coordinates,feature.geometry,0),child===zone?'inside':'outside');
+      }
+      if(!notices[i]){assert.equal(p.kind,'official_project_geometry');continue;}
+      assert.equal(p.kind,'official_notice_drawing');
+      assert.equal(new URL(p.source_url).searchParams.get('seq'),notices[i]);
+      assert.equal(p.scope,['644883','640660'].includes(notices[i])?'association_project_area':'management_plan_project_area');
+      assert.deepEqual(p.registration,zone.boundary_evidence.registration);
+      assert.ok(p.pdf_page>0 && p.digitized_area_sqm>0 && p.registration.source_url);
+      assert.equal(p.document_area_sqm,zone.project_area_m2);
+    }
+  }
 });
