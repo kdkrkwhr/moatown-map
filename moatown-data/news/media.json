@@ -1,0 +1,162 @@
+{
+  "schema_version": 1,
+  "source_type": "media",
+  "collected_on": "2026-11-24",
+  "items": [
+    {
+      "id": "media-8cab7c2f1e846fd3",
+      "title": "서울시, 개봉동·목2동·수유동·하월곡동에 모아타운 조성… 6319가구 공급",
+      "source": "조선비즈",
+      "published_on": "2026-11-18",
+      "url": "https://biz.chosun.com/real_estate/real_estate_general/2026/11/18/Q4GBDVPFI5HAZH5OWCQT5X76Q4/",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-048",
+          "zone_id": null,
+          "match_basis": "exact_borough_dong_lot"
+        },
+        {
+          "town_id": "mt-202603-public-069",
+          "zone_id": null,
+          "match_basis": "exact_borough_dong_lot"
+        },
+        {
+          "town_id": "mt-202603-public-039",
+          "zone_id": null,
+          "match_basis": "exact_borough_dong_lot"
+        },
+        {
+          "town_id": "mt-202603-resident-028",
+          "zone_id": null,
+          "match_basis": "exact_borough_dong_lot"
+        }
+      ]
+    },
+    {
+      "id": "media-117c0345f3eeb3a1",
+      "title": "서울 신월·중화동 모아주택 속도 낸다⋯총 2741가구 공급",
+      "source": "이투데이",
+      "published_on": "2026-11-13",
+      "url": "https://www.etoday.co.kr/news/view/2647622",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-018",
+          "zone_id": null,
+          "match_basis": "exact_borough_dong_lot"
+        },
+        {
+          "town_id": "mt-202603-public-067",
+          "zone_id": null,
+          "match_basis": "official_parent_child_plan_notice",
+          "match_source_url": "https://seoulboard.seoul.go.kr/comm/getFile?bbsNo=158&fileNo=2&fileTy=ATTACH&srvcId=BBSTY1&upperNo=470317"
+        }
+      ],
+      "unresolved_site_mentions": [
+        "신월동 144-20 A1 개별 ID 미확인",
+        "중랑구 중화동 313-23"
+      ]
+    },
+    {
+      "id": "media-5425d257bf935113",
+      "title": "마포 성산동 모아타운 4구역에도 대우건설 낙점…브랜드타운까지 성큼",
+      "source": "에너지경제신문",
+      "published_on": "2026-11-03",
+      "url": "https://ekn.kr/web/view.php?key=20261103022214891",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-030",
+          "zone_id": null,
+          "match_basis": "official_parent_child_plan_notice",
+          "match_source_url": "https://eminwon.mapo.go.kr/emwp/jsp/ofr/FileDown.jsp?file_path=%2Fntishome%2Ffile%2Fupload%2Fofr%2Fofr%2F20240112&sys_file_nm=%EA%B3%B5%EA%B3%A0%EB%AC%B8_ofr_ofr_zNNb2ApC_2ZOwgAP_20240112110035266_1.pdf&user_file_nm=%EA%B3%B5%EA%B3%A0%EB%AC%B8.pdf"
+        }
+      ],
+      "unresolved_site_mentions": [
+        "성산동 200-258 사업가능구역4 개별 ID 미확인"
+      ]
+    },
+    {
+      "id": "media-ebdafc0e2db1f254",
+      "title": "면목·사당동 모아주택 사업성 개선…내년 2121세대 착공 추진",
+      "source": "뉴시스",
+      "published_on": "2026-10-23",
+      "url": "https://www.newsis.com/view/NISX20261023_0003838261",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-010",
+          "zone_id": null,
+          "match_basis": "exact_borough_dong_lot"
+        },
+        {
+          "town_id": "mt-202603-public-059",
+          "zone_id": null,
+          "match_basis": "exact_borough_dong_lot"
+        },
+        {
+          "town_id": "mt-202603-resident-015",
+          "zone_id": null,
+          "match_basis": "exact_borough_dong_lot"
+        }
+      ],
+      "unresolved_site_mentions": [
+        "동작구 사당동 206-1 세부 사업구역"
+      ]
+    },
+    {
+      "id": "media-5aecdfaf0ce0360f",
+      "title": "서울시, 모아주택 조합설립 공공지원 첫 시행⋯구역별 최대 1억원",
+      "source": "이투데이",
+      "published_on": "2026-10-20",
+      "url": "https://www.etoday.co.kr/news/view/2637732",
+      "classification": "common",
+      "related_sites": []
+    },
+    {
+      "id": "media-7160091366ba6601",
+      "title": "중랑구, 망우동·면목동 모아타운 1076세대 관리계획안 수정가결",
+      "source": "아시아경제",
+      "published_on": "2026-10-13",
+      "url": "https://www.asiae.co.kr/article/2026101308272804890",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-resident-010",
+          "zone_id": null,
+          "match_basis": "exact_borough_dong_lot"
+        },
+        {
+          "town_id": "mt-202603-resident-031",
+          "zone_id": null,
+          "match_basis": "exact_borough_dong_lot"
+        }
+      ]
+    },
+    {
+      "id": "media-403d0eecf95500fd",
+      "title": "서울시, 모아타운 재개발 속도 높인다…착공까지 4.5년",
+      "source": "뉴시스",
+      "published_on": "2026-10-12",
+      "url": "https://www.newsis.com/view/NISX20261012_0003821747",
+      "classification": "common",
+      "related_sites": []
+    },
+    {
+      "id": "media-65eeff204e76d150",
+      "title": "금천 석수역 모아타운 586가구…선정 1년반 만에 심의 통과",
+      "source": "한국경제",
+      "published_on": "2026-09-11",
+      "url": "https://www.hankyung.com/article/202609118819i",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-resident-023",
+          "zone_id": null,
+          "match_basis": "exact_borough_dong_lot"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,213 @@
+{
+  "schema_version": 1,
+  "source_type": "official",
+  "collected_on": "2026-11-24",
+  "items": [
+    {
+      "id": "official-d9321f7d2748fd1b",
+      "title": "사당동 202-29번지 일대 소규모주택정비 관리계획(모아타운 관리계획) 변경(안) 주민 재공람 공고",
+      "source": "동작구 공고(서울시 공식 목록)",
+      "published_on": "2026-11-19",
+      "url": "https://news.seoul.go.kr/citybuild/archives/544265#:~:text=2026-1888",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-059",
+          "zone_id": null,
+          "match_basis": "exact_borough_dong_lot"
+        }
+      ],
+      "notice_number": "2026-1888"
+    },
+    {
+      "id": "official-df455c562c29b427",
+      "title": "서울시, 구로·양천·강북·성북 모아주택 6,319세대 공급 본격화",
+      "source": "서울특별시 모아주택과",
+      "published_on": "2026-11-18",
+      "url": "https://www.seoul.go.kr/news/news_report.do?nttNo=470585",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-048",
+          "zone_id": null,
+          "match_basis": "exact_borough_dong_lot"
+        },
+        {
+          "town_id": "mt-202603-public-069",
+          "zone_id": null,
+          "match_basis": "exact_borough_dong_lot"
+        },
+        {
+          "town_id": "mt-202603-public-039",
+          "zone_id": null,
+          "match_basis": "exact_borough_dong_lot"
+        },
+        {
+          "town_id": "mt-202603-resident-028",
+          "zone_id": null,
+          "match_basis": "exact_borough_dong_lot"
+        }
+      ]
+    },
+    {
+      "id": "official-89ba7c21fa8652c4",
+      "title": "서울시, 양천·중랑 '모아주택' 6곳 2,741세대 공급 속도… 2028년 착공",
+      "source": "서울특별시 모아주택과",
+      "published_on": "2026-11-13",
+      "url": "https://www.seoul.go.kr/news/news_report.do?nttNo=470317",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-018",
+          "zone_id": null,
+          "match_basis": "exact_borough_dong_lot"
+        },
+        {
+          "town_id": "mt-202603-public-067",
+          "zone_id": null,
+          "match_basis": "official_parent_child_plan_notice",
+          "match_source_url": "https://seoulboard.seoul.go.kr/comm/getFile?bbsNo=158&fileNo=2&fileTy=ATTACH&srvcId=BBSTY1&upperNo=470317"
+        }
+      ],
+      "unresolved_site_mentions": [
+        "신월동 144-20 A1 개별 ID 미확인",
+        "중랑구 중화동 313-23"
+      ]
+    },
+    {
+      "id": "official-86210a89405a4464",
+      "title": "장위동 219-15번지 일대 모아타운(소규모주택정비 관리지역) 지정을 위한 소규모주택정비 관리계획 수립(안) 공람 공고",
+      "source": "성북구 공고(서울시 공식 목록)",
+      "published_on": "2026-11-12",
+      "url": "https://news.seoul.go.kr/citybuild/archives/544111#:~:text=2026-1819",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-resident-029",
+          "zone_id": null,
+          "match_basis": "exact_borough_dong_lot"
+        }
+      ],
+      "notice_number": "2026-1819"
+    },
+    {
+      "id": "official-1a095af1a8818131",
+      "title": "면목동 127-26번지 일대 소규모주택정비 관리계획(모아타운 관리계획) 수립 주민공람 재공고",
+      "source": "중랑구 공고(서울시 공식 목록)",
+      "published_on": "2026-11-12",
+      "url": "https://news.seoul.go.kr/citybuild/archives/544111#:~:text=2026-1573",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-resident-031",
+          "zone_id": null,
+          "match_basis": "exact_borough_dong_lot"
+        }
+      ],
+      "notice_number": "2026-1573"
+    },
+    {
+      "id": "official-42f6c58faf577c3e",
+      "title": "[서울시 팩트브리핑] ‘모아주택 4만 호 착공’은 조합설립 이후 후속 단계 목표이며, ‘모아통합기획’을 통해 사업기간을 1.5년 단축할 계획입니다",
+      "source": "서울특별시 언론담당관",
+      "published_on": "2026-11-10",
+      "url": "https://mediahub.seoul.go.kr/archives/2019993",
+      "classification": "common",
+      "related_sites": []
+    },
+    {
+      "id": "official-4ff0671be350b982",
+      "title": "모아통합기획 모아타운 후보지 선정 공모 변경공고",
+      "source": "서울특별시 모아주택과",
+      "published_on": "2026-11-04",
+      "url": "https://www.seoul.go.kr/news/news_notice.do?nttNo=469588",
+      "classification": "common",
+      "related_sites": [],
+      "notice_number": "2026-3045"
+    },
+    {
+      "id": "official-201b50dcbef33d87",
+      "title": "화곡6동 957-1 일대 모아타운 [A3구역] 가로주택정비사업 조합설립인가 및 지형도면 고시",
+      "source": "강서구 고시(서울시 공식 목록)",
+      "published_on": "2026-10-28",
+      "url": "https://news.seoul.go.kr/citybuild/archives/543800#:~:text=2026-144",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-009",
+          "zone_id": null,
+          "match_basis": "official_parent_same_district_dong_and_94080_m2",
+          "match_source_url": "https://news.seoul.go.kr/citybuild/archives/538467"
+        }
+      ],
+      "notice_number": "2026-144",
+      "unresolved_site_mentions": [
+        "A3구역의 개별 ID 미확인"
+      ]
+    },
+    {
+      "id": "official-8f95d93c933f8e2c",
+      "title": "서울시, '모아통합기획' 후보지 공모 개시… '30년까지 100곳 선정",
+      "source": "서울특별시 모아주택과",
+      "published_on": "2026-10-12",
+      "url": "https://www.seoul.go.kr/news/news_report.do?nttNo=467904",
+      "classification": "common",
+      "related_sites": []
+    },
+    {
+      "id": "official-b17b251fa67610ce",
+      "title": "서울시, 강서·용산·중랑 모아주택·모아타운으로 1,725세대 공급",
+      "source": "서울특별시 모아주택과",
+      "published_on": "2026-10-09",
+      "url": "https://www.seoul.go.kr/news/news_report.do?nttNo=467891",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-006",
+          "zone_id": null,
+          "match_basis": "exact_borough_dong_lot"
+        },
+        {
+          "town_id": "mt-202603-resident-002",
+          "zone_id": null,
+          "match_basis": "exact_borough_dong_lot"
+        },
+        {
+          "town_id": "mt-202603-resident-010",
+          "zone_id": null,
+          "match_basis": "exact_borough_dong_lot"
+        },
+        {
+          "town_id": "mt-202603-resident-031",
+          "zone_id": null,
+          "match_basis": "exact_borough_dong_lot"
+        }
+      ]
+    },
+    {
+      "id": "official-5141a5526aad2ebe",
+      "title": "현저동 1-5번지 일대 모아타운(소규모주택정비 관리지역) 가로주택정비사업 시공자 선정 재 입찰공고",
+      "source": "현저동 1-5 모아타운 조합 (정비사업 정보몽땅)",
+      "published_on": "2026-09-30",
+      "url": "https://cleanup.seoul.go.kr/assc/bidpblanc/vscr.do?cafeId=&cpage=9&othbcListSn=1081141&searchCode=&searchValue=&signguCd=",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-resident-016",
+          "zone_id": "mz-seoul-11410uq120ps202607270001",
+          "match_basis": "exact_borough_dong_lot_and_project_label"
+        }
+      ],
+      "notice_on": "2026-09-29"
+    },
+    {
+      "id": "official-dfcac17dbffd695a",
+      "title": "서울시, 모아타운·신통기획 '취소 구역' 전면 공개로 투기거래 차단한다",
+      "source": "서울특별시 모아주택과",
+      "published_on": "2026-08-04",
+      "url": "https://www.seoul.go.kr/news/news_report.do?nttNo=463299",
+      "classification": "common",
+      "related_sites": []
+    }
+  ]
+}
