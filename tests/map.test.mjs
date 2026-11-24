@@ -64,7 +64,7 @@ test('deep link rejects a zone assigned to another town, yet supports zone alone
   assert.deepEqual(resolveSelection('?town=b&zone=z',map,zones),{townId:'b',zoneId:null});
   assert.deepEqual(resolveSelection('?zone=z',map,zones),{townId:'a',zoneId:'z'});
 });
-test('GeoJSON longitude/latitude becomes Leaflet latitude/longitude exactly once',()=>{
+test('GeoJSON longitude/latitude becomes map latitude/longitude exactly once',()=>{
   assert.deepEqual(pointLatLng({type:'Point',coordinates:[127.01,37.55]}),[37.55,127.01]);
   assert.equal(pointLatLng(null),null);
 });
@@ -89,74 +89,34 @@ test('a reference point appears only for selected, visible towns without boundar
   assert.equal(showReferencePin('point-only','point-only',new Set(),polygons),false);
 });
 
-test('vector start failure leaves map and exposes raster failure without removing overlays',async()=>{
-  const {attachBasemap}=await import('../map-engine.mjs');
-  const status={textContent:''};
-  const seen=[];
-  const overlays=new Set(['local-shape']);
-  let vectorEvent,tileError;
-  const map={hasLayer:layer=>overlays.has(layer),removeLayer:layer=>overlays.delete(layer)};
-  const vector={
-    addTo(){overlays.add(this);},
-    getMaplibreMap(){return {
-      once(){},on(event,fn){if(event==='error')vectorEvent=fn;},
-      getCanvas(){return {addEventListener(){}}}
-    };}
-  };
-  const leaf={
-    maplibreGL(options){seen.push(options);return vector;},
-    tileLayer(url,options){seen.push({url,...options});return {
-      on(_,cb){tileError=cb;},addTo(){overlays.add('raster');}
-    };}
-  };
-  attachBasemap(leaf,map,status,{Map:function(){}});
-  assert.ok(seen[0].style.endsWith('/positron'));
-  assert.match(seen[0].attributionControl.customAttribution,/OpenMapTiles/);
-  vectorEvent({error:new Error('style failed')});
-  assert.equal(seen.length,2);
-  assert.match(seen[1].attribution,/OpenStreetMap/);
-  assert.deepEqual([...overlays],['local-shape','raster']);
-  tileError();
-  assert.match(status.textContent,/계속 이용/);
+test('normal and hybrid keep the cadastral overlay independent and support older map links',async()=>{
+  const {mapSettings}=await import('../map-engine.mjs');
+  assert.deepEqual(mapSettings('?map=detail&town=a'),{hybrid:false,cadastral:false});
+  assert.deepEqual(mapSettings('?map=hybrid&cadastral=1&zone=b'),{hybrid:true,cadastral:true});
+  assert.deepEqual(mapSettings('?cadastral=1'),{hybrid:false,cadastral:true});
 });
-
-test('default district map and road map round-trip without disturbing town or zone',async()=>{
-  const {basemapMode,basemapUrl}=await import('../map-engine.mjs');
-  const input=new URL('https://example.org/moatown-map/?town=town-a&zone=zone-a#legend');
-  assert.equal(basemapMode(input.search),'quiet');
-  assert.equal(basemapMode('?map=quiet'),'quiet');
-  const switched=basemapUrl(input,'detail');
-  assert.equal(basemapMode(switched.search),'detail');
-  assert.equal(switched.searchParams.get('town'),'town-a');
-  assert.equal(switched.searchParams.get('zone'),'zone-a');
-  assert.equal(switched.hash,'#legend');
-  assert.equal(basemapUrl(switched,'quiet').href,input.href);
+test('fit padding compensates only the part of the panel that covers the map',async()=>{
+  const {fitPadding}=await import('../map-engine.mjs');
+  const box=(left,top,width,height)=>({left,top,width,height,right:left+width,bottom:top+height});
+  const map=box(0,60,1200,720);
+  assert.deepEqual(fitPadding(map,box(0,60,370,720)),{top:50,right:50,bottom:50,left:420});
+  assert.equal(fitPadding(box(370,60,830,720),box(0,60,370,720)).left,50);
+  assert.equal(fitPadding(map,box(0,560,1200,220)).bottom,270);
 });
-
-test('quiet mode fetches only same-origin context and supersedes delayed detailed startup without moving camera',async()=>{
-  const {basemapSwitcher}=await import('../map-engine.mjs');
-  const seen=[],active=new Set(),container={dataset:{}};
-  let detailedResolve;
-  const layer=()=>({addTo(){active.add(this);},addLayer(){}});
-  const map={createPane:()=>({style:{}}),on(){},getContainer:()=>container,getZoom:()=>11,
-    hasLayer:x=>active.has(x),removeLayer:x=>active.delete(x)};
-  const leaf={layerGroup:layer,geoJSON:layer};
-  const set=basemapSwitcher(leaf,map,{textContent:''},{
-    read:async url=>{seen.push(url.pathname);return {ok:true,json:()=>({type:'FeatureCollection',features:[]})};},
-    loadDetailed:()=>new Promise(r=>{detailedResolve=r;}),
-    startDetailed:()=>{throw Error('superseded startup must never attach');}
-  });
-  await set('quiet');
-  assert.equal(seen.length,1);
-  assert.ok(seen[0].endsWith('/moatown-data/basemap/seoul-context.geojson'));
-  const delayed=set('detail');
-  await set('quiet');detailedResolve();
-  await delayed;
-  assert.equal(container.dataset.basemap,'quiet');
-  assert.equal(seen.length,1);
-  assert.equal(active.size,2);
+test('straight-line distances include a consistently rounded walking estimate',async()=>{
+  const {distanceText}=await import('../map-engine.mjs');
+  assert.equal(distanceText(340),'직선 약 340m · 도보 약 5분');
+  assert.equal(distanceText(1200),'직선 약 1.2km · 도보 약 18분');
 });
-
+test('geocoding rejects ambiguous, unavailable and non-Seoul coordinates',async()=>{
+  const {geocodeSeoul}=await import('../address-reference.mjs');
+  const row={roadAddress:'서울특별시 중구 세종대로 110',x:'126.978',y:'37.566'};
+  const mock=(rows,status=200)=>({Status:{OK:200},geocode(_,done){done(status,{v2:{addresses:rows,meta:{totalCount:rows.length}}});}});
+  assert.deepEqual(await geocodeSeoul('서울시청',mock([row])),{label:row.roadAddress,point:[126.978,37.566]});
+  assert.equal(await geocodeSeoul('광장',mock([row,row])),null);
+  assert.equal(await geocodeSeoul('부산',mock([{...row,roadAddress:'부산광역시 중구'}])),null);
+  await assert.rejects(geocodeSeoul('서울',mock([],500)));
+});
 test('static Seoul context contains all 25 distinct Korean district names and local road/water geometry',()=>{
   const resource='../moatown-data/basemap/seoul-context.geojson';
   assert.ok(fs.statSync(new URL(resource,import.meta.url)).size < 350_000,'overview context must stay below 350 KB');
@@ -174,19 +134,4 @@ test('static Seoul context contains all 25 distinct Korean district names and lo
   assert.ok(byKind('road').length);
   const han=byKind('water').find(f=>f.properties.name==='한강');
   assert.ok(han && ['Polygon','MultiPolygon'].includes(han.geometry.type),'real named Han River water polygon');
-});
-
-test('map wheel zoom is cursor anchored with fractional zoom and responsive fit above old cap',async()=>{
-  const {mapInteractionOptions,overviewOptions}=await import('../app.mjs');
-  assert.equal(mapInteractionOptions.scrollWheelZoom,true);
-  assert.ok(mapInteractionOptions.zoomSnap>0 && mapInteractionOptions.zoomSnap<1);
-  assert.ok(mapInteractionOptions.wheelPxPerZoomLevel>=80);
-  const wide=overviewOptions({x:1363,y:936});
-  assert.ok(wide.maxZoom>11);
-  assert.ok(wide.paddingTopLeft[1]+wide.paddingBottomRight[1]<230);
-  const tall=overviewOptions({x:390,y:760});
-  assert.ok(tall.paddingTopLeft[1]>wide.paddingTopLeft[1]);
-  assert.ok(tall.paddingTopLeft[0]+tall.paddingBottomRight[0]<=48);
-  const short=overviewOptions({x:600,y:300});
-  assert.ok(short.paddingTopLeft[1]+short.paddingBottomRight[1]<150);
 });

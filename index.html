@@ -6,20 +6,10 @@
   <meta name="description" content="서울시 모아타운 선정 대상지와 공개 사업구역 자료를 지도에서 탐색하세요.">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <title>서울 모아타운 현황지도</title>
-  <link rel="stylesheet" href="./vendor/leaflet/leaflet.css">
-  <link rel="stylesheet" href="./styles.css?v=stage-search-1">
-  <script defer src="./vendor/leaflet/leaflet.js"></script>
-  <script type="module" src="./app.mjs?v=stage-search-1"></script>
+  <link rel="stylesheet" href="./styles.css?v=naver-1">
+  <script type="module" src="./app.mjs?v=naver-1"></script>
 </head>
 <body data-loading="true">
-<svg width="0" height="0" class="map-patterns" aria-hidden="true" focusable="false">
-  <defs>
-    <pattern id="stage-unverified" width="8" height="8" patternUnits="userSpaceOnUse">
-      <rect width="8" height="8" fill="#c1c8cd"/>
-      <path d="M-2 2 2-2M0 8 8 0M6 10 10 6" fill="none" stroke="#697584" stroke-width="1"/>
-    </pattern>
-  </defs>
-</svg>
 <a class="skip" href="#explorer">대상지 탐색으로 바로가기</a>
 <header class="topbar">
   <h1><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none"><path d="m4 12 12-7 12 7-12 7z" fill="currentColor"/><path d="m4 17 12 7 12-7M4 22l12 7 12-7" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"/></svg></span>모아타운 현황지도</h1>
@@ -34,15 +24,9 @@
       <p>사업 외곽과 대표 위치는 참고용입니다. 필지 포함 여부는 관할 기관의 최신 고시·공고를 확인하세요.</p>
       <nav aria-label="관련 자료"><a href="./docs/product-spec.html">프로젝트 안내</a><a href="./docs/data-sources.md">데이터 출처</a><a href="./moatown-data/latest.json">스냅샷 보기</a></nav>
       <p class="photo-credit">서울 전경 사진 · <a href="https://commons.wikimedia.org/wiki/File:Seoul_from_Namsan.jpg">kallerna</a> · <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> · 축소 및 WebP 변환</p>
+      <section class="guide-stages"><h3>세부 사업구역의 추진 단계</h3><div id="stage-definitions"></div>
+      <p>‘강북구 착공’처럼 검색하거나 사업 단계 필터를 선택하세요. 관리계획 승인은 대상지 단위, 조합설립·사업인가·착공은 세부 구역 단위입니다.</p></section>
 </dialog>
-<details class="stage-guide">
-  <summary><strong>사업 단계 안내</strong><span id="stage-key"></span></summary>
-  <div class="stage-guide-body">
-    <h2>세부 사업구역의 추진 단계</h2>
-    <div id="stage-definitions"></div>
-    <p>검색창에 ‘강북구 착공’처럼 입력하거나 사업 단계 필터를 선택하세요. 관리계획 승인은 대상지 단위, 조합설립·사업인가·착공은 세부 구역 단위로 표시합니다. 자치구 마커의 색 띠는 수록된 구역의 단계별 비율입니다.</p>
-  </div>
-</details>
 <main class="workspace">
   <aside id="explorer" aria-label="대상지 탐색" tabindex="-1">
     <div class="sheet-tools">
@@ -72,17 +56,21 @@
       </section>
       <section id="detail-view" aria-label="선택 상세" hidden>
         <button type="button" id="back-results" class="back"><span aria-hidden="true">←</span><span id="back-label">검색 결과</span></button>
-        <div id="town-detail"></div>
+        <div id="town-detail" aria-busy="true"><div class="skeleton detail-skeleton" aria-hidden="true"></div></div>
       </section>
     </div>
   </aside>
   <section class="map-stage" aria-label="서울 모아타운 지도">
     <div id="map" aria-label="대상지 위치 및 참고 경계"></div>
-    <span class="map-loading" role="status"><span class="sr-only">지도 자료를 가져오는 중입니다.</span></span>
+    <span class="map-loading" role="status" aria-label="지도 로딩"></span>
     <div class="map-style-picker" role="group" aria-label="배경지도 선택">
-      <button type="button" data-map-style="quiet" aria-pressed="true">구역 지도</button><button type="button" data-map-style="detail" aria-pressed="false">도로 지도</button>
+      <button type="button" data-map-style="normal" aria-pressed="true" disabled>일반 지도</button><button type="button" data-map-style="hybrid" aria-pressed="false" disabled>위성 지도</button>
     </div>
-    <button type="button" id="reset-map" title="검색 조건을 지우고 서울 전체 보기">서울 전체 보기</button>
+    <button type="button" id="cadastral" role="switch" aria-checked="false" disabled><span aria-hidden="true"></span>지적편집도</button>
+    <div class="map-tools"><button type="button" id="reset-map" title="검색 조건을 지우고 서울 전체 보기">서울 전체</button>
+      <button type="button" id="measure" aria-pressed="false" disabled>거리 재기</button>
+      <div class="map-zoom"><button id="zoom-in" aria-label="확대" disabled>+</button><button id="zoom-out" aria-label="축소" disabled>−</button></div>
+    </div><p id="measure-status" role="status"></p>
     <p id="map-status" role="status"></p>
     <aside id="map-brief" aria-label="최신 사업 소식" hidden></aside>
     <button type="button" id="address-open" aria-haspopup="dialog">주소 위치 확인</button>
@@ -97,11 +85,11 @@
 </main>
 <dialog id="address-dialog" aria-labelledby="address-heading">
   <div class="dialog-head"><h2 id="address-heading">주소 위치 확인</h2><button type="button" id="address-close">닫기</button></div>
-  <p>마포구 지번의 대표점을 수록된 모아타운 참고 외곽과 대조합니다. 필지의 법정 구역 포함 여부는 관할 기관의 고시에서 확인하세요.</p>
-  <form id="address-form"><label for="address-lot">법정동과 지번</label><div><input id="address-lot" placeholder="예: 망원동 456-6" required autocomplete="off"><button type="submit">조회</button></div></form>
+  <p>서울의 주소 좌표를 수록된 모아타운 참고 외곽과 대조합니다. 필지의 법정 구역 포함 여부는 관할 기관의 고시에서 확인하세요.</p>
+  <form id="address-form"><label for="address-lot">서울 주소 또는 마포구 지번</label><div><input id="address-lot" placeholder="예: 망원동 456-6" required autocomplete="off"><button type="submit">조회</button></div></form>
   <button type="button" id="address-road">카카오 도로명주소 찾기</button><div id="address-picker"></div>
   <p id="address-answer" role="status"></p><button type="button" id="locate-lot" hidden>지도에서 보기</button>
-  <small>필지 좌표 기준 2026.08.28 · <a href="https://www.data.go.kr/data/15162460/fileData.do" target="_blank" rel="noopener">마포구 지적도</a></small>
+  <small>오프라인 지번 색인 범위 · 마포구 41,156필지 (2026.08.28) · <a href="https://www.data.go.kr/data/15162460/fileData.do" target="_blank" rel="noopener">마포구 지적도</a></small>
 </dialog>
 </body>
 </html>

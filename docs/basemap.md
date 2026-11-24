@@ -1,10 +1,12 @@
-# 배경지도 출처와 표시 원칙
+# 네이버 지도와 참고 경계
 
-기본 **구역 지도**는 행정구역, 한강 및 주요 도로를 표시합니다. 서울 전역에서는 자치구 이름 옆 숫자로 현재 스냅샷에 수록된 대상지 수를 표시합니다. 자치구 이름을 누르면 해당 지역으로 목록이 좁혀집니다. 배경은 사업 데이터 스냅샷과 별도로 moatown-data/basemap/seoul-context.geojson에 보관합니다.
+배경은 네이버 지도 JavaScript API v3의 일반 지도와 위성 지도(HYBRID)입니다. 지적편집도는 두 지도에서 독립적으로 켤 수 있습니다. 위성·지적편집도 설정은 `?map=hybrid&cadastral=1`로 공유할 수 있습니다. 기존 도로 지도 링크는 일반 지도로 연결됩니다.
 
-**도로 지도**는 [OpenFreeMap](https://openfreemap.org/) Positron, [OpenMapTiles](https://openmaptiles.org/) 및 [OpenStreetMap contributors](https://www.openstreetmap.org/copyright) 데이터를 사용합니다. 상세 배경이 로드되지 않으면 OSM 래스터로 전환할 수 있습니다. 구역 지도는 사이트 내부 정적 파일만 읽습니다.
+줌 12까지는 자치구별 수록 대상지 수와 하위 구역의 단계별 비율을 보여줍니다. 줌 13부터는 구역명과 단계별 폴리곤이 나타납니다. 경계는 서울시 공개 공간자료에 기반한 참고 외곽입니다. 필지의 법정 포함 여부는 관할 기관의 최신 고시에서 확인하세요.
 
-상단 버튼은 카메라와 선택한 대상지·사업구역을 그대로 둔 채 배경만 바꿉니다. 도로 지도는 저장소 경로 아래의 `?map=detail`로 열 수 있습니다. 기존 `?map=quiet` 링크는 구역 지도를 엽니다. 필지 포함 여부는 관할 기관의 최신 고시를 확인해야 합니다.
+거리 재기는 두 지점의 직선거리를 네이버 지도 투영 좌표로 계산합니다. 도보 시간은 분당 67m를 적용한 추정값입니다. 실제 보행 경로와 소요 시간은 달라질 수 있습니다.
+
+카카오 우편번호 서비스에서 선택한 서울 주소는 네이버 Geocoding으로 좌표를 조회합니다. 좌표가 있는 주소는 Turf로 수록된 서울 전체 대상지 외곽과 비교하며 경계 5m 이내를 구분합니다. 마포구 지번은 자체 색인을 먼저 조회합니다. 공개 Maps Client ID의 Web 서비스 URL에 배포 도메인을 등록하고 Dynamic Map과 Geocoding 사용 권한을 각각 설정합니다. [네이버 Maps 애플리케이션 설정](https://guide.ncloud-docs.com/docs/maps-app/) · [네이버 지도 SDK](https://navermaps.github.io/maps.js.ncp/docs/tutorial-2-Getting-Started.html)
 
 ## 서울 지도 원자료
 

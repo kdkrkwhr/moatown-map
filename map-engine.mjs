@@ -1,198 +1,206 @@
-const VECTOR_STYLE='https://tiles.openfreemap.org/styles/positron';
-const OSM='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap contributors</a>';
-const VECTOR_ATTR='<a href="https://openfreemap.org/">OpenFreeMap</a> · &copy; <a href="https://openmaptiles.org/">OpenMapTiles</a> · '+OSM;
-
-// Leaflet geometry and pins remain usable throughout vector/raster transitions.
-export function attachBasemap(leaf,map,status,glLib=globalThis.maplibregl){
-  let vector, raster, deadline, fallbackStarted=false, disposed=false;
-  const dispose=()=>{
-    disposed=true; clearTimeout(deadline);
-    for(const layer of [vector,raster])if(layer && map.hasLayer(layer)){try{map.removeLayer(layer);}catch{/* keep overlays */}}
-  };
-  const failMessage='배경지도를 불러오지 못했습니다. 대상지·경계·목록은 계속 이용할 수 있습니다.';
-  function fallback(){
-    if(fallbackStarted || disposed)return;
-    fallbackStarted=true; clearTimeout(deadline);
-    if(vector && map.hasLayer(vector)){
-      try{map.removeLayer(vector);}catch{/* retain Leaflet overlays */}
-    }
-    if(raster)return;
-    raster=leaf.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19,attribution:OSM});
-    raster.on('tileerror',()=>{if(!disposed)status.textContent=failMessage;});
-    raster.addTo(map);
-  }
-  if(typeof leaf.maplibreGL!=='function' || typeof glLib?.Map!=='function'){fallback();return dispose;}
-  try{
-    vector=leaf.maplibreGL({style:VECTOR_STYLE,attributionControl:{customAttribution:VECTOR_ATTR}});
-    vector.addTo(map);
-    const gl=vector.getMaplibreMap();
-    let signaled=false, errors=0;
-    deadline=setTimeout(fallback,12000);
-    gl.once('idle',()=>{
-      if(fallbackStarted || disposed)return;
-      signaled=true;
-      clearTimeout(deadline);
-    });
-    gl.on('error',event=>{
-      if(fallbackStarted || disposed)return;
-      if((!signaled && !event?.tile) || ++errors>=4)fallback();
-    });
-    gl.on('sourcedata',event=>{if(event?.sourceDataType==='content' && event?.tile)errors=0;});
-    gl.getCanvas().addEventListener('webglcontextlost',fallback,{once:true});
-  }catch{fallback();}
-  return dispose;
+const SDK='https://oapi.map.naver.com/openapi/v3/maps.js';
+export function loadMaps(onAuthError){
+  window.navermap_authFailure=onAuthError;
+  if(window.naver?.maps?.Map)return Promise.resolve(window.naver.maps);
+  return new Promise((resolve,reject)=>{
+    const script=document.createElement('script');
+    const finish=error=>{
+      clearTimeout(timer);
+      if(error)reject(error);else resolve(window.naver.maps);
+    };
+    const timer=setTimeout(()=>finish(Error('네이버 지도 연결 시간 초과')),15000);
+    window.moaMapsReady=()=>finish();
+    script.onerror=()=>finish(Error('네이버 지도 연결 실패'));
+    const url=new URL(SDK);
+    url.search=new URLSearchParams({ncpKeyId:'u5ra1f7vic',submodules:'geocoder',callback:'moaMapsReady'});
+    script.async=true;script.src=url;document.head.append(script);
+  });
 }
-
-export function basemapMode(search){
-  return new URLSearchParams(search).get('map')==='detail'?'detail':'quiet';
+export function mapSettings(search){
+  const params=new URLSearchParams(search);
+  return {hybrid:params.get('map')==='hybrid',cadastral:params.get('cadastral')==='1'};
 }
-export function basemapUrl(input,mode){
-  const url=new URL(input);
-  if(mode==='detail')url.searchParams.set('map','detail'); else url.searchParams.delete('map');
-  return url;
+export function fitPadding(canvas,panel){
+  const edge=Math.min(50,Math.round(Math.min(canvas.width,canvas.height)*.12));
+  const overlaps=panel && panel.left<canvas.right && panel.right>canvas.left && panel.top<canvas.bottom && panel.bottom>canvas.top;
+  const left=overlaps && panel.height>=canvas.height*.8?Math.max(0,panel.right-canvas.left):0;
+  const bottom=overlaps && !left?Math.max(0,canvas.bottom-panel.top):0;
+  return {top:edge,right:edge,bottom:edge+bottom,left:edge+left};
 }
-
-const contextStyle=p=>{
-  if(p.kind==='water')return {color:'#88bdd1',fillColor:'#a2d0df',fillOpacity:1,weight:.8,opacity:1};
-  if(p.kind==='road')return {color:'#c4cfcf',weight:1,opacity:.62};
-  return {color:'#aabdbd',weight:1.2,fillColor:'#f9f8f1',fillOpacity:1};
+export function distanceText(metres){
+  const rounded=Math.round(metres);
+  const length=rounded>=1000?(rounded/1000).toLocaleString('ko-KR',{maximumFractionDigits:2})+'km':rounded.toLocaleString('ko-KR')+'m';
+  return '직선 약 '+length+' · 도보 약 '+(metres?Math.max(1,Math.round(metres/67)):0)+'분';
+}
+const node=(tag,cls,text)=>{
+  const el=document.createElement(tag);el.className=cls;if(text!=null)el.textContent=text;return el;
 };
-let detailStack;
-function getDetailStack(){
-  if(detailStack)return detailStack;
-  function script(src,integrity){
-    const tag=document.createElement('script');
-    tag.src=src;
-    if(integrity){tag.integrity=integrity;tag.crossOrigin='anonymous';}
-    const ready=new Promise((resolve,reject)=>{
-      const stop=setTimeout(()=>{tag.remove();reject(new Error('Detailed basemap library timeout'));},5000);
-      tag.onload=()=>{clearTimeout(stop);resolve();};
-      tag.onerror=()=>{clearTimeout(stop);reject(new Error('Detailed basemap library unavailable'));};
-    });
-    document.head.append(tag);
-    return ready;
-  }
-  // Detailed comparison preserves the established style and fallback.
-  const style=document.createElement('link');
-  style.rel='stylesheet';style.href=new URL('./vendor/maplibre/maplibre-gl.css',import.meta.url);
-  document.head.append(style);
-  detailStack=script('https://cdn.jsdelivr.net/npm/maplibre-gl@5.24.1/dist/maplibre-gl.js','sha384-nXMl9YiLoSG5KBPTFgvxVuIqQQcqIvo0bFrvoEaGJC6r7IibIzF1S36Zbf/sKBtL')
-    .then(()=>script(new URL('./vendor/maplibre/leaflet-maplibre-gl.js',import.meta.url))).catch(()=>{});
-  return detailStack;
-}
-export function basemapSwitcher(leaf,map,status,{read=fetch,loadDetailed=getDetailStack,startDetailed=attachBasemap,districtCounts=new Map(),districtStages=new Map(),selectDistrict}={}){
-  let mode,disposeDetail,quietLayer,labels,version=0;
-  let attribution='',attributionActive=false;
-  let contextData;
-  const districtLabels=[];
-  for(const [pane,z] of [['contextDistrict',201],['contextRoad',202],['contextWater',203],['contextLabel',435]]){
-    const node=map.createPane(pane);node.style.zIndex=z;node.style.pointerEvents='none';
-  }
-  function loadContext(){
-    contextData ??= read(new URL('./moatown-data/basemap/seoul-context.geojson',import.meta.url)).then(r=>{
-      if(!r.ok)throw new Error('Basemap unavailable');
-      return r.json();
-    }).catch(e=>{contextData=null;throw e;});
-    return contextData;
-  }
-  function syncLabels(){
-    if(!labels || mode!=='quiet')return;
-    const show=map.getZoom()>=9 && map.getZoom()<=14;
-    if(show&&!map.hasLayer(labels))labels.addTo(map);
-    if(!show&&map.hasLayer(labels))map.removeLayer(labels);
-    if(!show)return;
-    const placed=[];
-    const size=map.getSize?.();
-    for(const {marker,count} of districtLabels){
-      const at=map.latLngToContainerPoint(marker.getLatLng());
-      const overview=map.getContainer().classList.contains('district-overview');
-      const halfWidth=overview?37:26,halfHeight=overview?25:11;
-      const onScreen=at.x>=halfWidth && at.x<=size.x-halfWidth && at.y>=halfHeight && at.y<=size.y-halfHeight;
-      const clear=onScreen && placed.every(p=>Math.abs(p.x-at.x)>2*halfWidth || Math.abs(p.y-at.y)>2*halfHeight);
-      if(clear){
-        placed.push(at);
-        if(!labels.hasLayer(marker))labels.addLayer(marker);
-        count.hidden=map.getZoom()>12.5;
-      }else if(labels.hasLayer(marker))labels.removeLayer(marker);
+export function createProjectMap(m,container,{townById,zoneById,boundaries,districtCounts,districtStages,zoneStage,select,selectDistrict,view}){
+  const $=id=>document.getElementById(id),ll=([x,y])=>new m.LatLng(y,x);
+  const map=new m.Map(container,{center:ll([126.978,37.565]),zoom:11,minZoom:7,maxZoom:21,keyboardShortcuts:true,
+    mapTypeId:mapSettings(location.search).hybrid?m.MapTypeId.HYBRID:m.MapTypeId.NORMAL});
+  const cadastral=new m.CadastralLayer();
+  const shapes=new Map(),pins=new Map(),districts=[];
+  const on=(target,event,handler)=>m.Event.addListener(target,event,handler);
+  const setVisible=(overlay,visible)=>{if(Boolean(overlay.getMap())!==visible)overlay.setMap(visible?map:null);};
+  const marker=(position,content,zIndex,title,clickable=false)=>new m.Marker({position,title,zIndex,clickable,icon:{content,anchor:new m.Point(0,0)}});
+  let addressMarker,addressPoint,addressIds=new Set(),measuring=false,measureStart,measureLayers=[];
+  function markerText(text,cls){return node('span','map-caption '+cls,text);}
+  function selectLayer(townId,zoneId){if(!measuring)select(townId,zoneId);}
+  for(const feature of boundaries.features){
+    const {entity_id:id,entity_type:type,boundary_status}=feature.properties;
+    const isTown=type==='town',record=(isTown?townById:zoneById).get(id);
+    if(!record)continue;
+    const townId=isTown?id:record.town_id;
+    const geometry=feature.geometry;
+    const parts=geometry.type==='Polygon'?[geometry.coordinates]:geometry.type==='MultiPolygon'?geometry.coordinates:[];
+    if(!parts.length)continue;
+    const bounds=new m.LatLngBounds(),polygons=[];
+    for(const part of parts){
+      const paths=part.map(ring=>ring.map(coord=>{const point=ll(coord);bounds.extend(point);return point;}));
+      const polygon=new m.Polygon({paths,clickable:true,strokeLineJoin:'round',strokeStyle:boundary_status==='legal'?'solid':'shortdash'});
+      on(polygon,'click',e=>{if(measuring)measure(e.coord);else selectLayer(townId,isTown?null:id);});
+      polygons.push(polygon);
     }
-  }
-  map.on('zoomend moveend resize districtviewchange',syncLabels);
-  return async function setMode(next){
-    if(mode===next)return;
-    const request=++version;
-    mode=next;status.textContent='';
-    map.getContainer().dataset.basemap=next;
-    if(disposeDetail){disposeDetail();disposeDetail=null;}
-    if(quietLayer?.hasLayer && map.hasLayer(quietLayer))map.removeLayer(quietLayer);
-    if(labels && map.hasLayer(labels))map.removeLayer(labels);
-    if(attributionActive){map.attributionControl?.removeAttribution(attribution);attributionActive=false;}
-    if(next==='detail'){
-      await loadDetailed();
-      if(request!==version)return;
-      disposeDetail=startDetailed(leaf,map,status);
-      return;
+    const stage=isTown?null:zoneStage(record.stage);
+    const label=markerText(record.name,isTown?'town-caption':'zone-caption');
+    if(stage){
+      label.style.setProperty('--stage-ink',stage.ink);
+      label.append(node('small','',stage.short));
     }
-    try{
-      const source=await loadContext();
-      if(request!==version)return;
-      if(!quietLayer){
-        quietLayer=leaf.layerGroup();
-        for(const [kind,pane] of [['district','contextDistrict'],['road','contextRoad'],['water','contextWater']]){
-          quietLayer.addLayer(leaf.geoJSON(source,{
-            pane,interactive:kind==='district' && Boolean(selectDistrict),
-            filter:f=>f.properties?.kind===kind,style:f=>contextStyle(f.properties),
-            onEachFeature(f,layer){
-              const name=f.properties.name;
-              if(kind!=='district' || !selectDistrict)return;
-              if(!districtCounts.has(name)){layer.options.interactive=false;return;}
-              layer.on('click',()=>selectDistrict(name));
-              const label=document.createElement('span');
-              label.textContent=name+' · 수록 대상지 '+districtCounts.get(name)+'곳';
-              layer.bindTooltip(label,{sticky:true});
-            }
-          }));
-        }
-        labels=leaf.layerGroup();
-        const labelFeatures=source.features.filter(f=>f.properties?.kind==='label');
-        labelFeatures.sort((a,b)=>(districtCounts.get(b.properties.name) ?? 0)-(districtCounts.get(a.properties.name) ?? 0));
-        for(const f of labelFeatures){
-          const name=f.properties.name,total=districtCounts.get(name) ?? 0;
-          const text=document.createElement('span');text.className='district-label';
-          if(!total)text.classList.add('empty-district');
-          const nameplate=document.createElement('span');nameplate.className='district-nameplate';nameplate.textContent=name;
-          const count=document.createElement('b');count.textContent=String(total);nameplate.append(count);text.append(nameplate);
-          const mix=districtStages.get(name);
-          let title=name+' 수록 대상지 '+total+'곳';
-          if(mix?.size){
-            const bar=document.createElement('span');bar.className='stage-mix';bar.setAttribute('aria-hidden','true');
-            const breakdown=[];
-            for(const [stage,n] of mix){
-              if(!n)continue;
-              const segment=document.createElement('i');
-              segment.style.flexGrow=n;segment.style.backgroundColor=stage.ink;bar.append(segment);
-              breakdown.push(stage.short+' '+n+'곳');
-            }
-            text.append(bar);title+=' · 세부 사업구역 '+breakdown.join(', ');
-          }
-          const interactive=Boolean(selectDistrict && total);
-          const marker=leaf.marker(leaf.GeoJSON.coordsToLatLng(f.geometry.coordinates),{
-            pane:'contextLabel',interactive,keyboard:interactive,autoPanOnFocus:false,title,
-            icon:leaf.divIcon({className:'quiet-district',html:text,iconSize:[0,0]})
-          });
-          if(interactive)marker.on('click',()=>selectDistrict(name));
-          districtLabels.push({marker,count});
-        }
-        const districtCredit=source.districtSource==='seoul'?
-          '<a href="https://data.seoul.go.kr/dataList/OA-21184/F/1/datasetView.do">서울특별시</a>' :
-          source.districtSource==='sgis'?
-            '<a href="https://sgis.mods.go.kr/">SGIS</a> · <a href="https://github.com/vuski/admdongkor">vuski/admdongkor</a>' : '';
-        attribution=[districtCredit,OSM].filter(Boolean).join(' · ');
+    const pin=marker(bounds.getCenter(),label,isTown?80:90,record.name,true);
+    on(pin,'click',e=>{if(measuring)measure(e.coord??pin.getPosition());else selectLayer(townId,isTown?null:id);});
+    shapes.set(id,{isTown,townId,polygons,bounds,stage,pin});
+  }
+  for(const town of townById.values()){
+    if(!town.representative_point || shapes.has(town.id))continue;
+    const pin=marker(ll(town.representative_point.coordinates),markerText(town.name+' · 대표 위치','point-caption'),120,town.name,true);
+    on(pin,'click',e=>{if(measuring)measure(e.coord??pin.getPosition());else selectLayer(town.id,null);});
+    pins.set(town.id,pin);
+  }
+  fetch(new URL('./moatown-data/basemap/seoul-context.geojson',import.meta.url)).then(r=>{if(!r.ok)throw Error();return r.json();}).then(data=>{
+    for(const f of data.features.filter(f=>f.properties.kind==='label')){
+      const name=f.properties.name,count=districtCounts.get(name)??0;
+      const content=node('span','district-label'),plate=node('span','district-nameplate',name);
+      plate.append(node('b','',String(count)));content.append(plate);
+      const mix=node('span','stage-mix'),summary=[];
+      for(const [stage,n] of districtStages.get(name)??[]){
+        if(!n)continue;
+        const segment=node('i','');segment.style.flexGrow=n;segment.style.backgroundColor=stage.ink;mix.append(segment);
+        summary.push(stage.short+' '+n+'곳');
       }
-      quietLayer.addTo(map);syncLabels();
-      map.getContainer().dataset.contextReady='true';
-      if(attribution){map.attributionControl?.addAttribution(attribution);attributionActive=true;}
-    }catch{
-      if(request===version)status.textContent='서울 배경을 불러오지 못했습니다. 사업구역과 목록은 계속 이용할 수 있습니다.';
+      if(mix.childElementCount)content.append(mix);
+      const pin=marker(ll(f.geometry.coordinates),content,100+count,name+' · 대상지 '+count+'곳 · '+summary.join(', '),Boolean(count));
+      if(count)on(pin,'click',e=>{if(measuring)measure(e.coord??pin.getPosition());else selectDistrict(name);});
+      districts.push({name,pin,count});
     }
-  };
+    districts.sort((a,b)=>b.count-a.count);render();
+  }).catch(()=>{$('map-status').textContent='자치구 집계 마커를 불러오지 못했습니다. 목록에서 자치구를 선택해 주세요.';});
+  function render(){
+    const {current,visible,visibleZones,townHits,filtered}=view();
+    const wide=map.getZoom()<=12;
+    container.classList.toggle('district-overview',wide);
+    container.classList.toggle('show-totals',wide);
+    const occupied=[],projection=map.getProjection(),size=map.getSize();
+    for(const {pin,name} of districts){
+      let show=wide && !filtered && !current.townId;
+      if(show && projection){
+        const p=projection.fromCoordToOffset(pin.getPosition());
+        show=p.x>20 && p.x<size.width-20 && p.y>20 && p.y<size.height-20 &&
+          !occupied.some(other=>Math.abs(other.x-p.x)<58 && Math.abs(other.y-p.y)<32);
+        if(show)occupied.push(p);
+      }
+      setVisible(pin,show);
+    }
+    for(const [id,shape] of shapes){
+      const {isTown,townId,stage}=shape;
+      const hit=addressIds.has(id);
+      const show=hit || (isTown?visible.has(id):visibleZones.has(id)||townHits.has(townId));
+      const selected=id===(current.zoneId??current.townId);
+      const style={strokeColor:stage?.ink??'#345b75',fillColor:stage?.fill??'#a3c9dc',
+        fillOpacity:wide?0:isTown?.14:selected?.65:.44,strokeWeight:wide?1:selected||hit?3:1.6,
+        strokeOpacity:wide?.65:1,zIndex:isTown?1:selected?5:3};
+      for(const poly of shape.polygons){
+        setVisible(poly,show);
+        if(show)poly.setStyles(style);
+      }
+      shape.pin.setZIndex(selected?140:isTown?80:90);
+      setVisible(shape.pin,show && !wide && (!isTown || selected || ![...zoneById.values()].some(z=>z.town_id===id)));
+    }
+    for(const [id,pin] of pins)setVisible(pin,current.townId===id && visible.has(id));
+  }
+  function fit(){
+    const {current,rows,filtered}=view();
+    if(addressPoint){map.setCenter(addressPoint);return;}
+    const points=[];
+    function include(id){
+      const shape=shapes.get(id);
+      if(shape)points.push(shape.bounds.getSW(),shape.bounds.getNE());
+      else if(pins.has(id))points.push(pins.get(id).getPosition());
+    }
+    if(current.townId)include(current.zoneId??current.townId);
+    else if(filtered)for(const {town,zone} of rows){if(town)include(zone?.id??town.id);}
+    const all=!points.length;
+    if(all)points.push(ll([126.76,37.425]),ll([127.184,37.702]));
+    const opts=fitPadding(container.getBoundingClientRect(),$('explorer').getBoundingClientRect());
+    map.fitBounds(points,{...opts,maxZoom:all?12:current.townId?17:15});
+  }
+  function settings(){
+    const {hybrid,cadastral:enabled}=mapSettings(location.search);
+    map.setMapTypeId(hybrid?m.MapTypeId.HYBRID:m.MapTypeId.NORMAL);
+    cadastral.setMap(enabled?map:null);
+    for(const btn of document.querySelectorAll('[data-map-style]'))btn.setAttribute('aria-pressed',String((btn.dataset.mapStyle==='hybrid')===hybrid));
+    $('cadastral').setAttribute('aria-checked',String(enabled));
+  }
+  for(const btn of [...document.querySelectorAll('[data-map-style]'),$('cadastral')]){
+    btn.disabled=false;
+    btn.addEventListener('click',()=>{
+      const url=new URL(location.href);
+      if(btn.id==='cadastral'){
+        if(mapSettings(url.search).cadastral)url.searchParams.delete('cadastral');else url.searchParams.set('cadastral','1');
+      }else if(btn.dataset.mapStyle==='hybrid')url.searchParams.set('map','hybrid');
+      else url.searchParams.delete('map');
+      history.replaceState(null,'',url);settings();
+    });
+  }
+  function clearAddress(){
+    addressMarker?.setMap(null);addressMarker=null;addressPoint=null;addressIds.clear();
+  }
+  function showAddress({point,hits,label,note}){
+    clearAddress();addressPoint=ll(point);addressIds=new Set(hits.map(h=>h.feature.properties.entity_id));
+    const badge=markerText(label,'address-caption');badge.append(node('small','',note));
+    addressMarker=marker(addressPoint,badge,160,label);addressMarker.setMap(map);
+    map.setZoom(16,false);map.setCenter(addressPoint);render();
+  }
+  const measureButton=$('measure'),message=$('measure-status');
+  function resetMeasure(){
+    measureLayers.forEach(layer=>layer.setMap(null));measureLayers=[];measureStart=null;message.textContent='';
+  }
+  function toggleMeasure(active){
+    resetMeasure();measuring=active;measureButton.setAttribute('aria-pressed',String(active));
+    container.classList.toggle('measuring',active);
+    if(active)message.textContent='시작점을 선택하세요.';
+  }
+  function measure(point){
+    if(!point)return;
+    if(!measureStart){
+      resetMeasure();measureStart=point;
+      const start=marker(point,markerText('시작','ruler-caption'),170,'시작');start.setMap(map);measureLayers.push(start);
+      message.textContent='도착점을 선택하세요.';return;
+    }
+    const line=new m.Polyline({map,path:[measureStart,point],strokeColor:'#1356af',strokeWeight:4,strokeOpacity:.95,clickable:false,zIndex:30});
+    const result=distanceText(map.getProjection().getDistance(measureStart,point));
+    const end=marker(point,markerText(result,'ruler-caption'),175,result);end.setMap(map);
+    measureLayers.push(line,end);measureStart=null;message.textContent=result+' · 분당 67m 기준';
+  }
+  measureButton.disabled=false;measureButton.addEventListener('click',()=>toggleMeasure(!measuring));
+  on(map,'click',event=>{if(measuring)measure(event.coord);});
+  document.addEventListener('keydown',e=>{if(e.key==='Escape' && measuring)toggleMeasure(false);});
+  on(map,'idle',render);on(map,'zoom_changed',render);
+  $('zoom-in').disabled=$('zoom-out').disabled=false;
+  $('zoom-in').onclick=()=>map.setZoom(map.getZoom()+1,true);
+  $('zoom-out').onclick=()=>map.setZoom(map.getZoom()-1,true);
+  new ResizeObserver(()=>{map.autoResize();fit();}).observe(container);
+  settings();fit();render();
+  return {fit,render,settings,clearAddress,showAddress};
 }

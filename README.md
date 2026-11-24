@@ -5,7 +5,7 @@
 - [GitHub Pages 지도](https://kdkrkwhr.github.io/moatown-map/)
 - [착공 구역](https://kdkrkwhr.github.io/moatown-map/?progress=construction) · [관리계획 승인 대상지](https://kdkrkwhr.github.io/moatown-map/?plan=approved) · [취소 이력](https://kdkrkwhr.github.io/moatown-map/?plan=canceled)
 - [공식 자료와 언론 보도](https://kdkrkwhr.github.io/moatown-map/news.html)에서 지역과 출처를 고르거나 관련 대상지의 지도 상세를 열 수 있습니다.
-- [도로 지도 보기](https://kdkrkwhr.github.io/moatown-map/?map=detail)
+- [위성 지도와 지적편집도 보기](https://kdkrkwhr.github.io/moatown-map/?map=hybrid&cadastral=1)
 - [배경지도 출처 및 표시 원칙](docs/basemap.md)
 - [제품 기획서](docs/product-spec.html)
 - [상세 설계](docs/architecture.md)
@@ -24,7 +24,7 @@
 - `moatown-data/`: 한국시간 기준 날짜별 공개 데이터
 - `index.html`: 공개 지도와 대상지 목록 진입점
 - `app.mjs`, `map-engine.mjs`, `styles.css`: 지도 화면과 배경지도·경계 및 선택 동작
-- `vendor/leaflet/`: Leaflet 1.9.4 및 원본 BSD-2-Clause 라이선스
+- `vendor/turf/`: 주소 좌표와 참고 외곽의 포함 관계를 판별하는 Turf 모듈과 라이선스
 
 완성된 스냅샷을 검증한 뒤 `moatown-data/latest.json`을 변경합니다. 사이트 갱신일은 공식 자료 기준일과 다릅니다. 공식 고시·공고 확인을 대체하지 않습니다.
 
@@ -33,4 +33,4 @@
 
 저장소 루트에서 `python3 -m http.server 8000`을 실행한 다음 `http://localhost:8000/`을 엽니다. `file://`로 열면 브라우저가 데이터 요청을 차단할 수 있습니다. 지도 모듈 검증은 `node --test`로 실행합니다.
 
-상단의 **구역 지도 / 도로 지도**로 같은 위치의 배경을 비교할 수 있습니다. 도로 지도만 외부 타일을 요청합니다. 법정 경계는 운영 기관의 최신 고시를 확인해야 합니다.
+네이버 일반·위성 지도에서 지적편집도를 겹쳐 보거나 거리 재기로 두 지점의 직선거리를 확인할 수 있습니다. 법정 경계는 관할 기관의 최신 고시에서 확인하세요.
