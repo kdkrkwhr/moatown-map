@@ -58,6 +58,10 @@ export function createMarkerClusters(m,map,container,{setVisible,choose,padding,
     const points=opened.members.map(member=>member.pin.getPosition());
     dialog.close();map.fitBounds(points,{...padding(),maxZoom:Math.min(21,map.getZoom()+3)});
   };
+  container.addEventListener('click',e=>{
+    const entry=live.get(e.target.closest?.('.map-cluster')?.dataset.key);
+    if(entry && !measuring())open(entry);
+  },true);
   container.addEventListener('keydown',e=>{
     const entry=live.get(e.target.closest?.('.map-cluster')?.dataset.key);
     if(entry && (e.key==='Enter' || e.key===' ')){
@@ -81,13 +85,20 @@ export function createMarkerClusters(m,map,container,{setVisible,choose,padding,
   function render(candidates){
     const projection=map.getProjection();
     if(!projection)return;
-    measureLabels(candidates);
-    const points=candidates.map(item=>{
+    const size=map.getSize(),points=[];
+    // Keep a margin for labels entering the viewport while the map is dragged.
+    const margin=160;
+    for(const item of candidates){
       const {x,y}=projection.fromCoordToOffset(item.pin.getPosition());
-      return {...item,x,y,box:boxes.get(item.pin)};
-    });
+      if(x < -margin || y < -margin || x > size.width+margin || y > size.height+margin){
+        setVisible(item.pin,false);continue;
+      }
+      points.push({...item,x,y});
+    }
+    measureLabels(points);
+    for(const item of points)item.box=boxes.get(item.pin);
     const keep=new Set();
-    for(const {pin,members} of groupMarkers(points)){
+    for(const {pin,x,y,members} of groupMarkers(points)){
       const single=members.length===1;
       for(const member of members)setVisible(member.pin,single);
       if(single)continue;
@@ -103,12 +114,14 @@ export function createMarkerClusters(m,map,container,{setVisible,choose,padding,
         button.append(count,label);
         const title=members[0].district?'자치구 '+members.length+'곳':'대상지·세부구역 '+members.length+'곳';
         button.setAttribute('aria-label',title+' 목록 열기');
-        const marker=new m.Marker({position:pin.getPosition(),clickable:true,zIndex:151,title,icon:{content:button,anchor:new m.Point(0,0)}});
+        const marker=new m.Marker({position:pin.getPosition(),clickable:true,zIndex:151,title,
+          icon:{content:button,size:new m.Size(48,48),anchor:new m.Point(24,24)}});
         entry={pin:marker,button,title,members};
         entry.listener=m.Event.addListener(marker,'click',e=>open(entry,e.coord));
         live.set(key,entry);
       }
       entry.members=members;
+      entry.button.tabIndex=x>=0 && x<=size.width && y>=0 && y<=size.height?0:-1;
       entry.button.classList.toggle('has-selection',members.some(member=>member.selected));
       entry.pin.setPosition(pin.getPosition());setVisible(entry.pin,true);
     }

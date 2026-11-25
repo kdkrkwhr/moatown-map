@@ -1,4 +1,4 @@
-﻿:root {
+:root {
   color-scheme: light;
   --ink: #182c39;
   --sub: #495e6b;
@@ -224,7 +224,7 @@ a.town-item { color: inherit; text-decoration: none; }
 .key.point { border: 2px solid #174a48; border-radius: 50% 50% 3px 50%; }
 .key.cluster { width: 18px; height: 18px; border-radius: 50%; background: #174f58; color: white; text-align: center; font: 700 11px/18px sans-serif; }
 .marker-measurements { position: absolute; top: 0; left: 0; width: 0; height: 0; visibility: hidden; pointer-events: none; }
-.map-cluster { position: absolute; left: 0; top: 0; transform: translate(-50%,-50%); width: 48px; height: 48px; display: grid; place-content: center; gap: 1px; padding: 0; border-radius: 50%; border: 2px solid white; background: #174f58; color: white; box-shadow: 0 0 0 2px #23777c55,0 3px 8px #16363c40; font-family: Pretendard,sans-serif; text-align: center; }
+.map-cluster { width: 48px; height: 48px; display: grid; place-content: center; gap: 1px; padding: 0; border-radius: 50%; border: 2px solid white; background: #174f58; color: white; box-shadow: 0 0 0 2px #23777c55,0 3px 8px #16363c40; font-family: Pretendard,sans-serif; text-align: center; }
 .map-cluster strong { font-size: 17px; line-height: 18px; }
 .map-cluster span { font-size: 10px; line-height: 11px; font-weight: 600; }
 .map-cluster.has-selection,.map-cluster:focus-visible { outline: 3px solid #2478ce; outline-offset: 2px; }
