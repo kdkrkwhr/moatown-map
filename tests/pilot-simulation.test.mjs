@@ -12,6 +12,45 @@ const zones = new Map(read('zones').filter(z => z.town_id === town).map(z => [z.
 const areas = read('boundaries').features.filter(f => zones.has(f.properties.entity_id));
 const plans = read('pilot_plans').towns[town];
 
+test('Beon and Myeonmok build apartments in each documented zone using local counts and height limits',()=>{
+  for(const [id,expectedCounts] of [
+    ['mt-202603-public-034',[2,3,2,3,3]],['mt-202603-public-010',[5,4,5,5]]]){
+    const localPlans=read('pilot_plans').towns[id];
+    const localZones=new Map(read('zones').filter(z=>z.town_id===id).sort((a,b)=>a.id.localeCompare(b.id)).map(z=>[z.id,z]));
+    const localAreas=read('boundaries').features.filter(f=>localZones.has(f.properties.entity_id));
+    const inputs=manifest.pilot_3d.simulation_inputs?.[id];
+    assert.ok(inputs?.design,id+' design sources');
+    const design=read(inputs.design);
+    assert.equal(design.town_id,id);
+    assert.ok(inputs.layout,id+' registered official layout');
+    const layout=read(inputs.layout);
+    assert.equal(layout.metadata.town_id,id);
+    assert.ok(layout.metadata.source_document_url.startsWith('https://'));
+    const result=generateSimulation(localAreas,localZones,localPlans,{design,layout});
+    for(const [index,zoneId] of [...localZones.keys()].entries()){
+      const zonePlan=localPlans.zones[zoneId],area=localAreas.find(f=>f.properties.entity_id===zoneId);
+      const towers=result.features.filter(f=>f.properties.zone_id===zoneId);
+      assert.ok(towers.length>0,zoneId);
+      assert.equal(result.summaries[zoneId].layoutLabel,layout.metadata.layout_label);
+      if(expectedCounts[index]){
+        assert.equal(towers.length,expectedCounts[index],zoneId);
+        assert.equal(Math.max(...towers.map(f=>f.properties.floors)),zonePlan.floors,zoneId+' skyline');
+      }
+      for(const f of towers){
+        assert.deepEqual(f.geometry,layout.features.find(shape=>shape.id===f.id).geometry);
+        assert.ok(f.properties.floors<=zonePlan.floors);
+        if(zonePlan.height_m)assert.ok(f.properties.height_m<=zonePlan.height_m);
+        // The integrated review draws part of 601 across a hole in the older zone layer.
+        const boundary=f.id==='myeonmok-6-601'?{type:'Polygon',coordinates:[area.geometry.coordinates[0]]}:area;
+        for(const xy of f.geometry.coordinates[0])assert.ok(booleanPointInPolygon(xy,boundary,{ignoreBoundary:true}));
+        if(f.id==='myeonmok-6-601')assert.match(result.summaries[zoneId].overlayNote,/601동/);
+        const drawn=layout.features.find(shape=>shape.id===f.id).properties.drawing_max_floors;
+        assert.equal(f.properties.floors,Math.min(drawn,zonePlan.floors));
+      }
+    }
+  }
+});
+
 // Independent WGS84 degree-length series for measuring distances near Sinwol.
 const lon = 126.83, lat = 37.535, phi = lat * Math.PI / 180;
 const north = 111132.92 - 559.82 * Math.cos(2 * phi) + 1.175 * Math.cos(4 * phi);
@@ -133,6 +172,17 @@ function simulate(site, units, plan = {}) {
   return generateSimulation([site], new Map([['site', { planned_units_total: units }]]), plan);
 }
 const square = (x, y, w, h) => [[x, y], [x + w, y], [x + w, y + h], [x, y + h], [x, y]];
+
+test('the alternative 35 m layout also reports units from the dated inspection notice',()=>{
+  const zoneId='mz-seoul-11000uq120ps202505310440';
+  const zoneMap=new Map([[zoneId,read('zones').find(z=>z.id===zoneId)]]);
+  const parts=read('boundaries').features.filter(f=>f.properties.entity_id===zoneId);
+  const localPlan=read('pilot_plans').towns['mt-202603-public-010'];
+  const spaced=generateSimulation(parts,zoneMap,localPlan,{program:read('myeonmok_design')});
+  assert.equal(spaced.summaries[zoneId].units,419);
+  assert.ok(spaced.features.length>0);
+  assert.ok(spaced.features.every(f=>f.id.startsWith('sim-')));
+});
 
 test('a small hole and a narrow concave notch both exclude otherwise fitting rectangles', () => {
   const outer = square(0, 0, 64, 36);

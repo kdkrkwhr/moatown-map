@@ -1,0 +1,64 @@
+{
+  "town_id": "mt-202603-public-010",
+  "checked_on": "2026-11-25",
+  "zones": {
+    "mz-seoul-11000uq120ps202505310160": {
+      "records": [{
+        "stage_kind": "integrated_review",
+        "stage": "통합심의 공개 배치도",
+        "source_as_of": "2026-10-23",
+        "source_url": "https://www.seoul.go.kr/news/news_report.do?nttNo=468710",
+        "publisher": "서울특별시",
+        "evidence": "official_site_plan_digitized",
+        "source_locator": "붙임 면목동 건축배치도 · 101~105동",
+        "building_count": 5,
+        "floors": 29
+      }]
+    },
+    "mz-seoul-11000uq120ps202505310161": {
+      "records": [{
+        "stage_kind": "integrated_review",
+        "stage": "통합심의 공개 배치도",
+        "source_as_of": "2026-10-23",
+        "source_url": "https://www.seoul.go.kr/news/news_report.do?nttNo=468710",
+        "publisher": "서울특별시",
+        "evidence": "official_site_plan_digitized",
+        "source_locator": "붙임 면목동 건축배치도 · 201~204동",
+        "building_count": 4,
+        "floors": 37
+      }]
+    },
+    "mz-seoul-11000uq120ps202505310439": {
+      "records": [
+        {
+          "stage_kind": "public_inspection",
+          "stage": "사업시행계획인가 신청안 주민공람",
+          "source_as_of": "2026-10-29",
+          "source_url": "https://news.seoul.go.kr/citybuild/archives/543800",
+          "publisher": "서울특별시 중랑구",
+          "evidence": "official_public_inspection_notice",
+          "source_locator": "중랑구 공고 제2026-1505호 · 구보 13쪽",
+          "building_count": 5,
+          "units": 526,
+          "floors": 37
+        }
+      ]
+    },
+    "mz-seoul-11000uq120ps202505310440": {
+      "records": [
+        {
+          "stage_kind": "public_inspection",
+          "stage": "사업시행계획인가 신청안 주민공람",
+          "source_as_of": "2026-10-29",
+          "source_url": "https://news.seoul.go.kr/citybuild/archives/543800",
+          "publisher": "서울특별시 중랑구",
+          "evidence": "official_public_inspection_notice",
+          "source_locator": "중랑구 공고 제2026-1506호 · 구보 16쪽",
+          "building_count": 5,
+          "units": 419,
+          "floors": 33
+        }
+      ]
+    }
+  }
+}

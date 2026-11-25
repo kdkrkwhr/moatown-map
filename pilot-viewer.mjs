@@ -114,37 +114,50 @@ function showSimulation(panel,summaries,zoneId,design,publicSpace){
   const occupied=entries.filter(s=>s.blocks);
   const card=el('section',null,'pilot-scenario');
   const s=zoneId && entries[0];
-  const title=s?.sourceLayout?'조합 배치도 · 주거동 형태 '+count(total)+'개':
+  const drawn=entries.filter(entry=>entry.sourceLayout);
+  const allDrawn=drawn.length>0 && drawn.length===entries.length;
+  const title=allDrawn?drawn[0].layoutLabel+' · 주거동 '+count(total)+'동':
     design?'계획자료 반영 · 주거동 형태 '+count(total)+'개':'35m 간격 배치 · '+count(total)+'동';
   card.append(el('h3',title));
-  if(s?.sourceLayout)card.append(el('p',['조합 공개안','최고 '+s.capFloors+'층',Number.isFinite(s.units)?count(s.units)+'세대':null].filter(Boolean).join(' · '),'pilot-plan-program'));
+  if(s?.sourceLayout)card.append(el('p',['구역 최고 '+s.capFloors+'층',Number.isFinite(s.units)?count(s.units)+'세대':null].filter(Boolean).join(' · '),'pilot-plan-program'));
   if(occupied.length){
     const low=Math.min(...occupied.map(s=>s.minFloors)),high=Math.max(...occupied.map(s=>s.maxFloors));
-    card.append(el('p',low+'~'+high+'층 · 추정 높이 '+low*3+'~'+high*3+'m'));
+    const min=Math.min(...occupied.map(s=>s.minHeight)),max=Math.max(...occupied.map(s=>s.maxHeight));
+    card.append(el('p',(low===high?low:low+'~'+high)+'층 · 추정 높이 '+(min===max?count(min):count(min)+'~'+count(max))+'m'));
   }
-  const basis={zone:'구역 심의안',town:'대상지 전체 계획',association:'조합 공개안',default:'자료 미확인 시 기본 가정'};
+  const basis={zone:'세부구역 공개 계획',town:'대상지 전체 계획',association:'조합 공개안',default:'자료 미확인 시 기본 가정'};
   if(!design && entries.length && entries.every(s=>Number.isInteger(s.units))){
     card.append(facts([['자료상 계획 세대수',count(entries.reduce((sum,s)=>sum+s.units,0))+'세대'],
       ['배치 예시 환산',count(entries.reduce((sum,s)=>sum+s.simulatedUnits,0))+'세대']]));
   }
   const basisText=s?basis[s.capSource]+' 최고 '+s.capFloors+'층':
     [...new Set(entries.map(entry=>basis[entry.capSource]+' 최고 '+entry.capFloors+'층'))].join(' · ');
+  const heightRule=occupied.some(entry=>entry.usePlanHeight)
+    ?'구역 최고 높이가 공개된 곳은 동별 예시 층수에 비례해 높이를 환산했습니다. 최고 높이가 없는 곳은 층당 3m를 적용했습니다.'
+    :'동별 예시 높이는 층당 3m로 환산했습니다.';
   if(design){
-    if(!s || s.sourceLayout)card.append(el('p','A3의 주거동 위치와 날개 방향은 조합 배치도에서 읽었습니다. 개별 높이·창호·조경은 시각화용 추정입니다.','pilot-meta'));
-    if(!s || s.countRecord)card.append(el('p','A1은 시공사 선정 당시 제시한 동 수를 목표로 배치했습니다.','pilot-meta'));
-    if(s && !s.countRecord && !s.sourceLayout)card.append(el('p','계획 세대수와 가로 방향을 반영해 배치한 예시입니다.','pilot-meta'));
+    if(drawn.length){
+      const entry=drawn[0];
+      card.append(el('p',count(drawn.reduce((sum,row)=>sum+row.blocks,0))+'개 주거동의 위치·방향·윤곽을 배치도에서 옮겼습니다. 창호·조경은 예시입니다.','pilot-meta'));
+      if(entry.layoutUrl)card.append(source(entry.layoutUrl,entry.layoutLabel+(entry.layoutDate?' · '+date(entry.layoutDate):'')+' 원문 ↗'));
+    }
+    if(entries.some(entry=>!entry.sourceLayout && entry.countRecord))card.append(el('p','동 수가 공개된 구역은 해당 자료의 동 수를 목표로 배치했습니다.','pilot-meta'));
+    if(entries.some(entry=>!entry.sourceLayout&&!entry.countRecord))card.append(el('p','동 수가 확인되지 않은 구역은 계획 세대수와 층당 4세대를 기준으로 동 수를 추정했습니다.','pilot-meta'));
     const info=el('details',null,'pilot-evidence');
-    info.append(el('summary','배치와 추정 높이의 기준'),el('p','배치 상한 · '+basisText,'pilot-meta'),
-      el('p','층수가 없는 동은 자료상 최고 층수의 70~100% 범위에서 높이를 달리하고, 층당 3m를 적용했습니다. 자동 배치에는 32 × 16m 동, 경계 여백 5m, 동간 간격 10m를 가정했습니다.','pilot-meta'));
-    if(s?.overlayNote)info.append(el('p',s.overlayNote,'pilot-note'));
+    info.append(el('summary','배치와 추정 높이의 기준'),el('p','구역별 기준 · '+basisText,'pilot-meta'));
+    if(drawn.some(entry=>entry.hasDrawingFloors))info.append(el('p','한 동 안에서 가장 높은 날개의 층수를 적용했습니다. 후속 공람에서 구역 최고 층수가 낮아진 경우에는 그 상한을 적용했습니다.','pilot-meta'));
+    if(entries.some(entry=>!entry.hasDrawingFloors))info.append(el('p','동별 층수가 없는 곳은 최고 층수의 70~100%로 예시 층수를 정했습니다.','pilot-meta'));
+    info.append(el('p',heightRule,'pilot-meta'));
+    if(!allDrawn)info.append(el('p','자동 배치에는 32 × 16m 동, 경계 여백 5m, 동간 간격 10m를 가정했습니다.','pilot-meta'));
+    for(const note of new Set(entries.map(entry=>entry.overlayNote).filter(Boolean)))info.append(el('p',note,'pilot-note'));
     card.append(info);
   }else{
     card.append(el('p','배치 상한 · '+basisText,'pilot-meta'),
-      el('p','동 크기 42 × 14m · 경계에서 10m 이상 · 동 사이 35m 이상 · 층당 3m','pilot-meta'),
+      el('p','동 크기 42 × 14m · 경계에서 10m 이상 · 동 사이 35m 이상. '+heightRule,'pilot-meta'),
       el('p','층당 4세대를 가정해 계획 세대수를 동 수의 목표로 사용했습니다. 간격을 지킬 수 있는 동만 표시합니다.','pilot-meta'));
   }
   panel.append(card);
-  if(design && zoneId){
+  if(design?.zones[zoneId]?.records?.length){
     const section=el('section',null,'pilot-source-card');
     section.append(el('h4','구역별 공개 계획'));
     const records=[...(design.zones[zoneId]?.records??[])];
@@ -157,7 +170,7 @@ function showSimulation(panel,summaries,zoneId,design,publicSpace){
         ['지하층수',record.basement_floors,'층'],['건폐율',record.coverage_pct,'%'],['용적률',record.far_pct,'%'],
         ['건축면적',record.building_area_m2,'㎡'],['연면적',record.gross_floor_area_m2,'㎡']];
       row.append(facts(measures.filter(([,n])=>Number.isFinite(n)).map(([name,n,unit])=>[name,count(n)+unit])),
-        source(record.source_url,'계획 원문 ↗'));
+        source(record.source_url,(record.source_locator??'계획 원문')+' ↗'));
       if(record.plan_url)row.append(source(record.plan_url,'조합 배치도 원문 ↗'));
       section.append(row);
     }
@@ -307,6 +320,10 @@ export function mountPilotViewer({manifest,boundaries,townById,groups}){
     if(mode==='visual'){
       get('pilot-district').textContent=town.district+' · 공식 조감도';
       if(active.catalog)showIllustration(figure,inspector,active.catalog);
+      if(active.catalog && active.canSimulate){
+        const button=el('button','건축 후 3D 배치 보기 ›','pilot-text-button');
+        button.type='button';button.onclick=()=>changeMode('plan');inspector.prepend(button);
+      }
       return;
     }
     if(!data){
@@ -317,19 +334,20 @@ export function mountPilotViewer({manifest,boundaries,townById,groups}){
     if(mode==='plan'){
       const zone=data.zoneMap.get(zoneId);
       if(data.designError)inspector.append(el('p','구역별 계획자료를 불러오지 못해 35m 간격 예시를 표시합니다.','pilot-note'));
-      if(data.simulation)showSimulation(inspector,data.simulation.summaries,zoneId,active.placement==='design' && data.design,data.publicSpace);
+      const hasZoneSimulation=Boolean(zoneId?data.simulation?.summaries[zoneId]?.blocks:data.simulation?.features.length);
+      if(hasZoneSimulation)showSimulation(inspector,data.simulation.summaries,zoneId,active.placement==='design'?data.design:null,data.publicSpace);
       if(data.design && active.placement==='design' && !zone){
         const shortcuts=el('div',null,'pilot-plan-links');
         for(const z of data.zoneMap.values()){
           const s=data.simulation.summaries[z.id];
           if(!s?.sourceLayout && !s?.countRecord)continue;
-          const button=el('button',z.name+' · '+(s.sourceLayout?'조합 배치도':'동수 근거')+' ›');
+          const button=el('button',z.name+' · '+(s.layoutLabel??'공개 동 수')+' ›');
           button.type='button';button.onclick=()=>{selectZone(z.id);active.scene?.focusZone(z.id);};shortcuts.append(button);
         }
         inspector.append(shortcuts);
       }
-      if(!(zone && active.placement==='design' && data.design?.zones[zoneId]?.records.length))
-        showPlan(inspector,zone?data.plans.zones[zoneId]:data.plans.plan,zone?.name??town.name,Boolean(data.simulation));
+      if(!(active.placement==='design' && data.simulation?.summaries[zoneId]?.capSource==='association'))
+        showPlan(inspector,zone?data.plans.zones[zoneId]:data.plans.plan,zone?.name??town.name,hasZoneSimulation);
       return;
     }
     if(building){
@@ -396,7 +414,11 @@ export function mountPilotViewer({manifest,boundaries,townById,groups}){
     dialog.dataset.ready=String(ready);dialog.dataset.mode=mode;
     for(const button of modes)button.setAttribute('aria-pressed',String(button.dataset.pilotMode===mode));
     notice.hidden=mode!=='plan'||!canSimulate;
-    placement.hidden=notice.hidden||!ready;
+    const summaries=Object.values(active.data?.simulation?.summaries??{});
+    const drawn=active.placement==='design' && summaries.length>0 && summaries.every(s=>s.sourceLayout);
+    notice.textContent=drawn?'공식 배치도에서 옮긴 주거동 위치와 윤곽입니다. 높이와 외관은 공개 계획을 바탕으로 추정했습니다.':
+      '※ 본 3D 단지 배치는 계획 최고 층수·면적을 바탕으로 자동 생성된 참고용 시뮬레이션이며, 실제 건축 설계와 다릅니다.';
+    placement.hidden=notice.hidden||!ready||!active.data?.design;
     for(const button of placement.querySelectorAll('button')){
       button.setAttribute('aria-pressed',String(active.placement===button.dataset.placement));
       button.disabled=button.dataset.placement==='design'&&!active.data?.design;
@@ -465,7 +487,7 @@ export function mountPilotViewer({manifest,boundaries,townById,groups}){
       const fetchInput=key=>fetchJson(new URL(manifest.files[key],base),signal,config.hashes[key]);
       const indexUrl=new URL(manifest.files.buildings,base),planUrl=new URL(manifest.files.pilot_plans,base);
       const [index,planBook,{createPilotScene}]=await Promise.all([fetchJson(indexUrl,signal,config.hashes.buildings),
-        session.hasPlan?fetchJson(planUrl,signal,config.hashes.pilot_plans):null,import('./pilot-scene.mjs?v=4a9e5be231e1')]);
+        session.hasPlan?fetchJson(planUrl,signal,config.hashes.pilot_plans):null,import('./pilot-scene.mjs?v=2e396505ae87')]);
       const entry=index.towns[town.id],plans=planBook?.towns[town.id];
       async function fetchDetails(){
         const book=await fetchInput(session.detailKey);
@@ -498,15 +520,17 @@ export function mountPilotViewer({manifest,boundaries,townById,groups}){
       const mappedZones=new Set(areas.map(f=>f.properties.entity_id));
       let simulation=null,design=null,publicSpace=null,designError=null;
       if(session.canSimulate){
-        const [module,inputs]=await Promise.all([import('./pilot-simulation.mjs?v=4a9e5be231e1'),
-          Promise.all(['sinwol_design','sinwol_public_space','sinwol_layout'].map(fetchInput)).catch(error=>{designError=error;return null;})]);
+        const inputsForTown=config.simulation_inputs[town.id];
+        const modelAreas=areas.filter(a=>inputsForTown.zone_ids.includes(a.properties.entity_id));
+        const [module,inputs]=await Promise.all([import('./pilot-simulation.mjs?v=2e396505ae87'),
+          Promise.all([inputsForTown.design,inputsForTown.public_space,inputsForTown.layout].map(key=>key?fetchInput(key):null)).catch(error=>{designError=error;return null;})]);
         if(active!==session)return;
         const layout=inputs?.[2];
         design=inputs?.[0];publicSpace=inputs?.[1];
         if(!design)session.placement='spaced';
         const cache=new Map();
         session.simulate=key=>{
-          if(!cache.has(key))cache.set(key,module.generateSimulation(areas,zoneMap,plans,{design:key==='design'?design:null,publicSpace,layout}));
+          if(!cache.has(key))cache.set(key,module.generateSimulation(modelAreas,zoneMap,plans,{design:key==='design'?design:null,program:design,publicSpace,layout}));
           return cache.get(key);
         };
         simulation=session.simulate(session.placement);

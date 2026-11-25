@@ -1,4 +1,4 @@
-import booleanPointInPolygon from './vendor/turf/boolean-point-in-polygon.mjs?v=4a9e5be231e1';
+import booleanPointInPolygon from './vendor/turf/boolean-point-in-polygon.mjs?v=2e396505ae87';
 
 const LENGTH = 42, WIDTH = 14, UNITS_PER_FLOOR = 4;
 // Small margins keep the minimum distances intact after projection to WGS84.
@@ -178,7 +178,7 @@ function floorProfile(count, cap, units) {
   return floors;
 }
 
-export function generateSimulation(areas, zoneMap, plans, {design=null, publicSpace=null, layout=null}={}) {
+export function generateSimulation(areas, zoneMap, plans, {design=null, program=design, publicSpace=null, layout=null}={}) {
   const features = [], summaries = {}, occupied = [];
   const ordered = areas.filter(area => polygons(area.geometry)[0]?.[0]?.length >= 4 &&
     zoneMap.has(area.properties.entity_id)).sort((a, b) => a.properties.entity_id.localeCompare(b.properties.entity_id));
@@ -187,28 +187,38 @@ export function generateSimulation(areas, zoneMap, plans, {design=null, publicSp
   const traced=design?(layout?.features??[]):[];
   const reserved=reservedSpace([...(publicSpace?.features??[]),...traced],frame);
   const ordinaryAngles=Array.from({length:12},(_,i)=>i*15);
-  // Start along the Sinwol street grid, then try oblique layouts for irregular plots.
+  // A traced layout supplies a local street-grid reference for the Sinwol design.
   const settings={length:design?32:LENGTH,width:design?16:WIDTH,gap:design?DESIGN_SEPARATION:SEPARATION,
-    angles:design?[27,117,12,102,42,132,...ordinaryAngles]:ordinaryAngles};
+    angles:publicSpace && traced.length?[27,117,12,102,42,132,...ordinaryAngles]:ordinaryAngles};
   for (const area of ordered) {
     const zoneId = area.properties.entity_id, zone = zoneMap.get(zoneId);
     const records=design?.zones[zoneId]?.records??[];
     const shapes=traced.filter(f=>f.properties.zone_id===zoneId && polygons(f.geometry).length);
     const association=shapes.length && records.find(r=>r.stage_kind==='association_plan');
     const [capFloors, capSource] = association?.floors?[association.floors,'association']:floorCap(plans?.zones?.[zoneId], plans?.plan);
-    const unitValue=association?.units??zone.planned_units_total;
-    const units = Number.isInteger(unitValue) && unitValue >= 0 ? unitValue : null;
     const countRecord=records.find(r=>Number.isInteger(r.building_count) && r.building_count>0);
+    const publishedProgram=program?.zones[zoneId]?.records?.find(r=>['approved_project_plan','public_inspection'].includes(r.stage_kind));
+    const sameProgram=countRecord!=null && publishedProgram===countRecord;
+    const unitValue=association?.units??publishedProgram?.units??zone.planned_units_total;
+    const units = Number.isInteger(unitValue) && unitValue >= 0 ? unitValue : null;
+    const planHeight=plans?.zones?.[zoneId]?.height_m;
+    const usePlanHeight=capSource==='zone' && Number.isFinite(planHeight) && planHeight>0;
+    const metersFor=floors=>usePlanHeight?Number((planHeight*floors/capFloors).toFixed(2)):floors*3;
     if(shapes.length){
       const profile=floorProfile(shapes.length,capFloors,null);
-      const heights=shapes.map((shape,i)=>shape.properties.floors??profile[i]);
+      const heights=shapes.map(({properties:p},i)=>Math.min(p.drawing_max_floors??p.floors??profile[i],capFloors));
+      const meters=heights.map(metersFor);
       shapes.forEach((shape,i)=>{
         const floors=heights[i];
-        features.push({...shape,properties:{...shape.properties,floors,height_m:floors*3,
-          height_source:shape.properties.floors?'estimated_from_floors':'simulated_from_floors'}});
+        const drawn=shape.properties.drawing_max_floors??shape.properties.floors;
+        features.push({...shape,properties:{...shape.properties,floors,height_m:meters[i],
+          height_source:usePlanHeight?'scaled_from_plan_max_height':drawn?'estimated_from_floors':'simulated_from_floors'}});
       });
       summaries[zoneId]={blocks:shapes.length,minFloors:Math.min(...heights),maxFloors:Math.max(...heights),capFloors,
-        capSource,units,overlayNote:layout.metadata?.overlay_check?.note,sourceLayout:true,simulatedUnits:null};
+        minHeight:Math.min(...meters),maxHeight:Math.max(...meters),usePlanHeight,capSource,units,countRecord,
+        overlayNote:layout.metadata?.zone_notes?.[zoneId]??layout.metadata?.overlay_check?.note,sourceLayout:true,simulatedUnits:null,
+        layoutLabel:layout.metadata?.layout_label??'조합 배치도',layoutUrl:layout.metadata?.source_url,layoutDate:layout.metadata?.source_as_of,
+        hasDrawingFloors:shapes.every(shape=>Number.isInteger(shape.properties.drawing_max_floors))};
       continue;
     }
     const targetBlocks = countRecord?.building_count ?? (units == null ? null : Math.ceil(units / (capFloors * UNITS_PER_FLOOR)));
@@ -222,14 +232,18 @@ export function generateSimulation(areas, zoneMap, plans, {design=null, publicSp
       blocks.push(...placed);
     }
     blocks.sort((a, b) => a.center[1] - b.center[1] || a.center[0] - b.center[0]);
-    const heights = floorProfile(blocks.length, capFloors, units);
+    // Where the public plan specifies both count and skyline, the four-units-per-floor
+    // assumption must not lower that documented maximum.
+    const heights = floorProfile(blocks.length, capFloors, sameProgram ? null : units);
+    const meters=heights.map(metersFor);
     blocks.forEach((block, i) => {
       const id = 'sim-' + zoneId + '-' + (i + 1), floors = heights[i];
       features.push({ type: 'Feature', id, properties: { id, zone_id: zoneId, floors,
-        height_m: floors * 3, height_source: 'simulated_from_floors' },
+        height_m: meters[i], height_source: usePlanHeight?'scaled_from_plan_max_height':'simulated_from_floors' },
         geometry: { type: 'Polygon', coordinates: [block.ring.map(frame.unproject)] } });
     });
     summaries[zoneId] = { blocks: blocks.length, minFloors: heights.length ? Math.min(...heights) : null,
+      minHeight:meters.length?Math.min(...meters):null,maxHeight:meters.length?Math.max(...meters):null,usePlanHeight,
       maxFloors: heights.length ? Math.max(...heights) : null, capFloors, capSource, units, targetBlocks,
       simulatedUnits: heights.reduce((sum, n) => sum + n * UNITS_PER_FLOOR, 0),countRecord };
   }

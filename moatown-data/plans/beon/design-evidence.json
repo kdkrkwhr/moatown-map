@@ -1,0 +1,86 @@
+{
+  "town_id": "mt-202603-public-034",
+  "checked_on": "2026-11-25",
+  "zones": {
+    "mz-info-305900000750u59": {
+      "records": [
+        {
+          "stage_kind": "approved_project_plan",
+          "stage": "사업시행계획인가 당시 공개안",
+          "source_as_of": "2023-07-31",
+          "source_url": "https://www.seoul.go.kr/news/news_report.do?nttNo=393720",
+          "publisher": "서울특별시 전략주택공급과",
+          "evidence": "official_approval_announcement",
+          "source_locator": "첨부 PDF 6쪽 · 참고자료 1 · 번동1구역",
+          "building_count": 2,
+          "units": 146,
+          "floors": 28
+        }
+      ]
+    },
+    "mz-seoul-11000uq120ps202505310171": {
+      "records": [
+        {
+          "stage_kind": "approved_project_plan",
+          "stage": "사업시행계획인가 당시 공개안",
+          "source_as_of": "2023-07-31",
+          "source_url": "https://www.seoul.go.kr/news/news_report.do?nttNo=393720",
+          "publisher": "서울특별시 전략주택공급과",
+          "evidence": "official_approval_announcement",
+          "source_locator": "첨부 PDF 6쪽 · 참고자료 1 · 번동2구역",
+          "building_count": 3,
+          "units": 254,
+          "floors": 28
+        }
+      ]
+    },
+    "mz-seoul-11000uq120ps202505310172": {
+      "records": [
+        {
+          "stage_kind": "approved_project_plan",
+          "stage": "사업시행계획인가 당시 공개안",
+          "source_as_of": "2023-07-31",
+          "source_url": "https://www.seoul.go.kr/news/news_report.do?nttNo=393720",
+          "publisher": "서울특별시 전략주택공급과",
+          "evidence": "official_approval_announcement",
+          "source_locator": "첨부 PDF 6쪽 · 참고자료 1 · 번동3구역",
+          "building_count": 2,
+          "units": 226,
+          "floors": 28
+        }
+      ]
+    },
+    "mz-seoul-11000uq120ps202505310173": {
+      "records": [
+        {
+          "stage_kind": "approved_project_plan",
+          "stage": "사업시행계획인가 당시 공개안",
+          "source_as_of": "2023-07-31",
+          "source_url": "https://www.seoul.go.kr/news/news_report.do?nttNo=393720",
+          "publisher": "서울특별시 전략주택공급과",
+          "evidence": "official_approval_announcement",
+          "source_locator": "첨부 PDF 6쪽 · 참고자료 1 · 번동4구역",
+          "building_count": 3,
+          "units": 318,
+          "floors": 35
+        }
+      ]
+    },
+    "mz-seoul-11000uq120ps202505310174": {
+      "records": [
+        {
+          "stage_kind": "approved_project_plan",
+          "stage": "사업시행계획인가 당시 공개안",
+          "source_as_of": "2023-07-31",
+          "source_url": "https://www.seoul.go.kr/news/news_report.do?nttNo=393720",
+          "publisher": "서울특별시 전략주택공급과",
+          "evidence": "official_approval_announcement",
+          "source_locator": "첨부 PDF 6쪽 · 참고자료 1 · 번동5구역",
+          "building_count": 3,
+          "units": 298,
+          "floors": 28
+        }
+      ]
+    }
+  }
+}

@@ -18,9 +18,12 @@ test('pilot input versions and available towns match both published data catalog
   assert.deepEqual(latest.pilot_3d.plan_town_ids,Object.keys(read(source('pilot_plans')).towns).sort());
 });
 
-test('whole-town illustrations use the attributed original for each area and keep simulation scoped to Sinwol',()=>{
+test('published illustrations and apartment simulations are available together for the three documented projects',()=>{
   const town='mt-202603-public-067';
-  assert.deepEqual(latest.pilot_3d.simulation_town_ids,[town]);
+  for(const id of ['mt-202603-public-010','mt-202603-public-034',town]){
+    assert.ok(latest.pilot_3d.simulation_town_ids.includes(id),id);
+    assert.ok(latest.pilot_3d.visuals[id]);
+  }
   for(const [id,key] of Object.entries(latest.pilot_3d.visuals)){
     const catalog=read(source(key));
     assert.equal(catalog.town_id,id);

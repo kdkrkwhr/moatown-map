@@ -7,7 +7,8 @@ const manifest=JSON.parse(readFileSync(latest,'utf8'));
 const read=key=>readFileSync(new URL(manifest.files[key],root),'utf8').replaceAll('\r\n','\n');
 const buildings=JSON.parse(read('buildings')).towns,plans=JSON.parse(read('pilot_plans')).towns;
 const town_ids=Object.keys(buildings).sort();
-const boundaryIds=JSON.parse(read('boundaries')).features.filter(f=>f.properties.entity_type==='town').map(f=>f.properties.entity_id).sort();
+const boundaries=JSON.parse(read('boundaries')).features;
+const boundaryIds=boundaries.filter(f=>f.properties.entity_type==='town').map(f=>f.properties.entity_id).sort();
 const plan_town_ids=Object.keys(plans).sort();
 if(!town_ids.length || boundaryIds.join()!==town_ids.join() || !plan_town_ids.every(id=>town_ids.includes(id)))
   throw Error('대상지 참고 경계, 건물, 계획의 범위를 확인하세요.');
@@ -17,13 +18,23 @@ for(const key of Object.keys(manifest.files))if(key.startsWith('building_town_')
 function townFiles(suffix){
   const result={};
   for(const key of Object.keys(manifest.files).filter(key=>key.endsWith(suffix))){
-    const id=JSON.parse(read(key)).town_id;
+    const file=JSON.parse(read(key)),id=file.town_id??file.metadata?.town_id;
     if(!town_ids.includes(id) || result[id])throw Error(key+' 대상지 ID를 확인하세요.');
     result[id]=key;
   }
   return result;
 }
 const visuals=townFiles('_visuals'),current_details=townFiles('_current_details'),current_heights=townFiles('_height_evidence');
+const designs=townFiles('_design'),layouts=townFiles('_layout'),publicSpaces=townFiles('_public_space');
+const zoneShapes=new Set(boundaries.filter(f=>f.properties.entity_type==='zone'&&['Polygon','MultiPolygon'].includes(f.geometry?.type)).map(f=>f.properties.entity_id));
+const zoneTown=new Map(JSON.parse(read('zones')).map(z=>[z.id,z.town_id]));
+const simulation_inputs={};
+for(const id of plan_town_ids){
+  const town=plans[id];
+  const zone_ids=Object.entries(town.zones??{}).filter(([zone,record])=>
+    zoneTown.get(zone)===id && zoneShapes.has(zone) && [record?.floors,town.plan?.floors].some(n=>Number.isInteger(n)&&n>0)).map(([zone])=>zone);
+  if(zone_ids.length)simulation_inputs[id]={zone_ids,design:designs[id]??null,layout:layouts[id]??null,public_space:publicSpaces[id]??null};
+}
 for(const id of town_ids){
   for(const [group,folder] of [[current_details,'details'],[current_heights,'heights']]){
     if(group[id])continue;
@@ -33,14 +44,15 @@ for(const id of town_ids){
     group[id]=key;
   }
 }
-const keys=['towns','zones','boundaries','buildings','pilot_plans','building_height_review','registry_heights','sinwol_public_space','sinwol_design','sinwol_layout',
+const keys=['towns','zones','boundaries','buildings','pilot_plans','building_height_review','registry_heights',
+  ...Object.values(designs),...Object.values(layouts),...Object.values(publicSpaces),
   ...Object.values(visuals),...Object.values(current_details),...Object.values(current_heights)];
 if(manifest.files.current_site_sources)keys.push('current_site_sources');
 const hashes=Object.fromEntries(keys.map(key=>[key,createHash('sha256').update(read(key)).digest('hex')]));
 const height_review_town_ids=[...new Set(Object.values(JSON.parse(read('building_height_review')).records).flatMap(r=>r.town_ids))].sort();
 const registry_height_town_ids=[...new Set(Object.values(JSON.parse(read('registry_heights')).records).flatMap(r=>r.town_ids))].sort();
 if(registry_height_town_ids.some(id=>!town_ids.includes(id)))throw Error('표제부 높이 자료의 대상지 ID 불일치');
-const config={town_ids,plan_town_ids,hashes,visuals,simulation_town_ids:['mt-202603-public-067'],current_details,current_heights,height_review_town_ids,registry_height_town_ids};
+const config={town_ids,plan_town_ids,hashes,visuals,simulation_town_ids:Object.keys(simulation_inputs),simulation_inputs,current_details,current_heights,height_review_town_ids,registry_height_town_ids};
 if(process.argv.includes('--check')){
   if(JSON.stringify(config)!==JSON.stringify(manifest.pilot_3d)||JSON.stringify(manifest.files)!==savedFiles)throw Error('3D 입력 버전 갱신 필요 (node scripts/sync-pilot.mjs)');
 }else{
