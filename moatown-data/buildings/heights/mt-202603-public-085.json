@@ -5,14 +5,35 @@
   "wfs_url": "https://land.seoul.go.kr/land/geoserver/wfs.do",
   "source_as_of": null,
   "checked_on": "2026-11-25",
-  "date_note": "source_record_date는 원천 도형의 h_date이다. 지도 전체의 기준일은 확인되지 않았다.",
-  "method_note": "EPSG:5179에서 두 건물 도형의 교집합 면적을 합집합 면적으로 나눈 값(IoU)이 0.9 이상이어야 한다. 양방향에서 IoU 0.1 초과 후보가 하나여야 하며 도로명주소 건물(gro_flo_co, IoU 0.6 이상)과 층수가 다르면 보류한다. 지도 층수에 3m를 곱한 추정 높이다.",
+  "date_note": "수치지형도 기록일은 h_date이다. 도로명주소 건물 기록일은 개별 레코드의 source_date_field에 표시한 작업일시(opert_de) 또는 이동일자(mvmn_de)이다. checked_on은 조회일이며 레이어 전체의 기준일은 확인되지 않았다.",
+  "method_note": "EPSG:5179에서 두 건물 도형의 교집합 면적을 합집합 면적으로 나눈 값(IoU)이 0.9 이상이어야 한다. 양방향에서 IoU 0.1 초과 후보가 하나여야 하며 도로명주소 건물(gro_flo_co, IoU 0.6 이상)과 층수가 다르면 보류한다. 지도 층수에 3m를 곱한 추정 높이다. 수치지형도로 보완되지 않은 건물은 도로명주소 지상층수(gro_flo_co)를 확인한다. IoU가 0.9를 초과하고 서울 전역에서 건물관리번호가 하나이며 도로명주소 도형과 대응하는 공개 도형 및 GIS 원본 도형도 각각 하나여야 한다. 수치지형도에서 IoU 0.1 초과 후보가 여럿이거나 층수가 다르면 보류한다.",
   "coverage": {
     "originally_missing": 116,
-    "matched": 0,
-    "still_missing": 116
+    "matched": 1,
+    "still_missing": 115
   },
-  "records": {},
+  "records": {
+    "1988195757074481800200000000": {
+      "floors": 4,
+      "height_m": 12,
+      "height_source": "estimated_from_floors",
+      "source_url": "https://land.seoul.go.kr/land/map/land/map.do",
+      "source_layer": "landbiz:tl_sdw_buld",
+      "source_field": "gro_flo_co",
+      "source_id": "1117011500100010001017395",
+      "source_as_of": null,
+      "source_record_date": "2011-03-02",
+      "source_date_field": "opert_de",
+      "source_lookup_sha256": [
+        "41d9015f389337a9455e61cf672b61b26c9d8a0276c3d86b41589cac6612e3a1"
+      ],
+      "gis_neighbors_sha256": [
+        "e859729edf82558b0dcac0d9710b806dd2349093a4a20160ca1d2671473abcd5"
+      ],
+      "method": "unique_footprint_iou",
+      "overlap_iou": 0.9828
+    }
+  },
   "audit": {
     "building_chunks": [
       "1f26469874328afe1fb1108ece3e2f37a3cc1fccf0a0ec2acea075029a03ca79"
@@ -32,7 +53,7 @@
         "01ec2d6d255595c3bb82977f18ee4fc7e5cec47ee54efd26ed6789cc4a3359a2"
       ]
     },
-    "method_version": 1,
+    "method_version": 2,
     "topographic_rows": 1455,
     "road_rows": 859,
     "nonunique_source_ids": [
@@ -46,7 +67,7 @@
     "matched_by_area": {
       "inside": 0,
       "crossing": 0,
-      "nearby": 0
+      "nearby": 1
     }
   }
 }

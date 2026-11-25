@@ -12,6 +12,7 @@ const plan_town_ids=Object.keys(plans).sort();
 if(!town_ids.length || boundaryIds.join()!==town_ids.join() || !plan_town_ids.every(id=>town_ids.includes(id)))
   throw Error('대상지 참고 경계, 건물, 계획의 범위를 확인하세요.');
 const savedFiles=JSON.stringify(manifest.files);
+manifest.files.registry_heights='buildings/registry-heights.json';
 for(const key of Object.keys(manifest.files))if(key.startsWith('building_town_'))delete manifest.files[key];
 function townFiles(suffix){
   const result={};
@@ -32,12 +33,14 @@ for(const id of town_ids){
     group[id]=key;
   }
 }
-const keys=['towns','zones','boundaries','buildings','pilot_plans','building_height_review','sinwol_public_space','sinwol_design','sinwol_layout',
+const keys=['towns','zones','boundaries','buildings','pilot_plans','building_height_review','registry_heights','sinwol_public_space','sinwol_design','sinwol_layout',
   ...Object.values(visuals),...Object.values(current_details),...Object.values(current_heights)];
 if(manifest.files.current_site_sources)keys.push('current_site_sources');
 const hashes=Object.fromEntries(keys.map(key=>[key,createHash('sha256').update(read(key)).digest('hex')]));
 const height_review_town_ids=[...new Set(Object.values(JSON.parse(read('building_height_review')).records).flatMap(r=>r.town_ids))].sort();
-const config={town_ids,plan_town_ids,hashes,visuals,simulation_town_ids:['mt-202603-public-067'],current_details,current_heights,height_review_town_ids};
+const registry_height_town_ids=[...new Set(Object.values(JSON.parse(read('registry_heights')).records).flatMap(r=>r.town_ids))].sort();
+if(registry_height_town_ids.some(id=>!town_ids.includes(id)))throw Error('표제부 높이 자료의 대상지 ID 불일치');
+const config={town_ids,plan_town_ids,hashes,visuals,simulation_town_ids:['mt-202603-public-067'],current_details,current_heights,height_review_town_ids,registry_height_town_ids};
 if(process.argv.includes('--check')){
   if(JSON.stringify(config)!==JSON.stringify(manifest.pilot_3d)||JSON.stringify(manifest.files)!==savedFiles)throw Error('3D 입력 버전 갱신 필요 (node scripts/sync-pilot.mjs)');
 }else{

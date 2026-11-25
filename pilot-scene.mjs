@@ -1,4 +1,4 @@
-﻿import earcut from './vendor/earcut-3.0.2/earcut.mjs?v=eb5517265229';
+﻿import earcut from './vendor/earcut-3.0.2/earcut.mjs?v=f435fadf993b';
 
 const DEG = Math.PI / 180;
 const GROUND = '#f1f3ef';
@@ -357,7 +357,14 @@ function geometry(model, existingDetail) {
     const rim = paint(.78, .55, exterior && shade(exterior.wall, 1.09));
     const footprint = material(shade(current, .71), rgb('#a7b5af'), selected, { code: block.code, mode, lift: .95 });
     for (const part of block.parts) {
-      if (!block.height) { outline(part, 1.05, 0, footprint, 5); continue; }
+      if (!block.height) {
+        if (existingDetail) {
+          const fill = rgb('#ccd4d6');
+          flat(part, 0, material(fill, fill, selected, { code: block.code, mode: 'exterior', lift: .7 }), 5);
+        }
+        outline(part, 1.05, 0, footprint, 5);
+        continue;
+      }
       const z = block.height;
       const perimeter = part.rings[0];
       const shadow = shadows[Number(block.props.is_inside_town === false)];

@@ -1,11 +1,11 @@
-import {renderProjectDetail} from './detail-view.mjs?v=eb5517265229';
-import {durationSamples,elapsedMonths,formatValue} from './detail-format.mjs?v=eb5517265229';
+import {renderProjectDetail} from './detail-view.mjs?v=f435fadf993b';
+import {durationSamples,elapsedMonths,formatValue} from './detail-format.mjs?v=f435fadf993b';
 export {elapsedMonths};
-import {loadMaps,createProjectMap} from './map-engine.mjs?v=eb5517265229';
-import {loadNews,matchNews,newsCard,sourceLabels} from './news.mjs?v=eb5517265229';
-import {searchProjects,managementFilters,progressFilters,recentProjectDates} from './project-search.mjs?v=eb5517265229';
-import {mountAddressLookup} from './address-reference.mjs?v=eb5517265229';
-import {mountPilotViewer} from './pilot-viewer.mjs?v=eb5517265229';
+import {loadMaps,createProjectMap} from './map-engine.mjs?v=f435fadf993b';
+import {loadNews,matchNews,newsCard,sourceLabels} from './news.mjs?v=f435fadf993b';
+import {searchProjects,managementFilters,progressFilters,recentProjectDates} from './project-search.mjs?v=f435fadf993b';
+import {mountAddressLookup} from './address-reference.mjs?v=f435fadf993b';
+import {mountPilotViewer} from './pilot-viewer.mjs?v=f435fadf993b';
 const mobileMapQuery='(max-width: 760px) and (orientation: portrait), (max-width: 540px)';
 function initialSheetHeight(selection,hasFilters,mobile){
   if(!mobile)return 1;

@@ -10,7 +10,7 @@
   "source_as_of": "2024-12-31",
   "checked_on": "2026-11-25",
   "snapshot_date": "2026-11-24",
-  "boundary_sha256": "3f3b2e1f41e8a37ecc1305c1f8c7b133aa9b5a83f60045090fd2d16a0399db4c",
+  "boundary_sha256": "d5de1e504651c2703b9c08d51cb3aea9e3f856c084c47eb85c41b0ce5b412252",
   "buffer_m": 150,
   "source_fields": {
     "geom": "건물 전체 도형 (EPSG:5179, m)",
@@ -433,6 +433,69 @@
           {
             "id": "2014183612734503639500000000",
             "reason": "non_unique_building_id"
+          }
+        ]
+      }
+    },
+    "mt-202603-public-009": {
+      "source_as_of": "2024-12-31",
+      "files": [
+        {
+          "path": "mt-202603-public-009.geojson",
+          "sha256": "278062e5f645e861ef5608a4761245733c7020199e8eb67d2c68875dc9d79ffd",
+          "bytes": 379316,
+          "gzip_bytes": 50938,
+          "count": 858
+        }
+      ],
+      "stats": {
+        "total": 858,
+        "inside": 329,
+        "crossing": 10,
+        "nearby": 519,
+        "inside_known_year": 316,
+        "inside_unknown_year": 13,
+        "inside_30_plus": 234,
+        "registry_linked": 800,
+        "official_height": 613,
+        "estimated_height": 187,
+        "unknown_height": 58
+      },
+      "audit": {
+        "bbox_count": 1154,
+        "wfs_pages": [
+          {
+            "start_index": 0,
+            "number_returned": 1000,
+            "timestamp": "2026-11-25T03:34:30.073Z",
+            "sha256": "cf893026f0ed27caafc865aff0d6368880c0e29b5f1cbf50c2c65728d8166b6a"
+          },
+          {
+            "start_index": 1000,
+            "number_returned": 154,
+            "timestamp": "2026-11-25T03:34:30.354Z",
+            "sha256": "90e34d220b9bef3f25b39e2d66cd41223d410dbde00a52db59d9beac87a8142c"
+          }
+        ],
+        "matched_unique_ids": 858,
+        "duplicate_ids_outside_buffer": [],
+        "matched_ids_sha256": "ea844ca29a7367b47cdc5eda558ca6daa40e310af5987331670fb7d26261f598",
+        "rounded_geometry_reviews": [
+          {
+            "id": "1982186932074495369300000000",
+            "reason": "Ring Self-intersection[126.852914 37.547947]",
+            "resolution": "topology_preserving_grid_snap"
+          },
+          {
+            "id": "1985186680754495348600000000",
+            "reason": "Ring Self-intersection[126.850092 37.547964]",
+            "resolution": "topology_preserving_grid_snap"
+          }
+        ],
+        "withheld": [
+          {
+            "id": "1985186680754495348600000000",
+            "reason": "topology_lost_at_six_decimals"
           }
         ]
       }
@@ -1308,6 +1371,79 @@
         "withheld": [
           {
             "id": "2008191771684392186800000000",
+            "reason": "topology_lost_at_six_decimals"
+          }
+        ]
+      }
+    },
+    "mt-202603-public-026": {
+      "source_as_of": "2024-12-31",
+      "files": [
+        {
+          "path": "mt-202603-public-026-01.geojson",
+          "sha256": "fa4b1470658fe6c421dad90033a52fd3ca4eb3944892c5065e92ebccbec6ab70",
+          "bytes": 499557,
+          "gzip_bytes": 64802,
+          "count": 1110
+        },
+        {
+          "path": "mt-202603-public-026-02.geojson",
+          "sha256": "3d5b84ab5e0f80de05d5b6d568b45dc228cc768da464eccae42465d750fe0fda",
+          "bytes": 32727,
+          "gzip_bytes": 4844,
+          "count": 70
+        }
+      ],
+      "stats": {
+        "total": 1180,
+        "inside": 396,
+        "crossing": 9,
+        "nearby": 775,
+        "inside_known_year": 360,
+        "inside_unknown_year": 36,
+        "inside_30_plus": 303,
+        "registry_linked": 1071,
+        "official_height": 733,
+        "estimated_height": 338,
+        "unknown_height": 109
+      },
+      "audit": {
+        "bbox_count": 1379,
+        "wfs_pages": [
+          {
+            "start_index": 0,
+            "number_returned": 1000,
+            "timestamp": "2026-11-25T03:34:30.098Z",
+            "sha256": "17b9e10d1a7b424cc4401e3b14bea8af5f6f289d921a538cb1be8c049548c7c3"
+          },
+          {
+            "start_index": 1000,
+            "number_returned": 379,
+            "timestamp": "2026-11-25T03:34:30.361Z",
+            "sha256": "4473ed8ced1c7113936c4ccbad8b2f37d351e3988f26e8b02ad51c4ea55dd59c"
+          }
+        ],
+        "matched_unique_ids": 1180,
+        "duplicate_ids_outside_buffer": [],
+        "matched_ids_sha256": "e6cf8791ed36b8be9358fb212979be65d9c7ffd0f02499bde867729e8809630e",
+        "rounded_geometry_reviews": [
+          {
+            "id": "2009191457904387125100000000",
+            "reason": "Ring Self-intersection[126.904355 37.450464]",
+            "resolution": "topology_preserving_grid_snap"
+          }
+        ],
+        "withheld": [
+          {
+            "id": "1989191924344386732500000000",
+            "reason": "non_unique_building_id"
+          },
+          {
+            "id": "1989191924344386732500000000",
+            "reason": "non_unique_building_id"
+          },
+          {
+            "id": "2009191457904387125100000000",
             "reason": "topology_lost_at_six_decimals"
           }
         ]
@@ -4815,6 +4951,72 @@
         ]
       }
     },
+    "mt-202603-resident-008": {
+      "source_as_of": "2024-12-31",
+      "files": [
+        {
+          "path": "mt-202603-resident-008.geojson",
+          "sha256": "96142810e630c4ab62d6b92f8a628cf96e44298e1e11afcb8c9aa65b238823e5",
+          "bytes": 106248,
+          "gzip_bytes": 15627,
+          "count": 211
+        }
+      ],
+      "stats": {
+        "total": 211,
+        "inside": 47,
+        "crossing": 6,
+        "nearby": 158,
+        "inside_known_year": 45,
+        "inside_unknown_year": 2,
+        "inside_30_plus": 29,
+        "registry_linked": 156,
+        "official_height": 114,
+        "estimated_height": 42,
+        "unknown_height": 55
+      },
+      "audit": {
+        "bbox_count": 269,
+        "wfs_pages": [
+          {
+            "start_index": 0,
+            "number_returned": 269,
+            "timestamp": "2026-11-25T03:37:35.580Z",
+            "sha256": "d116ca9ddc747630c88df73c990a63373458a75d86c5d079017f9c924769372d"
+          }
+        ],
+        "matched_unique_ids": 211,
+        "duplicate_ids_outside_buffer": [],
+        "matched_ids_sha256": "a756ccfe50c704495af6233c0c5542ebe35600b22b8b3491c8767497589b5100",
+        "rounded_geometry_reviews": [],
+        "withheld": [
+          {
+            "id": "1998208029294481130400000000",
+            "reason": "non_unique_building_id"
+          },
+          {
+            "id": "1998208029294481130400000000",
+            "reason": "non_unique_building_id"
+          },
+          {
+            "id": "1999208037974481382800000000",
+            "reason": "non_unique_building_id"
+          },
+          {
+            "id": "1999208037974481382800000000",
+            "reason": "non_unique_building_id"
+          },
+          {
+            "id": "2012208058684484209300000000",
+            "reason": "non_unique_building_id"
+          },
+          {
+            "id": "2012208058684484209300000000",
+            "reason": "non_unique_building_id"
+          }
+        ]
+      }
+    },
     "mt-202603-resident-009": {
       "source_as_of": "2024-12-31",
       "files": [
@@ -5360,6 +5562,206 @@
         "matched_ids_sha256": "483129f8da3afbd057e92518becf2e69c59f8b6ae3675ad4316ad57824818781",
         "rounded_geometry_reviews": [],
         "withheld": []
+      }
+    },
+    "mt-202603-resident-036": {
+      "source_as_of": "2024-12-31",
+      "files": [
+        {
+          "path": "mt-202603-resident-036.geojson",
+          "sha256": "4d5711ae6392ccfebc815639a43c872f5aaeed16585fae32974eb9f00d9466b8",
+          "bytes": 455268,
+          "gzip_bytes": 61572,
+          "count": 983
+        }
+      ],
+      "stats": {
+        "total": 983,
+        "inside": 297,
+        "crossing": 33,
+        "nearby": 653,
+        "inside_known_year": 295,
+        "inside_unknown_year": 2,
+        "inside_30_plus": 158,
+        "registry_linked": 926,
+        "official_height": 691,
+        "estimated_height": 235,
+        "unknown_height": 57
+      },
+      "audit": {
+        "bbox_count": 1248,
+        "wfs_pages": [
+          {
+            "start_index": 0,
+            "number_returned": 1000,
+            "timestamp": "2026-11-25T03:37:35.568Z",
+            "sha256": "ebfaa83cda7bbfd056db1ef6afc4a02193a47fbe0751500c465f3c9d27687274"
+          },
+          {
+            "start_index": 1000,
+            "number_returned": 248,
+            "timestamp": "2026-11-25T03:37:36.255Z",
+            "sha256": "e46925497b2d7f7503d5f76a286effc1346679ac86114e52d538f867233f65b6"
+          }
+        ],
+        "matched_unique_ids": 983,
+        "duplicate_ids_outside_buffer": [],
+        "matched_ids_sha256": "927b2aea7aef98e4974eca514d84112611b1cb0955c7724a4357f5ba269360ce",
+        "rounded_geometry_reviews": [
+          {
+            "id": "0000206504654477818400000000",
+            "reason": "IllegalArgumentException: Invalid number of points in LinearRing found 2 - must be 0 or >= 3",
+            "resolution": "topology_preserving_grid_snap"
+          },
+          {
+            "id": "0000206608244479241900000000",
+            "reason": "IllegalArgumentException: Invalid number of points in LinearRing found 2 - must be 0 or >= 3",
+            "resolution": "topology_preserving_grid_snap"
+          },
+          {
+            "id": "0000206758404476173500000000",
+            "reason": "Too few points in geometry component[127.07725 37.530776]",
+            "resolution": "topology_preserving_grid_snap"
+          },
+          {
+            "id": "0000206882774478062600000000",
+            "reason": "Too few points in geometry component[127.078658 37.532477]",
+            "resolution": "topology_preserving_grid_snap"
+          },
+          {
+            "id": "0000207010374476458300000000",
+            "reason": "IllegalArgumentException: Invalid number of points in LinearRing found 2 - must be 0 or >= 3",
+            "resolution": "topology_preserving_grid_snap"
+          },
+          {
+            "id": "2015206533484476091100000000",
+            "reason": "Self-intersection[127.074657885196 37.5308006495468]",
+            "resolution": "topology_preserving_grid_snap"
+          },
+          {
+            "id": "2015206690254475872300000000",
+            "reason": "Self-intersection[127.076436942913 37.5305668180344]",
+            "resolution": "topology_preserving_grid_snap"
+          }
+        ],
+        "withheld": [
+          {
+            "id": "0000206504654477818400000000",
+            "reason": "topology_lost_at_six_decimals"
+          },
+          {
+            "id": "0000206608244479241900000000",
+            "reason": "topology_lost_at_six_decimals"
+          },
+          {
+            "id": "0000206758404476173500000000",
+            "reason": "topology_lost_at_six_decimals"
+          },
+          {
+            "id": "0000206882774478062600000000",
+            "reason": "topology_lost_at_six_decimals"
+          },
+          {
+            "id": "0000207010374476458300000000",
+            "reason": "topology_lost_at_six_decimals"
+          },
+          {
+            "id": "1994206822204477771000000000",
+            "reason": "invalid_source_geometry"
+          },
+          {
+            "id": "1997207052754476411700000000",
+            "reason": "invalid_source_geometry"
+          }
+        ]
+      }
+    },
+    "mt-202603-resident-044": {
+      "source_as_of": "2024-12-31",
+      "files": [
+        {
+          "path": "mt-202603-resident-044.geojson",
+          "sha256": "90d4b91a435e1a69d14b2c8aa9c88e4f09c9c2555fd7b6d8ac2c87df27533318",
+          "bytes": 350540,
+          "gzip_bytes": 48028,
+          "count": 748
+        }
+      ],
+      "stats": {
+        "total": 748,
+        "inside": 127,
+        "crossing": 9,
+        "nearby": 612,
+        "inside_known_year": 123,
+        "inside_unknown_year": 4,
+        "inside_30_plus": 61,
+        "registry_linked": 693,
+        "official_height": 504,
+        "estimated_height": 189,
+        "unknown_height": 55
+      },
+      "audit": {
+        "bbox_count": 985,
+        "wfs_pages": [
+          {
+            "start_index": 0,
+            "number_returned": 985,
+            "timestamp": "2026-11-25T03:37:35.620Z",
+            "sha256": "a7da01b24fbc6b366b0528a743756d4fbbee49d595b55ff8eeed8d3c8afe62c3"
+          }
+        ],
+        "matched_unique_ids": 748,
+        "duplicate_ids_outside_buffer": [],
+        "matched_ids_sha256": "53e77a9b37a99a0a6afc1b5901c3958d02b1d51cf30e88d9d470a857fa4593ac",
+        "rounded_geometry_reviews": [
+          {
+            "id": "0000207149884474124600000000",
+            "reason": "Too few points in geometry component[127.081676 37.528927]",
+            "resolution": "topology_preserving_grid_snap"
+          },
+          {
+            "id": "0000207371584478165000000000",
+            "reason": "Too few points in geometry component[127.084189 37.532566]",
+            "resolution": "topology_preserving_grid_snap"
+          },
+          {
+            "id": "0000207498634476429000000000",
+            "reason": "IllegalArgumentException: Invalid number of points in LinearRing found 2 - must be 0 or >= 3",
+            "resolution": "topology_preserving_grid_snap"
+          },
+          {
+            "id": "0000207591524477923300000000",
+            "reason": "IllegalArgumentException: Invalid number of points in LinearRing found 2 - must be 0 or >= 3",
+            "resolution": "topology_preserving_grid_snap"
+          },
+          {
+            "id": "2018207098424474232800000000",
+            "reason": "Self-intersection[127.081050450549 37.5290818644689]",
+            "resolution": "topology_preserving_grid_snap"
+          }
+        ],
+        "withheld": [
+          {
+            "id": "0000207149884474124600000000",
+            "reason": "topology_lost_at_six_decimals"
+          },
+          {
+            "id": "0000207371584478165000000000",
+            "reason": "topology_lost_at_six_decimals"
+          },
+          {
+            "id": "0000207498634476429000000000",
+            "reason": "topology_lost_at_six_decimals"
+          },
+          {
+            "id": "0000207591524477923300000000",
+            "reason": "topology_lost_at_six_decimals"
+          },
+          {
+            "id": "1978207677424475958100000000",
+            "reason": "invalid_source_geometry"
+          }
+        ]
       }
     }
   }

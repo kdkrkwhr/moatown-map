@@ -1,4 +1,4 @@
-import {dayNumber,projectEvents} from './detail-format.mjs?v=eb5517265229';
+import {dayNumber,projectEvents} from './detail-format.mjs?v=f435fadf993b';
 
 export const managementFilters=[
   ['selected','선정 대상지 전체'],['draft','관리계획 수립 중'],['approved','관리계획 승인'],

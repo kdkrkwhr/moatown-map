@@ -1,4 +1,4 @@
-import {formatValue,unitsChange,projectIntervals,compareInterval} from './detail-format.mjs?v=eb5517265229';
+import {formatValue,unitsChange,projectIntervals,compareInterval} from './detail-format.mjs?v=f435fadf993b';
 
 const pending='미고시';
 const date=v=>formatValue(v,'date');
@@ -33,8 +33,9 @@ function plannedZoningLabel(areas){
   const top=rows[0];
   return top.label+' '+formatValue(top.planned_sqm,'㎡').split(' (')[0]+(rows.length>1?' 외 '+(rows.length-1)+'개 용도':'')+' (고시 계획안)';
 }
-function boundaryLabel(boundary){
+export function boundaryLabel(boundary){
   if(!boundary)return null;
+  if(boundary.reference_label)return boundary.reference_label;
   if(boundary.scope==='association_project_area')return '인가 고시도 참고 경계';
   if(boundary.scope==='management_plan_project_area')return '관리계획도 참고 경계';
   return boundary.boundary_status==='legal'?'법정 경계':'참고 경계';
@@ -67,7 +68,11 @@ function regulations(card,r,town,zone,boundary,cityRule){
   const url=link(permitProof?.source_document??permitProof?.source_url,p?.notice_number??permitProof?.notice_number??'지정 공고 원문');
   const permitRow=field(facts,'허가구역 근거 공고',url?.textContent??p?.notice_number);
   if(url)permitRow.lastChild.replaceChildren(url);
-  field(facts,'구역 경계',boundaryLabel(boundary));
+  const boundaryRow=field(facts,'구역 경계',boundaryLabel(boundary));
+  if(boundary?.entity_type==='town'){
+    const source=link(boundary.source_url,'서울시 경계 원자료');
+    if(source)boundaryRow.lastChild.append(el('br'),source);
+  }
   field(facts,'대표 위치',r.representative_point?(r.representative_point_evidence?.address??r.registered_address??town.address):null);
   card.append(facts);
   if(boundary?.kind==='official_notice_drawing'){

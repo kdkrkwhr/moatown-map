@@ -19,16 +19,31 @@ export function buildingSummary(features){
     total:features.length,share:known?(old*100/known).toFixed(1)+'%':'산정 불가'};
 }
 
-export function mergeBuildingDetails(features,registry,heights,review){
+export function mergeBuildingDetails(features,registry,heights,review,registryHeights,snapshotDate){
   return features.map(feature=>{
     const p=feature.properties,details=registry?.records?.[p.id],extra=heights?.records?.[p.id];
     const check=review?.records?.[p.id];
-    if(!details && !extra && !check)return feature;
+    const measured=registryHeights?.records?.[p.id];
+    if(!details && !extra && !check && !measured)return feature;
     const properties={...p};
     for(const key of ['use','structure','basement_floors','approval_date','name','roof','roof_collected_on']){
       if(details?.[key]!=null)properties[key]=details[key];
     }
-    if(properties.floors==null && Number.isInteger(extra?.floors) && extra.floors>0){
+    if(p.height_m==null && Number.isFinite(measured?.height_m) && measured.height_m>0
+        && Number.isInteger(measured.floors) && measured.floors>0
+        && (p.floors==null || p.floors===measured.floors) && (!extra || extra.floors===measured.floors)){
+      properties.floors=measured.floors;
+      properties.height_m=measured.height_m;
+      properties.height_source='official';
+      properties.registry_height_evidence=measured;
+      const approved=Number(measured.approval_date?.slice(0,4)),asOf=Number(snapshotDate?.slice(0,4));
+      if(properties.approval_year==null && approved>0 && asOf>=approved){
+        properties.approval_date=measured.approval_date;
+        properties.approval_year=approved;
+        properties.age_years=asOf-approved;
+        properties.age_tier=properties.age_years>=30?'30_plus':properties.age_years>=20?'20_to_29':'under_20';
+      }
+    }else if(properties.floors==null && Number.isInteger(extra?.floors) && extra.floors>0){
       properties.floors=extra.floors;
       if(properties.height_m==null){
         properties.height_m=extra.floors*3;
@@ -244,6 +259,8 @@ export function mountPilotViewer({manifest,boundaries,townById,groups}){
     const timeline=active.town.published_timeline;
     const construction=timeline?.events?.find(e=>e.label==='착공 행사');
     if(construction)inspector.append(source(timeline.source_url,'정비 전 건물 기록 · '+date(construction.month)+' 착공 행사 ↗'));
+    if(data.boundary?.reference_label)inspector.append(source(data.boundary.source_url,
+      data.boundary.reference_label+' · '+date(data.boundary.source_as_of)+' ↗'));
     const examples=el('div',null,'pilot-plan-links');
     const inside=[...data.byId.values()].filter(f=>f.properties.is_inside_town===true);
     const named=inside.find(f=>f.properties.name);
@@ -261,10 +278,24 @@ export function mountPilotViewer({manifest,boundaries,townById,groups}){
     const coverage=el('details',null,'pilot-evidence');
     coverage.append(el('summary','높이 자료 확보 현황'),facts([['공식 높이',count(s.official)+'동'],
       ['층수 × 3m 환산',count(s.estimated)+'동'],['높이 미확인 · 평면 표시',count(s.unknownHeight)+'동']]));
-    const supplemental=inside.find(f=>f.properties.map_floor_evidence)??[...data.byId.values()].find(f=>f.properties.map_floor_evidence);
-    if(supplemental){
-      const example=el('button','지도 층수로 높이를 보강한 건물 보기','pilot-text-button');
-      example.type='button';example.onclick=()=>zoomToBuilding(supplemental);coverage.append(example);
+    const all=[...data.byId.values()];
+    const measured=all.find(f=>f.properties.registry_height_evidence);
+    if(measured){
+      const example=el('button','건축물대장 높이를 확인한 건물 보기','pilot-text-button');
+      example.type='button';example.onclick=()=>zoomToBuilding(measured);coverage.append(example);
+    }
+    for(const [field,label] of [['flr_num','수치지도'],['gro_flo_co','도로명주소 자료']]){
+      const hasSource=f=>f.properties.map_floor_evidence?.source_field===field;
+      const supplemental=inside.find(hasSource)??all.find(hasSource);
+      if(supplemental){
+        const example=el('button',label+' 층수로 높이를 보강한 건물 보기','pilot-text-button');
+        example.type='button';example.onclick=()=>zoomToBuilding(supplemental);coverage.append(example);
+      }
+    }
+    const withoutHeight=inside.find(f=>f.properties.height_m==null)??all.find(f=>f.properties.height_m==null);
+    if(withoutHeight){
+      const example=el('button','높이 미확인 건물의 외곽 보기','pilot-text-button');
+      example.type='button';example.onclick=()=>zoomToBuilding(withoutHeight);coverage.append(example);
     }
     inspector.append(coverage);
   }
@@ -303,14 +334,20 @@ export function mountPilotViewer({manifest,boundaries,townById,groups}){
     }
     if(building){
       const p=building.properties;
+      const floorSource=p.map_floor_evidence?.source_field==='gro_flo_co'?'도로명주소 건물 지상층수':'서울시 수치지도 층수';
       const registryRows=active.detailKey?[['주용도',p.use],['구조',p.structure],['대장상 지붕',p.roof]]:[];
       inspector.append(el('h3',p.name||'선택한 건물'),facts([...registryRows,
         ['건물 높이',p.height_m==null?'미확인':count(p.height_m)+'m'],
-        ['높이 근거',p.height_review?.decision==='use_registry_height'?'건축물대장 표제부':p.map_floor_evidence?'서울시 지도 층수 × 3m':p.height_source==='official'?'공식 자료':p.height_source==='estimated_from_floors'?'대장 지상층수 × 3m':'미확인'],
+        ['높이 근거',p.registry_height_evidence || p.height_review?.decision==='use_registry_height'?'건축물대장 표제부':p.map_floor_evidence?floorSource+' × 3m':p.height_source==='official'?'공식 자료':p.height_source==='estimated_from_floors'?'대장 지상층수 × 3m':'미확인'],
         [p.map_floor_evidence?'지도 표기 층수':'지상층수',p.floors==null?'미확인':p.floors+'층'],
         ...(active.detailKey?[['지하층수',p.basement_floors==null?null:p.basement_floors+'층']]:[]),
         p.approval_date?['사용승인일',date(p.approval_date)]:['사용승인연도',p.approval_year==null?'미확인':p.approval_year+'년'],
         ['위치',p.is_inside_town===true?'참고 외곽 내부':p.is_inside_town===false?'주변 150m':'참고 경계 걸침']]));
+      if(p.height_m==null)inspector.append(el('p','높이와 층수를 확인하지 못해 기록된 외곽을 평면으로 표시합니다.','pilot-note'));
+      if(p.registry_height_evidence){
+        const row=p.registry_height_evidence;
+        inspector.append(source(row.source_url,'표제부 높이 · 자료 수집일 '+date(row.registry_collected_on)+' ↗'));
+      }
       if(p.roof)inspector.append(source(data.registry.roof_source.source_url,'건축물대장 표제부 · 지붕 자료 수집일 '+date(p.roof_collected_on)+' ↗'));
       if(p.height_review){
         const check=p.height_review;
@@ -428,7 +465,7 @@ export function mountPilotViewer({manifest,boundaries,townById,groups}){
       const fetchInput=key=>fetchJson(new URL(manifest.files[key],base),signal,config.hashes[key]);
       const indexUrl=new URL(manifest.files.buildings,base),planUrl=new URL(manifest.files.pilot_plans,base);
       const [index,planBook,{createPilotScene}]=await Promise.all([fetchJson(indexUrl,signal,config.hashes.buildings),
-        session.hasPlan?fetchJson(planUrl,signal,config.hashes.pilot_plans):null,import('./pilot-scene.mjs?v=eb5517265229')]);
+        session.hasPlan?fetchJson(planUrl,signal,config.hashes.pilot_plans):null,import('./pilot-scene.mjs?v=f435fadf993b')]);
       const entry=index.towns[town.id],plans=planBook?.towns[town.id];
       async function fetchDetails(){
         const book=await fetchInput(session.detailKey);
@@ -443,13 +480,14 @@ export function mountPilotViewer({manifest,boundaries,townById,groups}){
         if(Object.keys(records).length!==entry.stats.total)throw Error('분할 건물 상세 자료 누락');
         return {...book,records};
       }
-      const [chunks,registry,heights,heightReview]=await Promise.all([
+      const [chunks,registry,heights,heightReview,registryHeights]=await Promise.all([
         Promise.all(entry.files.map(file=>fetchJson(new URL(file.path,indexUrl),signal,file.sha256))),
         session.detailKey?fetchDetails().catch(()=>null):null,
         session.heightsKey?fetchInput(session.heightsKey).catch(()=>null):null,
-        config.height_review_town_ids?.includes(town.id)?fetchInput('building_height_review'):null]);
+        config.height_review_town_ids?.includes(town.id)?fetchInput('building_height_review'):null,
+        config.registry_height_town_ids?.includes(town.id)?fetchInput('registry_heights'):null]);
       if(active!==session)return;
-      const features=mergeBuildingDetails(chunks.flatMap(chunk=>chunk.features),registry,heights,heightReview);
+      const features=mergeBuildingDetails(chunks.flatMap(chunk=>chunk.features),registry,heights,heightReview,registryHeights,manifest.snapshot_date);
       const zoneMap=new Map((groups.get(town.id)??[]).map(z=>[z.id,z]));
       const outline=boundaries.features.find(f=>f.properties.entity_id===town.id);
       const areas=boundaries.features.filter(f=>zoneMap.has(f.properties.entity_id)).map(f=>{
@@ -460,7 +498,7 @@ export function mountPilotViewer({manifest,boundaries,townById,groups}){
       const mappedZones=new Set(areas.map(f=>f.properties.entity_id));
       let simulation=null,design=null,publicSpace=null,designError=null;
       if(session.canSimulate){
-        const [module,inputs]=await Promise.all([import('./pilot-simulation.mjs?v=eb5517265229'),
+        const [module,inputs]=await Promise.all([import('./pilot-simulation.mjs?v=f435fadf993b'),
           Promise.all(['sinwol_design','sinwol_public_space','sinwol_layout'].map(fetchInput)).catch(error=>{designError=error;return null;})]);
         if(active!==session)return;
         const layout=inputs?.[2];
@@ -474,7 +512,7 @@ export function mountPilotViewer({manifest,boundaries,townById,groups}){
         simulation=session.simulate(session.placement);
       }
       session.data={zoneMap,plans,simulation,design,publicSpace,designError,registry,heights,heightReview,byId:new Map(features.map(f=>[f.properties.id,f])),summary:buildingSummary(features),
-        asOf:entry.source_as_of??index.source_as_of,sourceUrl:entry.source_url??index.source_url};
+        asOf:entry.source_as_of??index.source_as_of,sourceUrl:entry.source_url??index.source_url,boundary:outline?.properties};
       const sceneOptions={buildings:collection(features),town:outline,zones:collection(areas),publicSpace,existingDetail:Boolean(session.detailKey),
         ...(session.canSimulate?{initialBearing:18,initialPitch:42}:{}),
         onSelect:({kind,id})=>{

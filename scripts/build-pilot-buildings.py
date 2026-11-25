@@ -251,6 +251,7 @@ def main():
     parser.add_argument("--output", type=Path, default=ROOT / "moatown-data" / "buildings")
     parser.add_argument("--cache-dir", type=Path)
     parser.add_argument("--extend", action="store_true", help="Keep verified extracts for this snapshot and add missing towns")
+    parser.add_argument("--previous-boundaries", type=Path, help="The published boundary file used by the existing index")
     parser.add_argument("--workers", type=int, default=3, choices=range(1,7))
     args = parser.parse_args()
     manifest = json.loads(args.manifest.read_bytes())
@@ -267,10 +268,20 @@ def main():
     previous = {"towns": {}}
     if args.extend and existing.is_file():
         previous = json.loads(existing.read_bytes())
-        if previous["snapshot_date"] != snapshot.isoformat() or previous["boundary_sha256"] != boundary_digest:
-            raise ValueError("Snapshot or reference boundaries changed. Rebuild without --extend.")
+        if previous["snapshot_date"] != snapshot.isoformat():
+            raise ValueError("Snapshot changed. Rebuild without --extend.")
+        reusable = set(boundaries)
+        if previous["boundary_sha256"] != boundary_digest:
+            if not args.previous_boundaries:
+                raise ValueError("Supply --previous-boundaries or rebuild without --extend.")
+            old = args.previous_boundaries.read_bytes().replace(b"\r\n", b"\n")
+            if digest(old) != previous["boundary_sha256"]:
+                raise ValueError("Previous boundary file does not match the published index")
+            reusable = {f["properties"]["entity_id"] for f in json.loads(old)["features"]
+                        if f["properties"]["entity_type"] == "town" and
+                        boundaries.get(f["properties"]["entity_id"], {}).get("geometry") == f["geometry"]}
         for tid, entry in previous["towns"].items():
-            if tid in boundaries and all(digest((args.output / f["path"]).read_bytes().replace(b"\r\n", b"\n")) == f["sha256"] for f in entry["files"]):
+            if tid in reusable and all(digest((args.output / f["path"]).read_bytes().replace(b"\r\n", b"\n")) == f["sha256"] for f in entry["files"]):
                 towns[tid] = entry
     with tempfile.TemporaryDirectory(dir=args.output.parent) as workspace:
         stage = Path(workspace)

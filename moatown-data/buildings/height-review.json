@@ -8,9 +8,9 @@
   "wfs_pages": [
     {
       "first_id": "1970192574394495974700000000",
-      "count": 35,
-      "timestamp": "2026-11-25T02:30:35.805Z",
-      "sha256": "ae135b70e8be317670aff426e8fa6dbff18d54461f8656f0b31f0724b6ed3e0e"
+      "count": 36,
+      "timestamp": "2026-11-25T03:41:39.309Z",
+      "sha256": "7ebf0e4e8240fb2a26c4fb8f46e1e0e097a03c4ea6672766b14e03c52995232e"
     }
   ],
   "district_csv": {
@@ -98,7 +98,7 @@
       ],
       "reported_height_m": 3,
       "floors": 3,
-      "registry_height_m": 3.0,
+      "registry_height_m": 3,
       "registry_collected_on": "2024-11-19",
       "registry_serial": "1010119158",
       "pnu": "1130510300100470066",
@@ -146,7 +146,7 @@
       ],
       "reported_height_m": 3,
       "floors": 4,
-      "registry_height_m": 3.0,
+      "registry_height_m": 3,
       "registry_collected_on": "2025-03-25",
       "registry_serial": "100819116",
       "pnu": "1126010100104280023",
@@ -182,7 +182,7 @@
       ],
       "reported_height_m": 1,
       "floors": 3,
-      "registry_height_m": 1.0,
+      "registry_height_m": 1,
       "registry_collected_on": "2024-11-19",
       "registry_serial": "101713734",
       "pnu": "1150010200105150044",
@@ -286,6 +286,18 @@
       "pnu": "1130510200104600016",
       "decision": "sources_agree"
     },
+    "1991207461644474625000000000": {
+      "town_ids": [
+        "mt-202603-resident-044"
+      ],
+      "reported_height_m": 5.5,
+      "floors": 5,
+      "registry_height_m": 5.5,
+      "registry_collected_on": "2026-07-29",
+      "registry_serial": "1006119366",
+      "pnu": "1121510500106740001",
+      "decision": "sources_agree"
+    },
     "1992183120284515999000000000": {
       "town_ids": [
         "mt-202603-public-007"
@@ -305,7 +317,7 @@
       ],
       "reported_height_m": 74,
       "floors": 2,
-      "registry_height_m": 74.0,
+      "registry_height_m": 74,
       "registry_collected_on": "2024-11-19",
       "registry_serial": "1010118633",
       "pnu": "1130510300100230067",
@@ -342,7 +354,7 @@
       ],
       "reported_height_m": 3,
       "floors": 4,
-      "registry_height_m": 3.0,
+      "registry_height_m": 3,
       "registry_collected_on": "2024-11-19",
       "registry_serial": "1008126068",
       "pnu": "1126010500103420036",
@@ -434,7 +446,8 @@
     },
     "1997206694434479097000000000": {
       "town_ids": [
-        "mt-202603-public-078"
+        "mt-202603-public-078",
+        "mt-202603-resident-036"
       ],
       "reported_height_m": 2.2,
       "floors": 4,
@@ -487,7 +500,7 @@
       ],
       "reported_height_m": 3,
       "floors": 5,
-      "registry_height_m": 3.0,
+      "registry_height_m": 3,
       "registry_collected_on": "2024-11-19",
       "registry_serial": "10211100195232",
       "pnu": "1159010200102640172",

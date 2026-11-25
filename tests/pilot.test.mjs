@@ -131,7 +131,8 @@ test('supplemental floor counts resolve only uniquely matched missing heights an
 test('every mapped town joins its own current register and supplementary heights across all chunks',()=>{
   const config=latest.pilot_3d,index=read(source('buildings'));
   const review=read(source('building_height_review'));
-  const reviewedIds=new Set();
+  const registryHeights=read(source('registry_heights')),measuredIds=new Set();
+  const reviewedIds=new Set(),heightsById=new Map();
   for(const town of config.town_ids){
     const entry=index.towns[town];
     const buildings=entry.files.flatMap(f=>read(new URL(f.path,source('buildings'))).features);
@@ -151,12 +152,30 @@ test('every mapped town joins its own current register and supplementary heights
     }
     assert.deepEqual(Object.keys(registry.records).sort(),buildings.map(f=>f.properties.id).sort());
     assert.equal(registry.source_as_of,entry.source_as_of);
-    const merged=mergeBuildingDetails(buildings,registry,supplement,review);
+    const measured=buildings.filter(f=>registryHeights.records[f.properties.id]);
+    const merged=mergeBuildingDetails(buildings,registry,supplement,review,registryHeights,latest.snapshot_date);
     const supplementalCount=Object.keys(supplement.records).length;
+    const both=measured.filter(f=>supplement.records[f.properties.id]).length;
     const stats=buildingSummary(merged);
-    assert.equal(stats.official,entry.stats.official_height);
-    assert.equal(stats.estimated,entry.stats.estimated_height+supplementalCount);
-    assert.equal(stats.unknownHeight,entry.stats.unknown_height-supplementalCount);
+    assert.equal(stats.official,entry.stats.official_height+measured.length);
+    assert.equal(stats.estimated,entry.stats.estimated_height+supplementalCount-both);
+    assert.equal(stats.unknownHeight,entry.stats.unknown_height-supplementalCount-measured.length+both);
+    assert.equal(config.registry_height_town_ids.includes(town),measured.length>0);
+    for(const original of measured){
+      const id=original.properties.id,record=registryHeights.records[id];
+      const applied=merged.find(f=>f.properties.id===id).properties;
+      assert.equal(original.properties.height_m,null);
+      assert.ok(record.town_ids.includes(town)&&record.register_serial&&record.pnu);
+      assert.match(record.registry_collected_on,/^\d{4}-\d\d-\d\d$/);
+      assert.equal(applied.height_source,'official');assert.equal(applied.height_m,record.height_m);
+      assert.equal(applied.floors,record.floors);assert.deepEqual(applied.registry_height_evidence,record);
+      if(record.approval_date){
+        assert.equal(applied.approval_year,Number(record.approval_date.slice(0,4)));
+        assert.equal(applied.age_years,Number(latest.snapshot_date.slice(0,4))-applied.approval_year);
+      }
+      if(supplement.records[id])assert.equal(record.floors,supplement.records[id].floors);
+      measuredIds.add(id);
+    }
     for(const f of merged){
       const p=f.properties;
       if(p.approval_date)assert.equal(Number(p.approval_date.slice(0,4)),p.approval_year);
@@ -174,9 +193,64 @@ test('every mapped town joins its own current register and supplementary heights
         assert.equal(p.height_m,p.floors*3);
         assert.ok(p.map_floor_evidence.overlap_iou>=0.9);
       }
+      const height=[p.floors,p.height_m];
+      if(heightsById.has(p.id))assert.deepEqual(heightsById.get(p.id),height,p.id);
+      else heightsById.set(p.id,height);
     }
   }
   assert.deepEqual([...reviewedIds].sort(),Object.keys(review.records).sort());
+  assert.deepEqual([...measuredIds].sort(),Object.keys(registryHeights.records).sort());
+});
+
+test('supplemental map evidence identifies each source building uniquely and records the provenance of road-address floors',()=>{
+  const roadFloors=new Map(),buildingsBySource=new Map();
+  for(const key of Object.values(latest.pilot_3d.current_heights)){
+    const supplement=read(source(key));
+    const {originally_missing,matched,still_missing}=supplement.coverage;
+    assert.equal(matched,Object.keys(supplement.records).length);
+    assert.equal(originally_missing,matched+still_missing);
+    for(const [id,record] of Object.entries(supplement.records)){
+      const sourceKey=record.source_layer+'/'+record.source_id;
+      if(buildingsBySource.has(sourceKey))assert.equal(buildingsBySource.get(sourceKey),id,sourceKey);
+      else buildingsBySource.set(sourceKey,id);
+      if(record.source_layer==='landbiz:tl_nrm_buld'){
+        assert.equal(record.source_field,'flr_num');
+        continue;
+      }
+      assert.equal(record.source_layer,'landbiz:tl_sdw_buld');
+      assert.equal(record.source_field,'gro_flo_co');
+      assert.match(record.source_id,/^\d{25}$/);
+      assert.equal(record.source_url,'https://land.seoul.go.kr/land/map/land/map.do');
+      assert.equal(record.method,'unique_footprint_iou');
+      assert.ok(record.overlap_iou>=0.9 && record.overlap_iou<=1);
+      assert.equal(record.source_as_of,null);
+      if(record.source_record_date==null)assert.equal(record.source_date_field,null);
+      else{
+        assert.match(record.source_record_date,/^\d{4}-\d{2}-\d{2}$/);
+        assert.ok(['opert_de','mvmn_de'].includes(record.source_date_field));
+        assert.ok(record.source_record_date<=supplement.checked_on);
+      }
+      for(const pages of [record.source_lookup_sha256,record.gis_neighbors_sha256]){
+        assert.ok(pages.length>0);
+        for(const digest of pages)assert.match(digest,/^[a-f0-9]{64}$/);
+      }
+      assert.ok(Number.isInteger(record.floors) && record.floors>0);
+      assert.equal(record.height_m,record.floors*3);
+      assert.equal(record.height_source,'estimated_from_floors');
+      roadFloors.set(id,record.floors);
+    }
+  }
+  for(const [id,expectedFloors] of [
+    ['1976206437014560794200000000',2],['0000204875824578428200000000',1],
+    ['2013212534434477508300000000',4],['0000212491124433483300000000',2],
+    ['0000194546434425289900000000',1],['1988195757074481800200000000',4],
+    ['1982186822144497001900000000',3],
+  ])assert.equal(roadFloors.get(id),expectedFloors);
+  for(const town of ['mt-202603-public-002','mt-202603-public-003']){
+    const evidence=read(source(latest.pilot_3d.current_heights[town]));
+    // Road-address records report three floors, while the topographic record reports two.
+    assert.equal(evidence.records['1969185533114480338600000000'],undefined);
+  }
 });
 
 test('official current site links belong to towns with an existing building scene',()=>{

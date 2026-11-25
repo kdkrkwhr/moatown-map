@@ -1,0 +1,63 @@
+{
+  "source": "서울특별시 건축물대장 표제부",
+  "source_url": "https://data.seoul.go.kr/dataList/OA-22424/S/1/datasetView.do",
+  "height_field": "높이",
+  "address_source_url": "https://www.epost.go.kr/search/zipcode/areacdAddressDown.jsp",
+  "geometry_source_url": "https://land.seoul.go.kr/land/map/land/map.do",
+  "method_note": "GIS 건축물ID와 표제부 일련번호를 같은 필지에서 대조했다. 도로명주소 건물관리번호·우편번호 DB의 도로명주소·표제부 주소가 일치하고 도로명주소 도형 및 수치지형도의 지상층수가 모두 표제부와 일치한 건물에 표제부 높이(m)를 사용했다.",
+  "records": {
+    "2013212534434477508300000000": {
+      "town_ids": [
+        "mt-202603-public-056"
+      ],
+      "height_m": 11.8,
+      "floors": 4,
+      "source_url": "https://data.seoul.go.kr/dataList/OA-22424/S/1/datasetView.do",
+      "registry_collected_on": "2024-11-19",
+      "register_serial": "10261100209673",
+      "pnu": "1174010600104460002",
+      "method": "exact_register_id_parcel_and_road_footprint",
+      "approval_date": "2013-09-17",
+      "road_address": "천호대로186길 41",
+      "gis_register_id": "100209673",
+      "gis_source_as_of": "2024-12-31",
+      "gis_iou": 0.99412,
+      "road_building_id": "1174010600104460002000058",
+      "road_iou": 0.982571,
+      "road_floors": 4,
+      "topographic_id": "1000377052339B00110000000000000369",
+      "topographic_iou": 0.711144,
+      "topographic_floors": 4,
+      "footprint_area_m2": 91.03,
+      "register_area_m2": 83.92,
+      "checked_on": "2026-11-25",
+      "postal_as_of": "2026-11-09",
+      "registry_csv_sha256": "fc7fe9a5d187d498785e2e74ac9e322d2f8b2040938743d9492e7bd42aefec6a",
+      "postal_seoul_txt_sha256": "3c157f5e65fc9368e67783690351c878810018a2056dbea2d5329cf9eb256cea",
+      "wfs_pages_sha256": {
+        "landbiz:tl_unity_buld/a1/2013212534434477508300000000": [
+          "60aab624188884b17d47f53d238b111bab18bd57a17ce62695def6085112f549"
+        ],
+        "landbiz:tl_unity_buld/a2/1174010600104460002": [
+          "e2d3b1cb6bb36ea22d820bba04cc7b468412caeee6524f94aa4528d5a2342b15"
+        ],
+        "landbiz:tl_sdw_buld/bd_mgt_sn/bbox": [
+          "2b65afd0f18efe98ca0a3276587042f7970871bcd9584231eefd85b5f7cb4ec8"
+        ],
+        "landbiz:tl_nrm_buld/ufid/bbox": [
+          "36a4d505e85063710d9f2760eb9cc76cb7535ae9fee65f53df8523d4addbe999"
+        ]
+      },
+      "road_verification": {
+        "source_record_date": "2020-02-03",
+        "source_date_field": "opert_de",
+        "source_lookup_sha256": [
+          "35b88b568968e3971feef3f931099c00af187de839175e9377e0933a1efe1777"
+        ],
+        "gis_neighbors_sha256": [
+          "877432aeeb92a045d8e712806a61d566241c607cad3a4a843170fdd2fe730adc"
+        ]
+      }
+    }
+  }
+}

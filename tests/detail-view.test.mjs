@@ -3,13 +3,23 @@ import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import {compareInterval,durationSamples,formatValue,intervalBadge,projectEvents,projectIntervals,unitsChange} from '../detail-format.mjs';
 import {groupSubAreas} from '../app.mjs';
-import {comparePlans,reportIssueUrl} from '../detail-view.mjs';
+import {boundaryLabel,comparePlans,reportIssueUrl} from '../detail-view.mjs';
 import {searchProjects} from '../project-search.mjs';
 import {positionInGeometry} from '../address-reference.mjs';
 
 const read=file=>JSON.parse(readFileSync(new URL('../moatown-data/'+file,import.meta.url),'utf8'));
 const {files,coverage}=read('latest.json'),towns=read(files.towns),zones=read(files.zones);
 const groups=groupSubAreas(towns,zones);
+
+test('boundary descriptions retain the source distinction between selected and approved sites',()=>{
+  for(const reference_label of ['선정 대상지 · 서울플랜+ 참고 외곽','관리계획 승인고시 대상지 · 서울플랜+ 참고 외곽']){
+    assert.equal(boundaryLabel({boundary_status:'reference_only',reference_label}),reference_label);
+  }
+  assert.equal(boundaryLabel({boundary_status:'reference_only'}),'참고 경계');
+  assert.equal(boundaryLabel({scope:'management_plan_project_area'}),'관리계획도 참고 경계');
+  assert.equal(boundaryLabel({boundary_status:'legal'}),'법정 경계');
+  assert.equal(boundaryLabel(null),null);
+});
 
 test('child plan totals require comparable sources for every figure',()=>{
   const hapjeong=groups.get('mt-202603-public-032'),sinwol=groups.get('mt-202603-public-067');

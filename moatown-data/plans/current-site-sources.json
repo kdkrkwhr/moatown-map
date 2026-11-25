@@ -27,6 +27,20 @@
     "image_source_url": "https://news.seoul.go.kr/citybuild/files/2026/04/69f001331d7ee0.42780967.png",
     "source_address": "강서구 등촌2동 515-44, 520-3"
   },
+  "mt-202603-public-009": {
+    "title": "화곡6동 957-1 일대 정비 전 현황",
+    "scope": "강서구 화곡6동 957-1 일대",
+    "source_url": "https://news.seoul.go.kr/citybuild/archives/538467",
+    "source_title": "[서남권] 화곡6동 957-1번지 일대 모아타운",
+    "source_locator": "본문 상단 ‘변경 전 현황’",
+    "publisher": "서울특별시 건축기획관 전략주택공급과",
+    "source_as_of": "2026-05-22",
+    "date_kind": "웹페이지 수정일",
+    "capture_date": null,
+    "image": null,
+    "image_source_url": "https://news.seoul.go.kr/citybuild/files/2026/04/69f00ea71b0b89.31817321.png",
+    "source_address": "강서구 화곡6동 957-1"
+  },
   "mt-202603-public-011": {
     "title": "면목3·8동 44-6 일대 정비 전 현황",
     "scope": "중랑구 면목3·8동 44-6 일대",
@@ -180,6 +194,20 @@
     "image": null,
     "image_source_url": "https://news.seoul.go.kr/citybuild/files/2026/04/69f015b1bc0e60.82771359.png",
     "source_address": "금천구 시흥4동 817"
+  },
+  "mt-202603-public-026": {
+    "title": "시흥5동 922-16 일대 정비 전 현황",
+    "scope": "금천구 시흥5동 922-16 일대",
+    "source_url": "https://news.seoul.go.kr/citybuild/archives/538561",
+    "source_title": "[서남권] 시흥5동 922-16번지 일대 모아타운",
+    "source_locator": "본문 상단 ‘변경 전’",
+    "publisher": "서울특별시 건축기획관 전략주택공급과",
+    "source_as_of": "2026-05-22",
+    "date_kind": "웹페이지 수정일",
+    "capture_date": null,
+    "image": null,
+    "image_source_url": "https://news.seoul.go.kr/citybuild/files/2026/04/69f0168bc17eb0.00483679.png",
+    "source_address": "금천구 시흥5동 922-16"
   },
   "mt-202603-public-027": {
     "title": "시흥1동 864 일대 정비 전 현황",

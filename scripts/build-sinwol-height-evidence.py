@@ -35,6 +35,7 @@ WFS = "https://land.seoul.go.kr/land/geoserver/wfs.do"
 TO_METRES = Transformer.from_crs(4326, 5179, always_xy=True)
 NRM = "landbiz:tl_nrm_buld"
 ROAD = "landbiz:tl_sdw_buld"
+UNITY = "landbiz:tl_unity_buld"
 
 
 def atomic_write(path, data):
@@ -45,11 +46,19 @@ def atomic_write(path, data):
         tmp.replace(path)
 
 
-def fetch(layer, fields, bounds, cache):
+def fetch(layer, fields, bounds, cache, source_id=None):
     """Page by source identifier and check completeness against distinct WFS row identifiers."""
     key, *_ = fields
     names = "".join(f"<wfs:PropertyName>{v}</wfs:PropertyName>" for v in (*fields, "geom"))
-    west, south, east, north = bounds
+    if source_id is None:
+        west, south, east, north = bounds
+        predicate = f"""<ogc:BBOX><ogc:PropertyName>geom</ogc:PropertyName>
+            <gml:Envelope srsName="EPSG:5179"><gml:lowerCorner>{west} {south}</gml:lowerCorner>
+            <gml:upperCorner>{east} {north}</gml:upperCorner></gml:Envelope></ogc:BBOX>"""
+    else:
+        if not source_id.isascii() or not source_id.isdigit():
+            raise ValueError(f"Invalid road building identifier: {source_id!r}")
+        predicate = f"<ogc:PropertyIsEqualTo><ogc:PropertyName>{key}</ogc:PropertyName><ogc:Literal>{source_id}</ogc:Literal></ogc:PropertyIsEqualTo>"
     rows, dates, page_hashes = [], set(), []
     total = None
     while total is None or len(rows) < total:
@@ -57,9 +66,7 @@ def fetch(layer, fields, bounds, cache):
             xmlns:ogc="http://www.opengis.net/ogc" xmlns:gml="http://www.opengis.net/gml"
             version="1.1.0" service="WFS" outputFormat="application/json"
             maxFeatures="1000" startIndex="{len(rows)}"><wfs:Query typeName="{layer}" srsName="EPSG:5179">
-            {names}<ogc:Filter><ogc:BBOX><ogc:PropertyName>geom</ogc:PropertyName>
-            <gml:Envelope srsName="EPSG:5179"><gml:lowerCorner>{west} {south}</gml:lowerCorner>
-            <gml:upperCorner>{east} {north}</gml:upperCorner></gml:Envelope></ogc:BBOX></ogc:Filter>
+            {names}<ogc:Filter>{predicate}</ogc:Filter>
             <ogc:SortBy><ogc:SortProperty><ogc:PropertyName>{key}</ogc:PropertyName>
             <ogc:SortOrder>ASC</ogc:SortOrder></ogc:SortProperty></ogc:SortBy></wfs:Query></wfs:GetFeature>"""
         cached = cache / (sha256((WFS + xml).encode()).hexdigest() + ".json") if cache else None
@@ -95,33 +102,70 @@ def fetch(layer, fields, bounds, cache):
     return rows, dates.pop(), page_hashes
 
 
-def overlaps(published, rows):
-    """Index every meaningful competing footprint, including buildings with known floor counts."""
-    geometry = [shape(row["geometry"]) for row in rows]
-    index = shapely.STRtree(geometry)
-    pairs = [[] for _ in published]
-    candidates = Counter()
-    for i, g in enumerate(published):
-        for j in index.query(g):
-            other = geometry[j]
-            if not other.is_valid:
-                # Invalid geometry can block an ambiguous match but cannot supply a value.
-                if g.intersects(shapely.make_valid(other)):
-                    pairs[i].append((j, 0.0, False))
-                continue
-            area = g.intersection(other).area
-            iou = area / (g.area + other.area - area)
-            if iou > 0.1:
-                pairs[i].append((j, iou, True))
-                candidates[j] += 1
-    return pairs, candidates
+def overlaps(g, index):
+    """Find every meaningful competing footprint, including rows without a floor count."""
+    pairs = []
+    for j in index.query(g):
+        other = index.geometries[j]
+        if not other.is_valid:
+            if g.intersects(shapely.make_valid(other)):
+                pairs.append((j, 0.0))
+            continue
+        area = g.intersection(other).area
+        iou = area / (g.area + other.area - area)
+        if iou > 0.1:
+            pairs.append((j, iou))
+    return pairs
+
+
+def geometry_index(rows):
+    return shapely.STRtree([shape(row["geometry"]) for row in rows])
+
+
+def floor_count(value):
+    text = str(value)
+    return int(text) if text.isdigit() and int(text) > 0 else None
+
+
+def verify_road_candidate(published_id, road_row, cache, checked):
+    """Check source ID citywide, obtain its record date and check raw GIS neighbors beyond the display buffer."""
+    props = road_row["properties"]
+    source_id = props["bd_mgt_sn"]
+    rows, road_date, road_hashes = fetch(ROAD, ("bd_mgt_sn", "gro_flo_co", "opert_de", "mvmn_de"),
+                                        None, cache, source_id)
+    if road_date != checked:
+        raise ValueError(f"{source_id}: date of road record lookup differs from the footprint snapshot")
+    if len(rows) != 1:
+        return None
+    row = rows[0]
+    if (row["id"] != road_row["id"] or row["geometry"] != road_row["geometry"] or
+            any(row["properties"][key] != props[key] for key in ("bd_mgt_sn", "gro_flo_co"))):
+        raise ValueError(f"{source_id}: road feature changed between queries")
+    footprint = shape(row["geometry"])
+    w, s, e, n = footprint.bounds
+    bounds = [math.floor(w), math.floor(s), math.ceil(e), math.ceil(n)]
+    neighbors, unity_date, unity_hashes = fetch(UNITY, ("a1", "a16", "a26"), bounds, cache)
+    if unity_date != checked:
+        raise ValueError(f"{source_id}: date of neighboring GIS footprint lookup differs from the road check")
+    reverse = overlaps(footprint, geometry_index(neighbors))
+    if len(reverse) != 1 or reverse[0][1] <= 0.9:
+        return None
+    gis = neighbors[reverse[0][0]]["properties"]
+    if (gis["a1"] != published_id or any(float(gis[key] or 0) > 0 for key in ("a16", "a26")) or
+            sum(r["properties"]["a1"] == published_id for r in neighbors) != 1):
+        return None
+    date_field = next((k for k in ("opert_de", "mvmn_de") if row["properties"][k]), None)
+    raw_date = row["properties"][date_field][:8] if date_field else None
+    record_date = date.fromisoformat(raw_date).isoformat() if raw_date else None
+    return {"source_record_date": record_date, "source_date_field": date_field,
+            "source_lookup_sha256": road_hashes, "gis_neighbors_sha256": unity_hashes}
 
 
 def published_buildings(town_id, manifest):
     features = []
     for chunk in manifest["files"]:
         data = (ROOT / chunk["path"]).read_bytes()
-        if sha256(data).hexdigest() != chunk["sha256"]:
+        if sha256(data.replace(b"\r\n", b"\n")).hexdigest() != chunk["sha256"]:
             raise ValueError(f"Building chunk checksum mismatch: {chunk['path']}")
         features.extend(json.loads(data)["features"])
     if len(features) != manifest["stats"]["total"] or len({f["properties"]["id"] for f in features}) != len(features):
@@ -150,13 +194,19 @@ def process(town_id, boundary, manifest, cache, prefetch, resume):
     out = ROOT / f"{pilot}-height-evidence.json" if pilot else ROOT / "heights" / f"{town_id}.json"
     inputs = {"building_chunks": [chunk["sha256"] for chunk in manifest["files"]],
               "bbox_epsg_5179": bounds, "wfs_pages_sha256": {NRM: topo_pages, ROAD: road_pages}, "method_version": 1}
-    if resume and not pilot and out.exists():
-        previous = json.loads(out.read_bytes())
-        if previous["town_id"] == town_id and all(previous["audit"].get(k) == v for k, v in inputs.items()):
+    # Keep a completed check in its WFS snapshot even when the town gained no road records.
+    receipt = None
+    if cache:
+        signature = sha256(json.dumps({**inputs, "method_version": 2}, sort_keys=True).encode()).hexdigest()
+        receipt = cache / f"{town_id}-{signature}.sha256"
+        if resume and receipt.is_file() and out.is_file() and receipt.read_text() == sha256(out.read_bytes()).hexdigest():
+            previous = json.loads(out.read_bytes())
             return previous["coverage"]
-    matches, reverse = overlaps(published, topo)
-    street_matches, _ = overlaps(published, road)
+    published_index = shapely.STRtree(published)
+    topo_index = geometry_index(topo)
+    road_index = geometry_index(road)
     topo_ids = Counter(row["properties"]["ufid"] for row in topo)
+    road_ids = Counter(row["properties"]["bd_mgt_sn"] for row in road)
     records = {}
     missing_by_area = Counter({"inside": 0, "crossing": 0, "nearby": 0})
     matched_by_area = missing_by_area.copy()
@@ -166,26 +216,39 @@ def process(town_id, boundary, manifest, cache, prefetch, resume):
             continue
         area = {True: "inside", None: "crossing", False: "nearby"}[props["is_inside_town"]]
         missing_by_area[area] += 1
-        if len(matches[i]) != 1:
-            continue
-        j, iou, valid = matches[i][0]
-        if not valid or iou < 0.9 or reverse[j] != 1:
-            continue
-        row = topo[j]["properties"]
-        if not row["ufid"] or topo_ids[row["ufid"]] != 1:
-            continue
-        floor_text = str(row["flr_num"])
-        if not floor_text.isdigit() or int(floor_text) < 1:
-            continue
-        floors = int(floor_text)
-        # A substantial second source with a different count makes the floor evidence ambiguous.
-        if any(road[k]["properties"]["gro_flo_co"] not in (None, 0, floors)
-               for k, road_iou, usable in street_matches[i] if usable and road_iou >= 0.6):
-            continue
+        topo_pairs = overlaps(published[i], topo_index)
+        road_pairs = overlaps(published[i], road_index)
+        source = None
+        if len(topo_pairs) == 1:
+            j, iou = topo_pairs[0]
+            row = topo[j]["properties"]
+            floors = floor_count(row["flr_num"])
+            if (iou >= 0.9 and floors and row["ufid"] and topo_ids[row["ufid"]] == 1 and
+                    len(overlaps(topo_index.geometries[j], published_index)) == 1 and
+                    all(road[k]["properties"]["gro_flo_co"] in (None, 0, floors)
+                        for k, road_iou in road_pairs if road_iou >= 0.6)):
+                source = {"source_layer": NRM, "source_field": "flr_num", "source_id": row["ufid"],
+                          "source_as_of": None, "source_record_date": date.fromisoformat(row["h_date"]).isoformat() if row["h_date"] else None}
+        if source is None:
+            if len(road_pairs) != 1 or len(topo_pairs) > 1:
+                continue
+            j, iou = road_pairs[0]
+            row = road[j]["properties"]
+            floors = floor_count(row["gro_flo_co"])
+            if (iou <= 0.9 or not floors or not row["bd_mgt_sn"] or road_ids[row["bd_mgt_sn"]] != 1 or
+                    len(overlaps(road_index.geometries[j], published_index)) != 1):
+                continue
+            if any(topo_iou == 0 or floor_count(topo[k]["properties"]["flr_num"]) not in (None, floors)
+                   for k, topo_iou in topo_pairs):
+                continue
+            proof = verify_road_candidate(props["id"], road[j], cache, checked)
+            if proof is None:
+                continue
+            source = {"source_layer": ROAD, "source_field": "gro_flo_co", "source_id": row["bd_mgt_sn"],
+                      "source_as_of": None, **proof}
         records[props["id"]] = {
             "floors": floors, "height_m": floors * 3, "height_source": "estimated_from_floors",
-            "source_url": MAP, "source_layer": NRM, "source_field": "flr_num", "source_id": row["ufid"],
-            "source_as_of": None, "source_record_date": date.fromisoformat(row["h_date"]).isoformat() if row["h_date"] else None,
+            "source_url": MAP, **source,
             "method": "unique_footprint_iou", "overlap_iou": round(iou, 4),
         }
         matched_by_area[area] += 1
@@ -200,11 +263,23 @@ def process(town_id, boundary, manifest, cache, prefetch, resume):
         "coverage": {"originally_missing": missing, "matched": len(records), "still_missing": missing - len(records)},
         "records": records,
     }
+    if any(record["source_layer"] == ROAD for record in records.values()):
+        evidence["date_note"] = ("수치지형도 기록일은 h_date이다. 도로명주소 건물 기록일은 개별 레코드의 "
+                                 "source_date_field에 표시한 작업일시(opert_de) 또는 이동일자(mvmn_de)이다. "
+                                 "checked_on은 조회일이며 레이어 전체의 기준일은 확인되지 않았다.")
+        evidence["method_note"] += (" 수치지형도로 보완되지 않은 건물은 도로명주소 지상층수(gro_flo_co)를 확인한다. "
+                                    "IoU가 0.9를 초과하고 서울 전역에서 건물관리번호가 하나이며 도로명주소 도형과 대응하는 공개 도형 및 GIS 원본 도형도 각각 하나여야 한다. "
+                                    "수치지형도에서 IoU 0.1 초과 후보가 여럿이거나 층수가 다르면 보류한다.")
+        inputs["method_version"] = 2
     if not pilot:
         evidence["audit"] = {**inputs, "topographic_rows": len(topo), "road_rows": len(road),
                              "nonunique_source_ids": sorted(k for k, count in topo_ids.items() if k and count > 1),
                              "originally_missing_by_area": missing_by_area, "matched_by_area": matched_by_area}
-    atomic_write(out, (json.dumps(evidence, ensure_ascii=False, indent=2) + "\n").encode())
+    content = (json.dumps(evidence, ensure_ascii=False, indent=2) + "\n").encode()
+    if not out.is_file() or out.read_bytes().replace(b"\r\n", b"\n") != content:
+        atomic_write(out, content)
+    if receipt:
+        atomic_write(receipt, sha256(out.read_bytes()).hexdigest().encode())
     return evidence["coverage"]
 
 

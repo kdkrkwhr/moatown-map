@@ -932,12 +932,13 @@
       {
         "site": "화곡6동 957-1 일대",
         "notice_date": "2025-06-26",
-        "zone_count": null,
+        "zone_count": 4,
         "notice_number": "서울특별시 고시 제2025-343호",
         "notice_kind": "신규",
         "notice_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=614147",
         "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=614147",
-        "checked_on": "2026-11-24"
+        "checked_on": "2026-11-25",
+        "archive_url": "https://news.seoul.go.kr/citybuild/archives/538467"
       }
     ],
     "field_evidence": {
@@ -956,6 +957,24 @@
         "checked_on": "2026-11-24",
         "notice_number": "서울특별시 공고 제2024-2557호",
         "notes": "공고문 표의 강서구 화곡동 이 법정동 단위로 지정범위에 열거되어 있습니다. 사업지 개별 공고가 아니라 법정동 단위 지정이며, 대상은 지목이 도로인 토지에 한정됩니다."
+      },
+      "reference_boundary_identity": {
+        "kind": "official_site_alias",
+        "source_url": "https://www.gangseo.seoul.kr/build/bui010214",
+        "identity_sources": [
+          "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status",
+          "https://www.gangseo.seoul.kr/build/bui010214",
+          "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=613142",
+          "https://news.seoul.go.kr/citybuild/archives/538467"
+        ],
+        "registered_site_label": "화곡6동 957",
+        "geometry_site_label": "화곡6동 957-1 일대",
+        "source_feature_id": "11500UQ120PS202607020002",
+        "source_class": "BZ201",
+        "geometry_source": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+        "source_as_of": "2026-09-10",
+        "checked_on": "2026-11-25",
+        "notes": "구청 현황표의 ‘화곡6동 957’과 그 행에서 연결하는 ‘957-1 일대’ 관리계획 승인고시의 대상지가 같다. 시 명부·공식 소개·공간자료의 공시 면적은 94,080㎡이다."
       }
     },
     "representative_point_evidence": {
@@ -965,11 +984,19 @@
       "source_crs": "EPSG:5174",
       "source_feature_id": "11500UQ120PS202607020002",
       "source_label": "화곡6동 957-1 일대",
-      "match_method": "same_district_geometry_area_equals_published_area",
-      "geometry_area_m2": 94080.0,
+      "match_method": "same_district_official_alias_and_registered_area",
+      "geometry_area_m2": 94060.6,
       "published_area_m2": 94080,
-      "checked_on": "2026-11-24",
-      "notes": "공고·명부의 사업 면적과 도형 면적이 일치하는 단일 피처를 연결했습니다. 명부 지번(본번만)은 지적도에 단독 필지가 없어 필지 내부점을 만들 수 없습니다. 이 점은 서울시 공간자료 도형의 내부 대표점이며 사업구역 중심점이 아닙니다."
+      "checked_on": "2026-11-25",
+      "notes": "강서구의 957번지 사업 현황표가 957-1 일대 승인고시로 연결된다. 명부와 서울플랜+ 등록 면적은 94,080㎡이고, 배포 도형의 측정 면적은 94,060.6㎡이다. 이 점은 서울플랜+ 도형 내부점이다.",
+      "source_area_field": "DGM_AR",
+      "source_registered_area_m2": 94080.0,
+      "identity_sources": [
+        "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status",
+        "https://www.gangseo.seoul.kr/build/bui010214",
+        "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=613142",
+        "https://news.seoul.go.kr/citybuild/archives/538467"
+      ]
     }
   },
   {
@@ -2680,7 +2707,7 @@
     "selected_date": "2021-04",
     "selected_date_precision": "month",
     "area_m2": 89944,
-    "management_plan_stage": null,
+    "management_plan_stage": "관리계획 승인고시",
     "representative_point": {
       "type": "Point",
       "coordinates": [
@@ -2754,9 +2781,61 @@
         "checked_on": "2026-11-24",
         "notice_number": "서울특별시 공고 제2024-2557호",
         "notes": "공고문 표의 금천구 시흥동 이 법정동 단위로 지정범위에 열거되어 있습니다. 사업지 개별 공고가 아니라 법정동 단위 지정이며, 대상은 지목이 도로인 토지에 한정됩니다."
+      },
+      "reference_boundary_identity": {
+        "kind": "official_site_alias",
+        "source_url": "https://council.geumcheon.go.kr/cserver/data/burok/07/0C/26/070C2600.pdf",
+        "identity_sources": [
+          "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status",
+          "https://council.geumcheon.go.kr/cserver/data/burok/07/0C/26/070C2600.pdf",
+          "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=560543",
+          "https://news.seoul.go.kr/citybuild/archives/542058",
+          "https://news.seoul.go.kr/citybuild/archives/538561",
+          "https://event.seoul.go.kr/seoulsibo/fileDownload.do?fileName=seoulsibo_20260828163709_74413.pdf#page=37"
+        ],
+        "registered_site_label": "시흥5동 922-61",
+        "geometry_site_label": "시흥5동 922-16 일대",
+        "source_feature_id": "11000UQ120PS202503070064",
+        "source_class": "BZ201",
+        "geometry_source": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+        "source_as_of": "2026-09-10",
+        "checked_on": "2026-11-25",
+        "notes": "금천구의회 주요업무계획 70쪽은 922-61의 면적 89,944㎡와 지정고시일 2022-12-22를 기록한다. 같은 일자의 서울특별시 고시 제2022-520호 및 시 자료는 922-16으로 표기하고, 두 대표 지번의 필지 내부점 모두 같은 공간자료 도형 안에 있다."
+      },
+      "management_plan_stage": {
+        "kind": "official_management_plan_notice",
+        "source_url": "https://event.seoul.go.kr/seoulsibo/fileDownload.do?fileName=seoulsibo_20260828163709_74413.pdf#page=37",
+        "source_as_of": "2026-08-27",
+        "checked_on": "2026-11-25",
+        "notice_number": "서울특별시 고시 제2026-480호",
+        "pdf_page": 37,
+        "notes": "서울시보 제4175호 36~37쪽. 관리지역 지정 조서의 기정·변경 후 면적은 모두 89,944㎡이다. 토지이용계획표에는 A-1부터 A-8까지 8개 사업추진구역이 있다."
       }
     },
-    "sub_areas": []
+    "sub_areas": [],
+    "management_plan_notices": [
+      {
+        "site": "시흥5동 922-16번지 일대",
+        "notice_date": "2022-12-22",
+        "zone_count": 8,
+        "source_url": "https://news.seoul.go.kr/citybuild/archives/538561",
+        "archive_url": "https://news.seoul.go.kr/citybuild/archives/538561",
+        "checked_on": "2026-11-25",
+        "notice_number": "서울특별시 고시 제2022-520호",
+        "notice_kind": "신규",
+        "notice_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=560543"
+      },
+      {
+        "site": "시흥5동 922-16번지 일대",
+        "notice_date": "2026-08-27",
+        "zone_count": 8,
+        "source_url": "https://event.seoul.go.kr/seoulsibo/fileDownload.do?fileName=seoulsibo_20260828163709_74413.pdf#page=37",
+        "checked_on": "2026-11-25",
+        "notice_number": "서울특별시 고시 제2026-480호",
+        "notice_kind": "변경",
+        "notice_url": "https://event.seoul.go.kr/seoulsibo/fileDownload.do?fileName=seoulsibo_20260828163709_74413.pdf#page=37"
+      }
+    ]
   },
   {
     "id": "mt-202603-public-027",
@@ -9335,11 +9414,18 @@
       "source_crs": "EPSG:5174",
       "source_feature_id": "11000UQ120PS202503070082",
       "source_label": "일원동 대청마을 북측구역",
-      "match_method": "same_district_geometry_area_equals_published_area",
-      "geometry_area_m2": 90992.0,
+      "match_method": "same_district_official_alias_and_registered_area",
+      "geometry_area_m2": 93494.5,
       "published_area_m2": 90992,
-      "checked_on": "2026-11-24",
-      "notes": "공고·명부의 사업 면적과 도형 면적이 일치하는 단일 피처를 연결했습니다. 명부 지번(본번만)은 지적도에 단독 필지가 없어 필지 내부점을 만들 수 없습니다. 이 점은 서울시 공간자료 도형의 내부 대표점이며 사업구역 중심점이 아닙니다."
+      "checked_on": "2026-11-25",
+      "notes": "일원동 대청마을 북측구역의 관리계획 주민공람안과 서울플랜+ 도형의 등록 면적은 90,992㎡이다. 배포 도형의 측정 면적은 93,494.5㎡이다. 대표점은 서울플랜+ 도형 내부점이며, 공람 도면과의 범위 차이를 검토할 때까지 대상지 외곽 표시는 보류한다.",
+      "source_area_field": "DGM_AR",
+      "source_registered_area_m2": 90992.0,
+      "identity_sources": [
+        "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status",
+        "https://www.eum.go.kr/web/cp/hr/hrPeopleHearDet.jsp?seq=4573",
+        "https://www.gangnam.go.kr/board/union6/42/view.do?mid=ID02_01130505"
+      ]
     }
   },
   {
