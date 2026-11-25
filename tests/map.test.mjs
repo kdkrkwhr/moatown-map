@@ -84,14 +84,15 @@ test('production snapshot loads from the custom domain root with all layers pres
  assert.ok(paths.every(x=>x.startsWith('/moatown-data/')));
 });
 
-test('a reference point appears only for selected, visible towns without boundaries',async()=>{
+test('point-only towns appear in results and selections without duplicating polygons',async()=>{
   const {showReferencePin}=await import('../app.mjs');
   const visible=new Set(['with-shape','point-only']);
   const polygons=new Set(['with-shape']);
-  assert.equal(showReferencePin('point-only',null,visible,polygons),false);
+  assert.equal(showReferencePin('point-only',null,visible,polygons),true);
   assert.equal(showReferencePin('with-shape','with-shape',visible,polygons),false);
   assert.equal(showReferencePin('point-only','point-only',visible,polygons),true);
-  assert.equal(showReferencePin('point-only','point-only',new Set(),polygons),false);
+  assert.equal(showReferencePin('point-only','point-only',new Set(),polygons),true);
+  assert.equal(showReferencePin('point-only',null,new Set(),polygons),false);
 });
 
 test('normal and hybrid keep the cadastral overlay independent and support older map links',async()=>{

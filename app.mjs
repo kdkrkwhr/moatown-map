@@ -1,12 +1,13 @@
-import {projectUrl,renderProjectDetail,showUnplacedProgram} from './detail-view.mjs?v=3d4b75bd4b6b';
-import {durationSamples,elapsedMonths,formatValue,projectMetadata} from './detail-format.mjs?v=3d4b75bd4b6b';
-import {projectParams,setProjectPath} from './project-url.mjs?v=3d4b75bd4b6b';
+import {projectUrl,renderProjectDetail,showUnplacedProgram} from './detail-view.mjs?v=88e67d268463';
+import {durationSamples,elapsedMonths,formatValue,projectMetadata} from './detail-format.mjs?v=88e67d268463';
+import {projectParams,setProjectPath} from './project-url.mjs?v=88e67d268463';
 export {elapsedMonths};
-import {loadMaps,createProjectMap} from './map-engine.mjs?v=3d4b75bd4b6b';
-import {loadNews,matchNews,newsCard,sourceLabels} from './news.mjs?v=3d4b75bd4b6b';
-import {searchProjects,managementFilters,progressFilters,recentProjectDates} from './project-search.mjs?v=3d4b75bd4b6b';
-import {mountAddressLookup} from './address-reference.mjs?v=3d4b75bd4b6b';
-import {mountPilotViewer} from './pilot-viewer.mjs?v=3d4b75bd4b6b';
+import {loadMaps,createProjectMap} from './map-engine.mjs?v=88e67d268463';
+export {showReferencePin} from './map-engine.mjs?v=88e67d268463';
+import {loadNews,matchNews,newsCard,sourceLabels} from './news.mjs?v=88e67d268463';
+import {searchProjects,managementFilters,progressFilters,recentProjectDates} from './project-search.mjs?v=88e67d268463';
+import {mountAddressLookup} from './address-reference.mjs?v=88e67d268463';
+import {mountPilotViewer} from './pilot-viewer.mjs?v=88e67d268463';
 const mobileMapQuery='(max-width: 760px) and (orientation: portrait), (max-width: 540px)';
 function initialSheetHeight(selection,hasFilters,mobile){
   if(!mobile)return 1;
@@ -109,10 +110,6 @@ export function planIntervals(towns){
   }
   const mean=months.size?[...months.values()].reduce((a,b)=>a+b,0)/months.size:null;
   return {months,mean};
-}
-
-export function showReferencePin(id,selectedId,visible,polygons){
-  return id===selectedId && visible.has(id) && !polygons.has(id);
 }
 
 export function groupSubAreas(towns,zones){

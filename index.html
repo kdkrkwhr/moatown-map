@@ -18,8 +18,8 @@
   <meta property="og:image" content="https://moatownmap.com/assets/seoul-panorama.webp">
   <meta property="og:image:alt" content="서울 시가지 전경">
   <link rel="sitemap" type="application/xml" href="/sitemap.xml">
-  <link rel="stylesheet" href="./styles.css?v=3d4b75bd4b6b">
-  <script type="module" src="./app.mjs?v=3d4b75bd4b6b"></script>
+  <link rel="stylesheet" href="./styles.css?v=88e67d268463">
+  <script type="module" src="./app.mjs?v=88e67d268463"></script>
 </head>
 <body data-loading="true">
 <a class="skip" href="#explorer">대상지 탐색으로 바로가기</a>
@@ -93,7 +93,8 @@
       <li><i class="key district"></i>자치구별 수록 대상지 수</li>
       <li><i class="key town"></i>모아타운 참고 외곽</li>
       <li><i class="key zone"></i>세부 사업구역 · 단계별 색상</li>
-      <li><i class="key point"></i>선택한 대상지의 대표 위치</li>
+      <li><i class="key cluster" aria-hidden="true">3</i>겹친 마커 · 숫자를 눌러 목록 보기</li>
+      <li><i class="key point"></i>대상지의 대표 위치</li>
       <li><i class="key point"></i>세부 구역 핀 · 대표 지번</li>
     </ul></details>
     </div>
@@ -105,6 +106,11 @@
   </section>
 </main>
 <div id="share-status" role="status" aria-live="polite" aria-atomic="true"></div>
+<dialog id="cluster-dialog" aria-labelledby="cluster-heading">
+  <div class="dialog-head"><h2 id="cluster-heading">겹친 마커</h2><button type="button">닫기</button></div>
+  <ul id="cluster-members"></ul>
+  <button id="cluster-zoom" type="button">이 위치 확대</button>
+</dialog>
 <dialog id="layer-dialog" aria-labelledby="layer-heading">
   <div class="dialog-head"><h2 id="layer-heading">지도 레이어·도구</h2><button type="button" id="layer-close">닫기</button></div>
 </dialog>

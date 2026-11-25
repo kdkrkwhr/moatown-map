@@ -1,3 +1,4 @@
+import {createMarkerClusters} from './marker-clusters.mjs?v=88e67d268463';
 const SDK='https://oapi.map.naver.com/openapi/v3/maps.js';
 export function loadMaps(onAuthError){
   window.navermap_authFailure=onAuthError;
@@ -33,6 +34,9 @@ export function distanceText(metres){
   const length=rounded>=1000?(rounded/1000).toLocaleString('ko-KR',{maximumFractionDigits:2})+'km':rounded.toLocaleString('ko-KR')+'m';
   return '직선 약 '+length+' · 도보 약 '+(metres?Math.max(1,Math.round(metres/67)):0)+'분';
 }
+export function showReferencePin(id,selectedId,townHits,shapes){
+  return !shapes.has(id) && (townHits.has(id) || selectedId===id);
+}
 const node=(tag,cls,text)=>{
   const el=document.createElement(tag);el.className=cls;if(text!=null)el.textContent=text;return el;
 };
@@ -41,11 +45,15 @@ export function createProjectMap(m,container,{townById,zoneById,boundaries,distr
   const map=new m.Map(container,{center:ll([126.978,37.565]),zoom:11,minZoom:7,maxZoom:21,keyboardShortcuts:true,
     mapTypeId:mapSettings(location.search).hybrid?m.MapTypeId.HYBRID:m.MapTypeId.NORMAL});
   const cadastral=new m.CadastralLayer();
-  const shapes=new Map(),pins=new Map(),zonePins=new Map(),mappedChildren=new Set(),districts=[];
+  const shapes=new Map(),pins=new Map(),zonePins=new Map(),districts=[];
   const on=(target,event,handler)=>m.Event.addListener(target,event,handler);
   const setVisible=(overlay,visible)=>{if(Boolean(overlay.getMap())!==visible)overlay.setMap(visible?map:null);};
   const marker=(position,content,zIndex,title,clickable=false)=>new m.Marker({position,title,zIndex,clickable,icon:{content,anchor:new m.Point(0,0)}});
   let addressMarker,addressPoint,addressIds=new Set(),measuring=false,measureStart,measureLayers=[];
+  const padding=()=>fitPadding(container.getBoundingClientRect(),$('explorer').getBoundingClientRect(),$('map-search-dock').getBoundingClientRect());
+  const clusters=createMarkerClusters(m,map,container,{setVisible,padding,measuring:()=>measuring,measure,
+    choose(member){if(member.district)selectDistrict(member.district);else select(member.townId,member.zoneId);}
+  });
   function markerText(text,cls){return node('span','map-caption '+cls,text);}
   function selectLayer(townId,zoneId){if(!measuring)select(townId,zoneId);}
   for(const feature of boundaries.features){
@@ -74,7 +82,6 @@ export function createProjectMap(m,container,{townById,zoneById,boundaries,distr
     const pin=marker(position,label,isTown?80:90,record.name,true);
     on(pin,'click',e=>{if(measuring)measure(e.coord??pin.getPosition());else selectLayer(townId,isTown?null:id);});
     shapes.set(id,{isTown,townId,polygons,bounds,stage,pin,label});
-    if(!isTown)mappedChildren.add(townId);
   }
   for(const zone of zoneById.values()){
     const point=zone.representative_point;
@@ -85,7 +92,7 @@ export function createProjectMap(m,container,{townById,zoneById,boundaries,distr
     label.append(node('small','','대표 지번'));
     const pin=marker(ll(point.coordinates),label,110,zone.name+' · '+zone.registered_address,true);
     on(pin,'click',e=>{if(measuring)measure(e.coord??pin.getPosition());else selectLayer(zone.town_id,zone.id);});
-    zonePins.set(zone.id,pin);mappedChildren.add(zone.town_id);
+    zonePins.set(zone.id,pin);
   }
   for(const town of townById.values()){
     if(!town.representative_point || shapes.has(town.id))continue;
@@ -114,18 +121,20 @@ export function createProjectMap(m,container,{townById,zoneById,boundaries,distr
   function render(){
     const {current,visible,visibleZones,townHits,filtered}=view();
     const wide=map.getZoom()<=12;
-    container.classList.toggle('district-overview',wide);
-    container.classList.toggle('show-totals',wide);
-    const occupied=[],projection=map.getProjection(),size=map.getSize();
-    for(const {pin,name} of districts){
-      let show=wide && !filtered && !current.townId;
-      if(show && projection){
-        const p=projection.fromCoordToOffset(pin.getPosition());
-        show=p.x>20 && p.x<size.width-20 && p.y>20 && p.y<size.height-20 &&
-          !occupied.some(other=>Math.abs(other.x-p.x)<58 && Math.abs(other.y-p.y)<32);
-        if(show)occupied.push(p);
-      }
-      setVisible(pin,show);
+    const overview=wide && !filtered && !current.townId && districts.length>0;
+    container.classList.toggle('district-overview',overview);
+    container.classList.toggle('show-totals',overview);
+    const candidates=[];
+    for(const {pin,name,count} of districts){
+      if(overview && count)candidates.push({id:name,name,district:name,pin,description:'대상지 '+count+'곳'});
+      else setVisible(pin,false);
+    }
+    function projectPin(pin,show,townId,zoneId){
+      const id=zoneId??townId,selected=id===(current.zoneId??current.townId);
+      if(overview || !show){setVisible(pin,false);return;}
+      const town=townById.get(townId),zone=zoneById.get(zoneId);
+      const description=zone?[town.district,town.name,zone.stage].filter(Boolean).join(' · '):town.district+' · 모아타운 대상지';
+      candidates.push({id,pin,townId,zoneId,selected,name:zone?.name??town.name,description});
     }
     for(const [id,shape] of shapes){
       const {isTown,townId,stage}=shape;
@@ -142,21 +151,22 @@ export function createProjectMap(m,container,{townById,zoneById,boundaries,distr
       }
       shape.pin.setZIndex(selected?140:isTown?80:90);
       shape.label.classList.toggle('selected-caption',selected);
-      setVisible(shape.pin,show && !wide && (!isTown || !mappedChildren.has(id)));
+      projectPin(shape.pin,isTown?townHits.has(id)||selected||hit:show,townId,isTown?null:id);
     }
-    for(const [id,pin] of pins)setVisible(pin,current.townId===id && visible.has(id) && !mappedChildren.has(id));
+    for(const [id,pin] of pins)projectPin(pin,showReferencePin(id,current.townId,townHits,shapes),id,null);
     for(const [id,pin] of zonePins){
       const selected=current.zoneId===id;
       const townId=zoneById.get(id).town_id;
       const show=visibleZones.has(id) || townHits.has(townId) || current.townId===townId;
       pin.setZIndex(selected?150:110);
       pin.getIcon().content?.classList?.toggle('selected-caption',selected);
-      setVisible(pin,!wide && show);
+      projectPin(pin,show,townId,id);
     }
+    clusters.render(candidates);
   }
   function fit(){
     const {current,rows,filtered}=view();
-    const opts=fitPadding(container.getBoundingClientRect(),$('explorer').getBoundingClientRect(),$('map-search-dock').getBoundingClientRect());
+    const opts=padding();
     if(addressPoint){map.fitBounds([addressPoint],{...opts,maxZoom:16});return;}
     const points=[];
     function include(id){
@@ -233,10 +243,11 @@ export function createProjectMap(m,container,{townById,zoneById,boundaries,distr
   $('zoom-out').onclick=()=>map.setZoom(map.getZoom()-1,true);
   const resize=new ResizeObserver(entries=>{
     const canvasChanged=entries.some(entry=>entry.target===container);
-    if(canvasChanged)map.autoResize();
+    if(canvasChanged){clusters.resetSizes();map.autoResize();render();}
     if(canvasChanged || $('map-search-dock').offsetHeight)fit();
   });
   for(const element of [container,$('explorer'),$('map-search-dock')])resize.observe(element);
+  document.fonts?.ready.then(()=>{clusters.resetSizes();render();});
   settings();fit();render();
   return {fit,render,settings,clearAddress,showAddress};
 }
