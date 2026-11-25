@@ -1,4 +1,4 @@
-﻿import earcut from './vendor/earcut-3.0.2/earcut.mjs?v=44ebb41f5cd0';
+﻿import earcut from './vendor/earcut-3.0.2/earcut.mjs?v=d4517c7a007b';
 
 const DEG = Math.PI / 180;
 const GROUND = '#f1f3ef';
@@ -104,7 +104,8 @@ function buildModel(town, zones, buildings, simulation, publicSpace) {
   const towers = [];
   const simulatedZones = new Set();
   for (const raw of simulation?.features || []) {
-    const zone = zonesById.get(raw.properties?.zone_id);
+    const key=raw.properties?.zone_id;
+    const zone=key===perimeter?.id?perimeter:zonesById.get(key);
     if (!zone) continue;
     const tower = feature(raw, 'tower');
     if (!tower?.height || !Number.isInteger(tower.props.floors) || tower.props.floors < 1) continue;
@@ -211,7 +212,7 @@ function existingAppearance(block) {
     wall: color(palette[seed % palette.length]), cap: color(caps[(seed >>> 12) % caps.length]) };
 }
 
-function geometry(model, existingDetail) {
+function geometry(model, existingDetail, partialPlan) {
   const surfaces = [];
   function add(rings, points, indices, paint, group, facade) {
     const face = { rings, points, indices, paint, group, facade };
@@ -252,15 +253,17 @@ function geometry(model, existingDetail) {
   }
 
   const ground = rgb('#e6ebe2'), selectedArea = rgb('#90c6b9');
-  const townFill = material(ground, rgb('#e0e8df'), ground);
+  const wholePlan=model.simulatedZones.has(model.perimeter);
+  const modeledParts=partialPlan?[...model.simulatedZones].flatMap(area=>area.parts):[];
+  const townFill = material(ground, rgb(wholePlan?'#deebd9':'#e0e8df'), ground);
   const townLine = material(rgb('#466d64'), rgb('#47776c'), rgb('#466d64'), { lift: 2.1 });
   for (const part of model.perimeter?.parts || []) flat(part, 0, townFill, 0);
   model.areas.forEach((zone, i) => {
     const hasTowers = model.simulatedZones.has(zone);
     const planFill = hasTowers ? '#e4e6d7' : PLAN_COLORS[i % PLAN_COLORS.length];
-    const fill = material(rgb('#e1e8db'), rgb(planFill), selectedArea, { code: zone.code, lift: .4, mode: hasTowers ? 'current' : null });
+    const fill = material(rgb('#e1e8db'), rgb(planFill), selectedArea, { code: zone.code, lift: .4, mode: hasTowers||wholePlan ? 'current' : null });
     const planSurface = hasTowers && material(rgb(planFill), rgb(planFill), rgb('#d0ded0'), { code: zone.code, lift: .4, mode: 'plan' });
-    const border = material(rgb('#99b2a3'), rgb('#5a9084'), rgb('#176354'), { code: zone.code, lift: 1.4 });
+    const border = material(rgb('#99b2a3'), rgb('#5a9084'), rgb('#176354'), { code: zone.code, lift: 1.4,mode:wholePlan?'current':null });
     for (const part of zone.parts) {
       flat(part, 0, fill, 1);
       if (planSurface) flat(part, 0, planSurface, 1);
@@ -346,7 +349,8 @@ function geometry(model, existingDetail) {
     const current = block.props.is_inside_town === false
       ? tier.map((channel, i) => channel * .34 + context[i] * .66) : tier;
     const selected = rgb('#37947d');
-    const mode = block.props.is_inside_town !== false ? 'current' : null;
+    const insidePlan=partialPlan?modeledParts.some(part=>contains(part,...block.anchor)):block.props.is_inside_town!==false;
+    const mode=insidePlan?'current':null;
     const paint = (light, lift = 0, finish) => {
       const p = material(shade(current, light), shade(context, .38 + light * .62), shade(selected, light),
         { code: block.code, mode, lift });
@@ -891,7 +895,8 @@ function groundPoint(v, x, y) {
 // The largest intersected z is the visible surface, including a courtyard's inner wall.
 function pick(view, model, sx, sy) {
   const [x, y] = groundPoint(view, sx, sy);
-  const zoneAtPoint = () => model.areas.find(area => area.parts.some(part => contains(part, x, y)));
+  const zoneAtPoint = () => view.plan && model.simulatedZones.has(model.perimeter)?null:
+    model.areas.find(area => area.parts.some(part => contains(part, x, y)));
   let best = -1, hit = null;
   for (const block of view.plan ? model.towers : model.blocks) {
     const distance = block.height * view.sinP / view.cosP;
@@ -960,9 +965,9 @@ function labelText(props) {
 }
 
 export async function createPilotScene(container, { buildings, town, zones, simulation, publicSpace,
-  initialBearing, initialPitch, selectedZoneId = null, existingDetail = false, onSelect } = {}) {
+  initialBearing, initialPitch, selectedZoneId = null, existingDetail = false, partialPlan=false, onSelect } = {}) {
   const model = buildModel(town, zones?.features || [], buildings?.features || [], simulation, publicSpace);
-  let surfaces = geometry(model, existingDetail);
+  let surfaces = geometry(model, existingDetail, partialPlan);
   const host = document.createElement('div');
   host.className = 'pilot-world';
   host.tabIndex = 0;
@@ -988,7 +993,7 @@ export async function createPilotScene(container, { buildings, town, zones, simu
     const next = makeCanvas();
     canvas.replaceWith(next);
     canvas = next;
-    renderer = canvasRenderer(canvas, surfaces || geometry(model, existingDetail));
+    renderer = canvasRenderer(canvas, surfaces || geometry(model, existingDetail, partialPlan));
     host.dataset.renderer = 'canvas';
   }
   try {
@@ -1078,6 +1083,7 @@ export async function createPilotScene(container, { buildings, town, zones, simu
 
   function choose(feature) {
     if (!feature) return;
+    if (feature.kind === 'town') return;
     if (feature.kind === 'zone') { activeZone = feature; activeBuilding = null; }
     else activeBuilding = feature;
     schedule();
@@ -1088,6 +1094,7 @@ export async function createPilotScene(container, { buildings, town, zones, simu
     const taken = [];
     const ordered = [...labels].sort((a, b) => Number(b.zone === activeZone) - Number(a.zone === activeZone));
     for (const { zone, button, metrics } of ordered) {
+      if(v.plan && model.simulatedZones.has(model.perimeter)){button.hidden=true;continue;}
       button.setAttribute('aria-pressed', String(zone === activeZone));
       metrics.hidden = !v.plan || model.simulatedZones.has(zone);
       button.hidden = false;

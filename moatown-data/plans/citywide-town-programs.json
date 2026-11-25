@@ -1,0 +1,746 @@
+{
+  "checked_on": "2026-11-25",
+  "towns": {
+    "mt-202603-public-001": {
+      "floors": 17,
+      "units": 1025,
+      "kind": "municipal_town_plan_profile",
+      "scope": "강서구 화곡동 1087번지 일대 (3개 구역)",
+      "source_url": "https://news.seoul.go.kr/citybuild/archives/538350",
+      "source_as_of": "2026-05-22",
+      "evidence": "서울시 대상지기록의 규모 항목 — 60,616.1㎡ / 용적률 약 300% / 최고 17층 / 약 1,025세대",
+      "site_area_m2": 60616.1
+    },
+    "mt-202603-public-002": {
+      "floors": 15,
+      "units": 2134,
+      "kind": "municipal_town_plan_profile",
+      "scope": "강서구 화곡동 354번지 일대 (5개 구역)",
+      "source_url": "https://news.seoul.go.kr/citybuild/archives/538366",
+      "source_as_of": "2026-05-22",
+      "evidence": "서울시 대상지기록의 규모 항목 — 85,462.6㎡ / 용적률 약 300% / 최고 15층 / 약 2,134세대",
+      "site_area_m2": 85462.6
+    },
+    "mt-202603-public-003": {
+      "floors": 17,
+      "units": 1433,
+      "kind": "municipal_town_plan_profile",
+      "scope": "강서구 화곡동 359번지 일대 (3개 구역)",
+      "source_url": "https://news.seoul.go.kr/citybuild/archives/538386",
+      "source_as_of": "2026-05-22",
+      "evidence": "서울시 대상지기록의 규모 항목 — 58,477.4㎡ / 용적률 약 300% / 최고 17층 / 약 1,433세대",
+      "site_area_m2": 58477.4
+    },
+    "mt-202603-public-006": {
+      "floors": 15,
+      "units": 860,
+      "kind": "municipal_town_plan_profile",
+      "scope": "강서구 화곡6동 1130-7번지 일대 (4개 구역)",
+      "source_url": "https://news.seoul.go.kr/citybuild/archives/538421",
+      "source_as_of": "2026-05-22",
+      "evidence": "서울시 대상지기록의 규모 항목 — 67,957.1㎡ / 용적률 약 250% / 최고 15층 / 약 860세대",
+      "site_area_m2": 67957.1
+    },
+    "mt-202603-public-007": {
+      "floors": 15,
+      "units": 1389,
+      "kind": "municipal_town_plan_profile",
+      "scope": "강서구 방화2동 592-1번지 일대 (5개 구역)",
+      "source_url": "https://news.seoul.go.kr/citybuild/archives/538441",
+      "source_as_of": "2026-05-22",
+      "evidence": "서울시 대상지기록의 규모 항목 — 66,975㎡ / 용적률 약 300% / 최고 15층 / 약 1,389세대",
+      "site_area_m2": 66975
+    },
+    "mt-202603-public-008": {
+      "floors": 15,
+      "units": 1878,
+      "kind": "municipal_town_plan_profile",
+      "scope": "강서구 공항동 55-327번지 일대 (5개 구역)",
+      "source_url": "https://news.seoul.go.kr/citybuild/archives/538456",
+      "source_as_of": "2026-05-22",
+      "evidence": "서울시 대상지기록의 규모 항목 — 96,637㎡ / 용적률 약 300% / 최고 15층 / 약 1,878세대",
+      "site_area_m2": 96637
+    },
+    "mt-202603-public-009": {
+      "floors": 15,
+      "units": 1636,
+      "kind": "municipal_town_plan_profile",
+      "scope": "강서구 화곡6동 957-1번지 일대 (4개 구역)",
+      "source_url": "https://news.seoul.go.kr/citybuild/archives/538467",
+      "source_as_of": "2026-05-22",
+      "evidence": "서울시 대상지기록의 규모 항목 — 94,080.0㎡ / 용적률 약 300% / 최고 15층 / 약 1,636세대",
+      "note": "선정 명부의 화곡6동 957은 관리계획의 화곡6동 957-1에 해당합니다.",
+      "site_area_m2": 94080
+    },
+    "mt-202603-public-011": {
+      "floors": 25,
+      "units": null,
+      "kind": "municipal_town_plan_profile",
+      "scope": "중랑구 면목3·8동 44-6번지 일대 (1개 구역)",
+      "source_url": "https://news.seoul.go.kr/citybuild/archives/538669",
+      "source_as_of": "2026-05-12",
+      "evidence": "규모 항목에 최고 25층으로 기재돼 있습니다.",
+      "note": "소개문은 408세대, 규모 항목은 약 403세대로 서로 다릅니다. 최고 층수만 반영했습니다.",
+      "site_area_m2": 61253.6
+    },
+    "mt-202603-public-012": {
+      "floors": 25,
+      "units": 1381,
+      "kind": "municipal_town_plan_profile",
+      "scope": "중랑구 면목본동 297-28번지 일대 (4개 구역)",
+      "source_url": "https://news.seoul.go.kr/citybuild/archives/538733",
+      "source_as_of": "2026-05-12",
+      "evidence": "서울시 대상지기록의 규모 항목 — 55,385.0㎡ / 용적률 약 300% / 최고 25층 / 약 1,381세대",
+      "site_area_m2": 55385
+    },
+    "mt-202603-public-013": {
+      "floors": 25,
+      "units": 1790,
+      "kind": "municipal_town_plan_profile",
+      "scope": "중랑구 중화1동 4-30 일대 (4개 구역)",
+      "source_url": "https://news.seoul.go.kr/citybuild/archives/538746",
+      "source_as_of": "2026-05-12",
+      "evidence": "서울시 대상지기록의 규모 항목 — 73,625.8㎡ / 용적률 약 300% / 최고 25층 / 약 1,790세대",
+      "site_area_m2": 73625.8
+    },
+    "mt-202603-public-014": {
+      "floors": 22,
+      "units": 2273,
+      "kind": "municipal_town_plan_profile",
+      "scope": "중랑구 망우3동 427-5번지 일대 (7개 구역)",
+      "source_url": "https://news.seoul.go.kr/citybuild/archives/538758",
+      "source_as_of": "2026-05-12",
+      "evidence": "서울시 대상지기록의 규모 항목 — 98,171㎡ / 용적률 약 250% / 최고 22층 / 약 2,273세대",
+      "site_area_m2": 98171
+    },
+    "mt-202603-public-015": {
+      "floors": 29,
+      "units": 2112,
+      "kind": "municipal_town_plan_profile",
+      "scope": "중랑구 면목5동 152-1번지 일대 (5개 구역)",
+      "source_url": "https://news.seoul.go.kr/citybuild/archives/538769",
+      "source_as_of": "2026-04-30",
+      "evidence": "서울시 대상지기록의 규모 항목 — 87,787.8㎡ / 용적률 약 300% / 최고 29층 / 약 2,112세대",
+      "site_area_m2": 87787.8
+    },
+    "mt-202603-public-016": {
+      "floors": 23,
+      "units": 1656,
+      "kind": "municipal_town_plan_profile",
+      "scope": "중랑구 면목본동 63-1번지 일대 (4개 구역)",
+      "source_url": "https://news.seoul.go.kr/citybuild/archives/538782",
+      "source_as_of": "2026-04-30",
+      "evidence": "서울시 대상지기록의 규모 항목 — 90,110.4㎡ / 용적률 약 300% / 최고 23층 / 약 1,656세대",
+      "site_area_m2": 90110.4
+    },
+    "mt-202603-public-017": {
+      "floors": 29,
+      "units": 1180,
+      "kind": "municipal_town_plan_profile",
+      "scope": "중랑구 망우본동 354-2번지 일대 (3개 구역)",
+      "source_url": "https://news.seoul.go.kr/citybuild/archives/542225",
+      "source_as_of": "2026-09-18",
+      "evidence": "서울시 대상지기록의 규모 항목 — 66,389㎡ / 용적률 298.75% / 지하 3층~지상 29층 / 1,180세대",
+      "site_area_m2": 66389
+    },
+    "mt-202603-public-018": {
+      "floors": 35,
+      "units": 2818,
+      "kind": "municipal_town_plan_profile",
+      "scope": "중랑구 중화동 329-38번지 일대 (6개 구역)",
+      "source_url": "https://news.seoul.go.kr/citybuild/archives/538794",
+      "source_as_of": "2026-04-30",
+      "evidence": "서울시 대상지기록의 규모 항목 — 99,971.60㎡ / 용적률 약 300% / 최고 35층 / 약 2,818세대",
+      "site_area_m2": 99971.6
+    },
+    "mt-202603-public-020": {
+      "floors": 28,
+      "units": 1851,
+      "kind": "municipal_town_plan_profile",
+      "scope": "중랑구 묵2동 243-7번지 일대 (4개 구역)",
+      "source_url": "https://news.seoul.go.kr/citybuild/archives/542152",
+      "source_as_of": "2026-09-18",
+      "evidence": "서울시 대상지기록의 규모 항목 — 63,449.4㎡ / 용적률 약 300% / 최고 28층 / 약 1,851세대",
+      "site_area_m2": 63449.4
+    },
+    "mt-202603-public-023": {
+      "floors": 29,
+      "units": 2334,
+      "kind": "municipal_town_plan_profile",
+      "scope": "중랑구 면목동 453-1번지 일대",
+      "source_url": "https://news.seoul.go.kr/citybuild/archives/542207",
+      "source_as_of": "2026-09-18",
+      "evidence": "서울시 대상지기록의 규모 항목 — 80,494.1㎡ / 용적률 약 300% / 최고 29층 / 2,334세대",
+      "site_area_m2": 80494.1
+    },
+    "mt-202603-public-024": {
+      "floors": 20,
+      "units": 2818,
+      "kind": "municipal_town_plan_profile",
+      "scope": "금천구 시흥3동 1005번지 일대 (5개 구역)",
+      "source_url": "https://news.seoul.go.kr/citybuild/archives/538539",
+      "source_as_of": "2026-05-22",
+      "evidence": "서울시 대상지기록의 규모 항목 — 99,429.8㎡ / 용적률 약 250% / 최고 20층 / 약 2,818세대",
+      "site_area_m2": 99429.8
+    },
+    "mt-202603-public-025": {
+      "floors": 35,
+      "units": 817,
+      "kind": "municipal_town_plan_profile",
+      "scope": "금천구 시흥4동 817번지 일대 (1개 구역)",
+      "source_url": "https://news.seoul.go.kr/citybuild/archives/538550",
+      "source_as_of": "2026-05-22",
+      "evidence": "서울시 대상지기록의 규모 항목 — 30,279.4㎡ / 용적률 약 300% / 최고 35층 / 약 817세대",
+      "site_area_m2": 30279.4
+    },
+    "mt-202603-public-026": {
+      "floors": 25,
+      "units": 2302,
+      "kind": "municipal_town_plan_profile",
+      "scope": "금천구 시흥5동 922-16번지 일대 (8개 구역)",
+      "source_url": "https://news.seoul.go.kr/citybuild/archives/538561",
+      "source_as_of": "2026-05-22",
+      "evidence": "서울시 대상지기록의 규모 항목 — 89,944.0㎡ / 용적률 약 300% / 최고 25층 / 약 2,302세대",
+      "note": "2026년 5월 서울시 소개 수치입니다. 2026년 8월 27일 서울특별시 고시 제2026-480호로 관리계획이 변경됐습니다. 명부의 시흥5동 922-61은 고시의 시흥5동 922-16에 해당합니다.",
+      "site_area_m2": 89944
+    },
+    "mt-202603-public-027": {
+      "floors": 30,
+      "units": 1579,
+      "kind": "municipal_town_plan_profile",
+      "scope": "금천구 시흥1동 864번지 일대 (4개 구역)",
+      "source_url": "https://news.seoul.go.kr/citybuild/archives/538575",
+      "source_as_of": "2026-05-22",
+      "evidence": "서울시 대상지기록의 규모 항목 — 81,648.78㎡ / 용적률 약 300% / 최고 30층 / 약 1,579세대",
+      "site_area_m2": 81648.78
+    },
+    "mt-202603-public-028": {
+      "floors": 35,
+      "units": 1995,
+      "kind": "municipal_town_plan_profile",
+      "scope": "금천구 시흥3동 950번지 일대 (5개 구역)",
+      "source_url": "https://news.seoul.go.kr/citybuild/archives/538586",
+      "source_as_of": "2026-05-22",
+      "evidence": "서울시 대상지기록의 규모 항목 — 99,715.35㎡ / 용적률 약 300% / 최고 35층 / 약 1,995세대",
+      "site_area_m2": 99715.35
+    },
+    "mt-202603-public-030": {
+      "floors": null,
+      "units": 2336,
+      "kind": "municipal_town_plan_profile",
+      "scope": "마포구 성산동 160-4번지 일대 (4개 구역)",
+      "source_url": "https://news.seoul.go.kr/citybuild/archives/538805",
+      "source_as_of": "2026-05-22",
+      "evidence": "서울시 대상지기록의 규모 항목 — 84,876.00㎡ / 용적률 최고 300% 이하 / 약 2,336세대 (임대 637 포함)",
+      "site_area_m2": 84876
+    },
+    "mt-202603-public-031": {
+      "floors": null,
+      "units": 1512,
+      "kind": "municipal_town_plan_profile",
+      "scope": "마포구 망원동 456-6번지 일대 (8개 구역)",
+      "source_url": "https://news.seoul.go.kr/citybuild/archives/538816",
+      "source_as_of": "2026-05-22",
+      "evidence": "서울시 대상지기록의 규모 항목 — 77,449.33㎡ / 용적률 법적상한 250% 이하 / 약 1,512세대 (임대 298 포함)",
+      "site_area_m2": 77449.33
+    },
+    "mt-202603-public-033": {
+      "floors": 35,
+      "units": 531,
+      "kind": "municipal_town_plan_profile",
+      "scope": "마포구 중동 78번지 일대 (1개 구역)",
+      "source_url": "https://news.seoul.go.kr/citybuild/archives/538836",
+      "source_as_of": "2026-05-22",
+      "evidence": "서울시 대상지기록의 규모 항목 — 18,612.00㎡ / 용적률 약 300% / 최고 35층 / 약 531세대",
+      "note": "2026년 5월 서울시 관리계획 소개 기준입니다. 10월 13일자 소규모주택정비 사업대장의 중동 78번지 가로주택정비사업에는 136세대로 기재돼 있습니다.",
+      "notice_reviews": [
+        {
+          "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=611308",
+          "source_as_of": "2025-04-24",
+          "notice_number": "서울특별시 고시 제2025-224호",
+          "evidence": "고시문 6쪽의 A-1 전체 계획은 531세대입니다. 4쪽의 건축물 높이 항목은 용도지역 층수 기준을 적용합니다."
+        }
+      ],
+      "site_area_m2": 18612
+    },
+    "mt-202603-public-035": {
+      "floors": null,
+      "units": 1381,
+      "kind": "management_plan_notice",
+      "scope": "강북구 번동 454번지 일대 번동2지역 (사업추진구역 2-1·2-2·2-3)",
+      "source_url": "https://event.seoul.go.kr/seoulsibo/fileDownload.do?fileName=seoulsibo_20260708113419_91414.pdf#page=60",
+      "source_as_of": "2026-07-09",
+      "evidence": "서울시보 제4161호 59쪽 변경안의 합계는 1,381세대입니다. 2-1·2-2·2-3구역에 각각 282·584·515세대를 계획했습니다. 58쪽에는 건축물 높이를 용도지역 층수 기준으로 정했습니다.",
+      "note": "변경고시에는 대상지 전체의 최고 층수가 숫자로 제시되지 않았습니다.",
+      "site_area_m2": 70897,
+      "history": [
+        {
+          "floors": 29,
+          "units": 1380,
+          "kind": "municipal_town_plan_profile",
+          "scope": "강북구 번동 454번지 일대 (3개 구역)",
+          "source_url": "https://news.seoul.go.kr/citybuild/archives/538967",
+          "source_as_of": "2026-05-22",
+          "evidence": "서울시 대상지기록의 규모 항목 — 70,897.00㎡ / 용적률 약 300% / 최고 29층 / 약 1,380세대",
+          "note": "서울시가 2026년 5월에 소개한 번동2지역 전체 관리계획입니다. 선정 당시 대표 지번은 번동 454-61입니다.",
+          "site_area_m2": 70897
+        }
+      ]
+    },
+    "mt-202603-public-036": {
+      "floors": 29,
+      "units": 2242,
+      "kind": "municipal_town_plan_profile",
+      "scope": "강북구 번동 411번지 일대 (6개 구역)",
+      "source_url": "https://news.seoul.go.kr/citybuild/archives/538981",
+      "source_as_of": "2026-05-22",
+      "evidence": "서울시 대상지기록의 규모 항목 — 79,517.00㎡ / 용적률 약 300% / 최고 29층 / 약 2,242세대",
+      "site_area_m2": 79517
+    },
+    "mt-202603-public-037": {
+      "floors": 22,
+      "units": 754,
+      "kind": "municipal_town_plan_profile",
+      "scope": "강북구 수유동 52-1번지 일대 (7개 구역)",
+      "source_url": "https://news.seoul.go.kr/citybuild/archives/538992",
+      "source_as_of": "2026-05-22",
+      "evidence": "서울시 대상지기록의 규모 항목 — 72,754.70㎡ / 용적률 약 280% / 최고 22층 / 약 754세대",
+      "site_area_m2": 72754.7
+    },
+    "mt-202603-public-038": {
+      "floors": 30,
+      "units": 2595,
+      "kind": "municipal_town_plan_profile",
+      "scope": "강북구 수유동 392-9번지 일대 (5개 구역)",
+      "source_url": "https://news.seoul.go.kr/citybuild/archives/542001",
+      "source_as_of": "2026-09-01",
+      "evidence": "서울시 대상지기록의 규모 항목 — 86,324.1㎡ / 용적률 약 300% / 최고 30층 / 약 2,595세대",
+      "site_area_m2": 86324.1
+    },
+    "mt-202603-public-042": {
+      "floors": 29,
+      "units": 1378,
+      "kind": "municipal_town_plan_profile",
+      "scope": "성동구 마장동 457번지 일대 (1~5구역)",
+      "source_url": "https://news.seoul.go.kr/citybuild/archives/538948",
+      "source_as_of": "2026-05-22",
+      "evidence": "사업개요 표의 1~5구역 최고 층수는 각각 15·15·14·15·29층입니다. 계획 세대수 173·225·224·324·432세대를 합하면 1,378세대입니다.",
+      "note": "서울시가 소개한 5개 구역안 기준입니다. 2024년 12월 26일 고시에 수록된 A1~A6 구역별 개별 시행안과 구역 구성이 다릅니다.",
+      "notice_reviews": [
+        {
+          "source_url": "https://event.seoul.go.kr/seoulsibo/fileDownload.do?fileName=seoulsibo_20260520112133_47006.pdf#page=157",
+          "source_as_of": "2026-05-21",
+          "notice_number": "서울특별시 고시 제2026-282호",
+          "evidence": "서울시보 제4150호 156~159쪽. 49개소 관리계획에 사업성 보정계수를 적용하는 용적률 완화 기준을 신설했습니다. 대상지별 총세대수와 최고 층수는 이 고시에서 따로 제시하지 않았습니다."
+        },
+        {
+          "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=607655",
+          "source_as_of": "2024-12-26",
+          "notice_number": "서울특별시 고시 제2024-642호",
+          "evidence": "고시문 13쪽은 6개 구역 개별 시행 시 1,617세대, 통합 시행 시 1,657세대를 대안별로 제시합니다. 서울시 대상지기록 사업개요 표는 5개 구역을 기준으로 합니다."
+        }
+      ]
+    },
+    "mt-202603-public-044": {
+      "floors": 29,
+      "units": 2574,
+      "kind": "municipal_town_plan_profile",
+      "scope": "구로구 고척동 241번지 일대 (8개 구역)",
+      "source_url": "https://news.seoul.go.kr/citybuild/archives/538599",
+      "source_as_of": "2026-05-22",
+      "evidence": "서울시 대상지기록의 규모 항목 — 98,735.60㎡ / 용적률 약 270% / 최고 29층 / 약 2,574세대",
+      "site_area_m2": 98735.6
+    },
+    "mt-202603-public-045": {
+      "floors": 34,
+      "units": 1737,
+      "kind": "municipal_town_plan_profile",
+      "scope": "구로구 구로동 728번지 일대 (3개 구역)",
+      "source_url": "https://news.seoul.go.kr/citybuild/archives/538610",
+      "source_as_of": "2026-05-22",
+      "evidence": "서울시 대상지기록의 규모 항목 — 64,151㎡ / 용적률 약 300% / 최고 34층 / 약 1,737세대",
+      "site_area_m2": 64151
+    },
+    "mt-202603-public-046": {
+      "floors": 26,
+      "units": 847,
+      "kind": "municipal_town_plan_profile",
+      "scope": "구로구 개봉동 270-38번지 일대 A-1·A-2 공동주택용지",
+      "source_url": "https://news.seoul.go.kr/citybuild/archives/538623",
+      "source_as_of": "2026-05-22",
+      "evidence": "서울시 대상지기록의 규모 항목 — 32,790.0㎡ / 지하 3층~지상 26층 / 약 847세대",
+      "requires_zone_geometry": true,
+      "note": "서울시 소개의 32,790㎡는 A-1과 A-2의 공동주택용지 합계입니다. 두 구역의 경계를 기준으로 배치합니다.",
+      "notice_reviews": [
+        {
+          "source_url": "https://event.seoul.go.kr/seoulsibo/fileDownload.do?fileName=seoulsibo_20251217162958_75587.pdf#page=321",
+          "source_as_of": "2025-12-18",
+          "notice_number": "서울특별시 고시 제2025-714호",
+          "evidence": "서울시보 제4112호 320쪽의 관리지역 지정 면적은 41,623㎡입니다. 공동주택용지는 A-1 18,550㎡와 A-2 14,240㎡이며, 나머지에는 도로·공원·공공공지·존치 대지가 포함됩니다."
+        }
+      ],
+      "scope_geometry_mismatch": true
+    },
+    "mt-202603-public-047": {
+      "floors": 30,
+      "units": 1329,
+      "kind": "municipal_town_plan_profile",
+      "scope": "구로구 구로동 511번지 일대 (4개 구역)",
+      "source_url": "https://news.seoul.go.kr/citybuild/archives/538637",
+      "source_as_of": "2026-05-22",
+      "evidence": "서울시 대상지기록의 규모 항목 — 지하 3층~지상 30층 / 약 1,329세대 (4개 구역 통합)"
+    },
+    "mt-202603-public-049": {
+      "floors": 29,
+      "units": 1683,
+      "kind": "municipal_town_plan_profile",
+      "scope": "노원구 상계동 177-66번지 일대 (5개 구역)",
+      "source_url": "https://news.seoul.go.kr/citybuild/archives/538087",
+      "source_as_of": "2026-05-22",
+      "evidence": "서울시 대상지기록의 규모 항목 — 96,468.5㎡ / 약 300% / 최고 29층 / 약 1,683세대",
+      "site_area_m2": 96468.5
+    },
+    "mt-202603-public-050": {
+      "floors": 20,
+      "units": 878,
+      "kind": "municipal_town_plan_profile",
+      "scope": "노원구 월계동 534번지 일대 (2개 구역)",
+      "source_url": "https://news.seoul.go.kr/citybuild/archives/538250",
+      "source_as_of": "2026-05-22",
+      "evidence": "서울시 대상지기록의 규모 항목 — 51,857.00㎡ / 약 280% / 최고 20층 / 약 878세대",
+      "site_area_m2": 51857
+    },
+    "mt-202603-public-053": {
+      "floors": 25,
+      "units": 1949,
+      "kind": "municipal_town_plan_profile",
+      "scope": "도봉구 방학동 618번지 일대 (5개 구역)",
+      "source_url": "https://news.seoul.go.kr/citybuild/archives/538280",
+      "source_as_of": "2026-05-22",
+      "evidence": "서울시 대상지기록의 규모 항목 — 98,115.6㎡ / 약 250% / 최고 25층 / 약 1,949세대",
+      "site_area_m2": 98115.6
+    },
+    "mt-202603-public-054": {
+      "floors": 18,
+      "units": 1774,
+      "kind": "municipal_town_plan_profile",
+      "scope": "도봉구 쌍문동 460번지 일대 (4개 구역)",
+      "source_url": "https://news.seoul.go.kr/citybuild/archives/538292",
+      "source_as_of": "2026-05-22",
+      "evidence": "서울시 대상지기록의 규모 항목 — 87,774.0㎡ / 약 250% / 최고 18층 / 약 1,774세대",
+      "site_area_m2": 87774
+    },
+    "mt-202603-public-055": {
+      "floors": 27,
+      "units": 1261,
+      "kind": "municipal_town_plan_profile",
+      "scope": "도봉구 창동 501-13번지 일대 (3개 구역)",
+      "source_url": "https://news.seoul.go.kr/citybuild/archives/538303",
+      "source_as_of": "2026-05-22",
+      "evidence": "서울시 대상지기록의 규모 항목 — 47,933.7㎡ / 약 300% / 최고 27층 / 약 1,261세대",
+      "site_area_m2": 47933.7
+    },
+    "mt-202603-public-058": {
+      "floors": 29,
+      "units": 834,
+      "kind": "municipal_town_plan_profile",
+      "scope": "동작구 노량진동 221-24번지 일대 (1개 구역)",
+      "source_url": "https://news.seoul.go.kr/citybuild/archives/539074",
+      "source_as_of": "2026-05-22",
+      "evidence": "서울시 대상지기록의 규모 항목 — 34,555.6㎡ / 용적률 300% 이하 / 최고 29층 / 약 834세대",
+      "site_area_m2": 34555.6
+    },
+    "mt-202603-public-059": {
+      "floors": 26,
+      "units": 1725,
+      "kind": "municipal_town_plan_profile",
+      "scope": "동작구 사당동 202-29번지 일대 (8개 구역)",
+      "source_url": "https://news.seoul.go.kr/citybuild/archives/541969",
+      "source_as_of": "2026-08-31",
+      "evidence": "서울시 대상지기록의 규모 항목 — 83,180.3㎡ / 용적률 약 300%이하 / 최고 26층 / 약 1,725세대",
+      "notice_reviews": [
+        {
+          "source_url": "https://event.seoul.go.kr/seoulsibo/fileDownload.do?fileName=seoulsibo_20260520112133_47006.pdf#page=140",
+          "source_as_of": "2026-05-21",
+          "notice_number": "서울특별시 고시 제2026-281호",
+          "evidence": "서울시보 제4150호 139쪽은 일부 도로를 편입해 관리지역을 83,183.0㎡에서 87,314.3㎡로 변경했습니다. 148쪽의 전체 1,725세대는 8월 서울시 대상지기록과 같습니다."
+        }
+      ]
+    },
+    "mt-202603-public-060": {
+      "floors": 35,
+      "units": 1498,
+      "kind": "municipal_town_plan_profile",
+      "scope": "동작구 상도동 242번지 일대 (3개 구역)",
+      "source_url": "https://news.seoul.go.kr/citybuild/archives/539085",
+      "source_as_of": "2026-05-22",
+      "evidence": "서울시 대상지기록의 규모 항목 — 69,120.2㎡ / 용적률 약 300% / 최고 35층 / 약 1,498세대",
+      "site_area_m2": 69120.2
+    },
+    "mt-202603-public-062": {
+      "floors": 20,
+      "units": 930,
+      "kind": "municipal_town_plan_profile",
+      "scope": "송파구 풍납동 483-10번지 일대 (1개 구역)",
+      "source_url": "https://news.seoul.go.kr/citybuild/archives/538517",
+      "source_as_of": "2026-05-22",
+      "evidence": "서울시 대상지기록의 규모 항목 — 46,546.20㎡ / 용적률 약 266.70% / 최고 20층 / 약 930세대"
+    },
+    "mt-202603-public-063": {
+      "floors": 20,
+      "units": 386,
+      "kind": "municipal_town_plan_profile",
+      "scope": "송파구 거여동 555번지 일원 (3개 구역)",
+      "source_url": "https://news.seoul.go.kr/citybuild/archives/538528",
+      "source_as_of": "2026-05-22",
+      "evidence": "서울시 대상지기록의 규모 항목 — 12,615.7㎡ / 용적률 약 299% / 최고 20층 / 약 386세대",
+      "site_area_m2": 12615.7
+    },
+    "mt-202603-public-064": {
+      "floors": 34,
+      "units": 1703,
+      "kind": "municipal_town_plan_profile",
+      "scope": "성북구 석관동 334-69번지 일대 (5개 구역)",
+      "source_url": "https://news.seoul.go.kr/citybuild/archives/539033",
+      "source_as_of": "2026-05-22",
+      "evidence": "서울시 대상지기록의 규모 항목 — 76,336.3㎡ / 용적률 약 300% / 최고 34층 / 약 1,703세대",
+      "note": "5월 서울시가 소개한 관리계획 전체 수치입니다. 고시의 구역별 수치와 10월 사업대장의 개별 사업 수치를 혼합해 합산하면 다른 값이 나옵니다.",
+      "notice_reviews": [
+        {
+          "source_url": "https://event.seoul.go.kr/seoulsibo/fileDownload.do?fileName=seoulsibo_20260520112133_47006.pdf#page=157",
+          "source_as_of": "2026-05-21",
+          "notice_number": "서울특별시 고시 제2026-282호",
+          "evidence": "서울시보 제4150호 156~159쪽. 49개소 관리계획에 사업성 보정계수를 적용하는 용적률 완화 기준을 신설했습니다. 대상지별 총세대수와 최고 층수는 이 고시에서 따로 제시하지 않았습니다."
+        },
+        {
+          "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=607900",
+          "source_as_of": "2025-03-20",
+          "notice_number": "서울특별시 고시 제2025-143호",
+          "evidence": "고시문 10쪽의 A1~A5 전체 합계 1,703세대는 서울시 대상지기록의 합계와 같습니다. 8쪽에서 18층 이하로 정한 부분은 문화재 보호구역의 중·저층 배치구간입니다."
+        }
+      ],
+      "site_area_m2": 76336.3
+    },
+    "mt-202603-public-065": {
+      "floors": 35,
+      "units": 1183,
+      "kind": "municipal_town_plan_profile",
+      "scope": "성북구 석관동 261-22번지 일대 (2개 구역)",
+      "source_url": "https://news.seoul.go.kr/citybuild/archives/539044",
+      "source_as_of": "2026-05-22",
+      "evidence": "서울시 대상지기록의 규모 항목 — 52,019.9㎡ / 용적률 약 300% / 최고 35층 / 약 1,183세대",
+      "note": "5월 서울시가 소개한 관리계획 기준입니다. 2025년 3월 20일 변경고시에 수록된 두 구역의 세대수 합계는 1,178세대입니다.",
+      "notice_reviews": [
+        {
+          "source_url": "https://event.seoul.go.kr/seoulsibo/fileDownload.do?fileName=seoulsibo_20260520112133_47006.pdf#page=157",
+          "source_as_of": "2026-05-21",
+          "notice_number": "서울특별시 고시 제2026-282호",
+          "evidence": "서울시보 제4150호 156~159쪽. 49개소 관리계획에 사업성 보정계수를 적용하는 용적률 완화 기준을 신설했습니다. 대상지별 총세대수와 최고 층수는 이 고시에서 따로 제시하지 않았습니다."
+        },
+        {
+          "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=607899",
+          "source_as_of": "2025-03-20",
+          "notice_number": "서울특별시 고시 제2025-144호",
+          "evidence": "고시문 9쪽의 C1 688세대와 C2 490세대를 합한 전체 합계는 1,178세대입니다. 7쪽의 18층 이하는 문화재 보호구역의 중·저층 배치구간에 적용됩니다."
+        }
+      ],
+      "site_area_m2": 52019.9
+    },
+    "mt-202603-public-066": {
+      "floors": 10,
+      "units": 1494,
+      "kind": "municipal_town_plan_profile",
+      "scope": "양천구 신월3동 173번지 일대 (4개 구역)",
+      "source_url": "https://news.seoul.go.kr/citybuild/archives/538482",
+      "source_as_of": "2026-05-22",
+      "evidence": "서울시 대상지기록의 규모 항목 — 80,030.5㎡ / 용적률 약 250% / 최고 10층 / 약 1,494세대",
+      "site_area_m2": 80030.5
+    },
+    "mt-202603-public-068": {
+      "floors": 20,
+      "units": 772,
+      "kind": "municipal_town_plan_profile",
+      "scope": "양천구 목4동 728-1번지 일대 (2개 구역)",
+      "source_url": "https://news.seoul.go.kr/citybuild/archives/538504",
+      "source_as_of": "2026-05-22",
+      "evidence": "서울시 대상지기록의 규모 항목 — 27,139.0㎡ / 용적률 약 300% / 최고 20층 내외 / 약 772세대",
+      "note": "선정 당시 대표 지번은 목4동 724-1입니다. 서울시가 728-1로 소개한 변경 범위 27,139㎡의 2개 구역 계획이며, 최고 층수는 20층 내외입니다.",
+      "site_area_m2": 27139
+    },
+    "mt-202603-public-070": {
+      "floors": 30,
+      "units": 620,
+      "kind": "municipal_town_plan_profile",
+      "scope": "영등포구 대림3동 786번지 일대 (1개 구역)",
+      "source_url": "https://news.seoul.go.kr/citybuild/archives/539096",
+      "source_as_of": "2026-05-22",
+      "evidence": "서울시 대상지기록의 규모 항목 — 24,387.1㎡ / 용적률 약 300% / 최고 30층 / 약 620세대",
+      "site_area_m2": 24387.1
+    },
+    "mt-202603-public-071": {
+      "floors": null,
+      "units": 1420,
+      "kind": "municipal_town_plan_profile",
+      "scope": "은평구 불광동 170번지 일대 (3개 구역)",
+      "source_url": "https://news.seoul.go.kr/citybuild/archives/539055",
+      "source_as_of": "2026-05-22",
+      "evidence": "서울시 대상지기록의 규모 항목 — 53,915.8㎡ / 용도지역 상향(1종→2종) / 계획세대수 약 1,420세대",
+      "site_area_m2": 53915.8
+    },
+    "mt-202603-public-072": {
+      "floors": 32,
+      "units": 1342,
+      "kind": "municipal_town_plan_profile",
+      "scope": "은평구 대조동 89번지 일대 (3개 구역)",
+      "source_url": "https://news.seoul.go.kr/citybuild/archives/539063",
+      "source_as_of": "2026-05-22",
+      "evidence": "서울시 대상지기록의 규모 항목 — 42,686㎡ / 용적률 약 300% / 최고 32층 / 약 1,342세대",
+      "site_area_m2": 42686
+    },
+    "mt-202603-public-074": {
+      "floors": 25,
+      "units": 2009,
+      "kind": "municipal_town_plan_profile",
+      "scope": "관악구 봉천동 1021번지 일대 (4개 구역)",
+      "source_url": "https://news.seoul.go.kr/citybuild/archives/539107",
+      "source_as_of": "2026-05-22",
+      "evidence": "서울시 대상지기록의 규모 항목 — 72,266.9㎡ / 용적률 약 300% / 최고 25층 / 약 2,009세대",
+      "site_area_m2": 72266.9
+    },
+    "mt-202603-public-080": {
+      "floors": 25,
+      "units": 199,
+      "kind": "municipal_town_plan_profile",
+      "scope": "서초구 방배동 977번지 일대 (1개 구역)",
+      "source_url": "https://news.seoul.go.kr/citybuild/archives/538336",
+      "source_as_of": "2026-05-22",
+      "evidence": "서울시 대상지기록의 규모 항목 — 7,190.1㎡ / 용적률 약 250% / 최고 25층 / 약 199세대",
+      "site_area_m2": 7190.1
+    },
+    "mt-202603-public-083": {
+      "floors": 22,
+      "units": 506,
+      "kind": "municipal_town_plan_profile",
+      "scope": "서대문구 천연동 89-16번지 일대 (1개 구역)",
+      "source_url": "https://news.seoul.go.kr/citybuild/archives/538896",
+      "source_as_of": "2026-05-22",
+      "evidence": "서울시 대상지기록의 규모 항목 — 18,654㎡ / 용적률 약 299% / 최고 22층 / 약 506세대",
+      "site_area_m2": 18654
+    },
+    "mt-202603-public-084": {
+      "floors": 19,
+      "units": 883,
+      "kind": "municipal_town_plan_profile",
+      "scope": "서대문구 홍제동 322번지 일대 (1개 구역)",
+      "source_url": "https://news.seoul.go.kr/citybuild/archives/538913",
+      "source_as_of": "2026-05-22",
+      "evidence": "서울시 대상지기록의 규모 항목 — 39,442㎡ / 용적률 약 250% / 최고 19층 / 약 883세대",
+      "site_area_m2": 39442
+    },
+    "mt-202603-public-085": {
+      "floors": 30,
+      "units": 604,
+      "kind": "municipal_town_plan_profile",
+      "scope": "용산구 원효로4가 71번지 일대 (1개 구역)",
+      "source_url": "https://news.seoul.go.kr/citybuild/archives/538956",
+      "source_as_of": "2026-05-22",
+      "evidence": "서울시 대상지기록의 규모 항목 — 26,192.00㎡ / 용적률 약 300% / 최고 30층 / 약 604세대",
+      "site_area_m2": 26192
+    },
+    "mt-202603-public-086": {
+      "floors": 15,
+      "units": 799,
+      "kind": "municipal_town_plan_profile",
+      "scope": "종로구 구기동 100-48번지 일대 (2개 구역)",
+      "source_url": "https://news.seoul.go.kr/citybuild/archives/538316",
+      "source_as_of": "2026-05-22",
+      "evidence": "서울시 대상지기록의 규모 항목 — 63,697.0㎡ / 용적률 250% 이하 / 최고 8층, 15층 / 약 799세대",
+      "note": "두 구역에 각각 최고 8층과 15층을 제시합니다. 전체 사업지의 최고값은 15층입니다.",
+      "site_area_m2": 63697
+    },
+    "mt-202603-public-088": {
+      "floors": 23,
+      "units": 979,
+      "kind": "municipal_town_plan_profile",
+      "scope": "동대문구 답십리동 489번지 일대 (3개 구역)",
+      "source_url": "https://news.seoul.go.kr/citybuild/archives/542051",
+      "source_as_of": "2026-09-01",
+      "evidence": "서울시 대상지기록의 규모 항목 — 40,524.6㎡ / 용적률 약 300% / 최고 23층 / 약 979세대",
+      "site_area_m2": 40524.6
+    },
+    "mt-202603-resident-009": {
+      "floors": 29,
+      "units": 871,
+      "kind": "municipal_town_plan_profile",
+      "scope": "중랑구 신내동 493-13번지 일대 (2개 구역)",
+      "source_url": "https://news.seoul.go.kr/citybuild/archives/542189",
+      "source_as_of": "2026-09-18",
+      "evidence": "서울시 대상지기록의 규모 항목 — 37,152.20㎡ / 용적률 약 300% / 최고 29층 / 약 871세대",
+      "site_area_m2": 37152.2
+    },
+    "mt-202603-resident-016": {
+      "floors": 18,
+      "units": 358,
+      "kind": "municipal_town_plan_profile",
+      "scope": "서대문구 현저동 1-5번지 일대",
+      "source_url": "https://news.seoul.go.kr/citybuild/archives/538925",
+      "source_as_of": "2026-05-22",
+      "evidence": "사업 개요 표에 지상 18층, 358세대로 기재돼 있습니다.",
+      "note": "2026년 5월 서울시 대상지기록 기준입니다. 앞선 통합심의 보도자료는 같은 사업을 366세대로 소개했습니다.",
+      "notice_reviews": [
+        {
+          "source_url": "https://event.seoul.go.kr/seoulsibo/fileDownload.do?fileName=seoulsibo_20260520112133_47006.pdf#page=157",
+          "source_as_of": "2026-05-21",
+          "notice_number": "서울특별시 고시 제2026-282호",
+          "evidence": "서울시보 제4150호 156~159쪽. 49개소 관리계획에 사업성 보정계수를 적용하는 용적률 완화 기준을 신설했습니다. 대상지별 총세대수와 최고 층수는 이 고시에서 따로 제시하지 않았습니다."
+        },
+        {
+          "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=616203",
+          "source_as_of": "2025-06-19",
+          "notice_number": "서울특별시 고시 제2025-322호",
+          "evidence": "고시문 6쪽의 A-1 전체 사업 기준 공급 계획은 366세대입니다. 4쪽에서 높이는 용도지역 층수 기준을 적용합니다."
+        }
+      ],
+      "site_area_m2": 15142.4
+    },
+    "mt-202603-resident-017": {
+      "floors": 20,
+      "units": 322,
+      "kind": "municipal_town_plan_profile",
+      "scope": "서대문구 홍은동 10-18번지 일대 (1개 구역)",
+      "source_url": "https://news.seoul.go.kr/citybuild/archives/538936",
+      "source_as_of": "2026-05-22",
+      "evidence": "서울시 대상지기록의 규모 항목 — 17,668㎡ / 용적률 217.4% / 지하 5층~지상 20층 / 아파트 6개동 322세대",
+      "site_area_m2": 17668
+    },
+    "mt-202603-resident-020": {
+      "floors": 20,
+      "units": 292,
+      "kind": "municipal_town_plan_profile",
+      "scope": "마포구 창전동 46-1번지 일대 (1개 구역)",
+      "source_url": "https://news.seoul.go.kr/citybuild/archives/538878",
+      "source_as_of": "2026-05-22",
+      "evidence": "서울시 대상지기록의 규모 항목 — 11,630.0㎡ / 용적률 약 270% / 최고 20층 / 약 292세대",
+      "note": "2026년 5월 서울시 관리계획 소개 기준입니다. 10월 13일자 사업대장의 창전동 46-1번지 가로주택정비사업에는 199세대로 기재돼 있습니다.",
+      "notice_reviews": [
+        {
+          "source_url": "https://event.seoul.go.kr/seoulsibo/fileDownload.do?fileName=seoulsibo_20251226131847_53209.pdf#page=301",
+          "source_as_of": "2025-12-26",
+          "notice_number": "서울특별시 고시 제2025-752호",
+          "evidence": "서울시보 제4114호 300쪽은 단일 사업구역 전체 292세대와 그중 임대주택 40세대를 명시합니다. 298쪽은 건축물 높이에 용도지역 층수 기준을 적용합니다."
+        }
+      ],
+      "site_area_m2": 11630
+    },
+    "mt-202603-resident-025": {
+      "floors": 29,
+      "units": 472,
+      "kind": "municipal_town_plan_profile",
+      "scope": "관악구 신림동 655-78번지 일대 (1개 구역)",
+      "source_url": "https://news.seoul.go.kr/citybuild/archives/539118",
+      "source_as_of": "2026-05-22",
+      "evidence": "서울시 대상지기록의 규모 항목 — 16,137.49㎡ / 용적률 약 300% / 최고 29층 / 약 472세대",
+      "site_area_m2": 16137.49
+    }
+  }
+}

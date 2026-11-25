@@ -15,7 +15,8 @@ test('pilot input versions and available towns match both published data catalog
   execFileSync(process.execPath,[fileURLToPath(new URL('../scripts/sync-pilot.mjs',import.meta.url)),'--check']);
   const referenceIds=read(source('boundaries')).features.filter(f=>f.properties.entity_type==='town').map(f=>f.properties.entity_id).sort();
   assert.deepEqual(latest.pilot_3d.town_ids,referenceIds);
-  assert.deepEqual(latest.pilot_3d.plan_town_ids,Object.keys(read(source('pilot_plans')).towns).sort());
+  const expanded=read(new URL('plans/expanded-index.json',root));
+  assert.deepEqual(latest.pilot_3d.plan_town_ids,[...Object.keys(read(source('pilot_plans')).towns),...Object.keys(expanded.towns)].sort());
 });
 
 test('published illustrations and apartment simulations are available together for the three documented projects',()=>{

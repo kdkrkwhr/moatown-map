@@ -1,11 +1,11 @@
-import {projectUrl,renderProjectDetail} from './detail-view.mjs?v=44ebb41f5cd0';
-import {durationSamples,elapsedMonths,formatValue} from './detail-format.mjs?v=44ebb41f5cd0';
+import {projectUrl,renderProjectDetail,showUnplacedProgram} from './detail-view.mjs?v=d4517c7a007b';
+import {durationSamples,elapsedMonths,formatValue} from './detail-format.mjs?v=d4517c7a007b';
 export {elapsedMonths};
-import {loadMaps,createProjectMap} from './map-engine.mjs?v=44ebb41f5cd0';
-import {loadNews,matchNews,newsCard,sourceLabels} from './news.mjs?v=44ebb41f5cd0';
-import {searchProjects,managementFilters,progressFilters,recentProjectDates} from './project-search.mjs?v=44ebb41f5cd0';
-import {mountAddressLookup} from './address-reference.mjs?v=44ebb41f5cd0';
-import {mountPilotViewer} from './pilot-viewer.mjs?v=44ebb41f5cd0';
+import {loadMaps,createProjectMap} from './map-engine.mjs?v=d4517c7a007b';
+import {loadNews,matchNews,newsCard,sourceLabels} from './news.mjs?v=d4517c7a007b';
+import {searchProjects,managementFilters,progressFilters,recentProjectDates} from './project-search.mjs?v=d4517c7a007b';
+import {mountAddressLookup} from './address-reference.mjs?v=d4517c7a007b';
+import {mountPilotViewer} from './pilot-viewer.mjs?v=d4517c7a007b';
 const mobileMapQuery='(max-width: 760px) and (orientation: portrait), (max-width: 540px)';
 function initialSheetHeight(selection,hasFilters,mobile){
   if(!mobile)return 1;
@@ -123,6 +123,17 @@ export function mount({manifest,towns,zones,boundaries,excluded=[]},sdk){
   const defaultTitle=document.title,recentButton=get('recent-filter');
   const explorer=get('explorer'),sheet=get('sheet-toggle'),mapStatus=get('map-status');
   const mobile=matchMedia(mobileMapQuery);
+  let unplacedPrograms;
+  function loadUnplacedPrograms(){
+    const path=manifest.files.unplaced_programs;
+    if(!path)return Promise.resolve({});
+    const url=new URL('./moatown-data/'+path,document.baseURI);
+    url.searchParams.set('v',manifest.pilot_3d.hashes.unplaced_programs.slice(0,12));
+    return unplacedPrograms??=fetch(url).then(response=>{
+      if(!response.ok)throw Error('계획 자료를 불러올 수 없습니다.');
+      return response.json();
+    }).catch(()=>{unplacedPrograms=null;return {};});
+  }
   const mapGuides=[...document.querySelectorAll('details.legend,details.stage-filters')];
   document.addEventListener('click',event=>{
     for(const guide of mapGuides)if(guide.open && !guide.contains(event.target))guide.open=false;
@@ -311,7 +322,8 @@ export function mount({manifest,towns,zones,boundaries,excluded=[]},sdk){
       button.type='button';button.dataset.town=town.id;
       const meta=el('span',undefined,'row-meta');
       meta.append(el('span',town.district,'district-name'));
-      if(pilot.supports(town.id))meta.append(el('span','3D 보기 가능','pilot-list-label'));
+      const simulation=manifest.pilot_3d?.simulation_inputs?.[town.id];
+      if(pilot.supports(town.id))meta.append(el('span',simulation?(zone&&!simulation.zone_ids.includes(zone.id)?'대상지 3D':'건축 후 3D'):'기존 건물 3D','pilot-list-label'));
       if(badge)meta.append(badge);
       if(zone){
         button.dataset.zone=zone.id;
@@ -376,8 +388,14 @@ export function mount({manifest,towns,zones,boundaries,excluded=[]},sdk){
     renderProjectDetail(detail,{town,zone,children,boundaries:boundaryProps,snapshot:manifest.snapshot_date,cityRule:current.cancellation?null:manifest.seoul_road_permit,
       registryUrl:manifest.source_urls?.official_project_registry,stats:planStats,select:(townId,zoneId,preview)=>select(townId,zoneId,null,preview?undefined:'areas'),
       expandDetail:()=>{if(mobile.matches)setSheetHeight(2);},badge:stageBadge,copyLink,initialTab,
-      openPilot:pilot.supports(town.id)?()=>pilot.open(town.id,zone?.id):null});
+      openPilot:pilot.supports(town.id)?()=>pilot.open(town.id,zone?.id):null,
+      openPlan:manifest.pilot_3d?.simulation_inputs?.[town.id] && (!zone||manifest.pilot_3d.simulation_inputs[town.id].zone_ids.includes(zone.id))?
+        ()=>pilot.open(town.id,zone?.id,true,'after'):null});
     renderRelatedNews();
+    const pane=detail.querySelector('#pane-business'),id=(zone??town).id;
+    if(id)loadUnplacedPrograms().then(records=>{
+      if(pane?.isConnected && records[id])showUnplacedProgram(pane,records[id]);
+    });
   }
   function renderRelatedNews(){
     const section=detail.querySelector('.related-news');

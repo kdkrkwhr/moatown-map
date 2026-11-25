@@ -11,6 +11,7 @@
 - [상세 설계](docs/architecture.md)
 - [서울 108개 대상지 기존 건물 3D 목록](docs/3d-city-results.md) · [화곡동 354](https://moatownmap.com/?town=mt-202603-public-002&view=3d) · [신월동 102-33](https://moatownmap.com/?town=mt-202603-public-067&view=3d) · [번동 429-114](https://moatownmap.com/?town=mt-202603-public-034&view=3d) · [면목동 86-3](https://moatownmap.com/?town=mt-202603-public-010&view=3d)
 - [3D 시범 수집·검증 결과](docs/3d-pilot-results.md) · [시범 작업 지시서](docs/3d-pilot.md)
+- [전체 대상지 건축 후 예상 3D 수록·보류 현황](docs/3d-plan-coverage.md) · [시흥동 817 일대](https://moatownmap.com/?town=mt-202603-public-025&view=3d&mode=after) · [화곡동 1087 구역별·전체 배치](https://moatownmap.com/?town=mt-202603-public-001&view=3d&mode=after)
 - 건축 후 3D 배치 보기 · [번동 1~5구역](https://moatownmap.com/?town=mt-202603-public-034&view=3d&mode=after) · [면목역 1·2·4·6구역](https://moatownmap.com/?town=mt-202603-public-010&view=3d&mode=after) · [신월동 A1~A4](https://moatownmap.com/?town=mt-202603-public-067&view=3d&mode=after)
 - [데이터 출처와 수집 범위](docs/data-sources.md)
 - [최신 데이터 스냅샷](moatown-data/latest.json)

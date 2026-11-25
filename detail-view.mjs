@@ -1,4 +1,4 @@
-import {formatValue,unitsChange,projectIntervals,compareInterval} from './detail-format.mjs?v=44ebb41f5cd0';
+import {formatValue,unitsChange,projectIntervals,compareInterval} from './detail-format.mjs?v=d4517c7a007b';
 
 const pending='미고시';
 const date=v=>formatValue(v,'date');
@@ -26,6 +26,35 @@ function section(container,id,title){
   card.append(heading);container.append(card);return card;
 }
 const notice=(text)=>el('p',text,'notice');
+export function showUnplacedProgram(pane,record){
+  const card=section(pane,'unplaced-plan','건축 계획 원문');
+  const stats=el('dl',null,'facts');
+  field(stats,'계획 범위',record.scope);
+  field(stats,'계획 세대수',formatValue(record.units,'세대'));
+  field(stats,'계획 최고 층수',record.floors?record.floors+'층':null);
+  if(record.building_count)field(stats,'계획 동 수',record.building_count+'동');
+  if(record.height_m)field(stats,'계획 최고 높이',record.height_m+'m');
+  card.append(stats,notice('이 계획의 3D 배치 보류 · '+record.reason));
+  if(record.note)card.append(el('p',record.note));
+  const proof=link(record.source_url,'계획 원문'+(record.source_as_of?' · '+date(record.source_as_of):''));
+  if(proof)card.append(proof);
+  for(const other of record.separate_scopes??[]){
+    const facts=[other.units&&formatValue(other.units,'세대'),other.floors&&other.floors+'층'].filter(Boolean);
+    const row=el('p',other.scope+' · '+facts.join(' · ')+' ');
+    const ref=link(other.source_url,'구역 원문 · '+date(other.source_as_of));
+    if(ref)row.append(ref);
+    card.append(row);
+  }
+  const seen=new Set([record.source_url]);
+  for(const [field,e] of Object.entries(record.field_evidence??{})){
+    if(!e?.source_url || seen.has(e.source_url))continue;
+    seen.add(e.source_url);
+    const label={boundary_revision:'범위 변경 고시',review:'사업 추진 현황',site_area_m2:'면적 근거',floors:'층수 근거'}[field]??'관련 근거';
+    const extra=link(e.source_url,label+(e.source_as_of?' · '+date(e.source_as_of):''));
+    if(extra)card.append(el('br'),extra);
+  }
+  pane.prepend(card);
+}
 const listOf=v=>Array.isArray(v)?v:[];
 function plannedZoningLabel(areas){
   const rows=listOf(areas).filter(a=>Number(a?.planned_sqm)>0).sort((a,b)=>b.planned_sqm-a.planned_sqm);
@@ -419,7 +448,7 @@ function detailTabs(container,children,designated){
   return {panels,activate};
 }
 
-export function renderProjectDetail(container,{town,zone,children,boundaries,snapshot,cityRule,registryUrl,stats,select,badge,copyLink,expandDetail,initialTab,openPilot}){
+export function renderProjectDetail(container,{town,zone,children,boundaries,snapshot,cityRule,registryUrl,stats,select,badge,copyLink,expandDetail,initialTab,openPilot,openPlan}){
   const r=zone??town,boundary=boundaries.get(r.id),intervals=projectIntervals(town,zone,snapshot);
   const comparison=!zone && children.length?comparePlans(children):null;
   const header=summary(town,zone,intervals,badge,copyLink,comparison);
@@ -438,6 +467,11 @@ export function renderProjectDetail(container,{town,zone,children,boundaries,sna
     header.append(cta);
   }
   const steps=section(panels.schedule,'timeline','추진 타임라인');
+  if(openPlan){
+    const button=el('button','건축 후 예상 3D 보기 ›','pilot-text-button');
+    button.type='button';button.setAttribute('aria-haspopup','dialog');button.setAttribute('aria-controls','pilot-viewer');
+    button.onclick=openPlan;steps.append(button);
+  }
   timeline(steps,town,zone,snapshot,stats,intervals);
   section(panels.schedule,'news','사업 소식').append(el('div',null,'related-news'));
   const records=section(panels.schedule,'sources','출처 및 기준일');

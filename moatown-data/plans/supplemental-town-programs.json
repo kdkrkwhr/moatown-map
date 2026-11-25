@@ -1,0 +1,580 @@
+{
+  "checked_on": "2026-11-25",
+  "towns": {
+    "mt-202603-public-002": {
+      "floors": null,
+      "units": 1929,
+      "kind": "관리계획 변경 승인고시",
+      "scope": "화곡1동 354 일대 3개 사업구역",
+      "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=645315",
+      "source_as_of": "2026-04-30",
+      "evidence": "서울특별시 고시 제2026-233호(서울시보 50~51쪽)의 통합 3개 구역은 총 1,929세대이며 이 중 임대주택은 387세대다.",
+      "note": "5월 수정된 서울시 소개의 5개 구역·약 2,134세대·최고 15층은 통합 전 범위다. 변경 고시는 공항시설법의 장애물 제한표면을 높이 기준으로 적용한다.",
+      "supersedes_profile": true,
+      "site_area_m2": 85462.6
+    },
+    "mt-202603-public-004": {
+      "floors": null,
+      "units": 780,
+      "site_area_m2": 59000,
+      "kind": "선정 당시 공급 예상치",
+      "scope": "강서구 화곡동 424 일대 변경 전 59,000㎡",
+      "source_url": "https://ms.smc.seoul.kr/record/appendixDownload.do?key=eed3769e331b144182e51167220e09cc34250e1c88b2c4ae8fdcc3fbb67900efdfc0df67fed717c5",
+      "source_as_of": "2022-08",
+      "evidence": "서울시의회 붙임 1, 2022년 8월 기준 서울시 소규모주택정비 관리지역(모아타운) 현황에 화곡동 424번지 일대 59,000㎡·공급 예상 780세대로 표기.",
+      "scope_geometry_mismatch": true,
+      "note": "2023-597호 고시로 59,000㎡에서 54,767㎡로 변경됐다. 강서구의 현황표에는 2023년 12월 통합심의 보류로 기재되어 있다.",
+      "field_evidence": {
+        "boundary_revision": {
+          "source_url": "https://event.seoul.go.kr/seoulsibo/detailview.do?cn_seq=MjM0ODg%3D",
+          "source_as_of": "2023-12-28"
+        },
+        "review": {
+          "source_url": "https://www.gangseo.seoul.kr/build/bui010214",
+          "source_as_of": null
+        }
+      }
+    },
+    "mt-202603-public-005": {
+      "floors": 20,
+      "units": 1477,
+      "kind": "관리계획 승인고시",
+      "scope": "등촌동 515-44 일대 모아타운Ⅰ 사업가능 1~4구역",
+      "source_url": "https://www.gangseo.seoul.kr/comm/getFile?srvcId=MEDIA&upperNo=WEONkR8WSgb*9uvj0hTbBg%3d%3d&fileTy=MEDIA&fileNo=rsuFv6BGM0P1J6eeXHc1QQ%3d%3d",
+      "source_as_of": "2023-11-30",
+      "evidence": "서울시보 제3931호 63~64쪽. 1·2·4구역은 최고 20층 이하, 3구역은 최고 15층 이하이며 4개 구역 소계는 1,477세대다.",
+      "note": "함께 고시된 등촌동 520-3 일대 모아타운Ⅱ는 별도의 관리지역이다.",
+      "site_area_m2": 65498.6
+    },
+    "mt-202603-public-012": {
+      "floors": null,
+      "units": 1381,
+      "site_area_m2": 53120.5,
+      "kind": "관리계획 변경 승인고시",
+      "scope": "중랑구 면목본동 297-28 일대 변경 관리지역 전체",
+      "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=589741",
+      "source_as_of": "2024-06-20",
+      "supersedes_profile": true,
+      "evidence": "서울특별시 고시 제2024-294호. 필지선에 맞춰 관리지역을 55,385㎡에서 53,120.5㎡로 변경했다. 임대주택 공급계획 A1 313, A2 302, A3-1 259, A3-2 209, A4 298세대의 합계는 1,381세대(임대 360)다.",
+      "note": "서울시 대상지 소개에는 변경 전 면적으로 최고 25층이 제시되어 있다. 변경고시의 높이 기준은 용도지역에 따르며 별도 숫자가 없다."
+    },
+    "mt-202603-public-018": {
+      "floors": 35,
+      "units": 2387,
+      "kind": "관리계획 변경안 및 사업시행계획안 통합심의",
+      "scope": "중화동 329-38 일대 분리 후 2-1·2-2·2-3·2-5구역",
+      "source_url": "https://www.seoul.go.kr/news/news_report.do?nttNo=470317",
+      "source_as_of": "2026-11-13",
+      "evidence": "서울시 통합심의 자료에서 2-1구역 587세대·35층, 2-2구역 580세대·35층, 2-3구역 667세대·35층, 2-5구역 553세대·29층을 확인했다. 전체 2,387세대다.",
+      "note": "기존 6개 구역 중 2-4·2-6이 중화동 313-23 별도 모아타운으로 분리되면서 관리지역 면적이 99,971.6㎡에서 84,825.4㎡로 줄었다.",
+      "site_area_m2": 84825.4,
+      "supersedes_profile": true,
+      "scope_geometry_mismatch": true,
+      "previous_geometry_profile": true
+    },
+    "mt-202603-public-019": {
+      "floors": null,
+      "units": 2280,
+      "site_area_m2": 85584.61,
+      "kind": "관리계획 승인고시",
+      "scope": "중랑구 망우3동 474-29 일대 전체 (A1~A4)",
+      "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=628097",
+      "source_as_of": "2025-12-26",
+      "evidence": "서울특별시 고시 제2025-755호 고시문 10쪽 공급계획표 전체 세대 합계 2,280세대. 이 중 임대 510세대.",
+      "note": "관리지역 전체의 공급 규모다. 사업구역 세부 경계와 도로·존치 구획은 이 전체 예시에 반영하지 않았다."
+    },
+    "mt-202603-public-021": {
+      "floors": null,
+      "units": 1778,
+      "kind": "관리계획 승인고시",
+      "scope": "중화2동 299-8 일대 4개 사업구역",
+      "source_url": "https://news.seoul.go.kr/citybuild/archives/542502#:~:text=2026-509",
+      "source_as_of": "2026-09-10",
+      "evidence": "서울특별시 고시 제2026-509호는 1~3구역 1,559세대와 별도 가로주택정비사업 4구역 219세대를 포함한 전체 1,778세대를 병기했다.",
+      "site_area_m2": 75441.6
+    },
+    "mt-202603-public-029": {
+      "floors": null,
+      "units": 270,
+      "site_area_m2": 19602.5,
+      "kind": "관리계획 승인고시",
+      "scope": "마포구 대흥동 535-2 일대 전체 (모아주택 1구역)",
+      "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=584564",
+      "source_as_of": "2024-03-14",
+      "evidence": "서울특별시 고시 제2024-130호 고시문 6쪽 공급계획표 전체 세대 합계 270세대. 이 중 임대 54세대.",
+      "note": "관리지역 전체의 공급 규모다. 사업구역 세부 경계와 도로·존치 구획은 이 전체 예시에 반영하지 않았다."
+    },
+    "mt-202603-public-031": {
+      "floors": null,
+      "units": 1471,
+      "kind": "관리계획 변경 승인고시",
+      "scope": "망원동 456-6 일대 A-1~A-8",
+      "source_url": "https://news.seoul.go.kr/citybuild/archives/540026#:~:text=2026-340",
+      "source_as_of": "2026-06-18",
+      "evidence": "서울특별시 고시 제2026-340호는 전체세대를 1,512에서 1,471세대로, 임대주택을 298에서 290세대로 변경했다.",
+      "site_area_m2": 77449.33,
+      "supersedes_profile": true
+    },
+    "mt-202603-public-032": {
+      "floors": null,
+      "units": 1113,
+      "kind": "관리계획 승인고시",
+      "scope": "합정동 369 일대 A-1~A-4",
+      "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=631937",
+      "source_as_of": "2026-03-05",
+      "evidence": "서울특별시 고시 제2026-111호의 임대주택 공급 및 인수 계획표에서 4개 구역의 전체세대를 281·268·290·274세대로 집계했다."
+    },
+    "mt-202603-public-039": {
+      "floors": null,
+      "units": 2441,
+      "kind": "관리계획 통합심의",
+      "scope": "수유동 141 일대",
+      "source_url": "https://www.seoul.go.kr/news/news_report.do?nttNo=470585",
+      "source_as_of": "2026-11-18",
+      "evidence": "기존 1,373세대에서 2,441세대로 늘리는 계획에 임대주택 453세대가 포함된다.",
+      "site_area_m2": 93814.5,
+      "scope_geometry_mismatch": true,
+      "note": "현재 수록된 참고 외곽 면적(약 73,638㎡)과 심의 범위(93,814.5㎡)가 다르다.",
+      "field_evidence": {
+        "boundary_revision": {
+          "source_url": "https://event.seoul.go.kr/seoulsibo/fileDownload.do?fileName=seoulsibo_20260805144233_10330.pdf#page=54",
+          "source_as_of": "2026-08-06",
+          "evidence": "서울시 고시 제2026-449호의 권리산정 범위 추가 편입. 권리산정 면적과 11월 관리지역 면적은 각각 별도로 발표됐다."
+        }
+      }
+    },
+    "mt-202603-public-042": {
+      "floors": null,
+      "units": 1561,
+      "kind": "관리계획 변경안 주민공람",
+      "scope": "마장동 457 일대 A1~A5 통합시행안",
+      "source_url": "https://news.seoul.go.kr/citybuild/archives/543946#:~:text=2026-1523",
+      "source_as_of": "2026-11-05",
+      "evidence": "성동구 공고 제2026-1523호의 통합시행안은 5개 구역에 192·269·312·356·432세대, 합계 1,561세대(임대 291세대)를 제시한다.",
+      "note": "같은 공람의 개별시행안은 A5·A6을 분리한 6개 구역 1,521세대(임대 284세대)다. 이 기록은 5개 구역 통합시행안이다.",
+      "site_area_m2": 75559.7,
+      "supersedes_profile": true
+    },
+    "mt-202603-public-043": {
+      "floors": null,
+      "units": 1379,
+      "site_area_m2": 37287,
+      "kind": "공공관리사업 업무보고",
+      "scope": "성동구 응봉동 265 일대 2개 구역 전체",
+      "source_url": "https://ms.smc.seoul.kr/record/appendixDownload.do?key=e25a852e59718208ff328964a368ec2ca59952d5099dd0fff0b7001609f8aad327950e10edaf6fd6",
+      "source_as_of": "2025-04-22",
+      "evidence": "서울시의회 제330회 주택공간위원회 제2차 서울주택도시공사 업무보고. 응봉동 265 일대 공공관리 현황에 관리면적 37,287㎡와 2개 구역 1,379세대(임대 287세대)가 기재됐다.",
+      "note": "공공관리 업무보고 시점의 계획 규모이며 2개 구역을 하나로 통합하는 절차를 추진 중이었다."
+    },
+    "mt-202603-public-046": {
+      "floors": 26,
+      "units": 847,
+      "site_area_m2": 41623,
+      "kind": "관리계획 승인고시",
+      "scope": "구로구 개봉동 270-38 일대 전체 (A-1·A-2)",
+      "source_url": "https://event.seoul.go.kr/seoulsibo/fileDownload.do?fileName=seoulsibo_20251217162958_75587.pdf#page=328",
+      "source_as_of": "2025-12-18",
+      "supersedes_profile": true,
+      "evidence": "서울특별시 고시 제2025-714호 서울시보 327쪽. 분양 635세대와 임대 212세대, A-1 471세대와 A-2 376세대 모두 847세대에 해당한다.",
+      "field_evidence": {
+        "floors": {
+          "source_url": "https://news.seoul.go.kr/citybuild/archives/538623",
+          "source_as_of": "2026-05-22"
+        }
+      },
+      "note": "관리지역은 41,623㎡, 두 공동주택용지의 합계는 32,790㎡다. 서울시 2026년 5월 대상지 소개도 총 847세대이며, 최고 26층은 두 공동주택용지의 공개 규모다. 전체 예시는 도로와 존치 대지의 개별 위치를 반영하지 않는다."
+    },
+    "mt-202603-public-048": {
+      "floors": null,
+      "units": 1485,
+      "kind": "관리계획 통합심의",
+      "scope": "개봉동 20 일대",
+      "source_url": "https://www.seoul.go.kr/news/news_report.do?nttNo=470585",
+      "source_as_of": "2026-11-18",
+      "evidence": "서울시는 개봉동 20 일대 기존 1,161세대를 1,485세대 규모로 정비하는 계획을 발표했다.",
+      "site_area_m2": 65416.6,
+      "scope_geometry_mismatch": true,
+      "note": "현재 수록된 참고 외곽 면적(약 61,733㎡)과 심의 범위(65,416.6㎡)가 다르다.",
+      "field_evidence": {
+        "boundary_revision": {
+          "source_url": "https://event.seoul.go.kr/snews/data/CN_MST/seoulsibo_20260828163709_74413.pdf#page=31",
+          "source_as_of": "2026-08-27",
+          "evidence": "서울시 고시 제2026-478호, 30쪽. 제척 조정 후 59,776.2㎡에 5,640.4㎡를 추가해 65,416.6㎡로 변경했다."
+        }
+      }
+    },
+    "mt-202603-public-051": {
+      "floors": null,
+      "units": 1935,
+      "kind": "관리계획 변경 승인고시",
+      "scope": "쌍문동 524-87 일대 사업가능 2-1~2-5구역(2만㎡ 미만 시행안)",
+      "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=596685",
+      "source_as_of": "2024-10-17",
+      "evidence": "서울특별시 고시 제2024-492호의 2만㎡ 미만 시행안은 5개 구역에 총 1,935세대, 임대 371세대를 계획했다.",
+      "note": "동일 고시의 4만㎡ 미만 시행안은 2개 구역, 1,997세대다. 구체적 높이는 개별 사업시행 시 결정한다.",
+      "supersedes_profile": true,
+      "site_area_m2": 83526
+    },
+    "mt-202603-public-052": {
+      "floors": null,
+      "units": 799,
+      "kind": "관리계획 변경 승인고시",
+      "scope": "쌍문동 494-22 일대 사업가능 1-1·1-2구역(2만㎡ 미만 시행안)",
+      "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=596684",
+      "source_as_of": "2024-10-17",
+      "evidence": "서울특별시 고시 제2024-491호의 2만㎡ 미만 시행안은 2개 구역에 총 799세대, 임대 164세대를 계획했다.",
+      "note": "동일 고시의 4만㎡ 미만 시행안은 1개 구역, 881세대다. 구체적 높이는 개별 사업시행 시 결정한다.",
+      "supersedes_profile": true,
+      "site_area_m2": 37319.8
+    },
+    "mt-202603-public-056": {
+      "floors": null,
+      "units": 1165,
+      "kind": "관리계획 승인고시 내 일부 사업구역 소계",
+      "scope": "둔촌동 77-41 일대 A-1·A-2 사업추진구역",
+      "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=584798",
+      "source_as_of": "2023-12-28",
+      "evidence": "서울시 고시 제2023-605호 서울시보 609쪽 임대주택 공급표는 A-1 604세대와 A-2 561세대, 두 구역 소계 1,165세대를 명시한다.",
+      "note": "B-1 사업가능구역의 공급 세대수는 이 표에 없다. 1,165세대는 A-1·A-2 두 구역의 수치다. 높이는 용도지역 층수를 적용하도록 정했다.",
+      "scope_geometry_mismatch": true,
+      "separate_scopes": [
+        {
+          "scope": "B-1 둔촌2동 모아주택 3구역 조합 공고안",
+          "units": 448,
+          "floors": 29,
+          "site_area_m2": 14095.77,
+          "kind": "조합 경관심의 용역 입찰공고",
+          "source_url": "https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01815009&bidPbancOrd=000",
+          "source_as_of": "2026-11-06",
+          "evidence": "공고 제2026-1106-02호 사업개요 1쪽. 지하 3층~지상 29층, 448세대(임대 106세대). A-1·A-2 공급 계획과는 범위·시점이 다르다."
+        }
+      ]
+    },
+    "mt-202603-public-057": {
+      "floors": null,
+      "units": 971,
+      "kind": "관리계획 승인고시",
+      "scope": "천호동 113-2 일대 A·C구역",
+      "source_url": "https://news.seoul.go.kr/citybuild/archives/540500#:~:text=2026-345",
+      "source_as_of": "2026-06-25",
+      "evidence": "서울특별시 고시 제2026-345호는 A구역 554세대, C구역 417세대, 총 971세대(임대 155세대)를 계획했다.",
+      "site_area_m2": 58335
+    },
+    "mt-202603-public-061": {
+      "floors": null,
+      "units": 1250,
+      "kind": "관리계획 수립안 주민공람",
+      "scope": "상도동 279 일대 A-1 공동주택용지",
+      "source_url": "https://news.seoul.go.kr/citybuild/archives/543946#:~:text=2026-139",
+      "source_as_of": "2026-11-05",
+      "evidence": "동작구 공고 제2026-139호의 주택 규모별 공급표는 임대 128세대와 분양 1,122세대, 소계 1,250세대다.",
+      "site_area_m2": 49155
+    },
+    "mt-202603-public-068": {
+      "floors": 20,
+      "units": 772,
+      "kind": "관리계획 대상지 소개",
+      "scope": "목4동 728-1 일대 2개 구역(변경된 대표지번)",
+      "source_url": "https://news.seoul.go.kr/citybuild/archives/538504",
+      "source_as_of": "2026-05-22",
+      "evidence": "서울시는 변경된 728-1 일대 27,139㎡의 규모를 최고 20층 내외, 약 772세대로 안내한다.",
+      "note": "기존 명부의 724-1 일대에서 범위가 축소됐다. 지도 경계의 원자료 명칭은 목4동 728-1번지 일대다.",
+      "site_area_m2": 27139
+    },
+    "mt-202603-public-069": {
+      "floors": 22,
+      "units": 1786,
+      "kind": "관리계획 통합심의",
+      "scope": "목2동 231-27 일대",
+      "source_url": "https://www.seoul.go.kr/news/news_report.do?nttNo=470585",
+      "source_as_of": "2026-11-18",
+      "evidence": "전체 1,786세대이며 단지 최고 높이는 지상 22층이다. 용왕산 및 북측 저층주거지와 맞닿은 곳은 15층 이하로 계획했다.",
+      "site_area_m2": 72347,
+      "scope_geometry_mismatch": true,
+      "note": "현재 수록된 참고 외곽 면적(약 64,368㎡)과 심의 범위(72,347㎡)가 다르다.",
+      "field_evidence": {
+        "review": {
+          "source_url": "https://www.eum.go.kr/web/cp/hr/hrPeopleHearDet.jsp?seq=5537",
+          "source_as_of": "2026-07-30",
+          "evidence": "서울특별시 양천구 공고 제2026-1317호, 관리계획 공람 면적은 72,347.16㎡다."
+        }
+      }
+    },
+    "mt-202603-public-073": {
+      "floors": null,
+      "units": 507,
+      "kind": "관리계획 변경안 주민공람",
+      "scope": "청룡동 1535 일대 A1·B1·B2·B3 구역",
+      "source_url": "https://www.gwanak.go.kr/site/gwanak/ex/bbsNew/View.do?not_ancmt_mgt_no=40192&typeCode=1",
+      "source_as_of": "2026-02-12",
+      "evidence": "관악구 공고 제2026-317호의 변경안은 A1 206, B1 131, B2 102, B3 68세대, 합계 507세대(임대 71세대)다.",
+      "site_area_m2": 92420.1,
+      "field_evidence": {
+        "site_area_m2": {
+          "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=631139",
+          "source_as_of": "2026-02-05",
+          "evidence": "서울특별시 고시 제2026-69호. 2월 12일 공람안이 관리지역 면적을 유지했다."
+        }
+      }
+    },
+    "mt-202603-public-075": {
+      "floors": null,
+      "units": 2535,
+      "kind": "관리계획 승인고시",
+      "scope": "은천동 635-540 일대 사업가능 1-1~1-5구역",
+      "source_url": "https://news.seoul.go.kr/citybuild/archives/538433#:~:text=2026-218",
+      "source_as_of": "2026-04-23",
+      "evidence": "서울특별시 고시 제2026-218호의 공급 계획은 사업가능 5개 구역 합계 2,535세대(임대 445세대)다.",
+      "site_area_m2": 91988
+    },
+    "mt-202603-public-076": {
+      "floors": null,
+      "units": 2363,
+      "kind": "관리계획 승인고시",
+      "scope": "은천동 938-5 일대 사업가능 2-1~2-4구역",
+      "source_url": "https://news.seoul.go.kr/citybuild/archives/538433#:~:text=2026-219",
+      "source_as_of": "2026-04-23",
+      "evidence": "서울특별시 고시 제2026-219호의 공급 계획은 사업가능 4개 구역 합계 2,363세대(임대 415세대)다.",
+      "site_area_m2": 86070
+    },
+    "mt-202603-public-077": {
+      "floors": null,
+      "units": 1055,
+      "site_area_m2": 41569.3,
+      "kind": "관리계획 승인고시",
+      "scope": "관악구 난곡동 697-20 일대 전체 (A1·A2)",
+      "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=641915",
+      "source_as_of": "2026-01-08",
+      "evidence": "서울특별시 고시 제2026-17호 고시문 9쪽 공급계획표 전체 세대 합계 1,055세대. 이 중 임대 253세대.",
+      "note": "관리지역 전체의 공급 규모다. 사업구역 세부 경계와 도로·존치 구획은 이 전체 예시에 반영하지 않았다."
+    },
+    "mt-202603-public-078": {
+      "floors": null,
+      "units": 1900,
+      "kind": "관리계획 통합심의",
+      "scope": "자양1동 799 일대 모아주택 4개소",
+      "source_url": "https://www.seoul.go.kr/news/news_report.do?nttNo=455098",
+      "source_as_of": "2026-03-27",
+      "evidence": "광진구 자양1동 799 일대 4개 사업의 합계는 임대 329세대를 포함한 1,900세대다.",
+      "note": "1월 주민설명회의 1,887세대·최고 29층은 통합심의 전 수립안이다."
+    },
+    "mt-202603-public-079": {
+      "floors": null,
+      "units": 2325,
+      "site_area_m2": 95352.8,
+      "kind": "관리계획 승인고시",
+      "scope": "광진구 자양2동 649 일대 전체 (사업시행 1~5구역)",
+      "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=639882",
+      "source_as_of": "2026-04-30",
+      "evidence": "서울특별시 고시 제2026-239호 고시문 16쪽 공급계획표 전체 세대 합계 2,325세대. 이 중 임대 501세대.",
+      "note": "관리지역 전체의 공급 규모다. 사업구역 세부 경계와 도로·존치 구획은 이 전체 예시에 반영하지 않았다."
+    },
+    "mt-202603-public-087": {
+      "floors": null,
+      "units": 756,
+      "kind": "관리계획 수립안 주민공람",
+      "scope": "일원동 대청마을 북측구역 사업가능 1·2구역",
+      "source_url": "https://www.eum.go.kr/web/cp/hr/hrPeopleHearDet.jsp?seq=4573",
+      "source_as_of": "2026-04-17",
+      "evidence": "강남구 공고 제2026-1034호의 공급표에 사업구역 합계 756세대, 임대 216세대를 제시했다.",
+      "note": "시행구역 밖의 구간별 층수 기준은 사업구역 최고층과 구분된다.",
+      "site_area_m2": 90992
+    },
+    "mt-202603-resident-001": {
+      "floors": null,
+      "units": 418,
+      "kind": "관리계획 승인고시",
+      "scope": "숭인동 61 일대",
+      "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=639883",
+      "source_as_of": "2026-04-30",
+      "evidence": "서울특별시 고시 제2026-238호의 A-1 사업구역 공급 계획은 418세대(임대 61세대)다.",
+      "site_area_m2": 17413.3
+    },
+    "mt-202603-resident-002": {
+      "floors": 35,
+      "units": 438,
+      "kind": "관리계획 통합심의",
+      "scope": "서계동 116 일대",
+      "source_url": "https://www.seoul.go.kr/news/news_report.do?nttNo=467891",
+      "source_as_of": "2026-10-09",
+      "evidence": "준주거지역으로 상향하는 11,695.7㎡ 사업지에 임대 111세대를 포함한 438세대, 최고 35층을 계획했다.",
+      "site_area_m2": 11695.7
+    },
+    "mt-202603-resident-003": {
+      "floors": null,
+      "units": 518,
+      "kind": "관리계획 수립안 주민공람",
+      "scope": "금호동1가 129 일대",
+      "source_url": "https://www.eum.go.kr/web/cp/hr/hrPeopleHearDet.jsp?seq=4681",
+      "source_as_of": "2026-04-30",
+      "evidence": "성동구 공고 제2026-661호의 공동주택 공급 계획은 분양 429세대와 임대 89세대, 총 518세대다."
+    },
+    "mt-202603-resident-005": {
+      "floors": null,
+      "units": 1199,
+      "site_area_m2": 42920.89,
+      "kind": "관리계획 승인고시",
+      "scope": "광진구 자양1동 772-1 일대 전체 (A-1·A-2)",
+      "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=640709",
+      "source_as_of": "2026-07-30",
+      "evidence": "서울특별시 고시 제2026-437호 고시문 11쪽 공급계획표 전체 세대 합계 1,199세대. 이 중 임대 233세대.",
+      "note": "관리지역 전체의 공급 규모다. 사업구역 세부 경계와 도로·존치 구획은 이 전체 예시에 반영하지 않았다."
+    },
+    "mt-202603-resident-006": {
+      "floors": 27,
+      "units": 496,
+      "site_area_m2": 19441.79,
+      "kind": "관리계획 승인고시",
+      "scope": "광진구 자양1동 226-1 일대 전체 (A-3 단일 사업구역)",
+      "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=640708",
+      "source_as_of": "2026-07-30",
+      "evidence": "서울특별시 고시 제2026-438호 고시문 10쪽 공급계획표 전체 세대 합계 496세대. 이 중 임대 101세대.",
+      "note": "관리지역 전체의 공급 규모다. 사업구역 세부 경계와 도로·존치 구획은 이 전체 예시에 반영하지 않았다. 단일 사업구역의 27층·81m는 조합 공개 사업개요 기준이다. 조합 게시물은 기준일을 명시하지 않았다.",
+      "height_m": 81,
+      "field_evidence": {
+        "floors": {
+          "floors": 27,
+          "units": 496,
+          "height_m": 81,
+          "building_count": null,
+          "kind": "association_project_profile",
+          "scope": "자양1동 226-1번지 일대 모아타운 3구역 가로주택정비사업",
+          "source_url": "https://cleanup.seoul.go.kr/cafe/mastr-cleanup-bsnsSumry/execute.do?cafeId=215900001568N81&stepSeCode=102&div=sumry",
+          "source_as_of": null,
+          "evidence": "정비사업 정보몽땅 사업개요 건축시설계획에 지상 27층이 기재되어 있다. 분양·임대 면적 구간별 공급량의 합계는 496세대다. 건축시설계획의 최고높이는 81m다.",
+          "note": "조합 공개 사업개요 기준이며 게시 기준일과 최종 인가안 일치 여부는 미확인이다."
+        },
+        "height_m": {
+          "floors": 27,
+          "units": 496,
+          "height_m": 81,
+          "building_count": null,
+          "kind": "association_project_profile",
+          "scope": "자양1동 226-1번지 일대 모아타운 3구역 가로주택정비사업",
+          "source_url": "https://cleanup.seoul.go.kr/cafe/mastr-cleanup-bsnsSumry/execute.do?cafeId=215900001568N81&stepSeCode=102&div=sumry",
+          "source_as_of": null,
+          "evidence": "정비사업 정보몽땅 사업개요 건축시설계획에 지상 27층이 기재되어 있다. 분양·임대 면적 구간별 공급량의 합계는 496세대다. 건축시설계획의 최고높이는 81m다.",
+          "note": "조합 공개 사업개요 기준이며 게시 기준일과 최종 인가안 일치 여부는 미확인이다."
+        }
+      }
+    },
+    "mt-202603-resident-008": {
+      "floors": null,
+      "units": 591,
+      "kind": "관리계획 승인고시",
+      "scope": "구의3동 587-58 일대 A-1·A-2구역",
+      "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=644471",
+      "source_as_of": "2026-10-29",
+      "evidence": "승인 고시의 전체세대는 A-1구역 426세대, A-2구역 165세대로 합계 591세대다.",
+      "site_area_m2": 20358.1
+    },
+    "mt-202603-resident-010": {
+      "floors": null,
+      "units": 450,
+      "kind": "관리계획 통합심의",
+      "scope": "망우동 509 일대",
+      "source_url": "https://www.seoul.go.kr/news/news_report.do?nttNo=467891",
+      "source_as_of": "2026-10-09",
+      "evidence": "관리지역을 16,304.7㎡로 확대해 1개 단지에 임대 85세대를 포함한 공동주택 450세대를 계획했다."
+    },
+    "mt-202603-resident-012": {
+      "floors": null,
+      "units": 364,
+      "site_area_m2": 15030.93,
+      "kind": "관리계획 승인고시",
+      "scope": "성북구 정릉동 559-43 일대 전체 (A-1 단일 사업구역)",
+      "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=645471",
+      "source_as_of": "2026-04-30",
+      "evidence": "서울특별시 고시 제2026-236호 고시문 7쪽 공급계획표 전체 세대 합계 364세대. 이 중 임대 38세대.",
+      "note": "관리지역 전체의 공급 규모다. 사업구역 세부 경계와 도로·존치 구획은 이 전체 예시에 반영하지 않았다."
+    },
+    "mt-202603-resident-013": {
+      "floors": null,
+      "units": 782,
+      "kind": "관리계획 통합심의",
+      "scope": "정릉동 226-1 일대 모아주택 2개소",
+      "source_url": "https://www.seoul.go.kr/news/news_report.do?nttNo=447946",
+      "source_as_of": "2025-12-02",
+      "evidence": "서울시는 정릉동 226-1 일대 모아주택 2개소의 공급 규모를 임대 69세대를 포함해 총 782세대로 발표했다.",
+      "site_area_m2": 30111.1
+    },
+    "mt-202603-resident-015": {
+      "floors": null,
+      "units": 337,
+      "kind": "관리계획 통합심의",
+      "scope": "미아동 791-1134 일대",
+      "source_url": "https://www.seoul.go.kr/news/news_report.do?nttNo=468710",
+      "source_as_of": "2026-10-23",
+      "evidence": "서울시는 미아동 791-1134 일대 모아타운 계획을 수정가결했다. 기존 213세대에서 임대 34세대를 포함한 337세대로 늘어나는 안이다."
+    },
+    "mt-202603-resident-019": {
+      "floors": null,
+      "units": 529,
+      "kind": "관리계획 수립안 주민공람",
+      "scope": "연희동 520 일대 A-1구역",
+      "source_url": "https://news.seoul.go.kr/citybuild/archives/543191#:~:text=2026-1469",
+      "source_as_of": "2026-10-15",
+      "evidence": "서대문구 공고 제2026-1469호는 A-1 사업추진구역에 529세대를 배정했다. 임대주택은 53세대다.",
+      "site_area_m2": 19199
+    },
+    "mt-202603-resident-022": {
+      "floors": null,
+      "units": 677,
+      "kind": "관리계획 통합심의",
+      "scope": "목3동 644-1 일대",
+      "source_url": "https://www.seoul.go.kr/news/news_report.do?nttNo=452319",
+      "source_as_of": "2026-02-13",
+      "evidence": "관리계획안은 기존 270세대를 677세대로 늘리며 임대 124세대를 포함한다.",
+      "site_area_m2": 23475.6
+    },
+    "mt-202603-resident-023": {
+      "floors": 20,
+      "units": 586,
+      "kind": "관리계획 통합심의",
+      "scope": "시흥3동 972 일대 모아주택 3개소",
+      "source_url": "https://www.seoul.go.kr/news/news_report.do?nttNo=466168",
+      "source_as_of": "2026-09-11",
+      "evidence": "모아주택 3개소에 최고 20층 11개 동, 임대 118세대를 포함한 총 586세대를 계획했다."
+    },
+    "mt-202603-resident-027": {
+      "floors": null,
+      "units": 586,
+      "kind": "관리계획 통합심의",
+      "scope": "천호동 338 일대 1개 사업구역",
+      "source_url": "https://news.seoul.go.kr/citybuild/archives/530412",
+      "source_as_of": "2025-12-12",
+      "evidence": "서울시는 천호동 338 일대 모아주택 한 곳에서 기존 473세대를 586세대로 늘리는 계획을 발표했다.",
+      "site_area_m2": 20492.23
+    },
+    "mt-202603-resident-028": {
+      "floors": null,
+      "units": 607,
+      "kind": "관리계획 통합심의",
+      "scope": "하월곡동 40-107 일대",
+      "source_url": "https://www.seoul.go.kr/news/news_report.do?nttNo=470585",
+      "source_as_of": "2026-11-18",
+      "evidence": "기존 403세대에서 607세대로 늘리는 계획으로 임대주택 89세대를 포함한다."
+    },
+    "mt-202603-resident-029": {
+      "floors": null,
+      "units": 770,
+      "kind": "관리계획 수립안 주민공람",
+      "scope": "장위동 219-15 일대 2개 사업구역",
+      "source_url": "https://news.seoul.go.kr/citybuild/archives/544111#:~:text=2026-1819",
+      "source_as_of": "2026-11-12",
+      "evidence": "성북구 공고 제2026-1819호의 공급표는 2개 구역 합계 770세대, 임대 138세대다.",
+      "site_area_m2": 26229.2
+    },
+    "mt-202603-resident-031": {
+      "floors": null,
+      "units": 637,
+      "kind": "관리계획 수립안 주민 재공람",
+      "scope": "면목동 127-26 일대",
+      "source_url": "https://news.seoul.go.kr/citybuild/archives/544111#:~:text=2026-1573",
+      "source_as_of": "2026-11-12",
+      "evidence": "중랑구 공고 제2026-1573호의 공동주택 공급표는 637세대, 임대 107세대를 계획했다.",
+      "note": "10월 통합심의 발표의 626세대에서 주민 재공람안으로 변경됐다. 해발고도 107m 이하는 대공방어협조구역 기준이다.",
+      "site_area_m2": 26986.6
+    }
+  }
+}

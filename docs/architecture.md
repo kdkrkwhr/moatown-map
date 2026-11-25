@@ -35,3 +35,7 @@ GitHub Pages가 `main` 브랜치 루트의 정적 파일을 배포합니다. 브
 2. 화면 파일을 바꾼 뒤 `node scripts/sync-assets.mjs`를 실행합니다. 지도·소식 HTML에서 참조하는 CSS와 하위 모듈까지 같은 콘텐츠 해시를 붙입니다. 생성된 참조도 함께 커밋합니다.
 3. 저장소 루트에서 `node --test`를 실행합니다. 데이터 참조, 주소·지도 로직, 상세 지표, 사이트맵 목록과 배포용 캐시 태그를 검사합니다.
 4. GitHub Pages 배포 후 지도·소식 페이지와 상세 링크를 확인합니다. 검색용 `sitemap.xml`에는 두 페이지와 대상지·세부구역별 대표 URL을 담습니다. Google Search Console에서는 `https://moatownmap.com/` 속성의 `sitemap.xml` 처리 상태를 확인합니다. [사이트맵 열기](https://moatownmap.com/sitemap.xml) · [Search Console 사이트맵 보고서](https://search.google.com/search-console/sitemaps?resource_id=https%3A%2F%2Fmoatownmap.com%2F)
+
+## 건축 후 3D 배포 자료
+
+기존 배치도를 연결한 세 대상지는 원 도면을 사용한다. 추가 대상지의 예상 배치는 `node scripts/build-expanded-plans.mjs`로 미리 생성해 `moatown-data/plans/scenes/`에 저장한다. 한 대상지에서 전체 계획과 세부구역 계획이 모두 확인되면 두 장면을 따로 만든다. 브라우저는 선택한 대상지의 JSON을 읽으며, 배포 입력의 해시는 `node scripts/sync-pilot.mjs`로 갱신한다. [전체 수록 및 보류 목록](3d-plan-coverage.md)

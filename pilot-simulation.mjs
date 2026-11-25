@@ -1,4 +1,4 @@
-import booleanPointInPolygon from './vendor/turf/boolean-point-in-polygon.mjs?v=44ebb41f5cd0';
+import booleanPointInPolygon from './vendor/turf/boolean-point-in-polygon.mjs?v=d4517c7a007b';
 
 const LENGTH = 42, WIDTH = 14, UNITS_PER_FLOOR = 4;
 // Small margins keep the minimum distances intact after projection to WGS84.
@@ -88,8 +88,9 @@ function fitsSite(block, site) {
     if (booleanPointInPolygon(space.start, {type:'Polygon',coordinates:[block.ring]})) return false;
     if (space.edges.some(edge => block.edges.some(other => nearEdges(edge, other, space.clearance)))) return false;
   }
-  // A road notch can cross a footprint between two interior corners. Test every
-  // exterior and hole edge. An enclosed hole also lies within 7 m of an edge.
+  // A hole may fall entirely inside the footprint without crossing a wall.
+  if(site.geometry.coordinates.slice(1).some(ring=>booleanPointInPolygon(ring[0],{type:'Polygon',coordinates:[block.ring]})))return false;
+  // A road notch can cross a footprint between two interior corners.
   return !site.edges.some(edge => nearBoxes(block.box, edge.box, site.setback) &&
     block.edges.some(other => nearEdges(edge, other, site.setback)));
 }
@@ -113,6 +114,22 @@ function reservedSpace(features, frame) {
   return reserved;
 }
 
+// Spread a finite program over the usable site, including sites with long, narrow wings.
+function spreadAcrossSite(layout,target) {
+  if(layout.length<=target)return layout;
+  const remaining=layout.slice(),chosen=[];
+  const [left,bottom,right,top]=bounds(layout.map(block=>block.center));
+  let next=[(left+right)/2,(bottom+top)/2];
+  let distances=remaining.map(()=>Infinity);
+  while(chosen.length<target){
+    distances=remaining.map((block,i)=>Math.min(distances[i],(block.center[0]-next[0])**2+(block.center[1]-next[1])**2));
+    const index=distances.indexOf(chosen.length?Math.max(...distances):Math.min(...distances));
+    const [block]=remaining.splice(index,1);
+    distances.splice(index,1);chosen.push(block);next=block.center;
+  }
+  return chosen;
+}
+
 function layoutSite(site, occupied, target, settings) {
   if (!target) return [];
   const {length,width,gap,angles}=settings;
@@ -133,7 +150,7 @@ function layoutSite(site, occupied, target, settings) {
             if (fitsSite(block, site) && separated(block, occupied,gap)) layout.push(block);
           }
         }
-        if (layout.length >= target) return layout.slice(0, target);
+        if (layout.length >= target) return settings.spread?spreadAcrossSite(layout,target):layout.slice(0,target);
         if (layout.length > best.length) best = layout;
         candidates.push(...layout);
       }
@@ -178,7 +195,7 @@ function floorProfile(count, cap, units) {
   return floors;
 }
 
-export function generateSimulation(areas, zoneMap, plans, {design=null, program=design, publicSpace=null, layout=null}={}) {
+export function generateSimulation(areas, zoneMap, plans, {design=null, program=design, publicSpace=null, layout=null, schematic=false}={}) {
   const features = [], summaries = {}, occupied = [];
   const ordered = areas.filter(area => polygons(area.geometry)[0]?.[0]?.length >= 4 &&
     zoneMap.has(area.properties.entity_id)).sort((a, b) => a.properties.entity_id.localeCompare(b.properties.entity_id));
@@ -188,21 +205,27 @@ export function generateSimulation(areas, zoneMap, plans, {design=null, program=
   const reserved=reservedSpace([...(publicSpace?.features??[]),...traced],frame);
   const ordinaryAngles=Array.from({length:12},(_,i)=>i*15);
   // A traced layout supplies a local street-grid reference for the Sinwol design.
-  const settings={length:design?32:LENGTH,width:design?16:WIDTH,gap:design?DESIGN_SEPARATION:SEPARATION,
+  const compact=Boolean(design);
+  const settings={length:compact?32:LENGTH,width:compact?16:WIDTH,gap:compact?DESIGN_SEPARATION:SEPARATION,spread:schematic,
     angles:publicSpace && traced.length?[27,117,12,102,42,132,...ordinaryAngles]:ordinaryAngles};
   for (const area of ordered) {
     const zoneId = area.properties.entity_id, zone = zoneMap.get(zoneId);
+    const schematicPlan=schematic?(plans.zones[zoneId]??(area.properties.entity_type==='town'?plans.plan:null)):null;
     const records=design?.zones[zoneId]?.records??[];
     const shapes=traced.filter(f=>f.properties.zone_id===zoneId && polygons(f.geometry).length);
     const association=shapes.length && records.find(r=>r.stage_kind==='association_plan');
-    const [capFloors, capSource] = association?.floors?[association.floors,'association']:floorCap(plans?.zones?.[zoneId], plans?.plan);
+    const wholePlan=plans?.plan;
+    const sameDocument=schematicPlan?.source_as_of && schematicPlan.source_url===wholePlan?.source_url &&
+      schematicPlan.source_as_of===wholePlan.source_as_of;
+    const useTownCap=!schematic || !wholePlan?.scope_geometry_mismatch && (schematicPlan===wholePlan || sameDocument);
+    const [capFloors, capSource] = association?.floors?[association.floors,'association']:floorCap(plans?.zones?.[zoneId],useTownCap?wholePlan:null);
     const countRecord=records.find(r=>Number.isInteger(r.building_count) && r.building_count>0);
     const publishedProgram=program?.zones[zoneId]?.records?.find(r=>['approved_project_plan','public_inspection'].includes(r.stage_kind));
     const sameProgram=countRecord!=null && publishedProgram===countRecord;
-    const unitValue=association?.units??publishedProgram?.units??zone.planned_units_total;
+    const unitValue=association?.units??publishedProgram?.units??(schematicPlan?schematicPlan.units:zone.planned_units_total);
     const units = Number.isInteger(unitValue) && unitValue >= 0 ? unitValue : null;
-    const planHeight=plans?.zones?.[zoneId]?.height_m;
-    const usePlanHeight=capSource==='zone' && Number.isFinite(planHeight) && planHeight>0;
+    const planHeight=plans?.zones?.[zoneId]?.height_m??schematicPlan?.height_m;
+    const usePlanHeight=(capSource==='zone'||schematicPlan===plans?.plan && capSource==='town') && Number.isFinite(planHeight) && planHeight>0;
     const metersFor=floors=>usePlanHeight?Number((planHeight*floors/capFloors).toFixed(2)):floors*3;
     if(shapes.length){
       const profile=floorProfile(shapes.length,capFloors,null);
@@ -221,20 +244,42 @@ export function generateSimulation(areas, zoneMap, plans, {design=null, program=
         hasDrawingFloors:shapes.every(shape=>Number.isInteger(shape.properties.drawing_max_floors))};
       continue;
     }
-    const targetBlocks = countRecord?.building_count ?? (units == null ? null : Math.ceil(units / (capFloors * UNITS_PER_FLOOR)));
+    const publishedCount=countRecord?.building_count??schematicPlan?.building_count??null;
+    const targetBlocks = publishedCount ?? (units == null ? null : Math.ceil(units / (capFloors * UNITS_PER_FLOOR)));
     const blocks = [];
+    const dimensions=new Set();
     for (const polygon of polygons(area.geometry)) {
       const rings = polygon.map(ring => ring.map(frame.project));
       const site = { geometry: { type: 'Polygon', coordinates: rings }, edges: edges(rings), reserved,
-        setback:design?DESIGN_SETBACK:SETBACK };
-      const placed = layoutSite(site, occupied, (targetBlocks ?? Infinity) - blocks.length,settings);
+        setback:compact?DESIGN_SETBACK:SETBACK };
+      const remaining=(targetBlocks??Infinity)-blocks.length;
+      let placed=layoutSite(site,occupied,remaining,settings);
+      let dimensionsLabel='42×14m · 경계 10m · 동간 35m';
+      const compactSettings={...settings,length:32,width:16,gap:DESIGN_SEPARATION};
+      const compactSite={...site,setback:DESIGN_SETBACK};
+      if(schematic && placed.length<remaining && (Number.isFinite(remaining)||!placed.length)){
+        const alternate=layoutSite(compactSite,occupied,remaining,compactSettings);
+        if(alternate.length>placed.length){placed=alternate;dimensionsLabel='32×16m · 경계 5m · 동간 10m';}
+      }
+      if(schematic && (publishedCount||!placed.length) && placed.length<remaining){
+        // A smaller example footprint can fit a documented count on an irregular site.
+        const alternate=layoutSite(compactSite,occupied,remaining,{...compactSettings,length:24,width:12});
+        if(alternate.length>placed.length){placed=alternate;dimensionsLabel='24×12m · 경계 5m · 동간 10m';}
+      }
+      if(schematic && !placed.length && remaining>0 && units>0 && units<=80){
+        placed=layoutSite({...site,setback:3.1},occupied,remaining,{...compactSettings,length:16,width:9});
+        dimensionsLabel='16×9m · 경계 3m · 동간 10m';
+      }
+      if(schematic&&placed.length)dimensions.add(dimensionsLabel);
       occupied.push(...placed);
       blocks.push(...placed);
     }
     blocks.sort((a, b) => a.center[1] - b.center[1] || a.center[0] - b.center[0]);
     // Where the public plan specifies both count and skyline, the four-units-per-floor
     // assumption must not lower that documented maximum.
-    const heights = floorProfile(blocks.length, capFloors, sameProgram ? null : units);
+    const modelCap=schematic && capSource==='default' && units>0 && blocks.length?
+      Math.min(capFloors,Math.ceil(units/(blocks.length*UNITS_PER_FLOOR))):capFloors;
+    const heights = floorProfile(blocks.length, modelCap, sameProgram||schematic && publishedCount ? null : units);
     const meters=heights.map(metersFor);
     blocks.forEach((block, i) => {
       const id = 'sim-' + zoneId + '-' + (i + 1), floors = heights[i];
@@ -245,7 +290,8 @@ export function generateSimulation(areas, zoneMap, plans, {design=null, program=
     summaries[zoneId] = { blocks: blocks.length, minFloors: heights.length ? Math.min(...heights) : null,
       minHeight:meters.length?Math.min(...meters):null,maxHeight:meters.length?Math.max(...meters):null,usePlanHeight,
       maxFloors: heights.length ? Math.max(...heights) : null, capFloors, capSource, units, targetBlocks,
-      simulatedUnits: heights.reduce((sum, n) => sum + n * UNITS_PER_FLOOR, 0),countRecord };
+      simulatedUnits: heights.reduce((sum, n) => sum + n * UNITS_PER_FLOOR, 0),countRecord,publishedCount,
+      ...(schematic?{dimensions:[...dimensions]}:{}) };
   }
   return { features, summaries };
 }
