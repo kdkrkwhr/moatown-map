@@ -1,11 +1,11 @@
-import {projectUrl,renderProjectDetail,showUnplacedProgram} from './detail-view.mjs?v=d4517c7a007b';
-import {durationSamples,elapsedMonths,formatValue} from './detail-format.mjs?v=d4517c7a007b';
+import {projectUrl,renderProjectDetail,showUnplacedProgram} from './detail-view.mjs?v=b93a69eb7395';
+import {durationSamples,elapsedMonths,formatValue} from './detail-format.mjs?v=b93a69eb7395';
 export {elapsedMonths};
-import {loadMaps,createProjectMap} from './map-engine.mjs?v=d4517c7a007b';
-import {loadNews,matchNews,newsCard,sourceLabels} from './news.mjs?v=d4517c7a007b';
-import {searchProjects,managementFilters,progressFilters,recentProjectDates} from './project-search.mjs?v=d4517c7a007b';
-import {mountAddressLookup} from './address-reference.mjs?v=d4517c7a007b';
-import {mountPilotViewer} from './pilot-viewer.mjs?v=d4517c7a007b';
+import {loadMaps,createProjectMap} from './map-engine.mjs?v=b93a69eb7395';
+import {loadNews,matchNews,newsCard,sourceLabels} from './news.mjs?v=b93a69eb7395';
+import {searchProjects,managementFilters,progressFilters,recentProjectDates} from './project-search.mjs?v=b93a69eb7395';
+import {mountAddressLookup} from './address-reference.mjs?v=b93a69eb7395';
+import {mountPilotViewer} from './pilot-viewer.mjs?v=b93a69eb7395';
 const mobileMapQuery='(max-width: 760px) and (orientation: portrait), (max-width: 540px)';
 function initialSheetHeight(selection,hasFilters,mobile){
   if(!mobile)return 1;
@@ -75,6 +75,9 @@ function sourceLink(url,label='출처') {
 }
 const displayDate=value=>formatValue(value,'date');
 const stages=[
+  {label:'동의서 징구',short:'동의서 징구',ink:'#66547b',fill:'#baabcd',shape:'circle',description:'고시의 사업 추진현황에 동의서 징구로 기재되어 있습니다.'},
+  {label:'조합설립인가 반려',short:'조합인가 반려',ink:'#924f6a',fill:'#d89aaf',shape:'diamond',description:'관할 기관의 공개 자료에 조합설립인가 신청 반려가 기록되어 있습니다.'},
+  {label:'사업시행자 지정',short:'시행자 지정',ink:'#4a618e',fill:'#94aacf',shape:'circle',description:'관할 기관이 해당 사업의 시행자를 지정했습니다.'},
   {label:'조합설립 진행 중',short:'조합설립 중',ink:'#6746a3',fill:'#aa8bd9',shape:'circle',description:'주민들이 사업을 추진할 조합을 설립하는 단계입니다.'},
   {label:'조합설립인가',short:'조합설립인가',ink:'#523394',fill:'#9572ce',shape:'circle',description:'관할 구청이 조합 설립을 인가했습니다.'},
   {label:'건축심의',short:'건축심의',ink:'#87582a',fill:'#e8bd87',shape:'diamond',description:'공개 사업 현황에 건축심의 단계로 기록되어 있습니다.'},
@@ -82,6 +85,7 @@ const stages=[
   {label:'사업시행계획인가 진행 중',short:'사업인가 진행 중',ink:'#995117',fill:'#edac56',shape:'diamond',description:'사업시행계획의 인가 절차를 진행하는 단계입니다.'},
   {label:'사업시행계획인가',short:'사업인가 완료',ink:'#265d99',fill:'#80a9dd',shape:'triangle',description:'관할 구청이 사업시행계획을 인가했습니다. 구역 상세에서 인가일과 고시를 확인할 수 있습니다.'},
   {label:'착공',short:'착공',ink:'#006e62',fill:'#4bb8a1',shape:'square',description:'공사를 시작한 것으로 공개 자료에 표시된 단계입니다.'},
+  {label:'사업시행계획 폐지',short:'시행계획 폐지',ink:'#98463e',fill:'#cf938b',shape:'square',description:'관할 기관이 이 사업구역의 사업시행계획 폐지를 고시했습니다.'},
   {label:'미확인',short:'미확인',ink:'#586474',fill:'#a4adb8',shape:'ring',description:'해당 구역의 추진 단계를 확인할 공개 자료가 아직 없습니다.'}
 ];
 export function zoneStage(value){
@@ -335,7 +339,7 @@ export function mount({manifest,towns,zones,boundaries,excluded=[]},sdk){
       if(town.selected_date)meta.append(el('span',displayDate(town.selected_date)+' 선정'));
       const count=groups.get(town.id).length;
       if(count)meta.append(el('span','세부 '+count+'곳'));
-      if(chosen.plan || search.value.trim())meta.append(el('span',town.management_plan_stage || (town.management_plan_notices?.length?'관리계획 승인고시':'관리계획 미확인')));
+      if(town.candidate_status || chosen.plan || search.value.trim())meta.append(el('span',town.management_plan_stage || (town.management_plan_notices?.length?'관리계획 승인고시':town.candidate_status??'관리계획 미확인')));
       const note=el('span',undefined,'row-news');
       note.dataset.newsTown=town.id;
       note.hidden=!newsCounts.has(town.id);

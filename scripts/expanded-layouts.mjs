@@ -17,6 +17,7 @@ export function buildExpandedLayouts(town,children,shapes,whole,zoneSources,prev
   const plan=usable(whole)?whole:null;
   const zones={},modes={},updatedZones={};
   for(const z of children){
+    if(z.stage==='사업시행계획 폐지')continue;
     const record=zoneProgram(z,zoneSources[z.id]);
     if(!record)continue;
     if(record.scope_geometry_mismatch && usable(previousPrograms[z.id])){

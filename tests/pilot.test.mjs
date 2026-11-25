@@ -280,7 +280,8 @@ test('each of the pilot child records is tied to its own town and reference geom
       const original=zones.find(z=>z.id===id);
       assert.equal(record.derived_from.id,id);
       for(const key of ['floors','height_m','far_pct'])assert.equal(record[key],original[record.derived_from[key]]);
-      assert.equal(record.source_url,original.field_evidence.plan.source_url);
+      const evidence=record.derived_from.evidence.split('.').reduce((value,key)=>value?.[key],original);
+      assert.equal(record.source_url,evidence?.source_url);
     }
     for(const record of [value.plan,...Object.values(value.zones)].filter(Boolean)){
       assert.match(record.source_url,/^https:\/\//);

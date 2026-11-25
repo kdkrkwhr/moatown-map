@@ -351,12 +351,13 @@
     "mt-202603-public-078": {
       "floors": null,
       "units": 1900,
-      "kind": "관리계획 통합심의",
-      "scope": "자양1동 799 일대 모아주택 4개소",
-      "source_url": "https://www.seoul.go.kr/news/news_report.do?nttNo=455098",
-      "source_as_of": "2026-03-27",
-      "evidence": "광진구 자양1동 799 일대 4개 사업의 합계는 임대 329세대를 포함한 1,900세대다.",
-      "note": "1월 주민설명회의 1,887세대·최고 29층은 통합심의 전 수립안이다."
+      "kind": "관리계획 승인고시",
+      "scope": "자양1동 799 일대 A-1~A-4 통합 정비안",
+      "source_url": "https://event.seoul.go.kr/seoulsibo/fileDownload.do?fileName=seoulsibo_20260708113419_91414.pdf#page=292",
+      "source_as_of": "2026-07-09",
+      "evidence": "서울특별시 고시 제2026-397호. 서울시보 291쪽 승인 공급표의 4개 구역 통합 정비안은 총 1,900세대(임대 332), 별도 개별시행 대안은 총 1,504세대(임대 135)다. 이전 심의자료의 1,900세대와 같은 통합안이다.",
+      "site_area_m2": 73362.1,
+      "supersedes_profile": true
     },
     "mt-202603-public-079": {
       "floors": null,
@@ -539,12 +540,13 @@
     "mt-202603-resident-027": {
       "floors": null,
       "units": 586,
-      "kind": "관리계획 통합심의",
-      "scope": "천호동 338 일대 1개 사업구역",
-      "source_url": "https://news.seoul.go.kr/citybuild/archives/530412",
-      "source_as_of": "2025-12-12",
-      "evidence": "서울시는 천호동 338 일대 모아주택 한 곳에서 기존 473세대를 586세대로 늘리는 계획을 발표했다.",
-      "site_area_m2": 20492.23
+      "kind": "관리계획 승인고시",
+      "scope": "천호동 338 일대 A1 단일 사업구역",
+      "source_url": "https://event.seoul.go.kr/seoulsibo/fileDownload.do?fileName=seoulsibo_20260624163152_83531.pdf#page=84",
+      "source_as_of": "2026-06-25",
+      "evidence": "서울특별시 고시 제2026-346호. 서울시보 83쪽 임대주택 공급 및 인수 계획은 A1의 전체 586세대와 임대 122세대를 제시한다. 앞서 심의한 단일 사업구역과 같은 범위다.",
+      "site_area_m2": 20492.23,
+      "supersedes_profile": true
     },
     "mt-202603-resident-028": {
       "floors": null,
@@ -575,6 +577,49 @@
       "evidence": "중랑구 공고 제2026-1573호의 공동주택 공급표는 637세대, 임대 107세대를 계획했다.",
       "note": "10월 통합심의 발표의 626세대에서 주민 재공람안으로 변경됐다. 해발고도 107m 이하는 대공방어협조구역 기준이다.",
       "site_area_m2": 26986.6
+    },
+    "mt-202603-public-034": {
+      "floors": 35,
+      "units": 1242,
+      "kind": "관리계획 변경 승인고시",
+      "scope": "번동 429-114 일대 모아주택 A-1~A-3·B-1·B-2",
+      "source_url": "https://event.seoul.go.kr/seoulsibo/fileDownload.do?fileName=seoulsibo_20261014155938_38180.pdf#page=82",
+      "source_as_of": "2026-10-15",
+      "evidence": "서울특별시 고시 제2026-566호. 변경 공급계획 합계는 1,242세대(임대 163)이며, 서울시보 79쪽 높이 결정 조서에서 5개 시행구역 공동주택을 35층 이하로 정했다. 측량성과 반영 후 관리지역은 55,460.3㎡다.",
+      "site_area_m2": 55460.3,
+      "supersedes_profile": true
+    },
+    "mt-202603-public-006": {
+      "floors": null,
+      "units": 899,
+      "kind": "관리계획 변경안 주민 재공람",
+      "scope": "화곡6동 1130-7 일대 A-1~A-4 사업구역",
+      "source_url": "https://news.seoul.go.kr/citybuild/archives/542643#:~:text=2026-1628",
+      "source_as_of": "2026-09-16",
+      "evidence": "강서구 공고 제2026-1628호. 구보 22쪽 변경안은 4개 구역 515·114·211·59세대, 총 899세대(임대 103, 분양 796)다. 기정 860세대와 사업구역 구성 및 관리지역 면적이 같다. 공람안은 높이에 용도지역·용도지구 기준을 적용한다.",
+      "site_area_m2": 67957.1,
+      "supersedes_profile": true
+    },
+    "mt-202603-public-011": {
+      "floors": null,
+      "units": 403,
+      "kind": "관리계획 변경 승인고시",
+      "scope": "면목3·8동 44-6 일대 변경 관리지역의 사업추진 A1구역",
+      "source_url": "https://event.seoul.go.kr/seoulsibo/fileDownload.do?fileName=seoulsibo_20250115172613_99070.pdf#page=39",
+      "source_as_of": "2025-01-16",
+      "evidence": "서울특별시 고시 제2025-24호. 서울시보 38쪽 변경 공급표에 사업추진구역 A1(면목3·8동 42-8 일대)의 전체 403세대와 임대 107세대가 기재됐다. 필지선에 맞춰 관리지역을 76,525.5㎡에서 61,253.6㎡로 줄였다. 단지 전체 최고 층수는 용도지역 기준을 적용한다.",
+      "site_area_m2": 61253.6
+    },
+    "mt-202603-public-026": {
+      "floors": null,
+      "units": 2151,
+      "kind": "관리계획 변경 승인고시",
+      "scope": "시흥5동 922-16 일대 관리지역 A-1~A-8",
+      "source_url": "https://event.seoul.go.kr/seoulsibo/fileDownload.do?fileName=seoulsibo_20260828163709_74413.pdf#page=47",
+      "source_as_of": "2026-08-27",
+      "evidence": "서울특별시 고시 제2026-480호. 서울시보 46쪽에서 관리지역 8개 사업추진구역 공급 합계를 2,302세대에서 2,151세대(임대 717)로 변경했다. A-1은 544에서 393세대로 줄었고 A-2~A-8은 같다. 관리지역 지정면적은 89,944㎡로 동일하다.",
+      "site_area_m2": 89944,
+      "supersedes_profile": true
     }
   }
 }

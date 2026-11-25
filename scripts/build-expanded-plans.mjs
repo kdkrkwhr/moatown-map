@@ -84,7 +84,7 @@ const heldZones=zones.filter(z=>!pilot[z.town_id]&&(!index.towns[z.town_id]?.zon
   const p=local.zones[z.id],e=z.field_evidence?.plan??z.field_evidence?.planned_units_total;
   const r=p??(z.planned_units_total>0 && e?.source_url?{...e,scope:z.name,units:z.planned_units_total}:null);
   if(!r)return false;
-  heldPrograms[z.id]={...r,reason:r.scope_geometry_mismatch?'공개 계획과 수록 도형의 사업 범위가 다름':
+  heldPrograms[z.id]={...r,reason:z.stage==='사업시행계획 폐지'?'사업시행계획 폐지 고시':r.scope_geometry_mismatch?'공개 계획과 수록 도형의 사업 범위가 다름':
     !shapes.has(z.id)?'세부구역 참고 경계 미수록':'배치 범위 추가 대조'};
   return true;
 });

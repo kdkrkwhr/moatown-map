@@ -27,7 +27,9 @@ test('housing breakdowns reconcile with the published plan for their own zone',(
     if(zone.selected_contractor)assert.ok(zone.field_evidence.selected_contractor.source_url.startsWith('https://'));
   }
   const bun=zones.find(z=>z.name==='번동1구역');
-  assert.deepEqual(bun.published_private_area_bands.filter(row=>row.type==='임대').map(row=>[row.privateAreaBandM2,row.units]),[['40 초과~50 이하',12],['50 초과',18]]);
+  assert.deepEqual(bun.previous_plan.published_private_area_bands.filter(row=>row.type==='임대').map(row=>[row.privateAreaBandM2,row.units]),[['40 초과~50 이하',12],['50 초과',18]]);
+  assert.equal(bun.housing_allocation.rental,18);
+  assert.equal(bun.field_evidence.plan.notice_number,'서울특별시 고시 제2026-566호');
 });
 test('management notices stay scoped to each address in a joint listing',()=>{
   const manifest=read('../moatown-data/latest.json');
@@ -36,7 +38,8 @@ test('management notices stay scoped to each address in a joint listing',()=>{
   assert.equal(notices.length,manifest.coverage.management_plan_notice_records);
   assert.equal(towns.filter(t=>t.management_plan_notices?.length).length,manifest.coverage.towns_with_management_plan_notices);
   const joint=towns.find(t=>t.name==='등촌2동 515-44');
-  assert.deepEqual(joint.management_plan_notices.map(n=>[n.site,n.zone_count]),[['등촌2동 515-44',4],['등촌2동 520-3',2]]);
+  assert.deepEqual(joint.management_plan_notices.filter(n=>Number.isInteger(n.zone_count)).map(n=>[n.site,n.zone_count]),[['등촌2동 515-44',4],['등촌2동 520-3',2]]);
+  assert.deepEqual(joint.management_plan_notices.filter(n=>n.notice_number?.includes('2026-282')).map(n=>n.site).sort(),['등촌동 515-44','등촌동 520-3']);
 });
 test('published milestone intervals use calendar months and only apply to the cited project group',()=>{
   const manifest=read('../moatown-data/latest.json');

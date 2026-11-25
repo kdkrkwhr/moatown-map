@@ -7,6 +7,48 @@ const read=file=>JSON.parse(readFileSync(new URL('../moatown-data/'+file,import.
 const {files,coverage}=read('latest.json');
 const towns=read(files.towns),zones=read(files.zones),index=read(files.parcel_index);
 
+test('missing-field lists and published coverage describe the same snapshot',()=>{
+  const missing=read(files.review).missing_fields;
+  for(const [rows,absent,count,pick] of [
+    [towns,'town_rights_cutoff_history','towns_with_cutoff_history',t=>t.rights_cutoff_history?.length],
+    [towns,'town_land_transaction_permit','towns_with_permit_record',t=>t.land_transaction_permit],
+    [towns,'town_planned_units','towns_with_planned_units',t=>Number.isFinite(t.metrics?.planned_units)],
+    [zones,'zone_selected_contractor','zones_with_contractor',z=>z.selected_contractor],
+    [zones,'zone_stage','zones_with_stage',z=>z.stage],
+    [zones,'zone_planned_units_total','zone_records_with_plan_numbers',z=>Number.isFinite(z.planned_units_total)]
+  ]){
+    assert.deepEqual(missing[absent],rows.filter(row=>!pick(row)).map(row=>row.id));
+    assert.equal(coverage[count],rows.filter(pick).length);
+  }
+});
+
+test('published town metrics retain field sources and allocations reconcile within their own plan',()=>{
+  for(const t of towns){
+    for(const key of Object.keys(t.metrics??{})){
+      const e=t.field_evidence?.['metrics.'+key];
+      assert.ok(e?.source_url?.startsWith('https://') && e.checked_on && e.kind,t.id+' '+key);
+    }
+    for(const key of ['rental','sale_total']){
+      const a=t.housing_allocation?.[key];
+      if(a==null)continue;
+      const e=t.field_evidence['housing_allocation.'+key];
+      assert.equal(e.planned_units_in_source,t.metrics.planned_units,t.id);
+      assert.ok(a>=0 && a<=t.metrics.planned_units,t.id);
+    }
+    for(const h of t.rights_cutoff_history??[])assert.ok(h.scope && h.date && h.evidence?.source_url,t.id);
+  }
+});
+
+test('the Siheung revised plan and the Hwagok inspection draft each reconcile to their own rows',()=>{
+  for(const [id,total,rental] of [['mt-202603-public-026',2151,717],['mt-202603-public-006',899,103]]){
+    const t=towns.find(t=>t.id===id),rows=zones.filter(z=>z.town_id===id);
+    assert.equal(rows.reduce((sum,z)=>sum+z.planned_units_total,0),total);
+    assert.equal(rows.reduce((sum,z)=>sum+z.housing_allocation.rental,0),rental);
+    assert.equal(t.metrics.planned_units,total);
+    if(id.endsWith('006'))assert.ok(rows.every(z=>z.field_evidence.plan.kind==='management_plan_public_inspection'));
+  }
+});
+
 test('plan zoning coverage counts each town with a published planned area once',()=>{
   const withPlanAreas=towns.filter(town=>town.zoning?.areas?.some(
     area=>Number.isFinite(area?.planned_sqm) && area.planned_sqm>=0

@@ -50,7 +50,7 @@
     },
     "mt-202603-public-006": {
       "path": "plans/scenes/mt-202603-public-006.json",
-      "sha256": "4903324937500a2bfacf819a05d9e33d56cc954bcf0e4a36d8c2afaf07ded3fa",
+      "sha256": "3a3fb1fa1d16dbd0b1a86cb46028b5fa893da69389808bf5076d10bf1f3938ed",
       "modes": [
         "town",
         "zones"
@@ -82,7 +82,7 @@
     },
     "mt-202603-public-009": {
       "path": "plans/scenes/mt-202603-public-009.json",
-      "sha256": "bdc3b70350634e2fb7ca0dca20124bc273812bf584dd88e9fce6cdd2ac80b377",
+      "sha256": "e337ac304d06d0ceef48ff042d52659f889586b436db7a8ffc9416fdb5ef5048",
       "modes": [
         "town"
       ],
@@ -90,7 +90,7 @@
     },
     "mt-202603-public-011": {
       "path": "plans/scenes/mt-202603-public-011.json",
-      "sha256": "a129c36f8f38e2e2867cb23eb0f8d6ab1cdebcd94a58ab7df8d279ff81d8aa90",
+      "sha256": "d34c5b7aa1eb0a6942bf9b8948d5e0a37edf7d329ab5fa68629a541cf512f8ab",
       "modes": [
         "town"
       ],
@@ -113,7 +113,7 @@
     },
     "mt-202603-public-013": {
       "path": "plans/scenes/mt-202603-public-013.json",
-      "sha256": "21b2371c03c15ebeca7b3f8a1e42ed17612b93689f8596719a1f1c3008e17aaa",
+      "sha256": "5c3dc2d63221ce2451688b83d1a389fee34af03badefd425935ec3ee5e7b0112",
       "modes": [
         "town"
       ],
@@ -121,7 +121,7 @@
     },
     "mt-202603-public-014": {
       "path": "plans/scenes/mt-202603-public-014.json",
-      "sha256": "b14123b153bc84f276bc3e71f46bd2baa3c7799fe6c15c667183fca70e06a20c",
+      "sha256": "bd0e5e3be545ee3309ada09b4a444775c9e00f1730fba24647dbf41bcd0214d6",
       "modes": [
         "town"
       ],
@@ -205,7 +205,7 @@
     },
     "mt-202603-public-023": {
       "path": "plans/scenes/mt-202603-public-023.json",
-      "sha256": "e00ef14df0fc4c6fdc9df8582bba52e034809a1ca1763b58626e4dce912fd0fc",
+      "sha256": "280d80415c780cbc1de801fe54bf9d883927e28359362e6bae8c72df1b7ad8cf",
       "modes": [
         "town"
       ],
@@ -235,7 +235,7 @@
     },
     "mt-202603-public-026": {
       "path": "plans/scenes/mt-202603-public-026.json",
-      "sha256": "9ded4a202f7b615622f0076688ac9a044b11eb32b382cb9aa167820cfdbf977f",
+      "sha256": "375d8b17dd0c4b7dc966b371627fed14eb8aec1568aa820ed0b96bb552daac46",
       "modes": [
         "town"
       ],
@@ -278,14 +278,13 @@
     },
     "mt-202603-public-031": {
       "path": "plans/scenes/mt-202603-public-031.json",
-      "sha256": "34c582059bca9df54ae40b97b797c507de96f82c4f542da699e36920a6164c2c",
+      "sha256": "2d9d8f3fa456d2cfba44fee50653003220f19c2dce0693fa95610896451a61e3",
       "modes": [
         "town",
         "zones"
       ],
       "zone_ids": [
-        "mz-plan-587121-a-3",
-        "mz-plan-587121-a-8"
+        "mz-plan-587121-a-3"
       ]
     },
     "mt-202603-public-032": {
@@ -330,7 +329,7 @@
     },
     "mt-202603-public-037": {
       "path": "plans/scenes/mt-202603-public-037.json",
-      "sha256": "426907d16d39a869d5a3d26753a7a7ba3c278009adde4ab98c8442f042489ff2",
+      "sha256": "cee3e32d28cfa12ec6d94eb93cd1202b4f043118b948ee657e4e600d2b89114a",
       "modes": [
         "town"
       ],
@@ -384,7 +383,7 @@
     },
     "mt-202603-public-046": {
       "path": "plans/scenes/mt-202603-public-046.json",
-      "sha256": "a43e1b58a698b6f7f2c25cae19bd45a2b7ee4149e74d9ae45295cc255491678e",
+      "sha256": "5991c5d8be03afee00f146ac342ee42c6bc574b31b736aaaa3db85bd9f200ec6",
       "modes": [
         "town"
       ],
@@ -422,7 +421,7 @@
     },
     "mt-202603-public-051": {
       "path": "plans/scenes/mt-202603-public-051.json",
-      "sha256": "936b292c11254bdc19e6d008e01bbdb67e9aa735dec62718d41fd4a38495f3fd",
+      "sha256": "d0a09e3174ce89223efe007095b18ad0a141e059003f3069a0104d15ac881912",
       "modes": [
         "town"
       ],
@@ -430,7 +429,7 @@
     },
     "mt-202603-public-052": {
       "path": "plans/scenes/mt-202603-public-052.json",
-      "sha256": "f0263f6467983a3dd2ccfa5ad181348a39f017010237a71594069d12616b9dbd",
+      "sha256": "f141c92f630a2f01c1188ae248166104d05aacdecce69f15454d4f75ae3055c5",
       "modes": [
         "town"
       ],
@@ -446,7 +445,7 @@
     },
     "mt-202603-public-054": {
       "path": "plans/scenes/mt-202603-public-054.json",
-      "sha256": "e82106a1929694b50731a8f2278463de61457d7795da77e05f409418f29cd8d6",
+      "sha256": "67e92c8a3b85f8ee631d09bc2e05e66ab879593192df2dd3a1a3928572dc1a01",
       "modes": [
         "town"
       ],
@@ -586,7 +585,7 @@
     },
     "mt-202603-public-073": {
       "path": "plans/scenes/mt-202603-public-073.json",
-      "sha256": "3bf48c3b78cb71f420ae51e1efd54a0a7eaa2f760d0c8e89500641e9297fb2fa",
+      "sha256": "097bb4d0f21c7dd629172e5ce7e659f44a3ba897c6947fba8b96eacdab4c252c",
       "modes": [
         "town"
       ],
@@ -626,7 +625,7 @@
     },
     "mt-202603-public-078": {
       "path": "plans/scenes/mt-202603-public-078.json",
-      "sha256": "0035023d188631ddf073595372fce63996d2246c9808fabb7e290747f91f99e6",
+      "sha256": "da4413890887c0f8ef45dba761f718d938475df86af566359541014de146bc56",
       "modes": [
         "town"
       ],
@@ -733,7 +732,7 @@
     },
     "mt-202603-resident-008": {
       "path": "plans/scenes/mt-202603-resident-008.json",
-      "sha256": "a9619b365cfeb2bcf5390594d860a3f4e7152418be6ff6755fa00764fc5a2c24",
+      "sha256": "efc9a0692e20d3907a6e61e326abe900b2c37a4c4ac297e419d5b2d42ab9c1a7",
       "modes": [
         "town"
       ],
@@ -839,7 +838,7 @@
     },
     "mt-202603-resident-027": {
       "path": "plans/scenes/mt-202603-resident-027.json",
-      "sha256": "3e10a7bc2febc100bc55452a9b1bd9720607659fbe7b831a80c0dcfc6f7c538f",
+      "sha256": "640817607dea4ea6231917642548ad0834a647d7453d215c3ed87bdf86f5eed5",
       "modes": [
         "town"
       ],

@@ -59,7 +59,7 @@ export function projectIntervals(town,zone,snapshot){
   return events.map((event,i)=>{
     const next=events[i+1];
     const reached=next && (next.date || next.reached || next.completed || events.slice(i+2).some(e=>e.date));
-    const terminal=!next && ((zone??town).risk_info?.is_canceled===true || /준공|사업종료|취소|철회/.test(event.stage));
+    const terminal=!next && ((zone??town).risk_info?.is_canceled===true || /준공|사업종료|취소|철회|폐지/.test(event.stage));
     let label=intervalBadge(event.date,next?.date,snapshot,{ongoing:!reached,terminal});
     const monthOf=date=>date?.length===7 || dayNumber(date)!==null?date.slice(0,7):null;
     if(label===missing && (event.date?.length===7 || next?.date?.length===7)){
@@ -115,15 +115,25 @@ export function projectEvents(town,zone){
     }
     return events;
   }
-  const events=[{stage:'대상지 선정',date:town.selected_date_precision==='month'?town.selected_date?.slice(0,7):town.selected_date,source_url:town.sources?.[0]}];
+  const candidate=town.candidate_status && !town.selected_date;
+  const events=[candidate?{stage:town.candidate_status,date:town.field_evidence?.candidate_status?.source_as_of,source_url:town.field_evidence?.candidate_status?.source_url}:{stage:'대상지 선정',date:town.selected_date_precision==='month'?town.selected_date?.slice(0,7):town.selected_date,source_url:town.sources?.[0]}];
   const notices=town.management_plan_notices??[];
   // Separate addresses in a joint notice do not form sequential milestones.
   if(notices.length===1)events.push({stage:notices[0].notice_kind==='변경'?'관리계획 변경고시':'관리계획 승인고시',date:notices[0].notice_date,source_url:notices[0].notice_url??notices[0].source_url});
   else if(notices.length && notices.every(n=>n.notice_date===notices[0].notice_date))events.push({stage:'관리계획 공동 승인고시',date:notices[0].notice_date,source_url:notices[0].source_url});
   else if(notices.length>1){
     const ordered=[...notices].sort((a,b)=>(a.notice_date??'').localeCompare(b.notice_date??''));
-    if(ordered[0].notice_kind==='신규' && ordered.slice(1).every(n=>n.notice_kind==='변경')){
-      for(const n of ordered)events.push({stage:n.notice_kind==='신규'?'관리계획 승인고시':'관리계획 변경고시',date:n.notice_date,source_url:n.notice_url??n.source_url});
+    const originals=ordered.filter(n=>n.notice_kind!=='변경'),changes=ordered.filter(n=>n.notice_kind==='변경');
+    if(originals.length && originals.every(n=>n.notice_date && n.notice_date===ordered[0].notice_date) && changes.every(n=>n.notice_date>ordered[0].notice_date)){
+      const dates=new Map();
+      for(const n of ordered){
+        if(!dates.has(n.notice_date))dates.set(n.notice_date,[]);
+        dates.get(n.notice_date).push(n);
+      }
+      for(const [date,group] of dates){
+        const n=group[0],stage=n.notice_kind==='변경'?'관리계획 변경고시':group.length>1?'관리계획 공동 승인고시':'관리계획 승인고시';
+        events.push({stage,date,source_url:n.notice_url??n.source_url,scope:group.map(item=>item.site).filter(Boolean).join(' · ')});
+      }
     }else events.push({stage:'관리계획 고시',date:null,reached:true,scope:'구역별 고시일은 각 고시 원문에서 확인하세요.'});
   }
   if(shared){

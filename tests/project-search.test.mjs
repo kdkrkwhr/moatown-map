@@ -41,7 +41,7 @@ test('combined search returns the matching zone without siblings or duplicate pa
   assert.ok(search({query:'조합 설립'}).some(r=>r.zone?.stage==='조합설립인가'));
   assert.deepEqual(search({query:'관리계획 승인'}),search({plan:'approved'}));
   assert.ok(search({plan:'unknown',progress:'construction'}).every(({town,zone})=>!town.management_plan_stage && zone.stage==='착공'));
-  assert.equal(search({plan:'selected'}).length,towns.length);
+  assert.deepEqual(search({plan:'selected'}).map(row=>row.town.id),towns.filter(t=>!t.candidate_status || t.selected_date).map(t=>t.id));
 });
 
 test('unrecorded zone stages, unrecorded management plans and cancellation history retain their scope',()=>{
@@ -55,8 +55,12 @@ test('unrecorded zone stages, unrecorded management plans and cancellation histo
 
 test('published management intervals only compare a single dated notice to its own selection month',()=>{
   const stats=planIntervals(towns);
-  assert.equal(stats.months.size,56);
-  assert.equal(Math.round(stats.mean*10)/10,23.9);
+  const eligible=towns.filter(t=>t.selected_date && t.management_plan_notices?.length===1 &&
+    t.management_plan_notices[0].notice_kind!=='변경' && t.management_plan_notices[0].notice_date.slice(0,7)>=t.selected_date.slice(0,7));
+  assert.deepEqual([...stats.months.keys()],eligible.map(t=>t.id));
+  const fixture=[{id:'a',selected_date:'2024-10',management_plan_notices:[{notice_date:'2025-04-02'}]},
+    {id:'b',selected_date:'2025-01',management_plan_notices:[{notice_date:'2025-03-18'}]}];
+  assert.equal(planIntervals(fixture).mean,4);
   const amended=towns.find(t=>t.name==='수유동 52-1');
   assert.equal(amended.management_plan_notices[0].notice_kind,'변경');
   assert.ok(!stats.months.has(amended.id));

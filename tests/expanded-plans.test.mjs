@@ -76,7 +76,12 @@ test('every released mass fits its own boundary and all source-backed buildable 
       assert.ok(scene.modes.zones.summaries[id].blocks>0);
     }
   }
-  const expected=read(m.files.zones).filter(z=>!pilots.has(z.town_id)&&boundaries.has(z.id)&&!childPrograms[z.id]?.scope_geometry_mismatch&&
+  const zones=read(m.files.zones);
+  for(const z of zones.filter(z=>z.stage==='사업시행계획 폐지')){
+    assert.ok(!published[z.town_id]?.zone_ids.includes(z.id));
+    assert.equal(held[z.id]?.reason,'사업시행계획 폐지 고시');
+  }
+  const expected=zones.filter(z=>z.stage!=='사업시행계획 폐지'&&!pilots.has(z.town_id)&&boundaries.has(z.id)&&!childPrograms[z.id]?.scope_geometry_mismatch&&
     (z.planned_units_total>0&&z.field_evidence?.plan?.source_url || childPrograms[z.id]?.floors>0 || childPrograms[z.id]?.units>0));
   for(const z of expected)assert.ok(published[z.town_id]?.zone_ids.includes(z.id),'omitted eligible zone '+z.id);
   for(const [id,entry] of Object.entries(published)){
