@@ -31,7 +31,7 @@
 - `app.mjs`, `map-engine.mjs`, `styles.css`: 지도 화면과 배경지도·경계 및 선택 동작
 - `vendor/turf/`: 주소 좌표와 참고 외곽의 포함 관계를 판별하는 Turf 모듈과 라이선스
 
-완성된 스냅샷을 검증한 뒤 `moatown-data/latest.json`을 변경합니다. 대상지나 세부 구역 ID가 바뀌면 `node scripts/build-sitemap.mjs`로 도메인 루트의 사이트맵과 robots.txt를 갱신합니다. 사이트 갱신일은 공식 자료 기준일과 다릅니다. 공식 고시·공고 확인을 대체하지 않습니다.
+완성된 스냅샷을 검증한 뒤 `moatown-data/latest.json`을 변경합니다. `main`에 푸시하면 Pages 배포 작업이 최신 명부에서 자치구·대상지·세부구역 ID를 읽어 루트의 `sitemap.xml`과 `robots.txt`를 생성하고 테스트를 실행합니다. 로컬에서 같은 파일을 생성하려면 `node scripts/build-sitemap.mjs`를 실행합니다. 사이트 갱신일은 공식 자료 기준일과 다릅니다. 공식 고시·공고 확인을 대체하지 않습니다.
 
 
 ## 로컬 확인

@@ -1,3 +1,5 @@
+import {projectUrl} from './project-url.mjs?v=7469a89f1e9a';
+
 export const sourceLabels={official:'공식 자료',media:'언론 보도'};
 
 export async function loadNews(base,get=fetch){
@@ -57,7 +59,7 @@ export function newsCard(item,{towns,zones,compact=false}={}){
       const zone=zones?.get(site.zone_id);
       const verified=zone && zone.town_id===town.id;
       const target=element('a',town.district+' · '+(verified?zone.name:town.name));
-      target.href='./?'+new URLSearchParams(verified?{town:town.id,zone:zone.id}:{town:town.id});
+      target.href='./'+projectUrl(town,verified?zone:null).search;
       target.title='지도에서 '+target.textContent+' 보기';sites.append(target);
     }
     if(sites.childElementCount){

@@ -16,6 +16,10 @@ test('both public pages and the crawler entry point use the HTTPS custom domain'
   assert.equal(read('robots.txt').replaceAll('\r\n','\n'),'User-agent: *\nAllow: /\n\nSitemap: '+site+'sitemap.xml\n');
   for(const [file,path] of [['index.html',''],['news.html','news.html']]){
     const html=read(file);
+    assert.match(html,/<title>[^<]+<\/title>/);
+    for(const attribute of ['name="description"','property="og:title"','property="og:description"']){
+      assert.match(html,new RegExp('<meta '+attribute+' content="[^"]+"'));
+    }
     assert.ok(html.includes('<link rel="canonical" href="'+site+path+'">'));
     assert.ok(html.includes('<meta property="og:url" content="'+site+path+'">'));
     const image=new URL(html.match(/<meta property="og:image" content="([^"]+)"/)[1]);

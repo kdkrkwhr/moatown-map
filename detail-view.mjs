@@ -1,4 +1,6 @@
-import {formatValue,unitsChange,projectIntervals,compareInterval} from './detail-format.mjs?v=5003ff356a32';
+import {formatValue,unitsChange,projectIntervals,compareInterval} from './detail-format.mjs?v=7469a89f1e9a';
+import {projectUrl} from './project-url.mjs?v=7469a89f1e9a';
+export {projectUrl};
 
 const pending='미고시';
 const date=v=>formatValue(v,'date');
@@ -379,13 +381,6 @@ function publisher(url){
   if(h.endsWith('ycc.go.kr'))return '양천구의회';
   if(h.endsWith('data.go.kr'))return '공공데이터포털';
   return h;
-}
-export function projectUrl(town,zone){
-  const map=new URL('https://moatownmap.com/');
-  if(town?.id)map.searchParams.set('town',town.id);
-  else if(town?.address_raw)map.searchParams.set('cancellation',town.address_raw);
-  if(zone)map.searchParams.set('zone',zone.id);
-  return map;
 }
 export function reportIssueUrl(town,zone){
   const record=zone??town;
