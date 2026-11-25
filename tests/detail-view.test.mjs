@@ -6,6 +6,8 @@ import {groupSubAreas} from '../app.mjs';
 import {boundaryLabel,comparePlans,reportIssueUrl} from '../detail-view.mjs';
 import {searchProjects} from '../project-search.mjs';
 import {positionInGeometry} from '../address-reference.mjs';
+import {projectHtml} from '../scripts/project-html.mjs';
+import {projectParams} from '../project-url.mjs';
 
 const read=file=>JSON.parse(readFileSync(new URL('../moatown-data/'+file,import.meta.url),'utf8'));
 const {files,coverage}=read('latest.json'),towns=read(files.towns),zones=read(files.zones);
@@ -46,11 +48,10 @@ test('issue drafts carry the selected identifiers and a clean share link',()=>{
     assert.ok(url.searchParams.get('title').includes((child??town).name));
     const body=url.searchParams.get('body'),map=new URL(body.match(/https:\/\/[^\s]+/)[0]);
     assert.ok(body.includes('대상지 ID: '+town.id));
-    assert.equal(map.origin+map.pathname,'https://moatownmap.com/');
-    assert.equal(map.searchParams.get('district'),town.district);
+    assert.equal(map.origin,'https://moatownmap.com');
     assert.equal(body.includes('세부 구역 ID: '+zone.id),Boolean(child));
-    assert.equal(map.searchParams.get('town'),town.id);
-    assert.equal(map.searchParams.get('zone'),child?.id??null);
+    assert.equal(projectParams(map).get('town'),town.id);
+    assert.equal(projectParams(map).get('zone'),child?.id??null);
   }
   const archive=new URL(reportIssueUrl({district:'중구',name:'신당동',address_raw:'중구 신당동 122-3'})).searchParams.get('body');
   assert.ok(archive.includes('중구 신당동 122-3') && !archive.includes('undefined'));
@@ -60,9 +61,23 @@ test('the public sitemap includes one clean URL per town and child',()=>{
   const root='https://moatownmap.com/';
   const xml=readFileSync(new URL('../sitemap.xml',import.meta.url),'utf8');
   const urls=Array.from(xml.matchAll(/<loc>([^<]+)<\/loc>/g),m=>m[1].replaceAll('&amp;','&'));
-  const townUrls=new Map(towns.map(t=>[t.id,root+'?district='+encodeURIComponent(t.district)+'&town='+t.id]));
-  const expected=[root,root+'news.html',...townUrls.values(),...zones.map(z=>townUrls.get(z.town_id)+'&zone='+z.id)];
+  const townUrls=new Map(towns.map(t=>[t.id,root+'towns/'+t.id+'/']));
+  const expected=[root,root+'news.html',...townUrls.values(),...zones.map(z=>townUrls.get(z.town_id)+z.id+'/')];
   assert.deepEqual(urls.toSorted(),expected.toSorted());
+});
+
+test('Sinwol town and A1 publish their own metadata, stage and official evidence before JavaScript',()=>{
+  const template=readFileSync(new URL('../index.html',import.meta.url),'utf8');
+  const town=towns.find(t=>t.id==='mt-202603-public-067');
+  const zone=zones.find(z=>z.id==='mz-plan-584443-a1');
+  for(const child of [null,zone]){
+    const html=projectHtml(template,town,child,groups.get(town.id),'2026-11-25','https://moatownmap.com/');
+    const summary=html.match(/<article class="published-project">([\s\S]*?)<\/article>/)[1];
+    assert.ok(summary.includes('<h2>'+(child??town).name+'</h2>'));
+    assert.ok(summary.includes(child?zone.stage:town.management_plan_stage));
+    assert.ok(summary.includes('2026.11.25') && summary.includes('https://www.eum.go.kr/'));
+    assert.ok(html.includes('<link rel="canonical" href="https://moatownmap.com/towns/'+town.id+'/'+(child?zone.id+'/':'')+'">'));
+  }
 });
 
 test('published figures preserve units, a valid zero, and date precision',()=>{

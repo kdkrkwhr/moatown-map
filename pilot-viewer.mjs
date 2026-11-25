@@ -1,3 +1,5 @@
+import {projectParams,setProjectPath} from './project-url.mjs?v=3d4b75bd4b6b';
+
 const collection=features=>({type:'FeatureCollection',features});
 const count=value=>value.toLocaleString('ko-KR');
 const date=value=>value?value.replaceAll('-','.'):'미확인';
@@ -596,7 +598,7 @@ export function mountPilotViewer({manifest,boundaries,townById,groups}){
     if(!active?.data)return;
     active.zoneId=zoneId||null;active.building=null;choice.value=zoneId||'';
     const url=new URL(location.href);
-    if(zoneId)url.searchParams.set('zone',zoneId);else url.searchParams.delete('zone');
+    setProjectPath(url,active.town,zoneId?{id:zoneId}:null);
     history.replaceState(history.state,'',url);
     active.scene?.selectZone(active.zoneId);drawDetails();
   }
@@ -625,7 +627,7 @@ export function mountPilotViewer({manifest,boundaries,townById,groups}){
       const indexUrl=new URL(manifest.files.buildings,base),planUrl=new URL(manifest.files.pilot_plans,base);
       const inputsForTown=config.simulation_inputs?.[town.id];
       const [index,planBook,{createPilotScene},expanded]=await Promise.all([fetchJson(indexUrl,signal,config.hashes.buildings),
-        session.hasPlan && !inputsForTown?.path?fetchJson(planUrl,signal,config.hashes.pilot_plans):null,import('./pilot-scene.mjs?v=b081ee7adfd6'),
+        session.hasPlan && !inputsForTown?.path?fetchJson(planUrl,signal,config.hashes.pilot_plans):null,import('./pilot-scene.mjs?v=3d4b75bd4b6b'),
         inputsForTown?.path?fetchJson(new URL(inputsForTown.path,base),signal,inputsForTown.sha256):null]);
       if(expanded && expanded.town_id!==town.id)throw Error('예상 배치의 대상지 ID가 다릅니다.');
       const entry=index.towns[town.id],plans=expanded??planBook?.towns[town.id];
@@ -665,7 +667,7 @@ export function mountPilotViewer({manifest,boundaries,townById,groups}){
         simulation=session.simulate(session.placement);
       }else if(session.canSimulate){
         const modelAreas=areas.filter(a=>inputsForTown.zone_ids.includes(a.properties.entity_id));
-        const [module,inputs]=await Promise.all([import('./pilot-simulation.mjs?v=b081ee7adfd6'),
+        const [module,inputs]=await Promise.all([import('./pilot-simulation.mjs?v=3d4b75bd4b6b'),
           Promise.all([inputsForTown.design,inputsForTown.public_space,inputsForTown.layout].map(key=>key?fetchInput(key):null)).catch(error=>{designError=error;return null;})]);
         if(active!==session)return;
         const layout=inputs?.[2];
@@ -753,7 +755,7 @@ export function mountPilotViewer({manifest,boundaries,townById,groups}){
   }
   function restore(current){
     if(active){const same=active.background===location.href;close();return same;}
-    const params=new URLSearchParams(location.search);
+    const params=projectParams(new URL(location.href));
     return params.get('town')===current.townId && params.get('zone')===(current.zoneId??null) && fromUrl(current);
   }
   get('pilot-back').onclick=back;
@@ -779,7 +781,7 @@ export function mountPilotViewer({manifest,boundaries,townById,groups}){
     session.placement=next;session.data.simulation=session.simulate(next);
     const url=new URL(location.href);
     if(next==='spaced'||next==='town')url.searchParams.set('layout',next);else url.searchParams.delete('layout');
-    if(next==='town'){url.searchParams.delete('zone');session.zoneId=null;choice.value='';}
+    if(next==='town'){setProjectPath(url,session.town,null);session.zoneId=null;choice.value='';}
     history.replaceState(history.state,'',url);
     session.scene.destroy();session.scene=null;session.loadingScene=true;renderMode();
     try{

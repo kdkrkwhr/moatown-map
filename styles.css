@@ -136,6 +136,11 @@ body[data-loading=true] .map-loading { display: block; position: absolute; top: 
 .town-item::after, .zone-item::after, .chevron { content: ''; width: 7px; height: 7px; border: solid #79899e; border-width: 1.6px 1.6px 0 0; transform: rotate(45deg); }
 .town-item::after { position: absolute; right: var(--gutter); }
 .town-item:hover, .zone-item:hover, .back:hover { background: #f0f4ff; }
+a.town-item { color: inherit; text-decoration: none; }
+.published-project { padding: 20px; overflow: auto; }
+.published-project h3 { margin: 16px 0 5px; font-size: 15px; }
+.published-project ul { padding-left: 1.2em; }
+.published-project li + li { margin-top: 4px; }
 .town-item strong { font-size: 17px; line-height: 1.45; overflow-wrap: anywhere; }
 .row-meta { font-size: 12.5px; color: var(--sub); }
 .row-meta .district-name { color: var(--blue); font-weight: 650; }

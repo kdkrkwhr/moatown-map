@@ -1,5 +1,5 @@
-import {formatValue,unitsChange,projectIntervals,compareInterval} from './detail-format.mjs?v=b081ee7adfd6';
-import {projectUrl} from './project-url.mjs?v=b081ee7adfd6';
+import {formatValue,unitsChange,projectIntervals,compareInterval,projectStage} from './detail-format.mjs?v=3d4b75bd4b6b';
+import {projectUrl} from './project-url.mjs?v=3d4b75bd4b6b';
 export {projectUrl};
 
 const pending='미고시';
@@ -450,7 +450,7 @@ function summary(town,zone,intervals,badge,copyLink,comparison){
   const copy=el('button',null,'copy-link');copy.type='button';copy.title='링크 복사';copy.setAttribute('aria-label',copy.title);
   copy.addEventListener('click',copyLink);
   identity.append(place,copy);header.append(identity);
-  const stage=zone?r.stage:r.management_plan_stage??(r.management_plan_notices?.length?'관리계획 승인고시':r.candidate_status);
+  const stage=projectStage(town,zone);
   const badges=el('div',null,'summary-badges');
   const stageNode=stage?badge(stage):el('span','추진 단계 '+pending,'status-tag unverified');
   badges.append(stageNode);

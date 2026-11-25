@@ -2,6 +2,7 @@
 <html lang="ko">
 <head>
   <meta charset="utf-8">
+  <base href="/">
   <meta name="naver-site-verification" content="148cec6fb83263dcdbd56b6fc038c4f622dd01fd" />
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <meta name="description" content="서울시 모아타운 선정 대상지와 공개 사업구역 자료를 지도에서 탐색하세요.">
@@ -17,13 +18,13 @@
   <meta property="og:image" content="https://moatownmap.com/assets/seoul-panorama.webp">
   <meta property="og:image:alt" content="서울 시가지 전경">
   <link rel="sitemap" type="application/xml" href="/sitemap.xml">
-  <link rel="stylesheet" href="./styles.css?v=b081ee7adfd6">
-  <script type="module" src="./app.mjs?v=b081ee7adfd6"></script>
+  <link rel="stylesheet" href="./styles.css?v=3d4b75bd4b6b">
+  <script type="module" src="./app.mjs?v=3d4b75bd4b6b"></script>
 </head>
 <body data-loading="true">
 <a class="skip" href="#explorer">대상지 탐색으로 바로가기</a>
 <header class="topbar">
-  <h1><img class="brand-mark" src="/assets/moatownmap-logo.png" width="36" height="36" alt="">모아타운 현황지도</h1>
+  <h1><img class="brand-mark" src="/assets/moatownmap-logo.png" width="36" height="36" alt="">모아타운 현황지도<span id="heading-project" class="sr-only"></span></h1>
   <nav class="main-nav" aria-label="주 메뉴"><a href="./" aria-current="page">지도 탐색</a><a href="./news.html">사업 소식</a></nav>
   <div class="top-meta"><span class="updated">자료 갱신 <time id="snapshot-date">—</time></span>
     <button type="button" id="guide-open" aria-label="자료 안내" aria-haspopup="dialog" aria-controls="guide-dialog">자료 안내</button>

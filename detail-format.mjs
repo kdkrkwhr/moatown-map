@@ -5,6 +5,18 @@ const number=new Intl.NumberFormat('ko-KR',{maximumFractionDigits:4});
 const percent=new Intl.NumberFormat('ko-KR',{minimumFractionDigits:1,maximumFractionDigits:1});
 const approximate=new Intl.NumberFormat('ko-KR',{maximumFractionDigits:1});
 
+export function projectStage(town,zone){
+  return zone?zone.stage:town.management_plan_stage??(town.management_plan_notices?.length?'관리계획 승인고시':town.candidate_status);
+}
+
+export function projectMetadata(town,zone,snapshot){
+  const site='서울 모아타운 현황지도';
+  if(!town)return {title:site,description:'서울시 모아타운 선정 대상지와 공개 사업구역 자료를 지도에서 탐색하세요.'};
+  const name=town.district+' '+town.name+' 모아타운'+(zone?' · '+zone.name:'');
+  const stage=projectStage(town,zone)??'미확인';
+  return {title:name+' 현황 | '+site,description:name+'의 '+(zone?'사업 추진 단계':'관리계획 단계')+'는 '+stage+'입니다. '+formatValue(snapshot,'date')+' 기준 사업 정보와 근거 자료를 확인하세요.'};
+}
+
 export function dayNumber(value){
   if(typeof value!=='string')return null;
   const iso=value.replaceAll('.','-');
