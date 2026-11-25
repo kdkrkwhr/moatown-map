@@ -1,4 +1,4 @@
-import {projectUrl} from './project-url.mjs?v=8847e6027c36';
+import {projectUrl} from './project-url.mjs?v=ea63269c4509';
 
 export const sourceLabels={official:'공식 자료',media:'언론 보도'};
 
@@ -48,8 +48,13 @@ export function newsCard(item,{towns,zones,compact=false}={}){
   link.append(element('span','↗','outbound'));link.lastChild.setAttribute('aria-hidden','true');
   heading.append(link);
   const credit=[item.source];
-  if(!compact && item.notice_number)credit.push('공고 '+item.notice_number);
-  if(!compact && item.notice_on)credit.push('공고일 '+item.notice_on.replaceAll('-','.'));
+  if(!compact && item.notice_number){
+    const fullNumber=/고시|공고/.test(item.notice_number);
+    credit.push(fullNumber?item.notice_number:'공고 '+item.notice_number);
+  }
+  if(!compact && item.notice_on && item.notice_on!==item.published_on){
+    credit.push((item.notice_number?.includes('고시')?'고시일 ':'공고일 ')+item.notice_on.replaceAll('-','.'));
+  }
   article.append(meta,heading,element('p',credit.join(' · '),'publisher'));
   if(!compact && towns){
     const sites=element('div',null,'story-sites');

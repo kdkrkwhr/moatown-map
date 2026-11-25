@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "source_type": "official",
-  "collected_on": "2026-11-24",
+  "collected_on": "2026-11-25",
   "items": [
     {
       "id": "official-d9321f7d2748fd1b",
@@ -126,6 +126,42 @@
       "notice_number": "2026-3045"
     },
     {
+      "id": "official-1f3c7e105eb74c86",
+      "title": "구의3동 587-58번지 일대 소규모주택정비 관리계획(모아타운 관리계획) 수립 승인 및 지형도면 고시",
+      "source": "서울특별시",
+      "published_on": "2026-10-29",
+      "url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=644471",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-resident-008",
+          "zone_id": null,
+          "match_basis": "verified_management_plan_notice"
+        }
+      ],
+      "verified_on": "2026-11-25",
+      "notice_number": "서울특별시 고시 제2026-601호",
+      "notice_on": "2026-10-29"
+    },
+    {
+      "id": "official-830a79fa334c02be",
+      "title": "신월1동 137-1번지 일원 가로주택정비사업 조합설립인가 및 지형도면 고시",
+      "source": "서울특별시 양천구",
+      "published_on": "2026-10-29",
+      "url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=644883",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-067",
+          "zone_id": "mz-plan-584443-a2",
+          "match_basis": "verified_zone_notice"
+        }
+      ],
+      "verified_on": "2026-11-25",
+      "notice_number": "서울특별시 양천구 고시 제2026-99호",
+      "notice_on": "2026-10-29"
+    },
+    {
       "id": "official-201b50dcbef33d87",
       "title": "화곡6동 957-1 일대 모아타운 [A3구역] 가로주택정비사업 조합설립인가 및 지형도면 고시",
       "source": "강서구 고시(서울시 공식 목록)",
@@ -201,6 +237,192 @@
       "notice_on": "2026-09-29"
     },
     {
+      "id": "official-bafd9beb37ea8d9b",
+      "title": "주민 정보격차 해소 '모아주택 쾌속추진'… 서울시, 권역별 '우리조합 첫걸음 설명회' 개최",
+      "source": "서울특별시",
+      "published_on": "2026-09-21",
+      "url": "https://www.seoul.go.kr/news/news_report.do?nttNo=466892",
+      "classification": "common",
+      "related_sites": [],
+      "verified_on": "2026-11-25"
+    },
+    {
+      "id": "official-e377ca9ba384c4eb",
+      "title": "금천구 시흥3동 972번지 모아타운 통합심의 통과…모아주택 3곳 총586세대 공급",
+      "source": "서울특별시",
+      "published_on": "2026-09-11",
+      "url": "https://www.seoul.go.kr/news/news_report.do?nttNo=466168",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-resident-023",
+          "zone_id": null,
+          "match_basis": "published_project_and_catalog_town"
+        }
+      ],
+      "verified_on": "2026-11-25"
+    },
+    {
+      "id": "official-ccace41def044fd5",
+      "title": "자양동 637번지 일대 가로주택정비사업 조합설립인가 및 지형도면 고시",
+      "source": "서울특별시 광진구",
+      "published_on": "2026-09-01",
+      "url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=642005",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-079",
+          "zone_id": "mz-plan-639882-1121510500106370000",
+          "match_basis": "verified_zone_notice"
+        }
+      ],
+      "verified_on": "2026-11-25",
+      "notice_number": "서울특별시 광진구 고시 제2026-63호",
+      "notice_on": "2026-09-01"
+    },
+    {
+      "id": "official-bb91c5326704ecaf",
+      "title": "자양동 646번지 일대 가로주택정비사업 조합설립인가 및 지형도면 고시",
+      "source": "서울특별시 광진구",
+      "published_on": "2026-09-01",
+      "url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=642004",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-079",
+          "zone_id": "mz-plan-639882-1121510500106460000",
+          "match_basis": "verified_zone_notice"
+        }
+      ],
+      "verified_on": "2026-11-25",
+      "notice_number": "서울특별시 광진구 고시 제2026-64호",
+      "notice_on": "2026-09-01"
+    },
+    {
+      "id": "official-cb4b2068f85a29e7",
+      "title": "자양동 640번지 일대 가로주택정비사업 조합설립인가 및 지형도면 고시",
+      "source": "서울특별시 광진구",
+      "published_on": "2026-09-01",
+      "url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=642006",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-079",
+          "zone_id": "mz-plan-639882-1121510500106400000",
+          "match_basis": "verified_zone_notice"
+        }
+      ],
+      "verified_on": "2026-11-25",
+      "notice_number": "서울특별시 광진구 고시 제2026-65호",
+      "notice_on": "2026-09-01"
+    },
+    {
+      "id": "official-7b1389b3efbb1605",
+      "title": "자양1동 226-1번지 일대 모아타운 3구역 가로주택정비사업 조합설립인가 및 지형도면 고시",
+      "source": "서울특별시 광진구",
+      "published_on": "2026-09-01",
+      "url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=643523",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-resident-006",
+          "zone_id": "mz-plan-640708-a-3",
+          "match_basis": "verified_zone_notice"
+        }
+      ],
+      "verified_on": "2026-11-25",
+      "notice_number": "서울특별시 광진구 고시 제2026-69호",
+      "notice_on": "2026-09-01"
+    },
+    {
+      "id": "official-62d6ec2ccaa63eef",
+      "title": "자양1동 772-1번지 일대 모아타운 1구역 가로주택정비사업 조합설립인가 및 지형도면 고시",
+      "source": "서울특별시 광진구",
+      "published_on": "2026-09-01",
+      "url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=643521",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-resident-005",
+          "zone_id": "mz-plan-640709-a-1",
+          "match_basis": "verified_zone_notice"
+        }
+      ],
+      "verified_on": "2026-11-25",
+      "notice_number": "서울특별시 광진구 고시 제2026-67호",
+      "notice_on": "2026-09-01"
+    },
+    {
+      "id": "official-aae12940628d466f",
+      "title": "자양1동 772-1번지 일대 모아타운 2구역 가로주택정비사업 조합설립인가 및 지형도면 고시",
+      "source": "서울특별시 광진구",
+      "published_on": "2026-09-01",
+      "url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=643522",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-resident-005",
+          "zone_id": "mz-plan-640709-a-2",
+          "match_basis": "verified_zone_notice"
+        }
+      ],
+      "verified_on": "2026-11-25",
+      "notice_number": "서울특별시 광진구 고시 제2026-68호",
+      "notice_on": "2026-09-01"
+    },
+    {
+      "id": "official-df1ffdf36e448b6e",
+      "title": "광진 모아타운·성북 모아주택, 市 소규모주택정비 심의 통과…총643세대 공급",
+      "source": "서울특별시",
+      "published_on": "2026-08-28",
+      "url": "https://www.seoul.go.kr/news/news_report.do?nttNo=464807",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-resident-008",
+          "zone_id": null,
+          "match_basis": "published_project_and_catalog_town"
+        }
+      ],
+      "verified_on": "2026-11-25"
+    },
+    {
+      "id": "official-b81dcc61e0690752",
+      "title": "신월1동 99-1번지 일원 가로주택정비사업 조합설립인가 및 지형도면 고시",
+      "source": "서울특별시 양천구",
+      "published_on": "2026-08-13",
+      "url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=640660",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-067",
+          "zone_id": "mz-plan-584443-a3",
+          "match_basis": "verified_zone_notice"
+        }
+      ],
+      "verified_on": "2026-11-25",
+      "notice_number": "서울특별시 양천구 고시 제2026-77호",
+      "notice_on": "2026-08-13"
+    },
+    {
+      "id": "official-4a7af2e0ba7ba292",
+      "title": "면목3·8동 453-1번지 일대 소규모주택정비 관리계획(모아타운 관리계획) 승인 및 지형도면 고시",
+      "source": "서울특별시",
+      "published_on": "2026-08-06",
+      "url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=645351",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-023",
+          "zone_id": null,
+          "match_basis": "verified_management_plan_notice"
+        }
+      ],
+      "verified_on": "2026-11-25",
+      "notice_number": "서울특별시 고시 제2026-453호",
+      "notice_on": "2026-08-06"
+    },
+    {
       "id": "official-dfcac17dbffd695a",
       "title": "서울시, 모아타운·신통기획 '취소 구역' 전면 공개로 투기거래 차단한다",
       "source": "서울특별시 모아주택과",
@@ -208,6 +430,1958 @@
       "url": "https://www.seoul.go.kr/news/news_report.do?nttNo=463299",
       "classification": "common",
       "related_sites": []
+    },
+    {
+      "id": "official-f35c52e171761e59",
+      "title": "자양1동 799번지 일대 소규모주택정비 관리계획(모아타운 관리계획) 수립 승인 및 지형도면 고시",
+      "source": "서울특별시",
+      "published_on": "2026-07-09",
+      "url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=639881",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-078",
+          "zone_id": null,
+          "match_basis": "verified_management_plan_notice"
+        }
+      ],
+      "verified_on": "2026-11-25",
+      "notice_number": "서울특별시 고시 제2026-397호",
+      "notice_on": "2026-07-09"
+    },
+    {
+      "id": "official-580b6ec944c0ceec",
+      "title": "사당동 202-29번지 일대 소규모주택정비 관리계획(모아타운 관리계획) 변경 승인 및 지형도면 고시",
+      "source": "서울특별시",
+      "published_on": "2026-05-21",
+      "url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=644417",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-059",
+          "zone_id": null,
+          "match_basis": "verified_management_plan_notice"
+        }
+      ],
+      "verified_on": "2026-11-25",
+      "notice_number": "서울특별시 고시 제2026-281호",
+      "notice_on": "2026-05-21"
+    },
+    {
+      "id": "official-1a2873838995e249",
+      "title": "답십리동 489번지 일대 소규모주택정비 관리계획(모아타운 관리계획) 승인 및 지형도면 고시",
+      "source": "서울특별시",
+      "published_on": "2026-05-21",
+      "url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=641694",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-088",
+          "zone_id": null,
+          "match_basis": "verified_management_plan_notice"
+        }
+      ],
+      "verified_on": "2026-11-25",
+      "notice_number": "서울특별시 고시 제2026-288호",
+      "notice_on": "2026-05-21"
+    },
+    {
+      "id": "official-68792088cfdb0566",
+      "title": "서울시, 광진·중랑 모아타운 3곳 심의 통과…노후 주거지 정비에 지역 상생 더한다",
+      "source": "서울특별시",
+      "published_on": "2026-05-15",
+      "url": "https://www.seoul.go.kr/news/news_report.do?nttNo=458142",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-resident-005",
+          "zone_id": null,
+          "match_basis": "published_project_and_catalog_town"
+        },
+        {
+          "town_id": "mt-202603-resident-006",
+          "zone_id": null,
+          "match_basis": "published_project_and_catalog_town"
+        },
+        {
+          "town_id": "mt-202603-public-023",
+          "zone_id": null,
+          "match_basis": "published_project_and_catalog_town"
+        }
+      ],
+      "verified_on": "2026-11-25"
+    },
+    {
+      "id": "official-64abe53c93ac305c",
+      "title": "화곡1동 354번지 일대 소규모주택정비 관리계획(모아타운 관리계획) 변경 승인 및 지형도면 고시",
+      "source": "서울특별시",
+      "published_on": "2026-04-30",
+      "url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=645315",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-002",
+          "zone_id": null,
+          "match_basis": "verified_management_plan_notice"
+        }
+      ],
+      "verified_on": "2026-11-25",
+      "notice_number": "서울특별시 고시 제2026-233호",
+      "notice_on": "2026-04-30"
+    },
+    {
+      "id": "official-15259a7307873c6e",
+      "title": "숭인동 61번지 일대 소규모주택정비 관리계획(모아타운 관리계획) 승인 및 지형도면 고시",
+      "source": "서울특별시",
+      "published_on": "2026-04-30",
+      "url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=639883",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-resident-001",
+          "zone_id": null,
+          "match_basis": "verified_management_plan_notice"
+        }
+      ],
+      "verified_on": "2026-11-25",
+      "notice_number": "서울특별시 고시 제2026-238호",
+      "notice_on": "2026-04-30"
+    },
+    {
+      "id": "official-4f6fe6d18ce9263a",
+      "title": "대청마을 북측구역(일원동 619번지 일원) 소규모주택정비 관리계획(모아타운 관리계획) 수립(안) 주민공람 공고",
+      "source": "서울특별시 강남구",
+      "published_on": "2026-04-17",
+      "url": "https://www.eum.go.kr/web/cp/hr/hrPeopleHearDet.jsp?seq=4573",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-087",
+          "zone_id": null,
+          "match_basis": "published_project_and_catalog_town"
+        }
+      ],
+      "verified_on": "2026-11-25",
+      "notice_number": "2026-1034",
+      "notice_on": "2026-04-17"
+    },
+    {
+      "id": "official-c993a23020a84ebb",
+      "title": "서울특별시 마포구 합정동 369번지 일대 소규모주택정비 관리계획(모아타운 관리계획) 지정을 위하여「빈집 및 소규모주택 정비에 관한 특례법」 제43조의2(소규모주택정비 관리계획의 수립)에 따라 소규모주택정비 관리계획(모아타운 관리계획) 승인 및 「토지이용규제기본법」제8조 및 같은 법 시행령 제7조 규정에 따라 지형도면을 고시합니다.",
+      "source": "서울특별시",
+      "published_on": "2026-03-05",
+      "url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=631937",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-032",
+          "zone_id": null,
+          "match_basis": "verified_management_plan_notice"
+        }
+      ],
+      "verified_on": "2026-11-25",
+      "notice_number": "서울특별시 고시 제2026-111호",
+      "notice_on": "2026-03-05"
+    },
+    {
+      "id": "official-749ba3ddd5f316b7",
+      "title": "청룡동 1535번지 일대 소규모주택정비 관리계획(모아타운 관리계획) 변경 승인 및 지형도면 고시",
+      "source": "서울특별시",
+      "published_on": "2026-02-05",
+      "url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=631139",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-073",
+          "zone_id": null,
+          "match_basis": "verified_management_plan_notice"
+        }
+      ],
+      "verified_on": "2026-11-25",
+      "notice_number": "서울특별시 고시 제2026-69호",
+      "notice_on": "2026-02-05"
+    },
+    {
+      "id": "official-6a17532504bfb32c",
+      "title": "노량진동 221-24번지 일대 소규모주택정비 관리계획(모아타운 관리계획) 승인 및 지형도면 고시",
+      "source": "서울특별시",
+      "published_on": "2025-12-26",
+      "url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=628093",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-058",
+          "zone_id": null,
+          "match_basis": "verified_management_plan_notice"
+        }
+      ],
+      "verified_on": "2026-11-25",
+      "notice_number": "서울특별시 고시 제2025-737호",
+      "notice_on": "2025-12-26"
+    },
+    {
+      "id": "official-bd16d858b8bc2dc0",
+      "title": "홍제동 322번지 일대 소규모주택정비 관리계획(모아타운 관리계획) 승인 및 지형도면 고시",
+      "source": "서울특별시",
+      "published_on": "2025-12-26",
+      "url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=630320",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-084",
+          "zone_id": null,
+          "match_basis": "verified_management_plan_notice"
+        }
+      ],
+      "verified_on": "2026-11-25",
+      "notice_number": "서울특별시 고시 제2025-743호",
+      "notice_on": "2025-12-26"
+    },
+    {
+      "id": "official-03b5b4c912603a4b",
+      "title": "시흥4동 817번지 일대 소규모주택정비 관리계획(모아타운 관리계획) 변경 승인 및 지형도면 고시",
+      "source": "서울특별시",
+      "published_on": "2025-12-18",
+      "url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=631492",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-025",
+          "zone_id": null,
+          "match_basis": "verified_management_plan_notice"
+        }
+      ],
+      "verified_on": "2026-11-25",
+      "notice_number": "서울특별시 고시 제2025-708호",
+      "notice_on": "2025-12-18"
+    },
+    {
+      "id": "official-8c1c4208da7a6f1f",
+      "title": "구기동 100-48번지 일대 소규모주택정비 관리계획(모아타운 관리계획) 승인 및 지형도면 고시",
+      "source": "서울특별시",
+      "published_on": "2025-12-18",
+      "url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=630726",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-086",
+          "zone_id": null,
+          "match_basis": "verified_management_plan_notice"
+        }
+      ],
+      "verified_on": "2026-11-25",
+      "notice_number": "서울특별시 고시 제2025-717호",
+      "notice_on": "2025-12-18"
+    },
+    {
+      "id": "official-09dd3b37a14acb52",
+      "title": "구로동 511번지 일대 소규모주택정비 관리계획(모아타운 관리계획) 승인 및 지형도면 고시",
+      "source": "서울특별시",
+      "published_on": "2025-12-11",
+      "url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=628525",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-047",
+          "zone_id": null,
+          "match_basis": "verified_management_plan_notice"
+        }
+      ],
+      "verified_on": "2026-11-25",
+      "notice_number": "서울특별시 고시 제2025-687호",
+      "notice_on": "2025-12-11"
+    },
+    {
+      "id": "official-e4150b5fcde2796b",
+      "title": "홍은동 10-18번지 일대 소규모주택정비 관리계획(모아타운 관리계획) 승인 및 지형도면 고시",
+      "source": "서울특별시",
+      "published_on": "2025-12-04",
+      "url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=626249",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-resident-017",
+          "zone_id": null,
+          "match_basis": "verified_management_plan_notice"
+        }
+      ],
+      "verified_on": "2026-11-25",
+      "notice_number": "서울특별시 고시 제2025-666호",
+      "notice_on": "2025-12-04"
+    },
+    {
+      "id": "official-e84f8977d40b3290",
+      "title": "사당동 202-29번지 일대 소규모주택정비 관리계획(모아타운 관리계획) 변경 승인 및 지형도면 고시",
+      "source": "서울특별시",
+      "published_on": "2025-11-27",
+      "url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=626238",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-059",
+          "zone_id": null,
+          "match_basis": "verified_management_plan_notice"
+        }
+      ],
+      "verified_on": "2026-11-25",
+      "notice_number": "서울특별시 고시 제2025-643호",
+      "notice_on": "2025-11-27"
+    },
+    {
+      "id": "official-83f614ae2411da33",
+      "title": "불광동 170번지 일대 소규모주택정비 관리계획(모아타운 관리계획) 변경 승인 및 지형도면 고시",
+      "source": "서울특별시",
+      "published_on": "2025-11-06",
+      "url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=623053",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-071",
+          "zone_id": null,
+          "match_basis": "verified_management_plan_notice"
+        }
+      ],
+      "verified_on": "2026-11-25",
+      "notice_number": "서울특별시 고시 제2025-604호",
+      "notice_on": "2025-11-06"
+    },
+    {
+      "id": "official-8da2eb0fb4599ebc",
+      "title": "서울시, 모아타운 4개 지역 확정… 3,570세대 규모 주택공급 촉진",
+      "source": "서울특별시",
+      "published_on": "2025-10-17",
+      "url": "https://www.seoul.go.kr/news/news_report.do?nttNo=444792",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-086",
+          "zone_id": null,
+          "match_basis": "published_project_and_catalog_town"
+        },
+        {
+          "town_id": "mt-202603-public-077",
+          "zone_id": null,
+          "match_basis": "published_project_and_catalog_town"
+        },
+        {
+          "town_id": "mt-202603-public-058",
+          "zone_id": null,
+          "match_basis": "published_project_and_catalog_town"
+        },
+        {
+          "town_id": "mt-202603-public-084",
+          "zone_id": null,
+          "match_basis": "published_project_and_catalog_town"
+        }
+      ],
+      "verified_on": "2026-11-25"
+    },
+    {
+      "id": "official-cbf40dec062152c6",
+      "title": "목4동 728-1번지 일대 소규모주택정비 관리계획(모아타운 관리계획) 승인 및 지형도면 고시",
+      "source": "서울특별시",
+      "published_on": "2025-10-02",
+      "url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=625604",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-068",
+          "zone_id": null,
+          "match_basis": "verified_management_plan_notice"
+        }
+      ],
+      "verified_on": "2026-11-25",
+      "notice_number": "서울특별시 고시 제2025-548호",
+      "notice_on": "2025-10-02"
+    },
+    {
+      "id": "official-bc660740c8575373",
+      "title": "강북구 수유동1지역 (수유동 52-1번지 일대) 소규모주택정비 관리계획(모아타운 관리계획) 변경 승인 및 지형도면 고시",
+      "source": "서울특별시",
+      "published_on": "2025-09-25",
+      "url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=619723",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-037",
+          "zone_id": null,
+          "match_basis": "verified_management_plan_notice"
+        }
+      ],
+      "verified_on": "2026-11-25",
+      "notice_number": "서울특별시 고시 제2025-527호",
+      "notice_on": "2025-09-25"
+    },
+    {
+      "id": "official-d16539cac9b50fc5",
+      "title": "중화동 329-38번지 일대 소규모주택정비 관리계획(모아타운 관리계획) 변경결정(경미한 변경) 및 지형도면 고시",
+      "source": "서울특별시",
+      "published_on": "2025-09-04",
+      "url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=618072",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-018",
+          "zone_id": null,
+          "match_basis": "verified_management_plan_notice"
+        }
+      ],
+      "verified_on": "2026-11-25",
+      "notice_number": "서울특별시 고시 제2025-490호",
+      "notice_on": "2025-09-04"
+    },
+    {
+      "id": "official-72e4b0dba6350629",
+      "title": "창3동 501-13번지 일대 소규모주택정비 관리계획(모아타운 관리계획) 승인 및 지형도면 고시",
+      "source": "서울특별시",
+      "published_on": "2025-08-28",
+      "url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=618698",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-055",
+          "zone_id": null,
+          "match_basis": "verified_management_plan_notice"
+        }
+      ],
+      "verified_on": "2026-11-25",
+      "notice_number": "서울특별시 고시 제2025-485호",
+      "notice_on": "2025-08-28"
+    },
+    {
+      "id": "official-e5c900e40732153e",
+      "title": "원효로4가 71번지 일대 소규모주택정비 관리계획(모아타운 관리계획) 승인 및 지형도면 고시",
+      "source": "서울특별시",
+      "published_on": "2025-07-31",
+      "url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=616239",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-085",
+          "zone_id": null,
+          "match_basis": "verified_management_plan_notice"
+        }
+      ],
+      "verified_on": "2026-11-25",
+      "notice_number": "서울특별시 고시 제2025-421호",
+      "notice_on": "2025-07-31"
+    },
+    {
+      "id": "official-2cd94e2ccea64d5b",
+      "title": "`모아주택` 마포·금천구 3곳 1,965세대 공급… 서울시, 주택공급 속도 높인다",
+      "source": "서울특별시",
+      "published_on": "2025-07-22",
+      "url": "https://www.seoul.go.kr/news/news_report.do?nttNo=439883",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-030",
+          "zone_id": "mz-plan-584518-a-1",
+          "match_basis": "published_project_and_catalog_zone"
+        },
+        {
+          "town_id": "mt-202603-public-024",
+          "zone_id": null,
+          "match_basis": "published_project_and_catalog_town"
+        },
+        {
+          "town_id": "mt-202603-public-025",
+          "zone_id": null,
+          "match_basis": "published_project_and_catalog_town"
+        }
+      ],
+      "verified_on": "2026-11-25"
+    },
+    {
+      "id": "official-f611a09ab72664cd",
+      "title": "공항동 55-327 일대 소규모주택정비 관리계획(모아타운 관리계획) 승인 및 지형도면 고시",
+      "source": "서울특별시",
+      "published_on": "2025-07-17",
+      "url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=615059",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-008",
+          "zone_id": null,
+          "match_basis": "verified_management_plan_notice"
+        }
+      ],
+      "verified_on": "2026-11-25",
+      "notice_number": "서울특별시 고시 제2025-388호",
+      "notice_on": "2025-07-17"
+    },
+    {
+      "id": "official-f45841494d7983f7",
+      "title": "화곡6동 957-1 일대 소규모주택정비 관리계획(모아타운 관리계획) 승인 및 지형도면 고시",
+      "source": "서울특별시",
+      "published_on": "2025-06-26",
+      "url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=614147",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-009",
+          "zone_id": null,
+          "match_basis": "verified_management_plan_notice"
+        }
+      ],
+      "verified_on": "2026-11-25",
+      "notice_number": "서울특별시 고시 제2025-343호",
+      "notice_on": "2025-06-26"
+    },
+    {
+      "id": "official-73dc4c4201f47fa0",
+      "title": "월계동 534번지 일대 소규모주택정비 관리계획(모아타운 관리계획) 승인 및 지형도면 고시",
+      "source": "서울특별시",
+      "published_on": "2025-06-26",
+      "url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=614146",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-050",
+          "zone_id": null,
+          "match_basis": "verified_management_plan_notice"
+        }
+      ],
+      "verified_on": "2026-11-25",
+      "notice_number": "서울특별시 고시 제2025-342호",
+      "notice_on": "2025-06-26"
+    },
+    {
+      "id": "official-8b8e3144dde53a4f",
+      "title": "상도동 242번지 일대 소규모주택정비 관리계획(모아타운 관리계획) 승인 및 지형도면 고시",
+      "source": "서울특별시",
+      "published_on": "2025-06-19",
+      "url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=614691",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-060",
+          "zone_id": null,
+          "match_basis": "verified_management_plan_notice"
+        }
+      ],
+      "verified_on": "2026-11-25",
+      "notice_number": "서울특별시 고시 제2025-317호",
+      "notice_on": "2025-06-19"
+    },
+    {
+      "id": "official-ebfc688f8332a4c5",
+      "title": "현저동 1-5번지 일대 소규모주택정비 관리계획(모아타운 관리계획) 승인 및 지형도면 고시",
+      "source": "서울특별시",
+      "published_on": "2025-06-19",
+      "url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=616203",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-resident-016",
+          "zone_id": null,
+          "match_basis": "verified_management_plan_notice"
+        }
+      ],
+      "verified_on": "2026-11-25",
+      "notice_number": "서울특별시 고시 제2025-322호",
+      "notice_on": "2025-06-19"
+    },
+    {
+      "id": "official-b05afb3762334f78",
+      "title": "쌍문동 460번지 일대 소규모주택정비 관리계획(모아타운 관리계획) 승인 및 지형도면 고시",
+      "source": "서울특별시",
+      "published_on": "2025-05-08",
+      "url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=610051",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-054",
+          "zone_id": null,
+          "match_basis": "verified_management_plan_notice"
+        }
+      ],
+      "verified_on": "2026-11-25",
+      "notice_number": "서울특별시 고시 제2025-259호",
+      "notice_on": "2025-05-08"
+    },
+    {
+      "id": "official-ef5201a996542c29",
+      "title": "방학동 618번지 일대 소규모주택정비 관리계획(모아타운 관리계획) 승인 및 지형도면 고시",
+      "source": "서울특별시",
+      "published_on": "2025-05-01",
+      "url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=610807",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-053",
+          "zone_id": null,
+          "match_basis": "verified_management_plan_notice"
+        }
+      ],
+      "verified_on": "2026-11-25",
+      "notice_number": "서울특별시 고시 제2025-238호",
+      "notice_on": "2025-05-01"
+    },
+    {
+      "id": "official-15a0d93b255c0429",
+      "title": "중동 78번지 일대 소규모주택정비 관리계획(모아타운 관리계획) 승인 및 지형도면 고시",
+      "source": "서울특별시",
+      "published_on": "2025-04-24",
+      "url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=611308",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-033",
+          "zone_id": null,
+          "match_basis": "verified_management_plan_notice"
+        }
+      ],
+      "verified_on": "2026-11-25",
+      "notice_number": "서울특별시 고시 제2025-224호",
+      "notice_on": "2025-04-24"
+    },
+    {
+      "id": "official-a6b99a3269edae6f",
+      "title": "서울시, 모아타운 2건 통합심의 통과… 총 2,167세대 공급",
+      "source": "서울특별시",
+      "published_on": "2025-03-25",
+      "url": "https://www.seoul.go.kr/news/news_report.do?nttNo=431853",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-009",
+          "zone_id": null,
+          "match_basis": "published_project_and_catalog_town"
+        },
+        {
+          "town_id": "mt-202603-public-033",
+          "zone_id": null,
+          "match_basis": "published_project_and_catalog_town"
+        }
+      ],
+      "verified_on": "2026-11-25"
+    },
+    {
+      "id": "official-4ab56dcd29c4ca65",
+      "title": "석관동 334-69번지 일대 소규모주택정비 관리계획(모아타운 관리계획)변경 승인 및 지형도면 고시",
+      "source": "서울특별시",
+      "published_on": "2025-03-20",
+      "url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=607900",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-064",
+          "zone_id": null,
+          "match_basis": "verified_management_plan_notice"
+        }
+      ],
+      "verified_on": "2026-11-25",
+      "notice_number": "서울특별시 고시 제2025-143호",
+      "notice_on": "2025-03-20"
+    },
+    {
+      "id": "official-33a458a0db8a6431",
+      "title": "석관동 261-22번지 일대 소규모주택정비 관리계획(모아타운 관리계획)변경 승인 및 지형도면 고시",
+      "source": "서울특별시",
+      "published_on": "2025-03-20",
+      "url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=607899",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-065",
+          "zone_id": null,
+          "match_basis": "verified_management_plan_notice"
+        }
+      ],
+      "verified_on": "2026-11-25",
+      "notice_number": "서울특별시 고시 제2025-144호",
+      "notice_on": "2025-03-20"
+    },
+    {
+      "id": "official-d28bfc27666ad754",
+      "title": "천연동 89-16 일대 소규모주택정비 관리계획(모아타운 관리계획) 승인 및 지형도면 고시",
+      "source": "서울특별시",
+      "published_on": "2025-03-13",
+      "url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=606937",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-083",
+          "zone_id": null,
+          "match_basis": "verified_management_plan_notice"
+        }
+      ],
+      "verified_on": "2026-11-25",
+      "notice_number": "서울특별시 고시 제2025-135호",
+      "notice_on": "2025-03-13"
+    },
+    {
+      "id": "official-ee8f8cd642ca9cac",
+      "title": "서울시, 모아타운‧모아주택 4건 통합심의 통과… 총 1,919세대 공급",
+      "source": "서울특별시 서울주거포털",
+      "published_on": "2025-01-24",
+      "url": "https://housing.seoul.go.kr/site/main/board/news/12360",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-016",
+          "zone_id": null,
+          "match_basis": "published_project_and_catalog_town"
+        }
+      ],
+      "verified_on": "2026-11-25"
+    },
+    {
+      "id": "official-64a2def50b1440f8",
+      "title": "면목5동 152-1번지 일대 소규모주택정비 관리계획(모아타운 관리계획) 승인 및 지형도면 고시",
+      "source": "서울특별시",
+      "published_on": "2025-01-23",
+      "url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=605445",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-015",
+          "zone_id": null,
+          "match_basis": "verified_management_plan_notice"
+        }
+      ],
+      "verified_on": "2026-11-25",
+      "notice_number": "서울특별시 고시 제2025-44호",
+      "notice_on": "2025-01-23"
+    },
+    {
+      "id": "official-e1604523325ef2da",
+      "title": "면목3·8동 44-6번지 일대 소규모주택정비 관리계획(모아타운 관리계획) 결정(변경) 및 지형도면 고시",
+      "source": "서울특별시",
+      "published_on": "2025-01-16",
+      "url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=604352",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-011",
+          "zone_id": null,
+          "match_basis": "verified_management_plan_notice"
+        }
+      ],
+      "verified_on": "2026-11-25",
+      "notice_number": "서울특별시 고시 제2025-24호",
+      "notice_on": "2025-01-16"
+    },
+    {
+      "id": "official-260adbf6290a1260",
+      "title": "마장동 457번지 일대 소규모주택정비 관리계획(모아타운 관리계획) 승인 및 지형도면 고시",
+      "source": "서울특별시",
+      "published_on": "2024-12-26",
+      "url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=607655",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-042",
+          "zone_id": null,
+          "match_basis": "verified_management_plan_notice"
+        }
+      ],
+      "verified_on": "2026-11-25",
+      "notice_number": "서울특별시 고시 제2024-642호",
+      "notice_on": "2024-12-26"
+    },
+    {
+      "id": "official-e8133b345b4205b8",
+      "title": "고척동 241번지 일대 소규모주택정비 관리계획(모아타운 관리계획) 승인 및 지형도면 고시",
+      "source": "서울특별시",
+      "published_on": "2024-12-26",
+      "url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=601972",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-044",
+          "zone_id": null,
+          "match_basis": "verified_management_plan_notice"
+        }
+      ],
+      "verified_on": "2026-11-25",
+      "notice_number": "서울특별시 고시 제2024-672호",
+      "notice_on": "2024-12-26"
+    },
+    {
+      "id": "official-cb2fee6cbcadc48a",
+      "title": "구로동 728번지 일대 소규모주택정비 관리계획(모아타운 관리계획) 승인 및 지형도면 고시",
+      "source": "서울특별시",
+      "published_on": "2024-12-26",
+      "url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=602403",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-045",
+          "zone_id": null,
+          "match_basis": "verified_management_plan_notice"
+        }
+      ],
+      "verified_on": "2026-11-25",
+      "notice_number": "서울특별시 고시 제2024-671호",
+      "notice_on": "2024-12-26"
+    },
+    {
+      "id": "official-2610cc36e416dc0c",
+      "title": "대림3동 786번지 일대 소규모주택정비 관리계획(모아타운 관리계획) 승인 및 지형도면 고시",
+      "source": "서울특별시",
+      "published_on": "2024-12-26",
+      "url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=601902",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-070",
+          "zone_id": null,
+          "match_basis": "verified_management_plan_notice"
+        }
+      ],
+      "verified_on": "2026-11-25",
+      "notice_number": "서울특별시 고시 제2024-674호",
+      "notice_on": "2024-12-26"
+    },
+    {
+      "id": "official-56100e26b92eeabc",
+      "title": "대조동 89번지 일대 소규모주택정비 관리계획(모아타운 관리계획) 변경 승인 및 지형도면 고시",
+      "source": "서울특별시",
+      "published_on": "2024-12-26",
+      "url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=601717",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-072",
+          "zone_id": null,
+          "match_basis": "verified_management_plan_notice"
+        }
+      ],
+      "verified_on": "2026-11-25",
+      "notice_number": "서울특별시 고시 제2024-640호",
+      "notice_on": "2024-12-26"
+    },
+    {
+      "id": "official-bf99f44f5bb05bbc",
+      "title": "서울시 모아타운 1호 '번동' 착공… '28년 1,242세대 아파트 들어선다",
+      "source": "서울특별시",
+      "published_on": "2024-12-16",
+      "url": "https://www.seoul.go.kr/news/news_report.do?nttNo=424981",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-034",
+          "zone_id": null,
+          "match_basis": "published_project_and_catalog_town"
+        }
+      ],
+      "verified_on": "2026-11-25"
+    },
+    {
+      "id": "official-8b69433f77ebab11",
+      "title": "시흥1동 864번지 일대 소규모주택정비 관리계획(모아타운 관리계획) 변경 승인 및 지형도면 고시",
+      "source": "서울특별시",
+      "published_on": "2024-12-05",
+      "url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=601822",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-027",
+          "zone_id": null,
+          "match_basis": "verified_management_plan_notice"
+        }
+      ],
+      "verified_on": "2026-11-25",
+      "notice_number": "서울특별시 고시 제2024-588호",
+      "notice_on": "2024-12-05"
+    },
+    {
+      "id": "official-f759c19355336892",
+      "title": "중화동 329-38번지 일대 소규모주택정비 관리계획(모아타운 관리계획) 승인 및 지형도면 고시",
+      "source": "서울특별시",
+      "published_on": "2024-11-14",
+      "url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=599186",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-018",
+          "zone_id": null,
+          "match_basis": "verified_management_plan_notice"
+        }
+      ],
+      "verified_on": "2026-11-25",
+      "notice_number": "서울특별시 고시 제2024-552호",
+      "notice_on": "2024-11-14"
+    },
+    {
+      "id": "official-74875a8750661cdd",
+      "title": "신림동 655-78번지 일대 소규모주택정비 관리계획(모아타운 관리계획) 승인 및 지형도면 고시",
+      "source": "서울특별시",
+      "published_on": "2024-11-14",
+      "url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=599593",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-resident-025",
+          "zone_id": null,
+          "match_basis": "verified_management_plan_notice"
+        }
+      ],
+      "verified_on": "2026-11-25",
+      "notice_number": "서울특별시 고시 제2024-551호",
+      "notice_on": "2024-11-14"
+    },
+    {
+      "id": "official-737fe307e0e43490",
+      "title": "쌍문동 524-87번지 일대소규모주택정비 관리계획(모아타운 관리계획) 변경 승인 및 지형도면 고시",
+      "source": "서울특별시",
+      "published_on": "2024-10-17",
+      "url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=596685",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-051",
+          "zone_id": null,
+          "match_basis": "verified_management_plan_notice"
+        }
+      ],
+      "verified_on": "2026-11-25",
+      "notice_number": "서울특별시 고시 제2024-492호",
+      "notice_on": "2024-10-17"
+    },
+    {
+      "id": "official-df70b5126c866702",
+      "title": "쌍문동 494-22번지 일대 소규모주택정비 관리계획(모아타운 관리계획) 변경 승인 및 지형도면 고시",
+      "source": "서울특별시",
+      "published_on": "2024-10-17",
+      "url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=596684",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-052",
+          "zone_id": null,
+          "match_basis": "verified_management_plan_notice"
+        }
+      ],
+      "verified_on": "2026-11-25",
+      "notice_number": "서울특별시 고시 제2024-491호",
+      "notice_on": "2024-10-17"
+    },
+    {
+      "id": "official-8793d6dcdde8d92b",
+      "title": "시흥3동 950번지 일대 소규모주택정비 관리계획(모아타운 관리계획) 변경 승인 및 지형도면 고시",
+      "source": "서울특별시",
+      "published_on": "2024-09-19",
+      "url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=594346",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-028",
+          "zone_id": null,
+          "match_basis": "verified_management_plan_notice"
+        }
+      ],
+      "verified_on": "2026-11-25",
+      "notice_number": "서울특별시 고시 제2024-443호",
+      "notice_on": "2024-09-19"
+    },
+    {
+      "id": "official-0965715c4f98c049",
+      "title": "`모아타운` 투기근절하고 주민제안 방식으로 전환 추진",
+      "source": "서울특별시",
+      "published_on": "2024-07-18",
+      "url": "https://www.seoul.go.kr/news/news_report.do?nttNo=416010",
+      "classification": "common",
+      "related_sites": [],
+      "verified_on": "2026-11-25"
+    },
+    {
+      "id": "official-3614543dea7289ce",
+      "title": "(석간) `중랑구 면목동 모아타운 2호` 모아주택 통합심의 통과…1,919세대 공급",
+      "source": "서울특별시",
+      "published_on": "2024-07-12",
+      "url": "https://www.seoul.go.kr/news/news_report.do?nttNo=415689",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-010",
+          "zone_id": null,
+          "match_basis": "published_project_and_catalog_town"
+        }
+      ],
+      "verified_on": "2026-11-25"
+    },
+    {
+      "id": "official-bd7bb8e639da3558",
+      "title": "면목본동 297-28번지 일대 소규모주택정비 관리계획(모아타운 관리계획) 결정(변경) 및 지형도면 고시",
+      "source": "서울특별시",
+      "published_on": "2024-06-20",
+      "url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=590037",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-012",
+          "zone_id": null,
+          "match_basis": "verified_management_plan_notice"
+        }
+      ],
+      "verified_on": "2026-11-25",
+      "notice_number": "서울특별시 고시 제2024-294호",
+      "notice_on": "2024-06-20"
+    },
+    {
+      "id": "official-846381836599b1a1",
+      "title": "방화2동 592-1번지 일대 소규모주택정비 관리계획(모아타운 관리계획) 승인 및 지형도면 고시",
+      "source": "서울특별시",
+      "published_on": "2024-05-30",
+      "url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=594582",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-007",
+          "zone_id": null,
+          "match_basis": "verified_management_plan_notice"
+        }
+      ],
+      "verified_on": "2026-11-25",
+      "notice_number": "서울특별시 고시 제2024-266호",
+      "notice_on": "2024-05-30"
+    },
+    {
+      "id": "official-7d0b360423a0ec70",
+      "title": "일원동 대청마을 북측구역 모아타운 관리계획 수립 추진 주민의견조사 실시(의견 정정 방법 추가안내)",
+      "source": "서울특별시 강남구",
+      "published_on": "2024-05-20",
+      "url": "https://www.gangnam.go.kr/board/union6/42/view.do?mid=ID02_01130505",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-087",
+          "zone_id": null,
+          "match_basis": "published_project_and_catalog_town"
+        }
+      ],
+      "verified_on": "2026-11-25"
+    },
+    {
+      "id": "official-1995f12e173ec577",
+      "title": "망원동 456-6번지 일대 소규모주택정비 관리계획(모아타운 관리계획) 승인 및 지형도면 고시",
+      "source": "서울특별시",
+      "published_on": "2024-05-02",
+      "url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=588911",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-031",
+          "zone_id": null,
+          "match_basis": "verified_management_plan_notice"
+        }
+      ],
+      "verified_on": "2026-11-25",
+      "notice_number": "서울특별시 고시 제2024-225호",
+      "notice_on": "2024-05-02"
+    },
+    {
+      "id": "official-2cfec41978c1b97f",
+      "title": "신월3동 173번지 일대 소규모주택정비 관리계획(모아타운 관리계획) 승인 및 지형도면 정정고시",
+      "source": "서울특별시",
+      "published_on": "2024-04-25",
+      "url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=594579",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-066",
+          "zone_id": null,
+          "match_basis": "verified_management_plan_notice"
+        }
+      ],
+      "verified_on": "2026-11-25",
+      "notice_number": "서울특별시 고시 제2024-205호",
+      "notice_on": "2024-04-25"
+    },
+    {
+      "id": "official-d74b732703c617fc",
+      "title": "풍납동 483-10번지 일대 소규모주택정비 관리계획(모아타운 관리계획)승인 및 지형도면 고시",
+      "source": "서울특별시",
+      "published_on": "2024-04-18",
+      "url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=586349",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-062",
+          "zone_id": null,
+          "match_basis": "verified_management_plan_notice"
+        }
+      ],
+      "verified_on": "2026-11-25",
+      "notice_number": "서울특별시 고시 제2024-201호",
+      "notice_on": "2024-04-18"
+    },
+    {
+      "id": "official-d9cde4c425c05a1a",
+      "title": "신월3동 173번지 일대 소규모주택정비 관리계획(모아타운 관리계획) 승인 및 지형도면 고시",
+      "source": "서울특별시",
+      "published_on": "2024-03-28",
+      "url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=594578",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-066",
+          "zone_id": null,
+          "match_basis": "verified_management_plan_notice"
+        }
+      ],
+      "verified_on": "2026-11-25",
+      "notice_number": "서울특별시 고시 제2024-150호",
+      "notice_on": "2024-03-28"
+    },
+    {
+      "id": "official-ff3ebab486e95542",
+      "title": "고척6구역 가로주택정비사업 지정개발자 지정 및 지형도면 고시",
+      "source": "서울특별시 구로구",
+      "published_on": "2024-03-28",
+      "url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=587520",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-044",
+          "zone_id": "mz-plan-601972-a-6",
+          "match_basis": "verified_zone_notice"
+        }
+      ],
+      "verified_on": "2026-11-25",
+      "notice_number": "서울특별시 구로구 고시 제2024-52호",
+      "notice_on": "2024-03-28"
+    },
+    {
+      "id": "official-fc621c8035cc85ae",
+      "title": "중화1동 4-30번지 일대 소규모주택정비 관리계획(모아타운 관리계획) 결정(변경) 및 지형도면 고시",
+      "source": "서울특별시",
+      "published_on": "2024-03-14",
+      "url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=587169",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-013",
+          "zone_id": null,
+          "match_basis": "verified_management_plan_notice"
+        }
+      ],
+      "verified_on": "2026-11-25",
+      "notice_number": "서울특별시 고시 제2024-131호",
+      "notice_on": "2024-03-14"
+    },
+    {
+      "id": "official-1e1255255cc8e487",
+      "title": "망우3동 427-5번지 일대 소규모주택정비 관리계획(모아타운 관리계획) 결정(변경) 및 지형도면 고시",
+      "source": "서울특별시",
+      "published_on": "2024-03-14",
+      "url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=584263",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-014",
+          "zone_id": null,
+          "match_basis": "verified_management_plan_notice"
+        }
+      ],
+      "verified_on": "2026-11-25",
+      "notice_number": "서울특별시 고시 제2024-132호",
+      "notice_on": "2024-03-14"
+    },
+    {
+      "id": "official-9fb9e7f67eafa910",
+      "title": "시흥3동 1005번지 일대 소규모주택정비 관리계획(모아타운 관리계획) 변경승인 및 지형도면 고시",
+      "source": "서울특별시",
+      "published_on": "2024-03-07",
+      "url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=584437",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-024",
+          "zone_id": null,
+          "match_basis": "verified_management_plan_notice"
+        }
+      ],
+      "verified_on": "2026-11-25",
+      "notice_number": "서울특별시 고시 제2024-118호",
+      "notice_on": "2024-03-07"
+    },
+    {
+      "id": "official-dff0d89821136de2",
+      "title": "상계동 177-66번지 일대소규모주택정비 관리계획(모아타운 관리계획) 승인 및 지형도면 고시",
+      "source": "서울특별시",
+      "published_on": "2024-02-29",
+      "url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=584823",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-049",
+          "zone_id": null,
+          "match_basis": "verified_management_plan_notice"
+        }
+      ],
+      "verified_on": "2026-11-25",
+      "notice_number": "서울특별시 고시 제2024-111호",
+      "notice_on": "2024-02-29"
+    },
+    {
+      "id": "official-5b1b23467e718f97",
+      "title": "성산동 160-4번지 일대 소규모주택정비 관리계획(모아타운 관리계획) 승인 및 지형도면 고시",
+      "source": "서울특별시",
+      "published_on": "2024-02-22",
+      "url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=584518",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-030",
+          "zone_id": null,
+          "match_basis": "verified_management_plan_notice"
+        }
+      ],
+      "verified_on": "2026-11-25",
+      "notice_number": "서울특별시 고시 제2024-95호",
+      "notice_on": "2024-02-22"
+    },
+    {
+      "id": "official-158ffba35f70ed69",
+      "title": "화곡1동 1087번지 일대 소규모주택정비 관리계획(모아타운 관리계획) 승인 및 지형도면 고시",
+      "source": "서울특별시",
+      "published_on": "2023-12-28",
+      "url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=584446",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-001",
+          "zone_id": null,
+          "match_basis": "verified_management_plan_notice"
+        }
+      ],
+      "verified_on": "2026-11-25",
+      "notice_number": "서울특별시 고시 제2023-593호",
+      "notice_on": "2023-12-28"
+    },
+    {
+      "id": "official-f95c6bfbf8b7c3e9",
+      "title": "화곡1동 354번지 일대 소규모주택정비 관리계획(모아타운 관리계획) 승인 및 지형도면 고시",
+      "source": "서울특별시",
+      "published_on": "2023-12-28",
+      "url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=584450",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-002",
+          "zone_id": null,
+          "match_basis": "verified_management_plan_notice"
+        }
+      ],
+      "verified_on": "2026-11-25",
+      "notice_number": "서울특별시 고시 제2023-591호",
+      "notice_on": "2023-12-28"
+    },
+    {
+      "id": "official-3eeef79d055fda0d",
+      "title": "화곡1동 359번지 일대소규모주택정비 관리계획(모아타운 관리계획) 승인 및 지형도면 고시",
+      "source": "서울특별시",
+      "published_on": "2023-12-28",
+      "url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=584449",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-003",
+          "zone_id": null,
+          "match_basis": "verified_management_plan_notice"
+        }
+      ],
+      "verified_on": "2026-11-25",
+      "notice_number": "서울특별시 고시 제2023-592호",
+      "notice_on": "2023-12-28"
+    },
+    {
+      "id": "official-21ebab25a808f25d",
+      "title": "둔촌동 77-41번지 일대 모아타운 관리계획(소규모주택정비 관리계획) 승인 및 지형도면 고시",
+      "source": "서울특별시",
+      "published_on": "2023-12-28",
+      "url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=584798",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-056",
+          "zone_id": null,
+          "match_basis": "verified_management_plan_notice"
+        }
+      ],
+      "verified_on": "2026-11-25",
+      "notice_number": "서울특별시 고시 제2023-605호",
+      "notice_on": "2023-12-28"
+    },
+    {
+      "id": "official-80c5ed1e09708a30",
+      "title": "거여동 555번지 일대 모아타운 관리계획(소규모주택정비 관리계획) 승인 및 지형도면 고시",
+      "source": "서울특별시",
+      "published_on": "2023-12-28",
+      "url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=584607",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-063",
+          "zone_id": null,
+          "match_basis": "verified_management_plan_notice"
+        }
+      ],
+      "verified_on": "2026-11-25",
+      "notice_number": "서울특별시 고시 제2023-604호",
+      "notice_on": "2023-12-28"
+    },
+    {
+      "id": "official-64484c2da3e067f0",
+      "title": "신월동 102-33일대 소규모주택정비 관리계획(모아타운 관리계획) 승인 및 지형도면 도시",
+      "source": "서울특별시",
+      "published_on": "2023-12-28",
+      "url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=584443",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-067",
+          "zone_id": null,
+          "match_basis": "verified_management_plan_notice"
+        }
+      ],
+      "verified_on": "2026-11-25",
+      "notice_number": "서울특별시 고시 제2023-606호",
+      "notice_on": "2023-12-28"
+    },
+    {
+      "id": "official-fceff43bb55debb9",
+      "title": "불광동 170번지 일대 소규모주택정비 관리계획(모아타운 관리계획) 승인 및 지형도면 고시",
+      "source": "서울특별시",
+      "published_on": "2023-12-21",
+      "url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=584511",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-071",
+          "zone_id": null,
+          "match_basis": "verified_management_plan_notice"
+        }
+      ],
+      "verified_on": "2026-11-25",
+      "notice_number": "서울특별시 고시 제2023-565호",
+      "notice_on": "2023-12-21"
+    },
+    {
+      "id": "official-6c2fb4358fc352c6",
+      "title": "대조동 89번지 일대 소규모주택정비 관리계획(모아타운 관리계획) 승인 및 지형도면 고시",
+      "source": "서울특별시",
+      "published_on": "2023-12-21",
+      "url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=584512",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-072",
+          "zone_id": null,
+          "match_basis": "verified_management_plan_notice"
+        }
+      ],
+      "verified_on": "2026-11-25",
+      "notice_number": "서울특별시 고시 제2023-566호",
+      "notice_on": "2023-12-21"
+    },
+    {
+      "id": "official-17f86a9ca22c7cf1",
+      "title": "청룡동 1535번지 일대 소규모주택정비 관리계획(모아타운 관리계획) 승인 및 지형도면 고시",
+      "source": "서울특별시",
+      "published_on": "2023-12-21",
+      "url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=584431",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-073",
+          "zone_id": null,
+          "match_basis": "verified_management_plan_notice"
+        }
+      ],
+      "verified_on": "2026-11-25",
+      "notice_number": "서울특별시 고시 제2023-563호",
+      "notice_on": "2023-12-21"
+    },
+    {
+      "id": "official-9e1a53e9f50a2bfa",
+      "title": "방배동 977번지 일대 소규모주택정비 관리계획(모아타운 관리계획) 승인 및 지형도며7ㄴ 고시",
+      "source": "서울특별시",
+      "published_on": "2023-12-14",
+      "url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=584797",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-080",
+          "zone_id": null,
+          "match_basis": "verified_management_plan_notice"
+        }
+      ],
+      "verified_on": "2026-11-25",
+      "notice_number": "서울특별시 고시 제2023-550호",
+      "notice_on": "2023-12-14"
+    },
+    {
+      "id": "official-4ac784e674b79707",
+      "title": "시흥1동 864번지 일대 소규모주택정비 관리계획(모아타운 관리계획) 승인 및 지형도면 고시",
+      "source": "서울특별시",
+      "published_on": "2023-11-23",
+      "url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=584430",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-027",
+          "zone_id": null,
+          "match_basis": "verified_management_plan_notice"
+        }
+      ],
+      "verified_on": "2026-11-25",
+      "notice_number": "서울특별시 고시 제2023-502호",
+      "notice_on": "2023-11-23"
+    },
+    {
+      "id": "official-d3f9efdc63d6d1f6",
+      "title": "시흥3동 950번지 일대 소규모주택정비 관리계획(모아타운 관리계획) 승인 및 지형도면 고시",
+      "source": "서울특별시",
+      "published_on": "2023-11-23",
+      "url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=584429",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-028",
+          "zone_id": null,
+          "match_basis": "verified_management_plan_notice"
+        }
+      ],
+      "verified_on": "2026-11-25",
+      "notice_number": "서울특별시 고시 제2023-503호",
+      "notice_on": "2023-11-23"
+    },
+    {
+      "id": "official-13fdbe0ec5aa11b8",
+      "title": "석관동 334-69번지 일대 소규모주택정비 관리계획(모아타운 관리계획) 승인 및 지형도면 고시",
+      "source": "서울특별시",
+      "published_on": "2023-11-23",
+      "url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=584515",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-064",
+          "zone_id": null,
+          "match_basis": "verified_management_plan_notice"
+        }
+      ],
+      "verified_on": "2026-11-25",
+      "notice_number": "서울특별시 고시 제2023-505호",
+      "notice_on": "2023-11-23"
+    },
+    {
+      "id": "official-d913461ae547c7b0",
+      "title": "석관동 261-22번지 일대 소규모주택정비 관리계획(모아타운 관리계획) 승인 및 지형도면 고시",
+      "source": "서울특별시",
+      "published_on": "2023-11-23",
+      "url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=584516",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-065",
+          "zone_id": null,
+          "match_basis": "verified_management_plan_notice"
+        }
+      ],
+      "verified_on": "2026-11-25",
+      "notice_number": "서울특별시 고시 제2023-506호",
+      "notice_on": "2023-11-23"
+    },
+    {
+      "id": "official-e20e28641ca27076",
+      "title": "쌍문동 524-87번지 일대소규모주택정비 관리계획(모아타운 관리계획) 승인 및 지형도면 고시",
+      "source": "서울특별시",
+      "published_on": "2023-11-16",
+      "url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=584507",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-051",
+          "zone_id": null,
+          "match_basis": "verified_management_plan_notice"
+        }
+      ],
+      "verified_on": "2026-11-25",
+      "notice_number": "서울특별시 고시 제2023-496호",
+      "notice_on": "2023-11-16"
+    },
+    {
+      "id": "official-ccc44df369a36159",
+      "title": "쌍문동 494-22번지 일대소규모주택정비 관리계획(모아타운 관리계획) 승인 및 지형도면 고시",
+      "source": "서울특별시",
+      "published_on": "2023-11-16",
+      "url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=584503",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-052",
+          "zone_id": null,
+          "match_basis": "verified_management_plan_notice"
+        }
+      ],
+      "verified_on": "2026-11-25",
+      "notice_number": "서울특별시 고시 제2023-495호",
+      "notice_on": "2023-11-16"
+    },
+    {
+      "id": "official-3caa8865d372802e",
+      "title": "사당동 202-29번지 일대 소규모주택정비 관리계획(모아타운 관리계획) 승인 및 지형도면 고시",
+      "source": "서울특별시",
+      "published_on": "2023-09-21",
+      "url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=584434",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-059",
+          "zone_id": null,
+          "match_basis": "verified_management_plan_notice"
+        }
+      ],
+      "verified_on": "2026-11-25",
+      "notice_number": "서울특별시 고시 제2023-412호",
+      "notice_on": "2023-09-21"
+    },
+    {
+      "id": "official-26640c23f29056b1",
+      "title": "면목38동 44-6 일대 소규모주택정비 관리계획(모아타운 관리계획)승인 및 지형도면 고시",
+      "source": "서울특별시",
+      "published_on": "2023-08-10",
+      "url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=584257",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-011",
+          "zone_id": null,
+          "match_basis": "verified_management_plan_notice"
+        }
+      ],
+      "verified_on": "2026-11-25",
+      "notice_number": "서울특별시 고시 제2023-337호",
+      "notice_on": "2023-08-10"
+    },
+    {
+      "id": "official-aa02ea959f75b1ec",
+      "title": "면목본동 297-28 일대 소규모주택정비 관리계획(모아타운 관리계획)승인 및 지형도면 고시",
+      "source": "서울특별시",
+      "published_on": "2023-08-10",
+      "url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=584259",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-012",
+          "zone_id": null,
+          "match_basis": "verified_management_plan_notice"
+        }
+      ],
+      "verified_on": "2026-11-25",
+      "notice_number": "서울특별시 고시 제2023-338호",
+      "notice_on": "2023-08-10"
+    },
+    {
+      "id": "official-2519d83aaf5ee495",
+      "title": "중화1동 4-30 소규모주택정비 관리계획(모아타운 관리계획)승인 및 지형도면 고시",
+      "source": "서울특별시",
+      "published_on": "2023-08-10",
+      "url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=584260",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-013",
+          "zone_id": null,
+          "match_basis": "verified_management_plan_notice"
+        }
+      ],
+      "verified_on": "2026-11-25",
+      "notice_number": "서울특별시 고시 제2023-339호",
+      "notice_on": "2023-08-10"
+    },
+    {
+      "id": "official-24f2992c78e2a809",
+      "title": "망우3동 427-5번지 일대 소규모주택정비 관리계획(모아타운 관리계획)승인 및 지형도면 고시",
+      "source": "서울특별시",
+      "published_on": "2023-08-10",
+      "url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=584256",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-014",
+          "zone_id": null,
+          "match_basis": "verified_management_plan_notice"
+        }
+      ],
+      "verified_on": "2026-11-25",
+      "notice_number": "서울특별시 고시 제2023-336호",
+      "notice_on": "2023-08-10"
+    },
+    {
+      "id": "official-bf540e8ee33462ff",
+      "title": "`오세훈표 모아타운 1호` 강북구 번동 사업인가, 26년 1,242세대 공급",
+      "source": "서울특별시",
+      "published_on": "2023-07-31",
+      "url": "https://www.seoul.go.kr/news/news_report.do?nttNo=393720",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-034",
+          "zone_id": null,
+          "match_basis": "published_project_and_catalog_town"
+        }
+      ],
+      "verified_on": "2026-11-25"
+    },
+    {
+      "id": "official-1039f4613a22ef83",
+      "title": "시흥4동 817번지 일대 소규모주택정비 관리계획(모아타운 관리계획) 승인 및 지형도면 고시",
+      "source": "서울특별시",
+      "published_on": "2023-05-04",
+      "url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=571863",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-025",
+          "zone_id": null,
+          "match_basis": "verified_management_plan_notice"
+        }
+      ],
+      "verified_on": "2026-11-25",
+      "notice_number": "서울특별시 고시 제2023-162호",
+      "notice_on": "2023-05-04"
+    },
+    {
+      "id": "official-ac0956c4cace131a",
+      "title": "제안서 평가위원회 개최결과 공개(일원동 대청마을 북측구역 모아타운 관리계획 수립 용역)",
+      "source": "서울특별시 강남구",
+      "published_on": "2023-04-20",
+      "url": "https://www.gangnam.go.kr/board/union6/6/view.do?mid=ID02_01130505",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-087",
+          "zone_id": null,
+          "match_basis": "published_project_and_catalog_town"
+        }
+      ],
+      "verified_on": "2026-11-25"
+    },
+    {
+      "id": "official-8a5eea0321bb5390",
+      "title": "시흥3동 1005번지 일대 소규모주택정비 관리계획(모아타운 관리계획)승인 및 지형도면 고시",
+      "source": "서울특별시",
+      "published_on": "2022-12-22",
+      "url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=560541",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-024",
+          "zone_id": null,
+          "match_basis": "verified_management_plan_notice"
+        }
+      ],
+      "verified_on": "2026-11-25",
+      "notice_number": "서울특별시 고시 제2022-519호",
+      "notice_on": "2022-12-22"
+    },
+    {
+      "id": "official-b362aa047f86902c",
+      "title": "시흥5동 922-16번지 일대 소규모주택정비 관리계획(모아타운 관리계획)승인 및 지형도면 고시",
+      "source": "서울특별시",
+      "published_on": "2022-12-22",
+      "url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=560543",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-026",
+          "zone_id": null,
+          "match_basis": "verified_management_plan_notice"
+        }
+      ],
+      "verified_on": "2026-11-25",
+      "notice_number": "서울특별시 고시 제2022-520호",
+      "notice_on": "2022-12-22"
+    },
+    {
+      "id": "official-7c63d5f5f92c5416",
+      "title": "저층주거지 개발 '모아타운'…추가 선정된 26곳은?",
+      "source": "서울특별시 내 손안에 서울",
+      "published_on": "2022-10-21",
+      "url": "https://mediahub.seoul.go.kr/archives/2005946",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-085",
+          "zone_id": null,
+          "match_basis": "published_project_and_catalog_town"
+        },
+        {
+          "town_id": "mt-202603-public-032",
+          "zone_id": null,
+          "match_basis": "published_project_and_catalog_town"
+        },
+        {
+          "town_id": "mt-202603-public-043",
+          "zone_id": null,
+          "match_basis": "published_project_and_catalog_town"
+        },
+        {
+          "town_id": "mt-202603-public-033",
+          "zone_id": null,
+          "match_basis": "published_project_and_catalog_town"
+        },
+        {
+          "town_id": "mt-202603-public-008",
+          "zone_id": null,
+          "match_basis": "published_project_and_catalog_town"
+        },
+        {
+          "town_id": "mt-202603-public-015",
+          "zone_id": null,
+          "match_basis": "published_project_and_catalog_town"
+        },
+        {
+          "town_id": "mt-202603-public-009",
+          "zone_id": null,
+          "match_basis": "published_project_and_catalog_town"
+        },
+        {
+          "town_id": "mt-202603-public-016",
+          "zone_id": null,
+          "match_basis": "published_project_and_catalog_town"
+        },
+        {
+          "town_id": "mt-202603-public-046",
+          "zone_id": null,
+          "match_basis": "published_project_and_catalog_town"
+        },
+        {
+          "town_id": "mt-202603-public-064",
+          "zone_id": null,
+          "match_basis": "published_project_and_catalog_town"
+        },
+        {
+          "town_id": "mt-202603-public-027",
+          "zone_id": null,
+          "match_basis": "published_project_and_catalog_town"
+        },
+        {
+          "town_id": "mt-202603-public-065",
+          "zone_id": null,
+          "match_basis": "published_project_and_catalog_town"
+        },
+        {
+          "town_id": "mt-202603-public-028",
+          "zone_id": null,
+          "match_basis": "published_project_and_catalog_town"
+        },
+        {
+          "town_id": "mt-202603-public-036",
+          "zone_id": null,
+          "match_basis": "published_project_and_catalog_town"
+        },
+        {
+          "town_id": "mt-202603-public-037",
+          "zone_id": null,
+          "match_basis": "published_project_and_catalog_town"
+        },
+        {
+          "town_id": "mt-202603-public-070",
+          "zone_id": null,
+          "match_basis": "published_project_and_catalog_town"
+        },
+        {
+          "town_id": "mt-202603-public-058",
+          "zone_id": null,
+          "match_basis": "published_project_and_catalog_town"
+        },
+        {
+          "town_id": "mt-202603-public-050",
+          "zone_id": null,
+          "match_basis": "published_project_and_catalog_town"
+        },
+        {
+          "town_id": "mt-202603-public-059",
+          "zone_id": null,
+          "match_basis": "published_project_and_catalog_town"
+        },
+        {
+          "town_id": "mt-202603-public-071",
+          "zone_id": null,
+          "match_basis": "published_project_and_catalog_town"
+        },
+        {
+          "town_id": "mt-202603-public-073",
+          "zone_id": null,
+          "match_basis": "published_project_and_catalog_town"
+        },
+        {
+          "town_id": "mt-202603-public-072",
+          "zone_id": null,
+          "match_basis": "published_project_and_catalog_town"
+        },
+        {
+          "town_id": "mt-202603-public-057",
+          "zone_id": null,
+          "match_basis": "published_project_and_catalog_town"
+        }
+      ],
+      "verified_on": "2026-11-25"
+    },
+    {
+      "id": "official-d1aa60f1b94bad0e",
+      "title": "서울시, `오세훈표 모아타운` 추가 공모 시작...10월 중 20개 내외 선정",
+      "source": "서울특별시 서울주거포털",
+      "published_on": "2022-07-08",
+      "url": "https://housing.seoul.go.kr/site/main/board/news/9918",
+      "classification": "common",
+      "related_sites": [],
+      "verified_on": "2026-11-25"
+    },
+    {
+      "id": "official-ca8a8155a4fa5f7c",
+      "title": "면목, 쌍문 등 21곳에 '모아타운' 짓는다…7월 추가 공모",
+      "source": "서울특별시 내 손안에 서울",
+      "published_on": "2022-06-21",
+      "url": "https://mediahub.seoul.go.kr/archives/2004876",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-086",
+          "zone_id": null,
+          "match_basis": "published_project_and_catalog_town"
+        },
+        {
+          "town_id": "mt-202603-public-083",
+          "zone_id": null,
+          "match_basis": "published_project_and_catalog_town"
+        },
+        {
+          "town_id": "mt-202603-public-042",
+          "zone_id": null,
+          "match_basis": "published_project_and_catalog_town"
+        },
+        {
+          "town_id": "mt-202603-public-030",
+          "zone_id": null,
+          "match_basis": "published_project_and_catalog_town"
+        },
+        {
+          "town_id": "mt-202603-public-031",
+          "zone_id": null,
+          "match_basis": "published_project_and_catalog_town"
+        },
+        {
+          "town_id": "mt-202603-public-011",
+          "zone_id": null,
+          "match_basis": "published_project_and_catalog_town"
+        },
+        {
+          "town_id": "mt-202603-public-066",
+          "zone_id": null,
+          "match_basis": "published_project_and_catalog_town"
+        },
+        {
+          "town_id": "mt-202603-public-012",
+          "zone_id": null,
+          "match_basis": "published_project_and_catalog_town"
+        },
+        {
+          "town_id": "mt-202603-public-067",
+          "zone_id": null,
+          "match_basis": "published_project_and_catalog_town"
+        },
+        {
+          "town_id": "mt-202603-public-013",
+          "zone_id": null,
+          "match_basis": "published_project_and_catalog_town"
+        },
+        {
+          "town_id": "mt-202603-public-007",
+          "zone_id": null,
+          "match_basis": "published_project_and_catalog_town"
+        },
+        {
+          "town_id": "mt-202603-public-014",
+          "zone_id": null,
+          "match_basis": "published_project_and_catalog_town"
+        },
+        {
+          "town_id": "mt-202603-public-044",
+          "zone_id": null,
+          "match_basis": "published_project_and_catalog_town"
+        },
+        {
+          "town_id": "mt-202603-public-035",
+          "zone_id": null,
+          "match_basis": "published_project_and_catalog_town"
+        },
+        {
+          "town_id": "mt-202603-public-045",
+          "zone_id": null,
+          "match_basis": "published_project_and_catalog_town"
+        },
+        {
+          "town_id": "mt-202603-public-051",
+          "zone_id": null,
+          "match_basis": "published_project_and_catalog_town"
+        },
+        {
+          "town_id": "mt-202603-public-062",
+          "zone_id": null,
+          "match_basis": "published_project_and_catalog_town"
+        },
+        {
+          "town_id": "mt-202603-public-052",
+          "zone_id": null,
+          "match_basis": "published_project_and_catalog_town"
+        },
+        {
+          "town_id": "mt-202603-public-063",
+          "zone_id": null,
+          "match_basis": "published_project_and_catalog_town"
+        },
+        {
+          "town_id": "mt-202603-public-049",
+          "zone_id": null,
+          "match_basis": "published_project_and_catalog_town"
+        }
+      ],
+      "verified_on": "2026-11-25"
+    },
+    {
+      "id": "official-e69a4fe9688af143",
+      "title": "서울시, 저층주거지 새 정비모델 `모아타운 1호` 강북구 번동 통합심의 통과",
+      "source": "서울특별시 서울주거포털",
+      "published_on": "2022-04-25",
+      "url": "https://housing.seoul.go.kr/site/main/board/news/8198",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-034",
+          "zone_id": null,
+          "match_basis": "published_project_and_catalog_town"
+        }
+      ],
+      "verified_on": "2026-11-25"
+    },
+    {
+      "id": "official-3a5f5f00e25b57bf",
+      "title": "노후 저층주거지 '모아주택'으로…강북 번동, 중랑 면목동 시범사업",
+      "source": "서울특별시 내 손안에 서울",
+      "published_on": "2022-01-14",
+      "url": "https://mediahub.seoul.go.kr/archives/2003618",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-034",
+          "zone_id": null,
+          "match_basis": "published_project_and_catalog_town"
+        },
+        {
+          "town_id": "mt-202603-public-010",
+          "zone_id": null,
+          "match_basis": "published_project_and_catalog_town"
+        }
+      ],
+      "verified_on": "2026-11-25"
     }
   ]
 }

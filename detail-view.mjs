@@ -1,5 +1,5 @@
-import {formatValue,unitsChange,projectIntervals,compareInterval} from './detail-format.mjs?v=8847e6027c36';
-import {projectUrl} from './project-url.mjs?v=8847e6027c36';
+import {formatValue,unitsChange,projectIntervals,compareInterval} from './detail-format.mjs?v=ea63269c4509';
+import {projectUrl} from './project-url.mjs?v=ea63269c4509';
 export {projectUrl};
 
 const pending='미고시';
