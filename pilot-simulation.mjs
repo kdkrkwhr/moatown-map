@@ -1,8 +1,9 @@
-import booleanPointInPolygon from './vendor/turf/boolean-point-in-polygon.mjs?v=151be3657af1';
+import booleanPointInPolygon from './vendor/turf/boolean-point-in-polygon.mjs?v=744430b0c9fe';
 
 const LENGTH = 42, WIDTH = 14, UNITS_PER_FLOOR = 4;
 // Small margins keep the minimum distances intact after projection to WGS84.
 const SETBACK = 10.1, SEPARATION = 35.1;
+const DESIGN_SEPARATION = 10.1, DESIGN_SETBACK = 5.1;
 const radians = Math.PI / 180;
 
 function polygons(geometry) {
@@ -71,8 +72,8 @@ function nearEdges(edge, other, gap) {
     distanceSquared(p, a, b) < limit || distanceSquared(q, a, b) < limit;
 }
 
-function rectangle(x, y, orientation) {
-  const a = LENGTH / 2, b = WIDTH / 2;
+function rectangle(x, y, orientation, length, width) {
+  const a = length / 2, b = width / 2;
   const ring = [[-a, -b], [a, -b], [a, b], [-a, b]].map(([dx, dy]) =>
     orientation.rotate([x + dx, y + dy]));
   ring.push(ring[0]);
@@ -81,34 +82,55 @@ function rectangle(x, y, orientation) {
 
 function fitsSite(block, site) {
   if (!booleanPointInPolygon(block.center, site.geometry)) return false;
+  for (const space of site.reserved) {
+    if (!nearBoxes(block.box, space.box, space.clearance)) continue;
+    if (space.geometry && booleanPointInPolygon(block.center, space.geometry)) return false;
+    if (booleanPointInPolygon(space.start, {type:'Polygon',coordinates:[block.ring]})) return false;
+    if (space.edges.some(edge => block.edges.some(other => nearEdges(edge, other, space.clearance)))) return false;
+  }
   // A road notch can cross a footprint between two interior corners. Test every
   // exterior and hole edge. An enclosed hole also lies within 7 m of an edge.
-  return !site.edges.some(edge => nearBoxes(block.box, edge.box, SETBACK) &&
-    block.edges.some(other => nearEdges(edge, other, SETBACK)));
+  return !site.edges.some(edge => nearBoxes(block.box, edge.box, site.setback) &&
+    block.edges.some(other => nearEdges(edge, other, site.setback)));
 }
 
-function separated(block, others) {
-  return !others.some(other => nearBoxes(block.box, other.box, SEPARATION) &&
-    block.edges.some(edge => other.edges.some(next => nearEdges(edge, next, SEPARATION))));
+function separated(block, others, gap) {
+  return !others.some(other => nearBoxes(block.box, other.box, gap) &&
+    block.edges.some(edge => other.edges.some(next => nearEdges(edge, next, gap))));
 }
 
-function layoutSite(site, occupied, target) {
+function reservedSpace(features, frame) {
+  const reserved=[];
+  for(const feature of features){
+    const {geometry,properties}=feature;
+    const lines=geometry.type==='LineString'?[geometry.coordinates]:
+      geometry.type==='MultiLineString'?geometry.coordinates:[];
+    const add=(rings,polygon,clearance)=>reserved.push({start:rings[0][0],box:bounds(rings.flat()),
+      edges:edges(rings),geometry:polygon?{type:'Polygon',coordinates:rings}:null,clearance});
+    for(const polygon of polygons(geometry))add(polygon.map(r=>r.map(frame.project)),true,.2);
+    for(const line of lines)add([line.map(frame.project)],false,(properties.width_m??0)/2+.2);
+  }
+  return reserved;
+}
+
+function layoutSite(site, occupied, target, settings) {
   if (!target) return [];
-  const rowPitch = WIDTH + SEPARATION + .1, pitch = LENGTH + SEPARATION + .1;
+  const {length,width,gap,angles}=settings;
+  const rowPitch = width + gap + .1, pitch = length + gap + .1;
   const candidates = [];
   let best = [];
   // Try different street-grid directions and row offsets at each site. Blocks
   // within one lattice already meet the edge clearance by construction.
-  for (let angle = 0; angle < 180; angle += 15) {
+  for (const angle of angles) {
     const orientation = axes(angle);
     const [left, bottom, right, top] = bounds(site.geometry.coordinates[0].map(orientation.unrotate));
     for (let offsetY = 0; offsetY < 4; offsetY++) {
       for (let offsetX = 0; offsetX < 4; offsetX++) {
         const layout = [];
-        for (let y = bottom + SETBACK + WIDTH / 2 + rowPitch * offsetY / 4; y <= top - SETBACK - WIDTH / 2; y += rowPitch) {
-          for (let x = left + SETBACK + LENGTH / 2 + pitch * offsetX / 4; x <= right - SETBACK - LENGTH / 2; x += pitch) {
-            const block = rectangle(x, y, orientation);
-            if (fitsSite(block, site) && separated(block, occupied)) layout.push(block);
+        for (let y = bottom + site.setback + width / 2 + rowPitch * offsetY / 4; y <= top - site.setback - width / 2; y += rowPitch) {
+          for (let x = left + site.setback + length / 2 + pitch * offsetX / 4; x <= right - site.setback - length / 2; x += pitch) {
+            const block = rectangle(x, y, orientation,length,width);
+            if (fitsSite(block, site) && separated(block, occupied,gap)) layout.push(block);
           }
         }
         if (layout.length >= target) return layout.slice(0, target);
@@ -120,7 +142,7 @@ function layoutSite(site, occupied, target) {
   // Fill remaining pockets with a rotated block when the regular rows miss one.
   const placed = [...best];
   for (const block of candidates) {
-    if (separated(block, placed)) placed.push(block);
+    if (separated(block, placed,gap)) placed.push(block);
     if (placed.length >= target) break;
   }
   return placed;
@@ -156,22 +178,46 @@ function floorProfile(count, cap, units) {
   return floors;
 }
 
-export function generateSimulation(areas, zoneMap, plans) {
+export function generateSimulation(areas, zoneMap, plans, {design=null, publicSpace=null, layout=null}={}) {
   const features = [], summaries = {}, occupied = [];
   const ordered = areas.filter(area => polygons(area.geometry)[0]?.[0]?.length >= 4 &&
     zoneMap.has(area.properties.entity_id)).sort((a, b) => a.properties.entity_id.localeCompare(b.properties.entity_id));
   if (!ordered.length) return { features, summaries };
   const frame = localFrame(polygons(ordered[0].geometry)[0][0][0]);
+  const traced=design?(layout?.features??[]):[];
+  const reserved=reservedSpace([...(publicSpace?.features??[]),...traced],frame);
+  const ordinaryAngles=Array.from({length:12},(_,i)=>i*15);
+  // Start along the Sinwol street grid, then try oblique layouts for irregular plots.
+  const settings={length:design?32:LENGTH,width:design?16:WIDTH,gap:design?DESIGN_SEPARATION:SEPARATION,
+    angles:design?[27,117,12,102,42,132,...ordinaryAngles]:ordinaryAngles};
   for (const area of ordered) {
     const zoneId = area.properties.entity_id, zone = zoneMap.get(zoneId);
-    const [capFloors, capSource] = floorCap(plans?.zones?.[zoneId], plans?.plan);
-    const units = Number.isInteger(zone.planned_units_total) && zone.planned_units_total >= 0 ? zone.planned_units_total : null;
-    const targetBlocks = units == null ? null : Math.ceil(units / (capFloors * UNITS_PER_FLOOR));
+    const records=design?.zones[zoneId]?.records??[];
+    const shapes=traced.filter(f=>f.properties.zone_id===zoneId && polygons(f.geometry).length);
+    const association=shapes.length && records.find(r=>r.stage_kind==='association_plan');
+    const [capFloors, capSource] = association?.floors?[association.floors,'association']:floorCap(plans?.zones?.[zoneId], plans?.plan);
+    const unitValue=association?.units??zone.planned_units_total;
+    const units = Number.isInteger(unitValue) && unitValue >= 0 ? unitValue : null;
+    const countRecord=records.find(r=>Number.isInteger(r.building_count) && r.building_count>0);
+    if(shapes.length){
+      const profile=floorProfile(shapes.length,capFloors,null);
+      const heights=shapes.map((shape,i)=>shape.properties.floors??profile[i]);
+      shapes.forEach((shape,i)=>{
+        const floors=heights[i];
+        features.push({...shape,properties:{...shape.properties,floors,height_m:floors*3,
+          height_source:shape.properties.floors?'estimated_from_floors':'simulated_from_floors'}});
+      });
+      summaries[zoneId]={blocks:shapes.length,minFloors:Math.min(...heights),maxFloors:Math.max(...heights),capFloors,
+        capSource,units,overlayNote:layout.metadata?.overlay_check?.note,sourceLayout:true,simulatedUnits:null};
+      continue;
+    }
+    const targetBlocks = countRecord?.building_count ?? (units == null ? null : Math.ceil(units / (capFloors * UNITS_PER_FLOOR)));
     const blocks = [];
     for (const polygon of polygons(area.geometry)) {
       const rings = polygon.map(ring => ring.map(frame.project));
-      const site = { geometry: { type: 'Polygon', coordinates: rings }, edges: edges(rings) };
-      const placed = layoutSite(site, occupied, (targetBlocks ?? Infinity) - blocks.length);
+      const site = { geometry: { type: 'Polygon', coordinates: rings }, edges: edges(rings), reserved,
+        setback:design?DESIGN_SETBACK:SETBACK };
+      const placed = layoutSite(site, occupied, (targetBlocks ?? Infinity) - blocks.length,settings);
       occupied.push(...placed);
       blocks.push(...placed);
     }
@@ -185,7 +231,7 @@ export function generateSimulation(areas, zoneMap, plans) {
     });
     summaries[zoneId] = { blocks: blocks.length, minFloors: heights.length ? Math.min(...heights) : null,
       maxFloors: heights.length ? Math.max(...heights) : null, capFloors, capSource, units, targetBlocks,
-      simulatedUnits: heights.reduce((sum, n) => sum + n * UNITS_PER_FLOOR, 0) };
+      simulatedUnits: heights.reduce((sum, n) => sum + n * UNITS_PER_FLOOR, 0),countRecord };
   }
   return { features, summaries };
 }

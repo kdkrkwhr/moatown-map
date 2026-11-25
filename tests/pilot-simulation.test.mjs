@@ -100,6 +100,35 @@ function area(rings) {
   return { type: 'Feature', properties: { entity_id: 'site' },
     geometry: { type: 'Polygon', coordinates: rings.map(ring => ring.map(degrees)) } };
 }
+
+test('the design view preserves the independently measured A3 layout and dated A1 program',()=>{
+  const design=read('sinwol_design'),layout=read('sinwol_layout'),publicSpace=read('sinwol_public_space');
+  const scene=generateSimulation(areas,zones,plans,{design,publicSpace,layout});
+  const a1=scene.summaries['mz-plan-584443-a1'],a3=scene.summaries['mz-plan-584443-a3'];
+  assert.equal(a1.blocks,5);
+  assert.equal(a1.countRecord.stage_kind,'contractor_selection');
+  assert.equal(a1.capFloors,13);
+  assert.equal(a3.units,642);
+  assert.equal(a3.capFloors,14);
+  assert.equal(a3.blocks,layout.features.length);
+  assert.equal(a3.sourceLayout,true);
+  for(const f of layout.features){
+    assert.equal(f.properties.floors,null);
+    assert.deepEqual(scene.features.find(g=>g.properties.id===f.properties.id)?.geometry,f.geometry);
+  }
+  for(const f of scene.features.filter(f=>f.properties.zone_id!=='mz-plan-584443-a3')){
+    const ring=f.geometry.coordinates[0];
+    for(const space of publicSpace.features){
+      const polygon=space.geometry.type==='Polygon';
+      const line=polygon?space.geometry.coordinates[0]:space.geometry.coordinates;
+      assert.ok(ringDistance(ring.map(meters),line.map(meters))>(space.properties.width_m??0)/2);
+      if(polygon)assert.ok(ring.every(p=>!booleanPointInPolygon(p,space)));
+    }
+  }
+  const legacy=generateSimulation(areas,zones,plans,{publicSpace});
+  assert.ok(legacy.features.length<scene.features.length);
+  assert.ok(!legacy.summaries['mz-plan-584443-a3'].sourceLayout);
+});
 function simulate(site, units, plan = {}) {
   return generateSimulation([site], new Map([['site', { planned_units_total: units }]]), plan);
 }

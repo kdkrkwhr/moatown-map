@@ -6,7 +6,11 @@
 
 ## 어떤 자료를 사용했나
 
-신월동 102-33의 ‘공식 조감도’는 서울시 관리계획 소개 페이지(2026.05.22 수정)에 실린 A1~A4 조감도 원본을 표시한다. 출처와 공공누리 제4유형 이용 조건을 이미지 옆에 표기했다. A1의 후속 통합심의 조감도는 2026.11.13 서울시 보도자료 PDF 4쪽 왼쪽에서 열람할 수 있다. ‘건축 후 가상 배치’의 층수 상한에는 A1 심의안 최고 13층과 A2~A4의 대상지 전체 계획 최고 15층 이하를 사용했다. 가상 동의 위치, 세대 배분과 높이는 화면 표시용 추정값이다. [서울시 관리계획 소개](https://news.seoul.go.kr/citybuild/archives/538493) · [서울시 통합심의 보도자료](https://www.seoul.go.kr/news/news_report.do?nttNo=470317) · [그림별 출처와 이용 조건](../moatown-data/plans/sinwol/visuals.json)
+신월동 102-33의 ‘공식 조감도’는 서울시 관리계획 소개 페이지(2026.05.22 수정)에 실린 A1~A4 원본을 표시한다. A1 후속 통합심의 조감도는 2026.11.13 서울시 보도자료 PDF 4쪽 왼쪽에 있다. 시공사 선정안(5동·368세대)과 통합심의안(지하 3층·최고 13층·354세대)은 별도 기록으로 보관한다. [서울시 관리계획 소개](https://news.seoul.go.kr/citybuild/archives/538493) · [서울시 통합심의 보도자료](https://www.seoul.go.kr/news/news_report.do?nttNo=470317) · [그림별 이용 조건](../moatown-data/plans/sinwol/visuals.json)
+
+신월 A3은 신월1동 99-1번지 일원 가로주택정비사업조합이 정보몽땅에 공개한 배치도에서 주거동 7개 형태의 위치와 날개 방향을 판독했다. 기준일 미표기인 조합 건축계획에는 지상 14층·지하 2층·642세대(분양 509·임대 133)가 기재돼 있다. 2026.09 공람안의 A3 592세대와 구분한다. 동별 층수와 입면은 추정해 표시한다. [조합 배치도](https://cleanup.seoul.go.kr/cafe/mastr-cleanup-bsnsSumry/execute.do?cafeId=470900001596X74&div=posImage&stepSeCode=103) · [계획별 근거](../moatown-data/plans/sinwol/design-evidence.json) · [위치 판독 자료](../moatown-data/plans/sinwol/a3-layout.geojson)
+
+신월 B1 어린이공원(3,000㎡), B2 사회복지시설(1,600㎡), 도로 6개 구간과 공공보행통로 2개 구간은 2023.12.28 승인고시 도면을 서울시 공간자료에 맞춰 좌표화했다. 면적·폭은 고시 수치를 기록했다. 도면 쪽수와 위치 검증 방법은 각 도형과 자료 파일의 메타데이터에 있다. [서울시 고시 제2023-606호](https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=584443) · [공간자료와 검증 기록](../moatown-data/plans/sinwol/public-space.geojson)
 
 3D 시범 뷰어는 서울부동산정보광장의 GIS건물통합정보 도형과 대장 속성을 사용합니다. 건물의 원자료 기준일은 2024.12.31입니다. 사용승인연도를 확인한 내부 건물로 30년 이상 비율을 계산하고, 계획 높이와 용적률은 공고·심의안·사업개요 등 실제 근거 단위로 표시합니다. [건물 수집·검증 결과](3d-pilot-results.md) · [구역별 계획 근거](pilot-plan-sources.md) · [서울부동산정보광장](https://land.seoul.go.kr/land/map/land/map.do)
 

@@ -503,9 +503,24 @@ body[data-loading=true] .map-loading { display: block; position: absolute; top: 
 .pilot-visual-source p { margin: 4px 0; }
 .pilot-scenario { border-left: 3px solid #7fb5a2; padding-left: 12px; margin-bottom: 18px; }
 .pilot-scenario p { margin: 5px 0; }
+.pilot-scenario .pilot-plan-program { color:#1b5949; font-weight:650; }
 .pilot-layout { flex: 1; min-height: 0; display: grid; grid-template-columns: minmax(0,1fr) minmax(230px,27%); }
 .pilot-stage { position: relative; min-height: 0; min-width: 0; background: #e6eee8; isolation: isolate; }
 #pilot-scene { position: absolute; inset: 0; overflow: hidden; }
+#pilot-placement { position:absolute; top:12px; left:12px; display:flex; padding:3px; gap:2px; background:#fffffff5; border:1px solid #c4d3c9; border-radius:12px; box-shadow:0 3px 12px #1c422b18; }
+#pilot-placement button { min-height:35px; border-radius:8px; padding:5px 11px; font-size:12px; font-weight:650; color:#4a6158; }
+#pilot-placement button[aria-pressed=true] { color:#fff; background:#275d50; }
+#pilot-reference { margin:0 0 12px; padding-bottom:8px; border-bottom:1px solid #dce6e0; }
+#pilot-reference summary { font-size:13px; font-weight:700; padding:5px 0; }
+#pilot-reference img { display:block; width:100%; height:auto; margin-top:6px; }
+#pilot-reference a { font-size:11px; }
+#pilot-reference p { margin:4px 0; font-size:11px; }
+.pilot-source-card { margin:12px 0; padding:10px 12px; background:#f3f7f3; border-radius:10px; }
+.pilot-source-card h4 { margin:0; font-size:14px; }
+.pilot-source-card .pilot-facts { margin:3px 0; }
+.pilot-source-card summary { font-size:13px; }
+.pilot-plan-links { display:grid; gap:4px; margin:10px 0 16px; }
+.pilot-plan-links button { padding:8px 10px; text-align:left; background:#eef4ef; color:#1b5949; border-radius:7px; font-size:13px; font-weight:650; }
 #pilot-tools { position: absolute; z-index: 2; top: 12px; right: 12px; display: grid; gap: 3px; }
 #pilot-tools button { box-shadow: 0 2px 8px #254c3217; color: #254c40; font-size: 19px; min-width: 42px; padding: 1px 8px; }
 #pilot-tools button:last-child { font-size: 12px; }

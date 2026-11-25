@@ -1,0 +1,167 @@
+{
+  "town_id": "mt-202603-public-067",
+  "checked_on": "2026-11-25",
+  "zones": {
+    "mz-plan-584443-a1": {
+      "code": "A1",
+      "address": "신월동 144-20 일대",
+      "records": [
+        {
+          "stage_kind": "integrated_review",
+          "stage": "사업시행계획안 통합심의",
+          "source_as_of": "2026-11-13",
+          "event_date": "2026-11-12",
+          "source_url": "https://www.seoul.go.kr/news/news_report.do?nttNo=470317",
+          "source_title": "양천구 신월동 144-20 일대 모아주택",
+          "publisher": "서울특별시 주택실 모아주택과",
+          "source_locator": "보도자료 본문 2쪽 및 참고자료 1 인쇄 7쪽",
+          "floors": 13,
+          "basement_floors": 3,
+          "building_count": null,
+          "coverage_pct": 35.66,
+          "far_pct": 297.71,
+          "gross_floor_area_m2": 61269.28,
+          "units": 354,
+          "rental_units": 60,
+          "setback_m": 3,
+          "road_width_existing_m": 8,
+          "road_width_proposed_max_m": 10
+        },
+        {
+          "stage_kind": "management_draft",
+          "stage": "관리계획 변경안 주민공람",
+          "source_as_of": "2026-09-23",
+          "source_url": "https://www.eum.go.kr/web/cp/hr/hrPeopleHearDet.jsp?seq=5907",
+          "source_title": "양천구 공고 제2026-1666호",
+          "publisher": "서울특별시 양천구",
+          "source_locator": "토지이용계획(안), 건축물의 밀도계획(안), 임대주택의 공급 및 인수 계획 변경(안), 특별건축구역에 관한 변경(안)",
+          "residential_site_area_m2": 11289.3,
+          "special_architectural_district_area_m2": 11487.1,
+          "coverage_limit_pct": 50,
+          "far_limit_pct": 300,
+          "units": 354,
+          "rental_units": 68
+        },
+        {
+          "stage_kind": "contractor_selection",
+          "stage": "시공자 선정",
+          "source_as_of": "2025-08-31",
+          "event_date": "2025-08-30",
+          "source_url": "https://www.yna.co.kr/view/AKR20250831022500003?input=1195m",
+          "source_title": "호반건설, 1천336억 규모 서울 신월동 가로주택정비사업 수주",
+          "publisher": "호반건설 발표 · 연합뉴스 보도",
+          "contractor_listing_url": "https://www.ihoban.co.kr/pr/news-list/web?searchKeyword=%EC%8B%A0%EC%9B%94%EB%8F%99&searchCondition=subject&pageIndex=1",
+          "source_locator": "호반건설 홍보센터 보도자료 게시 목록에서 연결한 연합뉴스 기사, 2025년 8월 31일 발표",
+          "contractor": "호반건설",
+          "building_count": 5,
+          "basement_floors": 3,
+          "floors": 13,
+          "units": 368,
+          "note": "5개 동은 시공자 선정 당시 발표한 규모입니다. 이듬해 통합심의 발표에서는 동수를 밝히지 않았습니다."
+        }
+      ]
+    },
+    "mz-plan-584443-a2": {
+      "code": "A2",
+      "address": "신월동 137-14 일대",
+      "records": [
+        {
+          "stage_kind": "management_draft",
+          "stage": "관리계획 변경안 주민공람",
+          "source_as_of": "2026-09-23",
+          "source_url": "https://www.eum.go.kr/web/cp/hr/hrPeopleHearDet.jsp?seq=5907",
+          "source_title": "양천구 공고 제2026-1666호",
+          "publisher": "서울특별시 양천구",
+          "source_locator": "토지이용계획(안), 건축물의 밀도계획(안), 임대주택의 공급 및 인수 계획 변경(안), 특별건축구역에 관한 변경(안)",
+          "residential_site_area_m2": 12831.7,
+          "special_architectural_district_area_m2": 13237.5,
+          "coverage_limit_pct": 50,
+          "far_limit_pct": 300,
+          "units": 390,
+          "rental_units": 94
+        }
+      ]
+    },
+    "mz-plan-584443-a3": {
+      "code": "A3",
+      "address": "신월동 102-33 일대",
+      "records": [
+        {
+          "stage_kind": "architect_tender",
+          "stage": "조합 건축설계자 선정 입찰공고",
+          "source_as_of": "2026-11-02",
+          "source_url": "https://www.g2b.go.kr/pn/pnp/pnpe/UntyAtchFile/downloadFile.do?bidPbancNo=R26BK01804897&bidPbancOrd=001&fileType=&fileSeq=1&prcmBsneSeCd=22",
+          "source_title": "신월1동 99-1번지 일원 가로주택정비사업 공고 제2026-02호",
+          "publisher": "신월1동 99-1번지 일원 가로주택정비사업조합",
+          "source_locator": "조달청 나라장터 R26BK01804897-001 첨부 공고문 1쪽, 1. 입찰 개요",
+          "project_area_m2": 23770.3,
+          "residential_site_area_m2": 19226.3,
+          "gross_floor_area_m2": 93954.8,
+          "above_ground_floor_area_m2": 57638.8,
+          "below_ground_floor_area_m2": 36316,
+          "note": "설계자 선정에 쓰인 참고 규모로, 인허가 과정에서 변경될 수 있습니다."
+        },
+        {
+          "stage_kind": "management_draft",
+          "stage": "관리계획 변경안 주민공람",
+          "source_as_of": "2026-09-23",
+          "source_url": "https://www.eum.go.kr/web/cp/hr/hrPeopleHearDet.jsp?seq=5907",
+          "source_title": "양천구 공고 제2026-1666호",
+          "publisher": "서울특별시 양천구",
+          "source_locator": "토지이용계획(안), 건축물의 밀도계획(안), 임대주택의 공급 및 인수 계획 변경(안), 특별건축구역에 관한 변경(안)",
+          "residential_site_area_m2": 19226.3,
+          "special_architectural_district_area_m2": 23770.3,
+          "coverage_limit_pct": 50,
+          "far_limit_pct": 300,
+          "units": 592,
+          "rental_units": 142
+        },
+        {
+          "stage_kind": "association_plan",
+          "stage": "조합 공개 건축계획",
+          "source_as_of": null,
+          "source_url": "https://cleanup.seoul.go.kr/cafe/mastr-cleanup-bsnsSumry/execute.do?cafeId=470900001596X74&div=sumry&stepSeCode=103",
+          "source_title": "신월1동 99-1번지 일원 가로주택정비사업 사업개요",
+          "publisher": "신월1동 99-1번지 일원 가로주택정비사업조합 · 서울시 정비사업 정보몽땅",
+          "source_locator": "건축계획 및 주택공급계획 표. 같은 조합 배치도 우하단의 3구역 타입별 세대수 표",
+          "plan_url": "https://cleanup.seoul.go.kr/cafe/mastr-cleanup-bsnsSumry/execute.do?cafeId=470900001596X74&div=posImage&stepSeCode=103",
+          "floors": 14,
+          "basement_floors": 2,
+          "building_count": null,
+          "coverage_pct": 39,
+          "far_pct": 300,
+          "building_area_m2": 7481,
+          "residential_site_area_m2": 19226,
+          "gross_floor_area_m2": 93955,
+          "units": 642,
+          "sale_units": 509,
+          "rental_units": 133,
+          "note": "작성일 미표기. 분양 509세대와 임대 133세대는 배치도 합계 642세대와 일치합니다. 동별 층수는 표기되지 않았습니다.",
+          "layout_file": "moatown-data/plans/sinwol/a3-layout.geojson",
+          "observed_massing_group_count": 7
+        }
+      ]
+    },
+    "mz-plan-584443-a4": {
+      "code": "A4",
+      "address": "신월동 108-1 일대",
+      "records": [
+        {
+          "stage_kind": "management_draft",
+          "stage": "관리계획 변경안 주민공람",
+          "source_as_of": "2026-09-23",
+          "source_url": "https://www.eum.go.kr/web/cp/hr/hrPeopleHearDet.jsp?seq=5907",
+          "source_title": "양천구 공고 제2026-1666호",
+          "publisher": "서울특별시 양천구",
+          "source_locator": "토지이용계획(안), 건축물의 밀도계획(안), 임대주택의 공급 및 인수 계획 변경(안), 특별건축구역에 관한 변경(안)",
+          "residential_site_area_m2": 16539.1,
+          "special_architectural_district_area_m2": 20117.4,
+          "coverage_limit_pct": 50,
+          "far_limit_pct": 300,
+          "units": 503,
+          "rental_units": 118
+        }
+      ]
+    }
+  }
+}

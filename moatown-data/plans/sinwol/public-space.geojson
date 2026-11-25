@@ -1,0 +1,532 @@
+{
+  "type": "FeatureCollection",
+  "town_id": "mt-202603-public-067",
+  "name": "신월동 102-33 관리계획 기반시설",
+  "source_label": "서울특별시 고시 제2023-606호",
+  "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=584443",
+  "source_as_of": "2023-12-28",
+  "status": "승인된 관리계획의 시설계획. 고시상 개별 사업시행인가 시 결정.",
+  "registration": {
+    "reference_boundary_id": "mt-202603-public-067",
+    "reference_layer": "UPIS_C_UQ120",
+    "reference_url": "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+    "reference_as_of": "2026-09-10",
+    "projected_crs": "EPSG:5179",
+    "coordinate_crs": "OGC:CRS84",
+    "pdf_sha256": "46aa9bf004d2227ca0c5472a21a2024214b1b7849c07433fed74a4ff19098b8f",
+    "sheet_pixels": [
+      1535,
+      983
+    ],
+    "raster_origin": "upper left, x right, y down",
+    "pixel_to_projected_xy": [
+      [
+        0.52520845,
+        -0.002936181,
+        940704.843754739
+      ],
+      [
+        -0.002829982,
+        -0.52549837,
+        1948777.320397833
+      ]
+    ],
+    "drawings": [
+      {
+        "pdf_page": 9,
+        "embedded_image": 51,
+        "title": "관리지역 결정도"
+      },
+      {
+        "pdf_page": 9,
+        "embedded_image": 52,
+        "title": "토지이용계획(안)"
+      },
+      {
+        "pdf_page": 10,
+        "embedded_image": 60,
+        "title": "정비기반시설 결정(변경)(안)도"
+      },
+      {
+        "pdf_page": 12,
+        "embedded_image": 76,
+        "title": "건축물 배치 및 기타사항에 관한 계획(안)"
+      }
+    ],
+    "method": "9쪽 관리지역 결정도의 붉은 구역계 점선을 서울시 관리지역 외곽에 아핀 정합한 기존 A4 경계의 변환을 적용했다. 49×49픽셀 지적 배경 10곳을 기준 도면과 다른 세 도면에서 정규화 상관으로 대조했다.",
+    "management_sheet_dash_to_town_outline_p95_m": 0.93,
+    "town_outline_to_land_use_dash_p95_m": 4.69,
+    "drawing_alignment_check_px": {
+      "patch_centers": [
+        [
+          250,
+          140
+        ],
+        [
+          755,
+          105
+        ],
+        [
+          205,
+          446
+        ],
+        [
+          1080,
+          460
+        ],
+        [
+          339,
+          747
+        ],
+        [
+          635,
+          821
+        ],
+        [
+          1012,
+          810
+        ],
+        [
+          527,
+          144
+        ],
+        [
+          73,
+          532
+        ],
+        [
+          1030,
+          230
+        ]
+      ],
+      "search_radius": 6,
+      "checked_images": [
+        52,
+        60,
+        76
+      ],
+      "maximum_control_displacement": 0
+    },
+    "park_location_check": {
+      "parcel_pnu": "1147010300101090019",
+      "source_url": "https://land.seoul.go.kr/land/map/land/map.do",
+      "layer": "landbiz:ln_parcel",
+      "checked_on": "2026-11-25",
+      "parcel_centroid_inside": true,
+      "fraction_of_parcel_in_park": 1.0
+    },
+    "accuracy_note": "0.93m와 4.69m는 점선과 관리지역 외곽의 방향별 정합 지표다. 시설별 측량 정확도는 별도로 제공되지 않는다.",
+    "facility_location_check": {
+      "parcel_pnu": "1147010300100990024",
+      "source_url": "https://land.seoul.go.kr/land/map/land/map.do",
+      "layer": "landbiz:ln_parcel",
+      "parcel_centroid_inside": true,
+      "fraction_of_parcel_in_facility": 0.8851,
+      "checked_on": "2026-11-25"
+    }
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "id": "park-b1",
+      "properties": {
+        "kind": "park",
+        "name": "B1 어린이공원",
+        "zone_code": "A4",
+        "notice_area_m2": 3000,
+        "digitized_area_m2": 3049.7,
+        "width_m": null,
+        "address": "신월동 109-19 일대",
+        "evidence": "승인고시 2·4쪽 B1 어린이공원 신설 및 공영주차장 중복결정 계획. 10쪽 정비기반시설 결정(변경)(안)도의 녹색 공원 외곽을 추출하고 9쪽 B1 색면과 대조했다.",
+        "accuracy": "도면 선 중심을 옮긴 참고 경계. 지적 필지 109-19의 중심점 및 외곽과 대조.",
+        "context_url": "https://news.seoul.go.kr/citybuild/archives/538493",
+        "context": "서울시 사업 소개는 신영시장 등 인근 상권과의 연계를 설명한다.",
+        "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=584443",
+        "source_as_of": "2023-12-28"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              126.83289241,
+              37.53311226
+            ],
+            [
+              126.83318431,
+              37.53265346
+            ],
+            [
+              126.833198,
+              37.53264306
+            ],
+            [
+              126.83321763,
+              37.53263788
+            ],
+            [
+              126.83323724,
+              37.53263743
+            ],
+            [
+              126.83325863,
+              37.53264409
+            ],
+            [
+              126.8337091,
+              37.53282108
+            ],
+            [
+              126.83340928,
+              37.53331246
+            ],
+            [
+              126.83289241,
+              37.53311226
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "facility-b2",
+      "properties": {
+        "kind": "facility",
+        "name": "B2 사회복지시설",
+        "zone_code": "A3",
+        "address": "신월동 99-24 일대",
+        "width_m": null,
+        "notice_area_m2": 1600,
+        "digitized_area_m2": 1676.8,
+        "evidence": "승인고시 2·4쪽 B2 사회복지시설 신설 계획. 10쪽 정비기반시설 결정(변경)(안)도의 청색 외곽을 추출하고 9쪽 B2 색면과 대조했다.",
+        "accuracy": "도면 외곽선을 옮긴 참고 시설용지. 지적 필지 99-24의 중심점과 대조.",
+        "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=584443",
+        "source_as_of": "2023-12-28"
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              126.83237181,
+              37.53394431
+            ],
+            [
+              126.83251891,
+              37.5337107
+            ],
+            [
+              126.83252785,
+              37.53370218
+            ],
+            [
+              126.8325439,
+              37.53369841
+            ],
+            [
+              126.83255877,
+              37.53369607
+            ],
+            [
+              126.83257541,
+              37.53369893
+            ],
+            [
+              126.83306192,
+              37.5338841
+            ],
+            [
+              126.83290168,
+              37.53414875
+            ],
+            [
+              126.83237181,
+              37.53394431
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "road-middle-2-1",
+      "properties": {
+        "kind": "road",
+        "name": "곰달래로5길",
+        "route_code": "중로2-1",
+        "width_m": 18,
+        "notice_route_length_m": 867,
+        "evidence": "승인고시 2쪽 도로 결정(변경) 조서 중로2-1 폭원 18m. 10쪽 정비기반시설 결정(변경)(안)도에서 동일 노선번호를 대조했다.",
+        "accuracy": "도로 양쪽 선에서 추출한 참고 중심선. 교차로 접속부는 선 중심을 따라 연결.",
+        "coverage": "도면에서 A1 북측부터 A4 공원 남측까지 보이는 관리지역 인접 구간.",
+        "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=584443",
+        "source_as_of": "2023-12-28"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            126.82974267,
+            37.53534524
+          ],
+          [
+            126.82993298,
+            37.53529979
+          ],
+          [
+            126.83131671,
+            37.53506553
+          ],
+          [
+            126.83136545,
+            37.53505544
+          ],
+          [
+            126.83141287,
+            37.5350419
+          ],
+          [
+            126.83145857,
+            37.53502503
+          ],
+          [
+            126.83150218,
+            37.53500496
+          ],
+          [
+            126.83154336,
+            37.53498186
+          ],
+          [
+            126.83158178,
+            37.53495591
+          ],
+          [
+            126.83161712,
+            37.53492732
+          ],
+          [
+            126.8316491,
+            37.53489631
+          ],
+          [
+            126.83167745,
+            37.53486315
+          ],
+          [
+            126.83170197,
+            37.53482809
+          ],
+          [
+            126.83312137,
+            37.5325648
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "road-small-1-1",
+      "properties": {
+        "kind": "road",
+        "name": "남부순환로57길",
+        "route_code": "소로1-1",
+        "width_m": 10,
+        "notice_route_length_m": 171,
+        "evidence": "승인고시 2쪽 도로 결정(변경) 조서 소로1-1 폭원 10m. 10쪽 정비기반시설 결정(변경)(안)도에서 동일 노선번호를 대조했다.",
+        "accuracy": "도로 양쪽 선에서 추출한 참고 중심선. 교차로 접속부는 선 중심을 따라 연결.",
+        "coverage": "도면에 표시된 노선의 양쪽 도로 경계 사이를 추적.",
+        "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=584443",
+        "source_as_of": "2023-12-28"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            126.83093586,
+            37.5335186
+          ],
+          [
+            126.83129108,
+            37.53496372
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "road-small-1-2",
+      "properties": {
+        "kind": "road",
+        "name": "월정로31길",
+        "route_code": "소로1-2",
+        "width_m": 10,
+        "notice_route_length_m": 159,
+        "evidence": "승인고시 2쪽 도로 결정(변경) 조서 소로1-2 폭원 10m. 10쪽 정비기반시설 결정(변경)(안)도에서 동일 노선번호를 대조했다.",
+        "accuracy": "도로 양쪽 선에서 추출한 참고 중심선. 교차로 접속부는 선 중심을 따라 연결.",
+        "coverage": "도면에 표시된 노선의 양쪽 도로 경계 사이를 추적.",
+        "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=584443",
+        "source_as_of": "2023-12-28"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            126.8325836,
+            37.53364512
+          ],
+          [
+            126.8341663,
+            37.53426435
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "road-small-1-3",
+      "properties": {
+        "kind": "road",
+        "name": "월정로33길",
+        "route_code": "소로1-3",
+        "width_m": 10,
+        "notice_route_length_m": 215,
+        "evidence": "승인고시 2쪽 도로 결정(변경) 조서 소로1-3 폭원 10m. 10쪽 정비기반시설 결정(변경)(안)도에서 동일 노선번호를 대조했다.",
+        "accuracy": "도로 양쪽 선에서 추출한 참고 중심선. 교차로 접속부는 선 중심을 따라 연결.",
+        "coverage": "도면에 표시된 노선의 양쪽 도로 경계 사이를 추적.",
+        "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=584443",
+        "source_as_of": "2023-12-28"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            126.83195824,
+            37.5346429
+          ],
+          [
+            126.83412448,
+            37.53548736
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "road-small-2-1",
+      "properties": {
+        "kind": "road",
+        "name": "곰달래로5길",
+        "route_code": "소로2-1",
+        "width_m": 8,
+        "notice_route_length_m": 118,
+        "evidence": "승인고시 2쪽 도로 결정(변경) 조서 소로2-1 폭원 8m. 10쪽 정비기반시설 결정(변경)(안)도에서 동일 노선번호를 대조했다.",
+        "accuracy": "도로 양쪽 선에서 추출한 참고 중심선. 교차로 접속부는 선 중심을 따라 연결.",
+        "coverage": "도면에 표시된 노선의 양쪽 도로 경계 사이를 추적.",
+        "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=584443",
+        "source_as_of": "2023-12-28"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            126.83117215,
+            37.53311457
+          ],
+          [
+            126.83236938,
+            37.53357537
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "road-small-2-2",
+      "properties": {
+        "kind": "road",
+        "name": "곰달래로11길",
+        "route_code": "소로2-2",
+        "width_m": 8,
+        "notice_route_length_m": 224,
+        "evidence": "승인고시 2쪽 도로 결정(변경) 조서 소로2-2 폭원 8m. 10쪽 정비기반시설 결정(변경)(안)도에서 동일 노선번호를 대조했다.",
+        "accuracy": "도로 양쪽 선에서 추출한 참고 중심선. 교차로 접속부는 선 중심을 따라 연결.",
+        "coverage": "도면에 표시된 노선의 양쪽 도로 경계 사이를 추적.",
+        "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=584443",
+        "source_as_of": "2023-12-28"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            126.83448738,
+            37.53487325
+          ],
+          [
+            126.83398741,
+            37.5346793
+          ],
+          [
+            126.83484482,
+            37.53327203
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "walkway-a3",
+      "properties": {
+        "kind": "walkway",
+        "name": "A3 공공보행통로",
+        "zone_code": "A3",
+        "width_m": 6,
+        "evidence": "승인고시 5쪽 곰달래로9길 폐도 부분 공공보행통로, 7쪽 A3·A4 폭 6m. 9쪽 녹색 보행통로 무늬의 중심을 추출하고 12쪽 건축물 배치 계획과 대조했다.",
+        "accuracy": "녹색 무늬의 선형과 끝을 읽은 참고 중심선.",
+        "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=584443",
+        "source_as_of": "2023-12-28"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            126.83309776,
+            37.53502776
+          ],
+          [
+            126.83363189,
+            37.53414275
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "id": "walkway-a4",
+      "properties": {
+        "kind": "walkway",
+        "name": "A4 공공보행통로",
+        "zone_code": "A4",
+        "width_m": 6,
+        "evidence": "승인고시 5쪽 곰달래로9길 폐도 부분 공공보행통로, 7쪽 A3·A4 폭 6m. 9쪽 녹색 보행통로 무늬의 중심을 추출하고 12쪽 건축물 배치 계획과 대조했다.",
+        "accuracy": "녹색 무늬의 선형과 끝을 읽은 참고 중심선.",
+        "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=584443",
+        "source_as_of": "2023-12-28"
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            126.83370789,
+            37.5340055
+          ],
+          [
+            126.83427801,
+            37.53308738
+          ]
+        ]
+      }
+    }
+  ]
+}

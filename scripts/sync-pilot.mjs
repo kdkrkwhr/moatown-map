@@ -5,7 +5,7 @@ import {readFileSync,writeFileSync} from 'node:fs';
 const root=new URL('../moatown-data/',import.meta.url),latest=new URL('latest.json',root);
 const manifest=JSON.parse(readFileSync(latest,'utf8'));
 const read=key=>readFileSync(new URL(manifest.files[key],root),'utf8').replaceAll('\r\n','\n');
-const keys=['towns','zones','boundaries','buildings','pilot_plans','sinwol_visuals'];
+const keys=['towns','zones','boundaries','buildings','pilot_plans','sinwol_visuals','sinwol_public_space','sinwol_design','sinwol_layout'];
 const buildings=JSON.parse(read('buildings')).towns,plans=JSON.parse(read('pilot_plans')).towns;
 const town_ids=Object.keys(buildings).sort();
 if(!town_ids.length || town_ids.join()!==Object.keys(plans).sort().join())throw Error('계획과 건물 자료의 시범 대상지가 다릅니다.');

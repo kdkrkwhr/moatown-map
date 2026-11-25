@@ -1,4 +1,4 @@
-﻿import earcut from './vendor/earcut-3.0.2/earcut.mjs?v=151be3657af1';
+﻿import earcut from './vendor/earcut-3.0.2/earcut.mjs?v=744430b0c9fe';
 
 const DEG = Math.PI / 180;
 const GROUND = '#f1f3ef';
@@ -77,7 +77,7 @@ function localPart(raw, project) {
   return part;
 }
 
-function buildModel(town, zones, buildings, simulation) {
+function buildModel(town, zones, buildings, simulation, publicSpace) {
   const candidates = [town, ...zones, ...buildings].filter(Boolean);
   const reference = candidates.find(item => polygonRings(item.geometry).length);
   if (!reference) throw new Error('표시할 건물 또는 참고 경계 도형이 없습니다.');
@@ -112,9 +112,21 @@ function buildModel(town, zones, buildings, simulation) {
     towers.push(tower);
     simulatedZones.add(zone);
   }
+  const spaces = [];
+  for (const raw of publicSpace?.features || []) {
+    const { kind, name, width_m } = raw.properties || {};
+    if (!['park', 'facility', 'road', 'walkway'].includes(kind)) continue;
+    const parts = polygonRings(raw.geometry).map(poly => localPart(poly, project)).filter(Boolean);
+    const paths = raw.geometry?.type === 'LineString' ? [raw.geometry.coordinates]
+      : raw.geometry?.type === 'MultiLineString' ? raw.geometry.coordinates : [];
+    const lines = paths.map(path => path.map(project)).filter(path => path.length >= 2);
+    if (parts.length || (['road', 'walkway'].includes(kind) && lines.length)) {
+      spaces.push({ kind, name, parts, lines, width: Number.isFinite(width_m) && width_m > 0 ? width_m : null });
+    }
+  }
   const focus = perimeter ? [perimeter] : areas.length ? areas : blocks;
   const focusPoints = focus.flatMap(item => item.parts.flatMap(part => part.rings[0]));
-  return { perimeter, areas, blocks, towers, simulatedZones, focusPoints };
+  return { perimeter, areas, blocks, towers, spaces, simulatedZones, focusPoints };
 }
 
 function material(current, plan, selected, { code = 0, mode = null, lift = 0 } = {}) {
@@ -122,25 +134,65 @@ function material(current, plan, selected, { code = 0, mode = null, lift = 0 } =
     currentCss: cssColor(current), planCss: cssColor(plan), selectedCss: cssColor(selected) };
 }
 
+function nearSegment(x, y, a, b, radius) {
+  const dx = b[0] - a[0], dy = b[1] - a[1];
+  const t = clamp(((x - a[0]) * dx + (y - a[1]) * dy) / (dx * dx + dy * dy || 1), 0, 1);
+  return (x - a[0] - t * dx) ** 2 + (y - a[1] - t * dy) ** 2 < radius ** 2;
+}
+
+// Illustrative canopy symbols are limited to the supplied park interior.
+function parkTrees(part, spaces, towers) {
+  const [left, bottom, right, top] = part.bounds;
+  const pitch = Math.max(9, Math.sqrt((right - left) * (top - bottom) / 34));
+  const trees = [];
+  const obstacles = [...spaces.filter(s => s.kind !== 'park').flatMap(s => s.parts), ...towers.flatMap(t => t.parts)];
+  function nearRim(polygon, x, y, radius) {
+    return polygon.rings.some(ring => ring.some((a, i) => nearSegment(x, y, a, ring[(i + 1) % ring.length], radius)));
+  }
+  function clear(x, y, radius) {
+    if (!contains(part, x, y) || nearRim(part, x, y, radius)) return false;
+    if (obstacles.some(p => {
+      const [x0, y0, x1, y1] = p.bounds;
+      return x >= x0 - radius && x <= x1 + radius && y >= y0 - radius && y <= y1 + radius &&
+        (contains(p, x, y) || nearRim(p, x, y, radius));
+    })) return false;
+    return !spaces.some(s => s.lines.some(line => line.slice(1).some((b, i) =>
+      nearSegment(x, y, line[i], b, radius + (s.width || (s.kind === 'road' ? 3 : 2)) / 2))));
+  }
+  let index = 0;
+  for (let row = bottom + pitch * .42; row < top; row += pitch) {
+    for (let col = left + pitch * .42; col < right; col += pitch) {
+      index++;
+      const x = col + .23 * pitch * Math.sin(index * 13.17), y = row + .26 * pitch * Math.sin(index * 5.31);
+      const radius = 2.3 + .55 * Math.sin(index * 1.73);
+      if (clear(x, y, radius)) trees.push({ x, y, radius, index });
+    }
+  }
+  return trees;
+}
+
 function geometry(model) {
   const surfaces = [];
-  function add(rings, points, indices, paint, group) {
-    surfaces.push({ rings, points, indices, paint, group });
+  function add(rings, points, indices, paint, group, facade) {
+    const face = { rings, points, indices, paint, group, facade };
+    surfaces.push(face);
+    return face;
   }
   function flat(part, z, paint, group) {
     const rings = part.rings.map(r => r.map(([x, y]) => [x, y, z]));
     add(rings, rings.flat(), part.indices, paint, group);
   }
-  function quad(a, b, c, d, paint, group) {
+  function quad(a, b, c, d, paint, group, facade) {
     const points = [a, b, c, d];
-    add([points], points, [0, 1, 2, 0, 2, 3], paint, group);
+    return add([points], points, [0, 1, 2, 0, 2, 3], paint, group, facade);
   }
   function edge(a, b, width, z, paint, group) {
     const dx = b[0] - a[0], dy = b[1] - a[1], length = Math.hypot(dx, dy);
     if (length < 1e-5) return;
     const nx = -dy / length * width / 2, ny = dx / length * width / 2;
-    quad([a[0] + nx, a[1] + ny, z], [b[0] + nx, b[1] + ny, z],
+    const face = quad([a[0] + nx, a[1] + ny, z], [b[0] + nx, b[1] + ny, z],
       [b[0] - nx, b[1] - ny, z], [a[0] - nx, a[1] - ny, z], paint, group);
+    if (group === 6) face.rimWidth = width;
   }
   function outline(part, width, z, paint, group, dashed = false) {
     for (const ring of part.rings) {
@@ -164,15 +216,84 @@ function geometry(model) {
   const townLine = material(rgb('#466d64'), rgb('#47776c'), rgb('#466d64'), { lift: 2.1 });
   for (const part of model.perimeter?.parts || []) flat(part, 0, townFill, 0);
   model.areas.forEach((zone, i) => {
-    const planFill = model.simulatedZones.has(zone) ? '#dcfce7' : PLAN_COLORS[i % PLAN_COLORS.length];
-    const fill = material(rgb('#e1e8db'), rgb(planFill), selectedArea, { code: zone.code, lift: .4 });
+    const hasTowers = model.simulatedZones.has(zone);
+    const planFill = hasTowers ? '#e4e6d7' : PLAN_COLORS[i % PLAN_COLORS.length];
+    const fill = material(rgb('#e1e8db'), rgb(planFill), selectedArea, { code: zone.code, lift: .4, mode: hasTowers ? 'current' : null });
+    const planSurface = hasTowers && material(rgb(planFill), rgb(planFill), rgb('#d0ded0'), { code: zone.code, lift: .4, mode: 'plan' });
     const border = material(rgb('#99b2a3'), rgb('#5a9084'), rgb('#176354'), { code: zone.code, lift: 1.4 });
     for (const part of zone.parts) {
       flat(part, 0, fill, 1);
+      if (planSurface) flat(part, 0, planSurface, 1);
       outline(part, 1.5, 0, border, 3);
     }
   });
   for (const part of model.perimeter?.parts || []) outline(part, 2.1, 0, townLine, 4, true);
+
+  function planPaint(hex, lift = 0) {
+    const color = rgb(hex);
+    return material(color, color, color, { mode: 'plan', lift });
+  }
+  const lawn = planPaint('#b7cf92', .55), lawnEdge = planPaint('#86a674', .63);
+  const civicSite = planPaint('#d8c4cc', .57), civicEdge = planPaint('#af919c', .64);
+  const roadBed = planPaint('#dad9cf', .73), asphalt = planPaint('#a8b1af', .81);
+  const walkBed = planPaint('#b99b79', .88), paving = planPaint('#ead2ac', .94);
+  for (const space of model.spaces) {
+    const park = space.kind === 'park', facility = space.kind === 'facility', road = space.kind === 'road';
+    const fill = park ? lawn : facility ? civicSite : road ? asphalt : paving;
+    const rim = park ? lawnEdge : facility ? civicEdge : road ? roadBed : walkBed;
+    for (const part of space.parts) {
+      flat(part, 0, fill, 2);
+      outline(part, park ? 1.2 : .8, 0, material(rim.plan, rim.plan, rim.plan,
+        { mode: 'plan', lift: fill.lift + .04 }), 2);
+    }
+    for (const line of space.lines) {
+      // Unspecified widths are narrow cartographic strokes.
+      const width = space.width || (road ? 3 : 2);
+      const normals = line.slice(1).map(([x, y], i) => {
+        const dx = x - line[i][0], dy = y - line[i][1], length = Math.hypot(dx, dy) || 1;
+        return [-dy / length, dx / length];
+      });
+      const strip = (size, paint) => {
+        const vertices = line.map(([x, y], i) => {
+          const a = normals[Math.max(0, i - 1)], b = normals[Math.min(normals.length - 1, i)];
+          const half = size / (2 * Math.max(.5, 1 + a[0] * b[0] + a[1] * b[1]));
+          const nx = (a[0] + b[0]) * half, ny = (a[1] + b[1]) * half;
+          return [[x + nx, y + ny, 0], [x - nx, y - ny, 0]];
+        });
+        for (let i = 1; i < vertices.length; i++) {
+          quad(vertices[i - 1][0], vertices[i][0], vertices[i][1], vertices[i - 1][1], paint, 2);
+        }
+      };
+      strip(width, rim);
+      strip(width * (road ? .79 : .83), fill);
+    }
+  }
+  const trunk = planPaint('#88795c');
+  const foliage = ['#749963', '#89a861', '#608b68'].map(hex =>
+    [.81, .92, 1, 1.08, 1.14, 1.02].map(gain => {
+      const c = shade(rgb(hex), gain);
+      return material(c, c, c, { mode: 'plan' });
+    }));
+  for (const space of model.spaces.filter(s => s.kind === 'park')) {
+    for (const part of space.parts) {
+      for (const { x, y, radius, index } of parkTrees(part, model.spaces, model.towers)) {
+        const z = radius * 1.5, top = z + radius, tier = foliage[index % foliage.length];
+        quad([x - .26, y, 0], [x + .26, y, 0], [x + .26, y, z], [x - .26, y, z], trunk, 6);
+        quad([x, y - .26, 0], [x, y + .26, 0], [x, y + .26, z], [x, y - .26, z], trunk, 6);
+        const crown = tier.map((_, i) => {
+          const angle = (i + .23) * 2 * Math.PI / tier.length;
+          return [x + Math.cos(angle) * radius, y + Math.sin(angle) * radius, z];
+        });
+        for (let i = 0; i < crown.length; i++) {
+          const a = crown[i], b = crown[(i + 1) % crown.length];
+          const upper = [a, b, [x - .15 * radius, y + .20 * radius, top]];
+          const lower = [b, a, [x, y, z - radius * .7]];
+          add([upper], upper, [0, 1, 2], tier[i], 6);
+          add([lower], lower, [0, 1, 2], tier[0], 6);
+        }
+      }
+    }
+  }
 
   for (const block of model.blocks) {
     const tier = rgb(AGE_COLORS[block.props.age_tier] || AGE_COLORS.unknown);
@@ -189,35 +310,100 @@ function geometry(model) {
     for (const part of block.parts) {
       if (!block.height) { outline(part, 1.05, 0, footprint, 5); continue; }
       const z = block.height;
-      walls(part, (a, b, sun) => quad([...a, 0], [...b, 0], [...b, z], [...a, z], paint(.74 + .15 * sun), 6));
+      walls(part, (a, b, sun, nx, ny) => {
+        const face = quad([...a, 0], [...b, 0], [...b, z], [...a, z], paint(.74 + .15 * sun), 6);
+        face.normal = { nx, ny };
+      });
       flat(part, z, roof, 6);
       outline(part, .30, z, rim, 6);
     }
   }
 
-  for (const tower of model.towers) {
-    const style = (color, selected, lift = 0) => material(color, color, selected,
-      { code: tower.zone.code, mode: 'plan', lift });
-    const roof = style(rgb('#f8fafc'), rgb('#e4f3e7'), .12);
-    const rim = style(rgb('#83928f'), rgb('#608c7b'), .45);
-    const shadow = style(rgb('#a2be9c'), rgb('#83afa2'), .65);
-    const floorHeight = tower.height / tower.props.floors;
+  for (const [towerIndex, tower] of model.towers.entries()) {
+    const paints = new Map();
+    function finish(hex, gain = 1, lift = 0) {
+      const key = [hex, gain, lift].join('/');
+      if (!paints.has(key)) {
+        const color = shade(rgb(hex), gain);
+        paints.set(key, material(color, color, color.map((c, i) => c * [.98, 1, .98][i]),
+          { code: tower.zone.code, mode: 'plan', lift }));
+      }
+      return paints.get(key);
+    }
+    const roof = finish(['#c1c6bb', '#c6c5b9', '#b9c4be'][towerIndex % 3], 1, .04), rim = finish('#faf4e5', 1, .12);
+    const shadow = finish('#b4bdaa', 1, .48);
+    const z = tower.height, floors = tower.props.floors, podium = z / floors;
+    const accent = ['#b77858', '#6c8b81', '#a88962', '#7c91a0'][towerIndex % 4];
     for (const part of tower.parts) {
-      const shadowRings = part.rings.map(ring => ring.map(([x, y]) => [x + 3.5, y - 2.4, 0]));
+      const castX = z * .23, castY = -z * .16;
+      const shadowRings = part.rings.map(ring => ring.map(([x, y]) => [x + castX, y + castY, 0]));
       add(shadowRings, shadowRings.flat(), part.indices, shadow, 2);
-      walls(part, (a, b, sun) => {
-        const light = .88 + .11 * sun;
-        const wall = style(shade(rgb('#f8fafc'), light), shade(rgb('#e4f2e8'), light));
-        const band = style(shade(rgb('#bdcbd0'), light), shade(rgb('#a8c5bc'), light));
-        for (let floor = 0; floor < tower.props.floors; floor++) {
-          const bottom = floor * floorHeight, top = (floor + 1) * floorHeight;
-          const lintel = top - floorHeight * .20;
-          quad([...a, bottom], [...b, bottom], [...b, lintel], [...a, lintel], wall, 6);
-          quad([...a, lintel], [...b, lintel], [...b, top], [...a, top], band, 6);
+      let longest = 0, roofAxis;
+      walls(part, (a, b, sun, nx, ny, length) => {
+        const ux = (b[0] - a[0]) / length, uy = (b[1] - a[1]) / length;
+        if (length > longest) { longest = length; roofAxis = [ux, uy]; }
+        quad([...a, 0], [...b, 0], [b[0] + castX, b[1] + castY, 0], [a[0] + castX, a[1] + castY, 0], shadow, 2);
+        const light = .86 + .13 * sun;
+        const point = (t, depth, h) => [a[0] + ux * length * t + nx * depth, a[1] + uy * length * t + ny * depth, h];
+        const wall = (start, end, depth, low, high, paint, tile, repeats = floors - 1) => {
+          if (low >= high) return;
+          quad(point(start, depth, low), point(end, depth, low), point(end, depth, high), point(start, depth, high),
+            paint, 6, tile === undefined ? null : { tile, repeats, nx, ny });
+        };
+        const shell = finish('#fffaf1', light);
+        // A stone plinth carries the entrance; the upper floor slabs follow the modeled floor count.
+        const endWall = length < 21;
+        const wings = Math.ceil(length / 51);
+        for (let wing = 0; wing < wings; wing++) wall(wing / wings, (wing + 1) / wings, 0, 0, podium, shell, endWall ? 4 : 3, 1);
+        if (length < 4) {
+          wall(0, 1, 0, podium, z, shell);
+        } else if (endWall && length > 16.8) {
+          wall(0, .46, 0, podium, z, shell, 0);
+          wall(.46, .51, 0, podium, z, finish(accent, light));
+          wall(.51, 1, 0, podium, z, shell, 1);
+        } else if (endWall) {
+          wall(0, 1, 0, podium, z, shell, 2);
+          wall(.10, .17, .08, podium, z - .45, finish(accent, light));
+        } else {
+          const bays = [[0, .075, 0, 4], [.075, .263, -.35, 0], [.263, .437, 0, 1],
+            [.437, .563, -.8, 5], [.563, .737, 0, 1], [.737, .925, -.35, 0], [.925, 1, 0, 4]];
+          for (let wing = 0; wing < wings; wing++) {
+            const along = t => (wing + t) / wings;
+            let previous = 0;
+            for (const [start, end, depth, tile] of bays) {
+              if (depth !== previous && floors > 1) {
+                quad(point(along(start), previous, podium), point(along(start), depth, podium), point(along(start), depth, z),
+                  point(along(start), previous, z), finish('#b8bbad', light), 6);
+              }
+              wall(along(start), along(end), depth, podium, z, tile === 5 ? finish('#e2ece6', light) : shell, tile);
+              previous = depth;
+            }
+            wall(along(.405), along(.437), .08, podium, z, finish(accent, light));
+            wall(along(.563), along(.595), .08, podium, z, finish(accent, light));
+            quad(point(along(.408), -.8, podium), point(along(.592), -.8, podium),
+              point(along(.592), .7, podium), point(along(.408), .7, podium), finish('#777e71'), 6);
+          }
         }
+        wall(0, 1, .04, z - .46, z, finish('#f6f0de', light));
       });
-      flat(part, tower.height, roof, 6);
-      outline(part, .65, tower.height, rim, 6);
+      flat(part, z, roof, 6);
+      outline(part, .65, z, rim, 6);
+      if (!roofAxis) continue;
+      const [cx, cy] = part.anchor, [ux, uy] = roofAxis;
+      function roofBox(offset, side, length, width, height, body, cap) {
+        const corners = [[-1,-1],[1,-1],[1,1],[-1,1]].map(([sx, sy]) => {
+          const u = offset + sx * length / 2, v = side + sy * width / 2;
+          return [cx + ux * u - uy * v, cy + uy * u + ux * v];
+        });
+        if (!corners.every(([x, y]) => contains(part, x, y))) return;
+        const lid = corners.map(([x, y]) => [x, y, z + height]);
+        walls({ rings: [corners] }, (a, b, sun) =>
+          quad([...a, z], [...b, z], [...b, z + height], [...a, z + height], finish(body, .86 + .13 * sun), 6));
+        quad(...lid, finish(cap), 6);
+      }
+      roofBox((towerIndex % 3 - 1) * longest * .12, .6, 7.2, 4.1, 1.9, '#b0aaa0', '#f6eddb');
+      roofBox(-longest * .27, -.6, 3.1, 1.6, .8, '#747f79', '#93a69e');
+      roofBox(longest * .27, -.6, 3.1, 1.6, .8, '#747f79', '#93a69e');
     }
   }
   return surfaces;
@@ -236,7 +422,8 @@ function walls(part, draw) {
       const dx = b[0] - a[0], dy = b[1] - a[1], length = Math.hypot(dx, dy);
       if (length < .001) continue;
       // Fixed northwest lighting keeps the appearance consistent as the camera rotates.
-      draw(a, b, (-.58 * dy - .81 * dx) * orientation / length);
+      draw(a, b, (-.58 * dy - .81 * dx) * orientation / length,
+        dy * orientation / length, -dx * orientation / length, length);
     }
   }
 }
@@ -247,14 +434,77 @@ function makeCanvas() {
   return canvas;
 }
 
+const TILE_WIDTH = 128, TILE_HEIGHT = 64, ATLAS_TILES = 8;
+// Each atlas tile is one architectural bay over one floor. Both renderers repeat
+// the same elevation in building space, including when the view rotates or tilts.
+function facadeAtlas() {
+  const sheet = document.createElement('canvas');
+  sheet.width = TILE_WIDTH * ATLAS_TILES;
+  sheet.height = TILE_HEIGHT;
+  const ctx = sheet.getContext('2d');
+  function rect(x, y, w, h, color) {
+    ctx.fillStyle = color;
+    ctx.fillRect(x, y, w, h);
+  }
+  function glass(x, y, w, h, panes) {
+    rect(x - 2, y - 2, w + 4, h + 4, '#a5ada6');
+    rect(x, y, w, h, '#516972');
+    rect(x + 1, y + 2, w - 2, h * .52, '#79949b');
+    rect(x + 1, y + 2 + h * .52, w - 2, h * .38, '#94a8a7');
+    for (let i = 1; i < panes; i++) rect(x + i * w / panes - 1, y, 2, h, '#d0d4c8');
+    rect(x, y, w, 2, '#455961');
+  }
+  for (let tile = 0; tile < 6; tile++) {
+    ctx.save();
+    ctx.translate(tile * TILE_WIDTH, 0);
+    rect(0, 0, 128, 64, '#efeade');
+    if (tile === 0) {
+      rect(4, 5, 120, 52, '#9ba29b');
+      glass(10, 10, 108, 41, 4);
+      rect(5, 38, 118, 3, '#e7e6d8');
+      rect(6, 41, 116, 11, '#a5b8b6');
+      for (const x of [7, 43, 82, 119]) rect(x, 40, 2, 13, '#d9dfd2');
+      rect(3, 53, 122, 7, '#f5f1e5');
+      rect(4, 60, 120, 4, '#9b9e92');
+    } else if (tile === 1) {
+      glass(10, 11, 43, 34, 2);
+      glass(76, 11, 40, 34, 2);
+      rect(8, 46, 48, 3, '#bcbeb0');
+      rect(73, 46, 46, 3, '#bcbeb0');
+      rect(63, 0, 1, 64, '#d6d4c7');
+    } else if (tile === 2) {
+      rect(18, 0, 15, 64, '#d4ccb8');
+      rect(78, 0, 25, 64, '#dfded1');
+      glass(81, 14, 18, 27, 2);
+      rect(0, 57, 128, 1, '#d6d2c3');
+    } else if (tile === 3) {
+      rect(0, 0, 128, 64, '#b9b5a6');
+      rect(0, 0, 128, 9, '#dbd7c9');
+      for (const x of [6, 25, 43, 59, 78, 98, 115]) glass(x, 14, 8, 42, 1);
+      rect(0, 58, 128, 6, '#939c91');
+    } else if (tile === 4) {
+      rect(0, 0, 128, 64, '#e3ddcd');
+      rect(0, 58, 128, 2, '#cac8ba');
+    } else {
+      rect(0, 0, 128, 64, '#899895');
+      rect(0, 0, 18, 64, '#b9b9a8');
+      rect(110, 0, 18, 64, '#dedbcb');
+      glass(28, 6, 71, 41, 2);
+      rect(17, 52, 94, 4, '#bfc8bb');
+    }
+    ctx.restore();
+  }
+  return sheet;
+}
+
 function webglRenderer(canvas, surfaces) {
   const gl = canvas.getContext('webgl', { antialias: true, alpha: false, depth: true });
   if (!gl) return null;
   const vertex = `
-    attribute vec3 a_pos, a_current, a_plan, a_selected, a_options;
+    attribute vec3 a_pos, a_current, a_plan, a_selected, a_options, a_uv;
     uniform vec2 u_center, u_scale, u_bearing, u_pitch, u_active;
     uniform float u_plan;
-    varying vec3 v_color;
+    varying vec3 v_color, v_uv;
     void main(){
       vec2 d = a_pos.xy - u_center;
       float east = dot(d, u_bearing);
@@ -265,9 +515,20 @@ function webglRenderer(canvas, surfaces) {
       if ((a_options.y < -0.5 && u_plan > 0.5) || (a_options.y > 0.5 && u_plan < 0.5))
         gl_Position = vec4(2.0,2.0,2.0,1.0);
       v_color = mix(a_current, a_plan, u_plan);
+      v_uv = a_uv;
       if (a_options.x > 0.0 && (a_options.x == u_active.x || a_options.x == u_active.y)) v_color = a_selected;
     }`;
-  const fragment = 'precision mediump float; varying vec3 v_color; void main(){gl_FragColor = vec4(v_color, 1.0);}';
+  const fragment = `precision mediump float;
+    varying vec3 v_color, v_uv;
+    uniform sampler2D u_sheet;
+    void main(){
+      vec3 color = v_color;
+      if (v_uv.z >= 0.0) {
+        vec2 uv = vec2((v_uv.z + clamp(v_uv.x, .012, .988)) / 8.0, v_uv.y);
+        color *= texture2D(u_sheet, uv).rgb;
+      }
+      gl_FragColor = vec4(color, 1.0);
+    }`;
   function compile(type, source) {
     const shader = gl.createShader(type);
     gl.shaderSource(shader, source);
@@ -283,15 +544,23 @@ function webglRenderer(canvas, surfaces) {
   if (!gl.getProgramParameter(program, gl.LINK_STATUS)) throw new Error('3D 프로그램 초기화 실패');
   gl.useProgram(program);
   const count = surfaces.reduce((n, face) => n + face.indices.length, 0);
-  const stride = 15;
+  const textured = surfaces.some(face => face.facade);
+  const stride = textured ? 18 : 15;
   const data = new Float32Array(count * stride);
   let offset = 0;
-  for (const { indices, points, paint } of surfaces) {
+  for (const { indices, points, paint, facade } of surfaces) {
     const mode = paint.mode === 'current' ? -1 : paint.mode === 'plan' ? 1 : 0;
     const style = [...paint.current, ...paint.plan, ...paint.selected, paint.code, mode, paint.lift];
     for (const index of indices) {
       data.set(points[index], offset);
       data.set(style, offset + 3);
+      if (textured) {
+        if (facade) {
+          data[offset + 15] = Number(index === 1 || index === 2);
+          data[offset + 16] = index >= 2 ? facade.repeats : 0;
+        }
+        data[offset + 17] = facade ? facade.tile : -1;
+      }
       offset += stride;
     }
   }
@@ -303,6 +572,22 @@ function webglRenderer(canvas, surfaces) {
     gl.enableVertexAttribArray(index);
     gl.vertexAttribPointer(index, 3, gl.FLOAT, false, stride * 4, i * 12);
   });
+  const uv = gl.getAttribLocation(program, 'a_uv');
+  if (textured) {
+    gl.enableVertexAttribArray(uv);
+    gl.vertexAttribPointer(uv, 3, gl.FLOAT, false, stride * 4, 60);
+  } else gl.vertexAttrib3f(uv, 0, 0, -1);
+  const sheet = gl.createTexture();
+  gl.bindTexture(gl.TEXTURE_2D, sheet);
+  if (textured) {
+    gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, true);
+    gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGB, gl.RGB, gl.UNSIGNED_BYTE, facadeAtlas());
+    gl.generateMipmap(gl.TEXTURE_2D);
+    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR_MIPMAP_LINEAR);
+  } else {
+    gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGB, 1, 1, 0, gl.RGB, gl.UNSIGNED_BYTE, new Uint8Array([255, 255, 255]));
+    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR);
+  }
   const uniforms = Object.fromEntries(['center', 'scale', 'bearing', 'pitch', 'active', 'plan']
     .map(name => [name, gl.getUniformLocation(program, 'u_' + name)]));
   gl.clearColor(...rgb(GROUND), 1);
@@ -321,6 +606,7 @@ function webglRenderer(canvas, surfaces) {
       gl.drawArrays(gl.TRIANGLES, 0, count);
     },
     destroy() {
+      gl.deleteTexture(sheet);
       gl.deleteBuffer(buffer);
       gl.deleteProgram(program);
       gl.getExtension('WEBGL_lose_context')?.loseContext();
@@ -340,22 +626,62 @@ function canvasRenderer(canvas, surfaces) {
       center[1] += p[1] / count;
       center[2] += p[2] / count;
     }
-    return { ...face, center, depth: 0 };
+    const radius = face.points.reduce((limit, p) =>
+      Math.max(limit, Math.abs(p[0] - center[0]) + Math.abs(p[1] - center[1]) + Math.abs(p[2] - center[2])), 0);
+    return { ...face, center, radius, depth: 0 };
   });
+  const modeFaces = ['current', 'plan'].map(mode => faces.filter(f => !f.paint.mode || f.paint.mode === mode));
+  const tiles = new Map();
+  let sheet;
+  function facadePattern(tile, tint) {
+    const key = tile + tint;
+    if (!tiles.has(key)) {
+      sheet ||= facadeAtlas();
+      const swatch = document.createElement('canvas');
+      swatch.width = TILE_WIDTH;
+      swatch.height = TILE_HEIGHT;
+      const color = swatch.getContext('2d');
+      color.drawImage(sheet, tile * TILE_WIDTH, 0, TILE_WIDTH, TILE_HEIGHT, 0, 0, TILE_WIDTH, TILE_HEIGHT);
+      color.globalCompositeOperation = 'multiply';
+      color.fillStyle = tint;
+      color.fillRect(0, 0, TILE_WIDTH, TILE_HEIGHT);
+      tiles.set(key, ctx.createPattern(swatch, 'repeat-y'));
+    }
+    return tiles.get(key);
+  }
   return {
     draw(view) {
       ctx.setTransform(canvas.width / view.width, 0, 0, canvas.height / view.height, 0, 0);
       ctx.fillStyle = GROUND;
       ctx.fillRect(0, 0, view.width, view.height);
-      for (const face of faces) {
+      const visible = [];
+      for (const face of modeFaces[Number(view.plan)]) {
+        const normal = face.normal || face.facade;
+        if (normal && normal.nx * view.sinB - normal.ny * view.cosB <= 0) continue;
+        if (face.rimWidth && face.rimWidth * view.scale * canvas.width / view.width < .65) continue;
         const [x, y, z] = face.center;
+        const [sx, sy] = screenPoint(view, x, y, z);
+        const margin = face.radius * view.scale;
+        if (sx < -margin || sx > view.width + margin || sy < -margin || sy > view.height + margin) continue;
         face.depth = (view.sinB * x - view.cosB * y) * view.sinP + z * view.cosP + face.paint.lift;
+        visible.push(face);
       }
-      faces.sort((a, b) => a.group - b.group || a.depth - b.depth);
-      for (const { paint, rings } of faces) {
-        if (paint.mode && paint.mode !== (view.plan ? 'plan' : 'current')) continue;
+      visible.sort((a, b) => a.group - b.group || (a.group === 2 && a.paint.lift - b.paint.lift) || a.depth - b.depth);
+      for (const { paint, rings, facade } of visible) {
         const active = paint.code && (paint.code === view.zone || paint.code === view.building);
-        ctx.fillStyle = active ? paint.selectedCss : view.plan ? paint.planCss : paint.currentCss;
+        const color = active ? paint.selectedCss : view.plan ? paint.planCss : paint.currentCss;
+        if (facade) {
+          const ring = rings[0];
+          const [l, t] = screenPoint(view, ...ring[3]), [r, tr] = screenPoint(view, ...ring[2]);
+          const [, b] = screenPoint(view, ...ring[0]), height = TILE_HEIGHT * facade.repeats;
+          ctx.save();
+          ctx.transform((r - l) / TILE_WIDTH, (tr - t) / TILE_WIDTH, 0, (b - t) / height, l, t);
+          ctx.fillStyle = facadePattern(facade.tile, color);
+          ctx.fillRect(0, 0, TILE_WIDTH, height);
+          ctx.restore();
+          continue;
+        }
+        ctx.fillStyle = color;
         ctx.beginPath();
         for (const ring of rings) {
           for (let i = 0; i < ring.length; i++) {
@@ -364,10 +690,10 @@ function canvasRenderer(canvas, surfaces) {
           }
           ctx.closePath();
         }
-        ctx.fill('evenodd');
+        if (rings.length > 1) ctx.fill('evenodd'); else ctx.fill();
       }
     },
-    destroy() {},
+    destroy() { tiles.clear(); },
   };
 }
 
@@ -424,6 +750,9 @@ const SCENE_STYLE = `
 .pilot-world[data-dragging="true"] {cursor:grabbing}
 .pilot-world canvas,.pilot-world-labels {position:absolute;inset:0;display:block;width:100%;height:100%}
 .pilot-world-labels {pointer-events:none;overflow:hidden}
+.pilot-space-label {position:absolute;top:0;left:0;pointer-events:none;color:#425344;
+  font-family:inherit;font-size:10px;font-weight:650;line-height:1.3;white-space:nowrap;
+  text-shadow:-1px -1px 1px #f7f7eb,1px 1px 1px #f7f7eb,1px -1px 1px #f7f7eb,-1px 1px 1px #f7f7eb}
 .pilot-world-label {position:absolute;left:0;top:0;display:grid;place-items:center;gap:1px;pointer-events:auto;
   min-height:24px;max-width:145px;margin:0;padding:3px 8px;border:1px solid #a0b2a9;border-radius:5px;
   background:#ffffffed;color:#314d42;box-shadow:0 1px 4px #1b45371a;font:inherit;line-height:1.25;white-space:nowrap;
@@ -452,8 +781,9 @@ function labelText(props) {
   return fields.length ? fields.join(' · ') : '층수·높이 미확인';
 }
 
-export async function createPilotScene(container, { buildings, town, zones, simulation, selectedZoneId = null, onSelect } = {}) {
-  const model = buildModel(town, zones?.features || [], buildings?.features || [], simulation);
+export async function createPilotScene(container, { buildings, town, zones, simulation, publicSpace,
+  initialBearing, initialPitch, selectedZoneId = null, onSelect } = {}) {
+  const model = buildModel(town, zones?.features || [], buildings?.features || [], simulation, publicSpace);
   let surfaces = geometry(model);
   const host = document.createElement('div');
   host.className = 'pilot-world';
@@ -496,14 +826,16 @@ export async function createPilotScene(container, { buildings, town, zones, simu
 
   let frame = 0, destroyed = false, mode = 'current', activeBuilding = null;
   let activeZone = model.areas.find(zone => zone.id === selectedZoneId);
-  const camera = { x: 0, y: 0, bearing: DEFAULT_BEARING, pitch: DEFAULT_PITCH, zoom: 1 };
-  const cosDefault = Math.cos(DEFAULT_BEARING), sinDefault = Math.sin(DEFAULT_BEARING);
+  const bearing = Number.isFinite(initialBearing) ? initialBearing * DEG : DEFAULT_BEARING;
+  const tilt = Number.isFinite(initialPitch) ? clamp(initialPitch, 10, 74) * DEG : DEFAULT_PITCH;
+  const camera = { x: 0, y: 0, bearing, pitch: tilt, zoom: 1 };
+  const cosDefault = Math.cos(bearing), sinDefault = Math.sin(bearing);
   const focusBox = extent(model.focusPoints.map(([x, y]) => [cosDefault * x + sinDefault * y, -sinDefault * x + cosDefault * y]));
   const defaultEast = (focusBox[0] + focusBox[2]) / 2, defaultNorth = (focusBox[1] + focusBox[3]) / 2;
   const home = { x: cosDefault * defaultEast - sinDefault * defaultNorth,
     y: sinDefault * defaultEast + cosDefault * defaultNorth };
   const spanX = Math.max(80, focusBox[2] - focusBox[0]);
-  const spanY = Math.max(80, (focusBox[3] - focusBox[1]) * Math.cos(DEFAULT_PITCH));
+  const spanY = Math.max(80, (focusBox[3] - focusBox[1]) * Math.cos(tilt));
   let fittedScale = 0;
   Object.assign(camera, home);
   const abort = new AbortController();
@@ -536,6 +868,33 @@ export async function createPilotScene(container, { buildings, town, zones, simu
     overlay.append(button);
     return { zone, button, metrics };
   });
+  const spaceLabels = [];
+  const named = model.spaces.filter(s => s.name);
+  const park = named.filter(s => s.kind === 'park').sort((a, b) =>
+    Math.max(...b.parts.map(p => p.area)) - Math.max(...a.parts.map(p => p.area)))[0];
+  const facility = named.find(s => s.kind === 'facility');
+  const axis = named.filter(s => s.kind === 'road' || s.kind === 'walkway').sort((a, b) => (b.width || 0) - (a.width || 0))[0];
+  for (const space of [park, facility, axis].filter(Boolean)) {
+    const node = document.createElement('span');
+    node.className = 'pilot-space-label';
+    node.textContent = space.name;
+    const part = space.parts.reduce((best, p) => !best || p.area > best.area ? p : best, null);
+    let at = part?.anchor;
+    if (!at) {
+      const line = space.lines[0];
+      const lengths = line.slice(1).map((b, i) => Math.hypot(b[0] - line[i][0], b[1] - line[i][1]));
+      let left = lengths.reduce((sum, n) => sum + n, 0) / 2;
+      for (let i = 0; i < lengths.length; i++) {
+        if (left <= lengths[i]) {
+          const t = lengths[i] ? left / lengths[i] : 0;
+          at = line[i].map((value, k) => value + t * (line[i + 1][k] - value));
+          break;
+        }
+        left -= lengths[i];
+      }
+    }
+    if (at) { overlay.append(node); spaceLabels.push({ node, at, part }); }
+  }
 
   function choose(feature) {
     if (!feature) return;
@@ -569,6 +928,23 @@ export async function createPilotScene(container, { buildings, town, zones, simu
         taken.push(position);
       } else button.hidden = true;
     }
+    for (const { node, at, part } of spaceLabels) {
+      node.hidden = !v.plan;
+      if (node.hidden) continue;
+      const [x, y] = screenPoint(v, ...at), w = node.offsetWidth, h = node.offsetHeight;
+      node.hidden = true;
+      const offsets = part ? [[0, 0], [0, h], [0, -h], [-w / 4, 0], [w / 4, 0]] : [[0, 0]];
+      for (const [dx, dy] of offsets) {
+        const l = Math.round(x + dx - w / 2), t = Math.round(y + dy - h / 2);
+        if (part && !contains(part, ...groundPoint(v, x + dx, y + dy))) continue;
+        if (l < 4 || t < 4 || l + w + 4 > v.width || t + h + 4 > v.height ||
+            taken.some(b => l < b[2] + 3 && l + w + 3 > b[0] && t < b[3] + 3 && t + h + 3 > b[1])) continue;
+        node.hidden = false;
+        node.style.transform = 'translate(' + l + 'px,' + t + 'px)';
+        taken.push([l, t, l + w, t + h]);
+        break;
+      }
+    }
   }
 
   function render() {
@@ -593,8 +969,31 @@ export async function createPilotScene(container, { buildings, town, zones, simu
     if (!frame && !destroyed) frame = requestAnimationFrame(render);
   }
   function reset() {
-    Object.assign(camera, home, { zoom: 1, bearing: DEFAULT_BEARING, pitch: DEFAULT_PITCH });
+    Object.assign(camera, home, { zoom: 1, bearing, pitch: tilt });
     fittedScale = 0;
+    schedule();
+  }
+  function focusZone(id) {
+    const zone = model.areas.find(area => area.id === id);
+    if (!zone) return;
+    const v = view(), points = [];
+    function include(feature, height) {
+      for (const part of feature.parts) {
+        for (const [x, y] of part.rings[0]) {
+          points.push([v.cosB * x + v.sinB * y, (-v.sinB * x + v.cosB * y) * v.cosP + height * v.sinP]);
+        }
+      }
+    }
+    include(zone, 0);
+    const structures = v.plan ? model.towers.filter(tower => tower.zone === zone)
+      : model.blocks.filter(block => zone.parts.some(part => contains(part, ...block.anchor)));
+    for (const building of structures) include(building, building.height + (v.plan ? 2 : 0));
+    const [left, bottom, right, top] = extent(points);
+    const east = (left + right) / 2, north = (top + bottom) / (2 * v.cosP);
+    camera.x = v.cosB * east - v.sinB * north;
+    camera.y = v.sinB * east + v.cosB * north;
+    const targetScale = .80 * Math.min(v.width / Math.max(1, right - left), v.height / Math.max(1, top - bottom));
+    camera.zoom = clamp(targetScale / (v.scale / camera.zoom), .36, 12);
     schedule();
   }
   function panWorldAnchor(point, target) {
@@ -723,10 +1122,20 @@ export async function createPilotScene(container, { buildings, town, zones, simu
       activeBuilding = null;
       schedule();
     },
-    rotate, zoom: adjustZoom, pitch, pan, reset,
+    rotate, zoom: adjustZoom, pitch, pan, reset, focusZone,
     getCamera() {
       return { centerX: camera.x, centerY: camera.y, bearing: camera.bearing / DEG,
         pitch: camera.pitch / DEG, zoom: camera.zoom, pixelsPerMeter: view().scale };
+    },
+    restoreCamera(snapshot) {
+      if (!snapshot || ![snapshot.centerX, snapshot.centerY, snapshot.bearing, snapshot.pitch, snapshot.zoom].every(Number.isFinite)) return;
+      camera.x = snapshot.centerX;
+      camera.y = snapshot.centerY;
+      camera.bearing = snapshot.bearing * DEG;
+      camera.pitch = clamp(snapshot.pitch, 10, 74) * DEG;
+      camera.zoom = clamp(snapshot.zoom, .36, 12);
+      if (Number.isFinite(snapshot.pixelsPerMeter) && snapshot.pixelsPerMeter > 0) fittedScale = snapshot.pixelsPerMeter / camera.zoom;
+      schedule();
     },
     destroy() {
       destroyed = true;

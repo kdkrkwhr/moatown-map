@@ -1,11 +1,11 @@
-import {renderProjectDetail} from './detail-view.mjs?v=151be3657af1';
-import {durationSamples,elapsedMonths,formatValue} from './detail-format.mjs?v=151be3657af1';
+import {renderProjectDetail} from './detail-view.mjs?v=744430b0c9fe';
+import {durationSamples,elapsedMonths,formatValue} from './detail-format.mjs?v=744430b0c9fe';
 export {elapsedMonths};
-import {loadMaps,createProjectMap} from './map-engine.mjs?v=151be3657af1';
-import {loadNews,matchNews,newsCard,sourceLabels} from './news.mjs?v=151be3657af1';
-import {searchProjects,managementFilters,progressFilters,recentProjectDates} from './project-search.mjs?v=151be3657af1';
-import {mountAddressLookup} from './address-reference.mjs?v=151be3657af1';
-import {mountPilotViewer} from './pilot-viewer.mjs?v=151be3657af1';
+import {loadMaps,createProjectMap} from './map-engine.mjs?v=744430b0c9fe';
+import {loadNews,matchNews,newsCard,sourceLabels} from './news.mjs?v=744430b0c9fe';
+import {searchProjects,managementFilters,progressFilters,recentProjectDates} from './project-search.mjs?v=744430b0c9fe';
+import {mountAddressLookup} from './address-reference.mjs?v=744430b0c9fe';
+import {mountPilotViewer} from './pilot-viewer.mjs?v=744430b0c9fe';
 const mobileMapQuery='(max-width: 760px) and (orientation: portrait), (max-width: 540px)';
 function initialSheetHeight(selection,hasFilters,mobile){
   if(!mobile)return 1;
@@ -214,6 +214,7 @@ export function mount({manifest,towns,zones,boundaries,excluded=[]},sdk){
     const url=new URL(location.href);
     url.searchParams.delete('view');
     url.searchParams.delete('mode');
+    url.searchParams.delete('layout');
     for(const [key,value] of [['town',current.townId],['zone',current.zoneId],['cancellation',current.cancellation],['q',search.value],['district',district.value],['recent',recentOnly?'1':''],...Object.entries(chosen)]){
       if(value)url.searchParams.set(key,value);else url.searchParams.delete(key);
     }
