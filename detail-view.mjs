@@ -1,4 +1,4 @@
-import {formatValue,unitsChange,projectIntervals,compareInterval} from './detail-format.mjs?v=744430b0c9fe';
+import {formatValue,unitsChange,projectIntervals,compareInterval} from './detail-format.mjs?v=7dfd6896aee5';
 
 const pending='미고시';
 const date=v=>formatValue(v,'date');

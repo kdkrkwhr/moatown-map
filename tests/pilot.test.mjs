@@ -4,7 +4,7 @@ import {readFileSync} from 'node:fs';
 import {createHash} from 'node:crypto';
 import {execFileSync} from 'node:child_process';
 import {fileURLToPath} from 'node:url';
-import {buildingSummary} from '../pilot-viewer.mjs';
+import {buildingSummary,mergeBuildingDetails} from '../pilot-viewer.mjs';
 
 const root=new URL('../moatown-data/',import.meta.url);
 const read=url=>JSON.parse(readFileSync(url,'utf8'));
@@ -65,6 +65,57 @@ test('published pilot parts have unique complete buildings and reproducible cove
     assert.equal(summary.crossing,entry.stats.crossing);
     assert.equal(buildingSummary(all.filter(f=>f.properties.is_inside_town!==true)).share,'산정 불가');
   }
+});
+
+test('Sinwol links the existing-building register and the original before photo to their sources',()=>{
+  const town='mt-202603-public-067';
+  const config=latest.pilot_3d;
+  assert.deepEqual(Object.keys(config.current_details),[town]);
+  const registry=read(source(config.current_details[town]));
+  const buildings=read(new URL('buildings/'+town+'.geojson',root)).features;
+  assert.deepEqual(Object.keys(registry.records).sort(),buildings.map(f=>f.properties.id).sort());
+  const merged=mergeBuildingDetails(buildings,registry);
+  assert.equal(merged.filter(f=>f.properties.use && f.properties.structure && f.properties.approval_date && f.properties.basement_floors!=null).length,995);
+  assert.ok(merged.some(f=>f.properties.basement_floors===0));
+  assert.equal(merged.filter(f=>f.properties.roof).length,924);
+  assert.match(registry.roof_source.source_url,/OA-22424/);
+  for(const {properties:p} of merged){
+    if(p.approval_date)assert.equal(Number(p.approval_date.slice(0,4)),p.approval_year);
+    if(p.roof)assert.match(p.roof_collected_on,/^\d{4}-\d{2}-\d{2}$/);
+  }
+  assert.equal(merged.filter(f=>f.properties.name).length,1);
+  const photo=read(source(config.visuals[town])).current_view;
+  assert.equal(photo.capture_date,null);
+  assert.ok(photo.image_source_url.startsWith('https://news.seoul.go.kr/') && photo.attribution && photo.license_url);
+  assert.equal(createHash('sha256').update(readFileSync(new URL('../'+photo.image,root))).digest('hex'),photo.image_sha256);
+});
+
+test('supplemental floor counts resolve only uniquely matched missing heights and preserve the published geometry',()=>{
+  const town='mt-202603-public-067';
+  const config=latest.pilot_3d;
+  assert.deepEqual(Object.keys(config.current_heights),[town]);
+  const supplement=read(source(config.current_heights[town]));
+  const buildings=read(new URL('buildings/'+town+'.geojson',root)).features;
+  const merged=mergeBuildingDetails(buildings,null,supplement);
+  const before=buildingSummary(buildings),after=buildingSummary(merged);
+  assert.equal(before.unknownHeight,66);
+  assert.equal(after.official,433);assert.equal(after.estimated,589);assert.equal(after.unknownHeight,39);
+  assert.equal(after.known,before.known);
+  for(const [index,feature] of merged.entries()){
+    const original=buildings[index],record=supplement.records[original.properties.id];
+    assert.equal(feature.geometry,original.geometry);
+    if(!record){assert.equal(feature,original);continue;}
+    assert.equal(original.properties.height_m,null);assert.equal(original.properties.floors,null);
+    assert.equal(feature.properties.map_floor_evidence,record);
+    assert.equal(feature.properties.height_m,record.floors*3);
+    assert.equal(feature.properties.height_source,'estimated_from_floors');
+    assert.equal(record.source_field,'flr_num');
+    assert.match(record.source_record_date,/^\d{4}-\d{2}-\d{2}$/);
+    assert.ok(record.overlap_iou>=0.9 && record.source_url.startsWith('https://'));
+  }
+  const official=buildings.find(f=>f.properties.height_source==='official');
+  const stray={records:{[official.properties.id]:{floors:99}}};
+  assert.deepEqual(mergeBuildingDetails([official],null,stray)[0].properties,official.properties);
 });
 
 test('each of the pilot child records is tied to its own town and reference geometry',()=>{

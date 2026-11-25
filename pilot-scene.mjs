@@ -1,4 +1,4 @@
-﻿import earcut from './vendor/earcut-3.0.2/earcut.mjs?v=744430b0c9fe';
+﻿import earcut from './vendor/earcut-3.0.2/earcut.mjs?v=7dfd6896aee5';
 
 const DEG = Math.PI / 180;
 const GROUND = '#f1f3ef';
@@ -171,7 +171,47 @@ function parkTrees(part, spaces, towers) {
   return trees;
 }
 
-function geometry(model) {
+// These palettes and window bays illustrate building types. The registry identifies
+// use and load-bearing structure, while finish colours and roof shapes are unknown.
+const EXISTING_WALLS = {
+  old: ['#caab99', '#d9bdac', '#bb9585', '#ddcdb7', '#c9b8a4', '#d5c5ae'],
+  recent: ['#e1dbce', '#d1c5b7', '#e6dfd2', '#c5c3ba', '#d9cbbb', '#d3cdc5'],
+  work: ['#c9c9bf', '#ced1c6', '#c8c1b5', '#d9cfc0'],
+};
+// Muted greens and greys occur throughout the city's Sinwol overview photograph.
+const EXISTING_CAPS = ['#a6aca2', '#91a99a', '#b4b5a9', '#8a9f94', '#aaa79e', '#bcb9ab',
+  '#88a59c', '#a3a9a0', '#99b2a1', '#b4ad9e', '#9d9f97', '#a5aaa8'];
+const TILE_CAPS = ['#847f78', '#a08b7e', '#8d8980', '#a58576'];
+const SHEET_CAPS = ['#a4aaab', '#989f9c', '#adb1aa', '#a6a9a3'];
+const BAY = { villa: 6, house: 7, apartment: 8, commercial: 9, shop: 10, service: 11, plain: 12, entry: 13,
+  school: 14, assembly: 15 };
+
+function existingAppearance(block) {
+  const { use = '', structure = '', roof = '', age_tier, floors } = block.props;
+  // Stable between chunks, input ordering, and scene rebuilds.
+  let seed = 2166136261;
+  for (const c of String(block.id)) seed = Math.imul(seed ^ c.charCodeAt(0), 16777619) >>> 0;
+  const housing = /주택|아파트|기숙사/.test(use);
+  const commercial = /근린생활|판매|업무시설|상가/.test(use);
+  const service = /공장|창고|도매|운수시설|자동차관련/.test(use);
+  const masonry = /벽돌|연와|조적|블록|시멘트블럭/.test(structure);
+  let tile = BAY.plain, span = 4.0;
+  if (service) { tile = BAY.service; span = 6.2; }
+  else if (commercial) { tile = BAY.commercial; span = 5.4; }
+  else if (/교육연구/.test(use)) { tile = BAY.school; span = 6.4; }
+  else if (/종교|집회/.test(use)) { tile = BAY.assembly; span = 4.6; }
+  else if (housing && (/아파트/.test(use) || (/공동주택/.test(use) && floors >= 7))) { tile = BAY.apartment; span = 6.8; }
+  else if (housing && (/단독/.test(use) || masonry)) { tile = BAY.house; span = 5.7; }
+  else if (housing) { tile = BAY.villa; span = 6.0; }
+  const palette = service ? EXISTING_WALLS.work : age_tier === '30_plus' ? EXISTING_WALLS.old : EXISTING_WALLS.recent;
+  const caps = /기와/.test(roof) ? TILE_CAPS : /슬레이트|강판|철판|금속/.test(roof) ? SHEET_CAPS : EXISTING_CAPS;
+  const context = rgb('#d9dad0');
+  const color = hex => rgb(hex).map((c, i) => block.props.is_inside_town === false ? c * .79 + context[i] * .21 : c);
+  return { tile, span, housing, commercial: commercial && !service, floors: Number.isInteger(floors) && floors > 0 ? floors : 0,
+    wall: color(palette[seed % palette.length]), cap: color(caps[(seed >>> 12) % caps.length]) };
+}
+
+function geometry(model, existingDetail) {
   const surfaces = [];
   function add(rings, points, indices, paint, group, facade) {
     const face = { rings, points, indices, paint, group, facade };
@@ -295,23 +335,70 @@ function geometry(model) {
     }
   }
 
+  const shadows = ['#c5cbbf', '#d2d6cc'].map(hex => {
+    const color = rgb(hex);
+    return material(color, color, color, { mode: 'exterior', lift: .65 });
+  });
   for (const block of model.blocks) {
+    const exterior = existingDetail && existingAppearance(block);
     const tier = rgb(AGE_COLORS[block.props.age_tier] || AGE_COLORS.unknown);
     const context = rgb('#d1d9d4');
     const current = block.props.is_inside_town === false
       ? tier.map((channel, i) => channel * .34 + context[i] * .66) : tier;
     const selected = rgb('#37947d');
     const mode = block.props.is_inside_town !== false ? 'current' : null;
-    const paint = (light, lift = 0) => material(shade(current, light), shade(context, .38 + light * .62), shade(selected, light),
-      { code: block.code, mode, lift });
-    const roof = paint(1.05, .18);
-    const rim = paint(.78, .55);
+    const paint = (light, lift = 0, finish) => {
+      const p = material(shade(current, light), shade(context, .38 + light * .62), shade(selected, light),
+        { code: block.code, mode, lift });
+      if (finish) { p.exterior = finish; p.exteriorCss = cssColor(finish); }
+      return p;
+    };
+    const roof = paint(1.05, .18, exterior && exterior.cap);
+    const rim = paint(.78, .55, exterior && shade(exterior.wall, 1.09));
     const footprint = material(shade(current, .71), rgb('#a7b5af'), selected, { code: block.code, mode, lift: .95 });
     for (const part of block.parts) {
       if (!block.height) { outline(part, 1.05, 0, footprint, 5); continue; }
       const z = block.height;
-      walls(part, (a, b, sun, nx, ny) => {
-        const face = quad([...a, 0], [...b, 0], [...b, z], [...a, z], paint(.74 + .15 * sun), 6);
+      const perimeter = part.rings[0];
+      const shadow = shadows[Number(block.props.is_inside_town === false)];
+      const cast = ([x, y]) => [x + z * .23, y - z * .17, 0];
+      let shadowFace;
+      if (exterior) {
+        const rings = part.rings.map(ring => ring.map(cast));
+        shadowFace = add(rings, rings.flat(), [...part.indices], shadow, 2);
+        // The projected roof and side strips form one filled silhouette per building.
+        shadowFace.nonzero = true;
+      }
+      let frontage = -1, longest = 0;
+      if (exterior?.floors) {
+        for (let i = 0; i < perimeter.length; i++) {
+          const a = perimeter[i], b = perimeter[(i + 1) % perimeter.length];
+          const length = Math.hypot(b[0] - a[0], b[1] - a[1]);
+          if (length > longest) { longest = length; frontage = i; }
+        }
+      }
+      walls(part, (a, b, sun, nx, ny, length) => {
+        if (shadowFace && nx * .23 - ny * .17 < 0) {
+          const strip = [[...a, 0], [...b, 0], cast(b), cast(a)], i = shadowFace.points.length;
+          shadowFace.rings.push(strip);
+          shadowFace.points.push(...strip);
+          shadowFace.indices.push(i, i + 1, i + 2, i, i + 2, i + 3);
+        }
+        // Six lighting steps per palette colour bound the Canvas pattern cache.
+        const finish = exterior && shade(exterior.wall, .79 + .045 * Math.round((sun + 1) * 2.5));
+        const wall = paint(.74 + .15 * sun, 0, finish);
+        let facade;
+        if (exterior?.floors && length >= 3) {
+          const tile = length < 4.1 ? BAY.plain : exterior.tile;
+          const columns = Math.max(1, Math.round(length / exterior.span));
+          const front = a === perimeter[frontage] && length >= 4.1;
+          facade = { tile, columns, repeats: exterior.floors, nx, ny, floorHeight: z / exterior.floors,
+            distantCss: cssColor(shade(finish, exterior.commercial ? .77 : exterior.housing ? .86 : .91)) };
+          // Use one illustrated entrance on one broad wall. Only known retail-type
+          // uses get display windows. The location is schematic, as is the facade.
+          if (front && (exterior.commercial || exterior.housing)) facade.base = exterior.commercial ? BAY.shop : BAY.entry;
+        }
+        const face = quad([...a, 0], [...b, 0], [...b, z], [...a, z], wall, 6, facade);
         face.normal = { nx, ny };
       });
       flat(part, z, roof, 6);
@@ -434,7 +521,7 @@ function makeCanvas() {
   return canvas;
 }
 
-const TILE_WIDTH = 128, TILE_HEIGHT = 64, ATLAS_TILES = 8;
+const TILE_WIDTH = 128, TILE_HEIGHT = 64, ATLAS_TILES = 16;
 // Each atlas tile is one architectural bay over one floor. Both renderers repeat
 // the same elevation in building space, including when the view rotates or tilts.
 function facadeAtlas() {
@@ -494,6 +581,57 @@ function facadeAtlas() {
     }
     ctx.restore();
   }
+  for (const tile of Object.values(BAY)) {
+    ctx.save();
+    ctx.translate(tile * TILE_WIDTH, 0);
+    rect(0, 0, 128, 64, '#fcf9f1');
+    if (tile === BAY.house) {
+      glass(12, 13, 45, 31, 2);
+      glass(80, 16, 30, 27, 2);
+      rect(9, 45, 51, 3, '#e4ded0');
+      rect(77, 44, 36, 3, '#e4ded0');
+    } else if (tile === BAY.villa || tile === BAY.apartment) {
+      const apartment = tile === BAY.apartment;
+      glass(8, 10, apartment ? 85 : 65, 35, apartment ? 4 : 3);
+      glass(apartment ? 106 : 88, 14, apartment ? 14 : 27, 27, 2);
+      rect(5, 38, apartment ? 92 : 72, 12, '#acbbb8');
+      rect(4, 36, apartment ? 94 : 74, 3, '#e6e9e2');
+      for (const x of apartment ? [8, 35, 64, 92] : [8, 39, 72]) rect(x, 39, 2, 12, '#d6dcd2');
+      rect(3, 51, apartment ? 96 : 76, 4, '#eee8da');
+      rect(3, 55, apartment ? 96 : 76, 2, '#b7b6a8');
+    } else if (tile === BAY.commercial) {
+      glass(7, 11, 112, 36, 4);
+      rect(4, 49, 119, 4, '#dcd8cc');
+    } else if (tile === BAY.shop) {
+      rect(0, 3, 128, 13, '#a3b2ac');
+      rect(0, 15, 128, 4, '#738783');
+      glass(5, 22, 77, 35, 2);
+      glass(92, 20, 29, 41, 1);
+      rect(94, 44, 2, 10, '#d0d7cf');
+      rect(0, 61, 128, 3, '#a7a99f');
+    } else if (tile === BAY.service) {
+      for (let x = 3; x < 128; x += 14) rect(x, 0, 2, 64, '#dfdfd5');
+      glass(13, 11, 100, 16, 4);
+    } else if (tile === BAY.school) {
+      glass(8, 10, 112, 34, 5);
+      rect(8, 23, 112, 2, '#c5cdc6');
+      rect(4, 45, 120, 4, '#d9d9cd');
+    } else if (tile === BAY.assembly) {
+      for (const x of [24, 55, 86]) {
+        rect(x - 4, 6, 23, 48, '#d6d2c5');
+        glass(x, 9, 15, 40, 1);
+      }
+    } else if (tile === BAY.entry) {
+      glass(9, 13, 47, 28, 2);
+      rect(74, 13, 37, 50, '#adb1a5');
+      glass(79, 17, 26, 44, 2);
+      rect(69, 10, 47, 4, '#e5e2d5');
+      rect(72, 61, 41, 3, '#bdbdb0');
+    } else {
+      glass(34, 15, 55, 29, 2);
+    }
+    ctx.restore();
+  }
   return sheet;
 }
 
@@ -501,9 +639,9 @@ function webglRenderer(canvas, surfaces) {
   const gl = canvas.getContext('webgl', { antialias: true, alpha: false, depth: true });
   if (!gl) return null;
   const vertex = `
-    attribute vec3 a_pos, a_current, a_plan, a_selected, a_options, a_uv;
+    attribute vec3 a_pos, a_current, a_plan, a_selected, a_options, a_uv, a_exterior;
     uniform vec2 u_center, u_scale, u_bearing, u_pitch, u_active;
-    uniform float u_plan;
+    uniform float u_plan, u_exterior;
     varying vec3 v_color, v_uv;
     void main(){
       vec2 d = a_pos.xy - u_center;
@@ -512,11 +650,16 @@ function webglRenderer(canvas, surfaces) {
       float up = north * u_pitch.x + a_pos.z * u_pitch.y;
       float depth = a_pos.z * u_pitch.x - north * u_pitch.y + a_options.z;
       gl_Position = vec4(east * u_scale.x, up * u_scale.y, -depth / 4096.0, 1.0);
-      if ((a_options.y < -0.5 && u_plan > 0.5) || (a_options.y > 0.5 && u_plan < 0.5))
+      if ((a_options.y < -0.5 && u_plan > 0.5) || (a_options.y > 0.5 && u_plan < 0.5) ||
+          (a_options.y < -1.5 && u_exterior < 0.5))
         gl_Position = vec4(2.0,2.0,2.0,1.0);
-      v_color = mix(a_current, a_plan, u_plan);
+      v_color = mix(mix(a_current, a_exterior, u_exterior), a_plan, u_plan);
       v_uv = a_uv;
-      if (a_options.x > 0.0 && (a_options.x == u_active.x || a_options.x == u_active.y)) v_color = a_selected;
+      if (a_uv.z >= 6.0 && u_exterior < 0.5) v_uv.z = -1.0;
+      if (a_options.x > 0.0 && (a_options.x == u_active.x || a_options.x == u_active.y)) {
+        float tint = u_exterior > .5 && a_options.x == u_active.y && a_options.z < .4 ? .22 : 1.0;
+        v_color = mix(v_color, a_selected, tint);
+      }
     }`;
   const fragment = `precision mediump float;
     varying vec3 v_color, v_uv;
@@ -524,7 +667,15 @@ function webglRenderer(canvas, surfaces) {
     void main(){
       vec3 color = v_color;
       if (v_uv.z >= 0.0) {
-        vec2 uv = vec2((v_uv.z + clamp(v_uv.x, .012, .988)) / 8.0, v_uv.y);
+        float tile = floor(v_uv.z + .5);
+        float u = v_uv.x;
+        if (tile >= 6.0) {
+          float ground = floor(tile / 16.0);
+          tile = mod(tile, 16.0);
+          if (v_uv.y < 1.0 && (ground == ${BAY.shop}.0 || (ground == ${BAY.entry}.0 && u < 1.0))) tile = ground;
+          u = fract(u);
+        }
+        vec2 uv = vec2((tile + clamp(u, .012, .988)) / ${ATLAS_TILES}.0, v_uv.y);
         color *= texture2D(u_sheet, uv).rgb;
       }
       gl_FragColor = vec4(color, 1.0);
@@ -545,22 +696,24 @@ function webglRenderer(canvas, surfaces) {
   gl.useProgram(program);
   const count = surfaces.reduce((n, face) => n + face.indices.length, 0);
   const textured = surfaces.some(face => face.facade);
-  const stride = textured ? 18 : 15;
+  const existingDetail = surfaces.some(face => face.paint.exterior);
+  const stride = 15 + (textured ? 3 : 0) + (existingDetail ? 3 : 0);
   const data = new Float32Array(count * stride);
   let offset = 0;
   for (const { indices, points, paint, facade } of surfaces) {
-    const mode = paint.mode === 'current' ? -1 : paint.mode === 'plan' ? 1 : 0;
+    const mode = paint.mode === 'exterior' ? -2 : paint.mode === 'current' ? -1 : paint.mode === 'plan' ? 1 : 0;
     const style = [...paint.current, ...paint.plan, ...paint.selected, paint.code, mode, paint.lift];
     for (const index of indices) {
       data.set(points[index], offset);
       data.set(style, offset + 3);
       if (textured) {
         if (facade) {
-          data[offset + 15] = Number(index === 1 || index === 2);
+          data[offset + 15] = index === 1 || index === 2 ? facade.columns || 1 : 0;
           data[offset + 16] = index >= 2 ? facade.repeats : 0;
         }
-        data[offset + 17] = facade ? facade.tile : -1;
+        data[offset + 17] = facade ? facade.tile + (facade.base || 0) * ATLAS_TILES : -1;
       }
+      if (existingDetail) data.set(paint.exterior || paint.current, offset + stride - 3);
       offset += stride;
     }
   }
@@ -577,6 +730,11 @@ function webglRenderer(canvas, surfaces) {
     gl.enableVertexAttribArray(uv);
     gl.vertexAttribPointer(uv, 3, gl.FLOAT, false, stride * 4, 60);
   } else gl.vertexAttrib3f(uv, 0, 0, -1);
+  if (existingDetail) {
+    const index = gl.getAttribLocation(program, 'a_exterior');
+    gl.enableVertexAttribArray(index);
+    gl.vertexAttribPointer(index, 3, gl.FLOAT, false, stride * 4, (stride - 3) * 4);
+  }
   const sheet = gl.createTexture();
   gl.bindTexture(gl.TEXTURE_2D, sheet);
   if (textured) {
@@ -588,7 +746,7 @@ function webglRenderer(canvas, surfaces) {
     gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGB, 1, 1, 0, gl.RGB, gl.UNSIGNED_BYTE, new Uint8Array([255, 255, 255]));
     gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR);
   }
-  const uniforms = Object.fromEntries(['center', 'scale', 'bearing', 'pitch', 'active', 'plan']
+  const uniforms = Object.fromEntries(['center', 'scale', 'bearing', 'pitch', 'active', 'plan', 'exterior']
     .map(name => [name, gl.getUniformLocation(program, 'u_' + name)]));
   gl.clearColor(...rgb(GROUND), 1);
   gl.enable(gl.DEPTH_TEST);
@@ -603,6 +761,7 @@ function webglRenderer(canvas, surfaces) {
       gl.uniform2f(uniforms.pitch, view.cosP, view.sinP);
       gl.uniform2f(uniforms.active, view.zone, view.building);
       gl.uniform1f(uniforms.plan, Number(view.plan));
+      gl.uniform1f(uniforms.exterior, Number(view.exterior && !view.plan && existingDetail));
       gl.drawArrays(gl.TRIANGLES, 0, count);
     },
     destroy() {
@@ -630,7 +789,8 @@ function canvasRenderer(canvas, surfaces) {
       Math.max(limit, Math.abs(p[0] - center[0]) + Math.abs(p[1] - center[1]) + Math.abs(p[2] - center[2])), 0);
     return { ...face, center, radius, depth: 0 };
   });
-  const modeFaces = ['current', 'plan'].map(mode => faces.filter(f => !f.paint.mode || f.paint.mode === mode));
+  const modeFaces = ['current', 'plan', 'exterior'].map(mode => faces.filter(f =>
+    !f.paint.mode || f.paint.mode === mode || (mode === 'exterior' && f.paint.mode === 'current')));
   const tiles = new Map();
   let sheet;
   function facadePattern(tile, tint) {
@@ -645,7 +805,7 @@ function canvasRenderer(canvas, surfaces) {
       color.globalCompositeOperation = 'multiply';
       color.fillStyle = tint;
       color.fillRect(0, 0, TILE_WIDTH, TILE_HEIGHT);
-      tiles.set(key, ctx.createPattern(swatch, 'repeat-y'));
+      tiles.set(key, ctx.createPattern(swatch, 'repeat'));
     }
     return tiles.get(key);
   }
@@ -655,7 +815,8 @@ function canvasRenderer(canvas, surfaces) {
       ctx.fillStyle = GROUND;
       ctx.fillRect(0, 0, view.width, view.height);
       const visible = [];
-      for (const face of modeFaces[Number(view.plan)]) {
+      const exterior = view.exterior && !view.plan;
+      for (const face of modeFaces[view.plan ? 1 : exterior ? 2 : 0]) {
         const normal = face.normal || face.facade;
         if (normal && normal.nx * view.sinB - normal.ny * view.cosB <= 0) continue;
         if (face.rimWidth && face.rimWidth * view.scale * canvas.width / view.width < .65) continue;
@@ -667,17 +828,27 @@ function canvasRenderer(canvas, surfaces) {
         visible.push(face);
       }
       visible.sort((a, b) => a.group - b.group || (a.group === 2 && a.paint.lift - b.paint.lift) || a.depth - b.depth);
-      for (const { paint, rings, facade } of visible) {
+      const verticalPixels = view.scale * view.sinP * canvas.height / view.height;
+      for (const { paint, rings, facade, nonzero } of visible) {
         const active = paint.code && (paint.code === view.zone || paint.code === view.building);
-        const color = active ? paint.selectedCss : view.plan ? paint.planCss : paint.currentCss;
-        if (facade) {
+        let color = view.plan ? paint.planCss : (exterior && paint.exteriorCss) || paint.currentCss;
+        if (active) color = exterior && paint.exterior && paint.code === view.building && paint.lift < .4
+          ? cssColor(paint.exterior.map((c, i) => c * .78 + paint.selected[i] * .22)) : paint.selectedCss;
+        // Rows below two physical pixels resolve to their average tone at town scale.
+        if (facade && exterior && !active && facade.floorHeight * verticalPixels < 2) color = facade.distantCss;
+        else if (facade && (facade.tile < BAY.villa || exterior)) {
           const ring = rings[0];
           const [l, t] = screenPoint(view, ...ring[3]), [r, tr] = screenPoint(view, ...ring[2]);
           const [, b] = screenPoint(view, ...ring[0]), height = TILE_HEIGHT * facade.repeats;
+          const width = TILE_WIDTH * (facade.columns || 1);
           ctx.save();
-          ctx.transform((r - l) / TILE_WIDTH, (tr - t) / TILE_WIDTH, 0, (b - t) / height, l, t);
+          ctx.transform((r - l) / width, (tr - t) / width, 0, (b - t) / height, l, t);
           ctx.fillStyle = facadePattern(facade.tile, color);
-          ctx.fillRect(0, 0, TILE_WIDTH, height);
+          ctx.fillRect(0, 0, width, height);
+          if (facade.base) {
+            ctx.fillStyle = facadePattern(facade.base, color);
+            ctx.fillRect(0, height - TILE_HEIGHT, facade.base === BAY.entry ? TILE_WIDTH : width, TILE_HEIGHT);
+          }
           ctx.restore();
           continue;
         }
@@ -690,7 +861,7 @@ function canvasRenderer(canvas, surfaces) {
           }
           ctx.closePath();
         }
-        if (rings.length > 1) ctx.fill('evenodd'); else ctx.fill();
+        if (rings.length > 1 && !nonzero) ctx.fill('evenodd'); else ctx.fill();
       }
     },
     destroy() { tiles.clear(); },
@@ -782,9 +953,9 @@ function labelText(props) {
 }
 
 export async function createPilotScene(container, { buildings, town, zones, simulation, publicSpace,
-  initialBearing, initialPitch, selectedZoneId = null, onSelect } = {}) {
+  initialBearing, initialPitch, selectedZoneId = null, existingDetail = false, onSelect } = {}) {
   const model = buildModel(town, zones?.features || [], buildings?.features || [], simulation, publicSpace);
-  let surfaces = geometry(model);
+  let surfaces = geometry(model, existingDetail);
   const host = document.createElement('div');
   host.className = 'pilot-world';
   host.tabIndex = 0;
@@ -810,7 +981,7 @@ export async function createPilotScene(container, { buildings, town, zones, simu
     const next = makeCanvas();
     canvas.replaceWith(next);
     canvas = next;
-    renderer = canvasRenderer(canvas, surfaces || geometry(model));
+    renderer = canvasRenderer(canvas, surfaces || geometry(model, existingDetail));
     host.dataset.renderer = 'canvas';
   }
   try {
@@ -825,6 +996,8 @@ export async function createPilotScene(container, { buildings, town, zones, simu
   }
 
   let frame = 0, destroyed = false, mode = 'current', activeBuilding = null;
+  let currentStyle = existingDetail ? 'exterior' : 'age';
+  const maxZoom = existingDetail ? 32 : 12;
   let activeZone = model.areas.find(zone => zone.id === selectedZoneId);
   const bearing = Number.isFinite(initialBearing) ? initialBearing * DEG : DEFAULT_BEARING;
   const tilt = Number.isFinite(initialPitch) ? clamp(initialPitch, 10, 74) * DEG : DEFAULT_PITCH;
@@ -849,7 +1022,7 @@ export async function createPilotScene(container, { buildings, town, zones, simu
     return {
       ...camera, width, height, scale: (fittedScale || fit) * camera.zoom, cosB: Math.cos(camera.bearing), sinB: Math.sin(camera.bearing),
       cosP: Math.cos(camera.pitch), sinP: Math.sin(camera.pitch), zone: activeZone?.code || 0,
-      building: activeBuilding?.code || 0, plan: mode === 'plan',
+      building: activeBuilding?.code || 0, plan: mode === 'plan', exterior: currentStyle === 'exterior',
     };
   }
   const labels = model.areas.map(zone => {
@@ -955,6 +1128,7 @@ export async function createPilotScene(container, { buildings, town, zones, simu
     if (canvas.width !== w) canvas.width = w;
     if (canvas.height !== h) canvas.height = h;
     host.dataset.mode = mode;
+    host.dataset.currentStyle = currentStyle;
     renderer.draw(v);
     placeLabels(v);
     north.style.transform = 'rotate(' + Math.atan2(v.sinB, v.cosB * v.cosP) + 'rad)';
@@ -973,28 +1147,39 @@ export async function createPilotScene(container, { buildings, town, zones, simu
     fittedScale = 0;
     schedule();
   }
-  function focusZone(id) {
-    const zone = model.areas.find(area => area.id === id);
-    if (!zone) return;
+  function frameFeatures(features, minimumWidth, minimumHeight) {
     const v = view(), points = [];
-    function include(feature, height) {
+    for (const feature of features) {
+      const height = feature.kind === 'zone' ? 0 : feature.height + (v.plan ? 2 : 0);
       for (const part of feature.parts) {
         for (const [x, y] of part.rings[0]) {
-          points.push([v.cosB * x + v.sinB * y, (-v.sinB * x + v.cosB * y) * v.cosP + height * v.sinP]);
+          const east = v.cosB * x + v.sinB * y, north = (-v.sinB * x + v.cosB * y) * v.cosP;
+          points.push([east, north + height * v.sinP]);
+          if (features.length === 1 && feature.kind === 'building') points.push([east, north]);
         }
       }
     }
-    include(zone, 0);
-    const structures = v.plan ? model.towers.filter(tower => tower.zone === zone)
-      : model.blocks.filter(block => zone.parts.some(part => contains(part, ...block.anchor)));
-    for (const building of structures) include(building, building.height + (v.plan ? 2 : 0));
     const [left, bottom, right, top] = extent(points);
     const east = (left + right) / 2, north = (top + bottom) / (2 * v.cosP);
     camera.x = v.cosB * east - v.sinB * north;
     camera.y = v.sinB * east + v.cosB * north;
-    const targetScale = .80 * Math.min(v.width / Math.max(1, right - left), v.height / Math.max(1, top - bottom));
-    camera.zoom = clamp(targetScale / (v.scale / camera.zoom), .36, 12);
+    const targetScale = .80 * Math.min(v.width / Math.max(minimumWidth, right - left), v.height / Math.max(minimumHeight, top - bottom));
+    camera.zoom = clamp(targetScale / (v.scale / camera.zoom), .36, maxZoom);
     schedule();
+  }
+  function focusZone(id) {
+    const zone = model.areas.find(area => area.id === id);
+    if (!zone) return;
+    const structures = mode === 'plan' ? model.towers.filter(t => t.zone === zone)
+      : model.blocks.filter(b => zone.parts.some(part => contains(part, ...b.anchor)));
+    frameFeatures([zone, ...structures], 1, 1);
+  }
+  function focusBuilding(id) {
+    if (!existingDetail || mode !== 'current') return;
+    const block = model.blocks.find(b => b.id === id);
+    if (!block) return;
+    frameFeatures([block], 40, 30);
+    choose(block);
   }
   function panWorldAnchor(point, target) {
     const ground = groundPoint(view(), ...target);
@@ -1003,7 +1188,7 @@ export async function createPilotScene(container, { buildings, town, zones, simu
   }
   function adjustZoom(delta, anchor) {
     const before = anchor && groundPoint(view(), ...anchor);
-    camera.zoom = clamp(camera.zoom * 1.4 ** delta, .36, 12);
+    camera.zoom = clamp(camera.zoom * 1.4 ** delta, .36, maxZoom);
     if (before) panWorldAnchor(before, anchor);
     schedule();
   }
@@ -1051,7 +1236,7 @@ export async function createPilotScene(container, { buildings, town, zones, simu
     if (pointers.size === 2) {
       const after = pair(), anchor = groundPoint(view(), ...before.center);
       if (before.distance > 4 && after.distance > 4) {
-        camera.zoom = clamp(camera.zoom * after.distance / before.distance, .36, 12);
+        camera.zoom = clamp(camera.zoom * after.distance / before.distance, .36, maxZoom);
         camera.bearing += after.angle - before.angle;
       }
       camera.pitch = clamp(camera.pitch + (after.center[1] - before.center[1]) * .18 * DEG, 10 * DEG, 74 * DEG);
@@ -1117,12 +1302,17 @@ export async function createPilotScene(container, { buildings, town, zones, simu
       if (mode === 'plan') activeBuilding = null;
       schedule();
     },
+    setCurrentStyle(next) {
+      if (!existingDetail || (next !== 'exterior' && next !== 'age') || currentStyle === next) return;
+      currentStyle = next;
+      schedule();
+    },
     selectZone(id) {
       activeZone = model.areas.find(zone => zone.id === id);
       activeBuilding = null;
       schedule();
     },
-    rotate, zoom: adjustZoom, pitch, pan, reset, focusZone,
+    rotate, zoom: adjustZoom, pitch, pan, reset, focusZone, focusBuilding,
     getCamera() {
       return { centerX: camera.x, centerY: camera.y, bearing: camera.bearing / DEG,
         pitch: camera.pitch / DEG, zoom: camera.zoom, pixelsPerMeter: view().scale };
@@ -1133,7 +1323,7 @@ export async function createPilotScene(container, { buildings, town, zones, simu
       camera.y = snapshot.centerY;
       camera.bearing = snapshot.bearing * DEG;
       camera.pitch = clamp(snapshot.pitch, 10, 74) * DEG;
-      camera.zoom = clamp(snapshot.zoom, .36, 12);
+      camera.zoom = clamp(snapshot.zoom, .36, maxZoom);
       if (Number.isFinite(snapshot.pixelsPerMeter) && snapshot.pixelsPerMeter > 0) fittedScale = snapshot.pixelsPerMeter / camera.zoom;
       schedule();
     },

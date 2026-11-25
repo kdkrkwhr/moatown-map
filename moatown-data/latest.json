@@ -75,6 +75,8 @@
     "excluded": "snapshots/2026-11-24/excluded.json",
     "parcel_index": "addresses/index.json",
     "buildings": "buildings/index.json",
+    "sinwol_current_details": "buildings/sinwol-details.json",
+    "sinwol_height_evidence": "buildings/sinwol-height-evidence.json",
     "sinwol_visuals": "plans/sinwol/visuals.json",
     "sinwol_public_space": "plans/sinwol/public-space.geojson",
     "sinwol_design": "plans/sinwol/design-evidence.json",
@@ -107,16 +109,24 @@
       "boundaries": "3f3b2e1f41e8a37ecc1305c1f8c7b133aa9b5a83f60045090fd2d16a0399db4c",
       "buildings": "788fc05977728875bd7b2e5bbab0d8c0a3bfdbaccebe86e8f26194a4c7e20ea8",
       "pilot_plans": "b46ce2359f656f361107ee5b84c9688d746b878b220b7da65229c916c98ed854",
-      "sinwol_visuals": "cac8120ed554bdd54cc767898595b3f2b103bd18c5f76777dca70f5fcd233387",
+      "sinwol_visuals": "36675fdf1503cdf61ba7c057f87f3041ef0b52c4bab2d2958a9e9045a91ca2fa",
       "sinwol_public_space": "fd7c5b1a07c3186e08f10f1977263452092c502b6fe967c698fc40a09b4b9f32",
       "sinwol_design": "66e8e6c28451472105e64bb292299fbd4afe815900d3cdced928e2057a192bfa",
-      "sinwol_layout": "63a71e6d11e4d04cd83792a248bf96d1e911ae3954b38d489bc23ef371d7be16"
+      "sinwol_layout": "63a71e6d11e4d04cd83792a248bf96d1e911ae3954b38d489bc23ef371d7be16",
+      "sinwol_current_details": "3af3b79ca334c8fce74bc05d460cb3ff94785be9bfc1dd93c2082dab10ffa01f",
+      "sinwol_height_evidence": "84edad18f79539356ffd63dac4732f0469bc751c7edcdb20b47398c6c8cfd60d"
     },
     "visuals": {
       "mt-202603-public-067": "sinwol_visuals"
     },
     "simulation_town_ids": [
       "mt-202603-public-067"
-    ]
+    ],
+    "current_details": {
+      "mt-202603-public-067": "sinwol_current_details"
+    },
+    "current_heights": {
+      "mt-202603-public-067": "sinwol_height_evidence"
+    }
   }
 }

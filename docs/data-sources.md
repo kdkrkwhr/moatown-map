@@ -6,6 +6,8 @@
 
 ## 어떤 자료를 사용했나
 
+신월동 102-33 기존 건물은 GIS건물통합정보 건물 식별자로 995동에 용도·구조·사용승인일·지하층 수를 연결했다. 건축물대장 표제부와 일치한 924동에는 지붕 코드명과 행별 자료 수집일을 수록했다. 서울시 지도에서 도형을 대조해 27동의 층수와 환산 높이를 추가했다. 높이를 확인하지 못한 39동은 평면으로 표시한다. [자료별 기준일과 수집 결과](3d-pilot-results.md#신월동-정비-전-건물-보강) · [GIS건물통합정보](https://www.data.go.kr/data/15083092/fileData.do) · [서울시 건축물대장 표제부](https://data.seoul.go.kr/dataList/OA-22424/S/1/datasetView.do)
+
 신월동 102-33의 ‘공식 조감도’는 서울시 관리계획 소개 페이지(2026.05.22 수정)에 실린 A1~A4 원본을 표시한다. A1 후속 통합심의 조감도는 2026.11.13 서울시 보도자료 PDF 4쪽 왼쪽에 있다. 시공사 선정안(5동·368세대)과 통합심의안(지하 3층·최고 13층·354세대)은 별도 기록으로 보관한다. [서울시 관리계획 소개](https://news.seoul.go.kr/citybuild/archives/538493) · [서울시 통합심의 보도자료](https://www.seoul.go.kr/news/news_report.do?nttNo=470317) · [그림별 이용 조건](../moatown-data/plans/sinwol/visuals.json)
 
 신월 A3은 신월1동 99-1번지 일원 가로주택정비사업조합이 정보몽땅에 공개한 배치도에서 주거동 7개 형태의 위치와 날개 방향을 판독했다. 기준일 미표기인 조합 건축계획에는 지상 14층·지하 2층·642세대(분양 509·임대 133)가 기재돼 있다. 2026.09 공람안의 A3 592세대와 구분한다. 동별 층수와 입면은 추정해 표시한다. [조합 배치도](https://cleanup.seoul.go.kr/cafe/mastr-cleanup-bsnsSumry/execute.do?cafeId=470900001596X74&div=posImage&stepSeCode=103) · [계획별 근거](../moatown-data/plans/sinwol/design-evidence.json) · [위치 판독 자료](../moatown-data/plans/sinwol/a3-layout.geojson)

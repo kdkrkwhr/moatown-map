@@ -1,5 +1,23 @@
 {
   "town_id": "mt-202603-public-067",
+  "current_view": {
+    "title": "신월동 102-33 일대 정비 전 현황",
+    "scope": "A1~A4 전체",
+    "source_as_of": "2026-05-22",
+    "capture_date": null,
+    "source_url": "https://news.seoul.go.kr/citybuild/archives/538493",
+    "source_locator": "서울시 대상지 기록 본문 ‘변경 전 현황’",
+    "publisher": "서울특별시 전략주택공급과",
+    "attribution": "서울특별시 전략주택공급과, 「[서남권] 신월동 102-33번지 일대 모아타운」, 변경 전 현황.",
+    "license": "공공누리 제4유형 (출처표시·상업적 이용금지·변경금지)",
+    "license_url": "https://www.kogl.or.kr/info/licenseType4.do",
+    "image": "assets/sinwol/existing-site-2026-05.jpg",
+    "image_source_url": "https://news.seoul.go.kr/citybuild/files/2026/04/69f010d04f4b89.83632739-e1777340655740.jpg",
+    "image_sha256": "7a125fce9f6e94f707e35c4274961d069d0dd5cb4c06e292e6bd5ff19b69f07b",
+    "image_width": 678,
+    "image_height": 409,
+    "alt": "신월동 저층 주거지를 내려다본 서울시 정비 전 현황 자료. 붉은 선 안에 신월1동성당과 삼동아파트 등 주변 건물이 표시돼 있다."
+  },
   "views": [
     {
       "id": "sinwol-masterplan-2026-05",

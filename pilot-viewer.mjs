@@ -4,8 +4,10 @@ const date=value=>value?value.replaceAll('-','.'):'미확인';
 const tierLabels={under_20:'20년 미만','20_to_29':'20~29년','30_plus':'30년 이상',unknown:'연도 미확인'};
 
 export function buildingSummary(features){
-  let inside=0,known=0,old=0,crossing=0;
+  let inside=0,known=0,old=0,crossing=0,official=0,estimated=0;
   for(const {properties:p} of features){
+    if(p.height_source==='official')official++;
+    if(p.height_source==='estimated_from_floors')estimated++;
     if(p.is_inside_town===null)crossing++;
     if(p.is_inside_town!==true)continue;
     inside++;
@@ -13,7 +15,28 @@ export function buildingSummary(features){
     known++;
     if(p.age_tier==='30_plus')old++;
   }
-  return {inside,known,old,crossing,share:known?(old*100/known).toFixed(1)+'%':'산정 불가'};
+  return {inside,known,old,crossing,official,estimated,unknownHeight:features.length-official-estimated,
+    total:features.length,share:known?(old*100/known).toFixed(1)+'%':'산정 불가'};
+}
+
+export function mergeBuildingDetails(features,registry,heights){
+  return features.map(feature=>{
+    const p=feature.properties,details=registry?.records?.[p.id],extra=heights?.records?.[p.id];
+    if(!details && !extra)return feature;
+    const properties={...p};
+    for(const key of ['use','structure','basement_floors','approval_date','name','roof','roof_collected_on']){
+      if(details?.[key]!=null)properties[key]=details[key];
+    }
+    if(properties.floors==null && Number.isInteger(extra?.floors) && extra.floors>0){
+      properties.floors=extra.floors;
+      if(properties.height_m==null){
+        properties.height_m=extra.floors*3;
+        properties.height_source='estimated_from_floors';
+        properties.map_floor_evidence=extra;
+      }
+    }
+    return {...feature,properties};
+  });
 }
 
 function el(tag,text,cls){
@@ -176,9 +199,60 @@ export function mountPilotViewer({manifest,boundaries,townById,groups}){
   const modes=[...dialog.querySelectorAll('[data-pilot-mode]')],retry=status.querySelector('button');
   const figure=get('pilot-illustration'),notice=get('pilot-simulation-notice');
   const reference=get('pilot-reference'),placement=get('pilot-placement');
+  const currentSwitch=get('pilot-current-style');
   const config=manifest.pilot_3d,base=new URL('./moatown-data/',document.baseURI);
   const supports=id=>Boolean(config?.town_ids?.includes(id));
   let active=null;
+
+  function showReference(mode,catalog){
+    const current=mode==='current';
+    const view=current?catalog?.current_view:catalog?.views.find(v=>v.image);
+    reference.hidden=mode==='visual'||!view;
+    if(reference.hidden || reference.dataset.image===view.image)return;
+    reference.dataset.image=view.image;
+    reference.querySelector('summary').textContent=current?'서울시 정비 전 현황 함께 보기':'대상지 전체 조감도 함께 보기';
+    const img=el('img'),full=el('a');
+    img.src=new URL(view.image,document.baseURI).href;img.alt=view.alt;img.width=view.image_width;img.height=view.image_height;
+    full.href=img.src;full.target='_blank';full.rel='noopener';full.setAttribute('aria-label',view.title+' 원본 크기로 보기');full.append(img);
+    const caption=current?'게시물 수정 '+date(view.source_as_of)+' · 촬영일 미표기':date(view.source_as_of);
+    reference.querySelector('div').replaceChildren(full,el('p',view.publisher+' · '+caption),
+      source(view.source_url,'서울시 원문 ↗'),document.createTextNode(' · '),source(view.license_url,'공공누리 제4유형'));
+  }
+
+  function zoomToBuilding(feature){
+    if(!active?.scene)return;
+    active.scene.focusBuilding(feature.properties.id);
+    active.building=feature;drawDetails();
+  }
+
+  function showExistingOverview(data){
+    const s=data.summary;
+    inspector.append(el('h3','현재 건물 외관'),el('p','대상지와 주변 150m · '+count(s.total)+'동','pilot-denominator'),
+      el('p','건물을 누르면 용도·층수·사용승인일을 볼 수 있습니다. 창문 배치와 외장 색상은 건물 유형에 따른 예시입니다.','pilot-note'));
+    const examples=el('div',null,'pilot-plan-links');
+    const inside=[...data.byId.values()].filter(f=>f.properties.is_inside_town===true);
+    const named=inside.find(f=>f.properties.name);
+    const add=(feature,label)=>{
+      if(!feature)return;
+      const button=el('button',label+' ›');button.type='button';button.onclick=()=>zoomToBuilding(feature);
+      examples.append(button);
+    };
+    for(const use of ['단독주택','공동주택']){
+      const example=inside.find(f=>f.properties.use===use && f.properties.height_source==='official' && f.properties.floors>1 && f!==named);
+      add(example,use+' 한 동 확대');
+    }
+    if(named)add(named,named.properties.name+' 확대');
+    inspector.append(examples);
+    const coverage=el('details',null,'pilot-evidence');
+    coverage.append(el('summary','높이 자료 확보 현황'),facts([['공식 높이',count(s.official)+'동'],
+      ['층수 × 3m 환산',count(s.estimated)+'동'],['높이 미확인 · 평면 표시',count(s.unknownHeight)+'동']]));
+    const supplemental=inside.find(f=>f.properties.map_floor_evidence);
+    if(supplemental){
+      const example=el('button','지도 층수로 높이를 보강한 건물 보기','pilot-text-button');
+      example.type='button';example.onclick=()=>zoomToBuilding(supplemental);coverage.append(example);
+    }
+    inspector.append(coverage);
+  }
 
   function drawDetails(){
     if(!active)return;
@@ -214,13 +288,32 @@ export function mountPilotViewer({manifest,boundaries,townById,groups}){
     }
     if(building){
       const p=building.properties;
-      inspector.append(el('h3','선택한 건물'),facts([
+      const registryRows=active.detailKey?[['주용도',p.use],['구조',p.structure],['대장상 지붕',p.roof]]:[];
+      inspector.append(el('h3',p.name||'선택한 건물'),facts([...registryRows,
         ['건물 높이',p.height_m==null?'미확인':count(p.height_m)+'m'],
-        ['높이 근거',p.height_source==='official'?'공식 자료':p.height_source==='estimated_from_floors'?'층수 환산 높이':'미확인'],
-        ['지상층수',p.floors==null?'미확인':p.floors+'층'],['사용승인연도',p.approval_year==null?'미확인':p.approval_year+'년'],
+        ['높이 근거',p.map_floor_evidence?'서울시 지도 층수 × 3m':p.height_source==='official'?'공식 자료':p.height_source==='estimated_from_floors'?'대장 지상층수 × 3m':'미확인'],
+        [p.map_floor_evidence?'지도 표기 층수':'지상층수',p.floors==null?'미확인':p.floors+'층'],
+        ...(active.detailKey?[['지하층수',p.basement_floors==null?null:p.basement_floors+'층']]:[]),
+        p.approval_date?['사용승인일',date(p.approval_date)]:['사용승인연도',p.approval_year==null?'미확인':p.approval_year+'년'],
         ['위치',p.is_inside_town===true?'참고 외곽 내부':p.is_inside_town===false?'주변 150m':'참고 경계 걸침']]));
-      const back=el('button','대상지 통계 보기','pilot-text-button');
-      back.type='button';back.onclick=()=>{active.building=null;drawDetails();};inspector.append(back);
+      if(p.roof)inspector.append(source(data.registry.roof_source.source_url,'건축물대장 표제부 · 지붕 자료 수집일 '+date(p.roof_collected_on)+' ↗'));
+      if(active.detailKey){
+        const zoom=el('button','이 건물 확대','pilot-text-button');zoom.type='button';
+        zoom.onclick=()=>zoomToBuilding(building);inspector.append(zoom);
+      }
+      if(p.map_floor_evidence){
+        const evidence=p.map_floor_evidence;
+        inspector.append(source(evidence.source_url??data.heights.source_url,'보충 층수 원자료 ↗'),
+          el('p','원자료 기록일 '+date(evidence.source_record_date)+' · 조회 '+date(data.heights.checked_on),'pilot-meta'));
+      }
+      const back=el('button',active.detailKey?'대상지 전체 보기':'대상지 통계 보기','pilot-text-button');
+      back.type='button';back.onclick=()=>{
+        active.building=null;active.scene.selectZone(active.zoneId);
+        if(active.detailKey)active.scene.reset();
+        drawDetails();
+      };inspector.append(back);
+    }else if(active.detailKey && active.currentStyle==='exterior'){
+      showExistingOverview(data);
     }else{
       const s=data.summary;
       inspector.append(el('h3','대상지 전체 · 30년 이상 건물 비율'),el('strong',s.share,'pilot-stat'),
@@ -232,6 +325,8 @@ export function mountPilotViewer({manifest,boundaries,townById,groups}){
       }
       inspector.append(legend);
     }
+    if(active.detailKey && !data.registry)inspector.append(el('p','건축물 상세 자료를 불러올 수 없습니다.','pilot-note'));
+    if(active.heightsKey && !data.heights)inspector.append(el('p','보충 층수 자료를 불러올 수 없습니다.','pilot-note'));
     inspector.append(source(data.sourceUrl,'건물 원자료 ↗'),el('p','건물 자료 기준일 '+date(data.asOf),'pilot-meta'));
   }
   function renderMode(){
@@ -246,7 +341,9 @@ export function mountPilotViewer({manifest,boundaries,townById,groups}){
       button.setAttribute('aria-pressed',String(active.placement===button.dataset.placement));
       button.disabled=button.dataset.placement==='design'&&!active.data?.design;
     }
-    reference.hidden=notice.hidden||!active.catalog;
+    currentSwitch.hidden=mode!=='current'||!active.detailKey||!ready;
+    for(const button of currentSwitch.querySelectorAll('button'))button.setAttribute('aria-pressed',String(active.currentStyle===button.dataset.currentStyle));
+    showReference(mode,active.catalog);
     sceneBox.style.visibility=visual?'hidden':'';
     sceneBox.inert=visual;
     figure.hidden=!visual;
@@ -257,19 +354,23 @@ export function mountPilotViewer({manifest,boundaries,townById,groups}){
     for(const button of get('pilot-tools').querySelectorAll('button'))button.disabled=!ready;
     status.hidden=ready;retry.hidden=!error;
     status.querySelector('span').textContent=error?'자료를 열 수 없습니다. '+error.message:visual?'공식 조감도 불러오는 중':'3D 자료 불러오는 중';
-    if(!visual)scene?.setMode(mode);
+    if(!visual){
+      scene?.setMode(mode);
+      if(active.detailKey)scene?.setCurrentStyle(active.currentStyle);
+    }
     drawDetails();
   }
   function changeMode(mode){
     const session=active;
     if(!session)return;
+    if(mode==='plan')session.building=null;
     session.mode=mode;
     const url=new URL(location.href);
     if(mode==='current')url.searchParams.delete('mode');
     else url.searchParams.set('mode',mode==='plan'?'after':'visual');
     if(url.href!==location.href)history.replaceState(history.state,'',url);
     renderMode();
-    if((mode==='visual'||(mode==='plan' && session.visualKey)) && !session.catalog && !session.loadingVisual && !session.visualError)loadVisual(session);
+    if(session.visualKey && !session.catalog && !session.loadingVisual && !session.visualError)loadVisual(session);
     if(mode!=='visual' && !session.scene && !session.loadingScene && !session.sceneError)start(session);
   }
   function selectZone(zoneId){
@@ -287,29 +388,28 @@ export function mountPilotViewer({manifest,boundaries,townById,groups}){
       const catalog=await fetchJson(new URL(manifest.files[key],base),session.controller.signal,config.hashes[key]);
       if(catalog.town_id!==session.town.id || !catalog.views?.some(v=>v.image))throw Error('조감도 자료를 확인해 주세요.');
       session.catalog=catalog;
-      if(active===session){
-        const view=catalog.views.find(v=>v.image),img=el('img');
-        img.src=new URL(view.image,document.baseURI).href;img.alt=view.alt;img.width=view.image_width;img.height=view.image_height;
-        reference.querySelector('div').replaceChildren(img,el('p',view.publisher+' · '+date(view.source_as_of)),
-          source(view.source_url,'서울시 원문 ↗'),document.createTextNode(' · '),source(view.license_url,'공공누리 제4유형'));
-      }
     }catch(error){session.visualError=error;}
     finally{
       session.loadingVisual=false;
-      if(active===session && session.mode!=='current')renderMode();
+      if(active===session)renderMode();
     }
   }
   async function start(session){
     session.loadingScene=true;
     const signal=session.controller.signal,town=session.town;
     try{
+      const fetchInput=key=>fetchJson(new URL(manifest.files[key],base),signal,config.hashes[key]);
       const indexUrl=new URL(manifest.files.buildings,base),planUrl=new URL(manifest.files.pilot_plans,base);
       const [index,planBook,{createPilotScene}]=await Promise.all([fetchJson(indexUrl,signal,config.hashes.buildings),
-        fetchJson(planUrl,signal,config.hashes.pilot_plans),import('./pilot-scene.mjs?v=744430b0c9fe')]);
+        fetchJson(planUrl,signal,config.hashes.pilot_plans),import('./pilot-scene.mjs?v=7dfd6896aee5')]);
       const entry=index.towns[town.id],plans=planBook.towns[town.id];
-      const chunks=await Promise.all(entry.files.map(file=>fetchJson(new URL(file.path,indexUrl),signal,file.sha256)));
+      const [chunks,registry,heights]=await Promise.all([
+        Promise.all(entry.files.map(file=>fetchJson(new URL(file.path,indexUrl),signal,file.sha256))),
+        session.detailKey?fetchInput(session.detailKey).catch(()=>null):null,
+        session.heightsKey?fetchInput(session.heightsKey).catch(()=>null):null]);
       if(active!==session)return;
-      const features=chunks.flatMap(chunk=>chunk.features),zoneMap=new Map((groups.get(town.id)??[]).map(z=>[z.id,z]));
+      const features=mergeBuildingDetails(chunks.flatMap(chunk=>chunk.features),registry,heights);
+      const zoneMap=new Map((groups.get(town.id)??[]).map(z=>[z.id,z]));
       const outline=boundaries.features.find(f=>f.properties.entity_id===town.id);
       const areas=boundaries.features.filter(f=>zoneMap.has(f.properties.entity_id)).map(f=>{
         const z=zoneMap.get(f.properties.entity_id),record=plans.zones[z.id];
@@ -318,8 +418,7 @@ export function mountPilotViewer({manifest,boundaries,townById,groups}){
       });
       let simulation=null,design=null,publicSpace=null,designError=null;
       if(session.canSimulate){
-        const fetchInput=key=>fetchJson(new URL(manifest.files[key],base),signal,config.hashes[key]);
-        const [module,inputs]=await Promise.all([import('./pilot-simulation.mjs?v=744430b0c9fe'),
+        const [module,inputs]=await Promise.all([import('./pilot-simulation.mjs?v=7dfd6896aee5'),
           Promise.all(['sinwol_design','sinwol_public_space','sinwol_layout'].map(fetchInput)).catch(error=>{designError=error;return null;})]);
         if(active!==session)return;
         const layout=inputs?.[2];
@@ -332,9 +431,9 @@ export function mountPilotViewer({manifest,boundaries,townById,groups}){
         };
         simulation=session.simulate(session.placement);
       }
-      session.data={zoneMap,plans,simulation,design,publicSpace,designError,byId:new Map(features.map(f=>[f.properties.id,f])),summary:buildingSummary(features),
+      session.data={zoneMap,plans,simulation,design,publicSpace,designError,registry,heights,byId:new Map(features.map(f=>[f.properties.id,f])),summary:buildingSummary(features),
         asOf:entry.source_as_of??index.source_as_of,sourceUrl:entry.source_url??index.source_url};
-      const sceneOptions={buildings:collection(features),town:outline,zones:collection(areas),publicSpace,
+      const sceneOptions={buildings:collection(features),town:outline,zones:collection(areas),publicSpace,existingDetail:Boolean(session.detailKey),
         ...(session.canSimulate?{initialBearing:18,initialPitch:42}:{}),
         onSelect:({kind,id})=>{
           if(active!==session)return;
@@ -364,6 +463,7 @@ export function mountPilotViewer({manifest,boundaries,townById,groups}){
     active.controller.abort();active.scene?.destroy();active=null;
     dialog.close();sceneBox.replaceChildren();inspector.replaceChildren();choice.replaceChildren();figure.replaceChildren();dialog.dataset.ready='false';
     reference.querySelector('div').replaceChildren();
+    delete reference.dataset.image;
   }
   function open(townId,zoneId,push=true){
     if(!supports(townId) || active)return;
@@ -372,7 +472,9 @@ export function mountPilotViewer({manifest,boundaries,townById,groups}){
     url.searchParams.delete('view');url.searchParams.delete('mode');url.searchParams.delete('layout');
     const visualKey=config.visuals?.[townId],canSimulate=config.simulation_town_ids?.includes(townId);
     const mode=requested==='after'?'plan':requested==='visual' && visualKey?'visual':'current';
-    const session={town:townById.get(townId),zoneId,canSimulate,visualKey,placement:!push && layoutChoice==='spaced'?'spaced':'design',controller:new AbortController(),background:url.href};
+    const detailKey=config.current_details?.[townId];
+    const session={town:townById.get(townId),zoneId,canSimulate,visualKey,detailKey,heightsKey:config.current_heights?.[townId],currentStyle:detailKey?'exterior':'age',
+      placement:!push && layoutChoice==='spaced'?'spaced':'design',controller:new AbortController(),background:url.href};
     if(push){url.searchParams.set('view','3d');history.pushState({pilotViewer:true},'',url);}
     active=session;
     reference.open=window.matchMedia('(min-width: 800px)').matches;
@@ -397,6 +499,11 @@ export function mountPilotViewer({manifest,boundaries,townById,groups}){
   }
   get('pilot-back').onclick=back;
   dialog.addEventListener('cancel',event=>{event.preventDefault();back();});
+  currentSwitch.onclick=event=>{
+    const style=event.target.closest('button')?.dataset.currentStyle;
+    if(!style||!active?.scene)return;
+    active.currentStyle=style;renderMode();
+  };
   choice.onchange=()=>{
     selectZone(choice.value);
     if(active?.canSimulate && active.mode==='plan'){

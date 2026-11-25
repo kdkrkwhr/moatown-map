@@ -7,8 +7,8 @@
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <title>서울 모아타운 현황지도</title>
   <link rel="sitemap" type="application/xml" href="./sitemap.xml">
-  <link rel="stylesheet" href="./styles.css?v=744430b0c9fe">
-  <script type="module" src="./app.mjs?v=744430b0c9fe"></script>
+  <link rel="stylesheet" href="./styles.css?v=7dfd6896aee5">
+  <script type="module" src="./app.mjs?v=7dfd6896aee5"></script>
 </head>
 <body data-loading="true">
 <a class="skip" href="#explorer">대상지 탐색으로 바로가기</a>
@@ -120,7 +120,11 @@
     <div class="pilot-stage">
       <div id="pilot-scene"></div>
       <figure id="pilot-illustration" hidden></figure>
-      <div id="pilot-placement" role="group" aria-label="건축 후 배치 방식" hidden>
+      <div id="pilot-current-style" class="pilot-display-switch" role="group" aria-label="현재 건물 표시 방식" hidden>
+        <button type="button" data-current-style="exterior" aria-pressed="true">건물 외관</button>
+        <button type="button" data-current-style="age" aria-pressed="false">연식 색상</button>
+      </div>
+      <div id="pilot-placement" class="pilot-display-switch" role="group" aria-label="건축 후 배치 방식" hidden>
         <button type="button" data-placement="design" aria-pressed="true">계획자료 반영</button>
         <button type="button" data-placement="spaced" aria-pressed="false">35m 간격 예시</button>
       </div>
