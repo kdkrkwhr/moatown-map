@@ -1,5 +1,5 @@
-import {formatValue,unitsChange,projectIntervals,compareInterval,projectStage} from './detail-format.mjs?v=b8b5ff1537a3';
-import {projectUrl} from './project-url.mjs?v=b8b5ff1537a3';
+import {formatValue,unitsChange,projectIntervals,compareInterval,projectStage} from './detail-format.mjs?v=0de51c63d593';
+import {projectUrl} from './project-url.mjs?v=0de51c63d593';
 export {projectUrl};
 
 const pending='미고시';
@@ -99,7 +99,7 @@ function comparablePlan(r,otherKey){
 }
 
 function cutoffLabel(r){
-  if(r.rights_cutoff_date)return date(r.rights_cutoff_date);
+  if(r.rights_base_date??r.rights_cutoff_date)return date(r.rights_base_date??r.rights_cutoff_date);
   return r.rights_cutoff_history?.length?'범위별 기준 확인':pending;
 }
 
@@ -455,11 +455,30 @@ function summary(town,zone,intervals,badge,copyLink,comparison){
   const stageNode=stage?badge(stage):el('span','추진 단계 '+pending,'status-tag unverified');
   badges.append(stageNode);
   const rules=regulationLabels(r,town);
-  for(const [label,value] of [['권리산정기준일',rules.cutoff],['토지거래허가구역',rules.permit]]){
-    const chip=el('span',null,'regulation-chip'+(value===pending?' unverified':''));
-    chip.append(label+' ',el('b',value));badges.append(chip);
-  }
+  const permit=el('span',null,'regulation-chip'+(rules.permit===pending?' unverified':''));
+  permit.append('토지거래허가구역 ',el('b',rules.permit));badges.append(permit);
   header.append(badges);
+  const stats=r.aging_reference,metricCards=el('div',null,'decision-metrics');
+  const ageTip='수록된 건축물 연식 데이터 기반 참고 수치이며, 법적 노후·불량건축물 비율은 고시문을 확인하세요.';
+  const rightsTip='이 날짜 이후 신축된 건축물은 분양권(입주권) 대신 현금청산 대상이 될 수 있습니다. 필지별 적용 범위와 예외는 해당 고시에서 확인하세요.';
+  const ages=stats?stats.year+'년 기준 · 내부 '+countBuildings(stats.total)+' 중 사용승인 후 30년 이상으로 확인된 건물 '+countBuildings(stats.over_30)+'. 20년 이상 '+formatValue(stats.rate_20,'%')+' · 연식 미상 '+countBuildings(stats.unknown):'참고 경계와 건물 연식을 대조할 자료가 필요합니다.';
+  function countBuildings(n){return formatValue(n,'동');}
+  for(const [label,value,tip,note,proof] of [
+    ['권리산정기준일',rules.cutoff,rightsTip,r.rights_notice_no??r.field_evidence?.rights_cutoff_date?.notice_number,r.field_evidence?.rights_cutoff_date?.source_url],
+    ['참고 노후도 · 30년',Number.isFinite(r.aging_rate)?formatValue(r.aging_rate,'%'):'산출중',ageTip,ages,stats?.source_url]
+  ]){
+    const button=el('button');button.type='button';button.title=tip;button.setAttribute('aria-haspopup','dialog');
+    button.append(el('small',label),el('strong',value));metricCards.append(button);
+    button.addEventListener('click',()=>{
+      const dialog=document.getElementById('metric-dialog');
+      dialog.querySelector('h2').textContent=label+' · '+value;
+      const body=dialog.querySelector('.metric-description');body.replaceChildren(el('p',tip));
+      if(note)body.append(el('p',note));
+      const ref=link(proof,'근거 자료 열기');if(ref)body.append(ref);
+      dialog.showModal();
+    });
+  }
+  header.append(metricCards);
   if(r.risk_info?.is_canceled===true)header.append(el('p','선정 취소·철회 · '+(r.risk_info.cancel_reason??'사유 미고시'),'cancel-notice'));
   const {area,planned,existing}=values(r);
   const current=intervals.find(step=>step.label.includes('진행 중'))??intervals.at(-1);

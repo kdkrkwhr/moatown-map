@@ -1,4 +1,4 @@
-import {createMarkerClusters} from './marker-clusters.mjs?v=b8b5ff1537a3';
+import {createMarkerClusters} from './marker-clusters.mjs?v=0de51c63d593';
 const SDK='https://oapi.map.naver.com/openapi/v3/maps.js';
 export function loadMaps(onAuthError){
   window.navermap_authFailure=onAuthError;
@@ -167,6 +167,7 @@ export function createProjectMap(m,container,{townById,zoneById,boundaries,distr
   function fit(){
     const {current,rows,filtered}=view();
     const opts=padding();
+    if(opts.top+opts.bottom>=container.clientHeight-24)return;
     if(addressPoint){map.fitBounds([addressPoint],{...opts,maxZoom:16});return;}
     const points=[];
     function include(id){

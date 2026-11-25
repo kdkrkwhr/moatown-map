@@ -1,4 +1,4 @@
-import booleanPointInPolygon from './vendor/turf/boolean-point-in-polygon.mjs?v=b8b5ff1537a3';
+import booleanPointInPolygon from './vendor/turf/boolean-point-in-polygon.mjs?v=0de51c63d593';
 export function parseLot(value){
   const match=/^(?:서울(?:특별시|시)?\s+)?(?:([가-힣]+구)\s+)?([가-힣\d·.]+(?:동|가|로))\s+(산\s*)?(\d{1,4})(?:-(\d{1,4}))?(?:번지)?$/.exec(value.trim());
   if(!match || Number(match[4])===0)return null;
@@ -84,7 +84,11 @@ export function mountAddressLookup(townById,boundaries,showPoint,mapAvailable=()
   }
   function display(point,label,kind){
     const hits=shapes.map(feature=>({feature,position:positionInGeometry(point,feature.geometry)})).filter(x=>x.position!=='outside');
-    const note=hits.length?hits.map(({feature,position})=>townById.get(feature.properties.entity_id).name+' 참고 외곽 '+(position==='near'?'경계 5m 이내 · 고시 확인 필요':'안')).join(' · '):
+    const note=hits.length?hits.map(({feature,position})=>{
+      const town=townById.get(feature.properties.entity_id),day=town.rights_base_date??town.rights_cutoff_date;
+      const scope=position==='near'?'경계 5m 이내 · 고시 확인 필요':'안';
+      return town.name+' 참고 외곽 '+scope+(day?' · 대상지 권리산정기준일 '+day.replaceAll('-','.'):'');
+    }).join(' / '):
       shapes.length?'수록된 서울 참고 외곽 밖 · 외곽 미수록 대상지는 판정 보류':'대조할 참고 외곽 자료 없음';
     result={point,hits,label,note};
     output.textContent=label+' · '+kind+' · '+note;locate.hidden=!mapAvailable();

@@ -18,8 +18,8 @@
   <meta property="og:image" content="https://moatownmap.com/assets/seoul-panorama.webp">
   <meta property="og:image:alt" content="서울 시가지 전경">
   <link rel="sitemap" type="application/xml" href="/sitemap.xml">
-  <link rel="stylesheet" href="./styles.css?v=b8b5ff1537a3">
-  <script type="module" src="./app.mjs?v=b8b5ff1537a3"></script>
+  <link rel="stylesheet" href="./styles.css?v=0de51c63d593">
+  <script type="module" src="./app.mjs?v=0de51c63d593"></script>
 </head>
 <body data-loading="true">
 <a class="skip" href="#explorer">대상지 탐색으로 바로가기</a>
@@ -65,7 +65,7 @@
               </div>
             </details>
             <button type="button" id="recent-filter" aria-pressed="false" aria-describedby="recent-help" disabled>최근 변동</button>
-            <button type="button" id="layer-open" aria-haspopup="dialog" aria-controls="layer-dialog"><span class="layer-icon" aria-hidden="true"></span>레이어</button>
+            <button type="button" id="layer-open" aria-haspopup="dialog" aria-controls="layer-dialog"><span class="layer-icon" aria-hidden="true"></span>레이어·범례</button>
           </div>
         </div>
         <div class="results-head"><h3>검색 결과</h3><button type="button" id="clear-filters" hidden>조건 지우기</button><span id="result-count" role="status"></span></div>
@@ -106,6 +106,10 @@
   </section>
 </main>
 <div id="share-status" role="status" aria-live="polite" aria-atomic="true"></div>
+<dialog id="metric-dialog" aria-labelledby="metric-heading">
+  <div class="dialog-head"><h2 id="metric-heading">지표 기준</h2><form method="dialog"><button>닫기</button></form></div>
+  <div class="metric-description"></div>
+</dialog>
 <dialog id="cluster-dialog" aria-labelledby="cluster-heading">
   <div class="dialog-head"><h2 id="cluster-heading">겹친 마커</h2><button type="button">닫기</button></div>
   <ul id="cluster-members"></ul>

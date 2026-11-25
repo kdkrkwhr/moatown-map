@@ -265,7 +265,26 @@
         }
       }
     ],
-    "last_verified_at": "2026-11-25"
+    "last_verified_at": "2026-11-25",
+    "aging_rate": 70.4,
+    "aging_criteria": "2026년 기준 사용승인 후 30년 이상으로 확인된 동수 ÷ 참고 경계 내부 전체 수록 동수",
+    "aging_reference": {
+      "total": 199,
+      "known": 186,
+      "unknown": 13,
+      "over_20": 168,
+      "over_30": 140,
+      "rate_20": 84.4,
+      "rate_30": 70.4,
+      "year": 2026,
+      "source_url": "https://www.data.go.kr/data/15083092/fileData.do",
+      "source_as_of": "2024-12-31",
+      "checked_on": "2026-11-25",
+      "evidence": "registered_buildings_inside_reference_boundary",
+      "registry_supplement": "buildings/registry-heights.json"
+    },
+    "rights_base_date": null,
+    "rights_notice_no": null
   },
   {
     "id": "mt-202603-public-002",
@@ -489,7 +508,26 @@
         }
       }
     ],
-    "last_verified_at": "2026-11-25"
+    "last_verified_at": "2026-11-25",
+    "aging_rate": 65.4,
+    "aging_criteria": "2026년 기준 사용승인 후 30년 이상으로 확인된 동수 ÷ 참고 경계 내부 전체 수록 동수",
+    "aging_reference": {
+      "total": 289,
+      "known": 278,
+      "unknown": 11,
+      "over_20": 243,
+      "over_30": 189,
+      "rate_20": 84.1,
+      "rate_30": 65.4,
+      "year": 2026,
+      "source_url": "https://www.data.go.kr/data/15083092/fileData.do",
+      "source_as_of": "2024-12-31",
+      "checked_on": "2026-11-25",
+      "evidence": "registered_buildings_inside_reference_boundary",
+      "registry_supplement": "buildings/registry-heights.json"
+    },
+    "rights_base_date": null,
+    "rights_notice_no": null
   },
   {
     "id": "mt-202603-public-003",
@@ -765,7 +803,26 @@
         }
       }
     ],
-    "last_verified_at": "2026-11-25"
+    "last_verified_at": "2026-11-25",
+    "aging_rate": 70.5,
+    "aging_criteria": "2026년 기준 사용승인 후 30년 이상으로 확인된 동수 ÷ 참고 경계 내부 전체 수록 동수",
+    "aging_reference": {
+      "total": 217,
+      "known": 210,
+      "unknown": 7,
+      "over_20": 189,
+      "over_30": 153,
+      "rate_20": 87.1,
+      "rate_30": 70.5,
+      "year": 2026,
+      "source_url": "https://www.data.go.kr/data/15083092/fileData.do",
+      "source_as_of": "2024-12-31",
+      "checked_on": "2026-11-25",
+      "evidence": "registered_buildings_inside_reference_boundary",
+      "registry_supplement": "buildings/registry-heights.json"
+    },
+    "rights_base_date": null,
+    "rights_notice_no": null
   },
   {
     "id": "mt-202603-public-004",
@@ -916,7 +973,26 @@
         "checked_on": "2026-11-25"
       }
     ],
-    "last_verified_at": "2026-11-25"
+    "last_verified_at": "2026-11-25",
+    "aging_rate": 63.2,
+    "aging_criteria": "2026년 기준 사용승인 후 30년 이상으로 확인된 동수 ÷ 참고 경계 내부 전체 수록 동수",
+    "aging_reference": {
+      "total": 182,
+      "known": 173,
+      "unknown": 9,
+      "over_20": 151,
+      "over_30": 115,
+      "rate_20": 83.0,
+      "rate_30": 63.2,
+      "year": 2026,
+      "source_url": "https://www.data.go.kr/data/15083092/fileData.do",
+      "source_as_of": "2024-12-31",
+      "checked_on": "2026-11-25",
+      "evidence": "registered_buildings_inside_reference_boundary",
+      "registry_supplement": "buildings/registry-heights.json"
+    },
+    "rights_base_date": null,
+    "rights_notice_no": null
   },
   {
     "id": "mt-202603-public-005",
@@ -1178,7 +1254,26 @@
         }
       }
     ],
-    "last_verified_at": "2026-11-25"
+    "last_verified_at": "2026-11-25",
+    "aging_rate": 66.5,
+    "aging_criteria": "2026년 기준 사용승인 후 30년 이상으로 확인된 동수 ÷ 참고 경계 내부 전체 수록 동수",
+    "aging_reference": {
+      "total": 179,
+      "known": 170,
+      "unknown": 9,
+      "over_20": 151,
+      "over_30": 119,
+      "rate_20": 84.4,
+      "rate_30": 66.5,
+      "year": 2026,
+      "source_url": "https://www.data.go.kr/data/15083092/fileData.do",
+      "source_as_of": "2024-12-31",
+      "checked_on": "2026-11-25",
+      "evidence": "registered_buildings_inside_reference_boundary",
+      "registry_supplement": "buildings/registry-heights.json"
+    },
+    "rights_base_date": null,
+    "rights_notice_no": null
   },
   {
     "id": "mt-202603-public-006",
@@ -1420,7 +1515,26 @@
         }
       }
     ],
-    "last_verified_at": "2026-11-25"
+    "last_verified_at": "2026-11-25",
+    "aging_rate": 70.3,
+    "aging_criteria": "2026년 기준 사용승인 후 30년 이상으로 확인된 동수 ÷ 참고 경계 내부 전체 수록 동수",
+    "aging_reference": {
+      "total": 145,
+      "known": 139,
+      "unknown": 6,
+      "over_20": 118,
+      "over_30": 102,
+      "rate_20": 81.4,
+      "rate_30": 70.3,
+      "year": 2026,
+      "source_url": "https://www.data.go.kr/data/15083092/fileData.do",
+      "source_as_of": "2024-12-31",
+      "checked_on": "2026-11-25",
+      "evidence": "registered_buildings_inside_reference_boundary",
+      "registry_supplement": "buildings/registry-heights.json"
+    },
+    "rights_base_date": null,
+    "rights_notice_no": null
   },
   {
     "id": "mt-202603-public-007",
@@ -1706,7 +1820,26 @@
         }
       }
     ],
-    "last_verified_at": "2026-11-25"
+    "last_verified_at": "2026-11-25",
+    "aging_rate": 60.2,
+    "aging_criteria": "2026년 기준 사용승인 후 30년 이상으로 확인된 동수 ÷ 참고 경계 내부 전체 수록 동수",
+    "aging_reference": {
+      "total": 236,
+      "known": 215,
+      "unknown": 21,
+      "over_20": 188,
+      "over_30": 142,
+      "rate_20": 79.7,
+      "rate_30": 60.2,
+      "year": 2026,
+      "source_url": "https://www.data.go.kr/data/15083092/fileData.do",
+      "source_as_of": "2024-12-31",
+      "checked_on": "2026-11-25",
+      "evidence": "registered_buildings_inside_reference_boundary",
+      "registry_supplement": "buildings/registry-heights.json"
+    },
+    "rights_base_date": null,
+    "rights_notice_no": null
   },
   {
     "id": "mt-202603-public-008",
@@ -2019,7 +2152,26 @@
     "housing_allocation": {
       "rental": 258
     },
-    "last_verified_at": "2026-11-25"
+    "last_verified_at": "2026-11-25",
+    "aging_rate": 65.6,
+    "aging_criteria": "2026년 기준 사용승인 후 30년 이상으로 확인된 동수 ÷ 참고 경계 내부 전체 수록 동수",
+    "aging_reference": {
+      "total": 390,
+      "known": 368,
+      "unknown": 22,
+      "over_20": 297,
+      "over_30": 256,
+      "rate_20": 76.2,
+      "rate_30": 65.6,
+      "year": 2026,
+      "source_url": "https://www.data.go.kr/data/15083092/fileData.do",
+      "source_as_of": "2024-12-31",
+      "checked_on": "2026-11-25",
+      "evidence": "registered_buildings_inside_reference_boundary",
+      "registry_supplement": "buildings/registry-heights.json"
+    },
+    "rights_base_date": "2022-10-27",
+    "rights_notice_no": "서울특별시 고시 제2024-488호"
   },
   {
     "id": "mt-202603-public-009",
@@ -2278,7 +2430,26 @@
     },
     "max_floors_above_ground": 15,
     "floor_area_ratio_pct": 300.0,
-    "last_verified_at": "2026-11-25"
+    "last_verified_at": "2026-11-25",
+    "aging_rate": 71.1,
+    "aging_criteria": "2026년 기준 사용승인 후 30년 이상으로 확인된 동수 ÷ 참고 경계 내부 전체 수록 동수",
+    "aging_reference": {
+      "total": 329,
+      "known": 316,
+      "unknown": 13,
+      "over_20": 293,
+      "over_30": 234,
+      "rate_20": 89.1,
+      "rate_30": 71.1,
+      "year": 2026,
+      "source_url": "https://www.data.go.kr/data/15083092/fileData.do",
+      "source_as_of": "2024-12-31",
+      "checked_on": "2026-11-25",
+      "evidence": "registered_buildings_inside_reference_boundary",
+      "registry_supplement": "buildings/registry-heights.json"
+    },
+    "rights_base_date": null,
+    "rights_notice_no": null
   },
   {
     "id": "mt-202603-public-010",
@@ -2525,7 +2696,26 @@
         }
       }
     ],
-    "last_verified_at": "2026-11-25"
+    "last_verified_at": "2026-11-25",
+    "aging_rate": 82.8,
+    "aging_criteria": "2026년 기준 사용승인 후 30년 이상으로 확인된 동수 ÷ 참고 경계 내부 전체 수록 동수",
+    "aging_reference": {
+      "total": 487,
+      "known": 467,
+      "unknown": 20,
+      "over_20": 439,
+      "over_30": 403,
+      "rate_20": 90.1,
+      "rate_30": 82.8,
+      "year": 2026,
+      "source_url": "https://www.data.go.kr/data/15083092/fileData.do",
+      "source_as_of": "2024-12-31",
+      "checked_on": "2026-11-25",
+      "evidence": "registered_buildings_inside_reference_boundary",
+      "registry_supplement": "buildings/registry-heights.json"
+    },
+    "rights_base_date": null,
+    "rights_notice_no": null
   },
   {
     "id": "mt-202603-public-011",
@@ -2825,7 +3015,26 @@
         }
       }
     ],
-    "last_verified_at": "2026-11-25"
+    "last_verified_at": "2026-11-25",
+    "aging_rate": 79.9,
+    "aging_criteria": "2026년 기준 사용승인 후 30년 이상으로 확인된 동수 ÷ 참고 경계 내부 전체 수록 동수",
+    "aging_reference": {
+      "total": 249,
+      "known": 240,
+      "unknown": 9,
+      "over_20": 220,
+      "over_30": 199,
+      "rate_20": 88.4,
+      "rate_30": 79.9,
+      "year": 2026,
+      "source_url": "https://www.data.go.kr/data/15083092/fileData.do",
+      "source_as_of": "2024-12-31",
+      "checked_on": "2026-11-25",
+      "evidence": "registered_buildings_inside_reference_boundary",
+      "registry_supplement": "buildings/registry-heights.json"
+    },
+    "rights_base_date": null,
+    "rights_notice_no": null
   },
   {
     "id": "mt-202603-public-012",
@@ -3084,7 +3293,26 @@
         }
       }
     ],
-    "last_verified_at": "2026-11-25"
+    "last_verified_at": "2026-11-25",
+    "aging_rate": 72.1,
+    "aging_criteria": "2026년 기준 사용승인 후 30년 이상으로 확인된 동수 ÷ 참고 경계 내부 전체 수록 동수",
+    "aging_reference": {
+      "total": 208,
+      "known": 201,
+      "unknown": 7,
+      "over_20": 166,
+      "over_30": 150,
+      "rate_20": 79.8,
+      "rate_30": 72.1,
+      "year": 2026,
+      "source_url": "https://www.data.go.kr/data/15083092/fileData.do",
+      "source_as_of": "2024-12-31",
+      "checked_on": "2026-11-25",
+      "evidence": "registered_buildings_inside_reference_boundary",
+      "registry_supplement": "buildings/registry-heights.json"
+    },
+    "rights_base_date": null,
+    "rights_notice_no": null
   },
   {
     "id": "mt-202603-public-013",
@@ -3335,7 +3563,26 @@
         }
       }
     ],
-    "last_verified_at": "2026-11-25"
+    "last_verified_at": "2026-11-25",
+    "aging_rate": 64.5,
+    "aging_criteria": "2026년 기준 사용승인 후 30년 이상으로 확인된 동수 ÷ 참고 경계 내부 전체 수록 동수",
+    "aging_reference": {
+      "total": 310,
+      "known": 284,
+      "unknown": 26,
+      "over_20": 240,
+      "over_30": 200,
+      "rate_20": 77.4,
+      "rate_30": 64.5,
+      "year": 2026,
+      "source_url": "https://www.data.go.kr/data/15083092/fileData.do",
+      "source_as_of": "2024-12-31",
+      "checked_on": "2026-11-25",
+      "evidence": "registered_buildings_inside_reference_boundary",
+      "registry_supplement": "buildings/registry-heights.json"
+    },
+    "rights_base_date": null,
+    "rights_notice_no": null
   },
   {
     "id": "mt-202603-public-014",
@@ -3619,7 +3866,26 @@
         }
       }
     ],
-    "last_verified_at": "2026-11-25"
+    "last_verified_at": "2026-11-25",
+    "aging_rate": 68.6,
+    "aging_criteria": "2026년 기준 사용승인 후 30년 이상으로 확인된 동수 ÷ 참고 경계 내부 전체 수록 동수",
+    "aging_reference": {
+      "total": 421,
+      "known": 414,
+      "unknown": 7,
+      "over_20": 353,
+      "over_30": 289,
+      "rate_20": 83.8,
+      "rate_30": 68.6,
+      "year": 2026,
+      "source_url": "https://www.data.go.kr/data/15083092/fileData.do",
+      "source_as_of": "2024-12-31",
+      "checked_on": "2026-11-25",
+      "evidence": "registered_buildings_inside_reference_boundary",
+      "registry_supplement": "buildings/registry-heights.json"
+    },
+    "rights_base_date": null,
+    "rights_notice_no": null
   },
   {
     "id": "mt-202603-public-015",
@@ -3878,7 +4144,26 @@
     "housing_allocation": {
       "rental": 356
     },
-    "last_verified_at": "2026-11-25"
+    "last_verified_at": "2026-11-25",
+    "aging_rate": 73.0,
+    "aging_criteria": "2026년 기준 사용승인 후 30년 이상으로 확인된 동수 ÷ 참고 경계 내부 전체 수록 동수",
+    "aging_reference": {
+      "total": 381,
+      "known": 373,
+      "unknown": 8,
+      "over_20": 326,
+      "over_30": 278,
+      "rate_20": 85.6,
+      "rate_30": 73.0,
+      "year": 2026,
+      "source_url": "https://www.data.go.kr/data/15083092/fileData.do",
+      "source_as_of": "2024-12-31",
+      "checked_on": "2026-11-25",
+      "evidence": "registered_buildings_inside_reference_boundary",
+      "registry_supplement": "buildings/registry-heights.json"
+    },
+    "rights_base_date": "2022-10-27",
+    "rights_notice_no": "서울특별시 고시 제2024-488호"
   },
   {
     "id": "mt-202603-public-016",
@@ -4150,7 +4435,26 @@
     "housing_allocation": {
       "rental": 294
     },
-    "last_verified_at": "2026-11-25"
+    "last_verified_at": "2026-11-25",
+    "aging_rate": 77.8,
+    "aging_criteria": "2026년 기준 사용승인 후 30년 이상으로 확인된 동수 ÷ 참고 경계 내부 전체 수록 동수",
+    "aging_reference": {
+      "total": 454,
+      "known": 445,
+      "unknown": 9,
+      "over_20": 380,
+      "over_30": 353,
+      "rate_20": 83.7,
+      "rate_30": 77.8,
+      "year": 2026,
+      "source_url": "https://www.data.go.kr/data/15083092/fileData.do",
+      "source_as_of": "2024-12-31",
+      "checked_on": "2026-11-25",
+      "evidence": "registered_buildings_inside_reference_boundary",
+      "registry_supplement": "buildings/registry-heights.json"
+    },
+    "rights_base_date": "2022-10-27",
+    "rights_notice_no": "서울특별시 고시 제2024-488호"
   },
   {
     "id": "mt-202603-public-017",
@@ -4419,7 +4723,26 @@
         }
       }
     ],
-    "last_verified_at": "2026-11-25"
+    "last_verified_at": "2026-11-25",
+    "aging_rate": 88.4,
+    "aging_criteria": "2026년 기준 사용승인 후 30년 이상으로 확인된 동수 ÷ 참고 경계 내부 전체 수록 동수",
+    "aging_reference": {
+      "total": 361,
+      "known": 351,
+      "unknown": 10,
+      "over_20": 339,
+      "over_30": 319,
+      "rate_20": 93.9,
+      "rate_30": 88.4,
+      "year": 2026,
+      "source_url": "https://www.data.go.kr/data/15083092/fileData.do",
+      "source_as_of": "2024-12-31",
+      "checked_on": "2026-11-25",
+      "evidence": "registered_buildings_inside_reference_boundary",
+      "registry_supplement": "buildings/registry-heights.json"
+    },
+    "rights_base_date": null,
+    "rights_notice_no": null
   },
   {
     "id": "mt-202603-public-018",
@@ -4674,7 +4997,26 @@
         }
       }
     ],
-    "last_verified_at": "2026-11-25"
+    "last_verified_at": "2026-11-25",
+    "aging_rate": 83.1,
+    "aging_criteria": "2026년 기준 사용승인 후 30년 이상으로 확인된 동수 ÷ 참고 경계 내부 전체 수록 동수",
+    "aging_reference": {
+      "total": 534,
+      "known": 520,
+      "unknown": 14,
+      "over_20": 474,
+      "over_30": 444,
+      "rate_20": 88.8,
+      "rate_30": 83.1,
+      "year": 2026,
+      "source_url": "https://www.data.go.kr/data/15083092/fileData.do",
+      "source_as_of": "2024-12-31",
+      "checked_on": "2026-11-25",
+      "evidence": "registered_buildings_inside_reference_boundary",
+      "registry_supplement": "buildings/registry-heights.json"
+    },
+    "rights_base_date": null,
+    "rights_notice_no": null
   },
   {
     "id": "mt-202603-public-019",
@@ -4952,7 +5294,26 @@
         }
       }
     ],
-    "last_verified_at": "2026-11-25"
+    "last_verified_at": "2026-11-25",
+    "aging_rate": 75.6,
+    "aging_criteria": "2026년 기준 사용승인 후 30년 이상으로 확인된 동수 ÷ 참고 경계 내부 전체 수록 동수",
+    "aging_reference": {
+      "total": 386,
+      "known": 378,
+      "unknown": 8,
+      "over_20": 323,
+      "over_30": 292,
+      "rate_20": 83.7,
+      "rate_30": 75.6,
+      "year": 2026,
+      "source_url": "https://www.data.go.kr/data/15083092/fileData.do",
+      "source_as_of": "2024-12-31",
+      "checked_on": "2026-11-25",
+      "evidence": "registered_buildings_inside_reference_boundary",
+      "registry_supplement": "buildings/registry-heights.json"
+    },
+    "rights_base_date": null,
+    "rights_notice_no": null
   },
   {
     "id": "mt-202603-public-020",
@@ -5207,7 +5568,26 @@
         "checked_on": "2026-11-25"
       }
     ],
-    "last_verified_at": "2026-11-25"
+    "last_verified_at": "2026-11-25",
+    "aging_rate": 63.4,
+    "aging_criteria": "2026년 기준 사용승인 후 30년 이상으로 확인된 동수 ÷ 참고 경계 내부 전체 수록 동수",
+    "aging_reference": {
+      "total": 284,
+      "known": 275,
+      "unknown": 9,
+      "over_20": 212,
+      "over_30": 180,
+      "rate_20": 74.6,
+      "rate_30": 63.4,
+      "year": 2026,
+      "source_url": "https://www.data.go.kr/data/15083092/fileData.do",
+      "source_as_of": "2024-12-31",
+      "checked_on": "2026-11-25",
+      "evidence": "registered_buildings_inside_reference_boundary",
+      "registry_supplement": "buildings/registry-heights.json"
+    },
+    "rights_base_date": null,
+    "rights_notice_no": null
   },
   {
     "id": "mt-202603-public-021",
@@ -5443,7 +5823,26 @@
         "zone_count": 4
       }
     ],
-    "last_verified_at": "2026-11-25"
+    "last_verified_at": "2026-11-25",
+    "aging_rate": 91.9,
+    "aging_criteria": "2026년 기준 사용승인 후 30년 이상으로 확인된 동수 ÷ 참고 경계 내부 전체 수록 동수",
+    "aging_reference": {
+      "total": 360,
+      "known": 360,
+      "unknown": 0,
+      "over_20": 346,
+      "over_30": 331,
+      "rate_20": 96.1,
+      "rate_30": 91.9,
+      "year": 2026,
+      "source_url": "https://www.data.go.kr/data/15083092/fileData.do",
+      "source_as_of": "2024-12-31",
+      "checked_on": "2026-11-25",
+      "evidence": "registered_buildings_inside_reference_boundary",
+      "registry_supplement": "buildings/registry-heights.json"
+    },
+    "rights_base_date": null,
+    "rights_notice_no": null
   },
   {
     "id": "mt-202603-public-022",
@@ -5578,7 +5977,26 @@
         "checked_on": "2026-11-25"
       }
     ],
-    "last_verified_at": "2026-11-25"
+    "last_verified_at": "2026-11-25",
+    "aging_rate": 78.3,
+    "aging_criteria": "2026년 기준 사용승인 후 30년 이상으로 확인된 동수 ÷ 참고 경계 내부 전체 수록 동수",
+    "aging_reference": {
+      "total": 337,
+      "known": 332,
+      "unknown": 5,
+      "over_20": 297,
+      "over_30": 264,
+      "rate_20": 88.1,
+      "rate_30": 78.3,
+      "year": 2026,
+      "source_url": "https://www.data.go.kr/data/15083092/fileData.do",
+      "source_as_of": "2024-12-31",
+      "checked_on": "2026-11-25",
+      "evidence": "registered_buildings_inside_reference_boundary",
+      "registry_supplement": "buildings/registry-heights.json"
+    },
+    "rights_base_date": null,
+    "rights_notice_no": null
   },
   {
     "id": "mt-202603-public-023",
@@ -5886,7 +6304,26 @@
         }
       }
     ],
-    "last_verified_at": "2026-11-25"
+    "last_verified_at": "2026-11-25",
+    "aging_rate": 84.8,
+    "aging_criteria": "2026년 기준 사용승인 후 30년 이상으로 확인된 동수 ÷ 참고 경계 내부 전체 수록 동수",
+    "aging_reference": {
+      "total": 455,
+      "known": 444,
+      "unknown": 11,
+      "over_20": 403,
+      "over_30": 386,
+      "rate_20": 88.6,
+      "rate_30": 84.8,
+      "year": 2026,
+      "source_url": "https://www.data.go.kr/data/15083092/fileData.do",
+      "source_as_of": "2024-12-31",
+      "checked_on": "2026-11-25",
+      "evidence": "registered_buildings_inside_reference_boundary",
+      "registry_supplement": "buildings/registry-heights.json"
+    },
+    "rights_base_date": null,
+    "rights_notice_no": null
   },
   {
     "id": "mt-202603-public-024",
@@ -6170,7 +6607,26 @@
         }
       }
     ],
-    "last_verified_at": "2026-11-25"
+    "last_verified_at": "2026-11-25",
+    "aging_rate": 60.8,
+    "aging_criteria": "2026년 기준 사용승인 후 30년 이상으로 확인된 동수 ÷ 참고 경계 내부 전체 수록 동수",
+    "aging_reference": {
+      "total": 209,
+      "known": 188,
+      "unknown": 21,
+      "over_20": 166,
+      "over_30": 127,
+      "rate_20": 79.4,
+      "rate_30": 60.8,
+      "year": 2026,
+      "source_url": "https://www.data.go.kr/data/15083092/fileData.do",
+      "source_as_of": "2024-12-31",
+      "checked_on": "2026-11-25",
+      "evidence": "registered_buildings_inside_reference_boundary",
+      "registry_supplement": "buildings/registry-heights.json"
+    },
+    "rights_base_date": null,
+    "rights_notice_no": null
   },
   {
     "id": "mt-202603-public-025",
@@ -6400,7 +6856,26 @@
     "housing_allocation": {
       "rental": 218
     },
-    "last_verified_at": "2026-11-25"
+    "last_verified_at": "2026-11-25",
+    "aging_rate": 71.0,
+    "aging_criteria": "2026년 기준 사용승인 후 30년 이상으로 확인된 동수 ÷ 참고 경계 내부 전체 수록 동수",
+    "aging_reference": {
+      "total": 100,
+      "known": 99,
+      "unknown": 1,
+      "over_20": 87,
+      "over_30": 71,
+      "rate_20": 87.0,
+      "rate_30": 71.0,
+      "year": 2026,
+      "source_url": "https://www.data.go.kr/data/15083092/fileData.do",
+      "source_as_of": "2024-12-31",
+      "checked_on": "2026-11-25",
+      "evidence": "registered_buildings_inside_reference_boundary",
+      "registry_supplement": "buildings/registry-heights.json"
+    },
+    "rights_base_date": null,
+    "rights_notice_no": null
   },
   {
     "id": "mt-202603-public-026",
@@ -6650,7 +7125,26 @@
         }
       }
     ],
-    "last_verified_at": "2026-11-25"
+    "last_verified_at": "2026-11-25",
+    "aging_rate": 76.5,
+    "aging_criteria": "2026년 기준 사용승인 후 30년 이상으로 확인된 동수 ÷ 참고 경계 내부 전체 수록 동수",
+    "aging_reference": {
+      "total": 396,
+      "known": 360,
+      "unknown": 36,
+      "over_20": 333,
+      "over_30": 303,
+      "rate_20": 84.1,
+      "rate_30": 76.5,
+      "year": 2026,
+      "source_url": "https://www.data.go.kr/data/15083092/fileData.do",
+      "source_as_of": "2024-12-31",
+      "checked_on": "2026-11-25",
+      "evidence": "registered_buildings_inside_reference_boundary",
+      "registry_supplement": "buildings/registry-heights.json"
+    },
+    "rights_base_date": null,
+    "rights_notice_no": null
   },
   {
     "id": "mt-202603-public-027",
@@ -6987,7 +7481,26 @@
         }
       }
     ],
-    "last_verified_at": "2026-11-25"
+    "last_verified_at": "2026-11-25",
+    "aging_rate": 70.3,
+    "aging_criteria": "2026년 기준 사용승인 후 30년 이상으로 확인된 동수 ÷ 참고 경계 내부 전체 수록 동수",
+    "aging_reference": {
+      "total": 303,
+      "known": 298,
+      "unknown": 5,
+      "over_20": 253,
+      "over_30": 213,
+      "rate_20": 83.5,
+      "rate_30": 70.3,
+      "year": 2026,
+      "source_url": "https://www.data.go.kr/data/15083092/fileData.do",
+      "source_as_of": "2024-12-31",
+      "checked_on": "2026-11-25",
+      "evidence": "registered_buildings_inside_reference_boundary",
+      "registry_supplement": "buildings/registry-heights.json"
+    },
+    "rights_base_date": null,
+    "rights_notice_no": null
   },
   {
     "id": "mt-202603-public-028",
@@ -7341,7 +7854,26 @@
         }
       }
     ],
-    "last_verified_at": "2026-11-25"
+    "last_verified_at": "2026-11-25",
+    "aging_rate": 47.6,
+    "aging_criteria": "2026년 기준 사용승인 후 30년 이상으로 확인된 동수 ÷ 참고 경계 내부 전체 수록 동수",
+    "aging_reference": {
+      "total": 164,
+      "known": 153,
+      "unknown": 11,
+      "over_20": 126,
+      "over_30": 78,
+      "rate_20": 76.8,
+      "rate_30": 47.6,
+      "year": 2026,
+      "source_url": "https://www.data.go.kr/data/15083092/fileData.do",
+      "source_as_of": "2024-12-31",
+      "checked_on": "2026-11-25",
+      "evidence": "registered_buildings_inside_reference_boundary",
+      "registry_supplement": "buildings/registry-heights.json"
+    },
+    "rights_base_date": null,
+    "rights_notice_no": null
   },
   {
     "id": "mt-202603-public-029",
@@ -7607,7 +8139,26 @@
         }
       }
     ],
-    "last_verified_at": "2026-11-25"
+    "last_verified_at": "2026-11-25",
+    "aging_rate": 46.3,
+    "aging_criteria": "2026년 기준 사용승인 후 30년 이상으로 확인된 동수 ÷ 참고 경계 내부 전체 수록 동수",
+    "aging_reference": {
+      "total": 67,
+      "known": 54,
+      "unknown": 13,
+      "over_20": 40,
+      "over_30": 31,
+      "rate_20": 59.7,
+      "rate_30": 46.3,
+      "year": 2026,
+      "source_url": "https://www.data.go.kr/data/15083092/fileData.do",
+      "source_as_of": "2024-12-31",
+      "checked_on": "2026-11-25",
+      "evidence": "registered_buildings_inside_reference_boundary",
+      "registry_supplement": "buildings/registry-heights.json"
+    },
+    "rights_base_date": null,
+    "rights_notice_no": null
   },
   {
     "id": "mt-202603-public-030",
@@ -7856,7 +8407,26 @@
         }
       }
     ],
-    "last_verified_at": "2026-11-25"
+    "last_verified_at": "2026-11-25",
+    "aging_rate": 66.0,
+    "aging_criteria": "2026년 기준 사용승인 후 30년 이상으로 확인된 동수 ÷ 참고 경계 내부 전체 수록 동수",
+    "aging_reference": {
+      "total": 303,
+      "known": 298,
+      "unknown": 5,
+      "over_20": 242,
+      "over_30": 200,
+      "rate_20": 79.9,
+      "rate_30": 66.0,
+      "year": 2026,
+      "source_url": "https://www.data.go.kr/data/15083092/fileData.do",
+      "source_as_of": "2024-12-31",
+      "checked_on": "2026-11-25",
+      "evidence": "registered_buildings_inside_reference_boundary",
+      "registry_supplement": "buildings/registry-heights.json"
+    },
+    "rights_base_date": null,
+    "rights_notice_no": null
   },
   {
     "id": "mt-202603-public-031",
@@ -8093,7 +8663,26 @@
         }
       }
     ],
-    "last_verified_at": "2026-11-25"
+    "last_verified_at": "2026-11-25",
+    "aging_rate": 63.1,
+    "aging_criteria": "2026년 기준 사용승인 후 30년 이상으로 확인된 동수 ÷ 참고 경계 내부 전체 수록 동수",
+    "aging_reference": {
+      "total": 214,
+      "known": 197,
+      "unknown": 17,
+      "over_20": 160,
+      "over_30": 135,
+      "rate_20": 74.8,
+      "rate_30": 63.1,
+      "year": 2026,
+      "source_url": "https://www.data.go.kr/data/15083092/fileData.do",
+      "source_as_of": "2024-12-31",
+      "checked_on": "2026-11-25",
+      "evidence": "registered_buildings_inside_reference_boundary",
+      "registry_supplement": "buildings/registry-heights.json"
+    },
+    "rights_base_date": null,
+    "rights_notice_no": null
   },
   {
     "id": "mt-202603-public-032",
@@ -8397,7 +8986,26 @@
     "housing_allocation": {
       "rental": 129
     },
-    "last_verified_at": "2026-11-25"
+    "last_verified_at": "2026-11-25",
+    "aging_rate": 56.0,
+    "aging_criteria": "2026년 기준 사용승인 후 30년 이상으로 확인된 동수 ÷ 참고 경계 내부 전체 수록 동수",
+    "aging_reference": {
+      "total": 405,
+      "known": 338,
+      "unknown": 67,
+      "over_20": 285,
+      "over_30": 227,
+      "rate_20": 70.4,
+      "rate_30": 56.0,
+      "year": 2026,
+      "source_url": "https://www.data.go.kr/data/15083092/fileData.do",
+      "source_as_of": "2024-12-31",
+      "checked_on": "2026-11-25",
+      "evidence": "registered_buildings_inside_reference_boundary",
+      "registry_supplement": "buildings/registry-heights.json"
+    },
+    "rights_base_date": null,
+    "rights_notice_no": null
   },
   {
     "id": "mt-202603-public-033",
@@ -8704,7 +9312,26 @@
     "housing_allocation": {
       "rental": 108
     },
-    "last_verified_at": "2026-11-25"
+    "last_verified_at": "2026-11-25",
+    "aging_rate": 76.8,
+    "aging_criteria": "2026년 기준 사용승인 후 30년 이상으로 확인된 동수 ÷ 참고 경계 내부 전체 수록 동수",
+    "aging_reference": {
+      "total": 56,
+      "known": 54,
+      "unknown": 2,
+      "over_20": 52,
+      "over_30": 43,
+      "rate_20": 92.9,
+      "rate_30": 76.8,
+      "year": 2026,
+      "source_url": "https://www.data.go.kr/data/15083092/fileData.do",
+      "source_as_of": "2024-12-31",
+      "checked_on": "2026-11-25",
+      "evidence": "registered_buildings_inside_reference_boundary",
+      "registry_supplement": "buildings/registry-heights.json"
+    },
+    "rights_base_date": null,
+    "rights_notice_no": null
   },
   {
     "id": "mt-202603-public-034",
@@ -8973,7 +9600,26 @@
     "housing_allocation": {
       "rental": 163
     },
-    "last_verified_at": "2026-11-25"
+    "last_verified_at": "2026-11-25",
+    "aging_rate": 82.6,
+    "aging_criteria": "2026년 기준 사용승인 후 30년 이상으로 확인된 동수 ÷ 참고 경계 내부 전체 수록 동수",
+    "aging_reference": {
+      "total": 259,
+      "known": 259,
+      "unknown": 0,
+      "over_20": 241,
+      "over_30": 214,
+      "rate_20": 93.1,
+      "rate_30": 82.6,
+      "year": 2026,
+      "source_url": "https://www.data.go.kr/data/15083092/fileData.do",
+      "source_as_of": "2024-12-31",
+      "checked_on": "2026-11-25",
+      "evidence": "registered_buildings_inside_reference_boundary",
+      "registry_supplement": "buildings/registry-heights.json"
+    },
+    "rights_base_date": null,
+    "rights_notice_no": null
   },
   {
     "id": "mt-202603-public-035",
@@ -9232,7 +9878,26 @@
         }
       }
     ],
-    "last_verified_at": "2026-11-25"
+    "last_verified_at": "2026-11-25",
+    "aging_rate": 79.2,
+    "aging_criteria": "2026년 기준 사용승인 후 30년 이상으로 확인된 동수 ÷ 참고 경계 내부 전체 수록 동수",
+    "aging_reference": {
+      "total": 366,
+      "known": 348,
+      "unknown": 18,
+      "over_20": 333,
+      "over_30": 290,
+      "rate_20": 91.0,
+      "rate_30": 79.2,
+      "year": 2026,
+      "source_url": "https://www.data.go.kr/data/15083092/fileData.do",
+      "source_as_of": "2024-12-31",
+      "checked_on": "2026-11-25",
+      "evidence": "registered_buildings_inside_reference_boundary",
+      "registry_supplement": "buildings/registry-heights.json"
+    },
+    "rights_base_date": null,
+    "rights_notice_no": null
   },
   {
     "id": "mt-202603-public-036",
@@ -9491,7 +10156,26 @@
         }
       }
     ],
-    "last_verified_at": "2026-11-25"
+    "last_verified_at": "2026-11-25",
+    "aging_rate": 74.1,
+    "aging_criteria": "2026년 기준 사용승인 후 30년 이상으로 확인된 동수 ÷ 참고 경계 내부 전체 수록 동수",
+    "aging_reference": {
+      "total": 433,
+      "known": 426,
+      "unknown": 7,
+      "over_20": 376,
+      "over_30": 321,
+      "rate_20": 86.8,
+      "rate_30": 74.1,
+      "year": 2026,
+      "source_url": "https://www.data.go.kr/data/15083092/fileData.do",
+      "source_as_of": "2024-12-31",
+      "checked_on": "2026-11-25",
+      "evidence": "registered_buildings_inside_reference_boundary",
+      "registry_supplement": "buildings/registry-heights.json"
+    },
+    "rights_base_date": null,
+    "rights_notice_no": null
   },
   {
     "id": "mt-202603-public-037",
@@ -9786,7 +10470,26 @@
         }
       }
     ],
-    "last_verified_at": "2026-11-25"
+    "last_verified_at": "2026-11-25",
+    "aging_rate": 70.6,
+    "aging_criteria": "2026년 기준 사용승인 후 30년 이상으로 확인된 동수 ÷ 참고 경계 내부 전체 수록 동수",
+    "aging_reference": {
+      "total": 384,
+      "known": 354,
+      "unknown": 30,
+      "over_20": 322,
+      "over_30": 271,
+      "rate_20": 83.9,
+      "rate_30": 70.6,
+      "year": 2026,
+      "source_url": "https://www.data.go.kr/data/15083092/fileData.do",
+      "source_as_of": "2024-12-31",
+      "checked_on": "2026-11-25",
+      "evidence": "registered_buildings_inside_reference_boundary",
+      "registry_supplement": "buildings/registry-heights.json"
+    },
+    "rights_base_date": null,
+    "rights_notice_no": null
   },
   {
     "id": "mt-202603-public-038",
@@ -10039,7 +10742,26 @@
         "checked_on": "2026-11-25"
       }
     ],
-    "last_verified_at": "2026-11-25"
+    "last_verified_at": "2026-11-25",
+    "aging_rate": 58.7,
+    "aging_criteria": "2026년 기준 사용승인 후 30년 이상으로 확인된 동수 ÷ 참고 경계 내부 전체 수록 동수",
+    "aging_reference": {
+      "total": 373,
+      "known": 346,
+      "unknown": 27,
+      "over_20": 270,
+      "over_30": 219,
+      "rate_20": 72.4,
+      "rate_30": 58.7,
+      "year": 2026,
+      "source_url": "https://www.data.go.kr/data/15083092/fileData.do",
+      "source_as_of": "2024-12-31",
+      "checked_on": "2026-11-25",
+      "evidence": "registered_buildings_inside_reference_boundary",
+      "registry_supplement": "buildings/registry-heights.json"
+    },
+    "rights_base_date": null,
+    "rights_notice_no": null
   },
   {
     "id": "mt-202603-public-039",
@@ -10299,7 +11021,26 @@
         }
       }
     ],
-    "last_verified_at": "2026-11-25"
+    "last_verified_at": "2026-11-25",
+    "aging_rate": 62.4,
+    "aging_criteria": "2026년 기준 사용승인 후 30년 이상으로 확인된 동수 ÷ 참고 경계 내부 전체 수록 동수",
+    "aging_reference": {
+      "total": 330,
+      "known": 316,
+      "unknown": 14,
+      "over_20": 244,
+      "over_30": 206,
+      "rate_20": 73.9,
+      "rate_30": 62.4,
+      "year": 2026,
+      "source_url": "https://www.data.go.kr/data/15083092/fileData.do",
+      "source_as_of": "2024-12-31",
+      "checked_on": "2026-11-25",
+      "evidence": "registered_buildings_inside_reference_boundary",
+      "registry_supplement": "buildings/registry-heights.json"
+    },
+    "rights_base_date": null,
+    "rights_notice_no": null
   },
   {
     "id": "mt-202603-public-040",
@@ -10435,7 +11176,26 @@
         }
       }
     ],
-    "last_verified_at": "2026-11-25"
+    "last_verified_at": "2026-11-25",
+    "aging_rate": 71.2,
+    "aging_criteria": "2026년 기준 사용승인 후 30년 이상으로 확인된 동수 ÷ 참고 경계 내부 전체 수록 동수",
+    "aging_reference": {
+      "total": 514,
+      "known": 509,
+      "unknown": 5,
+      "over_20": 422,
+      "over_30": 366,
+      "rate_20": 82.1,
+      "rate_30": 71.2,
+      "year": 2026,
+      "source_url": "https://www.data.go.kr/data/15083092/fileData.do",
+      "source_as_of": "2024-12-31",
+      "checked_on": "2026-11-25",
+      "evidence": "registered_buildings_inside_reference_boundary",
+      "registry_supplement": "buildings/registry-heights.json"
+    },
+    "rights_base_date": null,
+    "rights_notice_no": null
   },
   {
     "id": "mt-202603-public-041",
@@ -10601,7 +11361,26 @@
     "metrics": {
       "area_sqm": 82607.5
     },
-    "last_verified_at": "2026-11-25"
+    "last_verified_at": "2026-11-25",
+    "aging_rate": 66.4,
+    "aging_criteria": "2026년 기준 사용승인 후 30년 이상으로 확인된 동수 ÷ 참고 경계 내부 전체 수록 동수",
+    "aging_reference": {
+      "total": 348,
+      "known": 327,
+      "unknown": 21,
+      "over_20": 260,
+      "over_30": 231,
+      "rate_20": 74.7,
+      "rate_30": 66.4,
+      "year": 2026,
+      "source_url": "https://www.data.go.kr/data/15083092/fileData.do",
+      "source_as_of": "2024-12-31",
+      "checked_on": "2026-11-25",
+      "evidence": "registered_buildings_inside_reference_boundary",
+      "registry_supplement": "buildings/registry-heights.json"
+    },
+    "rights_base_date": null,
+    "rights_notice_no": null
   },
   {
     "id": "mt-202603-public-042",
@@ -10867,7 +11646,26 @@
         }
       }
     ],
-    "last_verified_at": "2026-11-25"
+    "last_verified_at": "2026-11-25",
+    "aging_rate": 57.2,
+    "aging_criteria": "2026년 기준 사용승인 후 30년 이상으로 확인된 동수 ÷ 참고 경계 내부 전체 수록 동수",
+    "aging_reference": {
+      "total": 535,
+      "known": 372,
+      "unknown": 163,
+      "over_20": 356,
+      "over_30": 306,
+      "rate_20": 66.5,
+      "rate_30": 57.2,
+      "year": 2026,
+      "source_url": "https://www.data.go.kr/data/15083092/fileData.do",
+      "source_as_of": "2024-12-31",
+      "checked_on": "2026-11-25",
+      "evidence": "registered_buildings_inside_reference_boundary",
+      "registry_supplement": "buildings/registry-heights.json"
+    },
+    "rights_base_date": "2022-06-23",
+    "rights_notice_no": "서울특별시 고시 제2024-288호"
   },
   {
     "id": "mt-202603-public-043",
@@ -11046,7 +11844,26 @@
     "housing_allocation": {
       "rental": 287
     },
-    "last_verified_at": "2026-11-25"
+    "last_verified_at": "2026-11-25",
+    "aging_rate": 77.8,
+    "aging_criteria": "2026년 기준 사용승인 후 30년 이상으로 확인된 동수 ÷ 참고 경계 내부 전체 수록 동수",
+    "aging_reference": {
+      "total": 185,
+      "known": 176,
+      "unknown": 9,
+      "over_20": 174,
+      "over_30": 144,
+      "rate_20": 94.1,
+      "rate_30": 77.8,
+      "year": 2026,
+      "source_url": "https://www.data.go.kr/data/15083092/fileData.do",
+      "source_as_of": "2024-12-31",
+      "checked_on": "2026-11-25",
+      "evidence": "registered_buildings_inside_reference_boundary",
+      "registry_supplement": "buildings/registry-heights.json"
+    },
+    "rights_base_date": null,
+    "rights_notice_no": null
   },
   {
     "id": "mt-202603-public-044",
@@ -11499,7 +12316,26 @@
       "rental": 675,
       "sale_total": 1899
     },
-    "last_verified_at": "2026-11-25"
+    "last_verified_at": "2026-11-25",
+    "aging_rate": 78.6,
+    "aging_criteria": "2026년 기준 사용승인 후 30년 이상으로 확인된 동수 ÷ 참고 경계 내부 전체 수록 동수",
+    "aging_reference": {
+      "total": 332,
+      "known": 327,
+      "unknown": 5,
+      "over_20": 288,
+      "over_30": 261,
+      "rate_20": 86.7,
+      "rate_30": 78.6,
+      "year": 2026,
+      "source_url": "https://www.data.go.kr/data/15083092/fileData.do",
+      "source_as_of": "2024-12-31",
+      "checked_on": "2026-11-25",
+      "evidence": "registered_buildings_inside_reference_boundary",
+      "registry_supplement": "buildings/registry-heights.json"
+    },
+    "rights_base_date": null,
+    "rights_notice_no": null
   },
   {
     "id": "mt-202603-public-045",
@@ -11826,7 +12662,26 @@
         }
       }
     ],
-    "last_verified_at": "2026-11-25"
+    "last_verified_at": "2026-11-25",
+    "aging_rate": 59.8,
+    "aging_criteria": "2026년 기준 사용승인 후 30년 이상으로 확인된 동수 ÷ 참고 경계 내부 전체 수록 동수",
+    "aging_reference": {
+      "total": 410,
+      "known": 311,
+      "unknown": 99,
+      "over_20": 287,
+      "over_30": 245,
+      "rate_20": 70.0,
+      "rate_30": 59.8,
+      "year": 2026,
+      "source_url": "https://www.data.go.kr/data/15083092/fileData.do",
+      "source_as_of": "2024-12-31",
+      "checked_on": "2026-11-25",
+      "evidence": "registered_buildings_inside_reference_boundary",
+      "registry_supplement": "buildings/registry-heights.json"
+    },
+    "rights_base_date": "2022-06-23",
+    "rights_notice_no": "서울특별시 고시 제2024-288호"
   },
   {
     "id": "mt-202603-public-046",
@@ -12121,7 +12976,26 @@
       "rental": 212,
       "sale_total": 635
     },
-    "last_verified_at": "2026-11-25"
+    "last_verified_at": "2026-11-25",
+    "aging_rate": 80.2,
+    "aging_criteria": "2026년 기준 사용승인 후 30년 이상으로 확인된 동수 ÷ 참고 경계 내부 전체 수록 동수",
+    "aging_reference": {
+      "total": 126,
+      "known": 124,
+      "unknown": 2,
+      "over_20": 111,
+      "over_30": 101,
+      "rate_20": 88.1,
+      "rate_30": 80.2,
+      "year": 2026,
+      "source_url": "https://www.data.go.kr/data/15083092/fileData.do",
+      "source_as_of": "2024-12-31",
+      "checked_on": "2026-11-25",
+      "evidence": "registered_buildings_inside_reference_boundary",
+      "registry_supplement": "buildings/registry-heights.json"
+    },
+    "rights_base_date": "2022-10-27",
+    "rights_notice_no": "서울특별시 고시 제2024-488호"
   },
   {
     "id": "mt-202603-public-047",
@@ -12389,7 +13263,26 @@
         }
       }
     ],
-    "last_verified_at": "2026-11-25"
+    "last_verified_at": "2026-11-25",
+    "aging_rate": 77.2,
+    "aging_criteria": "2026년 기준 사용승인 후 30년 이상으로 확인된 동수 ÷ 참고 경계 내부 전체 수록 동수",
+    "aging_reference": {
+      "total": 373,
+      "known": 349,
+      "unknown": 24,
+      "over_20": 327,
+      "over_30": 288,
+      "rate_20": 87.7,
+      "rate_30": 77.2,
+      "year": 2026,
+      "source_url": "https://www.data.go.kr/data/15083092/fileData.do",
+      "source_as_of": "2024-12-31",
+      "checked_on": "2026-11-25",
+      "evidence": "registered_buildings_inside_reference_boundary",
+      "registry_supplement": "buildings/registry-heights.json"
+    },
+    "rights_base_date": null,
+    "rights_notice_no": null
   },
   {
     "id": "mt-202603-public-048",
@@ -12592,7 +13485,26 @@
         }
       }
     ],
-    "last_verified_at": "2026-11-25"
+    "last_verified_at": "2026-11-25",
+    "aging_rate": 67.4,
+    "aging_criteria": "2026년 기준 사용승인 후 30년 이상으로 확인된 동수 ÷ 참고 경계 내부 전체 수록 동수",
+    "aging_reference": {
+      "total": 172,
+      "known": 169,
+      "unknown": 3,
+      "over_20": 150,
+      "over_30": 116,
+      "rate_20": 87.2,
+      "rate_30": 67.4,
+      "year": 2026,
+      "source_url": "https://www.data.go.kr/data/15083092/fileData.do",
+      "source_as_of": "2024-12-31",
+      "checked_on": "2026-11-25",
+      "evidence": "registered_buildings_inside_reference_boundary",
+      "registry_supplement": "buildings/registry-heights.json"
+    },
+    "rights_base_date": null,
+    "rights_notice_no": null
   },
   {
     "id": "mt-202603-public-049",
@@ -12894,7 +13806,26 @@
         }
       }
     ],
-    "last_verified_at": "2026-11-25"
+    "last_verified_at": "2026-11-25",
+    "aging_rate": 74.2,
+    "aging_criteria": "2026년 기준 사용승인 후 30년 이상으로 확인된 동수 ÷ 참고 경계 내부 전체 수록 동수",
+    "aging_reference": {
+      "total": 427,
+      "known": 394,
+      "unknown": 33,
+      "over_20": 353,
+      "over_30": 317,
+      "rate_20": 82.7,
+      "rate_30": 74.2,
+      "year": 2026,
+      "source_url": "https://www.data.go.kr/data/15083092/fileData.do",
+      "source_as_of": "2024-12-31",
+      "checked_on": "2026-11-25",
+      "evidence": "registered_buildings_inside_reference_boundary",
+      "registry_supplement": "buildings/registry-heights.json"
+    },
+    "rights_base_date": null,
+    "rights_notice_no": null
   },
   {
     "id": "mt-202603-public-050",
@@ -13227,7 +14158,26 @@
       "rental": 120,
       "sale_total": 758
     },
-    "last_verified_at": "2026-11-25"
+    "last_verified_at": "2026-11-25",
+    "aging_rate": 57.2,
+    "aging_criteria": "2026년 기준 사용승인 후 30년 이상으로 확인된 동수 ÷ 참고 경계 내부 전체 수록 동수",
+    "aging_reference": {
+      "total": 173,
+      "known": 158,
+      "unknown": 15,
+      "over_20": 127,
+      "over_30": 99,
+      "rate_20": 73.4,
+      "rate_30": 57.2,
+      "year": 2026,
+      "source_url": "https://www.data.go.kr/data/15083092/fileData.do",
+      "source_as_of": "2024-12-31",
+      "checked_on": "2026-11-25",
+      "evidence": "registered_buildings_inside_reference_boundary",
+      "registry_supplement": "buildings/registry-heights.json"
+    },
+    "rights_base_date": "2022-10-27",
+    "rights_notice_no": "서울특별시 고시 제2024-488호"
   },
   {
     "id": "mt-202603-public-051",
@@ -13517,7 +14467,26 @@
         }
       }
     ],
-    "last_verified_at": "2026-11-25"
+    "last_verified_at": "2026-11-25",
+    "aging_rate": 71.0,
+    "aging_criteria": "2026년 기준 사용승인 후 30년 이상으로 확인된 동수 ÷ 참고 경계 내부 전체 수록 동수",
+    "aging_reference": {
+      "total": 334,
+      "known": 273,
+      "unknown": 61,
+      "over_20": 256,
+      "over_30": 237,
+      "rate_20": 76.6,
+      "rate_30": 71.0,
+      "year": 2026,
+      "source_url": "https://www.data.go.kr/data/15083092/fileData.do",
+      "source_as_of": "2024-12-31",
+      "checked_on": "2026-11-25",
+      "evidence": "registered_buildings_inside_reference_boundary",
+      "registry_supplement": "buildings/registry-heights.json"
+    },
+    "rights_base_date": null,
+    "rights_notice_no": null
   },
   {
     "id": "mt-202603-public-052",
@@ -13800,7 +14769,26 @@
         }
       }
     ],
-    "last_verified_at": "2026-11-25"
+    "last_verified_at": "2026-11-25",
+    "aging_rate": 60.5,
+    "aging_criteria": "2026년 기준 사용승인 후 30년 이상으로 확인된 동수 ÷ 참고 경계 내부 전체 수록 동수",
+    "aging_reference": {
+      "total": 152,
+      "known": 113,
+      "unknown": 39,
+      "over_20": 102,
+      "over_30": 92,
+      "rate_20": 67.1,
+      "rate_30": 60.5,
+      "year": 2026,
+      "source_url": "https://www.data.go.kr/data/15083092/fileData.do",
+      "source_as_of": "2024-12-31",
+      "checked_on": "2026-11-25",
+      "evidence": "registered_buildings_inside_reference_boundary",
+      "registry_supplement": "buildings/registry-heights.json"
+    },
+    "rights_base_date": null,
+    "rights_notice_no": null
   },
   {
     "id": "mt-202603-public-053",
@@ -14062,7 +15050,26 @@
         }
       }
     ],
-    "last_verified_at": "2026-11-25"
+    "last_verified_at": "2026-11-25",
+    "aging_rate": 72.5,
+    "aging_criteria": "2026년 기준 사용승인 후 30년 이상으로 확인된 동수 ÷ 참고 경계 내부 전체 수록 동수",
+    "aging_reference": {
+      "total": 309,
+      "known": 302,
+      "unknown": 7,
+      "over_20": 267,
+      "over_30": 224,
+      "rate_20": 86.4,
+      "rate_30": 72.5,
+      "year": 2026,
+      "source_url": "https://www.data.go.kr/data/15083092/fileData.do",
+      "source_as_of": "2024-12-31",
+      "checked_on": "2026-11-25",
+      "evidence": "registered_buildings_inside_reference_boundary",
+      "registry_supplement": "buildings/registry-heights.json"
+    },
+    "rights_base_date": null,
+    "rights_notice_no": null
   },
   {
     "id": "mt-202603-public-054",
@@ -14323,7 +15330,26 @@
         }
       }
     ],
-    "last_verified_at": "2026-11-25"
+    "last_verified_at": "2026-11-25",
+    "aging_rate": 68.5,
+    "aging_criteria": "2026년 기준 사용승인 후 30년 이상으로 확인된 동수 ÷ 참고 경계 내부 전체 수록 동수",
+    "aging_reference": {
+      "total": 352,
+      "known": 321,
+      "unknown": 31,
+      "over_20": 296,
+      "over_30": 241,
+      "rate_20": 84.1,
+      "rate_30": 68.5,
+      "year": 2026,
+      "source_url": "https://www.data.go.kr/data/15083092/fileData.do",
+      "source_as_of": "2024-12-31",
+      "checked_on": "2026-11-25",
+      "evidence": "registered_buildings_inside_reference_boundary",
+      "registry_supplement": "buildings/registry-heights.json"
+    },
+    "rights_base_date": null,
+    "rights_notice_no": null
   },
   {
     "id": "mt-202603-public-055",
@@ -14588,7 +15614,26 @@
         }
       }
     ],
-    "last_verified_at": "2026-11-25"
+    "last_verified_at": "2026-11-25",
+    "aging_rate": 78.2,
+    "aging_criteria": "2026년 기준 사용승인 후 30년 이상으로 확인된 동수 ÷ 참고 경계 내부 전체 수록 동수",
+    "aging_reference": {
+      "total": 238,
+      "known": 212,
+      "unknown": 26,
+      "over_20": 200,
+      "over_30": 186,
+      "rate_20": 84.0,
+      "rate_30": 78.2,
+      "year": 2026,
+      "source_url": "https://www.data.go.kr/data/15083092/fileData.do",
+      "source_as_of": "2024-12-31",
+      "checked_on": "2026-11-25",
+      "evidence": "registered_buildings_inside_reference_boundary",
+      "registry_supplement": "buildings/registry-heights.json"
+    },
+    "rights_base_date": null,
+    "rights_notice_no": null
   },
   {
     "id": "mt-202603-public-056",
@@ -14812,7 +15857,26 @@
         }
       }
     ],
-    "last_verified_at": "2026-11-25"
+    "last_verified_at": "2026-11-25",
+    "aging_rate": 57.8,
+    "aging_criteria": "2026년 기준 사용승인 후 30년 이상으로 확인된 동수 ÷ 참고 경계 내부 전체 수록 동수",
+    "aging_reference": {
+      "total": 258,
+      "known": 258,
+      "unknown": 0,
+      "over_20": 208,
+      "over_30": 149,
+      "rate_20": 80.6,
+      "rate_30": 57.8,
+      "year": 2026,
+      "source_url": "https://www.data.go.kr/data/15083092/fileData.do",
+      "source_as_of": "2024-12-31",
+      "checked_on": "2026-11-25",
+      "evidence": "registered_buildings_inside_reference_boundary",
+      "registry_supplement": "buildings/registry-heights.json"
+    },
+    "rights_base_date": null,
+    "rights_notice_no": null
   },
   {
     "id": "mt-202603-public-057",
@@ -15062,7 +16126,26 @@
         "zone_count": 2
       }
     ],
-    "last_verified_at": "2026-11-25"
+    "last_verified_at": "2026-11-25",
+    "aging_rate": 82.9,
+    "aging_criteria": "2026년 기준 사용승인 후 30년 이상으로 확인된 동수 ÷ 참고 경계 내부 전체 수록 동수",
+    "aging_reference": {
+      "total": 281,
+      "known": 277,
+      "unknown": 4,
+      "over_20": 244,
+      "over_30": 233,
+      "rate_20": 86.8,
+      "rate_30": 82.9,
+      "year": 2026,
+      "source_url": "https://www.data.go.kr/data/15083092/fileData.do",
+      "source_as_of": "2024-12-31",
+      "checked_on": "2026-11-25",
+      "evidence": "registered_buildings_inside_reference_boundary",
+      "registry_supplement": "buildings/registry-heights.json"
+    },
+    "rights_base_date": null,
+    "rights_notice_no": null
   },
   {
     "id": "mt-202603-public-058",
@@ -15344,7 +16427,26 @@
       "rental": 192,
       "sale_total": 642
     },
-    "last_verified_at": "2026-11-25"
+    "last_verified_at": "2026-11-25",
+    "aging_rate": 52.6,
+    "aging_criteria": "2026년 기준 사용승인 후 30년 이상으로 확인된 동수 ÷ 참고 경계 내부 전체 수록 동수",
+    "aging_reference": {
+      "total": 116,
+      "known": 111,
+      "unknown": 5,
+      "over_20": 91,
+      "over_30": 61,
+      "rate_20": 78.4,
+      "rate_30": 52.6,
+      "year": 2026,
+      "source_url": "https://www.data.go.kr/data/15083092/fileData.do",
+      "source_as_of": "2024-12-31",
+      "checked_on": "2026-11-25",
+      "evidence": "registered_buildings_inside_reference_boundary",
+      "registry_supplement": "buildings/registry-heights.json"
+    },
+    "rights_base_date": "2022-10-27",
+    "rights_notice_no": "서울특별시 고시 제2024-488호"
   },
   {
     "id": "mt-202603-public-059",
@@ -15586,7 +16688,26 @@
         }
       }
     ],
-    "last_verified_at": "2026-11-25"
+    "last_verified_at": "2026-11-25",
+    "aging_rate": 66.1,
+    "aging_criteria": "2026년 기준 사용승인 후 30년 이상으로 확인된 동수 ÷ 참고 경계 내부 전체 수록 동수",
+    "aging_reference": {
+      "total": 280,
+      "known": 257,
+      "unknown": 23,
+      "over_20": 226,
+      "over_30": 185,
+      "rate_20": 80.7,
+      "rate_30": 66.1,
+      "year": 2026,
+      "source_url": "https://www.data.go.kr/data/15083092/fileData.do",
+      "source_as_of": "2024-12-31",
+      "checked_on": "2026-11-25",
+      "evidence": "registered_buildings_inside_reference_boundary",
+      "registry_supplement": "buildings/registry-heights.json"
+    },
+    "rights_base_date": null,
+    "rights_notice_no": null
   },
   {
     "id": "mt-202603-public-060",
@@ -15871,7 +16992,26 @@
         }
       }
     ],
-    "last_verified_at": "2026-11-25"
+    "last_verified_at": "2026-11-25",
+    "aging_rate": 64.8,
+    "aging_criteria": "2026년 기준 사용승인 후 30년 이상으로 확인된 동수 ÷ 참고 경계 내부 전체 수록 동수",
+    "aging_reference": {
+      "total": 304,
+      "known": 288,
+      "unknown": 16,
+      "over_20": 224,
+      "over_30": 197,
+      "rate_20": 73.7,
+      "rate_30": 64.8,
+      "year": 2026,
+      "source_url": "https://www.data.go.kr/data/15083092/fileData.do",
+      "source_as_of": "2024-12-31",
+      "checked_on": "2026-11-25",
+      "evidence": "registered_buildings_inside_reference_boundary",
+      "registry_supplement": "buildings/registry-heights.json"
+    },
+    "rights_base_date": null,
+    "rights_notice_no": null
   },
   {
     "id": "mt-202603-public-061",
@@ -16083,7 +17223,26 @@
         }
       }
     ],
-    "last_verified_at": "2026-11-25"
+    "last_verified_at": "2026-11-25",
+    "aging_rate": 47.9,
+    "aging_criteria": "2026년 기준 사용승인 후 30년 이상으로 확인된 동수 ÷ 참고 경계 내부 전체 수록 동수",
+    "aging_reference": {
+      "total": 144,
+      "known": 139,
+      "unknown": 5,
+      "over_20": 102,
+      "over_30": 69,
+      "rate_20": 70.8,
+      "rate_30": 47.9,
+      "year": 2026,
+      "source_url": "https://www.data.go.kr/data/15083092/fileData.do",
+      "source_as_of": "2024-12-31",
+      "checked_on": "2026-11-25",
+      "evidence": "registered_buildings_inside_reference_boundary",
+      "registry_supplement": "buildings/registry-heights.json"
+    },
+    "rights_base_date": null,
+    "rights_notice_no": null
   },
   {
     "id": "mt-202603-public-062",
@@ -16308,7 +17467,26 @@
         }
       }
     ],
-    "last_verified_at": "2026-11-25"
+    "last_verified_at": "2026-11-25",
+    "aging_rate": 85.6,
+    "aging_criteria": "2026년 기준 사용승인 후 30년 이상으로 확인된 동수 ÷ 참고 경계 내부 전체 수록 동수",
+    "aging_reference": {
+      "total": 243,
+      "known": 231,
+      "unknown": 12,
+      "over_20": 220,
+      "over_30": 208,
+      "rate_20": 90.5,
+      "rate_30": 85.6,
+      "year": 2026,
+      "source_url": "https://www.data.go.kr/data/15083092/fileData.do",
+      "source_as_of": "2024-12-31",
+      "checked_on": "2026-11-25",
+      "evidence": "registered_buildings_inside_reference_boundary",
+      "registry_supplement": "buildings/registry-heights.json"
+    },
+    "rights_base_date": null,
+    "rights_notice_no": null
   },
   {
     "id": "mt-202603-public-063",
@@ -16493,7 +17671,26 @@
         }
       }
     ],
-    "last_verified_at": "2026-11-25"
+    "last_verified_at": "2026-11-25",
+    "aging_rate": 80.6,
+    "aging_criteria": "2026년 기준 사용승인 후 30년 이상으로 확인된 동수 ÷ 참고 경계 내부 전체 수록 동수",
+    "aging_reference": {
+      "total": 67,
+      "known": 64,
+      "unknown": 3,
+      "over_20": 57,
+      "over_30": 54,
+      "rate_20": 85.1,
+      "rate_30": 80.6,
+      "year": 2026,
+      "source_url": "https://www.data.go.kr/data/15083092/fileData.do",
+      "source_as_of": "2024-12-31",
+      "checked_on": "2026-11-25",
+      "evidence": "registered_buildings_inside_reference_boundary",
+      "registry_supplement": "buildings/registry-heights.json"
+    },
+    "rights_base_date": null,
+    "rights_notice_no": null
   },
   {
     "id": "mt-202603-public-064",
@@ -16777,7 +17974,26 @@
         }
       }
     ],
-    "last_verified_at": "2026-11-25"
+    "last_verified_at": "2026-11-25",
+    "aging_rate": 77.5,
+    "aging_criteria": "2026년 기준 사용승인 후 30년 이상으로 확인된 동수 ÷ 참고 경계 내부 전체 수록 동수",
+    "aging_reference": {
+      "total": 454,
+      "known": 441,
+      "unknown": 13,
+      "over_20": 386,
+      "over_30": 352,
+      "rate_20": 85.0,
+      "rate_30": 77.5,
+      "year": 2026,
+      "source_url": "https://www.data.go.kr/data/15083092/fileData.do",
+      "source_as_of": "2024-12-31",
+      "checked_on": "2026-11-25",
+      "evidence": "registered_buildings_inside_reference_boundary",
+      "registry_supplement": "buildings/registry-heights.json"
+    },
+    "rights_base_date": null,
+    "rights_notice_no": null
   },
   {
     "id": "mt-202603-public-065",
@@ -17017,7 +18233,26 @@
         }
       }
     ],
-    "last_verified_at": "2026-11-25"
+    "last_verified_at": "2026-11-25",
+    "aging_rate": 83.0,
+    "aging_criteria": "2026년 기준 사용승인 후 30년 이상으로 확인된 동수 ÷ 참고 경계 내부 전체 수록 동수",
+    "aging_reference": {
+      "total": 341,
+      "known": 325,
+      "unknown": 16,
+      "over_20": 295,
+      "over_30": 283,
+      "rate_20": 86.5,
+      "rate_30": 83.0,
+      "year": 2026,
+      "source_url": "https://www.data.go.kr/data/15083092/fileData.do",
+      "source_as_of": "2024-12-31",
+      "checked_on": "2026-11-25",
+      "evidence": "registered_buildings_inside_reference_boundary",
+      "registry_supplement": "buildings/registry-heights.json"
+    },
+    "rights_base_date": null,
+    "rights_notice_no": null
   },
   {
     "id": "mt-202603-public-066",
@@ -17299,7 +18534,26 @@
         }
       }
     ],
-    "last_verified_at": "2026-11-25"
+    "last_verified_at": "2026-11-25",
+    "aging_rate": 91.8,
+    "aging_criteria": "2026년 기준 사용승인 후 30년 이상으로 확인된 동수 ÷ 참고 경계 내부 전체 수록 동수",
+    "aging_reference": {
+      "total": 584,
+      "known": 575,
+      "unknown": 9,
+      "over_20": 562,
+      "over_30": 536,
+      "rate_20": 96.2,
+      "rate_30": 91.8,
+      "year": 2026,
+      "source_url": "https://www.data.go.kr/data/15083092/fileData.do",
+      "source_as_of": "2024-12-31",
+      "checked_on": "2026-11-25",
+      "evidence": "registered_buildings_inside_reference_boundary",
+      "registry_supplement": "buildings/registry-heights.json"
+    },
+    "rights_base_date": null,
+    "rights_notice_no": null
   },
   {
     "id": "mt-202603-public-067",
@@ -17596,7 +18850,26 @@
         }
       }
     ],
-    "last_verified_at": "2026-11-25"
+    "last_verified_at": "2026-11-25",
+    "aging_rate": 83.3,
+    "aging_criteria": "2026년 기준 사용승인 후 30년 이상으로 확인된 동수 ÷ 참고 경계 내부 전체 수록 동수",
+    "aging_reference": {
+      "total": 294,
+      "known": 285,
+      "unknown": 9,
+      "over_20": 272,
+      "over_30": 245,
+      "rate_20": 92.5,
+      "rate_30": 83.3,
+      "year": 2026,
+      "source_url": "https://www.data.go.kr/data/15083092/fileData.do",
+      "source_as_of": "2024-12-31",
+      "checked_on": "2026-11-25",
+      "evidence": "registered_buildings_inside_reference_boundary",
+      "registry_supplement": "buildings/registry-heights.json"
+    },
+    "rights_base_date": null,
+    "rights_notice_no": null
   },
   {
     "id": "mt-202603-public-068",
@@ -17871,7 +19144,26 @@
         "checked_on": "2026-11-25"
       }
     ],
-    "last_verified_at": "2026-11-25"
+    "last_verified_at": "2026-11-25",
+    "aging_rate": 51.8,
+    "aging_criteria": "2026년 기준 사용승인 후 30년 이상으로 확인된 동수 ÷ 참고 경계 내부 전체 수록 동수",
+    "aging_reference": {
+      "total": 85,
+      "known": 84,
+      "unknown": 1,
+      "over_20": 66,
+      "over_30": 44,
+      "rate_20": 77.6,
+      "rate_30": 51.8,
+      "year": 2026,
+      "source_url": "https://www.data.go.kr/data/15083092/fileData.do",
+      "source_as_of": "2024-12-31",
+      "checked_on": "2026-11-25",
+      "evidence": "registered_buildings_inside_reference_boundary",
+      "registry_supplement": "buildings/registry-heights.json"
+    },
+    "rights_base_date": null,
+    "rights_notice_no": null
   },
   {
     "id": "mt-202603-public-069",
@@ -18114,7 +19406,26 @@
         }
       }
     ],
-    "last_verified_at": "2026-11-25"
+    "last_verified_at": "2026-11-25",
+    "aging_rate": 51.9,
+    "aging_criteria": "2026년 기준 사용승인 후 30년 이상으로 확인된 동수 ÷ 참고 경계 내부 전체 수록 동수",
+    "aging_reference": {
+      "total": 185,
+      "known": 184,
+      "unknown": 1,
+      "over_20": 151,
+      "over_30": 96,
+      "rate_20": 81.6,
+      "rate_30": 51.9,
+      "year": 2026,
+      "source_url": "https://www.data.go.kr/data/15083092/fileData.do",
+      "source_as_of": "2024-12-31",
+      "checked_on": "2026-11-25",
+      "evidence": "registered_buildings_inside_reference_boundary",
+      "registry_supplement": "buildings/registry-heights.json"
+    },
+    "rights_base_date": null,
+    "rights_notice_no": null
   },
   {
     "id": "mt-202603-public-070",
@@ -18387,7 +19698,26 @@
     "housing_allocation": {
       "rental": 183
     },
-    "last_verified_at": "2026-11-25"
+    "last_verified_at": "2026-11-25",
+    "aging_rate": 95.2,
+    "aging_criteria": "2026년 기준 사용승인 후 30년 이상으로 확인된 동수 ÷ 참고 경계 내부 전체 수록 동수",
+    "aging_reference": {
+      "total": 124,
+      "known": 121,
+      "unknown": 3,
+      "over_20": 119,
+      "over_30": 118,
+      "rate_20": 96.0,
+      "rate_30": 95.2,
+      "year": 2026,
+      "source_url": "https://www.data.go.kr/data/15083092/fileData.do",
+      "source_as_of": "2024-12-31",
+      "checked_on": "2026-11-25",
+      "evidence": "registered_buildings_inside_reference_boundary",
+      "registry_supplement": "buildings/registry-heights.json"
+    },
+    "rights_base_date": null,
+    "rights_notice_no": null
   },
   {
     "id": "mt-202603-public-071",
@@ -18621,7 +19951,26 @@
         }
       }
     ],
-    "last_verified_at": "2026-11-25"
+    "last_verified_at": "2026-11-25",
+    "aging_rate": 72.4,
+    "aging_criteria": "2026년 기준 사용승인 후 30년 이상으로 확인된 동수 ÷ 참고 경계 내부 전체 수록 동수",
+    "aging_reference": {
+      "total": 199,
+      "known": 193,
+      "unknown": 6,
+      "over_20": 171,
+      "over_30": 144,
+      "rate_20": 85.9,
+      "rate_30": 72.4,
+      "year": 2026,
+      "source_url": "https://www.data.go.kr/data/15083092/fileData.do",
+      "source_as_of": "2024-12-31",
+      "checked_on": "2026-11-25",
+      "evidence": "registered_buildings_inside_reference_boundary",
+      "registry_supplement": "buildings/registry-heights.json"
+    },
+    "rights_base_date": null,
+    "rights_notice_no": null
   },
   {
     "id": "mt-202603-public-072",
@@ -18935,7 +20284,26 @@
         }
       }
     ],
-    "last_verified_at": "2026-11-25"
+    "last_verified_at": "2026-11-25",
+    "aging_rate": 66.3,
+    "aging_criteria": "2026년 기준 사용승인 후 30년 이상으로 확인된 동수 ÷ 참고 경계 내부 전체 수록 동수",
+    "aging_reference": {
+      "total": 169,
+      "known": 164,
+      "unknown": 5,
+      "over_20": 129,
+      "over_30": 112,
+      "rate_20": 76.3,
+      "rate_30": 66.3,
+      "year": 2026,
+      "source_url": "https://www.data.go.kr/data/15083092/fileData.do",
+      "source_as_of": "2024-12-31",
+      "checked_on": "2026-11-25",
+      "evidence": "registered_buildings_inside_reference_boundary",
+      "registry_supplement": "buildings/registry-heights.json"
+    },
+    "rights_base_date": null,
+    "rights_notice_no": null
   },
   {
     "id": "mt-202603-public-073",
@@ -19248,7 +20616,26 @@
         }
       }
     ],
-    "last_verified_at": "2026-11-25"
+    "last_verified_at": "2026-11-25",
+    "aging_rate": 64.8,
+    "aging_criteria": "2026년 기준 사용승인 후 30년 이상으로 확인된 동수 ÷ 참고 경계 내부 전체 수록 동수",
+    "aging_reference": {
+      "total": 381,
+      "known": 362,
+      "unknown": 19,
+      "over_20": 285,
+      "over_30": 247,
+      "rate_20": 74.8,
+      "rate_30": 64.8,
+      "year": 2026,
+      "source_url": "https://www.data.go.kr/data/15083092/fileData.do",
+      "source_as_of": "2024-12-31",
+      "checked_on": "2026-11-25",
+      "evidence": "registered_buildings_inside_reference_boundary",
+      "registry_supplement": "buildings/registry-heights.json"
+    },
+    "rights_base_date": null,
+    "rights_notice_no": null
   },
   {
     "id": "mt-202603-public-074",
@@ -19551,7 +20938,26 @@
         }
       }
     ],
-    "last_verified_at": "2026-11-25"
+    "last_verified_at": "2026-11-25",
+    "aging_rate": 64.3,
+    "aging_criteria": "2026년 기준 사용승인 후 30년 이상으로 확인된 동수 ÷ 참고 경계 내부 전체 수록 동수",
+    "aging_reference": {
+      "total": 269,
+      "known": 261,
+      "unknown": 8,
+      "over_20": 197,
+      "over_30": 173,
+      "rate_20": 73.2,
+      "rate_30": 64.3,
+      "year": 2026,
+      "source_url": "https://www.data.go.kr/data/15083092/fileData.do",
+      "source_as_of": "2024-12-31",
+      "checked_on": "2026-11-25",
+      "evidence": "registered_buildings_inside_reference_boundary",
+      "registry_supplement": "buildings/registry-heights.json"
+    },
+    "rights_base_date": null,
+    "rights_notice_no": null
   },
   {
     "id": "mt-202603-public-075",
@@ -19830,7 +21236,26 @@
         "zone_count": 5
       }
     ],
-    "last_verified_at": "2026-11-25"
+    "last_verified_at": "2026-11-25",
+    "aging_rate": 68.4,
+    "aging_criteria": "2026년 기준 사용승인 후 30년 이상으로 확인된 동수 ÷ 참고 경계 내부 전체 수록 동수",
+    "aging_reference": {
+      "total": 367,
+      "known": 362,
+      "unknown": 5,
+      "over_20": 301,
+      "over_30": 251,
+      "rate_20": 82.0,
+      "rate_30": 68.4,
+      "year": 2026,
+      "source_url": "https://www.data.go.kr/data/15083092/fileData.do",
+      "source_as_of": "2024-12-31",
+      "checked_on": "2026-11-25",
+      "evidence": "registered_buildings_inside_reference_boundary",
+      "registry_supplement": "buildings/registry-heights.json"
+    },
+    "rights_base_date": null,
+    "rights_notice_no": null
   },
   {
     "id": "mt-202603-public-076",
@@ -20109,7 +21534,26 @@
         "zone_count": 4
       }
     ],
-    "last_verified_at": "2026-11-25"
+    "last_verified_at": "2026-11-25",
+    "aging_rate": 64.2,
+    "aging_criteria": "2026년 기준 사용승인 후 30년 이상으로 확인된 동수 ÷ 참고 경계 내부 전체 수록 동수",
+    "aging_reference": {
+      "total": 352,
+      "known": 340,
+      "unknown": 12,
+      "over_20": 270,
+      "over_30": 226,
+      "rate_20": 76.7,
+      "rate_30": 64.2,
+      "year": 2026,
+      "source_url": "https://www.data.go.kr/data/15083092/fileData.do",
+      "source_as_of": "2024-12-31",
+      "checked_on": "2026-11-25",
+      "evidence": "registered_buildings_inside_reference_boundary",
+      "registry_supplement": "buildings/registry-heights.json"
+    },
+    "rights_base_date": null,
+    "rights_notice_no": null
   },
   {
     "id": "mt-202603-public-077",
@@ -20419,7 +21863,26 @@
         }
       }
     ],
-    "last_verified_at": "2026-11-25"
+    "last_verified_at": "2026-11-25",
+    "aging_rate": 78.6,
+    "aging_criteria": "2026년 기준 사용승인 후 30년 이상으로 확인된 동수 ÷ 참고 경계 내부 전체 수록 동수",
+    "aging_reference": {
+      "total": 187,
+      "known": 180,
+      "unknown": 7,
+      "over_20": 162,
+      "over_30": 147,
+      "rate_20": 86.6,
+      "rate_30": 78.6,
+      "year": 2026,
+      "source_url": "https://www.data.go.kr/data/15083092/fileData.do",
+      "source_as_of": "2024-12-31",
+      "checked_on": "2026-11-25",
+      "evidence": "registered_buildings_inside_reference_boundary",
+      "registry_supplement": "buildings/registry-heights.json"
+    },
+    "rights_base_date": null,
+    "rights_notice_no": null
   },
   {
     "id": "mt-202603-public-078",
@@ -20642,7 +22105,26 @@
         }
       }
     ],
-    "last_verified_at": "2026-11-25"
+    "last_verified_at": "2026-11-25",
+    "aging_rate": 67.4,
+    "aging_criteria": "2026년 기준 사용승인 후 30년 이상으로 확인된 동수 ÷ 참고 경계 내부 전체 수록 동수",
+    "aging_reference": {
+      "total": 337,
+      "known": 318,
+      "unknown": 19,
+      "over_20": 251,
+      "over_30": 227,
+      "rate_20": 74.5,
+      "rate_30": 67.4,
+      "year": 2026,
+      "source_url": "https://www.data.go.kr/data/15083092/fileData.do",
+      "source_as_of": "2024-12-31",
+      "checked_on": "2026-11-25",
+      "evidence": "registered_buildings_inside_reference_boundary",
+      "registry_supplement": "buildings/registry-heights.json"
+    },
+    "rights_base_date": null,
+    "rights_notice_no": null
   },
   {
     "id": "mt-202603-public-079",
@@ -20912,7 +22394,26 @@
         }
       }
     ],
-    "last_verified_at": "2026-11-25"
+    "last_verified_at": "2026-11-25",
+    "aging_rate": 49.0,
+    "aging_criteria": "2026년 기준 사용승인 후 30년 이상으로 확인된 동수 ÷ 참고 경계 내부 전체 수록 동수",
+    "aging_reference": {
+      "total": 386,
+      "known": 375,
+      "unknown": 11,
+      "over_20": 271,
+      "over_30": 189,
+      "rate_20": 70.2,
+      "rate_30": 49.0,
+      "year": 2026,
+      "source_url": "https://www.data.go.kr/data/15083092/fileData.do",
+      "source_as_of": "2024-12-31",
+      "checked_on": "2026-11-25",
+      "evidence": "registered_buildings_inside_reference_boundary",
+      "registry_supplement": "buildings/registry-heights.json"
+    },
+    "rights_base_date": null,
+    "rights_notice_no": null
   },
   {
     "id": "mt-202603-public-080",
@@ -21123,7 +22624,26 @@
         }
       }
     ],
-    "last_verified_at": "2026-11-25"
+    "last_verified_at": "2026-11-25",
+    "aging_rate": 61.5,
+    "aging_criteria": "2026년 기준 사용승인 후 30년 이상으로 확인된 동수 ÷ 참고 경계 내부 전체 수록 동수",
+    "aging_reference": {
+      "total": 13,
+      "known": 13,
+      "unknown": 0,
+      "over_20": 12,
+      "over_30": 8,
+      "rate_20": 92.3,
+      "rate_30": 61.5,
+      "year": 2026,
+      "source_url": "https://www.data.go.kr/data/15083092/fileData.do",
+      "source_as_of": "2024-12-31",
+      "checked_on": "2026-11-25",
+      "evidence": "registered_buildings_inside_reference_boundary",
+      "registry_supplement": "buildings/registry-heights.json"
+    },
+    "rights_base_date": null,
+    "rights_notice_no": null
   },
   {
     "id": "mt-202603-public-081",
@@ -21243,7 +22763,26 @@
         "checked_on": "2026-11-25"
       }
     ],
-    "last_verified_at": "2026-11-25"
+    "last_verified_at": "2026-11-25",
+    "aging_rate": 66.9,
+    "aging_criteria": "2026년 기준 사용승인 후 30년 이상으로 확인된 동수 ÷ 참고 경계 내부 전체 수록 동수",
+    "aging_reference": {
+      "total": 118,
+      "known": 107,
+      "unknown": 11,
+      "over_20": 101,
+      "over_30": 79,
+      "rate_20": 85.6,
+      "rate_30": 66.9,
+      "year": 2026,
+      "source_url": "https://www.data.go.kr/data/15083092/fileData.do",
+      "source_as_of": "2024-12-31",
+      "checked_on": "2026-11-25",
+      "evidence": "registered_buildings_inside_reference_boundary",
+      "registry_supplement": "buildings/registry-heights.json"
+    },
+    "rights_base_date": null,
+    "rights_notice_no": null
   },
   {
     "id": "mt-202603-public-082",
@@ -21353,7 +22892,26 @@
         "checked_on": "2026-11-25"
       }
     ],
-    "last_verified_at": "2026-11-25"
+    "last_verified_at": "2026-11-25",
+    "aging_rate": 55.0,
+    "aging_criteria": "2026년 기준 사용승인 후 30년 이상으로 확인된 동수 ÷ 참고 경계 내부 전체 수록 동수",
+    "aging_reference": {
+      "total": 171,
+      "known": 171,
+      "unknown": 0,
+      "over_20": 154,
+      "over_30": 94,
+      "rate_20": 90.1,
+      "rate_30": 55.0,
+      "year": 2026,
+      "source_url": "https://www.data.go.kr/data/15083092/fileData.do",
+      "source_as_of": "2024-12-31",
+      "checked_on": "2026-11-25",
+      "evidence": "registered_buildings_inside_reference_boundary",
+      "registry_supplement": "buildings/registry-heights.json"
+    },
+    "rights_base_date": null,
+    "rights_notice_no": null
   },
   {
     "id": "mt-202603-public-083",
@@ -21662,7 +23220,26 @@
         }
       }
     ],
-    "last_verified_at": "2026-11-25"
+    "last_verified_at": "2026-11-25",
+    "aging_rate": 60.7,
+    "aging_criteria": "2026년 기준 사용승인 후 30년 이상으로 확인된 동수 ÷ 참고 경계 내부 전체 수록 동수",
+    "aging_reference": {
+      "total": 112,
+      "known": 95,
+      "unknown": 17,
+      "over_20": 88,
+      "over_30": 68,
+      "rate_20": 78.6,
+      "rate_30": 60.7,
+      "year": 2026,
+      "source_url": "https://www.data.go.kr/data/15083092/fileData.do",
+      "source_as_of": "2024-12-31",
+      "checked_on": "2026-11-25",
+      "evidence": "registered_buildings_inside_reference_boundary",
+      "registry_supplement": "buildings/registry-heights.json"
+    },
+    "rights_base_date": null,
+    "rights_notice_no": null
   },
   {
     "id": "mt-202603-public-084",
@@ -21957,7 +23534,26 @@
         }
       }
     ],
-    "last_verified_at": "2026-11-25"
+    "last_verified_at": "2026-11-25",
+    "aging_rate": 73.0,
+    "aging_criteria": "2026년 기준 사용승인 후 30년 이상으로 확인된 동수 ÷ 참고 경계 내부 전체 수록 동수",
+    "aging_reference": {
+      "total": 122,
+      "known": 109,
+      "unknown": 13,
+      "over_20": 96,
+      "over_30": 89,
+      "rate_20": 78.7,
+      "rate_30": 73.0,
+      "year": 2026,
+      "source_url": "https://www.data.go.kr/data/15083092/fileData.do",
+      "source_as_of": "2024-12-31",
+      "checked_on": "2026-11-25",
+      "evidence": "registered_buildings_inside_reference_boundary",
+      "registry_supplement": "buildings/registry-heights.json"
+    },
+    "rights_base_date": "2023-12-07",
+    "rights_notice_no": "서울특별시 고시 제2025-565호"
   },
   {
     "id": "mt-202603-public-085",
@@ -22232,7 +23828,26 @@
     "housing_allocation": {
       "rental": 120
     },
-    "last_verified_at": "2026-11-25"
+    "last_verified_at": "2026-11-25",
+    "aging_rate": 72.1,
+    "aging_criteria": "2026년 기준 사용승인 후 30년 이상으로 확인된 동수 ÷ 참고 경계 내부 전체 수록 동수",
+    "aging_reference": {
+      "total": 111,
+      "known": 92,
+      "unknown": 19,
+      "over_20": 85,
+      "over_30": 80,
+      "rate_20": 76.6,
+      "rate_30": 72.1,
+      "year": 2026,
+      "source_url": "https://www.data.go.kr/data/15083092/fileData.do",
+      "source_as_of": "2024-12-31",
+      "checked_on": "2026-11-25",
+      "evidence": "registered_buildings_inside_reference_boundary",
+      "registry_supplement": "buildings/registry-heights.json"
+    },
+    "rights_base_date": "2022-10-27",
+    "rights_notice_no": "서울특별시 고시 제2024-488호"
   },
   {
     "id": "mt-202603-public-086",
@@ -22557,7 +24172,26 @@
         }
       }
     ],
-    "last_verified_at": "2026-11-25"
+    "last_verified_at": "2026-11-25",
+    "aging_rate": 69.7,
+    "aging_criteria": "2026년 기준 사용승인 후 30년 이상으로 확인된 동수 ÷ 참고 경계 내부 전체 수록 동수",
+    "aging_reference": {
+      "total": 122,
+      "known": 103,
+      "unknown": 19,
+      "over_20": 98,
+      "over_30": 85,
+      "rate_20": 80.3,
+      "rate_30": 69.7,
+      "year": 2026,
+      "source_url": "https://www.data.go.kr/data/15083092/fileData.do",
+      "source_as_of": "2024-12-31",
+      "checked_on": "2026-11-25",
+      "evidence": "registered_buildings_inside_reference_boundary",
+      "registry_supplement": "buildings/registry-heights.json"
+    },
+    "rights_base_date": "2022-06-23",
+    "rights_notice_no": "서울특별시 고시 제2024-288호"
   },
   {
     "id": "mt-202603-public-087",
@@ -22741,7 +24375,12 @@
     "housing_allocation": {
       "rental": 216
     },
-    "last_verified_at": "2026-11-25"
+    "last_verified_at": "2026-11-25",
+    "aging_rate": null,
+    "aging_criteria": null,
+    "aging_reference": null,
+    "rights_base_date": null,
+    "rights_notice_no": null
   },
   {
     "id": "mt-202603-public-088",
@@ -23009,7 +24648,26 @@
         }
       }
     ],
-    "last_verified_at": "2026-11-25"
+    "last_verified_at": "2026-11-25",
+    "aging_rate": 85.7,
+    "aging_criteria": "2026년 기준 사용승인 후 30년 이상으로 확인된 동수 ÷ 참고 경계 내부 전체 수록 동수",
+    "aging_reference": {
+      "total": 265,
+      "known": 244,
+      "unknown": 21,
+      "over_20": 243,
+      "over_30": 227,
+      "rate_20": 91.7,
+      "rate_30": 85.7,
+      "year": 2026,
+      "source_url": "https://www.data.go.kr/data/15083092/fileData.do",
+      "source_as_of": "2024-12-31",
+      "checked_on": "2026-11-25",
+      "evidence": "registered_buildings_inside_reference_boundary",
+      "registry_supplement": "buildings/registry-heights.json"
+    },
+    "rights_base_date": "2023-12-07",
+    "rights_notice_no": "서울특별시 고시 제2025-565호"
   },
   {
     "id": "mt-202603-resident-001",
@@ -23246,7 +24904,26 @@
         }
       }
     ],
-    "last_verified_at": "2026-11-25"
+    "last_verified_at": "2026-11-25",
+    "aging_rate": 53.7,
+    "aging_criteria": "2026년 기준 사용승인 후 30년 이상으로 확인된 동수 ÷ 참고 경계 내부 전체 수록 동수",
+    "aging_reference": {
+      "total": 190,
+      "known": 109,
+      "unknown": 81,
+      "over_20": 109,
+      "over_30": 102,
+      "rate_20": 57.4,
+      "rate_30": 53.7,
+      "year": 2026,
+      "source_url": "https://www.data.go.kr/data/15083092/fileData.do",
+      "source_as_of": "2024-12-31",
+      "checked_on": "2026-11-25",
+      "evidence": "registered_buildings_inside_reference_boundary",
+      "registry_supplement": "buildings/registry-heights.json"
+    },
+    "rights_base_date": null,
+    "rights_notice_no": null
   },
   {
     "id": "mt-202603-resident-002",
@@ -23413,7 +25090,26 @@
         "checked_on": "2026-11-25"
       }
     ],
-    "last_verified_at": "2026-11-25"
+    "last_verified_at": "2026-11-25",
+    "aging_rate": 56.7,
+    "aging_criteria": "2026년 기준 사용승인 후 30년 이상으로 확인된 동수 ÷ 참고 경계 내부 전체 수록 동수",
+    "aging_reference": {
+      "total": 67,
+      "known": 47,
+      "unknown": 20,
+      "over_20": 42,
+      "over_30": 38,
+      "rate_20": 62.7,
+      "rate_30": 56.7,
+      "year": 2026,
+      "source_url": "https://www.data.go.kr/data/15083092/fileData.do",
+      "source_as_of": "2024-12-31",
+      "checked_on": "2026-11-25",
+      "evidence": "registered_buildings_inside_reference_boundary",
+      "registry_supplement": "buildings/registry-heights.json"
+    },
+    "rights_base_date": null,
+    "rights_notice_no": null
   },
   {
     "id": "mt-202603-resident-003",
@@ -23677,7 +25373,26 @@
       "rental": 89,
       "sale_total": 429
     },
-    "last_verified_at": "2026-11-25"
+    "last_verified_at": "2026-11-25",
+    "aging_rate": 88.9,
+    "aging_criteria": "2026년 기준 사용승인 후 30년 이상으로 확인된 동수 ÷ 참고 경계 내부 전체 수록 동수",
+    "aging_reference": {
+      "total": 81,
+      "known": 78,
+      "unknown": 3,
+      "over_20": 78,
+      "over_30": 72,
+      "rate_20": 96.3,
+      "rate_30": 88.9,
+      "year": 2026,
+      "source_url": "https://www.data.go.kr/data/15083092/fileData.do",
+      "source_as_of": "2024-12-31",
+      "checked_on": "2026-11-25",
+      "evidence": "registered_buildings_inside_reference_boundary",
+      "registry_supplement": "buildings/registry-heights.json"
+    },
+    "rights_base_date": null,
+    "rights_notice_no": null
   },
   {
     "id": "mt-202603-resident-005",
@@ -23897,7 +25612,26 @@
         }
       }
     ],
-    "last_verified_at": "2026-11-25"
+    "last_verified_at": "2026-11-25",
+    "aging_rate": 60.1,
+    "aging_criteria": "2026년 기준 사용승인 후 30년 이상으로 확인된 동수 ÷ 참고 경계 내부 전체 수록 동수",
+    "aging_reference": {
+      "total": 183,
+      "known": 166,
+      "unknown": 17,
+      "over_20": 136,
+      "over_30": 110,
+      "rate_20": 74.3,
+      "rate_30": 60.1,
+      "year": 2026,
+      "source_url": "https://www.data.go.kr/data/15083092/fileData.do",
+      "source_as_of": "2024-12-31",
+      "checked_on": "2026-11-25",
+      "evidence": "registered_buildings_inside_reference_boundary",
+      "registry_supplement": "buildings/registry-heights.json"
+    },
+    "rights_base_date": null,
+    "rights_notice_no": null
   },
   {
     "id": "mt-202603-resident-006",
@@ -24144,7 +25878,26 @@
         }
       }
     ],
-    "last_verified_at": "2026-11-25"
+    "last_verified_at": "2026-11-25",
+    "aging_rate": 72.0,
+    "aging_criteria": "2026년 기준 사용승인 후 30년 이상으로 확인된 동수 ÷ 참고 경계 내부 전체 수록 동수",
+    "aging_reference": {
+      "total": 75,
+      "known": 70,
+      "unknown": 5,
+      "over_20": 62,
+      "over_30": 54,
+      "rate_20": 82.7,
+      "rate_30": 72.0,
+      "year": 2026,
+      "source_url": "https://www.data.go.kr/data/15083092/fileData.do",
+      "source_as_of": "2024-12-31",
+      "checked_on": "2026-11-25",
+      "evidence": "registered_buildings_inside_reference_boundary",
+      "registry_supplement": "buildings/registry-heights.json"
+    },
+    "rights_base_date": null,
+    "rights_notice_no": null
   },
   {
     "id": "mt-202603-resident-007",
@@ -24259,7 +26012,12 @@
         }
       }
     ],
-    "last_verified_at": "2026-11-25"
+    "last_verified_at": "2026-11-25",
+    "aging_rate": null,
+    "aging_criteria": null,
+    "aging_reference": null,
+    "rights_base_date": null,
+    "rights_notice_no": null
   },
   {
     "id": "mt-202603-resident-008",
@@ -24521,7 +26279,26 @@
         }
       }
     ],
-    "last_verified_at": "2026-11-25"
+    "last_verified_at": "2026-11-25",
+    "aging_rate": 61.7,
+    "aging_criteria": "2026년 기준 사용승인 후 30년 이상으로 확인된 동수 ÷ 참고 경계 내부 전체 수록 동수",
+    "aging_reference": {
+      "total": 47,
+      "known": 45,
+      "unknown": 2,
+      "over_20": 39,
+      "over_30": 29,
+      "rate_20": 83.0,
+      "rate_30": 61.7,
+      "year": 2026,
+      "source_url": "https://www.data.go.kr/data/15083092/fileData.do",
+      "source_as_of": "2024-12-31",
+      "checked_on": "2026-11-25",
+      "evidence": "registered_buildings_inside_reference_boundary",
+      "registry_supplement": "buildings/registry-heights.json"
+    },
+    "rights_base_date": null,
+    "rights_notice_no": null
   },
   {
     "id": "mt-202603-resident-009",
@@ -24770,7 +26547,26 @@
         }
       }
     ],
-    "last_verified_at": "2026-11-25"
+    "last_verified_at": "2026-11-25",
+    "aging_rate": 92.9,
+    "aging_criteria": "2026년 기준 사용승인 후 30년 이상으로 확인된 동수 ÷ 참고 경계 내부 전체 수록 동수",
+    "aging_reference": {
+      "total": 212,
+      "known": 208,
+      "unknown": 4,
+      "over_20": 204,
+      "over_30": 197,
+      "rate_20": 96.2,
+      "rate_30": 92.9,
+      "year": 2026,
+      "source_url": "https://www.data.go.kr/data/15083092/fileData.do",
+      "source_as_of": "2024-12-31",
+      "checked_on": "2026-11-25",
+      "evidence": "registered_buildings_inside_reference_boundary",
+      "registry_supplement": "buildings/registry-heights.json"
+    },
+    "rights_base_date": null,
+    "rights_notice_no": null
   },
   {
     "id": "mt-202603-resident-010",
@@ -24939,7 +26735,12 @@
         }
       }
     ],
-    "last_verified_at": "2026-11-25"
+    "last_verified_at": "2026-11-25",
+    "aging_rate": null,
+    "aging_criteria": null,
+    "aging_reference": null,
+    "rights_base_date": null,
+    "rights_notice_no": null
   },
   {
     "id": "mt-202603-resident-011",
@@ -25025,7 +26826,26 @@
     },
     "sub_areas": [
       "mz-seoul-11000uq120ps202505310709"
-    ]
+    ],
+    "aging_rate": 88.9,
+    "aging_criteria": "2026년 기준 사용승인 후 30년 이상으로 확인된 동수 ÷ 참고 경계 내부 전체 수록 동수",
+    "aging_reference": {
+      "total": 9,
+      "known": 9,
+      "unknown": 0,
+      "over_20": 8,
+      "over_30": 8,
+      "rate_20": 88.9,
+      "rate_30": 88.9,
+      "year": 2026,
+      "source_url": "https://www.data.go.kr/data/15083092/fileData.do",
+      "source_as_of": "2024-12-31",
+      "checked_on": "2026-11-25",
+      "evidence": "registered_buildings_inside_reference_boundary",
+      "registry_supplement": "buildings/registry-heights.json"
+    },
+    "rights_base_date": null,
+    "rights_notice_no": null
   },
   {
     "id": "mt-202603-resident-012",
@@ -25283,7 +27103,26 @@
         }
       }
     ],
-    "last_verified_at": "2026-11-25"
+    "last_verified_at": "2026-11-25",
+    "aging_rate": 73.1,
+    "aging_criteria": "2026년 기준 사용승인 후 30년 이상으로 확인된 동수 ÷ 참고 경계 내부 전체 수록 동수",
+    "aging_reference": {
+      "total": 52,
+      "known": 45,
+      "unknown": 7,
+      "over_20": 38,
+      "over_30": 38,
+      "rate_20": 73.1,
+      "rate_30": 73.1,
+      "year": 2026,
+      "source_url": "https://www.data.go.kr/data/15083092/fileData.do",
+      "source_as_of": "2024-12-31",
+      "checked_on": "2026-11-25",
+      "evidence": "registered_buildings_inside_reference_boundary",
+      "registry_supplement": "buildings/registry-heights.json"
+    },
+    "rights_base_date": null,
+    "rights_notice_no": null
   },
   {
     "id": "mt-202603-resident-013",
@@ -25578,7 +27417,26 @@
       "checked_on": "2026-11-25",
       "scope": "정릉동 226-1 일대",
       "note": "2026년 3월 승인고시의 공급 합계 721세대와 두 행의 합계 779세대(574+205)가 다릅니다. 6월 변경고시는 공급계획 변경 없음으로 표기했습니다. 상세에 표시한 782세대는 2025년 심의 당시 수치입니다."
-    }
+    },
+    "aging_rate": 45.2,
+    "aging_criteria": "2026년 기준 사용승인 후 30년 이상으로 확인된 동수 ÷ 참고 경계 내부 전체 수록 동수",
+    "aging_reference": {
+      "total": 84,
+      "known": 67,
+      "unknown": 17,
+      "over_20": 51,
+      "over_30": 38,
+      "rate_20": 60.7,
+      "rate_30": 45.2,
+      "year": 2026,
+      "source_url": "https://www.data.go.kr/data/15083092/fileData.do",
+      "source_as_of": "2024-12-31",
+      "checked_on": "2026-11-25",
+      "evidence": "registered_buildings_inside_reference_boundary",
+      "registry_supplement": "buildings/registry-heights.json"
+    },
+    "rights_base_date": null,
+    "rights_notice_no": null
   },
   {
     "id": "mt-202603-resident-014",
@@ -25731,7 +27589,12 @@
         }
       }
     ],
-    "last_verified_at": "2026-11-25"
+    "last_verified_at": "2026-11-25",
+    "aging_rate": null,
+    "aging_criteria": null,
+    "aging_reference": null,
+    "rights_base_date": null,
+    "rights_notice_no": null
   },
   {
     "id": "mt-202603-resident-015",
@@ -25915,7 +27778,12 @@
         }
       }
     ],
-    "last_verified_at": "2026-11-25"
+    "last_verified_at": "2026-11-25",
+    "aging_rate": null,
+    "aging_criteria": null,
+    "aging_reference": null,
+    "rights_base_date": null,
+    "rights_notice_no": null
   },
   {
     "id": "mt-202603-resident-016",
@@ -26154,7 +28022,26 @@
       "aging_ratio": 100
     },
     "max_floors_above_ground": 18,
-    "last_verified_at": "2026-11-25"
+    "last_verified_at": "2026-11-25",
+    "aging_rate": 12.6,
+    "aging_criteria": "2026년 기준 사용승인 후 30년 이상으로 확인된 동수 ÷ 참고 경계 내부 전체 수록 동수",
+    "aging_reference": {
+      "total": 87,
+      "known": 12,
+      "unknown": 75,
+      "over_20": 12,
+      "over_30": 11,
+      "rate_20": 13.8,
+      "rate_30": 12.6,
+      "year": 2026,
+      "source_url": "https://www.data.go.kr/data/15083092/fileData.do",
+      "source_as_of": "2024-12-31",
+      "checked_on": "2026-11-25",
+      "evidence": "registered_buildings_inside_reference_boundary",
+      "registry_supplement": "buildings/registry-heights.json"
+    },
+    "rights_base_date": "2024-05-09",
+    "rights_notice_no": "서울특별시 고시 제2024-233호"
   },
   {
     "id": "mt-202603-resident-017",
@@ -26447,7 +28334,26 @@
         }
       }
     ],
-    "last_verified_at": "2026-11-25"
+    "last_verified_at": "2026-11-25",
+    "aging_rate": 42.4,
+    "aging_criteria": "2026년 기준 사용승인 후 30년 이상으로 확인된 동수 ÷ 참고 경계 내부 전체 수록 동수",
+    "aging_reference": {
+      "total": 85,
+      "known": 47,
+      "unknown": 38,
+      "over_20": 38,
+      "over_30": 36,
+      "rate_20": 44.7,
+      "rate_30": 42.4,
+      "year": 2026,
+      "source_url": "https://www.data.go.kr/data/15083092/fileData.do",
+      "source_as_of": "2024-12-31",
+      "checked_on": "2026-11-25",
+      "evidence": "registered_buildings_inside_reference_boundary",
+      "registry_supplement": "buildings/registry-heights.json"
+    },
+    "rights_base_date": null,
+    "rights_notice_no": null
   },
   {
     "id": "mt-202603-resident-018",
@@ -26534,7 +28440,26 @@
     ],
     "sub_areas": [
       "mz-seoul-11000uq120ps202505310435"
-    ]
+    ],
+    "aging_rate": 59.6,
+    "aging_criteria": "2026년 기준 사용승인 후 30년 이상으로 확인된 동수 ÷ 참고 경계 내부 전체 수록 동수",
+    "aging_reference": {
+      "total": 99,
+      "known": 62,
+      "unknown": 37,
+      "over_20": 61,
+      "over_30": 59,
+      "rate_20": 61.6,
+      "rate_30": 59.6,
+      "year": 2026,
+      "source_url": "https://www.data.go.kr/data/15083092/fileData.do",
+      "source_as_of": "2024-12-31",
+      "checked_on": "2026-11-25",
+      "evidence": "registered_buildings_inside_reference_boundary",
+      "registry_supplement": "buildings/registry-heights.json"
+    },
+    "rights_base_date": null,
+    "rights_notice_no": null
   },
   {
     "id": "mt-202603-resident-019",
@@ -26658,7 +28583,12 @@
         }
       }
     ],
-    "last_verified_at": "2026-11-25"
+    "last_verified_at": "2026-11-25",
+    "aging_rate": null,
+    "aging_criteria": null,
+    "aging_reference": null,
+    "rights_base_date": null,
+    "rights_notice_no": null
   },
   {
     "id": "mt-202603-resident-020",
@@ -26906,7 +28836,26 @@
         }
       }
     ],
-    "last_verified_at": "2026-11-25"
+    "last_verified_at": "2026-11-25",
+    "aging_rate": 54.9,
+    "aging_criteria": "2026년 기준 사용승인 후 30년 이상으로 확인된 동수 ÷ 참고 경계 내부 전체 수록 동수",
+    "aging_reference": {
+      "total": 51,
+      "known": 46,
+      "unknown": 5,
+      "over_20": 37,
+      "over_30": 28,
+      "rate_20": 72.5,
+      "rate_30": 54.9,
+      "year": 2026,
+      "source_url": "https://www.data.go.kr/data/15083092/fileData.do",
+      "source_as_of": "2024-12-31",
+      "checked_on": "2026-11-25",
+      "evidence": "registered_buildings_inside_reference_boundary",
+      "registry_supplement": "buildings/registry-heights.json"
+    },
+    "rights_base_date": null,
+    "rights_notice_no": null
   },
   {
     "id": "mt-202603-resident-021",
@@ -27023,7 +28972,12 @@
         }
       }
     ],
-    "last_verified_at": "2026-11-25"
+    "last_verified_at": "2026-11-25",
+    "aging_rate": null,
+    "aging_criteria": null,
+    "aging_reference": null,
+    "rights_base_date": null,
+    "rights_notice_no": null
   },
   {
     "id": "mt-202603-resident-022",
@@ -27270,7 +29224,26 @@
         }
       }
     ],
-    "last_verified_at": "2026-11-25"
+    "last_verified_at": "2026-11-25",
+    "aging_rate": 68.0,
+    "aging_criteria": "2026년 기준 사용승인 후 30년 이상으로 확인된 동수 ÷ 참고 경계 내부 전체 수록 동수",
+    "aging_reference": {
+      "total": 75,
+      "known": 72,
+      "unknown": 3,
+      "over_20": 61,
+      "over_30": 51,
+      "rate_20": 81.3,
+      "rate_30": 68.0,
+      "year": 2026,
+      "source_url": "https://www.data.go.kr/data/15083092/fileData.do",
+      "source_as_of": "2024-12-31",
+      "checked_on": "2026-11-25",
+      "evidence": "registered_buildings_inside_reference_boundary",
+      "registry_supplement": "buildings/registry-heights.json"
+    },
+    "rights_base_date": null,
+    "rights_notice_no": null
   },
   {
     "id": "mt-202603-resident-023",
@@ -27461,7 +29434,26 @@
         }
       }
     ],
-    "last_verified_at": "2026-11-25"
+    "last_verified_at": "2026-11-25",
+    "aging_rate": 78.6,
+    "aging_criteria": "2026년 기준 사용승인 후 30년 이상으로 확인된 동수 ÷ 참고 경계 내부 전체 수록 동수",
+    "aging_reference": {
+      "total": 28,
+      "known": 26,
+      "unknown": 2,
+      "over_20": 26,
+      "over_30": 22,
+      "rate_20": 92.9,
+      "rate_30": 78.6,
+      "year": 2026,
+      "source_url": "https://www.data.go.kr/data/15083092/fileData.do",
+      "source_as_of": "2024-12-31",
+      "checked_on": "2026-11-25",
+      "evidence": "registered_buildings_inside_reference_boundary",
+      "registry_supplement": "buildings/registry-heights.json"
+    },
+    "rights_base_date": null,
+    "rights_notice_no": null
   },
   {
     "id": "mt-202603-resident-024",
@@ -27586,7 +29578,12 @@
         }
       }
     ],
-    "last_verified_at": "2026-11-25"
+    "last_verified_at": "2026-11-25",
+    "aging_rate": null,
+    "aging_criteria": null,
+    "aging_reference": null,
+    "rights_base_date": null,
+    "rights_notice_no": null
   },
   {
     "id": "mt-202603-resident-025",
@@ -27854,7 +29851,26 @@
         }
       }
     ],
-    "last_verified_at": "2026-11-25"
+    "last_verified_at": "2026-11-25",
+    "aging_rate": 82.5,
+    "aging_criteria": "2026년 기준 사용승인 후 30년 이상으로 확인된 동수 ÷ 참고 경계 내부 전체 수록 동수",
+    "aging_reference": {
+      "total": 80,
+      "known": 77,
+      "unknown": 3,
+      "over_20": 69,
+      "over_30": 66,
+      "rate_20": 86.3,
+      "rate_30": 82.5,
+      "year": 2026,
+      "source_url": "https://www.data.go.kr/data/15083092/fileData.do",
+      "source_as_of": "2024-12-31",
+      "checked_on": "2026-11-25",
+      "evidence": "registered_buildings_inside_reference_boundary",
+      "registry_supplement": "buildings/registry-heights.json"
+    },
+    "rights_base_date": null,
+    "rights_notice_no": null
   },
   {
     "id": "mt-202603-resident-026",
@@ -27986,7 +30002,26 @@
         }
       }
     ],
-    "last_verified_at": "2026-11-25"
+    "last_verified_at": "2026-11-25",
+    "aging_rate": 66.0,
+    "aging_criteria": "2026년 기준 사용승인 후 30년 이상으로 확인된 동수 ÷ 참고 경계 내부 전체 수록 동수",
+    "aging_reference": {
+      "total": 94,
+      "known": 91,
+      "unknown": 3,
+      "over_20": 84,
+      "over_30": 62,
+      "rate_20": 89.4,
+      "rate_30": 66.0,
+      "year": 2026,
+      "source_url": "https://www.data.go.kr/data/15083092/fileData.do",
+      "source_as_of": "2024-12-31",
+      "checked_on": "2026-11-25",
+      "evidence": "registered_buildings_inside_reference_boundary",
+      "registry_supplement": "buildings/registry-heights.json"
+    },
+    "rights_base_date": null,
+    "rights_notice_no": null
   },
   {
     "id": "mt-202603-resident-027",
@@ -28242,7 +30277,26 @@
         "checked_on": "2026-11-25"
       }
     ],
-    "last_verified_at": "2026-11-25"
+    "last_verified_at": "2026-11-25",
+    "aging_rate": 62.2,
+    "aging_criteria": "2026년 기준 사용승인 후 30년 이상으로 확인된 동수 ÷ 참고 경계 내부 전체 수록 동수",
+    "aging_reference": {
+      "total": 74,
+      "known": 73,
+      "unknown": 1,
+      "over_20": 58,
+      "over_30": 46,
+      "rate_20": 78.4,
+      "rate_30": 62.2,
+      "year": 2026,
+      "source_url": "https://www.data.go.kr/data/15083092/fileData.do",
+      "source_as_of": "2024-12-31",
+      "checked_on": "2026-11-25",
+      "evidence": "registered_buildings_inside_reference_boundary",
+      "registry_supplement": "buildings/registry-heights.json"
+    },
+    "rights_base_date": null,
+    "rights_notice_no": null
   },
   {
     "id": "mt-202603-resident-028",
@@ -28497,7 +30551,12 @@
         }
       }
     ],
-    "last_verified_at": "2026-11-25"
+    "last_verified_at": "2026-11-25",
+    "aging_rate": null,
+    "aging_criteria": null,
+    "aging_reference": null,
+    "rights_base_date": null,
+    "rights_notice_no": null
   },
   {
     "id": "mt-202603-resident-029",
@@ -28726,7 +30785,12 @@
         }
       }
     ],
-    "last_verified_at": "2026-11-25"
+    "last_verified_at": "2026-11-25",
+    "aging_rate": null,
+    "aging_criteria": null,
+    "aging_reference": null,
+    "rights_base_date": null,
+    "rights_notice_no": null
   },
   {
     "id": "mt-202603-resident-030",
@@ -28899,7 +30963,12 @@
     "metrics": {
       "area_sqm": 44178
     },
-    "last_verified_at": "2026-11-25"
+    "last_verified_at": "2026-11-25",
+    "aging_rate": null,
+    "aging_criteria": null,
+    "aging_reference": null,
+    "rights_base_date": null,
+    "rights_notice_no": null
   },
   {
     "id": "mt-202603-resident-031",
@@ -29091,7 +31160,12 @@
         }
       }
     ],
-    "last_verified_at": "2026-11-25"
+    "last_verified_at": "2026-11-25",
+    "aging_rate": null,
+    "aging_criteria": null,
+    "aging_reference": null,
+    "rights_base_date": null,
+    "rights_notice_no": null
   },
   {
     "id": "mt-202603-resident-032",
@@ -29216,7 +31290,12 @@
         }
       }
     ],
-    "last_verified_at": "2026-11-25"
+    "last_verified_at": "2026-11-25",
+    "aging_rate": null,
+    "aging_criteria": null,
+    "aging_reference": null,
+    "rights_base_date": null,
+    "rights_notice_no": null
   },
   {
     "id": "mt-202603-resident-033",
@@ -29341,7 +31420,12 @@
         }
       }
     ],
-    "last_verified_at": "2026-11-25"
+    "last_verified_at": "2026-11-25",
+    "aging_rate": null,
+    "aging_criteria": null,
+    "aging_reference": null,
+    "rights_base_date": null,
+    "rights_notice_no": null
   },
   {
     "id": "mt-202603-resident-034",
@@ -29466,7 +31550,12 @@
         }
       }
     ],
-    "last_verified_at": "2026-11-25"
+    "last_verified_at": "2026-11-25",
+    "aging_rate": null,
+    "aging_criteria": null,
+    "aging_reference": null,
+    "rights_base_date": null,
+    "rights_notice_no": null
   },
   {
     "id": "mt-202603-resident-035",
@@ -29567,7 +31656,12 @@
         }
       }
     ],
-    "last_verified_at": "2026-11-25"
+    "last_verified_at": "2026-11-25",
+    "aging_rate": null,
+    "aging_criteria": null,
+    "aging_reference": null,
+    "rights_base_date": null,
+    "rights_notice_no": null
   },
   {
     "id": "mt-202603-resident-036",
@@ -29692,7 +31786,26 @@
         }
       }
     ],
-    "last_verified_at": "2026-11-25"
+    "last_verified_at": "2026-11-25",
+    "aging_rate": 53.2,
+    "aging_criteria": "2026년 기준 사용승인 후 30년 이상으로 확인된 동수 ÷ 참고 경계 내부 전체 수록 동수",
+    "aging_reference": {
+      "total": 297,
+      "known": 295,
+      "unknown": 2,
+      "over_20": 217,
+      "over_30": 158,
+      "rate_20": 73.1,
+      "rate_30": 53.2,
+      "year": 2026,
+      "source_url": "https://www.data.go.kr/data/15083092/fileData.do",
+      "source_as_of": "2024-12-31",
+      "checked_on": "2026-11-25",
+      "evidence": "registered_buildings_inside_reference_boundary",
+      "registry_supplement": "buildings/registry-heights.json"
+    },
+    "rights_base_date": null,
+    "rights_notice_no": null
   },
   {
     "id": "mt-202603-resident-037",
@@ -29799,7 +31912,12 @@
         }
       }
     ],
-    "last_verified_at": "2026-11-25"
+    "last_verified_at": "2026-11-25",
+    "aging_rate": null,
+    "aging_criteria": null,
+    "aging_reference": null,
+    "rights_base_date": null,
+    "rights_notice_no": null
   },
   {
     "id": "mt-202603-resident-038",
@@ -29924,7 +32042,12 @@
         }
       }
     ],
-    "last_verified_at": "2026-11-25"
+    "last_verified_at": "2026-11-25",
+    "aging_rate": null,
+    "aging_criteria": null,
+    "aging_reference": null,
+    "rights_base_date": null,
+    "rights_notice_no": null
   },
   {
     "id": "mt-202603-resident-039",
@@ -30049,7 +32172,12 @@
         }
       }
     ],
-    "last_verified_at": "2026-11-25"
+    "last_verified_at": "2026-11-25",
+    "aging_rate": null,
+    "aging_criteria": null,
+    "aging_reference": null,
+    "rights_base_date": null,
+    "rights_notice_no": null
   },
   {
     "id": "mt-202603-resident-040",
@@ -30174,7 +32302,12 @@
         }
       }
     ],
-    "last_verified_at": "2026-11-25"
+    "last_verified_at": "2026-11-25",
+    "aging_rate": null,
+    "aging_criteria": null,
+    "aging_reference": null,
+    "rights_base_date": null,
+    "rights_notice_no": null
   },
   {
     "id": "mt-202603-resident-041",
@@ -30253,7 +32386,12 @@
         }
       }
     ],
-    "last_verified_at": "2026-11-25"
+    "last_verified_at": "2026-11-25",
+    "aging_rate": null,
+    "aging_criteria": null,
+    "aging_reference": null,
+    "rights_base_date": null,
+    "rights_notice_no": null
   },
   {
     "id": "mt-202603-resident-042",
@@ -30332,7 +32470,12 @@
         }
       }
     ],
-    "last_verified_at": "2026-11-25"
+    "last_verified_at": "2026-11-25",
+    "aging_rate": null,
+    "aging_criteria": null,
+    "aging_reference": null,
+    "rights_base_date": null,
+    "rights_notice_no": null
   },
   {
     "id": "mt-202603-resident-043",
@@ -30457,7 +32600,12 @@
         }
       }
     ],
-    "last_verified_at": "2026-11-25"
+    "last_verified_at": "2026-11-25",
+    "aging_rate": null,
+    "aging_criteria": null,
+    "aging_reference": null,
+    "rights_base_date": null,
+    "rights_notice_no": null
   },
   {
     "id": "mt-202603-resident-044",
@@ -30582,7 +32730,26 @@
         }
       }
     ],
-    "last_verified_at": "2026-11-25"
+    "last_verified_at": "2026-11-25",
+    "aging_rate": 48.0,
+    "aging_criteria": "2026년 기준 사용승인 후 30년 이상으로 확인된 동수 ÷ 참고 경계 내부 전체 수록 동수",
+    "aging_reference": {
+      "total": 127,
+      "known": 123,
+      "unknown": 4,
+      "over_20": 89,
+      "over_30": 61,
+      "rate_20": 70.1,
+      "rate_30": 48.0,
+      "year": 2026,
+      "source_url": "https://www.data.go.kr/data/15083092/fileData.do",
+      "source_as_of": "2024-12-31",
+      "checked_on": "2026-11-25",
+      "evidence": "registered_buildings_inside_reference_boundary",
+      "registry_supplement": "buildings/registry-heights.json"
+    },
+    "rights_base_date": null,
+    "rights_notice_no": null
   },
   {
     "id": "mt-2026-extra-001",
@@ -30718,7 +32885,12 @@
         }
       }
     ],
-    "last_verified_at": "2026-11-25"
+    "last_verified_at": "2026-11-25",
+    "aging_rate": null,
+    "aging_criteria": null,
+    "aging_reference": null,
+    "rights_base_date": null,
+    "rights_notice_no": null
   },
   {
     "id": "mt-2026-extra-002",
@@ -30853,7 +33025,12 @@
         }
       }
     ],
-    "last_verified_at": "2026-11-25"
+    "last_verified_at": "2026-11-25",
+    "aging_rate": null,
+    "aging_criteria": null,
+    "aging_reference": null,
+    "rights_base_date": null,
+    "rights_notice_no": null
   },
   {
     "id": "mt-2026-extra-003",
@@ -30980,7 +33157,12 @@
     "metrics": {
       "area_sqm": 10890
     },
-    "last_verified_at": "2026-11-25"
+    "last_verified_at": "2026-11-25",
+    "aging_rate": null,
+    "aging_criteria": null,
+    "aging_reference": null,
+    "rights_base_date": null,
+    "rights_notice_no": null
   },
   {
     "id": "mt-2026-extra-004",
@@ -31116,7 +33298,12 @@
         }
       }
     ],
-    "last_verified_at": "2026-11-25"
+    "last_verified_at": "2026-11-25",
+    "aging_rate": null,
+    "aging_criteria": null,
+    "aging_reference": null,
+    "rights_base_date": null,
+    "rights_notice_no": null
   },
   {
     "id": "mt-2026-extra-005",
@@ -31251,7 +33438,12 @@
         }
       }
     ],
-    "last_verified_at": "2026-11-25"
+    "last_verified_at": "2026-11-25",
+    "aging_rate": null,
+    "aging_criteria": null,
+    "aging_reference": null,
+    "rights_base_date": null,
+    "rights_notice_no": null
   },
   {
     "id": "mt-2026-extra-006",
@@ -31386,7 +33578,12 @@
         }
       }
     ],
-    "last_verified_at": "2026-11-25"
+    "last_verified_at": "2026-11-25",
+    "aging_rate": null,
+    "aging_criteria": null,
+    "aging_reference": null,
+    "rights_base_date": null,
+    "rights_notice_no": null
   },
   {
     "id": "mt-2026-extra-007",
@@ -31465,7 +33662,12 @@
       }
     ],
     "sub_areas": [],
-    "last_verified_at": "2026-11-25"
+    "last_verified_at": "2026-11-25",
+    "aging_rate": null,
+    "aging_criteria": null,
+    "aging_reference": null,
+    "rights_base_date": null,
+    "rights_notice_no": null
   },
   {
     "id": "mt-2026-extra-008",
@@ -31585,7 +33787,12 @@
         }
       }
     ],
-    "last_verified_at": "2026-11-25"
+    "last_verified_at": "2026-11-25",
+    "aging_rate": null,
+    "aging_criteria": null,
+    "aging_reference": null,
+    "rights_base_date": null,
+    "rights_notice_no": null
   },
   {
     "id": "mt-2026-extra-009",
@@ -31705,7 +33912,12 @@
         }
       }
     ],
-    "last_verified_at": "2026-11-25"
+    "last_verified_at": "2026-11-25",
+    "aging_rate": null,
+    "aging_criteria": null,
+    "aging_reference": null,
+    "rights_base_date": null,
+    "rights_notice_no": null
   },
   {
     "id": "mt-2026-extra-010",
@@ -31825,7 +34037,12 @@
         }
       }
     ],
-    "last_verified_at": "2026-11-25"
+    "last_verified_at": "2026-11-25",
+    "aging_rate": null,
+    "aging_criteria": null,
+    "aging_reference": null,
+    "rights_base_date": null,
+    "rights_notice_no": null
   },
   {
     "id": "mt-2026-extra-011",
@@ -31947,6 +34164,11 @@
         }
       }
     ],
-    "last_verified_at": "2026-11-25"
+    "last_verified_at": "2026-11-25",
+    "aging_rate": null,
+    "aging_criteria": null,
+    "aging_reference": null,
+    "rights_base_date": null,
+    "rights_notice_no": null
   }
 ]

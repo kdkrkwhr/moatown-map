@@ -14,6 +14,14 @@
 
 ## 어떤 자료를 사용했나
 
+### 참고 노후도와 권리산정기준일
+
+2026년 기준 대상지 108곳과 세부구역 62곳의 20년·30년 이상 비율을 계산했다. 분모는 참고 경계에 건물 전체가 들어오는 수록 건물 수다. 경계를 걸치는 건물과 반경 150m 주변 건물은 분모에서 제외한다. 사용승인연도 미상은 분모에만 포함하므로 연식이 확인된 노후 건물의 최소 비율이다. 구역별 사용승인연도 미상·전체·20년 이상·30년 이상 동수를 함께 보관한다. 예를 들어 신월동 102-33은 내부 294동 중 30년 이상 245동(83.3%), 20년 이상 272동(92.5%), 연식 미상 9동이다. 기존 3D 통계의 연식 확인 285동을 분모로 쓰는 86.0%와 기준이 다르다. 고시에 발표된 법정 노후도는 별도 항목이다. [GIS건물통합정보](https://www.data.go.kr/data/15083092/fileData.do) · [건축물대장 표제부](https://data.seoul.go.kr/dataList/OA-22424/S/1/datasetView.do)
+
+대상지 마스터의 `rights_base_date`와 `rights_notice_no`는 전체 대상지에 적용되는 검수된 단일 기준일과 근거 고시다. 실효·제척·추가 편입·기한 연장 이력은 규제 탭의 적용 범위별 기록으로 제공한다. 시보 기준일 후보는 검수용 CSV에만 저장한다. 시보 본문의 텍스트 추출이 가능한 범위에서 구역명·지번과 기준일 문구를 대조하며 스캔본이나 표의 행이 섞일 수 있는 경우 원문 검토가 필요하다. [서울시보](https://event.seoul.go.kr/seoulsibo/) · [검수 후보 CSV](../data/rights_base_date_draft.csv)
+
+로컬에서 `uv run --with geopandas python scripts/calculate_aging_rate.py`를 실행하면 현재 스냅샷의 대상지·세부구역 파일을 갱신한다. `--check`는 결과만 대조한다. 권리산정 자료는 `uv run --with pymupdf --with beautifulsoup4 python scripts/fetch_rights_date.py`로 검색한다. `--url`로 정보몽땅 등 기관의 HTML·PDF를 추가할 수 있고 `--catalog`, `--text-dir`로 시보 목차와 추출된 본문을 재사용할 수 있다. 후보 CSV 사본에서 날짜와 근거 고시를 확인한 뒤 전체 대상지에 적용되는 행만 `scope=전체`, `review=승인`으로 표시한다. `python scripts/fetch_rights_date.py --merge 검수본.csv`로 병합하거나 `--sync`로 기존 검증값을 동기화한다. 마스터 갱신 후 `node scripts/sync-pilot.mjs`, `node scripts/build-sitemap.mjs`, `node --test`를 실행한다.
+
 사업계획 3D 96곳 중 6곳에 공원·도로·보행공간 36개 도형을 수록했다. 신월동 102-33의 10개에 번동 429-114의 5개, 면목동 86-3의 7개를 더했다. 번동과 면목동은 주거동을 판독한 동일한 배치도와 좌표 변환을 사용했다. 도면에 폭이 없는 보행로는 중심선으로 표시한다. 면목동 어린이공원·주차장은 복합 부지의 지상 위치를 표시한다. [번동 서울시 배치도](https://www.seoul.go.kr/news/news_report.do?nttNo=393720) · [면목동 서울시 배치도](https://www.seoul.go.kr/news/news_report.do?nttNo=468710)
 
 시흥3동 1005의 도로 2개, 대흥동 535-2의 도로 2개와 어린이공원 1개, 망원동 456-6의 도로 9개는 서울시 시설 도형을 참고 경계로 잘랐다. 서울 전체 142곳의 관리계획 기록을 기준으로, 도시계획 결정고시 자료의 발령기관·고시번호·고시일과 시설의 고시관리코드를 연결하고 경계 교차를 확인했다. 2026년 9월 공개본의 도로·공간시설·공공문화체육시설·도로외 교통시설을 대조했다. 경계가 있는 곳은 108곳이다. 10㎡ 미만의 경계 접촉은 제외했다. 시설 도형·자료 기준일·출처는 대상지별 파일에 있다. 자동 배치에서는 이 부지를 비워 둔다. [시설 파일](../moatown-data/plans/public-spaces/) · [도시계획 결정고시](https://data.seoul.go.kr/dataList/OA-20283/S/1/datasetView.do) · [도시계획시설 도로](https://data.seoul.go.kr/dataList/OA-21134/F/1/datasetView.do) · [공간시설](https://data.seoul.go.kr/dataList/OA-21129/F/1/datasetView.do)

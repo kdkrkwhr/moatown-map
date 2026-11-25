@@ -107,6 +107,10 @@ dialog::backdrop { background: #132d40a6; }
 .dialog-head { display: flex; align-items: center; justify-content: space-between; gap: 14px; }
 .dialog-head h2 { font-size: 21px; }
 .dialog-head button { min-height: 40px; padding: 4px 10px; color: var(--blue); font-weight: 650; }
+.decision-metrics { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 6px; margin: 6px 0; }
+.decision-metrics button { display: grid; gap: 2px; min-height: 44px; padding: 6px 10px; text-align: left; border: 1px solid #cfdfdc; border-radius: 9px; background: #f3f8f6; color: #234d46; }
+.decision-metrics small { font-size: 11px; }
+.decision-metrics strong { font-size: 14px; }
 dialog p,dialog small { color: var(--sub); font-size: 14px; margin-block: 12px; }
 dialog nav, .official-docs { display: flex; flex-wrap: wrap; gap: 10px; }
 #address-form label { display: block; font-weight: 650; margin-bottom: 5px; }
@@ -308,7 +312,7 @@ a.town-item { color: inherit; text-decoration: none; }
 .news-empty button { display: block; padding: 10px 0; }
 .reader-footer { margin-top: 24px; color: var(--muted); font-size: 11px; }
 
-@media (max-width: 760px) {
+@media (max-width: 768px) {
   :root { --gutter: 17px; }
   .district-overview .district-label::before { height: 26px; width: 29px; }
   .topbar { height: 52px; padding: env(safe-area-inset-top) 12px 0; box-sizing: content-box; gap: 8px; }
@@ -369,14 +373,6 @@ a.town-item { color: inherit; text-decoration: none; }
   .news-switch { flex: 1; }
   .news-switch button { flex: 1; white-space: nowrap; }
   .news-area select { max-width: 92px; }
-}
-@media(max-height: 530px) and (max-width: 760px) and (orientation: landscape) {
-  .workspace { display: grid; grid-template-columns: 46% 54%; }
-  #explorer, #explorer:has(#detail-view:not([hidden])) { height: 100%; }
-  .sheet-tools { display: none; }
-  #explorer.collapsed #panel-content { display: flex; }
-  .search-block { padding-top: 8px; }
-  .map-style-picker button { padding-inline: 7px; }
 }
 
 .guide-stages { margin-top: 18px; padding-top: 12px; border-top: 1px solid var(--line); }
@@ -629,13 +625,16 @@ a.town-item { color: inherit; text-decoration: none; }
 #map-options { display: contents; }
 #map-search-dock, #layer-open { display: none; }
 
-@media (max-width:760px) and (orientation:portrait), (max-width:540px) {
+@media (max-width:768px) {
   body:has(.workspace) .topbar { height: 42px; padding-inline: 15px; border: 0; }
   body:has(.workspace) .main-nav a[aria-current] { display: none; }
   body:has(.workspace) .brand-mark { width: 25px; height: 25px; }
   .workspace { position: relative; display: block; isolation: isolate; }
   .workspace > .map-stage { position: absolute; inset: 0; }
-  #map-search-dock { display: block; position: absolute; z-index: 4; inset: 0 0 auto; padding: 9px 12px 4px; pointer-events: none; }
+  #map-search-dock { display: block; position: absolute; z-index: 4; inset: 10px 12px auto auto; pointer-events: none; }
+  #map-search-dock #layer-open { pointer-events: auto; border-radius: 22px; background: white; border: 1px solid #d2dfe3; padding: 0 14px; min-height: 42px; box-shadow: var(--shadow); }
+  #explorer > #project-search { flex: none; padding: 0 12px 9px; }
+  #explorer.collapsed > #project-search .filter-row,#explorer:has(#detail-view:not([hidden])) > #project-search { display: none; }
   #project-search { padding: 0; gap: 8px; background: none; }
   .search-line, .filter-row > * { pointer-events: auto; }
   .search-line { display: flex; align-items: center; padding-right: 5px; background: white; border: 1px solid #cad9df; border-radius: 17px; box-shadow: 0 3px 14px #163c5226; }
@@ -659,17 +658,19 @@ a.town-item { color: inherit; text-decoration: none; }
   .layer-icon::after { top: 3px; border-top: none; border-right: none; }
   .filter-menu { top: calc(100% + 6px); bottom: auto; max-height: min(56dvh,440px); }
   #explorer, #explorer:has(#detail-view:not([hidden])) {
-    position: absolute; z-index: 3; inset: auto 8px calc(23px + env(safe-area-inset-bottom)); height: min(42%,340px);
+    position: absolute; z-index: 3; inset: auto 8px calc(23px + env(safe-area-inset-bottom)); height: min(36%,340px);
     padding: 0; border: 1px solid #d7e2e7; border-radius: 21px; background: white; overflow: hidden;
     box-shadow: 0 5px 25px #183d5233;
   }
   #explorer.tall:not(.collapsed), #explorer.tall:has(#detail-view:not([hidden])) {
-    height: min(75%,calc(100% - 132px - env(safe-area-inset-bottom)));
+    height: 100%; inset: 0; border-radius: 18px 18px 0 0; z-index: 5;
   }
   #explorer.collapsed, #explorer.collapsed:has(#detail-view:not([hidden])) { height: auto; }
   #explorer.collapsed #panel-content { display: none; }
   #explorer.collapsed:has(#detail-view:not([hidden])) #panel-content { display: flex; flex: none; }
   #explorer.collapsed .detail-tabs, #explorer.collapsed .detail-pane { display: none; }
+  #explorer.collapsed .decision-metrics { display: none; }
+  #explorer.tall .filter-menu { max-height: 55dvh; overflow: auto; }
   .sheet-tools { position: relative; gap: 4px; padding: 7px 13px 0; min-height: 43px; touch-action: none; }
   .sheet-tools::before { content: ''; position: absolute; width: 31px; height: 4px; border-radius: 4px; background: #becdd3; top: 5px; left: calc(50% - 15.5px); pointer-events: none; }
   #sheet-toggle { min-height: 39px; font-size: 14px; justify-content: space-between; }
@@ -694,6 +695,7 @@ a.town-item { color: inherit; text-decoration: none; }
   .map-stage #map-status, .map-stage #measure-status { top: 112px; bottom: auto; }
   #layer-dialog { margin: auto auto 0; width: min(100%,520px); max-height: 83dvh; border-radius: 22px 22px 0 0; padding: 19px 20px calc(20px + env(safe-area-inset-bottom)); }
   #layer-dialog #map-options { display: grid; grid-template-columns: minmax(0,1fr); gap: 12px; }
+  #layer-dialog #address-open { position: static; display: block; width: 100%; min-height: 44px; }
   #layer-dialog .map-style-picker, #layer-dialog #cadastral, #layer-dialog .map-tools, #layer-dialog .legend, #layer-dialog .legend ul { position: static; box-shadow: none; }
   #layer-dialog .map-style-picker { display: flex; border-radius: 12px; background: #eff4f6; }
   #layer-dialog .map-style-picker button { flex: 1; min-height: 42px; }

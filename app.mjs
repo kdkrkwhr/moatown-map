@@ -1,17 +1,17 @@
-import {projectUrl,renderProjectDetail,showUnplacedProgram} from './detail-view.mjs?v=b8b5ff1537a3';
-import {durationSamples,elapsedMonths,formatValue,projectMetadata} from './detail-format.mjs?v=b8b5ff1537a3';
-import {projectParams,setProjectPath} from './project-url.mjs?v=b8b5ff1537a3';
+import {projectUrl,renderProjectDetail,showUnplacedProgram} from './detail-view.mjs?v=0de51c63d593';
+import {durationSamples,elapsedMonths,formatValue,projectMetadata} from './detail-format.mjs?v=0de51c63d593';
+import {projectParams,setProjectPath} from './project-url.mjs?v=0de51c63d593';
 export {elapsedMonths};
-import {loadMaps,createProjectMap} from './map-engine.mjs?v=b8b5ff1537a3';
-export {showReferencePin} from './map-engine.mjs?v=b8b5ff1537a3';
-import {loadNews,matchNews,newsCard,sourceLabels} from './news.mjs?v=b8b5ff1537a3';
-import {searchProjects,managementFilters,progressFilters,recentProjectDates} from './project-search.mjs?v=b8b5ff1537a3';
-import {mountAddressLookup} from './address-reference.mjs?v=b8b5ff1537a3';
-import {mountPilotViewer} from './pilot-viewer.mjs?v=b8b5ff1537a3';
-const mobileMapQuery='(max-width: 760px) and (orientation: portrait), (max-width: 540px)';
+import {loadMaps,createProjectMap} from './map-engine.mjs?v=0de51c63d593';
+export {showReferencePin} from './map-engine.mjs?v=0de51c63d593';
+import {loadNews,matchNews,newsCard,sourceLabels} from './news.mjs?v=0de51c63d593';
+import {searchProjects,managementFilters,progressFilters,recentProjectDates} from './project-search.mjs?v=0de51c63d593';
+import {mountAddressLookup} from './address-reference.mjs?v=0de51c63d593';
+import {mountPilotViewer} from './pilot-viewer.mjs?v=0de51c63d593';
+const mobileMapQuery='(max-width: 768px)';
 function initialSheetHeight(selection,hasFilters,mobile){
   if(!mobile)return 1;
-  if(selection.zoneId)return 2;
+  if(selection.zoneId)return 1;
   if(selection.townId || selection.cancellation)return 0;
   return hasFilters?1:0;
 }
@@ -269,8 +269,7 @@ export function mount({manifest,towns,zones,boundaries,excluded=[]},sdk){
     const distance=dragStart-event.clientY;
     dragStart=null;
     if(Math.abs(distance)<24)return;
-    const selected=current.townId || current.cancellation;
-    dragged=true;setSheetHeight(selected?(distance>0?2:0):Math.max(0,Math.min(2,currentHeight()+Math.sign(distance))));
+    dragged=true;setSheetHeight(Math.max(0,Math.min(2,currentHeight()+Math.sign(distance))));
   });
   explorer.addEventListener('click',event=>{
     if(dragged && event.detail){dragged=false;event.preventDefault();event.stopPropagation();}
@@ -478,7 +477,8 @@ export function mount({manifest,towns,zones,boundaries,excluded=[]},sdk){
   window.addEventListener('focus',refreshRecentDates);
   district.addEventListener('change',()=>updateFilters(false));
   get('clear-filters').addEventListener('click',reset);
-  get('apply-stage').addEventListener('click',()=>{get('stage-filter-box').open=false;get('stage-filter-box').querySelector('summary').focus();});
+  get('stage-filter-box').addEventListener('toggle',()=>{if(mobile.matches && get('stage-filter-box').open)setSheetHeight(2);});
+  get('apply-stage').addEventListener('click',()=>{get('stage-filter-box').open=false;if(mobile.matches)setSheetHeight(1);get('stage-filter-box').querySelector('summary').focus();});
   get('reset-map').addEventListener('click',reset);
   window.addEventListener('popstate',()=>{
     if(pilot.restore(current))return;
@@ -527,11 +527,11 @@ function placeMobileControls(){
   function place(){
     if(dialog.open)dialog.close();
     if(mobile.matches){
-      dock.append(search);search.querySelector('.search-line').append(address);
-      dialog.append(options);document.querySelector('.sheet-tools').prepend(back);
+      document.querySelector('.sheet-tools').after(search);dock.append(get('layer-open'));
+      options.append(address);dialog.append(options);document.querySelector('.sheet-tools').prepend(back);
       searchInput.placeholder='어느 동네·구역을 찾으세요?';address.textContent='주소 판별';
     }else{
-      document.querySelector('.results-head').before(search);mapStage.append(options,address);
+      document.querySelector('.results-head').before(search);search.querySelector('.filter-row').append(get('layer-open'));mapStage.append(options,address);
       get('detail-view').prepend(back);
       searchInput.placeholder='주소, 구역명 또는 사업 단계';address.textContent='주소 위치 확인';
     }
@@ -540,7 +540,7 @@ function placeMobileControls(){
   get('layer-open').addEventListener('click',()=>dialog.showModal());
   get('layer-close').addEventListener('click',()=>dialog.close());
   options.addEventListener('click',event=>{
-    if(dialog.open && event.target.closest('#measure,#reset-map,#zoom-in,#zoom-out'))dialog.close();
+    if(dialog.open && event.target.closest('#address-open,#measure,#reset-map,#zoom-in,#zoom-out'))dialog.close();
   });
 }
 function prepareLoading(){
