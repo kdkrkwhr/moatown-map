@@ -9,6 +9,7 @@
 - [배경지도 출처 및 표시 원칙](docs/basemap.md)
 - [제품 기획서](docs/product-spec.html)
 - [상세 설계](docs/architecture.md)
+- [대상지 3D 시범 작업 지시서](docs/3d-pilot.md)
 - [데이터 출처와 수집 범위](docs/data-sources.md)
 - [최신 데이터 스냅샷](moatown-data/latest.json)
 
