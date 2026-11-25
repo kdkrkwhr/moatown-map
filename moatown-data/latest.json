@@ -75,6 +75,7 @@
     "excluded": "snapshots/2026-11-24/excluded.json",
     "parcel_index": "addresses/index.json",
     "buildings": "buildings/index.json",
+    "sinwol_visuals": "plans/sinwol/visuals.json",
     "pilot_plans": "snapshots/2026-11-24/pilot-plans.json",
     "review": "snapshots/2026-11-24/review.json"
   },
@@ -102,7 +103,14 @@
       "zones": "183f00659c3cc64b8f14f0193dfdbfafeaa74b0aaa6f4714e262362d5b27d132",
       "boundaries": "3f3b2e1f41e8a37ecc1305c1f8c7b133aa9b5a83f60045090fd2d16a0399db4c",
       "buildings": "788fc05977728875bd7b2e5bbab0d8c0a3bfdbaccebe86e8f26194a4c7e20ea8",
-      "pilot_plans": "b46ce2359f656f361107ee5b84c9688d746b878b220b7da65229c916c98ed854"
-    }
+      "pilot_plans": "b46ce2359f656f361107ee5b84c9688d746b878b220b7da65229c916c98ed854",
+      "sinwol_visuals": "cac8120ed554bdd54cc767898595b3f2b103bd18c5f76777dca70f5fcd233387"
+    },
+    "visuals": {
+      "mt-202603-public-067": "sinwol_visuals"
+    },
+    "simulation_town_ids": [
+      "mt-202603-public-067"
+    ]
   }
 }

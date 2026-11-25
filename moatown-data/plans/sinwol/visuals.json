@@ -1,0 +1,53 @@
+{
+  "town_id": "mt-202603-public-067",
+  "views": [
+    {
+      "id": "sinwol-masterplan-2026-05",
+      "zone_id": null,
+      "title": "신월동 102-33 일대 A1~A4 조감도",
+      "stage": "모아타운 관리계획",
+      "scope": "A1~A4 전체",
+      "source_as_of": "2026-05-22",
+      "source_url": "https://news.seoul.go.kr/citybuild/archives/538493",
+      "source_title": "[서남권] 신월동 102-33번지 일대 모아타운",
+      "source_locator": "본문 상단 ‘변경 후 조감도’",
+      "publisher": "서울특별시 건축기획관 전략주택공급과",
+      "attribution": "서울특별시 전략주택공급과, 2026년. 「[서남권] 신월동 102-33번지 일대 모아타운」의 ‘변경 후 조감도’. 게시물 작성자 김기영.",
+      "license": "공공누리 제4유형 (출처표시·상업적 이용금지·변경금지)",
+      "license_url": "https://www.kogl.or.kr/info/licenseType4.do",
+      "rights_checked_on": "2026-11-25",
+      "rights_evidence": "서울시 게시물 하단에 제4유형이 명시돼 있다. 조감도와 해당 캡션에서 별도의 제3자 권리 표시를 찾지 못했다.",
+      "image": "assets/sinwol/masterplan-2026-05.jpg",
+      "image_source_url": "https://news.seoul.go.kr/citybuild/files/2026/04/69f010d9e45ea2.43852852.jpg",
+      "image_width": 1011,
+      "image_height": 593,
+      "image_sha256": "aced75a4b6faae53108be57b1e5a438eaf9cfceb1c7db5a46248465db38127ee",
+      "alt": "신월1동 네 사업구역의 계획 조감도. 왼쪽에 A1과 A2, 오른쪽에 A3와 A4가 표시되고, 가운데 생활중심가로와 어린이공원, 공공보행통로가 보인다."
+    },
+    {
+      "id": "sinwol-a1-review-2026-11",
+      "zone_id": "mz-plan-584443-a1",
+      "title": "신월동 144-20 일대 A1 조감도",
+      "stage": "가로주택정비사업 사업시행계획안 통합심의",
+      "scope": "A1구역",
+      "source_as_of": "2026-11-13",
+      "source_url": "https://www.seoul.go.kr/news/news_report.do?nttNo=470317",
+      "source_title": "서울시, 양천·중랑 ‘모아주택’ 6곳 2,741세대 공급 속도… 2028년 착공",
+      "source_locator": "참고자료 1 ‘양천구 신월동 144-20 일대 모아주택’의 사업개요 및 조감도",
+      "publisher": "서울특별시 주택실 모아주택과",
+      "attribution": "서울특별시 모아주택과, 2026년 11월 13일 보도자료 참고자료 1.",
+      "license": "공공누리 표시 미확인 · 서울시 원문에서 열람",
+      "license_url": "https://www.seoul.go.kr/helper/copyright.do",
+      "rights_checked_on": "2026-11-25",
+      "rights_evidence": "게시물의 이용허락 표시란은 비어 있고 첨부 조감도에도 별도의 이용허락 표시가 없다. 서울시 저작권 정책은 공공누리 미표시 자료를 이용하려면 사전 협의를 안내한다.",
+      "image": null,
+      "document_url": "https://seoulboard.seoul.go.kr/comm/getFile?srvcId=BBSTY1&upperNo=470317&fileTy=ATTACH&fileNo=2&bbsNo=158",
+      "page_label": "PDF 4쪽 왼쪽 · 인쇄 7쪽",
+      "original_document_url": "https://seoulboard.seoul.go.kr/comm/getFile?srvcId=BBSTY1&upperNo=470317&fileTy=ATTACH&fileNo=1&bbsNo=158",
+      "original_document_member": "BinData/image4.jpg",
+      "original_image_sha256": "5c52d39f16612f334c543ff6a5137a3eb9ce07705ec0fdb787e1ad8cc41cfb00",
+      "alt": "신월동 A1구역의 공동주택과 중앙 녹지, 단지 주변 도로를 비스듬히 내려다본 사업시행계획안 조감도.",
+      "note": "2026년 11월 12일 심의한 계획안의 예시로, 세부 설계에 따라 바뀔 수 있습니다."
+    }
+  ]
+}

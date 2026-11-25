@@ -1,4 +1,4 @@
-﻿import earcut from './vendor/earcut-3.0.2/earcut.mjs?v=669df25d30a5';
+﻿import earcut from './vendor/earcut-3.0.2/earcut.mjs?v=151be3657af1';
 
 const DEG = Math.PI / 180;
 const GROUND = '#f1f3ef';
@@ -77,7 +77,7 @@ function localPart(raw, project) {
   return part;
 }
 
-function buildModel(town, zones, buildings) {
+function buildModel(town, zones, buildings, simulation) {
   const candidates = [town, ...zones, ...buildings].filter(Boolean);
   const reference = candidates.find(item => polygonRings(item.geometry).length);
   if (!reference) throw new Error('표시할 건물 또는 참고 경계 도형이 없습니다.');
@@ -92,7 +92,7 @@ function buildModel(town, zones, buildings) {
     if (!parts.length) return null;
     const props = raw.properties || {};
     return {
-      kind, props, parts, code: next++, id: kind === 'building' ? props.id : props.entity_id,
+      kind, props, parts, code: next++, id: kind === 'building' || kind === 'tower' ? props.id : props.entity_id,
       height: Number.isFinite(props.height_m) && props.height_m > 0 ? props.height_m : 0,
       anchor: parts.reduce((best, part) => part.area > best.area ? part : best).anchor,
     };
@@ -100,13 +100,25 @@ function buildModel(town, zones, buildings) {
   const perimeter = feature(town, 'town');
   const areas = zones.map(raw => feature(raw, 'zone')).filter(Boolean);
   const blocks = buildings.map(raw => feature(raw, 'building')).filter(Boolean);
+  const zonesById = new Map(areas.map(zone => [zone.id, zone]));
+  const towers = [];
+  const simulatedZones = new Set();
+  for (const raw of simulation?.features || []) {
+    const zone = zonesById.get(raw.properties?.zone_id);
+    if (!zone) continue;
+    const tower = feature(raw, 'tower');
+    if (!tower?.height || !Number.isInteger(tower.props.floors) || tower.props.floors < 1) continue;
+    tower.zone = zone;
+    towers.push(tower);
+    simulatedZones.add(zone);
+  }
   const focus = perimeter ? [perimeter] : areas.length ? areas : blocks;
   const focusPoints = focus.flatMap(item => item.parts.flatMap(part => part.rings[0]));
-  return { perimeter, areas, blocks, focusPoints };
+  return { perimeter, areas, blocks, towers, simulatedZones, focusPoints };
 }
 
-function material(current, plan, selected, { code = 0, hideInPlan = false, lift = 0 } = {}) {
-  return { current, plan, selected, code, hideInPlan, lift,
+function material(current, plan, selected, { code = 0, mode = null, lift = 0 } = {}) {
+  return { current, plan, selected, code, mode, lift,
     currentCss: cssColor(current), planCss: cssColor(plan), selectedCss: cssColor(selected) };
 }
 
@@ -152,7 +164,8 @@ function geometry(model) {
   const townLine = material(rgb('#466d64'), rgb('#47776c'), rgb('#466d64'), { lift: 2.1 });
   for (const part of model.perimeter?.parts || []) flat(part, 0, townFill, 0);
   model.areas.forEach((zone, i) => {
-    const fill = material(rgb('#e1e8db'), rgb(PLAN_COLORS[i % PLAN_COLORS.length]), selectedArea, { code: zone.code, lift: .4 });
+    const planFill = model.simulatedZones.has(zone) ? '#dcfce7' : PLAN_COLORS[i % PLAN_COLORS.length];
+    const fill = material(rgb('#e1e8db'), rgb(planFill), selectedArea, { code: zone.code, lift: .4 });
     const border = material(rgb('#99b2a3'), rgb('#5a9084'), rgb('#176354'), { code: zone.code, lift: 1.4 });
     for (const part of zone.parts) {
       flat(part, 0, fill, 1);
@@ -167,36 +180,65 @@ function geometry(model) {
     const current = block.props.is_inside_town === false
       ? tier.map((channel, i) => channel * .34 + context[i] * .66) : tier;
     const selected = rgb('#37947d');
-    const hideInPlan = block.props.is_inside_town !== false;
+    const mode = block.props.is_inside_town !== false ? 'current' : null;
     const paint = (light, lift = 0) => material(shade(current, light), shade(context, .38 + light * .62), shade(selected, light),
-      { code: block.code, hideInPlan, lift });
+      { code: block.code, mode, lift });
     const roof = paint(1.05, .18);
     const rim = paint(.78, .55);
-    const footprint = material(shade(current, .71), rgb('#a7b5af'), selected, { code: block.code, hideInPlan, lift: .95 });
+    const footprint = material(shade(current, .71), rgb('#a7b5af'), selected, { code: block.code, mode, lift: .95 });
     for (const part of block.parts) {
       if (!block.height) { outline(part, 1.05, 0, footprint, 5); continue; }
       const z = block.height;
-      for (const [ringIndex, ring] of part.rings.entries()) {
-        let signed = 0;
-        for (let i = 0; i < ring.length; i++) {
-          const a = ring[i], b = ring[(i + 1) % ring.length];
-          signed += a[0] * b[1] - a[1] * b[0];
-        }
-        const orientation = (signed >= 0 ? 1 : -1) * (ringIndex ? -1 : 1);
-        for (let i = 0; i < ring.length; i++) {
-          const a = ring[i], b = ring[(i + 1) % ring.length];
-          const dx = b[0] - a[0], dy = b[1] - a[1], length = Math.hypot(dx, dy);
-          if (length < .001) continue;
-          // Diffuse incident light from the northwest; walls retain their world orientation on orbit.
-          const sun = (-.58 * dy - .81 * dx) * orientation / length;
-          quad([...a, 0], [...b, 0], [...b, z], [...a, z], paint(.74 + .15 * sun), 6);
-        }
-      }
+      walls(part, (a, b, sun) => quad([...a, 0], [...b, 0], [...b, z], [...a, z], paint(.74 + .15 * sun), 6));
       flat(part, z, roof, 6);
       outline(part, .30, z, rim, 6);
     }
   }
+
+  for (const tower of model.towers) {
+    const style = (color, selected, lift = 0) => material(color, color, selected,
+      { code: tower.zone.code, mode: 'plan', lift });
+    const roof = style(rgb('#f8fafc'), rgb('#e4f3e7'), .12);
+    const rim = style(rgb('#83928f'), rgb('#608c7b'), .45);
+    const shadow = style(rgb('#a2be9c'), rgb('#83afa2'), .65);
+    const floorHeight = tower.height / tower.props.floors;
+    for (const part of tower.parts) {
+      const shadowRings = part.rings.map(ring => ring.map(([x, y]) => [x + 3.5, y - 2.4, 0]));
+      add(shadowRings, shadowRings.flat(), part.indices, shadow, 2);
+      walls(part, (a, b, sun) => {
+        const light = .88 + .11 * sun;
+        const wall = style(shade(rgb('#f8fafc'), light), shade(rgb('#e4f2e8'), light));
+        const band = style(shade(rgb('#bdcbd0'), light), shade(rgb('#a8c5bc'), light));
+        for (let floor = 0; floor < tower.props.floors; floor++) {
+          const bottom = floor * floorHeight, top = (floor + 1) * floorHeight;
+          const lintel = top - floorHeight * .20;
+          quad([...a, bottom], [...b, bottom], [...b, lintel], [...a, lintel], wall, 6);
+          quad([...a, lintel], [...b, lintel], [...b, top], [...a, top], band, 6);
+        }
+      });
+      flat(part, tower.height, roof, 6);
+      outline(part, .65, tower.height, rim, 6);
+    }
+  }
   return surfaces;
+}
+
+function walls(part, draw) {
+  for (const [ringIndex, ring] of part.rings.entries()) {
+    let signed = 0;
+    for (let i = 0; i < ring.length; i++) {
+      const a = ring[i], b = ring[(i + 1) % ring.length];
+      signed += a[0] * b[1] - a[1] * b[0];
+    }
+    const orientation = (signed >= 0 ? 1 : -1) * (ringIndex ? -1 : 1);
+    for (let i = 0; i < ring.length; i++) {
+      const a = ring[i], b = ring[(i + 1) % ring.length];
+      const dx = b[0] - a[0], dy = b[1] - a[1], length = Math.hypot(dx, dy);
+      if (length < .001) continue;
+      // Fixed northwest lighting keeps the appearance consistent as the camera rotates.
+      draw(a, b, (-.58 * dy - .81 * dx) * orientation / length);
+    }
+  }
 }
 
 function makeCanvas() {
@@ -220,7 +262,8 @@ function webglRenderer(canvas, surfaces) {
       float up = north * u_pitch.x + a_pos.z * u_pitch.y;
       float depth = a_pos.z * u_pitch.x - north * u_pitch.y + a_options.z;
       gl_Position = vec4(east * u_scale.x, up * u_scale.y, -depth / 4096.0, 1.0);
-      if (a_options.y > 0.5 && u_plan > 0.5) gl_Position = vec4(2.0,2.0,2.0,1.0);
+      if ((a_options.y < -0.5 && u_plan > 0.5) || (a_options.y > 0.5 && u_plan < 0.5))
+        gl_Position = vec4(2.0,2.0,2.0,1.0);
       v_color = mix(a_current, a_plan, u_plan);
       if (a_options.x > 0.0 && (a_options.x == u_active.x || a_options.x == u_active.y)) v_color = a_selected;
     }`;
@@ -244,7 +287,8 @@ function webglRenderer(canvas, surfaces) {
   const data = new Float32Array(count * stride);
   let offset = 0;
   for (const { indices, points, paint } of surfaces) {
-    const style = [...paint.current, ...paint.plan, ...paint.selected, paint.code, Number(paint.hideInPlan), paint.lift];
+    const mode = paint.mode === 'current' ? -1 : paint.mode === 'plan' ? 1 : 0;
+    const style = [...paint.current, ...paint.plan, ...paint.selected, paint.code, mode, paint.lift];
     for (const index of indices) {
       data.set(points[index], offset);
       data.set(style, offset + 3);
@@ -309,7 +353,7 @@ function canvasRenderer(canvas, surfaces) {
       }
       faces.sort((a, b) => a.group - b.group || a.depth - b.depth);
       for (const { paint, rings } of faces) {
-        if (view.plan && paint.hideInPlan) continue;
+        if (paint.mode && paint.mode !== (view.plan ? 'plan' : 'current')) continue;
         const active = paint.code && (paint.code === view.zone || paint.code === view.building);
         ctx.fillStyle = active ? paint.selectedCss : view.plan ? paint.planCss : paint.currentCss;
         ctx.beginPath();
@@ -344,9 +388,8 @@ function groundPoint(v, x, y) {
 function pick(view, model, sx, sy) {
   const [x, y] = groundPoint(view, sx, sy);
   const zoneAtPoint = () => model.areas.find(area => area.parts.some(part => contains(part, x, y)));
-  if (view.plan) return zoneAtPoint();
   let best = -1, hit = null;
-  for (const block of model.blocks) {
+  for (const block of view.plan ? model.towers : model.blocks) {
     const distance = block.height * view.sinP / view.cosP;
     const dx = view.sinB * distance, dy = -view.cosB * distance;
     for (const part of block.parts) {
@@ -372,7 +415,7 @@ function pick(view, model, sx, sy) {
       }
     }
   }
-  return hit || zoneAtPoint();
+  return hit?.zone || hit || zoneAtPoint();
 }
 
 const SCENE_STYLE = `
@@ -409,8 +452,8 @@ function labelText(props) {
   return fields.length ? fields.join(' · ') : '층수·높이 미확인';
 }
 
-export async function createPilotScene(container, { buildings, town, zones, selectedZoneId = null, onSelect } = {}) {
-  const model = buildModel(town, zones?.features || [], buildings?.features || []);
+export async function createPilotScene(container, { buildings, town, zones, simulation, selectedZoneId = null, onSelect } = {}) {
+  const model = buildModel(town, zones?.features || [], buildings?.features || [], simulation);
   let surfaces = geometry(model);
   const host = document.createElement('div');
   host.className = 'pilot-world';
@@ -507,7 +550,7 @@ export async function createPilotScene(container, { buildings, town, zones, sele
     const ordered = [...labels].sort((a, b) => Number(b.zone === activeZone) - Number(a.zone === activeZone));
     for (const { zone, button, metrics } of ordered) {
       button.setAttribute('aria-pressed', String(zone === activeZone));
-      metrics.hidden = !v.plan;
+      metrics.hidden = !v.plan || model.simulatedZones.has(zone);
       button.hidden = false;
       const [x, y] = screenPoint(v, ...zone.anchor);
       const w = button.offsetWidth, h = button.offsetHeight;

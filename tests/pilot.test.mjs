@@ -16,6 +16,20 @@ test('pilot input versions and available towns match both published data catalog
   assert.deepEqual(latest.pilot_3d.town_ids,['mt-202603-public-010','mt-202603-public-034','mt-202603-public-067']);
 });
 
+test('only Sinwol publishes simulated towers and an original, attributed whole-town illustration',()=>{
+  const town='mt-202603-public-067';
+  assert.deepEqual(latest.pilot_3d.simulation_town_ids,[town]);
+  assert.deepEqual(Object.keys(latest.pilot_3d.visuals),[town]);
+  const catalog=read(source(latest.pilot_3d.visuals[town]));
+  assert.equal(catalog.town_id,town);
+  const picture=catalog.views.find(v=>v.image);
+  assert.equal(picture.zone_id,null);
+  assert.ok(picture.attribution && picture.license_url && picture.source_as_of);
+  const bytes=readFileSync(new URL('../'+picture.image,root));
+  assert.equal(createHash('sha256').update(bytes).digest('hex'),picture.image_sha256);
+  assert.ok(catalog.views.some(v=>v.zone_id==='mz-plan-584443-a1' && v.document_url && v.page_label));
+});
+
 test('published pilot parts have unique complete buildings and reproducible coverage counts',()=>{
   const index=read(source('buildings'));
   for(const entry of Object.values(index.towns)){

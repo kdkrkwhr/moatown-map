@@ -7,8 +7,8 @@
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <title>서울 모아타운 현황지도</title>
   <link rel="sitemap" type="application/xml" href="./sitemap.xml">
-  <link rel="stylesheet" href="./styles.css?v=669df25d30a5">
-  <script type="module" src="./app.mjs?v=669df25d30a5"></script>
+  <link rel="stylesheet" href="./styles.css?v=151be3657af1">
+  <script type="module" src="./app.mjs?v=151be3657af1"></script>
 </head>
 <body data-loading="true">
 <a class="skip" href="#explorer">대상지 탐색으로 바로가기</a>
@@ -112,11 +112,14 @@
     <div class="pilot-modes" role="group" aria-label="3D 표시 자료">
       <button type="button" data-pilot-mode="current" aria-pressed="true">현재 건물</button>
       <button type="button" data-pilot-mode="plan" aria-pressed="false">사업 계획</button>
+      <button type="button" data-pilot-mode="visual" aria-pressed="false" hidden>공식 조감도</button>
     </div>
   </header>
+  <p id="pilot-simulation-notice" hidden>※ 본 3D 단지 배치는 계획 최고 층수·면적을 바탕으로 자동 생성된 참고용 시뮬레이션이며, 실제 건축 설계와 다릅니다.</p>
   <div class="pilot-layout">
     <div class="pilot-stage">
       <div id="pilot-scene"></div>
+      <figure id="pilot-illustration" hidden></figure>
       <div id="pilot-tools" aria-label="3D 시점 조절">
         <button type="button" data-camera="in" aria-label="3D 확대">＋</button>
         <button type="button" data-camera="out" aria-label="3D 축소">−</button>
@@ -129,7 +132,7 @@
     <aside class="pilot-info" aria-label="선택한 3D 자료">
       <label class="pilot-select">구역 선택 <select id="pilot-zone"></select></label>
       <div id="pilot-inspector" aria-live="polite"></div>
-      <details class="pilot-evidence"><summary>지도 조작 방법</summary><p class="pilot-meta">한 손가락으로 지도를 옮기고, 두 손가락으로 확대·회전하거나 위아래로 밀어 기울기를 바꿉니다. 마우스는 드래그로 이동하고 Shift를 누른 채 드래그해 회전합니다.</p></details>
+      <details id="pilot-gestures" class="pilot-evidence"><summary>지도 조작 방법</summary><p class="pilot-meta">한 손가락으로 지도를 옮기고, 두 손가락으로 확대·회전하거나 위아래로 밀어 기울기를 바꿉니다. 마우스는 드래그로 이동하고 Shift를 누른 채 드래그해 회전합니다.</p></details>
     </aside>
   </div>
 </dialog>
