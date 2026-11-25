@@ -1,4 +1,4 @@
-import {formatValue,unitsChange,projectIntervals,compareInterval} from './detail-format.mjs?v=b93a69eb7395';
+import {formatValue,unitsChange,projectIntervals,compareInterval} from './detail-format.mjs?v=5003ff356a32';
 
 const pending='미고시';
 const date=v=>formatValue(v,'date');
@@ -118,14 +118,23 @@ function permitLabel(p){
   return p.roads_only?'지정 · 도로 한정':'지정';
 }
 
-function regulations(card,r,town,zone,boundary,cityRule){
+function regulationLabels(r,town){
+  const child=r!==town;
+  return {
+    cutoff:cutoffLabel(r)===pending && child && cutoffLabel(town)!==pending?'상위 대상지 고시 있음':cutoffLabel(r),
+    permit:permitLabel(r.land_transaction_permit)===pending && child && permitLabel(town.land_transaction_permit)!==pending?'상위 대상지 공고 있음':permitLabel(r.land_transaction_permit)
+  };
+}
+
+function regulations(card,r,town,zone,boundary,cityRule,openTownRules){
   const facts=el('dl',null,'facts'),p=r.land_transaction_permit;
-  field(facts,'권리산정기준일',cutoffLabel(r));
+  const labels=regulationLabels(r,town);
+  field(facts,'권리산정기준일',labels.cutoff);
   const evidence=r.field_evidence?.rights_cutoff_date;
   const proof=link(evidence?.source_url,evidence?.notice_number??'근거 고시 원문');
   const cutoff=field(facts,'권리산정 근거 고시',proof?.textContent??evidence?.notice_number);
   if(proof)cutoff.lastChild.replaceChildren(proof);
-  field(facts,'토지거래허가구역',permitLabel(p));
+  field(facts,'토지거래허가구역',labels.permit);
   field(facts,'지정 기간',p?.start_date || p?.end_date?[p.start_date,p.end_date].map(date).join(' ~ '):null);
   field(facts,'지정 범위',p?.scope??(p?.roads_only?'지목이 도로인 토지':null));
   const permitProof=r.field_evidence?.land_transaction_permit;
@@ -139,6 +148,12 @@ function regulations(card,r,town,zone,boundary,cityRule){
   }
   field(facts,'대표 위치',r.representative_point?(r.representative_point_evidence?.address??r.registered_address??town.address):null);
   card.append(facts);
+  if(zone && openTownRules && (labels.cutoff!==cutoffLabel(r) || labels.permit!==permitLabel(p))){
+    const box=notice('세부구역의 필지별 적용 범위는 상위 대상지 고시의 도면과 조서에서 확인할 수 있습니다.');
+    const button=el('button',town.name+' 규제 근거 보기','source-link');
+    button.type='button';button.addEventListener('click',openTownRules);
+    box.append(el('br'),button);card.append(box);
+  }
   if(boundary?.kind==='official_notice_drawing'){
     const box=notice('점선은 고시 도면의 구역선을 지도에 옮긴 것입니다. 개별 필지의 포함 여부는 원문에서 확인하세요.');
     const source=link(boundary.source_url,boundary.notice_number+' · 도면 '+boundary.pdf_page+'쪽');
@@ -444,7 +459,8 @@ function summary(town,zone,intervals,badge,copyLink,comparison){
   const badges=el('div',null,'summary-badges');
   const stageNode=stage?badge(stage):el('span','추진 단계 '+pending,'status-tag unverified');
   badges.append(stageNode);
-  for(const [label,value] of [['권리산정기준일',cutoffLabel(r)],['토지거래허가구역',permitLabel(r.land_transaction_permit)]]){
+  const rules=regulationLabels(r,town);
+  for(const [label,value] of [['권리산정기준일',rules.cutoff],['토지거래허가구역',rules.permit]]){
     const chip=el('span',null,'regulation-chip'+(value===pending?' unverified':''));
     chip.append(label+' ',el('b',value));badges.append(chip);
   }
@@ -508,7 +524,7 @@ function detailTabs(container,children,designated){
   return {panels,activate};
 }
 
-export function renderProjectDetail(container,{town,zone,children,boundaries,snapshot,cityRule,registryUrl,stats,select,badge,copyLink,expandDetail,initialTab,openPilot,openPlan}){
+export function renderProjectDetail(container,{town,zone,children,boundaries,snapshot,cityRule,registryUrl,stats,select,badge,copyLink,expandDetail,initialTab,openPilot,openPlan,openTownRules}){
   const r=zone??town,boundary=boundaries.get(r.id),intervals=projectIntervals(town,zone,snapshot);
   const comparison=!zone && children.length?comparePlans(children):null;
   const header=summary(town,zone,intervals,badge,copyLink,comparison);
@@ -537,7 +553,7 @@ export function renderProjectDetail(container,{town,zone,children,boundaries,sna
   const records=section(panels.schedule,'sources','출처 및 기준일');
   sources(records,r,snapshot,boundary,intervals.map(step=>step.event),registryUrl,reportIssueUrl(town,zone));
   metrics(panels.business,r,zone?[]:children);
-  regulations(section(panels.business,'regulation','거래·규제 상세'),r,town,zone,boundary,cityRule);
+  regulations(section(panels.business,'regulation','거래·규제 상세'),r,town,zone,boundary,cityRule,openTownRules);
   subAreas(panels.areas,town,zone,children,boundaries,select,badge);
   activate(initialTab??(zone?'areas':'schedule'));
 }

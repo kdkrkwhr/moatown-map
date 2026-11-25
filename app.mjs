@@ -1,11 +1,11 @@
-import {projectUrl,renderProjectDetail,showUnplacedProgram} from './detail-view.mjs?v=b93a69eb7395';
-import {durationSamples,elapsedMonths,formatValue} from './detail-format.mjs?v=b93a69eb7395';
+import {projectUrl,renderProjectDetail,showUnplacedProgram} from './detail-view.mjs?v=5003ff356a32';
+import {durationSamples,elapsedMonths,formatValue} from './detail-format.mjs?v=5003ff356a32';
 export {elapsedMonths};
-import {loadMaps,createProjectMap} from './map-engine.mjs?v=b93a69eb7395';
-import {loadNews,matchNews,newsCard,sourceLabels} from './news.mjs?v=b93a69eb7395';
-import {searchProjects,managementFilters,progressFilters,recentProjectDates} from './project-search.mjs?v=b93a69eb7395';
-import {mountAddressLookup} from './address-reference.mjs?v=b93a69eb7395';
-import {mountPilotViewer} from './pilot-viewer.mjs?v=b93a69eb7395';
+import {loadMaps,createProjectMap} from './map-engine.mjs?v=5003ff356a32';
+import {loadNews,matchNews,newsCard,sourceLabels} from './news.mjs?v=5003ff356a32';
+import {searchProjects,managementFilters,progressFilters,recentProjectDates} from './project-search.mjs?v=5003ff356a32';
+import {mountAddressLookup} from './address-reference.mjs?v=5003ff356a32';
+import {mountPilotViewer} from './pilot-viewer.mjs?v=5003ff356a32';
 const mobileMapQuery='(max-width: 760px) and (orientation: portrait), (max-width: 540px)';
 function initialSheetHeight(selection,hasFilters,mobile){
   if(!mobile)return 1;
@@ -392,6 +392,7 @@ export function mount({manifest,towns,zones,boundaries,excluded=[]},sdk){
     renderProjectDetail(detail,{town,zone,children,boundaries:boundaryProps,snapshot:manifest.snapshot_date,cityRule:current.cancellation?null:manifest.seoul_road_permit,
       registryUrl:manifest.source_urls?.official_project_registry,stats:planStats,select:(townId,zoneId,preview)=>select(townId,zoneId,null,preview?undefined:'areas'),
       expandDetail:()=>{if(mobile.matches)setSheetHeight(2);},badge:stageBadge,copyLink,initialTab,
+      openTownRules:zone?()=>select(town.id,null,null,'business'):null,
       openPilot:pilot.supports(town.id)?()=>pilot.open(town.id,zone?.id):null,
       openPlan:manifest.pilot_3d?.simulation_inputs?.[town.id] && (!zone||manifest.pilot_3d.simulation_inputs[town.id].zone_ids.includes(zone.id))?
         ()=>pilot.open(town.id,zone?.id,true,'after'):null});
