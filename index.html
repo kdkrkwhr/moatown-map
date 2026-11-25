@@ -16,8 +16,8 @@
   <meta property="og:image" content="https://moatownmap.com/assets/seoul-panorama.webp">
   <meta property="og:image:alt" content="서울 시가지 전경">
   <link rel="sitemap" type="application/xml" href="/sitemap.xml">
-  <link rel="stylesheet" href="./styles.css?v=7469a89f1e9a">
-  <script type="module" src="./app.mjs?v=7469a89f1e9a"></script>
+  <link rel="stylesheet" href="./styles.css?v=8847e6027c36">
+  <script type="module" src="./app.mjs?v=8847e6027c36"></script>
 </head>
 <body data-loading="true">
 <a class="skip" href="#explorer">대상지 탐색으로 바로가기</a>
@@ -115,45 +115,55 @@
   <small>서울 25개 구 필지 내부 대표점 · 2026.11.24 조회 · <a href="https://land.seoul.go.kr/land/map/land/map.do" target="_blank" rel="noopener">서울부동산정보광장</a></small>
 </dialog>
 <dialog id="pilot-viewer" aria-labelledby="pilot-title">
-  <header class="pilot-heading">
-    <button id="pilot-back" type="button" aria-label="지도로 돌아가기">← 지도</button>
-    <div><small id="pilot-district"></small><h2 id="pilot-title"></h2></div>
-    <div class="pilot-modes" role="group" aria-label="3D 표시 자료">
-      <button type="button" data-pilot-mode="current" aria-pressed="true">기존 건물</button>
-      <button type="button" data-pilot-mode="plan" aria-pressed="false">사업 계획</button>
-      <button type="button" data-pilot-mode="visual" aria-pressed="false" hidden>공식 조감도</button>
+  <div id="pilot-frame">
+    <header class="pilot-heading">
+      <button id="pilot-back" type="button" aria-label="지도로 돌아가기">← 지도</button>
+      <div><small id="pilot-district"></small><h2 id="pilot-title"></h2></div>
+      <div class="pilot-modes" role="group" aria-label="3D 표시 자료">
+        <button type="button" data-pilot-mode="current" aria-pressed="true">기존 건물</button>
+        <button type="button" data-pilot-mode="plan" aria-pressed="false">사업 계획</button>
+        <button type="button" data-pilot-mode="visual" aria-pressed="false" hidden>공식 조감도</button>
+      </div>
+      <button id="pilot-info-toggle" type="button" aria-controls="pilot-info" aria-expanded="true" hidden>구역 정보</button>
+      <button id="pilot-fullscreen" type="button" aria-controls="pilot-frame" aria-label="전체화면" title="전체화면">
+        <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path class="expand-icon" d="M8 3H3v5m13-5h5v5M3 16v5h5m8 0h5v-5"/>
+          <path class="restore-icon" d="M3 8h5V3m8 0v5h5M8 21v-5H3m18 0h-5v5"/>
+        </svg>
+        <span>전체화면</span>
+      </button>
+    </header>
+    <p id="pilot-simulation-notice" hidden>※ 본 3D 단지 배치는 계획 최고 층수·면적을 바탕으로 자동 생성된 참고용 시뮬레이션이며, 실제 건축 설계와 다릅니다.</p>
+    <div class="pilot-layout">
+      <div class="pilot-stage">
+        <div id="pilot-scene"></div>
+        <figure id="pilot-illustration" hidden></figure>
+        <div id="pilot-current-style" class="pilot-display-switch" role="group" aria-label="현재 건물 표시 방식" hidden>
+          <button type="button" data-current-style="exterior" aria-pressed="true">건물 외관</button>
+          <button type="button" data-current-style="age" aria-pressed="false">연식 색상</button>
+        </div>
+        <div id="pilot-placement" class="pilot-display-switch" role="group" aria-label="건축 후 배치 방식" hidden>
+          <button type="button" data-placement="design" aria-pressed="true">계획자료 반영</button>
+          <button type="button" data-placement="spaced" aria-pressed="false">35m 간격 예시</button>
+          <button type="button" data-placement="zones" aria-pressed="false" hidden>세부구역별</button>
+          <button type="button" data-placement="town" aria-pressed="false" hidden>대상지 전체</button>
+        </div>
+        <div id="pilot-tools" aria-label="3D 시점 조절">
+          <button type="button" data-camera="in" aria-label="3D 확대">＋</button>
+          <button type="button" data-camera="out" aria-label="3D 축소">−</button>
+          <button type="button" data-camera="left" aria-label="왼쪽으로 회전">↶</button>
+          <button type="button" data-camera="right" aria-label="오른쪽으로 회전">↷</button>
+          <button type="button" data-camera="reset">초기화</button>
+        </div>
+        <div id="pilot-loading" role="status"><span></span><button type="button" hidden>다시 시도</button></div>
+      </div>
+      <aside id="pilot-info" class="pilot-info" aria-label="선택한 3D 자료">
+        <details id="pilot-reference" hidden><summary>대상지 전체 조감도 함께 보기</summary><div></div></details>
+        <label class="pilot-select">구역 선택 <select id="pilot-zone"></select></label>
+        <div id="pilot-inspector" aria-live="polite"></div>
+        <details id="pilot-gestures" class="pilot-evidence"><summary>지도 조작 방법</summary><p class="pilot-meta">한 손가락으로 지도를 옮기고, 두 손가락으로 확대·회전하거나 위아래로 밀어 기울기를 바꿉니다. 마우스는 드래그로 이동하고 Shift를 누른 채 드래그해 회전합니다.</p></details>
+      </aside>
     </div>
-  </header>
-  <p id="pilot-simulation-notice" hidden>※ 본 3D 단지 배치는 계획 최고 층수·면적을 바탕으로 자동 생성된 참고용 시뮬레이션이며, 실제 건축 설계와 다릅니다.</p>
-  <div class="pilot-layout">
-    <div class="pilot-stage">
-      <div id="pilot-scene"></div>
-      <figure id="pilot-illustration" hidden></figure>
-      <div id="pilot-current-style" class="pilot-display-switch" role="group" aria-label="현재 건물 표시 방식" hidden>
-        <button type="button" data-current-style="exterior" aria-pressed="true">건물 외관</button>
-        <button type="button" data-current-style="age" aria-pressed="false">연식 색상</button>
-      </div>
-      <div id="pilot-placement" class="pilot-display-switch" role="group" aria-label="건축 후 배치 방식" hidden>
-        <button type="button" data-placement="design" aria-pressed="true">계획자료 반영</button>
-        <button type="button" data-placement="spaced" aria-pressed="false">35m 간격 예시</button>
-        <button type="button" data-placement="zones" aria-pressed="false" hidden>세부구역별</button>
-        <button type="button" data-placement="town" aria-pressed="false" hidden>대상지 전체</button>
-      </div>
-      <div id="pilot-tools" aria-label="3D 시점 조절">
-        <button type="button" data-camera="in" aria-label="3D 확대">＋</button>
-        <button type="button" data-camera="out" aria-label="3D 축소">−</button>
-        <button type="button" data-camera="left" aria-label="왼쪽으로 회전">↶</button>
-        <button type="button" data-camera="right" aria-label="오른쪽으로 회전">↷</button>
-        <button type="button" data-camera="reset">초기화</button>
-      </div>
-      <div id="pilot-loading" role="status"><span></span><button type="button" hidden>다시 시도</button></div>
-    </div>
-    <aside class="pilot-info" aria-label="선택한 3D 자료">
-      <details id="pilot-reference" hidden><summary>대상지 전체 조감도 함께 보기</summary><div></div></details>
-      <label class="pilot-select">구역 선택 <select id="pilot-zone"></select></label>
-      <div id="pilot-inspector" aria-live="polite"></div>
-      <details id="pilot-gestures" class="pilot-evidence"><summary>지도 조작 방법</summary><p class="pilot-meta">한 손가락으로 지도를 옮기고, 두 손가락으로 확대·회전하거나 위아래로 밀어 기울기를 바꿉니다. 마우스는 드래그로 이동하고 Shift를 누른 채 드래그해 회전합니다.</p></details>
-    </aside>
   </div>
 </dialog>
 </body>

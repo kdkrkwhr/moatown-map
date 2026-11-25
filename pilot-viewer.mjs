@@ -322,9 +322,49 @@ export function mountPilotViewer({manifest,boundaries,townById,groups}){
   const figure=get('pilot-illustration'),notice=get('pilot-simulation-notice');
   const reference=get('pilot-reference'),placement=get('pilot-placement');
   const currentSwitch=get('pilot-current-style');
+  const frame=get('pilot-frame'),fullscreen=get('pilot-fullscreen');
+  const info=get('pilot-info'),infoToggle=get('pilot-info-toggle');
   const config=manifest.pilot_3d,base=new URL('./moatown-data/',document.baseURI);
   const supports=id=>Boolean(config?.town_ids?.includes(id));
   let active=null;
+
+  function showInfo(visible){
+    info.hidden=!visible;
+    infoToggle.setAttribute('aria-expanded',String(visible));
+  }
+  function setExpanded(expanded){
+    dialog.classList.toggle('is-expanded',expanded);
+    const label=expanded?'전체화면 종료':'전체화면';
+    fullscreen.querySelector('span').textContent=label;
+    fullscreen.setAttribute('aria-label',label);fullscreen.title=label;
+    infoToggle.hidden=!expanded;
+    showInfo(!expanded);
+  }
+  function exitExpanded(){
+    setExpanded(false);
+    if(document.fullscreenElement===frame){
+      document.exitFullscreen().catch(()=>{
+        if(active && document.fullscreenElement===frame)setExpanded(true);
+      });
+    }
+  }
+  fullscreen.onclick=()=>{
+    if(dialog.classList.contains('is-expanded')){exitExpanded();return;}
+    setExpanded(true);
+    // A modal dialog cannot enter native fullscreen itself. Its contents can.
+    // The viewport layout also works when a browser declines the request.
+    if(document.fullscreenEnabled && frame.requestFullscreen && !document.fullscreenElement){
+      frame.requestFullscreen({navigationUI:'hide'}).catch(()=>{});
+    }
+  };
+  frame.addEventListener('fullscreenchange',()=>{
+    if(document.fullscreenElement===frame){
+      if(!active || !dialog.classList.contains('is-expanded'))exitExpanded();
+    }else{
+      setExpanded(false);
+    }
+  });
+  infoToggle.onclick=()=>showInfo(info.hidden);
 
   function showReference(mode,catalog){
     const current=mode==='current';
@@ -585,7 +625,7 @@ export function mountPilotViewer({manifest,boundaries,townById,groups}){
       const indexUrl=new URL(manifest.files.buildings,base),planUrl=new URL(manifest.files.pilot_plans,base);
       const inputsForTown=config.simulation_inputs?.[town.id];
       const [index,planBook,{createPilotScene},expanded]=await Promise.all([fetchJson(indexUrl,signal,config.hashes.buildings),
-        session.hasPlan && !inputsForTown?.path?fetchJson(planUrl,signal,config.hashes.pilot_plans):null,import('./pilot-scene.mjs?v=7469a89f1e9a'),
+        session.hasPlan && !inputsForTown?.path?fetchJson(planUrl,signal,config.hashes.pilot_plans):null,import('./pilot-scene.mjs?v=8847e6027c36'),
         inputsForTown?.path?fetchJson(new URL(inputsForTown.path,base),signal,inputsForTown.sha256):null]);
       if(expanded && expanded.town_id!==town.id)throw Error('예상 배치의 대상지 ID가 다릅니다.');
       const entry=index.towns[town.id],plans=expanded??planBook?.towns[town.id];
@@ -625,7 +665,7 @@ export function mountPilotViewer({manifest,boundaries,townById,groups}){
         simulation=session.simulate(session.placement);
       }else if(session.canSimulate){
         const modelAreas=areas.filter(a=>inputsForTown.zone_ids.includes(a.properties.entity_id));
-        const [module,inputs]=await Promise.all([import('./pilot-simulation.mjs?v=7469a89f1e9a'),
+        const [module,inputs]=await Promise.all([import('./pilot-simulation.mjs?v=8847e6027c36'),
           Promise.all([inputsForTown.design,inputsForTown.public_space,inputsForTown.layout].map(key=>key?fetchInput(key):null)).catch(error=>{designError=error;return null;})]);
         if(active!==session)return;
         const layout=inputs?.[2];
@@ -644,6 +684,7 @@ export function mountPilotViewer({manifest,boundaries,townById,groups}){
         partialPlan:Boolean(expanded),...(session.canSimulate?{initialBearing:18,initialPitch:42}:{}),
         onSelect:({kind,id})=>{
           if(active!==session)return;
+          if(dialog.classList.contains('is-expanded'))showInfo(true);
           if(kind==='zone')selectZone(id);
           else if(kind==='building'){session.building=session.data.byId.get(id);drawDetails();}
         }};
@@ -673,6 +714,7 @@ export function mountPilotViewer({manifest,boundaries,townById,groups}){
   }
   function close(){
     if(!active)return;
+    exitExpanded();
     active.controller.abort();active.scene?.destroy();active=null;
     dialog.close();sceneBox.replaceChildren();inspector.replaceChildren();choice.replaceChildren();figure.replaceChildren();dialog.dataset.ready='false';
     reference.querySelector('div').replaceChildren();
@@ -715,7 +757,10 @@ export function mountPilotViewer({manifest,boundaries,townById,groups}){
     return params.get('town')===current.townId && params.get('zone')===(current.zoneId??null) && fromUrl(current);
   }
   get('pilot-back').onclick=back;
-  dialog.addEventListener('cancel',event=>{event.preventDefault();back();});
+  dialog.addEventListener('cancel',event=>{
+    event.preventDefault();
+    if(dialog.classList.contains('is-expanded'))exitExpanded();else back();
+  });
   currentSwitch.onclick=event=>{
     const style=event.target.closest('button')?.dataset.currentStyle;
     if(!style||!active?.scene)return;
