@@ -465,7 +465,7 @@ export function mountPilotViewer({manifest,boundaries,townById,groups}){
       const fetchInput=key=>fetchJson(new URL(manifest.files[key],base),signal,config.hashes[key]);
       const indexUrl=new URL(manifest.files.buildings,base),planUrl=new URL(manifest.files.pilot_plans,base);
       const [index,planBook,{createPilotScene}]=await Promise.all([fetchJson(indexUrl,signal,config.hashes.buildings),
-        session.hasPlan?fetchJson(planUrl,signal,config.hashes.pilot_plans):null,import('./pilot-scene.mjs?v=f435fadf993b')]);
+        session.hasPlan?fetchJson(planUrl,signal,config.hashes.pilot_plans):null,import('./pilot-scene.mjs?v=4a9e5be231e1')]);
       const entry=index.towns[town.id],plans=planBook?.towns[town.id];
       async function fetchDetails(){
         const book=await fetchInput(session.detailKey);
@@ -498,7 +498,7 @@ export function mountPilotViewer({manifest,boundaries,townById,groups}){
       const mappedZones=new Set(areas.map(f=>f.properties.entity_id));
       let simulation=null,design=null,publicSpace=null,designError=null;
       if(session.canSimulate){
-        const [module,inputs]=await Promise.all([import('./pilot-simulation.mjs?v=f435fadf993b'),
+        const [module,inputs]=await Promise.all([import('./pilot-simulation.mjs?v=4a9e5be231e1'),
           Promise.all(['sinwol_design','sinwol_public_space','sinwol_layout'].map(fetchInput)).catch(error=>{designError=error;return null;})]);
         if(active!==session)return;
         const layout=inputs?.[2];

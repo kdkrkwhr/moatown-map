@@ -1,11 +1,11 @@
-import {renderProjectDetail} from './detail-view.mjs?v=f435fadf993b';
-import {durationSamples,elapsedMonths,formatValue} from './detail-format.mjs?v=f435fadf993b';
+import {projectUrl,renderProjectDetail} from './detail-view.mjs?v=4a9e5be231e1';
+import {durationSamples,elapsedMonths,formatValue} from './detail-format.mjs?v=4a9e5be231e1';
 export {elapsedMonths};
-import {loadMaps,createProjectMap} from './map-engine.mjs?v=f435fadf993b';
-import {loadNews,matchNews,newsCard,sourceLabels} from './news.mjs?v=f435fadf993b';
-import {searchProjects,managementFilters,progressFilters,recentProjectDates} from './project-search.mjs?v=f435fadf993b';
-import {mountAddressLookup} from './address-reference.mjs?v=f435fadf993b';
-import {mountPilotViewer} from './pilot-viewer.mjs?v=f435fadf993b';
+import {loadMaps,createProjectMap} from './map-engine.mjs?v=4a9e5be231e1';
+import {loadNews,matchNews,newsCard,sourceLabels} from './news.mjs?v=4a9e5be231e1';
+import {searchProjects,managementFilters,progressFilters,recentProjectDates} from './project-search.mjs?v=4a9e5be231e1';
+import {mountAddressLookup} from './address-reference.mjs?v=4a9e5be231e1';
+import {mountPilotViewer} from './pilot-viewer.mjs?v=4a9e5be231e1';
 const mobileMapQuery='(max-width: 760px) and (orientation: portrait), (max-width: 540px)';
 function initialSheetHeight(selection,hasFilters,mobile){
   if(!mobile)return 1;
@@ -346,7 +346,7 @@ export function mount({manifest,towns,zones,boundaries,excluded=[]},sdk){
   let toastTimer;
   async function copyLink(){
     writeUrl(true);
-    const url=location.href,toast=get('share-status');
+    const url=projectUrl().href+location.search+location.hash,toast=get('share-status');
     let copied=false;
     try{await navigator.clipboard.writeText(url);copied=true;}catch{
       const previous=document.activeElement,input=el('textarea');
@@ -360,6 +360,10 @@ export function mount({manifest,towns,zones,boundaries,excluded=[]},sdk){
   function renderPanel(initialTab){
     const town=townById.get(current.townId)??cancellations.get(current.cancellation),zone=zoneById.get(current.zoneId);
     document.title=town?(zone??town).name+' 모아타운 현황 - '+defaultTitle:defaultTitle;
+    const canonical=projectUrl(town,zone).href;
+    document.querySelector('link[rel="canonical"]').href=canonical;
+    document.querySelector('meta[property="og:url"]').content=canonical;
+    document.querySelector('meta[property="og:title"]').content=document.title;
     get('list-view').hidden=Boolean(town);get('detail-view').hidden=!town;
     get('back-results').hidden=!town;
     updateSheetLabel();

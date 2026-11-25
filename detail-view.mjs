@@ -1,4 +1,4 @@
-import {formatValue,unitsChange,projectIntervals,compareInterval} from './detail-format.mjs?v=f435fadf993b';
+import {formatValue,unitsChange,projectIntervals,compareInterval} from './detail-format.mjs?v=4a9e5be231e1';
 
 const pending='미고시';
 const date=v=>formatValue(v,'date');
@@ -276,12 +276,16 @@ function publisher(url){
   if(h.endsWith('data.go.kr'))return '공공데이터포털';
   return h;
 }
+export function projectUrl(town,zone){
+  const map=new URL('https://moatownmap.com/');
+  if(town?.id)map.searchParams.set('town',town.id);
+  else if(town?.address_raw)map.searchParams.set('cancellation',town.address_raw);
+  if(zone)map.searchParams.set('zone',zone.id);
+  return map;
+}
 export function reportIssueUrl(town,zone){
   const record=zone??town;
-  const map=new URL('https://kdkrkwhr.github.io/moatown-map/');
-  if(town.id)map.searchParams.set('town',town.id);
-  else map.searchParams.set('cancellation',town.address_raw);
-  if(zone)map.searchParams.set('zone',zone.id);
+  const map=projectUrl(town,zone);
   const issue=new URL('https://github.com/kdkrkwhr/moatown-map/issues/new');
   const name=record.name.startsWith(town.district+' ')?record.name:town.district+' '+record.name;
   issue.searchParams.set('title','[정보 제보] '+name);

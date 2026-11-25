@@ -46,6 +46,7 @@ test('issue drafts carry the selected identifiers and a clean share link',()=>{
     assert.ok(url.searchParams.get('title').includes((child??town).name));
     const body=url.searchParams.get('body'),map=new URL(body.match(/https:\/\/[^\s]+/)[0]);
     assert.ok(body.includes('대상지 ID: '+town.id));
+    assert.equal(map.origin+map.pathname,'https://moatownmap.com/');
     assert.equal(body.includes('세부 구역 ID: '+zone.id),Boolean(child));
     assert.equal(map.searchParams.get('town'),town.id);
     assert.equal(map.searchParams.get('zone'),child?.id??null);
@@ -55,7 +56,7 @@ test('issue drafts carry the selected identifiers and a clean share link',()=>{
 });
 
 test('the public sitemap includes one clean URL per town and child',()=>{
-  const root='https://kdkrkwhr.github.io/moatown-map/';
+  const root='https://moatownmap.com/';
   const xml=readFileSync(new URL('../sitemap.xml',import.meta.url),'utf8');
   const urls=Array.from(xml.matchAll(/<loc>([^<]+)<\/loc>/g),m=>m[1].replaceAll('&amp;','&'));
   const expected=[root,root+'news.html',...towns.map(t=>root+'?town='+t.id),...zones.map(z=>root+'?town='+z.town_id+'&zone='+z.id)];

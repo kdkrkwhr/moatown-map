@@ -6,7 +6,7 @@
 
 거리 재기는 두 지점의 직선거리를 네이버 지도 투영 좌표로 계산합니다. 도보 시간은 분당 67m를 적용한 추정값입니다. 실제 보행 경로와 소요 시간은 달라질 수 있습니다.
 
-카카오 우편번호 서비스에서 선택한 서울 주소는 네이버 Geocoding으로 좌표를 조회합니다. 좌표가 있는 주소는 Turf로 수록된 서울 전체 대상지 외곽과 비교하며 경계 5m 이내를 구분합니다. 마포구 지번은 자체 색인을 먼저 조회합니다. 공개 Maps Client ID의 Web 서비스 URL에 배포 도메인을 등록하고 Dynamic Map과 Geocoding 사용 권한을 각각 설정합니다. [네이버 Maps 애플리케이션 설정](https://guide.ncloud-docs.com/docs/maps-app/) · [네이버 지도 SDK](https://navermaps.github.io/maps.js.ncp/docs/tutorial-2-Getting-Started.html)
+카카오 우편번호 서비스에서 선택한 서울 주소는 네이버 Geocoding으로 좌표를 조회합니다. 좌표가 있는 주소는 Turf로 수록된 서울 전체 대상지 외곽과 비교하며 경계 5m 이내를 구분합니다. 마포구 지번은 자체 색인을 먼저 조회합니다. 공개 Maps Client ID의 Web 서비스 URL에 배포 주소 `https://moatownmap.com`을 등록하고 Dynamic Map과 Geocoding 사용 권한을 각각 설정합니다. [네이버 Maps 애플리케이션 설정](https://guide.ncloud-docs.com/docs/maps-app/) · [네이버 지도 SDK](https://navermaps.github.io/maps.js.ncp/docs/tutorial-2-Getting-Started.html)
 
 ## 서울 지도 원자료
 

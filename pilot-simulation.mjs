@@ -1,4 +1,4 @@
-import booleanPointInPolygon from './vendor/turf/boolean-point-in-polygon.mjs?v=f435fadf993b';
+import booleanPointInPolygon from './vendor/turf/boolean-point-in-polygon.mjs?v=4a9e5be231e1';
 
 const LENGTH = 42, WIDTH = 14, UNITS_PER_FLOOR = 4;
 // Small margins keep the minimum distances intact after projection to WGS84.
