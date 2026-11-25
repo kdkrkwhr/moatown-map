@@ -1,4 +1,4 @@
-import booleanPointInPolygon from './vendor/turf/boolean-point-in-polygon.mjs?v=d03b1c2de517';
+import booleanPointInPolygon from './vendor/turf/boolean-point-in-polygon.mjs?v=b8b5ff1537a3';
 
 const LENGTH = 42, WIDTH = 14, UNITS_PER_FLOOR = 4;
 // Small margins keep the minimum distances intact after projection to WGS84.
@@ -207,7 +207,7 @@ export function generateSimulation(areas, zoneMap, plans, {design=null, program=
   // A traced layout supplies a local street-grid reference for the Sinwol design.
   const compact=Boolean(design);
   const settings={length:compact?32:LENGTH,width:compact?16:WIDTH,gap:compact?DESIGN_SEPARATION:SEPARATION,spread:schematic,
-    angles:publicSpace && traced.length?[27,117,12,102,42,132,...ordinaryAngles]:ordinaryAngles};
+    angles:publicSpace && layout?.metadata?.town_id==='mt-202603-public-067' && traced.length?[27,117,12,102,42,132,...ordinaryAngles]:ordinaryAngles};
   for (const area of ordered) {
     const zoneId = area.properties.entity_id, zone = zoneMap.get(zoneId);
     const schematicPlan=schematic?(plans.zones[zoneId]??(area.properties.entity_type==='town'?plans.plan:null)):null;

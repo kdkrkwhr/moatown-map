@@ -103,6 +103,8 @@
     "review": "snapshots/2026-11-25/review.json",
     "registry_heights": "buildings/registry-heights.json",
     "unplaced_programs": "plans/unplaced-programs.json",
+    "beon_public_space": "plans/beon/public-space.geojson",
+    "myeonmok_public_space": "plans/myeonmok/public-space.geojson",
     "building_town_details_mt-202603-public-001": "buildings/details/mt-202603-public-001.json",
     "building_town_heights_mt-202603-public-001": "buildings/heights/mt-202603-public-001.json",
     "building_town_details_mt-202603-public-002": "buildings/details/mt-202603-public-002.json",
@@ -552,6 +554,8 @@
       "myeonmok_layout": "08443e18ff926fe97a1966a1fb04fa373a7f7123d3d5b46e1e7b8a9e43fd638c",
       "sinwol_layout": "63a71e6d11e4d04cd83792a248bf96d1e911ae3954b38d489bc23ef371d7be16",
       "sinwol_public_space": "fd7c5b1a07c3186e08f10f1977263452092c502b6fe967c698fc40a09b4b9f32",
+      "beon_public_space": "bcb4c4285698a753ec845b4226f69c04e52d918e8be4a0daecdc106da6d5b608",
+      "myeonmok_public_space": "fe952064843b5d41be01bbbe2ccfab4193823e0d4e7a55eac396b6cf5d5618c3",
       "beon_visuals": "54a90a9221400dfe39442eb70c6f447e1ccb87afda2aa2e9d035fac18b26849c",
       "myeonmok_visuals": "050581dde823bda6607775b70a201a0e5c3caadd79e79b3a6857c48cb2b7e942",
       "sinwol_visuals": "36675fdf1503cdf61ba7c057f87f3041ef0b52c4bab2d2958a9e9045a91ca2fa",
@@ -886,7 +890,7 @@
         ],
         "design": "myeonmok_design",
         "layout": "myeonmok_layout",
-        "public_space": null
+        "public_space": "myeonmok_public_space"
       },
       "mt-202603-public-034": {
         "zone_ids": [
@@ -898,7 +902,7 @@
         ],
         "design": "beon_design",
         "layout": "beon_layout",
-        "public_space": null
+        "public_space": "beon_public_space"
       },
       "mt-202603-public-067": {
         "zone_ids": [
@@ -1123,7 +1127,7 @@
       },
       "mt-202603-public-024": {
         "path": "plans/scenes/mt-202603-public-024.json",
-        "sha256": "547aa6b4831107bb8a4e40c3ba4ebd31a8971afd675ca6e98937a943e64ea90e",
+        "sha256": "588dde28dcd2bd0223b57a2a27b82f2ae56e23e2f51d162a30754597fb3bcdbc",
         "modes": [
           "town",
           "zones"
@@ -1172,7 +1176,7 @@
       },
       "mt-202603-public-029": {
         "path": "plans/scenes/mt-202603-public-029.json",
-        "sha256": "f4dcf233d6c4cb00990da87eff5aab6190f54d1b734bf355b4509703755b0683",
+        "sha256": "6cdea3df8b89862d87f3dd5aaa74e6ae704b86e4e93ee4aca3f35ff99bc10347",
         "modes": [
           "town"
         ],
@@ -1188,7 +1192,7 @@
       },
       "mt-202603-public-031": {
         "path": "plans/scenes/mt-202603-public-031.json",
-        "sha256": "2d9d8f3fa456d2cfba44fee50653003220f19c2dce0693fa95610896451a61e3",
+        "sha256": "51dbe6eb8e688e2077117955fc6346b0fbb6a79a9fd7de4dec2df81706813390",
         "modes": [
           "town",
           "zones"

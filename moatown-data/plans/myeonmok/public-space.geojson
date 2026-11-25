@@ -1,0 +1,481 @@
+{
+  "type": "FeatureCollection",
+  "town_id": "mt-202603-public-010",
+  "source_label": "서울시 통합심의 배치도",
+  "source_url": "https://www.seoul.go.kr/news/news_report.do?nttNo=468710",
+  "source_as_of": "2026-10-23",
+  "checked_on": "2026-11-25",
+  "source_locator": "서울시 2026.10.23 통합심의 발표 붙임 건축배치도. 2026.10.29 후속 공람과 함께 제공.",
+  "source_document_url": "https://seoulboard.seoul.go.kr/comm/getFile?srvcId=BBSTY1&upperNo=468710&fileTy=ATTACH&fileNo=1&bbsNo=158",
+  "source_image_sha256": "4503a7baf7ee0eb24e5247f3f415bf3bfc2af196b26db9d35bb24eb88cfd5c3f",
+  "registration": {
+    "working_image_size_px": [
+      1350,
+      954
+    ],
+    "reference_crs": "EPSG:5179",
+    "pixel_to_projected_xy": [
+      [
+        0.48015437,
+        0.13138001,
+        963525.79686607
+      ],
+      [
+        0.13138001,
+        -0.48015437,
+        1954834.58928311
+      ]
+    ],
+    "reference_features": "서울시 대상지 및 세부 사업구역 참고 경계",
+    "method": "도면의 대상지·사업구역 외곽을 참고 경계에 회전·축척·이동 정합 후 주거동 외곽을 단순화했다."
+  },
+  "status": "공개 배치도에서 판독한 위치입니다. 폭 표기가 없는 통로는 중심선으로 표시합니다.",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "myeonmok-west-road",
+        "name": "1·2구역 사이 8m 도로",
+        "kind": "road",
+        "width_m": 8,
+        "source_url": "https://www.seoul.go.kr/news/news_report.do?nttNo=468710",
+        "source_as_of": "2026-10-23",
+        "checked_on": "2026-11-25",
+        "evidence": "official_site_plan_digitized",
+        "drawing_pixels": [
+          [
+            519,
+            230
+          ],
+          [
+            508,
+            256
+          ],
+          [
+            471,
+            309
+          ],
+          [
+            462,
+            326
+          ],
+          [
+            446,
+            383
+          ],
+          [
+            443,
+            397
+          ],
+          [
+            444,
+            451
+          ]
+        ]
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            127.0900091,
+            37.5918217
+          ],
+          [
+            127.0899886,
+            37.5916961
+          ],
+          [
+            127.0898678,
+            37.5914224
+          ],
+          [
+            127.0898446,
+            37.5913381
+          ],
+          [
+            127.0898438,
+            37.5910725
+          ],
+          [
+            127.0898487,
+            37.5910084
+          ],
+          [
+            127.0899358,
+            37.5907762
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "myeonmok-southwest-road",
+        "name": "1구역 남측 6m 도로",
+        "kind": "road",
+        "width_m": 6,
+        "source_url": "https://www.seoul.go.kr/news/news_report.do?nttNo=468710",
+        "source_as_of": "2026-10-23",
+        "checked_on": "2026-11-25",
+        "evidence": "official_site_plan_digitized",
+        "drawing_pixels": [
+          [
+            294,
+            472
+          ],
+          [
+            427,
+            472
+          ]
+        ]
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            127.0891527,
+            37.5905049
+          ],
+          [
+            127.0898752,
+            37.5906649
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "myeonmok-cross-road",
+        "name": "2·4구역 사이 8m 도로",
+        "kind": "road",
+        "width_m": 8,
+        "source_url": "https://www.seoul.go.kr/news/news_report.do?nttNo=468710",
+        "source_as_of": "2026-10-23",
+        "checked_on": "2026-11-25",
+        "evidence": "official_site_plan_digitized",
+        "drawing_pixels": [
+          [
+            460,
+            472
+          ],
+          [
+            609,
+            472
+          ]
+        ]
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            127.0900545,
+            37.5907046
+          ],
+          [
+            127.0908638,
+            37.5908839
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "myeonmok-north-road",
+        "name": "2구역 북측 10m 도로",
+        "kind": "road",
+        "width_m": 10,
+        "source_url": "https://www.seoul.go.kr/news/news_report.do?nttNo=468710",
+        "source_as_of": "2026-10-23",
+        "checked_on": "2026-11-25",
+        "evidence": "official_site_plan_digitized",
+        "drawing_pixels": [
+          [
+            535,
+            227
+          ],
+          [
+            579,
+            250
+          ],
+          [
+            643,
+            287
+          ],
+          [
+            699,
+            306
+          ]
+        ]
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            127.0900915,
+            37.5918539
+          ],
+          [
+            127.0903653,
+            37.5918074
+          ],
+          [
+            127.0907689,
+            37.5917245
+          ],
+          [
+            127.0911018,
+            37.5917097
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "myeonmok-child-park",
+        "name": "어린이공원·주차장 복합 부지",
+        "kind": "park",
+        "width_m": null,
+        "source_url": "https://www.seoul.go.kr/news/news_report.do?nttNo=468710",
+        "source_as_of": "2026-10-23",
+        "checked_on": "2026-11-25",
+        "evidence": "official_site_plan_digitized",
+        "drawing_pixels": [
+          [
+            819,
+            640
+          ],
+          [
+            913,
+            640
+          ],
+          [
+            906,
+            681
+          ],
+          [
+            858,
+            681
+          ],
+          [
+            844,
+            678
+          ],
+          [
+            836,
+            682
+          ],
+          [
+            812,
+            677
+          ]
+        ]
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              127.0922586,
+              37.5904103
+            ],
+            [
+              127.0927692,
+              37.5905234
+            ],
+            [
+              127.0927932,
+              37.5903377
+            ],
+            [
+              127.0925324,
+              37.59028
+            ],
+            [
+              127.0924518,
+              37.5902761
+            ],
+            [
+              127.0924144,
+              37.5902492
+            ],
+            [
+              127.0922765,
+              37.5902419
+            ],
+            [
+              127.0922586,
+              37.5904103
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "myeonmok-play",
+        "name": "1구역 어린이놀이터",
+        "kind": "playground",
+        "width_m": null,
+        "source_url": "https://www.seoul.go.kr/news/news_report.do?nttNo=468710",
+        "source_as_of": "2026-10-23",
+        "checked_on": "2026-11-25",
+        "evidence": "official_site_plan_digitized",
+        "drawing_pixels": [
+          [
+            339,
+            260
+          ],
+          [
+            351,
+            258
+          ],
+          [
+            369,
+            263
+          ],
+          [
+            374,
+            271
+          ],
+          [
+            374,
+            289
+          ],
+          [
+            367,
+            300
+          ],
+          [
+            350,
+            304
+          ],
+          [
+            337,
+            299
+          ],
+          [
+            333,
+            288
+          ],
+          [
+            333,
+            274
+          ]
+        ]
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              127.0890766,
+              37.5914754
+            ],
+            [
+              127.0891388,
+              37.5914985
+            ],
+            [
+              127.0892441,
+              37.5914986
+            ],
+            [
+              127.0892834,
+              37.59147
+            ],
+            [
+              127.0893106,
+              37.5913922
+            ],
+            [
+              127.0892892,
+              37.5913362
+            ],
+            [
+              127.0892029,
+              37.5912985
+            ],
+            [
+              127.0891247,
+              37.5913045
+            ],
+            [
+              127.0890864,
+              37.5913472
+            ],
+            [
+              127.0890652,
+              37.5914077
+            ],
+            [
+              127.0890766,
+              37.5914754
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "myeonmok-open-space",
+        "name": "2·4구역 사이 공개공지",
+        "kind": "open_space",
+        "width_m": null,
+        "source_url": "https://www.seoul.go.kr/news/news_report.do?nttNo=468710",
+        "source_as_of": "2026-10-23",
+        "checked_on": "2026-11-25",
+        "evidence": "official_site_plan_digitized",
+        "drawing_pixels": [
+          [
+            653,
+            460
+          ],
+          [
+            815,
+            460
+          ],
+          [
+            813,
+            476
+          ],
+          [
+            652,
+            476
+          ]
+        ]
+      },
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              127.0910847,
+              37.5909887
+            ],
+            [
+              127.0919647,
+              37.5911836
+            ],
+            [
+              127.0919781,
+              37.591112
+            ],
+            [
+              127.0911035,
+              37.5909183
+            ],
+            [
+              127.0910847,
+              37.5909887
+            ]
+          ]
+        ]
+      }
+    }
+  ]
+}

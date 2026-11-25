@@ -1,0 +1,367 @@
+{
+  "type": "FeatureCollection",
+  "town_id": "mt-202603-public-034",
+  "source_label": "서울시 사업인가 배치도",
+  "source_url": "https://www.seoul.go.kr/news/news_report.do?nttNo=393720",
+  "source_as_of": "2023-07-31",
+  "checked_on": "2026-11-25",
+  "source_locator": "서울시 2023.07.31 사업인가 발표 PDF 6쪽 배치도",
+  "source_document_url": "https://seoulboard.seoul.go.kr/comm/getFile?bbsNo=158&fileNo=2&fileTy=ATTACH&srvcId=BBSTY1&upperNo=393720",
+  "source_image_sha256": "1bc80912bd16c221f930bca35de9e141d10fa4bdbd551dd7231834f97f1b3836",
+  "registration": {
+    "working_image_size_px": [
+      1200,
+      849
+    ],
+    "reference_crs": "EPSG:5179",
+    "pixel_to_projected_xy": [
+      [
+        0.33590684,
+        -0.2536343,
+        959005.05624039
+      ],
+      [
+        -0.2536343,
+        -0.33590684,
+        1959943.00808219
+      ]
+    ],
+    "reference_features": "서울시 대상지 및 세부 사업구역 참고 경계",
+    "method": "도면의 대상지·사업구역 외곽을 참고 경계에 회전·축척·이동 정합 후 주거동 외곽을 단순화했다."
+  },
+  "status": "공개 배치도에서 판독한 위치입니다. 폭 표기가 없는 통로는 중심선으로 표시합니다.",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "beon-central-road",
+        "name": "단지 중앙 10m 도로",
+        "kind": "road",
+        "width_m": 10,
+        "source_url": "https://www.seoul.go.kr/news/news_report.do?nttNo=393720",
+        "source_as_of": "2023-07-31",
+        "checked_on": "2026-11-25",
+        "evidence": "official_site_plan_digitized",
+        "drawing_pixels": [
+          [
+            593,
+            167
+          ],
+          [
+            594,
+            342
+          ],
+          [
+            594,
+            474
+          ],
+          [
+            592,
+            514
+          ]
+        ]
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            127.0371379,
+            37.63619
+          ],
+          [
+            127.036642,
+            37.6356559
+          ],
+          [
+            127.036265,
+            37.6352548
+          ],
+          [
+            127.0361431,
+            37.6351378
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "beon-north-crossing",
+        "name": "1·2구역 사이 공공보행통로",
+        "kind": "walkway",
+        "width_m": null,
+        "source_url": "https://www.seoul.go.kr/news/news_report.do?nttNo=393720",
+        "source_as_of": "2023-07-31",
+        "checked_on": "2026-11-25",
+        "evidence": "official_site_plan_digitized",
+        "drawing_pixels": [
+          [
+            387,
+            299
+          ],
+          [
+            447,
+            299
+          ],
+          [
+            456,
+            291
+          ],
+          [
+            579,
+            291
+          ]
+        ]
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            127.0359738,
+            37.6362567
+          ],
+          [
+            127.036203,
+            37.6361205
+          ],
+          [
+            127.0362603,
+            37.6361243
+          ],
+          [
+            127.0367303,
+            37.635845
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "beon-west-crossing",
+        "name": "2·3구역 사이 보행자전용도로(입체결정)",
+        "kind": "walkway",
+        "width_m": null,
+        "source_url": "https://www.seoul.go.kr/news/news_report.do?nttNo=393720",
+        "source_as_of": "2023-07-31",
+        "checked_on": "2026-11-25",
+        "evidence": "official_site_plan_digitized",
+        "drawing_pixels": [
+          [
+            312,
+            488
+          ],
+          [
+            575,
+            488
+          ]
+        ]
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            127.0351474,
+            37.6358527
+          ],
+          [
+            127.0361524,
+            37.6352554
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "beon-east-crossing",
+        "name": "4·5구역 사이 보행자전용도로(입체결정)",
+        "kind": "walkway",
+        "width_m": null,
+        "source_url": "https://www.seoul.go.kr/news/news_report.do?nttNo=393720",
+        "source_as_of": "2023-07-31",
+        "checked_on": "2026-11-25",
+        "evidence": "official_site_plan_digitized",
+        "drawing_pixels": [
+          [
+            613,
+            482
+          ],
+          [
+            692,
+            451
+          ],
+          [
+            803,
+            411
+          ],
+          [
+            888,
+            378
+          ]
+        ]
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            127.0363147,
+            37.6351873
+          ],
+          [
+            127.0367052,
+            37.6351021
+          ],
+          [
+            127.0372435,
+            37.6349716
+          ],
+          [
+            127.0376626,
+            37.6348788
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "id": "beon-court-path",
+        "name": "2구역 안뜰 순환 보행로",
+        "kind": "walkway",
+        "width_m": null,
+        "source_url": "https://www.seoul.go.kr/news/news_report.do?nttNo=393720",
+        "source_as_of": "2023-07-31",
+        "checked_on": "2026-11-25",
+        "evidence": "official_site_plan_digitized",
+        "drawing_pixels": [
+          [
+            427,
+            388
+          ],
+          [
+            427,
+            374
+          ],
+          [
+            433,
+            361
+          ],
+          [
+            445,
+            355
+          ],
+          [
+            505,
+            355
+          ],
+          [
+            517,
+            359
+          ],
+          [
+            524,
+            370
+          ],
+          [
+            526,
+            392
+          ],
+          [
+            522,
+            410
+          ],
+          [
+            514,
+            420
+          ],
+          [
+            499,
+            425
+          ],
+          [
+            449,
+            425
+          ],
+          [
+            434,
+            419
+          ],
+          [
+            427,
+            408
+          ],
+          [
+            427,
+            388
+          ]
+        ]
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            127.0358724,
+            37.6358954
+          ],
+          [
+            127.0359124,
+            37.635938
+          ],
+          [
+            127.0359725,
+            37.6359638
+          ],
+          [
+            127.0360355,
+            37.6359548
+          ],
+          [
+            127.0362647,
+            37.6358186
+          ],
+          [
+            127.0362992,
+            37.6357792
+          ],
+          [
+            127.0362945,
+            37.6357298
+          ],
+          [
+            127.0362393,
+            37.6356584
+          ],
+          [
+            127.0361726,
+            37.6356128
+          ],
+          [
+            127.0361135,
+            37.6356006
+          ],
+          [
+            127.0360419,
+            37.6356195
+          ],
+          [
+            127.0358508,
+            37.635733
+          ],
+          [
+            127.0358107,
+            37.6357853
+          ],
+          [
+            127.0358153,
+            37.6358346
+          ],
+          [
+            127.0358724,
+            37.6358954
+          ]
+        ]
+      }
+    }
+  ]
+}

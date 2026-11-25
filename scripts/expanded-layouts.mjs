@@ -12,8 +12,9 @@ function zoneProgram(zone,published){
     source_url:evidence.source_url,source_as_of:evidence.source_as_of??null,checked_on:evidence.checked_on??null};
 }
 
-export function buildExpandedLayouts(town,children,shapes,whole,zoneSources,previousPrograms={}){
+export function buildExpandedLayouts(town,children,shapes,whole,zoneSources,previousPrograms={},publicSpace=null){
   if(!shapes.has(town.id))return null;
+  if(publicSpace && publicSpace.town_id!==town.id)throw Error('시설 도형 대상지 불일치 '+town.id);
   const plan=usable(whole)?whole:null;
   const zones={},modes={},updatedZones={};
   for(const z of children){
@@ -28,7 +29,7 @@ export function buildExpandedLayouts(town,children,shapes,whole,zoneSources,prev
   function addMode(key,rows,areas){
     if(!areas.length)return;
     const map=new Map(rows.map(r=>[r.id,r]));
-    const result=generateSimulation(areas,map,{plan,zones},{schematic:true});
+    const result=generateSimulation(areas,map,{plan,zones},{schematic:true,publicSpace});
     if(!result.features.length)return;
     for(const f of result.features)f.geometry.coordinates[0]=f.geometry.coordinates[0].map(xy=>xy.map(n=>Number(n.toFixed(7))));
     modes[key]=result;
@@ -37,5 +38,6 @@ export function buildExpandedLayouts(town,children,shapes,whole,zoneSources,prev
   const modeled=children.filter(z=>shapes.has(z.id)&&zones[z.id]&&!zones[z.id].scope_geometry_mismatch);
   addMode('zones',modeled,modeled.map(z=>shapes.get(z.id)));
   return Object.keys(modes).length?{town_id:town.id,plan,zones,modes,
+    ...(publicSpace?{public_space:publicSpace}:{}),
     ...(Object.keys(updatedZones).length?{updated_zones:updatedZones}:{})}:null;
 }

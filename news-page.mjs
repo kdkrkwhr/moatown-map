@@ -1,4 +1,4 @@
-import {loadNews,matchNews,newsCard,sourceLabels} from './news.mjs?v=d03b1c2de517';
+import {loadNews,matchNews,newsCard,sourceLabels} from './news.mjs?v=b8b5ff1537a3';
 
 const get=id=>document.getElementById(id);
 async function catalog(){

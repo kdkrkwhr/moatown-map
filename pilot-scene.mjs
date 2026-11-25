@@ -1,4 +1,4 @@
-﻿import earcut from './vendor/earcut-3.0.2/earcut.mjs?v=d03b1c2de517';
+﻿import earcut from './vendor/earcut-3.0.2/earcut.mjs?v=b8b5ff1537a3';
 
 const DEG = Math.PI / 180;
 const GROUND = '#f1f3ef';
@@ -116,7 +116,7 @@ function buildModel(town, zones, buildings, simulation, publicSpace) {
   const spaces = [];
   for (const raw of publicSpace?.features || []) {
     const { kind, name, width_m } = raw.properties || {};
-    if (!['park', 'facility', 'road', 'walkway'].includes(kind)) continue;
+    if (!['park', 'facility', 'road', 'walkway', 'playground', 'open_space', 'green'].includes(kind)) continue;
     const parts = polygonRings(raw.geometry).map(poly => localPart(poly, project)).filter(Boolean);
     const paths = raw.geometry?.type === 'LineString' ? [raw.geometry.coordinates]
       : raw.geometry?.type === 'MultiLineString' ? raw.geometry.coordinates : [];
@@ -281,8 +281,8 @@ function geometry(model, existingDetail, partialPlan) {
   const roadBed = planPaint('#dad9cf', .73), asphalt = planPaint('#a8b1af', .81);
   const walkBed = planPaint('#b99b79', .88), paving = planPaint('#ead2ac', .94);
   for (const space of model.spaces) {
-    const park = space.kind === 'park', facility = space.kind === 'facility', road = space.kind === 'road';
-    const fill = park ? lawn : facility ? civicSite : road ? asphalt : paving;
+    const park = space.kind === 'park' || space.kind === 'green', facility = space.kind === 'facility', road = space.kind === 'road';
+    const fill = park ? lawn : facility ? civicSite : road ? asphalt : space.kind==='playground'?planPaint('#e8ad86',.94):paving;
     const rim = park ? lawnEdge : facility ? civicEdge : road ? roadBed : walkBed;
     for (const part of space.parts) {
       flat(part, 0, fill, 2);

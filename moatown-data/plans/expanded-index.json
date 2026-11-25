@@ -213,7 +213,7 @@
     },
     "mt-202603-public-024": {
       "path": "plans/scenes/mt-202603-public-024.json",
-      "sha256": "547aa6b4831107bb8a4e40c3ba4ebd31a8971afd675ca6e98937a943e64ea90e",
+      "sha256": "588dde28dcd2bd0223b57a2a27b82f2ae56e23e2f51d162a30754597fb3bcdbc",
       "modes": [
         "town",
         "zones"
@@ -262,7 +262,7 @@
     },
     "mt-202603-public-029": {
       "path": "plans/scenes/mt-202603-public-029.json",
-      "sha256": "f4dcf233d6c4cb00990da87eff5aab6190f54d1b734bf355b4509703755b0683",
+      "sha256": "6cdea3df8b89862d87f3dd5aaa74e6ae704b86e4e93ee4aca3f35ff99bc10347",
       "modes": [
         "town"
       ],
@@ -278,7 +278,7 @@
     },
     "mt-202603-public-031": {
       "path": "plans/scenes/mt-202603-public-031.json",
-      "sha256": "2d9d8f3fa456d2cfba44fee50653003220f19c2dce0693fa95610896451a61e3",
+      "sha256": "51dbe6eb8e688e2077117955fc6346b0fbb6a79a9fd7de4dec2df81706813390",
       "modes": [
         "town",
         "zones"

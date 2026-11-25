@@ -19,6 +19,12 @@ for(const [key,path] of Object.entries(m.files)){
   originalInputs.get(id)[match[1]==='public_space'?'publicSpace':match[1]]=input;
 }
 const city=read('plans/citywide-town-programs.json'),supplement=read('plans/supplemental-town-programs.json'),local=read('plans/citywide-zone-programs.json');
+const facilityDir=new URL('plans/public-spaces/',root);
+const facilities=new Map(readdirSync(facilityDir).filter(f=>f.endsWith('.geojson')).map(file=>{
+  const input=read('plans/public-spaces/'+file);
+  if(file!==input.town_id+'.geojson'||!input.features.length)throw Error('시설 파일 불일치 '+file);
+  return [input.town_id,input];
+}));
 const checkedOn=[city.checked_on,supplement.checked_on,local.checked_on].sort().at(-1);
 const index={checked_on:checkedOn,towns:{}},rows=[];
 const saved=new Set();
@@ -47,7 +53,7 @@ for(const town of towns){
   const plan=sourced(town.id);
   const previous=plan?.scope_geometry_mismatch && (plan.previous_geometry_profile?city.towns[town.id]:plan.previous_geometry_program);
   const displayPlan=previous?{...previous,previous_geometry:true}:plan;
-  const scene=pilot[town.id]?null:buildExpandedLayouts(town,children,shapes,displayPlan,local.zones,local.previous_geometry_programs);
+  const scene=pilot[town.id]?null:buildExpandedLayouts(town,children,shapes,displayPlan,local.zones,local.previous_geometry_programs,facilities.get(town.id));
   const state={id:town.id,district:town.district,name:town.name};
   if(pilot[town.id]){
     state.status='도면·계획 기반 구역별 배치';
