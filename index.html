@@ -7,8 +7,8 @@
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <title>서울 모아타운 현황지도</title>
   <link rel="sitemap" type="application/xml" href="./sitemap.xml">
-  <link rel="stylesheet" href="./styles.css?v=21935ea7588b">
-  <script type="module" src="./app.mjs?v=21935ea7588b"></script>
+  <link rel="stylesheet" href="./styles.css?v=669df25d30a5">
+  <script type="module" src="./app.mjs?v=669df25d30a5"></script>
 </head>
 <body data-loading="true">
 <a class="skip" href="#explorer">대상지 탐색으로 바로가기</a>
@@ -104,6 +104,34 @@
   <button type="button" id="address-road">카카오 도로명주소 찾기</button><div id="address-picker"></div>
   <p id="address-answer" role="status"></p><button type="button" id="locate-lot" hidden>지도에서 보기</button>
   <small>서울 25개 구 필지 내부 대표점 · 2026.11.24 조회 · <a href="https://land.seoul.go.kr/land/map/land/map.do" target="_blank" rel="noopener">서울부동산정보광장</a></small>
+</dialog>
+<dialog id="pilot-viewer" aria-labelledby="pilot-title">
+  <header class="pilot-heading">
+    <button id="pilot-back" type="button" aria-label="지도로 돌아가기">← 지도</button>
+    <div><small id="pilot-district"></small><h2 id="pilot-title"></h2></div>
+    <div class="pilot-modes" role="group" aria-label="3D 표시 자료">
+      <button type="button" data-pilot-mode="current" aria-pressed="true">현재 건물</button>
+      <button type="button" data-pilot-mode="plan" aria-pressed="false">사업 계획</button>
+    </div>
+  </header>
+  <div class="pilot-layout">
+    <div class="pilot-stage">
+      <div id="pilot-scene"></div>
+      <div id="pilot-tools" aria-label="3D 시점 조절">
+        <button type="button" data-camera="in" aria-label="3D 확대">＋</button>
+        <button type="button" data-camera="out" aria-label="3D 축소">−</button>
+        <button type="button" data-camera="left" aria-label="왼쪽으로 회전">↶</button>
+        <button type="button" data-camera="right" aria-label="오른쪽으로 회전">↷</button>
+        <button type="button" data-camera="reset">초기화</button>
+      </div>
+      <div id="pilot-loading" role="status"><span></span><button type="button" hidden>다시 시도</button></div>
+    </div>
+    <aside class="pilot-info" aria-label="선택한 3D 자료">
+      <label class="pilot-select">구역 선택 <select id="pilot-zone"></select></label>
+      <div id="pilot-inspector" aria-live="polite"></div>
+      <details class="pilot-evidence"><summary>지도 조작 방법</summary><p class="pilot-meta">한 손가락으로 지도를 옮기고, 두 손가락으로 확대·회전하거나 위아래로 밀어 기울기를 바꿉니다. 마우스는 드래그로 이동하고 Shift를 누른 채 드래그해 회전합니다.</p></details>
+    </aside>
+  </div>
 </dialog>
 </body>
 </html>

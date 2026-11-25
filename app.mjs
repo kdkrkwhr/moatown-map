@@ -1,10 +1,11 @@
-import {renderProjectDetail} from './detail-view.mjs?v=21935ea7588b';
-import {durationSamples,elapsedMonths,formatValue} from './detail-format.mjs?v=21935ea7588b';
+import {renderProjectDetail} from './detail-view.mjs?v=669df25d30a5';
+import {durationSamples,elapsedMonths,formatValue} from './detail-format.mjs?v=669df25d30a5';
 export {elapsedMonths};
-import {loadMaps,createProjectMap} from './map-engine.mjs?v=21935ea7588b';
-import {loadNews,matchNews,newsCard,sourceLabels} from './news.mjs?v=21935ea7588b';
-import {searchProjects,managementFilters,progressFilters,recentProjectDates} from './project-search.mjs?v=21935ea7588b';
-import {mountAddressLookup} from './address-reference.mjs?v=21935ea7588b';
+import {loadMaps,createProjectMap} from './map-engine.mjs?v=669df25d30a5';
+import {loadNews,matchNews,newsCard,sourceLabels} from './news.mjs?v=669df25d30a5';
+import {searchProjects,managementFilters,progressFilters,recentProjectDates} from './project-search.mjs?v=669df25d30a5';
+import {mountAddressLookup} from './address-reference.mjs?v=669df25d30a5';
+import {mountPilotViewer} from './pilot-viewer.mjs?v=669df25d30a5';
 const mobileMapQuery='(max-width: 760px) and (orientation: portrait), (max-width: 540px)';
 function initialSheetHeight(selection,hasFilters,mobile){
   if(!mobile)return 1;
@@ -48,7 +49,12 @@ export async function loadSnapshot(base, get=fetch) {
     return response.json();
   }
   const manifest=await json(manifestUrl);
-  const [towns,zones,boundaries,excluded]=await Promise.all(['towns','zones','boundaries','excluded'].map(k=>manifest.files[k]?json(new URL(manifest.files[k],manifestUrl)):[]));
+  const [towns,zones,boundaries,excluded]=await Promise.all(['towns','zones','boundaries','excluded'].map(key=>{
+    if(!manifest.files[key])return [];
+    const url=new URL(manifest.files[key],manifestUrl),hash=manifest.pilot_3d?.hashes?.[key];
+    if(hash)url.searchParams.set('v',hash.slice(0,12));
+    return json(url);
+  }));
   return {manifest,towns,zones,boundaries,excluded};
 }
 
@@ -139,6 +145,7 @@ export function mount({manifest,towns,zones,boundaries,excluded=[]},sdk){
   const newsCounts=new Map();
   get('map-totals').textContent=new Set(towns.map(town=>town.district)).size+'개 자치구 · 선정 대상지 '+towns.length+'곳';
   const groups=groupSubAreas(towns,zones);
+  const pilot=mountPilotViewer({manifest,boundaries,townById,groups});
   const calendar=new Intl.DateTimeFormat('sv-SE',{timeZone:'Asia/Seoul',year:'numeric',month:'2-digit',day:'2-digit'});
   let recentOnly=false,recentDay=calendar.format(Date.now());
   let recentDates=recentProjectDates(towns,groups,excluded,recentDay);
@@ -205,6 +212,7 @@ export function mount({manifest,towns,zones,boundaries,excluded=[]},sdk){
   readUrl();
   function writeUrl(replace=false){
     const url=new URL(location.href);
+    url.searchParams.delete('view');
     for(const [key,value] of [['town',current.townId],['zone',current.zoneId],['cancellation',current.cancellation],['q',search.value],['district',district.value],['recent',recentOnly?'1':''],...Object.entries(chosen)]){
       if(value)url.searchParams.set(key,value);else url.searchParams.delete(key);
     }
@@ -301,6 +309,7 @@ export function mount({manifest,towns,zones,boundaries,excluded=[]},sdk){
       button.type='button';button.dataset.town=town.id;
       const meta=el('span',undefined,'row-meta');
       meta.append(el('span',town.district,'district-name'));
+      if(pilot.supports(town.id))meta.append(el('span','3D 보기 가능','pilot-list-label'));
       if(badge)meta.append(badge);
       if(zone){
         button.dataset.zone=zone.id;
@@ -360,7 +369,8 @@ export function mount({manifest,towns,zones,boundaries,excluded=[]},sdk){
     const children=groups.get(town.id)??[];
     renderProjectDetail(detail,{town,zone,children,boundaries:boundaryProps,snapshot:manifest.snapshot_date,cityRule:current.cancellation?null:manifest.seoul_road_permit,
       registryUrl:manifest.source_urls?.official_project_registry,stats:planStats,select:(townId,zoneId,preview)=>select(townId,zoneId,null,preview?undefined:'areas'),
-      expandDetail:()=>{if(mobile.matches)setSheetHeight(2);},badge:stageBadge,copyLink,initialTab});
+      expandDetail:()=>{if(mobile.matches)setSheetHeight(2);},badge:stageBadge,copyLink,initialTab,
+      openPilot:pilot.supports(town.id)?()=>pilot.open(town.id,zone?.id):null});
     renderRelatedNews();
   }
   function renderRelatedNews(){
@@ -433,17 +443,20 @@ export function mount({manifest,towns,zones,boundaries,excluded=[]},sdk){
   get('apply-stage').addEventListener('click',()=>{get('stage-filter-box').open=false;get('stage-filter-box').querySelector('summary').focus();});
   get('reset-map').addEventListener('click',reset);
   window.addEventListener('popstate',()=>{
+    if(pilot.restore(current))return;
     readUrl();setSheetHeight(initialHeight());renderList();renderPanel();
     try{
       clearAddress();map?.settings();renderLayers();fitView();
     }catch{
       mapStatus.textContent||='네이버 지도의 이전 화면을 복원할 수 없습니다.';
     }
+    pilot.fromUrl(current);
   });
   const date=get('snapshot-date');
   date.dateTime=manifest.snapshot_date;date.textContent=displayDate(manifest.snapshot_date);
   get('coverage-note').textContent=displayDate(manifest.coverage.baseline_as_of)+' 선정 명부와 이후 확인한 변동을 반영했습니다. '+districtCounts.size+'개 자치구의 대상지 '+towns.length+'곳이 수록되어 있습니다.';
   renderList();renderPanel();renderLayers();fitView();
+  pilot.fromUrl(current);
   loadNews(document.baseURI).then(({items})=>{
     newsItems=items;
     for(const item of items){

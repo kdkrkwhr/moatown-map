@@ -1,0 +1,704 @@
+{
+  "checked_on": "2026-11-25",
+  "towns": {
+    "mt-202603-public-067": {
+      "plan": {
+        "floors": 15,
+        "height_m": null,
+        "far_pct": 300,
+        "qualifiers": {
+          "floors": "최고·이하",
+          "height_m": null,
+          "far_pct": "약"
+        },
+        "labels": {
+          "floors": "최고 15층 이하",
+          "height_m": null,
+          "far_pct": "약 300%"
+        },
+        "kind": "관리계획 소개",
+        "scope": "신월동 102-33 일대 A1~A4",
+        "source_url": "https://news.seoul.go.kr/citybuild/archives/538493",
+        "source_as_of": "2026-05-22",
+        "publisher": "서울특별시 전략주택공급과",
+        "notice_number": null,
+        "page": null,
+        "section": "대상지기록 · 규모",
+        "date_kind": "웹페이지 수정일",
+        "history": [
+          {
+            "kind": "관리계획 변경 승인고시",
+            "scope": "신월동 102-33 등 49개 관리지역",
+            "source_url": "https://event.seoul.go.kr/snews/data/CN_MST/seoulsibo_20260520112133_47006.pdf#page=157",
+            "source_as_of": "2026-05-21",
+            "publisher": "서울특별시",
+            "notice_number": "서울특별시 고시 제2026-282호",
+            "page": "서울시보 제4150호 156~158·177쪽",
+            "note": "임대주택 공급·인수계획에 사업성 보정계수를 적용하는 기준 변경."
+          }
+        ]
+      },
+      "zones": {
+        "mz-plan-584443-a1": {
+          "floors": 13,
+          "height_m": null,
+          "far_pct": 297.71,
+          "qualifiers": {
+            "floors": "최고",
+            "height_m": null,
+            "far_pct": "계획"
+          },
+          "labels": {
+            "floors": "최고 13층",
+            "height_m": null,
+            "far_pct": "계획 297.71%"
+          },
+          "kind": "사업시행계획안 통합심의",
+          "scope": "신월동 A1구역 (144-20 일대)",
+          "source_url": "https://www.seoul.go.kr/news/news_report.do?nttNo=470317",
+          "source_as_of": "2026-11-13",
+          "publisher": "서울특별시 모아주택과",
+          "notice_number": null,
+          "page": "보도자료 PDF 1·4쪽 (인쇄 2·7쪽)",
+          "section": "① 신월동 모아타운 A1구역 및 참고자료 1 사업개요",
+          "review_date": "2026-11-12",
+          "attachment_url": "https://seoulboard.seoul.go.kr/comm/getFile?srvcId=BBSTY1&upperNo=470317&fileTy=ATTACH&fileNo=2&bbsNo=158",
+          "far_upper_pct": 300,
+          "far_upper_qualifier": "상한 300% 이하",
+          "history": [
+            {
+              "kind": "관리계획 승인고시",
+              "scope": "신월동 102-33 일대 A1~A4",
+              "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=584443",
+              "source_as_of": "2023-12-28",
+              "publisher": "서울특별시",
+              "notice_number": "서울특별시 고시 제2023-606호",
+              "page": "첨부 PDF 6쪽",
+              "section": "사. 건폐율·용적률 등 건축물의 밀도계획(안)",
+              "far_base_pct": 250,
+              "far_upper_pct": 300,
+              "note": "상향 기준 250% 이하, 법적상한 300% 이하."
+            },
+            {
+              "kind": "관리계획 변경안 주민공람",
+              "scope": "신월동 102-33 일대 A1~A4",
+              "source_url": "https://www.eum.go.kr/web/cp/hr/hrPeopleHearDet.jsp?seq=5907",
+              "source_as_of": "2026-09-23",
+              "publisher": "양천구",
+              "notice_number": "양천구 공고 제2026-1666호",
+              "page": "양천구보 제2581호 8~9쪽",
+              "section": "마. 건폐율·용적률 등 건축물의 밀도계획(안)",
+              "gazette_url": "https://news.seoul.go.kr/citybuild/archives/542834",
+              "far_upper_pct": 300,
+              "note": "변경안에서도 A1 법적상한 300% 이하."
+            }
+          ]
+        },
+        "mz-plan-584443-a2": {
+          "floors": null,
+          "height_m": null,
+          "far_pct": 300,
+          "qualifiers": {
+            "floors": null,
+            "height_m": null,
+            "far_pct": "법적상한 이하"
+          },
+          "labels": {
+            "floors": null,
+            "height_m": null,
+            "far_pct": "법적상한 300% 이하"
+          },
+          "kind": "관리계획 변경안 주민공람",
+          "scope": "신월동 A2구역 (공람안 사업시행 2구역)",
+          "source_url": "https://www.eum.go.kr/web/cp/hr/hrPeopleHearDet.jsp?seq=5907",
+          "source_as_of": "2026-09-23",
+          "publisher": "양천구",
+          "notice_number": "양천구 공고 제2026-1666호",
+          "page": "양천구보 제2581호 8~9쪽",
+          "section": "마. 건폐율·용적률 등 건축물의 밀도계획(안)",
+          "gazette_url": "https://news.seoul.go.kr/citybuild/archives/542834",
+          "far_base_pct": 250,
+          "far_base_qualifier": "상향 기준 250% 이하",
+          "note": "대상지 전체의 층수와 장애물제한표면의 해발 표고는 개별 건축계획 수치로 환산할 수 없다. 개별 사업시행인가 시 결정.",
+          "history": [
+            {
+              "kind": "관리계획 승인고시",
+              "scope": "신월동 102-33 일대 A1~A4",
+              "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=584443",
+              "source_as_of": "2023-12-28",
+              "publisher": "서울특별시",
+              "notice_number": "서울특별시 고시 제2023-606호",
+              "page": "첨부 PDF 6쪽",
+              "section": "사. 건폐율·용적률 등 건축물의 밀도계획(안)",
+              "far_base_pct": 250,
+              "far_upper_pct": 300,
+              "note": "기정 승인고시도 해당 사업구역을 명시."
+            }
+          ]
+        },
+        "mz-plan-584443-a3": {
+          "floors": null,
+          "height_m": null,
+          "far_pct": 300,
+          "qualifiers": {
+            "floors": null,
+            "height_m": null,
+            "far_pct": "법적상한 이하"
+          },
+          "labels": {
+            "floors": null,
+            "height_m": null,
+            "far_pct": "법적상한 300% 이하"
+          },
+          "kind": "관리계획 변경안 주민공람",
+          "scope": "신월동 A3구역 (공람안 사업시행 3구역)",
+          "source_url": "https://www.eum.go.kr/web/cp/hr/hrPeopleHearDet.jsp?seq=5907",
+          "source_as_of": "2026-09-23",
+          "publisher": "양천구",
+          "notice_number": "양천구 공고 제2026-1666호",
+          "page": "양천구보 제2581호 8~9쪽",
+          "section": "마. 건폐율·용적률 등 건축물의 밀도계획(안)",
+          "gazette_url": "https://news.seoul.go.kr/citybuild/archives/542834",
+          "far_base_pct": 250,
+          "far_base_qualifier": "상향 기준 250% 이하",
+          "note": "대상지 전체의 층수와 장애물제한표면의 해발 표고는 개별 건축계획 수치로 환산할 수 없다. 개별 사업시행인가 시 결정.",
+          "history": [
+            {
+              "kind": "관리계획 승인고시",
+              "scope": "신월동 102-33 일대 A1~A4",
+              "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=584443",
+              "source_as_of": "2023-12-28",
+              "publisher": "서울특별시",
+              "notice_number": "서울특별시 고시 제2023-606호",
+              "page": "첨부 PDF 6쪽",
+              "section": "사. 건폐율·용적률 등 건축물의 밀도계획(안)",
+              "far_base_pct": 250,
+              "far_upper_pct": 300,
+              "note": "기정 승인고시도 해당 사업구역을 명시."
+            }
+          ]
+        },
+        "mz-plan-584443-a4": {
+          "floors": null,
+          "height_m": null,
+          "far_pct": 300,
+          "qualifiers": {
+            "floors": null,
+            "height_m": null,
+            "far_pct": "법적상한 이하"
+          },
+          "labels": {
+            "floors": null,
+            "height_m": null,
+            "far_pct": "법적상한 300% 이하"
+          },
+          "kind": "관리계획 변경안 주민공람",
+          "scope": "신월동 A4구역 (공람안 사업시행 4구역)",
+          "source_url": "https://www.eum.go.kr/web/cp/hr/hrPeopleHearDet.jsp?seq=5907",
+          "source_as_of": "2026-09-23",
+          "publisher": "양천구",
+          "notice_number": "양천구 공고 제2026-1666호",
+          "page": "양천구보 제2581호 8~9쪽",
+          "section": "마. 건폐율·용적률 등 건축물의 밀도계획(안)",
+          "gazette_url": "https://news.seoul.go.kr/citybuild/archives/542834",
+          "far_base_pct": 250,
+          "far_base_qualifier": "상향 기준 250% 이하",
+          "note": "대상지 전체의 층수와 장애물제한표면의 해발 표고는 개별 건축계획 수치로 환산할 수 없다. 개별 사업시행인가 시 결정.",
+          "history": [
+            {
+              "kind": "관리계획 승인고시",
+              "scope": "신월동 102-33 일대 A1~A4",
+              "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=584443",
+              "source_as_of": "2023-12-28",
+              "publisher": "서울특별시",
+              "notice_number": "서울특별시 고시 제2023-606호",
+              "page": "첨부 PDF 6쪽",
+              "section": "사. 건폐율·용적률 등 건축물의 밀도계획(안)",
+              "far_base_pct": 250,
+              "far_upper_pct": 300,
+              "note": "기정 승인고시도 해당 사업구역을 명시."
+            }
+          ]
+        }
+      }
+    },
+    "mt-202603-public-034": {
+      "plan": {
+        "floors": 35,
+        "height_m": null,
+        "far_pct": 300,
+        "qualifiers": {
+          "floors": "공동주택 이하",
+          "height_m": null,
+          "far_pct": "상한"
+        },
+        "labels": {
+          "floors": "공동주택 35층 이하",
+          "height_m": null,
+          "far_pct": "상한 300%"
+        },
+        "kind": "관리계획 변경 승인고시",
+        "scope": "번동 429-114 일대 모아주택 1~5구역",
+        "source_url": "https://news.seoul.go.kr/citybuild/archives/543191",
+        "source_as_of": "2026-10-15",
+        "publisher": "서울특별시",
+        "notice_number": "서울특별시 고시 제2026-566호",
+        "page": "서울시보 제4186호 77~79쪽",
+        "section": "용적률·높이 결정 조서",
+        "attachment_url": "https://news.seoul.go.kr/citybuild/files/2026/10/6ad996344efae8.16381823.zip",
+        "far_base_pct": 250,
+        "note": "시행구역의 공동주택 기준. 고시 78쪽은 공동이용시설 설치 등에 따른 용적률 특례를 설명한다.",
+        "history": [
+          {
+            "kind": "관리계획 소개",
+            "scope": "번동 429-114 일대 모아주택 1~5구역",
+            "source_url": "https://news.seoul.go.kr/citybuild/archives/539017",
+            "source_as_of": "2026-05-22",
+            "publisher": "서울특별시 전략주택공급과",
+            "notice_number": null,
+            "page": null,
+            "section": "대상지기록 · 규모",
+            "date_kind": "웹페이지 수정일",
+            "floors": 35,
+            "far_pct": 300,
+            "note": "전체 최고 35층, 용적률 약 300%로 소개."
+          }
+        ]
+      },
+      "zones": {
+        "mz-info-305900000750u59": {
+          "floors": 28,
+          "height_m": 80.0,
+          "far_pct": 300.0,
+          "qualifiers": {
+            "floors": "지상",
+            "height_m": "최고",
+            "far_pct": "계획"
+          },
+          "labels": {
+            "floors": "지상 28층",
+            "height_m": "최고 80m",
+            "far_pct": "계획 300%"
+          },
+          "kind": "정비사업 정보몽땅 공개 사업개요",
+          "scope": "번동1구역",
+          "source_url": "https://cleanup.seoul.go.kr/cafe/mastr-cleanup-bsnsSumry/execute.do?cafeId=305900000750u59&div=sumry&stepSeCode=103",
+          "source_as_of": null,
+          "publisher": "서울특별시 정비사업 정보몽땅 · 해당 조합",
+          "notice_number": null,
+          "page": null,
+          "section": "사업개요 · 건축계획",
+          "status": "published_plan_not_latest_approval_verified",
+          "derived_from": {
+            "file": "zones.json",
+            "id": "mz-info-305900000750u59",
+            "floors": "max_floors_above_ground",
+            "height_m": "height_m",
+            "far_pct": "floor_area_ratio_pct",
+            "evidence": "field_evidence.plan"
+          },
+          "latest_approval_verified": false
+        },
+        "mz-seoul-11000uq120ps202505310171": {
+          "floors": 28,
+          "height_m": 79.0,
+          "far_pct": 308.0,
+          "qualifiers": {
+            "floors": "지상",
+            "height_m": "최고",
+            "far_pct": "계획"
+          },
+          "labels": {
+            "floors": "지상 28층",
+            "height_m": "최고 79m",
+            "far_pct": "계획 308%"
+          },
+          "kind": "정비사업 정보몽땅 공개 사업개요",
+          "scope": "번동2구역 가로주택정비사업",
+          "source_url": "https://cleanup.seoul.go.kr/cafe/mastr-cleanup-bsnsSumry/execute.do?cafeId=305900000768h78&div=sumry&stepSeCode=103",
+          "source_as_of": null,
+          "publisher": "서울특별시 정비사업 정보몽땅 · 해당 조합",
+          "notice_number": null,
+          "page": null,
+          "section": "사업개요 · 건축계획",
+          "status": "published_plan_not_latest_approval_verified",
+          "derived_from": {
+            "file": "zones.json",
+            "id": "mz-seoul-11000uq120ps202505310171",
+            "floors": "max_floors_above_ground",
+            "height_m": "height_m",
+            "far_pct": "floor_area_ratio_pct",
+            "evidence": "field_evidence.plan"
+          },
+          "latest_approval_verified": false
+        },
+        "mz-seoul-11000uq120ps202505310172": {
+          "floors": 28,
+          "height_m": 80.0,
+          "far_pct": 308.0,
+          "qualifiers": {
+            "floors": "지상",
+            "height_m": "최고",
+            "far_pct": "계획"
+          },
+          "labels": {
+            "floors": "지상 28층",
+            "height_m": "최고 80m",
+            "far_pct": "계획 308%"
+          },
+          "kind": "정비사업 정보몽땅 공개 사업개요",
+          "scope": "번동3구역 가로주택정비사업",
+          "source_url": "https://cleanup.seoul.go.kr/cafe/mastr-cleanup-bsnsSumry/execute.do?cafeId=305900000786L24&div=sumry&stepSeCode=103",
+          "source_as_of": null,
+          "publisher": "서울특별시 정비사업 정보몽땅 · 해당 조합",
+          "notice_number": null,
+          "page": null,
+          "section": "사업개요 · 건축계획",
+          "status": "published_plan_not_latest_approval_verified",
+          "derived_from": {
+            "file": "zones.json",
+            "id": "mz-seoul-11000uq120ps202505310172",
+            "floors": "max_floors_above_ground",
+            "height_m": "height_m",
+            "far_pct": "floor_area_ratio_pct",
+            "evidence": "field_evidence.plan"
+          },
+          "latest_approval_verified": false
+        },
+        "mz-seoul-11000uq120ps202505310173": {
+          "floors": 35,
+          "height_m": 100.0,
+          "far_pct": 306.0,
+          "qualifiers": {
+            "floors": "지상",
+            "height_m": "최고",
+            "far_pct": "계획"
+          },
+          "labels": {
+            "floors": "지상 35층",
+            "height_m": "최고 100m",
+            "far_pct": "계획 306%"
+          },
+          "kind": "정비사업 정보몽땅 공개 사업개요",
+          "scope": "번동4구역 가로주택정비사업",
+          "source_url": "https://cleanup.seoul.go.kr/cafe/mastr-cleanup-bsnsSumry/execute.do?cafeId=305900000788K18&div=sumry&stepSeCode=103",
+          "source_as_of": null,
+          "publisher": "서울특별시 정비사업 정보몽땅 · 해당 조합",
+          "notice_number": null,
+          "page": null,
+          "section": "사업개요 · 건축계획",
+          "status": "published_plan_not_latest_approval_verified",
+          "derived_from": {
+            "file": "zones.json",
+            "id": "mz-seoul-11000uq120ps202505310173",
+            "floors": "max_floors_above_ground",
+            "height_m": "height_m",
+            "far_pct": "floor_area_ratio_pct",
+            "evidence": "field_evidence.plan"
+          },
+          "latest_approval_verified": false
+        },
+        "mz-seoul-11000uq120ps202505310174": {
+          "floors": 28,
+          "height_m": 80.0,
+          "far_pct": 299.0,
+          "qualifiers": {
+            "floors": "지상",
+            "height_m": "최고",
+            "far_pct": "계획"
+          },
+          "labels": {
+            "floors": "지상 28층",
+            "height_m": "최고 80m",
+            "far_pct": "계획 299%"
+          },
+          "kind": "정비사업 정보몽땅 공개 사업개요",
+          "scope": "번동5구역 가로주택정비사업",
+          "source_url": "https://cleanup.seoul.go.kr/cafe/mastr-cleanup-bsnsSumry/execute.do?cafeId=305900000787k48&div=sumry&stepSeCode=103",
+          "source_as_of": null,
+          "publisher": "서울특별시 정비사업 정보몽땅 · 해당 조합",
+          "notice_number": null,
+          "page": null,
+          "section": "사업개요 · 건축계획",
+          "status": "published_plan_not_latest_approval_verified",
+          "derived_from": {
+            "file": "zones.json",
+            "id": "mz-seoul-11000uq120ps202505310174",
+            "floors": "max_floors_above_ground",
+            "height_m": "height_m",
+            "far_pct": "floor_area_ratio_pct",
+            "evidence": "field_evidence.plan"
+          },
+          "latest_approval_verified": false
+        }
+      }
+    },
+    "mt-202603-public-010": {
+      "plan": {
+        "floors": 38,
+        "height_m": null,
+        "far_pct": null,
+        "qualifiers": {
+          "floors": "심의 당시 최고",
+          "height_m": null,
+          "far_pct": null
+        },
+        "labels": {
+          "floors": "심의 당시 최고 38층",
+          "height_m": null,
+          "far_pct": null
+        },
+        "kind": "사업시행계획안 통합심의",
+        "scope": "면목동 86-3 일대 면목역 1·2·4·6구역",
+        "source_url": "https://www.seoul.go.kr/news/news_report.do?nttNo=468710",
+        "source_as_of": "2026-10-23",
+        "publisher": "서울특별시 모아주택과",
+        "notice_number": null,
+        "page": null,
+        "section": "① 면목동 모아주택 4개 사업 및 참고자료 1 사업개요",
+        "review_date": "2026-10-22",
+        "attachment_url": "https://seoulboard.seoul.go.kr/comm/getFile?srvcId=BBSTY1&upperNo=468710&fileTy=ATTACH&fileNo=1&bbsNo=158",
+        "note": "10월 22일 통합심의 때 네 구역 전체의 최고값. 10월 29일 4·6구역 공람안 층수는 각각 별도 표시한다.",
+        "history": [
+          {
+            "kind": "관리계획 소개",
+            "scope": "면목동 86-3 일대 면목역 1·2·4·6구역",
+            "source_url": "https://news.seoul.go.kr/citybuild/archives/538651",
+            "source_as_of": "2026-05-22",
+            "publisher": "서울특별시 전략주택공급과",
+            "notice_number": null,
+            "page": null,
+            "section": "대상지기록 · 규모",
+            "date_kind": "웹페이지 수정일",
+            "floors": 37,
+            "note": "5월 대상지기록상 전체 지상 최고 37층."
+          }
+        ]
+      },
+      "zones": {
+        "mz-seoul-11000uq120ps202505310161": {
+          "floors": 37,
+          "height_m": 107.86,
+          "far_pct": 302.02,
+          "qualifiers": {
+            "floors": "지상",
+            "height_m": "최고",
+            "far_pct": "계획"
+          },
+          "labels": {
+            "floors": "지상 37층",
+            "height_m": "최고 107.86m",
+            "far_pct": "계획 302.02%"
+          },
+          "kind": "사업시행계획인가 고시",
+          "scope": "면목역2구역 가로주택정비사업",
+          "source_url": "https://eminwon.jungnang.go.kr/emwp/gov/mogaha/ntis/web/ofr/action/OfrAction.do?context=NTIS&homepage_pbs_yn=Y&jndinm=OfrNotAncmtEJB&method=selectOfrNotAncmt&methodnm=selectOfrNotAncmtRegst&not_ancmt_mgt_no=15568&not_ancmt_se_code=01%2C02%2C04&pageIndex=1&subCheck=Y",
+          "source_as_of": "2026-07-30",
+          "publisher": "중랑구",
+          "notice_number": "중랑구 고시 제2026-91호",
+          "page": null,
+          "section": "6. 건축물의 건축계획에 관한 사항",
+          "approval_date": "2026-07-28",
+          "derived_from": {
+            "file": "zones.json",
+            "id": "mz-seoul-11000uq120ps202505310161",
+            "floors": "max_floors_above_ground",
+            "height_m": "height_m",
+            "far_pct": "floor_area_ratio_pct",
+            "evidence": "field_evidence.plan"
+          },
+          "later_confirmation": {
+            "kind": "사업시행계획안 통합심의",
+            "scope": "면목역2구역 가로주택정비사업",
+            "source_url": "https://www.seoul.go.kr/news/news_report.do?nttNo=468710",
+            "source_as_of": "2026-10-23",
+            "publisher": "서울특별시 모아주택과",
+            "notice_number": null,
+            "page": null,
+            "section": "① 면목동 모아주택 4개 사업 및 참고자료 1 사업개요",
+            "review_date": "2026-10-22",
+            "attachment_url": "https://seoulboard.seoul.go.kr/comm/getFile?srvcId=BBSTY1&upperNo=468710&fileTy=ATTACH&fileNo=1&bbsNo=158",
+            "note": "통합심의 참고자료 1에서도 층수·용적률 일치. 최고높이는 7월 인가 고시 기준."
+          }
+        },
+        "mz-seoul-11000uq120ps202505310439": {
+          "floors": 37,
+          "height_m": null,
+          "far_pct": 299.08,
+          "qualifiers": {
+            "floors": "공람안 지상",
+            "height_m": null,
+            "far_pct": "심의안 계획"
+          },
+          "labels": {
+            "floors": "공람안 지상 37층",
+            "height_m": null,
+            "far_pct": "심의안 299.08%"
+          },
+          "kind": "사업시행계획인가 신청안 주민공람",
+          "scope": "면목역 4구역",
+          "source_url": "https://news.seoul.go.kr/citybuild/archives/543800",
+          "source_as_of": "2026-10-29",
+          "publisher": "중랑구",
+          "notice_number": "중랑구 공고 제2026-1505호",
+          "page": "구보 13쪽 · 개별 PDF 2쪽",
+          "section": "마. 신청내용 6) 건축규모",
+          "attachment_url": "https://news.seoul.go.kr/citybuild/files/2026/11/6ae92d52984400.03785610.zip",
+          "field_evidence": {
+            "floors": {
+              "kind": "사업시행계획인가 신청안 주민공람",
+              "scope": "면목역 4구역",
+              "source_url": "https://news.seoul.go.kr/citybuild/archives/543800",
+              "source_as_of": "2026-10-29",
+              "publisher": "중랑구",
+              "notice_number": "중랑구 공고 제2026-1505호",
+              "page": "구보 13쪽 · 개별 PDF 2쪽",
+              "section": "마. 신청내용 6) 건축규모",
+              "attachment_url": "https://news.seoul.go.kr/citybuild/files/2026/11/6ae92d52984400.03785610.zip"
+            },
+            "far_pct": {
+              "kind": "사업시행계획안 통합심의",
+              "scope": "면목역 4구역",
+              "source_url": "https://www.seoul.go.kr/news/news_report.do?nttNo=468710",
+              "source_as_of": "2026-10-23",
+              "publisher": "서울특별시 모아주택과",
+              "notice_number": null,
+              "page": null,
+              "section": "참고자료 1 · 사업개요 및 조감도, 건축규모 표",
+              "review_date": "2026-10-22",
+              "attachment_url": "https://seoulboard.seoul.go.kr/comm/getFile?srvcId=BBSTY1&upperNo=468710&fileTy=ATTACH&fileNo=1&bbsNo=158"
+            }
+          },
+          "history": [
+            {
+              "kind": "사업시행계획안 통합심의",
+              "scope": "면목역 4구역",
+              "source_url": "https://www.seoul.go.kr/news/news_report.do?nttNo=468710",
+              "source_as_of": "2026-10-23",
+              "publisher": "서울특별시 모아주택과",
+              "notice_number": null,
+              "page": null,
+              "section": "참고자료 1 · 사업개요 및 조감도, 건축규모 표",
+              "review_date": "2026-10-22",
+              "attachment_url": "https://seoulboard.seoul.go.kr/comm/getFile?srvcId=BBSTY1&upperNo=468710&fileTy=ATTACH&fileNo=1&bbsNo=158",
+              "floors": 38,
+              "far_pct": 299.08,
+              "note": "10월 22일 심의표 지상 38층. 10월 29일 주민공람 신청서 요약과 한 층 차이."
+            }
+          ]
+        },
+        "mz-seoul-11000uq120ps202505310440": {
+          "floors": 33,
+          "height_m": null,
+          "far_pct": 302.35,
+          "qualifiers": {
+            "floors": "공람안 지상",
+            "height_m": null,
+            "far_pct": "심의안 계획"
+          },
+          "labels": {
+            "floors": "공람안 지상 33층",
+            "height_m": null,
+            "far_pct": "심의안 302.35%"
+          },
+          "kind": "사업시행계획인가 신청안 주민공람",
+          "scope": "면목역 6구역",
+          "source_url": "https://news.seoul.go.kr/citybuild/archives/543800",
+          "source_as_of": "2026-10-29",
+          "publisher": "중랑구",
+          "notice_number": "중랑구 공고 제2026-1506호",
+          "page": "구보 16쪽 · 개별 PDF 2쪽",
+          "section": "마. 신청내용 6) 건축규모",
+          "attachment_url": "https://news.seoul.go.kr/citybuild/files/2026/11/6ae92d52984400.03785610.zip",
+          "field_evidence": {
+            "floors": {
+              "kind": "사업시행계획인가 신청안 주민공람",
+              "scope": "면목역 6구역",
+              "source_url": "https://news.seoul.go.kr/citybuild/archives/543800",
+              "source_as_of": "2026-10-29",
+              "publisher": "중랑구",
+              "notice_number": "중랑구 공고 제2026-1506호",
+              "page": "구보 16쪽 · 개별 PDF 2쪽",
+              "section": "마. 신청내용 6) 건축규모",
+              "attachment_url": "https://news.seoul.go.kr/citybuild/files/2026/11/6ae92d52984400.03785610.zip"
+            },
+            "far_pct": {
+              "kind": "사업시행계획안 통합심의",
+              "scope": "면목역 6구역",
+              "source_url": "https://www.seoul.go.kr/news/news_report.do?nttNo=468710",
+              "source_as_of": "2026-10-23",
+              "publisher": "서울특별시 모아주택과",
+              "notice_number": null,
+              "page": null,
+              "section": "참고자료 1 · 사업개요 및 조감도, 건축규모 표",
+              "review_date": "2026-10-22",
+              "attachment_url": "https://seoulboard.seoul.go.kr/comm/getFile?srvcId=BBSTY1&upperNo=468710&fileTy=ATTACH&fileNo=1&bbsNo=158"
+            }
+          },
+          "history": [
+            {
+              "kind": "사업시행계획안 통합심의",
+              "scope": "면목역 6구역",
+              "source_url": "https://www.seoul.go.kr/news/news_report.do?nttNo=468710",
+              "source_as_of": "2026-10-23",
+              "publisher": "서울특별시 모아주택과",
+              "notice_number": null,
+              "page": null,
+              "section": "참고자료 1 · 사업개요 및 조감도, 건축규모 표",
+              "review_date": "2026-10-22",
+              "attachment_url": "https://seoulboard.seoul.go.kr/comm/getFile?srvcId=BBSTY1&upperNo=468710&fileTy=ATTACH&fileNo=1&bbsNo=158",
+              "floors": 34,
+              "far_pct": 302.35,
+              "note": "10월 22일 심의표 지상 34층. 10월 29일 주민공람 신청서 요약과 한 층 차이."
+            }
+          ]
+        },
+        "mz-seoul-11000uq120ps202505310160": {
+          "floors": 29,
+          "height_m": 83.75,
+          "far_pct": 300.48,
+          "qualifiers": {
+            "floors": "지상",
+            "height_m": "최고",
+            "far_pct": "계획"
+          },
+          "labels": {
+            "floors": "지상 29층",
+            "height_m": "최고 83.75m",
+            "far_pct": "계획 300.48%"
+          },
+          "kind": "사업시행계획인가 고시",
+          "scope": "면목역1구역 가로주택정비사업",
+          "source_url": "https://eminwon.jungnang.go.kr/emwp/gov/mogaha/ntis/web/ofr/action/OfrAction.do?context=NTIS&homepage_pbs_yn=Y&jndinm=OfrNotAncmtEJB&method=selectOfrNotAncmt&methodnm=selectOfrNotAncmtRegst&not_ancmt_mgt_no=15567&not_ancmt_se_code=01%2C02%2C04&pageIndex=1&subCheck=Y",
+          "source_as_of": "2026-07-30",
+          "publisher": "중랑구",
+          "notice_number": "중랑구 고시 제2026-90호",
+          "page": null,
+          "section": "6. 건축물의 건축계획에 관한 사항",
+          "approval_date": "2026-07-28",
+          "derived_from": {
+            "file": "zones.json",
+            "id": "mz-seoul-11000uq120ps202505310160",
+            "floors": "max_floors_above_ground",
+            "height_m": "height_m",
+            "far_pct": "floor_area_ratio_pct",
+            "evidence": "field_evidence.plan"
+          },
+          "later_confirmation": {
+            "kind": "사업시행계획안 통합심의",
+            "scope": "면목역1구역 가로주택정비사업",
+            "source_url": "https://www.seoul.go.kr/news/news_report.do?nttNo=468710",
+            "source_as_of": "2026-10-23",
+            "publisher": "서울특별시 모아주택과",
+            "notice_number": null,
+            "page": null,
+            "section": "① 면목동 모아주택 4개 사업 및 참고자료 1 사업개요",
+            "review_date": "2026-10-22",
+            "attachment_url": "https://seoulboard.seoul.go.kr/comm/getFile?srvcId=BBSTY1&upperNo=468710&fileTy=ATTACH&fileNo=1&bbsNo=158",
+            "note": "통합심의 참고자료 1에서도 층수·용적률 일치. 최고높이는 7월 인가 고시 기준."
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,188 @@
+{
+  "dataset": "국토교통부 GIS건물통합정보 (서울시 부동산정보광장)",
+  "source_url": "https://land.seoul.go.kr/land/map/land/map.do",
+  "wfs_url": "https://land.seoul.go.kr/land/geoserver/wfs.do",
+  "layer": "landbiz:tl_unity_buld",
+  "catalog_url": "https://www.data.go.kr/data/15083092/fileData.do",
+  "column_dictionary_url": "https://www.vworld.kr/contents/국가중점데이터_컬럼정의서_배포용.xlsx",
+  "license": "공공누리 제1유형 (출처표시)",
+  "license_url": "https://www.kogl.or.kr/info/licenseType1.do",
+  "source_as_of": "2024-12-31",
+  "checked_on": "2026-11-25",
+  "snapshot_date": "2026-11-24",
+  "boundary_sha256": "3f3b2e1f41e8a37ecc1305c1f8c7b133aa9b5a83f60045090fd2d16a0399db4c",
+  "buffer_m": 150,
+  "source_fields": {
+    "geom": "건물 전체 도형 (EPSG:5179, m)",
+    "a1": "GIS건물통합식별번호",
+    "a13": "사용승인일자",
+    "a16": "높이(m)",
+    "a19": "건축물ID (원자료의 대장 연결 지표)",
+    "a22": "데이터기준일자",
+    "a26": "지상층_수"
+  },
+  "source_crs": "EPSG:5179",
+  "output_crs": "OGC:CRS84",
+  "geometry_source": "연속지적도 기반 건물 도형과 세움터 대장을 건물 단위로 통합. 위치는 원자료의 작성 정확도를 따릅니다.",
+  "towns": {
+    "mt-202603-public-010": {
+      "source_as_of": "2024-12-31",
+      "files": [
+        {
+          "path": "mt-202603-public-010-01.geojson",
+          "sha256": "30dd1ad3584187a0ccce5d884444f4c48b6b8a90941ae437301fb296fe25488b",
+          "bytes": 499807,
+          "gzip_bytes": 58178,
+          "count": 1213
+        },
+        {
+          "path": "mt-202603-public-010-02.geojson",
+          "sha256": "8460ab5c059f56429f51b8b0b068166a59be79ed74c00206a054f032a0e4f460",
+          "bytes": 164577,
+          "gzip_bytes": 22641,
+          "count": 371
+        }
+      ],
+      "stats": {
+        "total": 1584,
+        "inside": 487,
+        "crossing": 20,
+        "nearby": 1077,
+        "inside_known_year": 467,
+        "inside_unknown_year": 20,
+        "inside_30_plus": 403,
+        "registry_linked": 1484,
+        "official_height": 587,
+        "estimated_height": 897,
+        "unknown_height": 100
+      },
+      "audit": {
+        "bbox_count": 1916,
+        "wfs_pages": [
+          {
+            "start_index": 0,
+            "number_returned": 1000,
+            "timestamp": "2026-11-25T01:27:42.572Z",
+            "sha256": "6fdb472a753172041ee13a103f39d54f3aaf1adda18a5fb4a57277bebbe539f0"
+          },
+          {
+            "start_index": 1000,
+            "number_returned": 916,
+            "timestamp": "2026-11-25T01:27:42.866Z",
+            "sha256": "0aee34bdb8f8e7797a5d28931dc62639d646d7acbf65f6663f0c70280c2d6e64"
+          }
+        ],
+        "matched_unique_ids": 1584,
+        "duplicate_ids_outside_buffer": [],
+        "matched_ids_sha256": "3a24a974b4783c1ec77557c686ffe26e84b291502167d6abfb2f243415887201",
+        "rounded_geometry_reviews": [
+          {
+            "id": "1973208099114542285500000000",
+            "reason": "Self-intersection[127.092431989011 37.5903210989011]",
+            "resolution": "topology_preserving_grid_snap"
+          }
+        ]
+      }
+    },
+    "mt-202603-public-034": {
+      "source_as_of": "2024-12-31",
+      "files": [
+        {
+          "path": "mt-202603-public-034.geojson",
+          "sha256": "0882caf734c4e228a6f111c1fc9d7cf7be45d8af1db4de7a0617836d28ff9a82",
+          "bytes": 328605,
+          "gzip_bytes": 40228,
+          "count": 794
+        }
+      ],
+      "stats": {
+        "total": 794,
+        "inside": 259,
+        "crossing": 2,
+        "nearby": 533,
+        "inside_known_year": 259,
+        "inside_unknown_year": 0,
+        "inside_30_plus": 214,
+        "registry_linked": 716,
+        "official_height": 457,
+        "estimated_height": 259,
+        "unknown_height": 78
+      },
+      "audit": {
+        "bbox_count": 1090,
+        "wfs_pages": [
+          {
+            "start_index": 0,
+            "number_returned": 1000,
+            "timestamp": "2026-11-25T01:27:46.080Z",
+            "sha256": "7728974aa3ab5d488049fd3fa57a89ac83d708325814b92bfe234351a6c43827"
+          },
+          {
+            "start_index": 1000,
+            "number_returned": 90,
+            "timestamp": "2026-11-25T01:27:46.440Z",
+            "sha256": "7465082625384a5c01fe33b7c9dd8f26021e895e2adc21d0b9674a3a960e9b39"
+          }
+        ],
+        "matched_unique_ids": 794,
+        "duplicate_ids_outside_buffer": [],
+        "matched_ids_sha256": "c4a3ea7c9851a4033309bc608bc5b2be33302a5506036912bc0604cb31490860",
+        "rounded_geometry_reviews": []
+      }
+    },
+    "mt-202603-public-067": {
+      "source_as_of": "2024-12-31",
+      "files": [
+        {
+          "path": "mt-202603-public-067.geojson",
+          "sha256": "4c8755839685660c3149a58ee8f173e1f846c89a31d1402a435f0d24645c61a7",
+          "bytes": 475582,
+          "gzip_bytes": 61509,
+          "count": 1061
+        }
+      ],
+      "stats": {
+        "total": 1061,
+        "inside": 294,
+        "crossing": 23,
+        "nearby": 744,
+        "inside_known_year": 285,
+        "inside_unknown_year": 9,
+        "inside_30_plus": 245,
+        "registry_linked": 995,
+        "official_height": 433,
+        "estimated_height": 562,
+        "unknown_height": 66
+      },
+      "audit": {
+        "bbox_count": 1383,
+        "wfs_pages": [
+          {
+            "start_index": 0,
+            "number_returned": 1000,
+            "timestamp": "2026-11-25T01:28:21.921Z",
+            "sha256": "7dae410c33be795e1e665ba95749e68436208d51a9a358349ca8be6be8a80126"
+          },
+          {
+            "start_index": 1000,
+            "number_returned": 383,
+            "timestamp": "2026-11-25T01:28:22.138Z",
+            "sha256": "eba664786fe198960ed15047e52d74f37be2fe60c4acc8ec659eea3bba63edb2"
+          }
+        ],
+        "matched_unique_ids": 1061,
+        "duplicate_ids_outside_buffer": [
+          "1978184952944476790300000000"
+        ],
+        "matched_ids_sha256": "78d058b5e9d13b6d6852f3d09b33422eb43af32eb35be57f189450ea5e733ba7",
+        "rounded_geometry_reviews": [
+          {
+            "id": "2011185189924477530400000000",
+            "reason": "Self-intersection[126.833144297845 37.5319645353612]",
+            "resolution": "topology_preserving_grid_snap"
+          }
+        ]
+      }
+    }
+  }
+}

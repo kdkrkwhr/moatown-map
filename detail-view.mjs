@@ -1,4 +1,4 @@
-import {formatValue,unitsChange,projectIntervals,compareInterval} from './detail-format.mjs?v=21935ea7588b';
+import {formatValue,unitsChange,projectIntervals,compareInterval} from './detail-format.mjs?v=669df25d30a5';
 
 const pending='미고시';
 const date=v=>formatValue(v,'date');
@@ -410,10 +410,16 @@ function detailTabs(container,children,designated){
   return {panels,activate};
 }
 
-export function renderProjectDetail(container,{town,zone,children,boundaries,snapshot,cityRule,registryUrl,stats,select,badge,copyLink,expandDetail,initialTab}){
+export function renderProjectDetail(container,{town,zone,children,boundaries,snapshot,cityRule,registryUrl,stats,select,badge,copyLink,expandDetail,initialTab,openPilot}){
   const r=zone??town,boundary=boundaries.get(r.id),intervals=projectIntervals(town,zone,snapshot);
   const comparison=!zone && children.length?comparePlans(children):null;
   const header=summary(town,zone,intervals,badge,copyLink,comparison);
+  if(openPilot){
+    const button=el('button','3D 보기','pilot-entry');
+    button.type='button';button.setAttribute('aria-haspopup','dialog');button.setAttribute('aria-controls','pilot-viewer');
+    button.addEventListener('click',openPilot);
+    header.querySelector('.copy-link').before(button);
+  }
   container.append(header);
   const {panels,activate}=detailTabs(container,children,r.land_transaction_permit?.designated===true);
   if(comparison){

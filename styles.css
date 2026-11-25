@@ -478,6 +478,66 @@ body[data-loading=true] .map-loading { display: block; position: absolute; top: 
 .sub-card-field > :first-child { color: var(--sub); }
 .compare-areas { grid-column: 1 / -1; display: flex; width: 100%; align-items: center; justify-content: space-between; gap: 6px; margin-top: 7px; padding: 9px 10px; border-radius: 8px; background: #eaf4f1; color: #165849; text-align: left; font-size: 13px; }
 .compare-areas span { margin-left: auto; font-size: 12px; }
+.pilot-entry { flex: none; margin-left: auto; padding: 8px 11px; min-height: 40px; border-radius: 10px; font-size: 13px; font-weight: 700; color: white; background: #176755; }
+.pilot-entry:hover { background: #104c40; }
+.pilot-list-label { font-size: 11px; font-weight: 650; color: #176755; }
+#pilot-viewer { width: min(1240px,96vw); height: min(850px,90dvh); max-width: none; max-height: none; border: 0; border-radius: 20px; padding: 0; overflow: hidden; background: #f8faf8; color: #18382f; }
+#pilot-viewer[open] { display: flex; flex-direction: column; }
+#pilot-viewer::backdrop { background: rgb(15 39 34 / .62); }
+.pilot-heading { flex: none; display: flex; align-items: center; gap: 18px; padding: 14px 20px; background: white; border-bottom: 1px solid #dae5df; }
+.pilot-heading h2,.pilot-info h3 { margin: 0; line-height: 1.3; }
+.pilot-heading h2 { font-size: clamp(17px,2.5vw,23px); }
+.pilot-heading small { display: block; color: #537064; font-weight: 600; }
+#pilot-back,#pilot-tools button { border: 1px solid #c7d6cd; border-radius: 9px; background: #fff; min-height: 40px; padding: 5px 11px; font-weight: 650; }
+.pilot-modes { display: flex; gap: 3px; margin-left: auto; background: #edf2ef; padding: 3px; border-radius: 12px; }
+.pilot-modes button { min-height: 38px; padding: 5px 16px; font-size: 14px; border-radius: 9px; font-weight: 650; }
+.pilot-modes button[aria-pressed=true] { background: #195d50; color: white; }
+.pilot-layout { flex: 1; min-height: 0; display: grid; grid-template-columns: minmax(0,1fr) minmax(230px,27%); }
+.pilot-stage { position: relative; min-height: 0; min-width: 0; background: #e6eee8; isolation: isolate; }
+#pilot-scene { position: absolute; inset: 0; overflow: hidden; }
+#pilot-tools { position: absolute; z-index: 2; top: 12px; right: 12px; display: grid; gap: 3px; }
+#pilot-tools button { box-shadow: 0 2px 8px #254c3217; color: #254c40; font-size: 19px; min-width: 42px; padding: 1px 8px; }
+#pilot-tools button:last-child { font-size: 12px; }
+#pilot-viewer [disabled] { opacity: .45; }
+#pilot-loading { position: absolute; z-index: 3; top: 50%; left: 50%; transform: translate(-50%,-50%); background: #fff; border-radius: 12px; padding: 12px 18px; text-align: center; font-size: 14px; box-shadow: var(--shadow); }
+#pilot-loading button,.pilot-text-button { color: #176755; text-decoration: underline; padding: 6px; }
+.pilot-info { min-height: 0; overflow-y: auto; background: #fff; padding: 18px; border-left: 1px solid #d8e4dd; }
+.pilot-select { display: grid; gap: 6px; color: #46645b; font-size: 13px; font-weight: 650; margin-bottom: 18px; }
+.pilot-select select { width: 100%; max-width: 100%; min-height: 40px; background: white; border: 1px solid #bdcfc4; border-radius: 9px; padding: 5px 9px; color: #193a30; font: inherit; }
+.pilot-info h3 { font-size: 17px; }
+.pilot-stat { display: block; color: #1c6051; font-size: 34px; line-height: 1.15; margin-top: 8px; }
+.pilot-denominator,.pilot-meta,.pilot-note { margin: 6px 0; }
+.pilot-info a { display: inline-block; font-size: 13px; color: #13614e; padding-block: 5px; text-underline-offset: 3px; }
+.pilot-meta,.pilot-note { font-size: 12px; line-height: 1.5; color: #536a60; display: block; }
+.pilot-note { padding: 9px 10px; border-radius: 8px; background: #f0f5f2; }
+.pilot-evidence { margin-top: 6px; font-size: 13px; }
+.pilot-evidence summary { padding-block: 5px; cursor: pointer; }
+.pilot-evidence a { display: block; }
+.pilot-key { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 6px; list-style: none; padding: 12px 0; margin: 8px 0; border-block: 1px solid #e0e9e2; font-size: 12px; }
+.pilot-key li::before { content: ''; display: inline-block; width: 10px; height: 10px; border-radius: 3px; margin-right: 5px; background: #adb9bf; }
+.pilot-key [data-tier=under_20]::before { background: #82ac98; }
+.pilot-key [data-tier="20_to_29"]::before { background: #d4aa64; }
+.pilot-key [data-tier="30_plus"]::before { background: #ce815e; }
+.pilot-facts { display: grid; margin: 10px 0; }
+.pilot-facts div { display: flex; justify-content: space-between; gap: 8px; padding-block: 7px; border-bottom: 1px solid #e3eae5; }
+.pilot-facts dt { color: #51695d; font-size: 13px; }
+.pilot-facts dd { margin: 0; text-align: right; font-weight: 650; }
+@media(max-width:700px) and (orientation:portrait), (max-width:540px) {
+  #pilot-viewer { width: 100%; height: 100dvh; border-radius: 0; }
+  .pilot-heading { padding: max(9px,env(safe-area-inset-top)) 12px 9px; gap: 8px; flex-wrap: wrap; }
+  .pilot-heading div:not(.pilot-modes) { flex: 1; }
+  .pilot-modes { flex: 1 0 100%; }
+  .pilot-modes button { flex: 1; }
+  .pilot-layout { display: flex; flex-direction: column; }
+  .pilot-stage { flex: 1 1 auto; }
+  .pilot-info { flex: 0 0 clamp(145px,30dvh,270px); border: 0; border-top: 1px solid #c4d4ca; padding: 10px 16px max(12px,env(safe-area-inset-bottom)); }
+  .pilot-select { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; white-space: nowrap; }
+  .pilot-select select { min-width: 0; }
+  .pilot-stat { display: inline-block; margin: 2px 8px 0 0; font-size: 25px; }
+  .pilot-denominator { display: inline; font-size: 13px; }
+  .pilot-key { display: flex; flex-wrap: wrap; padding-block: 6px; margin-block: 4px; column-gap: 12px; }
+  #pilot-tools { right: 8px; top: 8px; }
+}
 .compare-areas::after { content: '›'; font-size: 17px; line-height: 1; }
 .zone-comparison { width: 100%; margin: 0 0 14px; border-collapse: collapse; table-layout: fixed; background: white; font-size: 12px; overflow-wrap: anywhere; }
 .zone-comparison caption { padding: 3px 0 8px; text-align: left; color: var(--ink); font-size: 15px; font-weight: 700; }
