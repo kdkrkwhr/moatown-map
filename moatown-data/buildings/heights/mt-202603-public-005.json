@@ -1,0 +1,50 @@
+{
+  "town_id": "mt-202603-public-005",
+  "source": "서울특별시 서울부동산정보광장 건물 지도",
+  "source_url": "https://land.seoul.go.kr/land/map/land/map.do",
+  "wfs_url": "https://land.seoul.go.kr/land/geoserver/wfs.do",
+  "source_as_of": null,
+  "checked_on": "2026-11-25",
+  "date_note": "source_record_date는 원천 도형의 h_date이다. 지도 전체의 기준일은 확인되지 않았다.",
+  "method_note": "EPSG:5179에서 두 건물 도형의 교집합 면적을 합집합 면적으로 나눈 값(IoU)이 0.9 이상이어야 한다. 양방향에서 IoU 0.1 초과 후보가 하나여야 하며 도로명주소 건물(gro_flo_co, IoU 0.6 이상)과 층수가 다르면 보류한다. 지도 층수에 3m를 곱한 추정 높이다.",
+  "coverage": {
+    "originally_missing": 68,
+    "matched": 0,
+    "still_missing": 68
+  },
+  "records": {},
+  "audit": {
+    "building_chunks": [
+      "d5ec83f8b4955312c76ebe95209327e2c0e5385908d9efcc3f6b889b27bc9ccf"
+    ],
+    "bbox_epsg_5179": [
+      942954,
+      1949434,
+      943793,
+      1950235
+    ],
+    "wfs_pages_sha256": {
+      "landbiz:tl_nrm_buld": [
+        "9be812d24120c1405eebd80b758df9086fe9d9f83cb4cd5dc65a03336daffb56",
+        "731714bed83117a6523c0304d7f078076bb892c9d6e49185c0fc21713faa333d"
+      ],
+      "landbiz:tl_sdw_buld": [
+        "370dbbd6122ab14fb0f3158843e132c78fe3a45b2b22ec657fb961d7cdefdd36"
+      ]
+    },
+    "method_version": 1,
+    "topographic_rows": 1174,
+    "road_rows": 783,
+    "nonunique_source_ids": [],
+    "originally_missing_by_area": {
+      "inside": 12,
+      "crossing": 5,
+      "nearby": 51
+    },
+    "matched_by_area": {
+      "inside": 0,
+      "crossing": 0,
+      "nearby": 0
+    }
+  }
+}

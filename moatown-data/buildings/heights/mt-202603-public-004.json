@@ -1,0 +1,66 @@
+{
+  "town_id": "mt-202603-public-004",
+  "source": "서울특별시 서울부동산정보광장 건물 지도",
+  "source_url": "https://land.seoul.go.kr/land/map/land/map.do",
+  "wfs_url": "https://land.seoul.go.kr/land/geoserver/wfs.do",
+  "source_as_of": null,
+  "checked_on": "2026-11-25",
+  "date_note": "source_record_date는 원천 도형의 h_date이다. 지도 전체의 기준일은 확인되지 않았다.",
+  "method_note": "EPSG:5179에서 두 건물 도형의 교집합 면적을 합집합 면적으로 나눈 값(IoU)이 0.9 이상이어야 한다. 양방향에서 IoU 0.1 초과 후보가 하나여야 하며 도로명주소 건물(gro_flo_co, IoU 0.6 이상)과 층수가 다르면 보류한다. 지도 층수에 3m를 곱한 추정 높이다.",
+  "coverage": {
+    "originally_missing": 44,
+    "matched": 1,
+    "still_missing": 43
+  },
+  "records": {
+    "0000185867304474310100000000": {
+      "floors": 1,
+      "height_m": 3,
+      "height_source": "estimated_from_floors",
+      "source_url": "https://land.seoul.go.kr/land/map/land/map.do",
+      "source_layer": "landbiz:tl_nrm_buld",
+      "source_field": "flr_num",
+      "source_id": "1000376082249B00110000000000000065",
+      "source_as_of": null,
+      "source_record_date": "2024-06-24",
+      "method": "unique_footprint_iou",
+      "overlap_iou": 0.9762
+    }
+  },
+  "audit": {
+    "building_chunks": [
+      "918a0aa5dc2721a1b849371c994f247ef764c810b74a0b569f5c5e7223609590"
+    ],
+    "bbox_epsg_5179": [
+      941387,
+      1947831,
+      942149,
+      1948582
+    ],
+    "wfs_pages_sha256": {
+      "landbiz:tl_nrm_buld": [
+        "6f1f98e97f24ff5cea5423ee6fc6194d4e6bb9869d8af6a8afe08aa8cdacaa36",
+        "8d7cbbf70a2210deaaae9851133bd7ea7768aa1be1f7a3c8cafc4cdd78c804c4",
+        "8b2c2554717e84248399f8de32634b9fbd54607dbaa7b1b0431a81792be52f4e"
+      ],
+      "landbiz:tl_sdw_buld": [
+        "6d5e5d678bc0619ce57f44487cbf8756891f03f31d59a97dc1e896143bf7a7b3",
+        "6d70c02e3799055634440e67aff031592f24c2aa620d02a8a8a2e1a10effa945"
+      ]
+    },
+    "method_version": 1,
+    "topographic_rows": 2339,
+    "road_rows": 1697,
+    "nonunique_source_ids": [],
+    "originally_missing_by_area": {
+      "inside": 9,
+      "crossing": 1,
+      "nearby": 34
+    },
+    "matched_by_area": {
+      "inside": 0,
+      "crossing": 0,
+      "nearby": 1
+    }
+  }
+}

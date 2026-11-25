@@ -1,0 +1,68 @@
+{
+  "town_id": "mt-202603-public-039",
+  "source": "서울특별시 서울부동산정보광장 건물 지도",
+  "source_url": "https://land.seoul.go.kr/land/map/land/map.do",
+  "wfs_url": "https://land.seoul.go.kr/land/geoserver/wfs.do",
+  "source_as_of": null,
+  "checked_on": "2026-11-25",
+  "date_note": "source_record_date는 원천 도형의 h_date이다. 지도 전체의 기준일은 확인되지 않았다.",
+  "method_note": "EPSG:5179에서 두 건물 도형의 교집합 면적을 합집합 면적으로 나눈 값(IoU)이 0.9 이상이어야 한다. 양방향에서 IoU 0.1 초과 후보가 하나여야 하며 도로명주소 건물(gro_flo_co, IoU 0.6 이상)과 층수가 다르면 보류한다. 지도 층수에 3m를 곱한 추정 높이다.",
+  "coverage": {
+    "originally_missing": 110,
+    "matched": 1,
+    "still_missing": 109
+  },
+  "records": {
+    "0000202423664597511100000000": {
+      "floors": 1,
+      "height_m": 3,
+      "height_source": "estimated_from_floors",
+      "source_url": "https://land.seoul.go.kr/land/map/land/map.do",
+      "source_layer": "landbiz:tl_nrm_buld",
+      "source_field": "flr_num",
+      "source_id": "1000377051116B00110000000000000521",
+      "source_as_of": null,
+      "source_record_date": "2024-06-24",
+      "method": "unique_footprint_iou",
+      "overlap_iou": 0.9136
+    }
+  },
+  "audit": {
+    "building_chunks": [
+      "aa9449bf3fe67770784ec5331144ec4098f48aff3e0fd51233054ce97281696b"
+    ],
+    "bbox_epsg_5179": [
+      957822,
+      1960055,
+      958767,
+      1960942
+    ],
+    "wfs_pages_sha256": {
+      "landbiz:tl_nrm_buld": [
+        "c0403a2459865bef7259eadc2e449b84c226dc4900cd8553451cc1c7e0d75b64",
+        "f054ff57bedeebcf1da9fad37abd7bef9d1b39284957743a9257de2d4f019ef7",
+        "511122fcd09187792ad44d669ae98732f490b4904ecf4d29986aa69bdbe213ca",
+        "78e613c93815b3866d9e641e6ddc32f40675d067db61dbcffac1221b332e7228"
+      ],
+      "landbiz:tl_sdw_buld": [
+        "30226e12d5bcf572d3e88a15525582bc91d2fa88aade57384927f295b99867ea",
+        "3937b88b82e9d40573de555f82ae7e0855e20fee77b950e9179721a8308d7bec",
+        "6b7e9d8657f730c100731a606965ddf91589e82fc77f39f77f77506bc832d1b1"
+      ]
+    },
+    "method_version": 1,
+    "topographic_rows": 3561,
+    "road_rows": 2723,
+    "nonunique_source_ids": [],
+    "originally_missing_by_area": {
+      "inside": 12,
+      "crossing": 0,
+      "nearby": 98
+    },
+    "matched_by_area": {
+      "inside": 0,
+      "crossing": 0,
+      "nearby": 1
+    }
+  }
+}

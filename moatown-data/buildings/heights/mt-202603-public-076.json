@@ -1,0 +1,118 @@
+{
+  "town_id": "mt-202603-public-076",
+  "source": "서울특별시 서울부동산정보광장 건물 지도",
+  "source_url": "https://land.seoul.go.kr/land/map/land/map.do",
+  "wfs_url": "https://land.seoul.go.kr/land/geoserver/wfs.do",
+  "source_as_of": null,
+  "checked_on": "2026-11-25",
+  "date_note": "source_record_date는 원천 도형의 h_date이다. 지도 전체의 기준일은 확인되지 않았다.",
+  "method_note": "EPSG:5179에서 두 건물 도형의 교집합 면적을 합집합 면적으로 나눈 값(IoU)이 0.9 이상이어야 한다. 양방향에서 IoU 0.1 초과 후보가 하나여야 하며 도로명주소 건물(gro_flo_co, IoU 0.6 이상)과 층수가 다르면 보류한다. 지도 층수에 3m를 곱한 추정 높이다.",
+  "coverage": {
+    "originally_missing": 109,
+    "matched": 5,
+    "still_missing": 104
+  },
+  "records": {
+    "0000194507714425403100000000": {
+      "floors": 1,
+      "height_m": 3,
+      "height_source": "estimated_from_floors",
+      "source_url": "https://land.seoul.go.kr/land/map/land/map.do",
+      "source_layer": "landbiz:tl_nrm_buld",
+      "source_field": "flr_num",
+      "source_id": "1000376120428B00110000000000000285",
+      "source_as_of": null,
+      "source_record_date": "2024-06-24",
+      "method": "unique_footprint_iou",
+      "overlap_iou": 0.9022
+    },
+    "0000194512084425532600000000": {
+      "floors": 1,
+      "height_m": 3,
+      "height_source": "estimated_from_floors",
+      "source_url": "https://land.seoul.go.kr/land/map/land/map.do",
+      "source_layer": "landbiz:tl_nrm_buld",
+      "source_field": "flr_num",
+      "source_id": "1000376120428B00110000000000000290",
+      "source_as_of": null,
+      "source_record_date": "2024-06-24",
+      "method": "unique_footprint_iou",
+      "overlap_iou": 0.9163
+    },
+    "0000194539194425288500000000": {
+      "floors": 1,
+      "height_m": 3,
+      "height_source": "estimated_from_floors",
+      "source_url": "https://land.seoul.go.kr/land/map/land/map.do",
+      "source_layer": "landbiz:tl_nrm_buld",
+      "source_field": "flr_num",
+      "source_id": "1000376120438B00110000000000000497",
+      "source_as_of": null,
+      "source_record_date": "2024-06-24",
+      "method": "unique_footprint_iou",
+      "overlap_iou": 0.9158
+    },
+    "0000194978044427430800000000": {
+      "floors": 1,
+      "height_m": 3,
+      "height_source": "estimated_from_floors",
+      "source_url": "https://land.seoul.go.kr/land/map/land/map.do",
+      "source_layer": "landbiz:tl_nrm_buld",
+      "source_field": "flr_num",
+      "source_id": "1000376120429B00110000000000000487",
+      "source_as_of": null,
+      "source_record_date": "2024-06-24",
+      "method": "unique_footprint_iou",
+      "overlap_iou": 0.9386
+    },
+    "0000194990444427471600000000": {
+      "floors": 1,
+      "height_m": 3,
+      "height_source": "estimated_from_floors",
+      "source_url": "https://land.seoul.go.kr/land/map/land/map.do",
+      "source_layer": "landbiz:tl_nrm_buld",
+      "source_field": "flr_num",
+      "source_id": "1000376120429B00110000000000000455",
+      "source_as_of": null,
+      "source_record_date": "2024-06-24",
+      "method": "unique_footprint_iou",
+      "overlap_iou": 0.9097
+    }
+  },
+  "audit": {
+    "building_chunks": [
+      "c677ee694661fde3d79eb514d218874eb21935a12fcea713fc8b67fd7b34cf54"
+    ],
+    "bbox_epsg_5179": [
+      950190,
+      1942895,
+      951105,
+      1943968
+    ],
+    "wfs_pages_sha256": {
+      "landbiz:tl_nrm_buld": [
+        "3fb27aa18d609e3543030f1ae70e149ac1a399691cdb1588ac757e1171f35f5d",
+        "a0d726dbd107d42e09bc937b1bf0403d66702ae8c9a260adf94cd434013fffb8",
+        "a4fd33cc68269a3b75807f8fb24955dd2ccd7e1d35427abef66f6e4a5359482f"
+      ],
+      "landbiz:tl_sdw_buld": [
+        "c7e786f1dba565bb5c694aee56c5d60163fc337211af40578465ee12f7ed8a19",
+        "84846d64e2898c8b1cecefa30bf9d00935e8e4abaa55bfb8f6af0a054393decb"
+      ]
+    },
+    "method_version": 1,
+    "topographic_rows": 2966,
+    "road_rows": 1832,
+    "nonunique_source_ids": [],
+    "originally_missing_by_area": {
+      "inside": 11,
+      "crossing": 3,
+      "nearby": 95
+    },
+    "matched_by_area": {
+      "inside": 0,
+      "crossing": 0,
+      "nearby": 5
+    }
+  }
+}

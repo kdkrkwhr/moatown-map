@@ -2,7 +2,7 @@
 # requires-python = ">=3.11"
 # dependencies = ["shapely==2.2.0", "pyproj==3.7.2", "numpy==2.4.6"]
 # ///
-"""Build the three static building extracts with 'uv run scripts/build-pilot-buildings.py'.
+"""Build static extracts for every published town reference boundary.
 
 Use --cache-dir OUTSIDE_THE_REPO to retain and replay the WFS pages used for a build.
 The national AL_D010 column dictionary also applies to Seoul's tl_unity_buld layer.
@@ -15,6 +15,7 @@ import json
 import math
 import tempfile
 from collections import Counter
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 from urllib.parse import quote, urlencode
@@ -27,7 +28,6 @@ from shapely.geometry import mapping, shape
 
 
 ROOT = Path(__file__).resolve().parents[1]
-TOWN_IDS = tuple(f"mt-202603-public-{n}" for n in ("010", "034", "067"))
 MAP_URL = "https://land.seoul.go.kr/land/map/land/map.do"
 WFS = "https://land.seoul.go.kr/land/geoserver/wfs.do"
 LAYER = "landbiz:tl_unity_buld"
@@ -43,6 +43,11 @@ FIELDS = {
     "a19": "건축물ID (원자료의 대장 연결 지표)",
     "a22": "데이터기준일자",
     "a26": "지상층_수",
+    "a2": "필지 고유번호",
+    "a4": "법정동명",
+    "a9": "건축물용도명",
+    "a11": "건축물구조명",
+    "a27": "지하층_수",
 }
 
 
@@ -110,11 +115,14 @@ def topology(geometry):
 def output_geometry(original, building_id, reviews):
     geographic = shapely.transform(original, TO_LONLAT.transform, interleaved=False)
     rounded = shapely.transform(geographic, lambda coordinates: np.round(coordinates, 6))
-    rounded = shapely.remove_repeated_points(rounded)
-    if not rounded.is_valid:
+    try:
+        rounded = shapely.remove_repeated_points(rounded)
+        reason = None if rounded.is_valid else shapely.is_valid_reason(rounded)
+    except shapely.errors.GEOSException as error:
+        reason = str(error)
+    if reason:
         # Independent rounding can cross edges a few centimetres apart. Snap-round the
         # original polygon on the same grid and check every part and interior ring below.
-        reason = shapely.is_valid_reason(rounded)
         snapped = shapely.set_precision(geographic, 0.000001)
         rounded = shapely.transform(snapped, lambda coordinates: np.round(coordinates, 6))
         reviews.append({"id": building_id, "reason": reason, "resolution": "topology_preserving_grid_snap"})
@@ -185,23 +193,38 @@ def process_town(town_id, boundary, cache, directory, snapshot):
     region = town.buffer(150, quad_segs=16)
     rows, pages = read_source(region.bounds, cache, town_id)
     features, reviews, selected, dates = [], [], set(), set()
+    withheld = []
     stats = Counter(dict.fromkeys(("total", "inside", "crossing", "nearby", "inside_known_year",
                                    "inside_unknown_year", "inside_30_plus", "registry_linked",
                                    "official_height", "estimated_height", "unknown_height"), 0))
     candidate_ids = Counter(row["properties"]["a1"] for row in rows)
+    outside_duplicates = {key for key,count in candidate_ids.items() if count > 1}
     for row in rows:
-        source, original = row["properties"], shape(row["geometry"])
-        if not original.is_valid or original.geom_type not in ("Polygon", "MultiPolygon"):
-            raise ValueError(f"{source['a1']}: invalid source polygon")
+        source = row["properties"]
+        try:
+            original = shape(row["geometry"])
+        except (shapely.errors.GEOSException, ValueError):
+            outside_duplicates.discard(source["a1"])
+            withheld.append({"id": source["a1"], "reason": "unreadable_bbox_geometry"})
+            continue
         if not region.intersects(original):
             continue
-        if source["a1"] in selected:
-            raise ValueError(f"{town_id}: duplicate building in the buffer: {source['a1']}")
+        outside_duplicates.discard(source["a1"])
+        if not original.is_valid or original.geom_type not in ("Polygon", "MultiPolygon"):
+            withheld.append({"id": source["a1"], "reason": "invalid_source_geometry"})
+            continue
+        if candidate_ids[source["a1"]] != 1:
+            withheld.append({"id": source["a1"], "reason": "non_unique_building_id"})
+            continue
+        try:
+            geometry = output_geometry(original, source["a1"], reviews)
+        except (ValueError, shapely.errors.GEOSException):
+            withheld.append({"id": source["a1"], "reason": "topology_lost_at_six_decimals"})
+            continue
         selected.add(source["a1"])
         dates.add(date.fromisoformat(source["a22"].removesuffix("Z")).isoformat())
         inside = True if town.covers(original) else None if town.intersects(original) else False
         properties = building_properties(source, inside, snapshot)
-        geometry = output_geometry(original, source["a1"], reviews)
         features.append({"type": "Feature", "properties": properties, "geometry": geometry})
         stats["total"] += 1
         stats[{True: "inside", False: "nearby", None: "crossing"}[inside]] += 1
@@ -217,10 +240,9 @@ def process_town(town_id, boundary, cache, directory, snapshot):
     files = package(directory, town_id, features, selected)
     return {"source_as_of": dates.pop(), "files": files, "stats": dict(stats),
             "audit": {"bbox_count": len(rows), "wfs_pages": pages, "matched_unique_ids": len(selected),
-                      "duplicate_ids_outside_buffer": sorted(k for k,n in candidate_ids.items()
-                                                             if n > 1 and k not in selected),
+                      "duplicate_ids_outside_buffer": sorted(outside_duplicates),
                       "matched_ids_sha256": digest("\n".join(sorted(selected)).encode()),
-                      "rounded_geometry_reviews": reviews}}
+                      "rounded_geometry_reviews": reviews,"withheld": withheld}}
 
 
 def main():
@@ -228,6 +250,8 @@ def main():
     parser.add_argument("--manifest", type=Path, default=ROOT / "moatown-data" / "latest.json")
     parser.add_argument("--output", type=Path, default=ROOT / "moatown-data" / "buildings")
     parser.add_argument("--cache-dir", type=Path)
+    parser.add_argument("--extend", action="store_true", help="Keep verified extracts for this snapshot and add missing towns")
+    parser.add_argument("--workers", type=int, default=3, choices=range(1,7))
     args = parser.parse_args()
     manifest = json.loads(args.manifest.read_bytes())
     boundary_path = args.manifest.parent / manifest["files"]["boundaries"]
@@ -237,9 +261,45 @@ def main():
         args.cache_dir.mkdir(parents=True, exist_ok=True)
     snapshot = date.fromisoformat(manifest["snapshot_date"])
     args.output.mkdir(parents=True, exist_ok=True)
+    boundary_digest = digest(boundary_path.read_bytes().replace(b"\r\n", b"\n"))
+    towns = {}
+    existing = args.output / "index.json"
+    previous = {"towns": {}}
+    if args.extend and existing.is_file():
+        previous = json.loads(existing.read_bytes())
+        if previous["snapshot_date"] != snapshot.isoformat() or previous["boundary_sha256"] != boundary_digest:
+            raise ValueError("Snapshot or reference boundaries changed. Rebuild without --extend.")
+        for tid, entry in previous["towns"].items():
+            if tid in boundaries and all(digest((args.output / f["path"]).read_bytes().replace(b"\r\n", b"\n")) == f["sha256"] for f in entry["files"]):
+                towns[tid] = entry
     with tempfile.TemporaryDirectory(dir=args.output.parent) as workspace:
         stage = Path(workspace)
-        towns = {tid: process_town(tid, boundaries[tid], args.cache_dir, stage, snapshot) for tid in TOWN_IDS}
+        with ThreadPoolExecutor(args.workers) as pool:
+            tasks = {pool.submit(process_town, tid, boundary, args.cache_dir, stage, snapshot): tid
+                     for tid, boundary in boundaries.items() if tid not in towns}
+            failures = []
+            for future in as_completed(tasks):
+                tid = tasks[future]
+                try:
+                    entry = future.result()
+                except Exception as error:
+                    failures.append(tid)
+                    print(f"{tid}: {error}", flush=True)
+                    continue
+                towns[tid] = entry
+                if args.extend and tid not in previous["towns"]:
+                    for f in entry["files"]:
+                        (stage / f["path"]).replace(args.output / f["path"])
+                if args.cache_dir and args.extend:
+                    entries = args.cache_dir / "entries"
+                    entries.mkdir(exist_ok=True)
+                    tmp = entries / (tid + ".tmp")
+                    tmp.write_bytes(encode(entry))
+                    tmp.replace(entries / (tid + ".json"))
+                print(f"{tid}: {entry['stats']['total']} buildings", flush=True)
+            if failures:
+                raise ValueError("Unfinished towns: " + ", ".join(sorted(failures)))
+        towns = dict(sorted(towns.items()))
         dates = {town["source_as_of"] for town in towns.values()}
         checks = [datetime.fromisoformat(page["timestamp"]).astimezone(timezone(timedelta(hours=9))).date()
                   for town in towns.values() for page in town["audit"]["wfs_pages"]]
@@ -252,16 +312,15 @@ def main():
             "license_url": "https://www.kogl.or.kr/info/licenseType1.do",
             "source_as_of": next(iter(dates)) if len(dates) == 1 else None,
             "checked_on": max(checks).isoformat(), "snapshot_date": snapshot.isoformat(),
-            "boundary_sha256": digest(boundary_path.read_bytes()), "buffer_m": 150,
+            "boundary_sha256": boundary_digest, "buffer_m": 150,
             "source_fields": FIELDS, "source_crs": "EPSG:5179", "output_crs": "OGC:CRS84",
             "geometry_source": "연속지적도 기반 건물 도형과 세움터 대장을 건물 단위로 통합. 위치는 원자료의 작성 정확도를 따릅니다.",
             "towns": towns,
         }
         index_name = "index.json"
         (stage / index_name).write_bytes(json.dumps(index, ensure_ascii=False, indent=2).encode() + b"\n")
-        for town in towns.values():
-            for file in town["files"]:
-                (stage / file["path"]).replace(args.output / file["path"])
+        for part in stage.glob("*.geojson"):
+            part.replace(args.output / part.name)
         (stage / index_name).replace(args.output / index_name)
 
 

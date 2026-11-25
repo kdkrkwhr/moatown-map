@@ -1,0 +1,51 @@
+{
+  "town_id": "mt-202603-public-034",
+  "current_view": {
+    "title": "번동 429-114 일대 정비 전 항공사진",
+    "scope": "번동 1~5구역 전체",
+    "source_as_of": "2026-05-22",
+    "date_kind": "웹페이지 수정일",
+    "capture_date": null,
+    "source_url": "https://news.seoul.go.kr/citybuild/archives/539017",
+    "source_title": "[동북권] 번동 429-114번지 일대 모아타운 (모아타운 1호 시범단지)",
+    "source_locator": "본문 상단 ‘변경 전 현황’의 번동 항공사진",
+    "publisher": "서울특별시 건축기획관 전략주택공급과",
+    "attribution": "서울특별시 전략주택공급과, 2026년, 「[동북권] 번동 429-114번지 일대 모아타운 (모아타운 1호 시범단지)」의 ‘변경 전 현황’.",
+    "license": "공공누리 제4유형 (출처표시·상업적 이용금지·변경금지)",
+    "license_url": "https://www.kogl.or.kr/info/licenseType4.do",
+    "rights_checked_on": "2026-11-25",
+    "rights_evidence": "서울시 대상지 기록 하단에 공공누리 제4유형이 표시돼 있다. 시가 본문에서 제공하는 가로 1,024픽셀 파일을 그대로 사용했다.",
+    "image": "assets/beon/existing-site-2026-05.jpg",
+    "image_source_url": "https://news.seoul.go.kr/citybuild/files/2026/04/69f29871f0f729.18862338-scaled-e1777506527166-1024x611.jpg",
+    "image_width": 1024,
+    "image_height": 611,
+    "image_sha256": "7e9ed302d83d26380a024ee6d53591477e2fdc081572ff3fd27f7c8758dd083e",
+    "alt": "번동 우이천변의 정비 전 항공사진. 저층 주택 위에 흰 선으로 1~5구역을 구분하고 붉은 점선으로 대상지 외곽을 표시했다."
+  },
+  "views": [
+    {
+      "id": "beon-masterplan-2026-05",
+      "zone_id": null,
+      "title": "번동 429-114 일대 1~5구역 조감도",
+      "stage": "모아타운 관리계획",
+      "scope": "번동 1~5구역 전체",
+      "source_as_of": "2026-05-22",
+      "date_kind": "웹페이지 수정일",
+      "source_url": "https://news.seoul.go.kr/citybuild/archives/539017",
+      "source_title": "[동북권] 번동 429-114번지 일대 모아타운 (모아타운 1호 시범단지)",
+      "source_locator": "본문 상단 ‘변경 후 조감도’의 번동 1~5구역 주경 조감도",
+      "publisher": "서울특별시 건축기획관 전략주택공급과",
+      "attribution": "서울특별시 전략주택공급과, 2026년, 「[동북권] 번동 429-114번지 일대 모아타운 (모아타운 1호 시범단지)」의 ‘변경 후 조감도’.",
+      "license": "공공누리 제4유형 (출처표시·상업적 이용금지·변경금지)",
+      "license_url": "https://www.kogl.or.kr/info/licenseType4.do",
+      "rights_checked_on": "2026-11-25",
+      "rights_evidence": "서울시 대상지 기록 하단에 공공누리 제4유형이 표시돼 있다. 시가 본문에서 제공하는 가로 1,024픽셀 파일을 그대로 사용했다.",
+      "image": "assets/beon/masterplan-2026-05.jpg",
+      "image_source_url": "https://news.seoul.go.kr/citybuild/files/2026/04/69f298f8d0ffb5.66793357-1024x723.jpg",
+      "image_width": 1024,
+      "image_height": 723,
+      "image_sha256": "3dccbf069eefb0164676b9532796ffdeb3e02a4cdb50d290f27fb77532344ae5",
+      "alt": "번동 1~5구역을 위에서 본 계획 조감도. 우이천을 따라 공동주택과 수변 산책로가 배치돼 있다."
+    }
+  ]
+}

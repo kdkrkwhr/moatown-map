@@ -1,0 +1,65 @@
+{
+  "town_id": "mt-202603-public-032",
+  "source": "서울특별시 서울부동산정보광장 건물 지도",
+  "source_url": "https://land.seoul.go.kr/land/map/land/map.do",
+  "wfs_url": "https://land.seoul.go.kr/land/geoserver/wfs.do",
+  "source_as_of": null,
+  "checked_on": "2026-11-25",
+  "date_note": "source_record_date는 원천 도형의 h_date이다. 지도 전체의 기준일은 확인되지 않았다.",
+  "method_note": "EPSG:5179에서 두 건물 도형의 교집합 면적을 합집합 면적으로 나눈 값(IoU)이 0.9 이상이어야 한다. 양방향에서 IoU 0.1 초과 후보가 하나여야 하며 도로명주소 건물(gro_flo_co, IoU 0.6 이상)과 층수가 다르면 보류한다. 지도 층수에 3m를 곱한 추정 높이다.",
+  "coverage": {
+    "originally_missing": 129,
+    "matched": 1,
+    "still_missing": 128
+  },
+  "records": {
+    "0000192383274491836500000000": {
+      "floors": 1,
+      "height_m": 3,
+      "height_source": "estimated_from_floors",
+      "source_url": "https://land.seoul.go.kr/land/map/land/map.do",
+      "source_layer": "landbiz:tl_nrm_buld",
+      "source_field": "flr_num",
+      "source_id": "1000376082413B00110000000000000011",
+      "source_as_of": null,
+      "source_record_date": "2024-06-24",
+      "method": "unique_footprint_iou",
+      "overlap_iou": 0.9499
+    }
+  },
+  "audit": {
+    "building_chunks": [
+      "c605dfc2a04f9a884945c5ee80406a8be8ca22ff4d632ec0b2601f094f6f6a37"
+    ],
+    "bbox_epsg_5179": [
+      947778,
+      1949281,
+      948817,
+      1950219
+    ],
+    "wfs_pages_sha256": {
+      "landbiz:tl_nrm_buld": [
+        "92cec6c7955cafc0fe99a5f0556bf8e752abfaed83efc154e55c9d576f2eb27a",
+        "62b055bdd86b6ca9158b963499549e5462a849f019394f40ba418eb85e7795a5"
+      ],
+      "landbiz:tl_sdw_buld": [
+        "63c47a2c0c4090e6cfbf693a01677a1337e379123d21a56d75776bff5f68e152",
+        "d404618606f382bdfe391f151b0b8690f50417af8f49d14f38a201842d7b2591"
+      ]
+    },
+    "method_version": 1,
+    "topographic_rows": 1943,
+    "road_rows": 1339,
+    "nonunique_source_ids": [],
+    "originally_missing_by_area": {
+      "inside": 64,
+      "crossing": 4,
+      "nearby": 61
+    },
+    "matched_by_area": {
+      "inside": 1,
+      "crossing": 0,
+      "nearby": 0
+    }
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "town_id": "mt-202603-public-010",
+  "current_view": {
+    "title": "면목동 86-3 일대 정비 전 현황",
+    "scope": "면목역 1·2·4·6구역 전체",
+    "source_as_of": "2026-05-22",
+    "date_kind": "웹페이지 수정일",
+    "capture_date": null,
+    "source_url": "https://news.seoul.go.kr/citybuild/archives/538651",
+    "source_title": "[동북권] 면목동 86-3번지 일대 모아타운 (모아타운 2호 시범단지)",
+    "source_locator": "본문 상단 ‘변경 전 현황’",
+    "publisher": "서울특별시 건축기획관 전략주택공급과",
+    "attribution": "서울특별시 전략주택공급과, 2026년, 「[동북권] 면목동 86-3번지 일대 모아타운 (모아타운 2호 시범단지)」의 ‘변경 전 현황’.",
+    "license": "공공누리 제4유형 (출처표시·상업적 이용금지·변경금지)",
+    "license_url": "https://www.kogl.or.kr/info/licenseType4.do",
+    "rights_checked_on": "2026-11-25",
+    "rights_evidence": "서울시 대상지 기록 하단에 공공누리 제4유형이 표시돼 있다. 시가 본문에서 제공하는 가로 1,024픽셀 파일을 그대로 사용했다.",
+    "image": "assets/myeonmok/existing-site-2026-05.png",
+    "image_source_url": "https://news.seoul.go.kr/citybuild/files/2026/04/69f03672bcab08.02501828-1024x837.png",
+    "image_width": 1024,
+    "image_height": 837,
+    "image_sha256": "d4585ff4b42313b6048f64a43fba4f1186cfc62dac0f5213cf5737e028d8dd79",
+    "alt": "면목동 저층 주거지를 비스듬히 내려다본 정비 전 현황 자료. 붉은 점선이 대상지 경계를 따라 이어지고 흰 화살표가 도로를 표시한다."
+  },
+  "views": [
+    {
+      "id": "myeonmok-masterplan-2026-05",
+      "zone_id": null,
+      "title": "면목동 86-3 일대 면목역 1·2·4·6구역 조감도",
+      "stage": "모아타운 관리계획",
+      "scope": "면목역 1·2·4·6구역 전체",
+      "source_as_of": "2026-05-22",
+      "date_kind": "웹페이지 수정일",
+      "source_url": "https://news.seoul.go.kr/citybuild/archives/538651",
+      "source_title": "[동북권] 면목동 86-3번지 일대 모아타운 (모아타운 2호 시범단지)",
+      "source_locator": "본문 상단 ‘변경 후 조감도’",
+      "publisher": "서울특별시 건축기획관 전략주택공급과",
+      "attribution": "서울특별시 전략주택공급과, 2026년, 「[동북권] 면목동 86-3번지 일대 모아타운 (모아타운 2호 시범단지)」의 ‘변경 후 조감도’.",
+      "license": "공공누리 제4유형 (출처표시·상업적 이용금지·변경금지)",
+      "license_url": "https://www.kogl.or.kr/info/licenseType4.do",
+      "rights_checked_on": "2026-11-25",
+      "rights_evidence": "서울시 대상지 기록 하단에 공공누리 제4유형이 표시돼 있다. 시가 본문에서 제공하는 가로 1,024픽셀 파일을 그대로 사용했다.",
+      "image": "assets/myeonmok/masterplan-2026-05.png",
+      "image_source_url": "https://news.seoul.go.kr/citybuild/files/2026/04/69f0368bed3941.49837361-1024x724.png",
+      "image_width": 1024,
+      "image_height": 724,
+      "image_sha256": "8b86fa21615a44ac6303850119217a0e88ed00dfabe5a3fd27420e6ec3ef9695",
+      "alt": "면목역 1·2·4·6구역 전체를 내려다본 계획 조감도. 여러 높이의 흰색 공동주택 사이에 보행로와 녹지가 보인다."
+    }
+  ]
+}

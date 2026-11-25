@@ -1,0 +1,497 @@
+{
+  "checked_on": "2026-11-25",
+  "source_as_of": "2024-12-31",
+  "source_url": "https://land.seoul.go.kr/land/map/land/map.do",
+  "registry_url": "https://data.seoul.go.kr/dataList/OA-22424/S/1/datasetView.do",
+  "selection": "공식 높이 400m 초과, 층당 높이 1.2m 미만, 또는 공식 높이 30m 이상이면서 층당 높이 20m 초과인 동을 대조했다.",
+  "comparison": "필지·대장번호·사용승인일·지상층·지하층·주용도·구조가 일치하는 표제부 높이를 대조했다.",
+  "wfs_pages": [
+    {
+      "first_id": "1970192574394495974700000000",
+      "count": 35,
+      "timestamp": "2026-11-25T02:30:35.805Z",
+      "sha256": "ae135b70e8be317670aff426e8fa6dbff18d54461f8656f0b31f0724b6ed3e0e"
+    }
+  ],
+  "district_csv": {
+    "강동구": {
+      "sha256": "c4300c21a6df0a22f3c8a28a87bca80f7ad4b1245f7be58503cf840ebb3fc89d",
+      "serial_prefix": "10261"
+    },
+    "강북구": {
+      "sha256": "a31e0dbbf40bc6ff9b73d349f39dbb22ef72c84e9ec5203110f8e4d3bfa62d35",
+      "serial_prefix": "10101"
+    },
+    "강서구": {
+      "sha256": "de77cc15fa2b3c34041436e5984f0099b5277b0b21331c1dc2570f289182f9dd",
+      "serial_prefix": "10171"
+    },
+    "관악구": {
+      "sha256": "b9e449aa7026591d840f74ca0a4365f1de045057f994b6b2264e3879777623f0",
+      "serial_prefix": "10221"
+    },
+    "광진구": {
+      "sha256": "c3a87a23a6f1360bc350fe3fe79e87e3afc8a8ccf8a70f2be8116c5bd8a63941",
+      "serial_prefix": "10061"
+    },
+    "구로구": {
+      "sha256": "5c4ac452748054ac51215bb2e49e95d9c830f1116df78cee2e6b3d1cd0928418",
+      "serial_prefix": "10181"
+    },
+    "동작구": {
+      "sha256": "6d893663693683d5d04992b8d348154b6df10b3cca87d5ed813551fb2860ca92",
+      "serial_prefix": "10211"
+    },
+    "마포구": {
+      "sha256": "cc0a5b38e904f7916584cca6d8198b4dea806ff2300b7ddffcea0ff9f987587d",
+      "serial_prefix": "10151"
+    },
+    "서초구": {
+      "sha256": "bbfad02ae9ca155b74e7b9b3ac761a44e811b4272d5509ba0f552be61391456f",
+      "serial_prefix": "10231"
+    },
+    "송파구": {
+      "sha256": "a5e759180b4ea8232a76e51d8b079d3b8f70a8f562cc212eb6c7c95e3ee32a01",
+      "serial_prefix": "10251"
+    },
+    "용산구": {
+      "sha256": "acfaa26e84264ecb5b242732ae23868e62d1f4edeeccaeb0ed1634f8f6992336",
+      "serial_prefix": "10041"
+    },
+    "은평구": {
+      "sha256": "655eb6056dced80a8bed539e564f34497af33164c0f3b3bd38b88d220e0faab9",
+      "serial_prefix": "10131"
+    },
+    "중랑구": {
+      "sha256": "d20ecfecfd1236a624548bcd2149d34766243fae7f83cf0cec7f2539abab49f5",
+      "serial_prefix": "10081"
+    }
+  },
+  "records": {
+    "1970192574394495974700000000": {
+      "town_ids": [
+        "mt-202603-public-032"
+      ],
+      "reported_height_m": 3.5,
+      "floors": 3,
+      "registry_height_m": 3.5,
+      "registry_collected_on": "2024-11-19",
+      "registry_serial": "1015123609",
+      "pnu": "1144012200104120005",
+      "decision": "sources_agree"
+    },
+    "1971210588614483303300000000": {
+      "town_ids": [
+        "mt-202603-public-062"
+      ],
+      "reported_height_m": 2.7,
+      "floors": 3,
+      "registry_height_m": null,
+      "registry_collected_on": null,
+      "registry_serial": null,
+      "pnu": "1171010300101490010",
+      "decision": "retain_source_pending_review"
+    },
+    "1975201655684591861700000000": {
+      "town_ids": [
+        "mt-202603-public-037"
+      ],
+      "reported_height_m": 3,
+      "floors": 3,
+      "registry_height_m": 3.0,
+      "registry_collected_on": "2024-11-19",
+      "registry_serial": "1010119158",
+      "pnu": "1130510300100470066",
+      "decision": "sources_agree"
+    },
+    "1976196926434428543300000000": {
+      "town_ids": [
+        "mt-202603-public-059"
+      ],
+      "reported_height_m": 2.7,
+      "floors": 3,
+      "registry_height_m": 2.7,
+      "registry_collected_on": "2024-11-19",
+      "registry_serial": "1021129465",
+      "pnu": "1159010700102020002",
+      "decision": "sources_agree"
+    },
+    "1984207684574538915200000000": {
+      "town_ids": [
+        "mt-202603-public-012"
+      ],
+      "reported_height_m": 2.8,
+      "floors": 4,
+      "registry_height_m": 2.8,
+      "registry_collected_on": "2024-11-19",
+      "registry_serial": "100813399",
+      "pnu": "1126010100101150031",
+      "decision": "sources_agree"
+    },
+    "1985201930704593071500000000": {
+      "town_ids": [
+        "mt-202603-public-041"
+      ],
+      "reported_height_m": 3.4,
+      "floors": 4,
+      "registry_height_m": 3.4,
+      "registry_collected_on": "2024-11-19",
+      "registry_serial": "1010118462",
+      "pnu": "1130510300100070017",
+      "decision": "sources_agree"
+    },
+    "1985207777264535168300000000": {
+      "town_ids": [
+        "mt-202603-public-016"
+      ],
+      "reported_height_m": 3,
+      "floors": 4,
+      "registry_height_m": 3.0,
+      "registry_collected_on": "2025-03-25",
+      "registry_serial": "100819116",
+      "pnu": "1126010100104280023",
+      "decision": "sources_agree"
+    },
+    "1986208445984552764600000000": {
+      "town_ids": [
+        "mt-202603-resident-009"
+      ],
+      "reported_height_m": 2.7,
+      "floors": 3,
+      "registry_height_m": 2.7,
+      "registry_collected_on": "2024-11-19",
+      "registry_serial": "1008130951",
+      "pnu": "1126010600104950039",
+      "decision": "sources_agree"
+    },
+    "1986210641574481949800000000": {
+      "town_ids": [
+        "mt-202603-public-062"
+      ],
+      "reported_height_m": 2.6,
+      "floors": 3,
+      "registry_height_m": 2.6,
+      "registry_collected_on": "2024-11-19",
+      "registry_serial": "1025115802",
+      "pnu": "1171010300104840018",
+      "decision": "sources_agree"
+    },
+    "1988187333354493351800000000": {
+      "town_ids": [
+        "mt-202603-public-005"
+      ],
+      "reported_height_m": 1,
+      "floors": 3,
+      "registry_height_m": 1.0,
+      "registry_collected_on": "2024-11-19",
+      "registry_serial": "101713734",
+      "pnu": "1150010200105150044",
+      "decision": "sources_agree"
+    },
+    "1988212333744475360900000000": {
+      "town_ids": [
+        "mt-202603-public-056"
+      ],
+      "reported_height_m": 2.6,
+      "floors": 3,
+      "registry_height_m": 2.6,
+      "registry_collected_on": "2024-11-19",
+      "registry_serial": "102616470",
+      "pnu": "1174010600100700055",
+      "decision": "sources_agree"
+    },
+    "1990194791154427552300000000": {
+      "town_ids": [
+        "mt-202603-public-076"
+      ],
+      "reported_height_m": 2.6,
+      "floors": 4,
+      "registry_height_m": 2.6,
+      "registry_collected_on": "2024-11-19",
+      "registry_serial": "102215791",
+      "pnu": "1162010100106330014",
+      "decision": "sources_agree"
+    },
+    "1990207679754537001000000000": {
+      "town_ids": [
+        "mt-202603-public-012",
+        "mt-202603-public-016"
+      ],
+      "reported_height_m": 2.3,
+      "floors": 4,
+      "registry_height_m": 2.3,
+      "registry_collected_on": "2024-11-19",
+      "registry_serial": "1008110043",
+      "pnu": "1126010100105020010",
+      "decision": "sources_agree"
+    },
+    "1991185793674481092700000000": {
+      "town_ids": [
+        "mt-202603-public-002"
+      ],
+      "reported_height_m": 3.2,
+      "floors": 4,
+      "registry_height_m": null,
+      "registry_collected_on": null,
+      "registry_serial": null,
+      "pnu": "1150010300103660066",
+      "decision": "retain_source_pending_review"
+    },
+    "1991194919714455078900000000": {
+      "town_ids": [
+        "mt-202603-public-058"
+      ],
+      "reported_height_m": 2.6,
+      "floors": 3,
+      "registry_height_m": 2.6,
+      "registry_collected_on": "2024-11-19",
+      "registry_serial": "1021127358",
+      "pnu": "1159010100101190035",
+      "decision": "sources_agree"
+    },
+    "1991195149604452930700000000": {
+      "town_ids": [
+        "mt-202603-public-058"
+      ],
+      "reported_height_m": 2.7,
+      "floors": 3,
+      "registry_height_m": 2.7,
+      "registry_collected_on": "2024-11-19",
+      "registry_serial": "1021114528",
+      "pnu": "1159010100102220047",
+      "decision": "sources_agree"
+    },
+    "1991195832374427173700000000": {
+      "town_ids": [
+        "mt-202603-public-074"
+      ],
+      "reported_height_m": 1.7,
+      "floors": 2,
+      "registry_height_m": 1.7,
+      "registry_collected_on": "2024-11-19",
+      "registry_serial": "102218395",
+      "pnu": "1162010100100410882",
+      "decision": "sources_agree"
+    },
+    "1991202631534594894300000000": {
+      "town_ids": [
+        "mt-202603-public-036",
+        "mt-202603-public-040"
+      ],
+      "reported_height_m": 3.3,
+      "floors": 4,
+      "registry_height_m": 3.3,
+      "registry_collected_on": "2024-11-19",
+      "registry_serial": "1010116669",
+      "pnu": "1130510200104600016",
+      "decision": "sources_agree"
+    },
+    "1992183120284515999000000000": {
+      "town_ids": [
+        "mt-202603-public-007"
+      ],
+      "reported_height_m": 67.6,
+      "floors": 2,
+      "registry_height_m": 67.6,
+      "registry_collected_on": "2024-11-19",
+      "registry_serial": "101715141",
+      "pnu": "1150010900106040038",
+      "decision": "sources_agree"
+    },
+    "1993201844614595761400000000": {
+      "town_ids": [
+        "mt-202603-public-038",
+        "mt-202603-public-041"
+      ],
+      "reported_height_m": 74,
+      "floors": 2,
+      "registry_height_m": 74.0,
+      "registry_collected_on": "2024-11-19",
+      "registry_serial": "1010118633",
+      "pnu": "1130510300100230067",
+      "decision": "sources_agree"
+    },
+    "1993203036384592536900000000": {
+      "town_ids": [
+        "mt-202603-public-034",
+        "mt-202603-public-035"
+      ],
+      "reported_height_m": 2.1,
+      "floors": 2,
+      "registry_height_m": null,
+      "registry_collected_on": null,
+      "registry_serial": null,
+      "pnu": "1130510200104300017",
+      "decision": "retain_source_pending_review"
+    },
+    "1993208091054532722700000000": {
+      "town_ids": [
+        "mt-202603-public-023"
+      ],
+      "reported_height_m": 87.7,
+      "floors": 2,
+      "registry_height_m": 87.7,
+      "registry_collected_on": "2024-11-19",
+      "registry_serial": "100819811",
+      "pnu": "1126010100104670007",
+      "decision": "sources_agree"
+    },
+    "1993209124194554355100000000": {
+      "town_ids": [
+        "mt-202603-public-017"
+      ],
+      "reported_height_m": 3,
+      "floors": 4,
+      "registry_height_m": 3.0,
+      "registry_collected_on": "2024-11-19",
+      "registry_serial": "1008126068",
+      "pnu": "1126010500103420036",
+      "decision": "sources_agree"
+    },
+    "1994183148414522585500000000": {
+      "town_ids": [
+        "mt-202603-public-007"
+      ],
+      "reported_height_m": 4.22,
+      "floors": 5,
+      "registry_height_m": 4.22,
+      "registry_collected_on": "2025-11-26",
+      "registry_serial": "1017111621",
+      "pnu": "1150010900105590005",
+      "decision": "sources_agree"
+    },
+    "1994186544574447893200000000": {
+      "town_ids": [
+        "mt-202603-public-044"
+      ],
+      "reported_height_m": 90.6,
+      "floors": 2,
+      "registry_height_m": 90.6,
+      "registry_collected_on": "2024-11-19",
+      "registry_serial": "1018118479",
+      "pnu": "1153010600102410269",
+      "decision": "sources_agree"
+    },
+    "1994197169424498396300000000": {
+      "town_ids": [
+        "mt-202603-resident-002"
+      ],
+      "reported_height_m": 2.2,
+      "floors": 2,
+      "registry_height_m": 2.2,
+      "registry_collected_on": "2024-11-19",
+      "registry_serial": "1004119021",
+      "pnu": "1117010800101000025",
+      "decision": "sources_agree"
+    },
+    "1995192911834568945400000000": {
+      "town_ids": [
+        "mt-202603-public-072"
+      ],
+      "reported_height_m": 2.55,
+      "floors": 5,
+      "registry_height_m": 2.55,
+      "registry_collected_on": "2024-11-19",
+      "registry_serial": "1013121497",
+      "pnu": "1138010600102150037",
+      "decision": "sources_agree"
+    },
+    "1996195162764452929600000000": {
+      "town_ids": [
+        "mt-202603-public-058"
+      ],
+      "reported_height_m": 2.6,
+      "floors": 3,
+      "registry_height_m": 2.6,
+      "registry_collected_on": "2024-11-19",
+      "registry_serial": "1021111868",
+      "pnu": "1159010100102220040",
+      "decision": "sources_agree"
+    },
+    "1996203717264411821500000000": {
+      "town_ids": [
+        "mt-202603-public-081"
+      ],
+      "reported_height_m": 3.9,
+      "floors": 4,
+      "registry_height_m": 3.9,
+      "registry_collected_on": "2025-12-19",
+      "registry_serial": "102319263",
+      "pnu": "1165010200103090000",
+      "decision": "sources_agree"
+    },
+    "1997195366564451209200000000": {
+      "town_ids": [
+        "mt-202603-public-058"
+      ],
+      "reported_height_m": 48.3,
+      "floors": 2,
+      "registry_height_m": 48.3,
+      "registry_collected_on": "2024-11-19",
+      "registry_serial": "102112738",
+      "pnu": "1159010100103230000",
+      "decision": "sources_agree"
+    },
+    "1997206694434479097000000000": {
+      "town_ids": [
+        "mt-202603-public-078"
+      ],
+      "reported_height_m": 2.2,
+      "floors": 4,
+      "registry_height_m": 2.2,
+      "registry_collected_on": "2024-11-19",
+      "registry_serial": "1006117833",
+      "pnu": "1121510500106100028",
+      "decision": "sources_agree"
+    },
+    "1997207628594552842800000000": {
+      "town_ids": [
+        "mt-202603-public-013"
+      ],
+      "reported_height_m": 130,
+      "floors": 3,
+      "registry_height_m": null,
+      "registry_collected_on": null,
+      "registry_serial": null,
+      "pnu": "1126010200102040001",
+      "decision": "retain_source_pending_review"
+    },
+    "2002204136424410813000000000": {
+      "town_ids": [
+        "mt-202603-public-081",
+        "mt-202603-public-082"
+      ],
+      "reported_height_m": 13418,
+      "floors": 5,
+      "registry_height_m": 13.418,
+      "registry_collected_on": "2025-11-26",
+      "registry_serial": "1023110520",
+      "pnu": "1165010200103970011",
+      "decision": "use_registry_height"
+    },
+    "2005201504404594058600000000": {
+      "town_ids": [
+        "mt-202603-public-038"
+      ],
+      "reported_height_m": 2.7,
+      "floors": 5,
+      "registry_height_m": 2.7,
+      "registry_collected_on": "2024-11-19",
+      "registry_serial": "1010123718",
+      "pnu": "1130510300103990029",
+      "decision": "sources_agree"
+    },
+    "2011194256924439658300000000": {
+      "town_ids": [
+        "mt-202603-public-060"
+      ],
+      "reported_height_m": 3,
+      "floors": 5,
+      "registry_height_m": 3.0,
+      "registry_collected_on": "2024-11-19",
+      "registry_serial": "10211100195232",
+      "pnu": "1159010200102640172",
+      "decision": "sources_agree"
+    }
+  }
+}
