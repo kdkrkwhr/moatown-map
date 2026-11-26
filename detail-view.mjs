@@ -1,7 +1,7 @@
-import {formatValue,unitsChange,projectIntervals,compareInterval,projectStage} from './detail-format.mjs?v=de1b422a2bc2';
-import {projectUrl} from './project-url.mjs?v=de1b422a2bc2';
-import {metricGlossary,translateStage} from './glossary-translator.mjs?v=de1b422a2bc2';
-import {decorativeEmoji,toolIcon} from './ui-icons.mjs?v=de1b422a2bc2';
+import {formatValue,unitsChange,projectIntervals,compareInterval,projectStage} from './detail-format.mjs?v=208c3fc8754e';
+import {projectUrl} from './project-url.mjs?v=208c3fc8754e';
+import {metricGlossary,translateStage} from './glossary-translator.mjs?v=208c3fc8754e';
+import {decorativeEmoji,toolIcon} from './ui-icons.mjs?v=208c3fc8754e';
 export {projectUrl};
 
 const pending='미고시';
@@ -202,6 +202,7 @@ const unknownStageLabel=r=>r?.field_evidence?.stage_review?.state==='scope_misma
 function associationFields(grid,projects){
   for(const project of projects){
     const row=field(grid,project.project_name+' 시공사',project.selected_contractor);
+    row.dataset.award=project.project_name;
     const evidence=project.field_evidence.selected_contractor;
     const dates=[evidence.selection_date && '선정일 '+date(evidence.selection_date),evidence.contract_date && '계약일 '+date(evidence.contract_date)];
     row.append(el('small',[project.registered_address,...dates].filter(Boolean).join(' · ')));
@@ -238,6 +239,7 @@ function contractorField(grid,r,children){
   }
   const e=r.field_evidence?.selected_contractor;
   if(!e)return;
+  row.dataset.award='1';
   const source=link(e.source_url,e.source_title??'시공사 확인 자료');
   if(e.selection_date)row.append(el('small','선정일 '+date(e.selection_date)));
   if(e.note)row.append(el('small',e.note));
@@ -605,7 +607,7 @@ function detailTabs(container,areasLabel,designated){
   return {panels,activate};
 }
 
-export function renderProjectDetail(container,{town,zone,children,boundaries,snapshot,cityRule,registryUrl,stats,select,badge,copyLink,expandDetail,initialTab,openPilot,openPlan,openTownRules,association}){
+export function renderProjectDetail(container,{town,zone,children,boundaries,snapshot,cityRule,registryUrl,stats,select,badge,copyLink,expandDetail,initialTab,award,openPilot,openPlan,openTownRules,association}){
   const r=zone??town,boundary=boundaries.get(r.id),intervals=projectIntervals(town,zone,snapshot);
   const comparison=!zone && children.length?comparePlans(children):null;
   const header=summary(town,zone,intervals,badge,copyLink,comparison);
@@ -644,4 +646,12 @@ export function renderProjectDetail(container,{town,zone,children,boundaries,sna
   regulations(section(panels.business,'regulation','거래·규제 상세'),r,town,zone,boundary,cityRule,openTownRules);
   subAreas(panels.areas,town,zone,children,boundaries,select,badge);
   activate(initialTab??(zone?'areas':'schedule'));
+  if(award){
+    const pane=zone?panels.business:panels.areas;
+    const row=pane.querySelector('[data-award="'+CSS.escape(award)+'"]');
+    if(row){
+      row.classList.add('award-focus');row.tabIndex=-1;
+      pane.scrollTop+=row.getBoundingClientRect().top-pane.getBoundingClientRect().top-12;
+    }
+  }
 }

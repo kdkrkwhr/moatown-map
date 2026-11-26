@@ -12,6 +12,21 @@ const towns=snapshot('towns'),zones=snapshot('zones'),archive=snapshot('excluded
 const groups=new Map(towns.map(town=>[town.id,zones.filter(zone=>zone.town_id===town.id)]));
 const search=options=>searchProjects(towns,groups,archive,options);
 
+test('contractor discovery lists each awarded zone or named association exactly once',()=>{
+  const found=search({contractor:'all'});
+  const assigned=zones.filter(z=>z.selected_contractor);
+  const associations=towns.flatMap(t=>t.contractor_projects??[]);
+  assert.deepEqual(found.filter(r=>r.zone).map(r=>r.zone.id).sort(),assigned.map(z=>z.id).sort());
+  assert.deepEqual(found.filter(r=>r.association).map(r=>r.association.project_name).sort(),associations.map(a=>a.project_name).sort());
+  assert.equal(found.length,assigned.length+associations.length);
+  assert.deepEqual(search({contractor:'all',plan:'canceled'}),[]);
+  const byCompany=search({contractor:'동부건설',district:'금천구'});
+  assert.equal(byCompany.filter(r=>r.town.name==='시흥3동 972' && r.association?.selected_contractor==='동부건설').length,3);
+  assert.deepEqual(search({query:'금천구 동부건설'}),byCompany);
+  assert.deepEqual(search({query:'디엘건설'}),search({contractor:'DL건설'}));
+  assert.ok(search({contractor:'all',progress:'construction'}).every(r=>r.zone?.selected_contractor && r.zone.stage==='착공'));
+});
+
 test('recency uses seven calendar dates, rolls child updates up to the parent and composes with filters',()=>{
   const town={id:'town',district:'양천구',name:'신월동',last_verified_at:'2026-11-17'};
   const child={id:'child',name:'A1',stage:'착공',timeline:[{stage:'착공',date:'2026-11-18'}]};

@@ -1,4 +1,4 @@
-import {dayNumber,projectEvents} from './detail-format.mjs?v=de1b422a2bc2';
+import {dayNumber,projectEvents} from './detail-format.mjs?v=208c3fc8754e';
 
 export const managementFilters=[
   ['selected','선정 대상지 전체'],['draft','관리계획 수립 중'],['approved','관리계획 승인'],
@@ -17,6 +17,20 @@ export const progressFilters=[
 const compact=value=>String(value ?? '').normalize('NFKC').toLowerCase().replace(/\s+/g,'');
 const termsFor=value=>value.normalize('NFKC').trim().split(/\s+/).filter(Boolean).map(compact);
 const matches=(terms,fields)=>terms.every(term=>fields.some(field=>compact(field).includes(term)));
+const companyAliases=new Map([
+  ['디엘건설','DL건설'],['한화','한화 건설부문'],['에스케이에코플랜트','SK에코플랜트'],
+  ['에이치제이중공업','HJ중공업'],['에이치에스화성','HS화성'],['비에스한양','BS한양']
+]);
+export function contractorName(value){
+  const name=String(value??'').normalize('NFKC').replace(/주식회사|\(주\)/g,'').trim();
+  return companyAliases.get(name)??name;
+}
+function contractorTerms(value){
+  const name=contractorName(value);
+  if(!name)return [];
+  return [name,value,'시공사 선정',...[...companyAliases].filter(([,key])=>key===name).map(([alias])=>alias)];
+}
+export const associationReviewKey=(town,project)=>town.id+'/'+project.project_name;
 function management(town){
   const stage=town.management_plan_stage;
   if(['관리계획 승인','관리계획 승인고시'].includes(stage) || town.management_plan_notices?.length)return 'approved';
@@ -35,6 +49,11 @@ export function recentProjectDates(towns,groups,excluded,today){
     include(town.id,town.last_verified_at);
     for(const event of projectEvents(town))include(town.id,event.date);
     for(const notice of town.management_plan_notices??[])include(town.id,notice.notice_date);
+    for(const project of town.contractor_projects??[]){
+      const key=associationReviewKey(town,project);
+      include(key,project.field_evidence?.selected_contractor?.checked_on);
+      if(dates.has(key))include(town.id,dates.get(key));
+    }
     for(const zone of groups.get(town.id)??[]){
       include(zone.id,zone.last_verified_at);
       for(const event of projectEvents(town,zone))include(zone.id,event.date);
@@ -47,9 +66,12 @@ export function recentProjectDates(towns,groups,excluded,today){
   return dates;
 }
 
-export function searchProjects(towns,groups,excluded,{query='',district='',plan='',progress='',recentDates=null}={}){
+export function searchProjects(towns,groups,excluded,{query='',district='',plan='',progress='',contractor='',recentDates=null}={}){
   const terms=termsFor(query),rows=[];
+  const company=contractorName(contractor);
+  const eligible=value=>!company || (Boolean(contractorName(value)) && (company==='all' || compact(contractorName(value))===compact(company)));
   if(plan==='canceled' || (!plan && !progress && /취소|철회/.test(query))){
+    if(company)return rows;
     for(const record of excluded){
       if(recentDates && !recentDates.has(record.address_raw))continue;
       if((!district || district===record.district) && matches(terms,[record.address_raw,record.name_raw,record.status_raw,'취소 이력'])){
@@ -67,20 +89,28 @@ export function searchProjects(towns,groups,excluded,{query='',district='',plan=
     const fields=[town.name,town.address,town.district,town.candidate_status??'대상지 선정',town.management_plan_stage,
       managementFilters.find(([key])=>key===status)?.[1],...(town.alternate_locations ?? []).map(a=>a.address)];
     const townMatches=matches(terms,fields);
-    if(!progress && townMatches)rows.push({town});
-    if(!progress && !terms.length)continue;
+    if(!contractor && !progress && townMatches)rows.push({town});
+    if(!contractor && !progress && !terms.length)continue;
+    if(!progress)for(const association of town.contractor_projects??[]){
+      if(!association.selected_contractor || !eligible(association.selected_contractor))continue;
+      if(recentDates && !recentDates.has(associationReviewKey(town,association)))continue;
+      const local=[association.project_name,association.registered_address,...contractorTerms(association.selected_contractor)];
+      if((contractor || !townMatches) && matches(terms,[...fields,...local]))
+        rows.push({town,association});
+    }
     for(const zone of groups.get(town.id) ?? []){
+      if(!eligible(zone.selected_contractor))continue;
       if(recentDates && !recentDates.has(zone.id))continue;
       const stage=zone.stage || '미확인';
       const def=progressFilters.find(([,label])=>label===stage);
       if(progress && progress!==def?.[0])continue;
       const code=zone.drawing_code?.replace(/^([A-Z])-?(?=\d)/,'$1');
-      const zoneFields=[zone.name,zone.registered_address,zone.drawing_code,code,code?.replace(/^([A-Z])(?=\d)/,'$1-'),stage,def?.[2]];
+      const zoneFields=[zone.name,zone.registered_address,zone.drawing_code,code,code?.replace(/^([A-Z])(?=\d)/,'$1-'),stage,def?.[2],...contractorTerms(zone.selected_contractor)];
       if(def && def[0]!=='unknown')zoneFields.push(stage+' 단계');
       if(stage==='사업시행계획인가')zoneFields.push('사업시행계획인가 완료','사업시행인가 완료');
       if(stage==='사업시행계획인가 진행 중')zoneFields.push('사업시행인가 진행 중');
       if(!matches(terms,[...fields,...zoneFields]))continue;
-      if(progress || !townMatches || terms.some(term=>matches([term],zoneFields)))rows.push({town,zone});
+      if(contractor || progress || !townMatches || terms.some(term=>matches([term],zoneFields)))rows.push({town,zone});
     }
   }
   return rows;

@@ -73,6 +73,7 @@ export function createMarkerClusters(m,map,container,{setVisible,choose,padding,
     if(!missing.length)return;
     const probe=document.createElement('div');
     probe.className='marker-measurements district-overview show-totals';probe.setAttribute('aria-hidden','true');
+    probe.classList.toggle('contractor-map',container.classList.contains('contractor-map'));
     const labels=missing.map(item=>item.pin.getIcon().content.cloneNode(true));
     probe.append(...labels);container.parentElement.append(probe);
     const origin=probe.getBoundingClientRect();

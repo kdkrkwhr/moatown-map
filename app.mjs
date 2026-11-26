@@ -1,15 +1,15 @@
-import {projectUrl,renderProjectDetail,showUnplacedProgram} from './detail-view.mjs?v=de1b422a2bc2';
-import {durationSamples,elapsedMonths,formatValue,projectMetadata} from './detail-format.mjs?v=de1b422a2bc2';
-import {projectParams,setProjectPath} from './project-url.mjs?v=de1b422a2bc2';
+import {projectUrl,renderProjectDetail,showUnplacedProgram} from './detail-view.mjs?v=208c3fc8754e';
+import {durationSamples,elapsedMonths,formatValue,projectMetadata} from './detail-format.mjs?v=208c3fc8754e';
+import {projectParams,setProjectPath} from './project-url.mjs?v=208c3fc8754e';
 export {elapsedMonths};
-import {loadMaps,createProjectMap} from './map-engine.mjs?v=de1b422a2bc2';
-export {showReferencePin} from './map-engine.mjs?v=de1b422a2bc2';
-import {loadNews,matchNews,newsCard,sourceLabels} from './news.mjs?v=de1b422a2bc2';
-import {searchProjects,managementFilters,progressFilters,recentProjectDates} from './project-search.mjs?v=de1b422a2bc2';
-import {mountAddressLookup} from './address-reference.mjs?v=de1b422a2bc2';
-import {hasPublicLayout,mountPilotViewer} from './pilot-viewer.mjs?v=de1b422a2bc2';
-import {metricGlossary,translateStage} from './glossary-translator.mjs?v=de1b422a2bc2';
-import {decorativeEmoji,toolIcon} from './ui-icons.mjs?v=de1b422a2bc2';
+import {loadMaps,createProjectMap} from './map-engine.mjs?v=208c3fc8754e';
+export {showReferencePin} from './map-engine.mjs?v=208c3fc8754e';
+import {loadNews,matchNews,newsCard,sourceLabels} from './news.mjs?v=208c3fc8754e';
+import {searchProjects,managementFilters,progressFilters,recentProjectDates,contractorName,associationReviewKey} from './project-search.mjs?v=208c3fc8754e';
+import {mountAddressLookup} from './address-reference.mjs?v=208c3fc8754e';
+import {hasPublicLayout,mountPilotViewer} from './pilot-viewer.mjs?v=208c3fc8754e';
+import {metricGlossary,translateStage} from './glossary-translator.mjs?v=208c3fc8754e';
+import {decorativeEmoji,toolIcon} from './ui-icons.mjs?v=208c3fc8754e';
 const mobileMapQuery='(max-width: 768px)';
 function initialSheetHeight(selection,hasFilters,mobile){
   if(!mobile)return 1;
@@ -30,7 +30,7 @@ function displaySheetHeight(height){
   size.textContent=height===2?'기본 높이':'크게 보기';
 }
 export function filterTowns(towns, query, district) {
-  return searchProjects(towns,new Map(),[],{query,district}).map(row=>row.town);
+  return [...new Set(searchProjects(towns,new Map(),[],{query,district}).map(row=>row.town))];
 }
 export function resolveSelection(search, towns, zones) {
   const params=new URLSearchParams(search);
@@ -131,6 +131,8 @@ export function mount({manifest,towns,zones,boundaries,excluded=[]},sdk,mapSigna
   const get=id=>document.getElementById(id);
   const list=get('town-list'),detail=get('town-detail'),search=get('search-input'),district=get('district-filter');
   const recentButton=get('recent-filter');
+  const awardButton=get('contractor-toggle'),companySelect=get('contractor-company');
+  let contractor='';
   const explorer=get('explorer'),sheet=get('sheet-toggle'),mapStatus=get('map-status');
   const mobile=matchMedia(mobileMapQuery);
   let unplacedPrograms;
@@ -166,6 +168,8 @@ export function mount({manifest,towns,zones,boundaries,excluded=[]},sdk,mapSigna
   const newsCounts=new Map();
   get('map-totals').textContent=new Set(towns.map(town=>town.district)).size+'개 자치구 · 선정 대상지 '+towns.length+'곳';
   const groups=groupSubAreas(towns,zones);
+  function awardName(row){return contractorName((row.zone??row.association)?.selected_contractor);}
+  const allCompanies=new Set([...zones,...towns.flatMap(t=>t.contractor_projects??[])].map(r=>contractorName(r.selected_contractor)).filter(Boolean));
   const pilot=mountPilotViewer({manifest,boundaries,townById,groups});
   const calendar=new Intl.DateTimeFormat('sv-SE',{timeZone:'Asia/Seoul',year:'numeric',month:'2-digit',day:'2-digit'});
   let recentOnly=false,recentDay=calendar.format(Date.now());
@@ -202,18 +206,20 @@ export function mount({manifest,towns,zones,boundaries,excluded=[]},sdk,mapSigna
       if(group==='progress' && key)button.replaceChildren(stageBadge(label,true));
       button.addEventListener('click',()=>{
         chosen[group]=key;
-        if(group==='plan' && key==='canceled')chosen.progress='';
+        if(group==='plan' && key==='canceled'){chosen.progress='';contractor='';}
         if(group==='progress' && key && chosen.plan==='canceled')chosen.plan='';
         updateFilters(false);
       });
       get(group+'-chips').append(button);
     }
   }
-  const results=()=>searchProjects(towns,groups,excluded,{query:search.value,district:district.value,...chosen,recentDates:recentOnly?recentDates:null});
-  const filtered=()=>Boolean(search.value.trim() || district.value || chosen.plan || chosen.progress || recentOnly);
+  const results=(company=contractor)=>searchProjects(towns,groups,excluded,{query:search.value,district:district.value,...chosen,contractor:company,recentDates:recentOnly?recentDates:null});
+  const filtered=()=>Boolean(search.value.trim() || district.value || chosen.plan || chosen.progress || recentOnly || contractor);
   function readUrl(){
     const params=projectParams(new URL(location.href));
     recentOnly=params.get('recent')==='1';
+    const company=contractorName(params.get('contractor'));
+    contractor=company==='all'||allCompanies.has(company)?company:'';
     search.value=params.get('q') ?? '';
     const region=params.get('district');
     district.value=region ?? '';
@@ -221,13 +227,16 @@ export function mount({manifest,towns,zones,boundaries,excluded=[]},sdk,mapSigna
       const value=params.get(key);
       chosen[key]=options.some(([code])=>code===value)?value:'';
     }
-    if(chosen.plan==='canceled')chosen.progress='';
+    if(chosen.plan==='canceled'){chosen.progress='';contractor='';}
     current=resolveSelection(params,townById,zoneById);
+    const award=params.get('award');
+    if(current.zoneId && award==='1' && zoneById.get(current.zoneId).selected_contractor)current.award=award;
+    else if(!current.zoneId && townById.get(current.townId)?.contractor_projects?.some(p=>p.project_name===award))current.award=award;
     if(!current.townId && cancellations.has(params.get('cancellation'))){
-      current.cancellation=params.get('cancellation');chosen.plan='canceled';chosen.progress='';
+      current.cancellation=params.get('cancellation');chosen.plan='canceled';chosen.progress='';contractor='';
     }
     if(current.townId && !results().some(row=>row.town?.id===current.townId)){
-      search.value='';district.value='';chosen.plan='';chosen.progress='';recentOnly=false;
+      search.value='';district.value='';chosen.plan='';chosen.progress='';recentOnly=false;contractor='';
     }
   }
   readUrl();
@@ -240,7 +249,7 @@ export function mount({manifest,towns,zones,boundaries,excluded=[]},sdk,mapSigna
     url.searchParams.delete('view');
     url.searchParams.delete('mode');
     url.searchParams.delete('layout');
-    for(const [key,value] of [['cancellation',current.cancellation],['q',search.value],['district',district.value],['recent',recentOnly?'1':''],...Object.entries(chosen)]){
+    for(const [key,value] of [['cancellation',current.cancellation],['q',search.value],['district',district.value],['recent',recentOnly?'1':''],['contractor',contractor],['award',current.award],...Object.entries(chosen)]){
       if(value)url.searchParams.set(key,value);else url.searchParams.delete(key);
     }
     if(url.href!==location.href) history[replace?'replaceState':'pushState'](null,'',url);
@@ -260,6 +269,7 @@ export function mount({manifest,towns,zones,boundaries,excluded=[]},sdk,mapSigna
     get('sheet-label').textContent=sheetLabel(current,currentHeight(),rows.length);
   }
   function initialHeight(){
+    if(mobile.matches && (current.award || contractor && !current.townId))return 2;
     return initialSheetHeight(current,filtered(),mobile.matches);
   }
   sheetSize.addEventListener('click',()=>setSheetHeight(currentHeight()===2?1:2));
@@ -300,14 +310,28 @@ export function mount({manifest,towns,zones,boundaries,excluded=[]},sdk,mapSigna
     map?.showAddress(result);
   },()=>Boolean(map));
   function renderList(){
-    rows=results();
+    rows=results(contractor?'all':'');
+    awardButton.setAttribute('aria-pressed',String(Boolean(contractor)));
+    get('contractor-tools').hidden=!contractor;
+    get('results-title').textContent=contractor?'시공사 선정 사업':'검색 결과';
+    if(contractor){
+      const counts=new Map();
+      for(const row of rows){const name=awardName(row);counts.set(name,(counts.get(name)??0)+1);}
+      if(contractor!=='all' && !counts.has(contractor))counts.set(contractor,0);
+      const companies=[...counts].sort((a,b)=>b[1]-a[1] || a[0].localeCompare(b[0],'ko'));
+      companySelect.replaceChildren(new Option('전체 시공사 · '+rows.length+'건','all'),...companies.map(([name,count])=>new Option(name+' · '+count+'건',name)));
+      companySelect.value=contractor;
+      if(contractor!=='all')rows=rows.filter(row=>awardName(row)===contractor);
+    }
     updateSheetLabel();
     recentButton.setAttribute('aria-pressed',String(recentOnly));
     visible=new Set(rows.filter(row=>row.town).map(row=>row.town.id));
     visibleZones=new Set(rows.filter(row=>row.zone).map(row=>row.zone.id));
-    townHits=new Set(rows.filter(row=>row.town && !row.zone).map(row=>row.town.id));
+    townHits=new Set(rows.filter(row=>row.town && (!row.zone || contractor && !row.zone.representative_point && !boundaryProps.has(row.zone.id))).map(row=>row.town.id));
     const canceled=rows.filter(row=>row.excluded).length;
-    get('result-count').textContent=[townHits.size && '대상지 '+townHits.size+'곳',visibleZones.size && '구역 '+visibleZones.size+'곳',canceled && '취소 이력 '+canceled+'건'].filter(Boolean).join(' · ') || '0건';
+    const townCount=rows.filter(row=>row.town && !row.zone && !row.association).length;
+    const associationCount=rows.filter(row=>row.association).length;
+    get('result-count').textContent=[townCount && '대상지 '+townCount+'곳',visibleZones.size && '구역 '+visibleZones.size+'곳',associationCount && '조합 '+associationCount+'곳',canceled && '취소 이력 '+canceled+'건'].filter(Boolean).join(' · ') || '0건';
     get('clear-filters').hidden=!filtered();
     const active=Object.values(chosen).filter(Boolean).length;
     const group=chosen.progress?'progress':'plan';
@@ -317,12 +341,12 @@ export function mount({manifest,towns,zones,boundaries,excluded=[]},sdk,mapSigna
       button.setAttribute('aria-pressed',String(chosen[button.dataset.group]===button.value));
     }
     const fragment=document.createDocumentFragment();
-    for(const {town,zone,excluded:archived} of rows){
-      const date=recentDates.get(archived?.address_raw??zone?.id??town?.id);
+    for(const {town,zone,association,excluded:archived} of rows){
+      const date=recentDates.get(association?associationReviewKey(town,association):archived?.address_raw??zone?.id??town?.id);
       const badge=date?el('span','최근 갱신','recent-badge'):null;
       if(badge){
         badge.prepend(decorativeEmoji(metricGlossary.recent.emoji));
-        badge.title=displayDate(date)+' · '+metricGlossary.recent.summary+(!zone && town?' (세부구역 포함)':'');
+        badge.title=displayDate(date)+' · '+metricGlossary.recent.summary+(!zone && !association && town?' (세부구역 포함)':'');
       }
       if(archived){
         const entry=el('article',undefined,'archive-item');
@@ -335,10 +359,14 @@ export function mount({manifest,towns,zones,boundaries,excluded=[]},sdk,mapSigna
         fragment.append(entry);continue;
       }
       const button=el('a',undefined,'town-item');
-      button.href=projectUrl(town,zone).pathname;button.dataset.town=town.id;
+      const resultUrl=new URL(projectUrl(town,zone).pathname,location.origin);
+      const award=association?.project_name??(contractor && zone?.selected_contractor?'1':'');
+      if(award)resultUrl.searchParams.set('award',award);
+      button.href=resultUrl.pathname+resultUrl.search;button.dataset.town=town.id;
+      if(association)button.dataset.association=association.project_name;
       button.addEventListener('click',event=>{
         if(event.ctrlKey || event.metaKey || event.shiftKey || event.altKey)return;
-        event.preventDefault();select(town.id,zone?.id??null);
+        event.preventDefault();select(town.id,zone?.id??null,null,award?(zone?'business':'areas'):undefined,award);
       });
       const meta=el('span',undefined,'row-meta');
       meta.append(el('span',town.district,'district-name'));
@@ -346,10 +374,17 @@ export function mount({manifest,towns,zones,boundaries,excluded=[]},sdk,mapSigna
       const drawing=hasPublicLayout(simulation,town.id,zone?.id);
       if(pilot.supports(town.id))meta.append(el('span',drawing?'공개 배치도 3D':simulation?(zone&&!simulation.zone_ids.includes(zone.id)?'대상지 3D':'건축 후 3D'):'기존 건물 3D','pilot-list-label'));
       if(badge)meta.append(badge);
-      if(zone){
-        button.dataset.zone=zone.id;
+      if(zone || association){
+        if(zone)button.dataset.zone=zone.id;
         meta.append(el('span',town.name));
-        button.append(el('strong',zone.name),meta,stageBadge(zone.stage));
+        button.append(el('strong',zone?.name??association.project_name),meta);
+        const project=zone??association,company=contractorName(project.selected_contractor);
+        if(company){
+          const line=el('span',company,'contractor-line');
+          line.prepend(el('small','시공사'));button.append(line);
+        }
+        if(zone)button.append(stageBadge(zone.stage));
+        else if(association.registered_address)button.append(el('small',association.registered_address,'location-note'));
         fragment.append(button);continue;
       }
       if(town.selected_date)meta.append(el('span',displayDate(town.selected_date)+' 선정'));
@@ -362,13 +397,18 @@ export function mount({manifest,towns,zones,boundaries,excluded=[]},sdk,mapSigna
       if(!note.hidden)note.textContent='소식 '+newsCounts.get(town.id);
       meta.append(note);
       button.append(el('strong',town.name),meta);
+      const names=[...new Set([...(groups.get(town.id)??[]),...(town.contractor_projects??[])].map(p=>contractorName(p.selected_contractor)).filter(Boolean))];
+      if(names.length){
+        const line=el('span',names.join(' · '),'contractor-line');
+        line.prepend(el('small','개별 사업 시공사'));button.append(line);
+      }
       if(!boundaryProps.has(town.id))button.append(el('span',town.representative_point?'대표 위치만 확인':'지도 위치 미확인','location-note'));
       fragment.append(button);
     }
     if(!rows.length){
       const note=el('div',undefined,'empty empty-search');
       const image=el('img');image.src='./assets/empty-search.svg?v=67579da3a801';image.alt='';image.width=112;image.height=70;
-      note.append(image,el('strong','검색 조건에 맞는 구역이 없어요.'),el('p','동·지번을 다시 입력하거나 선택한 조건을 지워 보세요.'));
+      note.append(image,el('strong',contractor?'이 조건에서 시공사가 확인된 사업이 없어요.':'검색 조건에 맞는 구역이 없어요.'),el('p','다른 검색어를 입력하거나 선택한 조건을 지워 보세요.'));
       const clear=el('button','검색 조건 지우기');
       clear.type='button';clear.addEventListener('click',reset);
       note.append(clear);fragment.append(note);
@@ -415,7 +455,7 @@ export function mount({manifest,towns,zones,boundaries,excluded=[]},sdk,mapSigna
     const association=hasPublicLayout(simulation,town.id,zone?.id);
     renderProjectDetail(detail,{town,zone,children,boundaries:boundaryProps,snapshot:manifest.snapshot_date,cityRule:current.cancellation?null:manifest.seoul_road_permit,
       registryUrl:manifest.source_urls?.official_project_registry,stats:planStats,select:(townId,zoneId,preview)=>select(townId,zoneId,null,preview?undefined:'areas'),
-      expandDetail:()=>{if(mobile.matches)setSheetHeight(2);},badge:stageBadge,copyLink,initialTab,
+      expandDetail:()=>{if(mobile.matches)setSheetHeight(2);},badge:stageBadge,copyLink,initialTab:initialTab??(current.award?(zone?'business':'areas'):undefined),award:current.award,
       openTownRules:zone?()=>select(town.id,null,null,'business'):null,
       association,openPilot:pilot.supports(town.id)?()=>pilot.open(town.id,zone?.id,true,association?'after':null):null,
       openPlan:simulation && (!zone||association||simulation.zone_ids.includes(zone.id))?
@@ -445,31 +485,31 @@ export function mount({manifest,towns,zones,boundaries,excluded=[]},sdk,mapSigna
     }
     if(!section.childElementCount)section.append(el('span','미고시','unverified'));
   }
-  function select(townId,zoneId,cancellation=null,initialTab){
+  function select(townId,zoneId,cancellation=null,initialTab,award=''){
     clearAddress();
-    current={townId,zoneId,cancellation};
+    current={townId,zoneId,cancellation,award};
     const preview=mobile.matches && (townId || cancellation) && !initialTab;
-    setSheetHeight(preview?0:mobile.matches && initialTab?2:1);
+    setSheetHeight(preview?0:mobile.matches && (initialTab || contractor && !townId)?2:1);
     if(mobile.matches && (townId || cancellation))search.blur();
     writeUrl();renderPanel(initialTab);renderLayers();fitView();
-    const focusTarget=zoneId && !preview?detail.querySelector('#pane-areas [aria-current="true"]'):detail.querySelector('h2');
+    const focusTarget=award?detail.querySelector('.award-focus'):zoneId && !preview?detail.querySelector('#pane-areas [aria-current="true"]'):detail.querySelector('h2');
     focusTarget?.focus({preventScroll:true});
   }
   get('back-results').addEventListener('click',()=>{
-    const {townId,zoneId,cancellation}=current;
+    const {townId,zoneId,cancellation,award}=current;
     const direct=zoneId && visibleZones.has(zoneId);
     select(zoneId && !direct?townId:null,null,null,zoneId && !direct?'areas':undefined);
     if(cancellation){list.querySelector('[data-cancellation="'+CSS.escape(cancellation)+'"]')?.focus();return;}
-    const target=zoneId ? (direct?list:detail).querySelector('[data-zone="'+CSS.escape(zoneId)+'"]') : list.querySelector('[data-town="'+CSS.escape(townId)+'"]');
+    const target=zoneId ? (direct?list:detail).querySelector('[data-zone="'+CSS.escape(zoneId)+'"]') : award?list.querySelector('[data-association="'+CSS.escape(award)+'"]'):list.querySelector('[data-town="'+CSS.escape(townId)+'"]');
     target?.focus();
   });
   function updateFilters(replace=true){
     clearAddress();
     current={townId:null,zoneId:null};
-    setSheetHeight(mobile.matches && !filtered()?0:1);writeUrl(replace);renderList();renderPanel();renderLayers();fitView();
+    setSheetHeight(mobile.matches?(contractor?2:filtered()?1:0):1);writeUrl(replace);renderList();renderPanel();renderLayers();fitView();
   }
   function reset(){
-    search.value='';district.value='';chosen.plan='';chosen.progress='';recentOnly=false;
+    search.value='';district.value='';chosen.plan='';chosen.progress='';recentOnly=false;contractor='';
     get('stage-filter-box').open=false;updateFilters(false);
   }
   search.addEventListener('input',()=>updateFilters());
@@ -482,6 +522,13 @@ export function mount({manifest,towns,zones,boundaries,excluded=[]},sdk,mapSigna
     if(event.key==='Enter' && !event.isComposing && mobile.matches){search.blur();setSheetHeight(1);}
   });
   recentButton.disabled=false;
+  awardButton.disabled=false;companySelect.disabled=false;
+  awardButton.addEventListener('click',()=>{
+    contractor=contractor?'':'all';
+    if(contractor && chosen.plan==='canceled')chosen.plan='';
+    updateFilters(false);
+  });
+  companySelect.addEventListener('change',()=>{contractor=companySelect.value;updateFilters(false);});
   recentButton.addEventListener('click',()=>{recentOnly=!recentOnly;updateFilters(false);});
   function refreshRecentDates(){
     const day=calendar.format(Date.now());
@@ -531,9 +578,15 @@ export function mount({manifest,towns,zones,boundaries,excluded=[]},sdk,mapSigna
   sdk.then(maps=>{
     if(!maps || mapSignal?.aborted)return;
     mapSignal?.addEventListener('abort',()=>{map=null;},{once:true});
-    map=createProjectMap(maps,get('map'),{townById,zoneById,boundaries,districtCounts,districtStages,zoneStage,select,signal:mapSignal,
+    map=createProjectMap(maps,get('map'),{townById,zoneById,boundaries,districtCounts,districtStages,zoneStage,signal:mapSignal,
+      select(townId,zoneId){
+        if(!contractor){select(townId,zoneId);return;}
+        const projects=rows.filter(row=>row.town?.id===townId && row.association);
+        const award=zoneId?'1':projects.length===1?projects[0].association.project_name:'';
+        select(townId,zoneId,null,zoneId?'business':'areas',award);
+      },
       selectDistrict(name){search.value='';district.value=name;updateFilters(false);},
-      view:()=>({current,rows,visible,visibleZones,townHits,filtered:filtered()})});
+      view:()=>({current,rows,visible,visibleZones,townHits,contractor,filtered:filtered()})});
   }).catch(()=>{mapStatus.textContent='네이버 지도를 열 수 없습니다. 검색 결과와 구역 상세는 목록에서 확인하세요.';});
 }
 function placeMobileControls(){
@@ -546,11 +599,11 @@ function placeMobileControls(){
     if(mobile.matches){
       document.querySelector('.sheet-tools').after(search);dock.append(get('layer-open'));
       options.append(address);dialog.append(options);document.querySelector('.sheet-tools').prepend(back);
-      searchInput.placeholder='어느 동네·구역을 찾으세요?';
+      searchInput.placeholder='동네, 구역명, 시공사 검색';
     }else{
       document.querySelector('.results-head').before(search);search.querySelector('.filter-row').append(get('layer-open'));mapStage.append(options,address);
       get('detail-view').prepend(back);
-      searchInput.placeholder='주소, 구역명 또는 사업 단계';
+      searchInput.placeholder='주소, 구역명, 단계, 시공사';
     }
   }
   mobile.addEventListener('change',place);place();
@@ -567,6 +620,10 @@ function prepareLoading(){
   placeMobileControls();
   $('search-input').value=params.get('q')??'';
   $('recent-filter').setAttribute('aria-pressed',String(params.get('recent')==='1'));
+  const contractor=params.get('contractor');
+  $('contractor-toggle').setAttribute('aria-pressed',String(Boolean(contractor)));
+  $('contractor-tools').hidden=!contractor;
+  if(contractor && contractor!=='all')$('contractor-company').add(new Option(contractor,contractor,true,true));
   const region=params.get('district');
   if(region)$('district-filter').add(new Option(region,region,true,true));
   const selected=[];
@@ -582,8 +639,9 @@ function prepareLoading(){
   if(selected.length)$('filter-label').textContent=selected.join(' · ');
   const selection={townId:params.get('town'),zoneId:params.get('zone'),cancellation:params.get('cancellation')};
   const isDetail=Boolean(selection.townId || selection.zoneId || selection.cancellation);
-  const filtered=region || $('search-input').value.trim() || selected.length || params.get('recent')==='1';
-  const height=initialSheetHeight(selection,filtered,matchMedia(mobileMapQuery).matches);
+  const filtered=region || $('search-input').value.trim() || selected.length || params.get('recent')==='1' || contractor;
+  const mobile=matchMedia(mobileMapQuery).matches;
+  const height=mobile && (params.has('award') || contractor && !isDetail)?2:initialSheetHeight(selection,filtered,mobile);
   displaySheetHeight(height);
   $('sheet-label').textContent=sheetLabel(selection,height);
   $('back-results').hidden=!isDetail;

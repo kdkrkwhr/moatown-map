@@ -18,8 +18,8 @@
   <meta property="og:image" content="https://moatownmap.com/assets/seoul-panorama.webp">
   <meta property="og:image:alt" content="서울 시가지 전경">
   <link rel="sitemap" type="application/xml" href="/sitemap.xml">
-  <link rel="stylesheet" href="./styles.css?v=de1b422a2bc2">
-  <script type="module" src="./app.mjs?v=de1b422a2bc2"></script>
+  <link rel="stylesheet" href="./styles.css?v=208c3fc8754e">
+  <script type="module" src="./app.mjs?v=208c3fc8754e"></script>
 </head>
 <body data-loading="true">
 <a class="skip" href="#explorer">대상지 탐색으로 바로가기</a>
@@ -58,7 +58,9 @@
           <p id="map-totals">선정 대상지 현황</p></div>
         </div>
         <div class="search-block" id="project-search">
-          <div class="search-line"><label class="search-box"><span data-tool-icon="search"></span><span class="sr-only">주소·구역명·사업 단계 검색</span><input id="search-input" type="search" placeholder="주소, 구역명 또는 사업 단계" autocomplete="off" enterkeyhint="search"></label></div>
+          <div class="search-line"><label class="search-box"><span data-tool-icon="search"></span><span class="sr-only">주소·구역명·사업 단계·시공사 검색</span><input id="search-input" type="search" placeholder="주소, 구역명, 단계, 시공사" autocomplete="off" enterkeyhint="search"></label>
+            <button type="button" id="contractor-toggle" aria-pressed="false" aria-controls="contractor-tools town-list" disabled>시공사 선정</button>
+          </div>
           <div class="filter-row"><label class="sr-only" for="district-filter">자치구</label><select id="district-filter"><option value="">서울 전체</option></select>
             <details class="stage-filters" id="stage-filter-box"><summary><span data-tool-icon="filter"></span><span id="filter-label">사업 단계</span></summary>
               <div class="filter-menu">
@@ -70,8 +72,9 @@
             <button type="button" id="recent-filter" aria-pressed="false" aria-describedby="recent-help" disabled>최근 변동</button>
             <button type="button" id="layer-open" aria-haspopup="dialog" aria-controls="layer-dialog"><span data-tool-icon="layers"></span>레이어·범례</button>
           </div>
+          <div id="contractor-tools" hidden><label for="contractor-company">선정 업체</label><select id="contractor-company" disabled><option value="all">전체 시공사</option></select></div>
         </div>
-        <div class="results-head"><h3>검색 결과</h3><button type="button" id="clear-filters" hidden>조건 지우기</button><span id="result-count" role="status"></span></div>
+        <div class="results-head"><h3 id="results-title">검색 결과</h3><button type="button" id="clear-filters" hidden>조건 지우기</button><span id="result-count" role="status"></span></div>
         <div id="town-list" aria-label="모아타운 검색 결과" aria-busy="true"><div class="skeleton" aria-hidden="true"></div></div>
       </section>
       <section id="detail-view" aria-label="선택 상세" hidden>
