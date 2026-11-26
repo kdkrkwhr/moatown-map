@@ -1,7 +1,7 @@
 import {createHash} from 'node:crypto';
 import {readFileSync,writeFileSync} from 'node:fs';
 
-// Both HTML pages and their local module graphs are served as plain files by Pages.
+// Pages serves these HTML entry points and their local modules directly.
 const root=new URL('../',import.meta.url);
 const files=new Map();
 const reference=/(["'])(\.\.?\/[^"'?#\s]+\.(?:mjs|css))(?:\?v=[\w.-]+)?\1/g;
@@ -24,7 +24,7 @@ function visit(url){
   files.set(path,source);
   for(const [, ,relative] of source.matchAll(reference))visit(new URL(relative,url));
 }
-for(const page of ['index.html','news.html'])visit(new URL(page,root));
+for(const page of ['index.html','news.html','qa.html'])visit(new URL(page,root));
 const hash=createHash('sha256');
 for(const path of [...files.keys()].sort()){
   const source=versionImages(files.get(path),new URL(path,root)).replace(reference,'$1$2$1').replaceAll('\r\n','\n');

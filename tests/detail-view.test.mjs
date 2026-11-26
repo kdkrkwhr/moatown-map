@@ -77,8 +77,21 @@ test('the public sitemap includes one clean URL per town and child',()=>{
   const xml=readFileSync(new URL('../sitemap.xml',import.meta.url),'utf8');
   const urls=Array.from(xml.matchAll(/<loc>([^<]+)<\/loc>/g),m=>m[1].replaceAll('&amp;','&'));
   const townUrls=new Map(towns.map(t=>[t.id,root+'towns/'+t.id+'/']));
-  const expected=[root,root+'news.html',...townUrls.values(),...zones.map(z=>townUrls.get(z.town_id)+z.id+'/')];
+  const expected=[root,root+'news.html',root+'qa.html',...townUrls.values(),...zones.map(z=>townUrls.get(z.town_id)+z.id+'/')];
   assert.deepEqual(urls.toSorted(),expected.toSorted());
+});
+
+test('example links in the static Q&A lead to published project pages',()=>{
+  const html=readFileSync(new URL('../qa.html',import.meta.url),'utf8');
+  const links=Array.from(html.matchAll(/href="(\/towns\/[^"]+)"/g),match=>match[1]);
+  assert.ok(links.length>0);
+  for(const link of links){
+    const params=projectParams(new URL(link.replaceAll('&amp;','&'),'https://moatownmap.com'));
+    const town=towns.find(record=>record.id===params.get('town'));
+    assert.ok(town,link);
+    if(params.has('zone'))assert.ok(groups.get(town.id)?.some(zone=>zone.id===params.get('zone')),link);
+    if(params.get('mode')==='after')assert.ok(read('latest.json').pilot_3d.plan_town_ids.includes(town.id),link);
+  }
 });
 
 test('Sinwol town and A1 publish their own metadata, stage and official evidence before JavaScript',()=>{

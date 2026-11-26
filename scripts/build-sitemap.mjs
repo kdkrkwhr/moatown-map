@@ -7,7 +7,7 @@ const readJson=url=>JSON.parse(readFileSync(url,'utf8'));
 const {files,snapshot_date}=readJson(manifestUrl);
 const template=readFileSync(new URL('../index.html',import.meta.url),'utf8');
 const root='https://'+readFileSync(new URL('../CNAME',import.meta.url),'utf8').trim()+'/';
-const urls=[root,root+'news.html'];
+const urls=[root,root+'news.html',root+'qa.html'];
 const towns=new Map();
 const children=new Map();
 for(const town of readJson(new URL(files.towns,manifestUrl))){

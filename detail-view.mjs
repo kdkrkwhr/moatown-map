@@ -1,7 +1,7 @@
-import {formatValue,unitsChange,projectIntervals,compareInterval,projectStage} from './detail-format.mjs?v=f2003da4e393';
-import {projectUrl} from './project-url.mjs?v=f2003da4e393';
-import {metricGlossary,translateStage} from './glossary-translator.mjs?v=f2003da4e393';
-import {decorativeEmoji,toolIcon} from './ui-icons.mjs?v=f2003da4e393';
+import {formatValue,unitsChange,projectIntervals,compareInterval,projectStage} from './detail-format.mjs?v=53a1cfa6c179';
+import {projectUrl} from './project-url.mjs?v=53a1cfa6c179';
+import {metricGlossary,translateStage} from './glossary-translator.mjs?v=53a1cfa6c179';
+import {decorativeEmoji,toolIcon} from './ui-icons.mjs?v=53a1cfa6c179';
 export {projectUrl};
 
 const pending='미고시';

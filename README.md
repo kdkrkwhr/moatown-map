@@ -3,6 +3,7 @@
 서울시가 선정한 모아타운과 세부 사업구역을 찾는 공개 지도입니다. 검색창에 `강북구 착공`처럼 입력하거나 자치구와 사업 단계 필터를 함께 선택하세요. 관리계획 승인은 대상지 단위로, 조합설립·사업인가·착공은 하위 구역 단위로 찾을 수 있습니다. 검색 결과를 누르면 해당 상세와 원문이 열립니다. 모바일은 하단 검색 패널을 누르거나 위로 끌어 올려 사용합니다.
 
 - [서울 모아타운 현황지도](https://moatownmap.com/)
+- [모아타운 Q&A](https://moatownmap.com/qa.html)에서 주소, 추진 단계, 시공사, 3D 계획에 대한 답을 읽고 해당 화면을 바로 열 수 있습니다.
 - [착공 구역](https://moatownmap.com/?progress=construction) · [관리계획 승인 대상지](https://moatownmap.com/?plan=approved) · [취소 이력](https://moatownmap.com/?plan=canceled)
 - [공식 자료와 언론 보도](https://moatownmap.com/news.html)에서 지역과 출처를 고르거나 관련 대상지의 지도 상세를 열 수 있습니다.
 - [위성 지도와 지적편집도 보기](https://moatownmap.com/?map=hybrid&cadastral=1)
@@ -36,6 +37,6 @@
 
 ## 로컬 확인
 
-저장소 루트에서 `python3 -m http.server 8000`을 실행한 다음 `http://localhost:8000/`을 엽니다. 네이버 배경지도를 로컬에서 확인하려면 해당 주소를 Maps 애플리케이션의 Web 서비스 URL에 등록해야 합니다. 지도·소식 화면의 HTML, CSS, 모듈 또는 여기에서 참조하는 `assets/` 이미지를 수정한 후에는 `node scripts/sync-assets.mjs`를 실행하고 변경된 참조를 함께 커밋합니다. `node --test`는 두 페이지와 하위 모듈, 이미지의 캐시 태그도 검사합니다.
+저장소 루트에서 `python3 -m http.server 8000`을 실행한 다음 `http://localhost:8000/`을 엽니다. 네이버 배경지도를 로컬에서 확인하려면 해당 주소를 Maps 애플리케이션의 Web 서비스 URL에 등록해야 합니다. 지도·소식·Q&A 페이지의 HTML, CSS, 모듈 또는 여기에서 참조하는 `assets/` 이미지를 수정한 후에는 `node scripts/sync-assets.mjs`를 실행하고 변경된 참조를 함께 커밋합니다. `node --test`는 공개 페이지와 하위 모듈, 이미지의 캐시 태그도 검사합니다.
 
 네이버 일반·위성 지도에서 지적편집도를 겹쳐 보거나 거리 재기로 두 지점의 직선거리를 확인할 수 있습니다. 법정 경계는 관할 기관의 최신 고시에서 확인하세요.

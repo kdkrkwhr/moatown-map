@@ -1,4 +1,4 @@
-import booleanPointInPolygon from './vendor/turf/boolean-point-in-polygon.mjs?v=f2003da4e393';
+import booleanPointInPolygon from './vendor/turf/boolean-point-in-polygon.mjs?v=53a1cfa6c179';
 export function parseLot(value){
   const match=/^(?:서울(?:특별시|시)?\s+)?(?:([가-힣]+구)\s+)?([가-힣\d·.]+(?:동|가|로))\s+(산\s*)?(\d{1,4})(?:-(\d{1,4}))?(?:번지)?$/.exec(value.trim());
   if(!match || Number(match[4])===0)return null;
@@ -125,7 +125,17 @@ export function mountAddressLookup(townById,boundaries,showPoint,mapAvailable=()
       if(id===version)output.textContent='도로명 좌표 서비스에 연결할 수 없습니다. 서울 25개 구의 법정동과 지번으로 조회할 수 있습니다.';
     }
   }
-  $('address-open').addEventListener('click',()=>{dialog.showModal();input.focus();});
+  function openAddress(){
+    dialog.showModal();
+    input.focus();
+  }
+  $('address-open').addEventListener('click',openAddress);
+  const entry=new URL(location.href);
+  if(entry.searchParams.get('tool')==='address'){
+    openAddress();
+    entry.searchParams.delete('tool');
+    history.replaceState(history.state,'',entry);
+  }
   $('address-close').addEventListener('click',()=>dialog.close());
   dialog.addEventListener('close',clear);
   input.addEventListener('input',clear);
