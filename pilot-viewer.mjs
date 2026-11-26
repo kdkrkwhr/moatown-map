@@ -1,4 +1,4 @@
-import {projectParams,setProjectPath} from './project-url.mjs?v=0de51c63d593';
+import {projectParams,setProjectPath} from './project-url.mjs?v=9dd69d08e58e';
 
 const collection=features=>({type:'FeatureCollection',features});
 const count=value=>value.toLocaleString('ko-KR');
@@ -130,7 +130,7 @@ function showExpandedPlan(panel,session){
   const scope=whole?'대상지 전체':zoneId?(zoneMap.get(zoneId)?.name??'선택 구역'):'세부구역 '+rows.filter(([,s])=>s.blocks).length+'곳';
   section.append(el('h3',scope+' · 예상 배치 '+count(countBlocks)+'동'));
   if(!rows.length)section.append(el('p','선택한 구역의 경계와 계획 수치를 대조하는 중입니다.','pilot-note'));
-  if(whole)section.append(el('p',session.data.publicSpace?'자료에서 확인한 시설 부지를 비워 두고 대상지 전체 계획 규모에 맞춰 주거동을 배치했습니다.':'대상지 전체 계획 규모를 참고 외곽 안에 배치했습니다. 도로·공원·존치 건물의 위치는 별도 반영하지 않았습니다.','pilot-meta'));
+  if(whole)section.append(el('p',session.data.publicSpace?'주거동은 가상 배치입니다. 도로·공원·보행공간은 아래 원문에서 위치를 확인할 수 있습니다.':'대상지 전체 계획 규모를 참고 외곽 안에 배치했습니다. 도로·공원·존치 건물의 위치는 별도 반영하지 않았습니다.','pilot-meta'));
   if(!whole && !zoneId && zoneMap.size>rows.length)section.append(el('p','등록된 세부구역 '+zoneMap.size+'곳 중 경계와 계획 수치가 연결된 구역을 표시합니다.','pilot-meta'));
   for(const [id,s] of rows){
     const record=whole?expanded.plan:expanded.zones[id];
@@ -271,12 +271,18 @@ function showSimulation(panel,summaries,zoneId,design){
 function showPublicSpaces(panel,publicSpace){
   if(publicSpace?.features.length){
     const places=el('details',null,'pilot-evidence');
-    places.append(el('summary','대상지 도로·열린 공간 '+publicSpace.features.length+'곳'),
+    places.append(el('summary','도로·공원·보행공간 · '+publicSpace.features.length+'개 항목'),
       el('p',publicSpace.source_label+' · '+date(publicSpace.source_as_of),'pilot-meta'));
     if(publicSpace.status)places.append(el('p',publicSpace.status,'pilot-meta'));
-    for(const {properties:p} of publicSpace.features){
+    for(const {properties:p,geometry} of publicSpace.features){
       const measure=p.width_m?' · 폭 '+p.width_m+'m':p.notice_area_m2?' · '+count(p.notice_area_m2)+'㎡':'';
-      places.append(source(p.source_url,p.name+measure+' ↗'));
+      let label='';
+      if(p.location_only)label=p.representative_lot?' · 대표 지번 '+p.representative_lot:' · 위치 기호';
+      else if(p.evidence==='official_plan_drawing_traced' && geometry.type.endsWith('LineString'))label=' · 도면 중심선';
+      const asOf=p.source_as_of && p.source_as_of!==publicSpace.source_as_of?' · '+date(p.source_as_of):'';
+      const link=source(p.source_url,p.name+measure+label+asOf+' ↗');
+      if(p.source_label)link.title=p.source_label;
+      places.append(link);
     }
     panel.append(places);
   }
@@ -632,7 +638,7 @@ export function mountPilotViewer({manifest,boundaries,townById,groups}){
       const indexUrl=new URL(manifest.files.buildings,base),planUrl=new URL(manifest.files.pilot_plans,base);
       const inputsForTown=config.simulation_inputs?.[town.id];
       const [index,planBook,{createPilotScene},expanded]=await Promise.all([fetchJson(indexUrl,signal,config.hashes.buildings),
-        session.hasPlan && !inputsForTown?.path?fetchJson(planUrl,signal,config.hashes.pilot_plans):null,import('./pilot-scene.mjs?v=0de51c63d593'),
+        session.hasPlan && !inputsForTown?.path?fetchJson(planUrl,signal,config.hashes.pilot_plans):null,import('./pilot-scene.mjs?v=9dd69d08e58e'),
         inputsForTown?.path?fetchJson(new URL(inputsForTown.path,base),signal,inputsForTown.sha256):null]);
       if(expanded && expanded.town_id!==town.id)throw Error('예상 배치의 대상지 ID가 다릅니다.');
       const entry=index.towns[town.id],plans=expanded??planBook?.towns[town.id];
@@ -673,7 +679,7 @@ export function mountPilotViewer({manifest,boundaries,townById,groups}){
         simulation=session.simulate(session.placement);
       }else if(session.canSimulate){
         const modelAreas=areas.filter(a=>inputsForTown.zone_ids.includes(a.properties.entity_id));
-        const [module,inputs]=await Promise.all([import('./pilot-simulation.mjs?v=0de51c63d593'),
+        const [module,inputs]=await Promise.all([import('./pilot-simulation.mjs?v=9dd69d08e58e'),
           Promise.all([inputsForTown.design,inputsForTown.public_space,inputsForTown.layout].map(key=>key?fetchInput(key):null)).catch(error=>{designError=error;return null;})]);
         if(active!==session)return;
         const layout=inputs?.[2];

@@ -1,4 +1,4 @@
-﻿import earcut from './vendor/earcut-3.0.2/earcut.mjs?v=0de51c63d593';
+﻿import earcut from './vendor/earcut-3.0.2/earcut.mjs?v=9dd69d08e58e';
 
 const DEG = Math.PI / 180;
 const GROUND = '#f1f3ef';
@@ -121,8 +121,11 @@ function buildModel(town, zones, buildings, simulation, publicSpace) {
     const paths = raw.geometry?.type === 'LineString' ? [raw.geometry.coordinates]
       : raw.geometry?.type === 'MultiLineString' ? raw.geometry.coordinates : [];
     const lines = paths.map(path => path.map(project)).filter(path => path.length >= 2);
-    if (parts.length || (['road', 'walkway'].includes(kind) && lines.length)) {
-      spaces.push({ kind, name, parts, lines, width: Number.isFinite(width_m) && width_m > 0 ? width_m : null });
+    const point = raw.geometry?.type === 'Point' && raw.properties?.location_only
+      && raw.geometry.coordinates.length === 2 && raw.geometry.coordinates.every(Number.isFinite)
+      ? project(raw.geometry.coordinates) : null;
+    if (parts.length || point || (['road', 'walkway'].includes(kind) && lines.length)) {
+      spaces.push({ kind, name, parts, lines, point, width: Number.isFinite(width_m) && width_m > 0 ? width_m : null });
     }
   }
   const focus = perimeter ? [perimeter] : areas.length ? areas : blocks;
@@ -1055,16 +1058,16 @@ export async function createPilotScene(container, { buildings, town, zones, simu
   });
   const spaceLabels = [];
   const named = model.spaces.filter(s => s.name);
-  const park = named.filter(s => s.kind === 'park').sort((a, b) =>
+  const park = named.filter(s => ['park','green','open_space'].includes(s.kind) && s.parts.length).sort((a, b) =>
     Math.max(...b.parts.map(p => p.area)) - Math.max(...a.parts.map(p => p.area)))[0];
   const facility = named.find(s => s.kind === 'facility');
-  const axis = named.filter(s => s.kind === 'road' || s.kind === 'walkway').sort((a, b) => (b.width || 0) - (a.width || 0))[0];
-  for (const space of [park, facility, axis].filter(Boolean)) {
+  const axis = named.find(s => s.kind === 'walkway') || named.find(s => s.kind === 'road');
+  for (const space of new Set([park, facility, axis, ...named.filter(s => s.point)].filter(Boolean))) {
     const node = document.createElement('span');
     node.className = 'pilot-space-label';
     node.textContent = space.name;
     const part = space.parts.reduce((best, p) => !best || p.area > best.area ? p : best, null);
-    let at = part?.anchor;
+    let at = space.point || part?.anchor;
     if (!at) {
       const line = space.lines[0];
       const lengths = line.slice(1).map((b, i) => Math.hypot(b[0] - line[i][0], b[1] - line[i][1]));

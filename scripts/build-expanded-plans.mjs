@@ -25,7 +25,7 @@ const facilities=new Map(readdirSync(facilityDir).filter(f=>f.endsWith('.geojson
   if(file!==input.town_id+'.geojson'||!input.features.length)throw Error('시설 파일 불일치 '+file);
   return [input.town_id,input];
 }));
-const checkedOn=[city.checked_on,supplement.checked_on,local.checked_on].sort().at(-1);
+const checkedOn=[city.checked_on,supplement.checked_on,local.checked_on,...Array.from(facilities.values(),f=>f.checked_on)].filter(Boolean).sort().at(-1);
 const index={checked_on:checkedOn,towns:{}},rows=[];
 const saved=new Set();
 const heldPrograms={};

@@ -1,13 +1,13 @@
-import {projectUrl,renderProjectDetail,showUnplacedProgram} from './detail-view.mjs?v=0de51c63d593';
-import {durationSamples,elapsedMonths,formatValue,projectMetadata} from './detail-format.mjs?v=0de51c63d593';
-import {projectParams,setProjectPath} from './project-url.mjs?v=0de51c63d593';
+import {projectUrl,renderProjectDetail,showUnplacedProgram} from './detail-view.mjs?v=9dd69d08e58e';
+import {durationSamples,elapsedMonths,formatValue,projectMetadata} from './detail-format.mjs?v=9dd69d08e58e';
+import {projectParams,setProjectPath} from './project-url.mjs?v=9dd69d08e58e';
 export {elapsedMonths};
-import {loadMaps,createProjectMap} from './map-engine.mjs?v=0de51c63d593';
-export {showReferencePin} from './map-engine.mjs?v=0de51c63d593';
-import {loadNews,matchNews,newsCard,sourceLabels} from './news.mjs?v=0de51c63d593';
-import {searchProjects,managementFilters,progressFilters,recentProjectDates} from './project-search.mjs?v=0de51c63d593';
-import {mountAddressLookup} from './address-reference.mjs?v=0de51c63d593';
-import {mountPilotViewer} from './pilot-viewer.mjs?v=0de51c63d593';
+import {loadMaps,createProjectMap} from './map-engine.mjs?v=9dd69d08e58e';
+export {showReferencePin} from './map-engine.mjs?v=9dd69d08e58e';
+import {loadNews,matchNews,newsCard,sourceLabels} from './news.mjs?v=9dd69d08e58e';
+import {searchProjects,managementFilters,progressFilters,recentProjectDates} from './project-search.mjs?v=9dd69d08e58e';
+import {mountAddressLookup} from './address-reference.mjs?v=9dd69d08e58e';
+import {mountPilotViewer} from './pilot-viewer.mjs?v=9dd69d08e58e';
 const mobileMapQuery='(max-width: 768px)';
 function initialSheetHeight(selection,hasFilters,mobile){
   if(!mobile)return 1;

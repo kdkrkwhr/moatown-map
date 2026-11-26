@@ -1,8 +1,43 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {readFileSync} from 'node:fs';
+import {readdirSync,readFileSync} from 'node:fs';
 import booleanPointInPolygon from '../vendor/turf/boolean-point-in-polygon.mjs';
 import {buildExpandedLayouts} from '../scripts/expanded-layouts.mjs';
+
+test('released 3D scenes carry their dated facility drawings and preserve location-only symbols',()=>{
+  const root=new URL('../moatown-data/',import.meta.url);
+  const read=path=>JSON.parse(readFileSync(new URL(path,root)));
+  const catalog=read('plans/expanded-index.json').towns;
+  const byTown=new Map(read(read('latest.json').files.towns).map(t=>[t.id,t.district]));
+  const parcelFiles=new Map(read('addresses/index.json').districts.map(d=>[d.name,d.file]));
+  const parcels=new Map();
+  for(const file of readdirSync(new URL('plans/public-spaces/',root)).filter(f=>f.endsWith('.geojson'))){
+    const collection=read('plans/public-spaces/'+file);
+    assert.deepEqual(read(catalog[collection.town_id].path).public_space,collection);
+    const ids=new Set();
+    for(const {properties,geometry} of collection.features){
+      assert.ok(properties.id && !ids.has(properties.id),file);
+      ids.add(properties.id);
+      assert.ok(properties.name && properties.evidence,file);
+      assert.match(properties.source_url,/^https:\/\//);
+      assert.match(properties.source_as_of,/^\d{4}-\d{2}-\d{2}$/);
+      if(geometry.type==='Point')assert.equal(properties.location_only,true);
+      if(properties.evidence==='official_facility_schedule_parcel_point'){
+        const district=byTown.get(collection.town_id);
+        if(!parcels.has(district))parcels.set(district,read('addresses/'+parcelFiles.get(district)));
+        const index=parcels.get(district);
+        const [dong,lot]=properties.representative_lot.split(' ');
+        assert.equal(geometry.type,'Point',properties.id);
+        assert.deepEqual(geometry.coordinates,index.points[dong]?.[lot],properties.id);
+        assert.equal(properties.parcel_source_url,index.evidence.source_url);
+      }
+      if(properties.evidence==='official_plan_legend_digitized' || properties.evidence==='official_plan_drawing_traced'){
+        assert.ok(collection.drawings.some(d=>d.source_url===properties.source_url &&
+          d.source_as_of===properties.source_as_of && d.locator===properties.source_label),properties.id);
+      }
+    }
+  }
+});
 
 const shape=(id,x,width)=>({type:'Feature',properties:{entity_id:id},geometry:{type:'Polygon',
   coordinates:[[[x,37.5],[x+width,37.5],[x+width,37.5018],[x,37.5018],[x,37.5]]]}});

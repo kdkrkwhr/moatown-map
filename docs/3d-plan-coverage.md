@@ -1,6 +1,6 @@
 # 건축 후 예상 3D 수록 현황
 
-계획 자료 대조일 2026-11-25. 142개 대상지를 검토해 96곳에서 건축 후 3D를 제공한다. 기존 3곳과 추가 93곳을 합한 수치다.
+계획 자료 대조일 2026-11-26. 142개 대상지를 검토해 96곳에서 건축 후 3D를 제공한다. 기존 3곳과 추가 93곳을 합한 수치다.
 
 세부구역 단위로 볼 수 있는 대상지는 31곳이며, 해당 세부구역은 모두 59곳이다. 대상지 전체 예시를 제공하는 곳은 90곳이다. 한 가지 이상의 보기에서 층수 기본 가정을 사용하는 대상지는 38곳이다.
 
@@ -13,7 +13,7 @@
 | 자치구 · 대상지 | 제공 범위 또는 보류 이유 | 모델링 세부구역 | 구역별 모형 | 전체 예시 모형 | 층수 기본 가정 포함 |
 | --- | --- | ---: | ---: | ---: | --- |
 | [강서구 화곡동 1087](https://moatownmap.com/?town=mt-202603-public-001&view=3d&mode=after) | 구역별 / 대상지 전체 | 3 | 12 | 16 | 아니오 |
-| [강서구 화곡동 354](https://moatownmap.com/?town=mt-202603-public-002&view=3d&mode=after) | 구역별 / 대상지 전체 | 3 | 20 | 25 | 예 |
+| [강서구 화곡동 354](https://moatownmap.com/?town=mt-202603-public-002&view=3d&mode=after) | 구역별 / 대상지 전체 | 3 | 19 | 25 | 예 |
 | [강서구 화곡동 359](https://moatownmap.com/?town=mt-202603-public-003&view=3d&mode=after) | 대상지 전체 | 0 | — | 22 | 아니오 |
 | 강서구 화곡동 424 | 배치에 쓸 공개 계획 수치·적용 범위 추가 대조 | — | — | — | — |
 | [강서구 등촌2동 515-44](https://moatownmap.com/?town=mt-202603-public-005&view=3d&mode=after) | 구역별 / 대상지 전체 | 3 | 21 | 19 | 예 |
@@ -22,7 +22,7 @@
 | [강서구 공항동 55-327](https://moatownmap.com/?town=mt-202603-public-008&view=3d&mode=after) | 대상지 전체 | 0 | — | 32 | 아니오 |
 | [강서구 화곡6동 957](https://moatownmap.com/?town=mt-202603-public-009&view=3d&mode=after) | 대상지 전체 | 0 | — | 28 | 아니오 |
 | [중랑구 (시범2호)면목동 86-3](https://moatownmap.com/?town=mt-202603-public-010&view=3d&mode=after) | 도면·계획 기반 구역별 배치 | 4 | 19 | — | 아니오 |
-| [중랑구 면목3·8동 44-6](https://moatownmap.com/?town=mt-202603-public-011&view=3d&mode=after) | 대상지 전체 | 0 | — | 12 | 아니오 |
+| [중랑구 면목3·8동 44-6](https://moatownmap.com/?town=mt-202603-public-011&view=3d&mode=after) | 대상지 전체 | 0 | — | 11 | 아니오 |
 | [중랑구 면목본동 297-28](https://moatownmap.com/?town=mt-202603-public-012&view=3d&mode=after) | 구역별 / 대상지 전체 | 5 | 19 | 18 | 예 |
 | [중랑구 중화1동 4-30](https://moatownmap.com/?town=mt-202603-public-013&view=3d&mode=after) | 대상지 전체 | 0 | — | 18 | 아니오 |
 | [중랑구 망우3동 427-5](https://moatownmap.com/?town=mt-202603-public-014&view=3d&mode=after) | 대상지 전체 | 0 | — | 26 | 아니오 |
@@ -102,7 +102,7 @@
 | [동대문구 답십리동 489](https://moatownmap.com/?town=mt-202603-public-088&view=3d&mode=after) | 대상지 전체 | 0 | — | 11 | 아니오 |
 | [종로구 숭인동 61](https://moatownmap.com/?town=mt-202603-resident-001&view=3d&mode=after) | 대상지 전체 | 0 | — | 6 | 예 |
 | [용산구 서계동 116](https://moatownmap.com/?town=mt-202603-resident-002&view=3d&mode=after) | 구역별 / 대상지 전체 | 1 | 4 | 4 | 아니오 |
-| [성동구 금호동1가 129](https://moatownmap.com/?town=mt-202603-resident-003&view=3d&mode=after) | 대상지 전체 | 0 | — | 7 | 예 |
+| [성동구 금호동1가 129](https://moatownmap.com/?town=mt-202603-resident-003&view=3d&mode=after) | 대상지 전체 | 0 | — | 6 | 예 |
 | [광진구 자양1동 772-1](https://moatownmap.com/?town=mt-202603-resident-005&view=3d&mode=after) | 대상지 전체 | 0 | — | 15 | 예 |
 | [광진구 자양1동 226-1](https://moatownmap.com/?town=mt-202603-resident-006&view=3d&mode=after) | 대상지 전체 | 0 | — | 5 | 아니오 |
 | 광진구 광장동 264-1 | 참고 외곽 미수록 | — | — | — | — |

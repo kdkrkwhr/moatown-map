@@ -22,7 +22,9 @@
 
 로컬에서 `uv run --with geopandas python scripts/calculate_aging_rate.py`를 실행하면 현재 스냅샷의 대상지·세부구역 파일을 갱신한다. `--check`는 결과만 대조한다. 권리산정 자료는 `uv run --with pymupdf --with beautifulsoup4 python scripts/fetch_rights_date.py`로 검색한다. `--url`로 정보몽땅 등 기관의 HTML·PDF를 추가할 수 있고 `--catalog`, `--text-dir`로 시보 목차와 추출된 본문을 재사용할 수 있다. 후보 CSV 사본에서 날짜와 근거 고시를 확인한 뒤 전체 대상지에 적용되는 행만 `scope=전체`, `review=승인`으로 표시한다. `python scripts/fetch_rights_date.py --merge 검수본.csv`로 병합하거나 `--sync`로 기존 검증값을 동기화한다. 마스터 갱신 후 `node scripts/sync-pilot.mjs`, `node scripts/build-sitemap.mjs`, `node --test`를 실행한다.
 
-사업계획 3D 96곳 중 6곳에 공원·도로·보행공간 36개 도형을 수록했다. 신월동 102-33의 10개에 번동 429-114의 5개, 면목동 86-3의 7개를 더했다. 번동과 면목동은 주거동을 판독한 동일한 배치도와 좌표 변환을 사용했다. 도면에 폭이 없는 보행로는 중심선으로 표시한다. 면목동 어린이공원·주차장은 복합 부지의 지상 위치를 표시한다. [번동 서울시 배치도](https://www.seoul.go.kr/news/news_report.do?nttNo=393720) · [면목동 서울시 배치도](https://www.seoul.go.kr/news/news_report.do?nttNo=468710)
+2026.11.26에 사업계획 3D 96곳 중 92곳에서 시설 위치를 볼 수 있도록 갱신했다. 86곳은 부지·경로를 표시하며, 6곳은 고시 조서의 대표 지번을 서울시 지적도에 대조해 위치만 표시한다. 4곳은 위치를 보류했다. 시설 도면과 기준일, 공람안의 적용 범위, 도면 좌표를 맞춘 방법 및 대상지별 보류 근거를 기록했다. [96곳 검수 결과](./3d-public-space-audit.md) · [시흥3동 972 재공람 자료](https://news.seoul.go.kr/citybuild/archives/543800)
+
+초기 수록 6곳에는 36개 도형이 있다. 신월동 102-33의 10개에 번동 429-114의 5개, 면목동 86-3의 7개를 더했다. 번동과 면목동은 주거동을 판독한 동일한 배치도와 좌표 변환을 사용했다. 도면에 폭이 없는 보행로는 중심선으로 표시한다. 면목동 어린이공원·주차장은 복합 부지의 지상 위치를 표시한다. [번동 서울시 배치도](https://www.seoul.go.kr/news/news_report.do?nttNo=393720) · [면목동 서울시 배치도](https://www.seoul.go.kr/news/news_report.do?nttNo=468710)
 
 시흥3동 1005의 도로 2개, 대흥동 535-2의 도로 2개와 어린이공원 1개, 망원동 456-6의 도로 9개는 서울시 시설 도형을 참고 경계로 잘랐다. 서울 전체 142곳의 관리계획 기록을 기준으로, 도시계획 결정고시 자료의 발령기관·고시번호·고시일과 시설의 고시관리코드를 연결하고 경계 교차를 확인했다. 2026년 9월 공개본의 도로·공간시설·공공문화체육시설·도로외 교통시설을 대조했다. 경계가 있는 곳은 108곳이다. 10㎡ 미만의 경계 접촉은 제외했다. 시설 도형·자료 기준일·출처는 대상지별 파일에 있다. 자동 배치에서는 이 부지를 비워 둔다. [시설 파일](../moatown-data/plans/public-spaces/) · [도시계획 결정고시](https://data.seoul.go.kr/dataList/OA-20283/S/1/datasetView.do) · [도시계획시설 도로](https://data.seoul.go.kr/dataList/OA-21134/F/1/datasetView.do) · [공간시설](https://data.seoul.go.kr/dataList/OA-21129/F/1/datasetView.do)
 
