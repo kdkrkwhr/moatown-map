@@ -1,7 +1,7 @@
-import {formatValue,unitsChange,projectIntervals,compareInterval,projectStage} from './detail-format.mjs?v=7cd8d39c8a68';
-import {projectUrl} from './project-url.mjs?v=7cd8d39c8a68';
-import {metricGlossary,translateStage} from './glossary-translator.mjs?v=7cd8d39c8a68';
-import {decorativeEmoji,toolIcon} from './ui-icons.mjs?v=7cd8d39c8a68';
+import {formatValue,unitsChange,projectIntervals,compareInterval,projectStage} from './detail-format.mjs?v=fac4593c626c';
+import {projectUrl} from './project-url.mjs?v=fac4593c626c';
+import {metricGlossary,translateStage} from './glossary-translator.mjs?v=fac4593c626c';
+import {decorativeEmoji,toolIcon} from './ui-icons.mjs?v=fac4593c626c';
 export {projectUrl};
 
 const pending='미고시';
@@ -196,6 +196,9 @@ function regulations(card,r,town,zone,boundary,cityRule,openTownRules){
   if(r.risk_info?.notes)card.append(notice(r.risk_info.notes));
 }
 
+const reviewedContractorLabel='선정 결과 미확인';
+const unknownStageLabel=r=>r?.field_evidence?.stage_review?.state==='scope_mismatch'?'변경 전 구역 · 단계 미확인':pending;
+
 function contractorField(grid,r,children){
   const confirmed=children.filter(child=>child.selected_contractor);
   if(!r.selected_contractor && confirmed.length){
@@ -205,7 +208,18 @@ function contractorField(grid,r,children){
     return;
   }
   const row=field(grid,children.length?'세부 구역 시공사':'시공사',r.selected_contractor);
-  if(!r.selected_contractor){row.lastChild.classList.add('unverified');return;}
+  if(!r.selected_contractor){
+    const review=r.field_evidence?.contractor_review;
+    if(review){
+      const value=row.querySelector('dd');
+      value.textContent=reviewedContractorLabel;
+      value.removeAttribute('title');
+      row.append(el('small',review.note));
+      const source=link(review.source_url,review.source_title);
+      if(source)row.append(source);
+    }
+    return;
+  }
   const e=r.field_evidence?.selected_contractor;
   if(!e)return;
   const source=link(e.source_url,e.source_title??'시공사 확인 자료');
@@ -236,7 +250,8 @@ function metrics(panel,r,children){
   }
   contractorField(grid,r,children);
   const contract=e.selected_contractor??{};
-  field(grid,contract.contract_date?'시공사 계약일':contract.source_as_of?'시공사 자료 기준일':'시공사 자료 확인일',date(contract.contract_date??contract.source_as_of??contract.checked_on));
+  const contractLabel=contract.contract_date?'시공사 계약일':contract.source_as_of?'시공사 자료 기준일':'시공사 자료 확인일';
+  field(grid,contractLabel,date(contract.contract_date??contract.source_as_of??contract.checked_on??e.contractor_review?.checked_on));
   field(grid,'계획 자료 기준일',date(e.plan?.source_as_of));
   if(r.previous_plan)citedField(grid,'이전 계획',formatValue(r.previous_plan.planned_units_total,'세대'),r.previous_plan.evidence);
   const types=[...listOf(r.unit_types),...listOf(r.published_private_area_bands)];
@@ -319,7 +334,7 @@ function timeline(card,town,zone,snapshot,stats,intervals){
     card.append(notice(n.site+' · '+date(n.notice_date)+' 관리계획 고시'+count));
   }
   if(!zone && town.selection_track)card.append(el('small','선정 방식 · '+town.selection_track,'detail-caption'));
-  const e=zone?zone.field_evidence?.stage:town.field_evidence?.management_plan_stage;
+  const e=zone?(zone.field_evidence?.stage??zone.field_evidence?.stage_review):town.field_evidence?.management_plan_stage;
   if(e?.source_as_of)card.append(el('small','추진 단계 자료 기준 '+date(e.source_as_of),'detail-caption'));
   if(e?.note){
     const item=notice(e.note),ref=link(e.source_url,e.notice_number??'단계 확인 원문');
@@ -363,8 +378,8 @@ function comparisonTable(town,children,zone,select,badge){
     const selectChild=()=>select(town.id,child.id,true);
     button.addEventListener('click',selectChild);
     row.addEventListener('click',event=>{if(!event.target.closest('button'))selectChild();});
-    row.insertCell().append(child.stage?badge(child.stage,true):el('span',pending,'unverified'));
-    row.insertCell().append(el('span',child.selected_contractor??pending,child.selected_contractor?'':'unverified'));
+    row.insertCell().append(child.stage?badge(child.stage,true):el('span',unknownStageLabel(child),'unverified'));
+    row.insertCell().append(el('span',child.selected_contractor??(child.field_evidence?.contractor_review?reviewedContractorLabel:pending),child.selected_contractor?'':'unverified'));
     const n=values(child).planned,asOf=child.field_evidence?.plan?.source_as_of;
     const origin=child.stage==='사업시행계획 폐지'?'폐지 전 계획':planLabel(child.field_evidence?.plan);
     row.insertCell().append(el('strong',formatValue(n,'세대')),el('small',[origin,asOf?date(asOf):'기준일 미고시'].filter(Boolean).join(' · ')));
@@ -381,13 +396,14 @@ function subAreas(panel,town,zone,children,boundaries,select,badge){
     const item=el('li'),button=el('button'),head=el('span',null,'sub-card-head');
     button.type='button';button.dataset.zone=child.id;button.setAttribute('aria-label',child.name+' 상세 보기');
     if(zone?.id===child.id)button.setAttribute('aria-current','true');
-    head.append(el('strong',child.name),child.stage?badge(child.stage,true):el('span',pending,'status-tag unverified'));
+    head.append(el('strong',child.name),child.stage?badge(child.stage,true):el('span',unknownStageLabel(child),'status-tag unverified'));
     if(child.drawing_code && !child.name.includes(child.drawing_code))head.firstChild.prepend(child.drawing_code+' · ');
     button.append(head);
     const sizes=values(child);
     const entries=[['대표 지번',child.registered_address],['계획',formatValue(sizes.planned,'세대')],['면적',formatValue(sizes.area,'㎡')],['시공사',child.selected_contractor],['지도 위치',boundaryLabel(boundaries.get(child.id))??(child.representative_point?'대표 지번 핀':null)]];
     for(const [label,value] of entries.sort((a,b)=>Number(!a[1]||a[1]===pending)-Number(!b[1]||b[1]===pending))){
-      const line=el('span',null,'sub-card-field');line.append(el('span',label),el('span',value||pending,!value||value===pending?'unverified':null));button.append(line);
+      const fallback=label==='시공사' && child.field_evidence?.contractor_review?reviewedContractorLabel:pending;
+      const line=el('span',null,'sub-card-field');line.append(el('span',label),el('span',value||fallback,!value||value===pending?'unverified':null));button.append(line);
     }
     button.addEventListener('click',()=>select(town.id,child.id));item.append(button);list.append(item);
   }
@@ -438,7 +454,7 @@ function sources(card,r,snapshot,boundary,events,registryUrl,reportUrl){
     if(!e?.source_url)continue;
     const labels={plan:'사업 계획',stage:'추진 단계',metrics:'사업 규모',registered_address:'대표 지번',selected_contractor:'시공사',zoning:'용도지역',observed_zoning:'용도지역도'};
     add(e.source_url,e.source_title??e.notice_number??labels[key],e.source_as_of);
-    if(key==='selected_contractor')for(const item of listOf(e.supporting_sources))add(item.url,item.title,null);
+    for(const item of listOf(e.supporting_sources))add(item.url,item.title,item.source_as_of);
     if(e.notice_number)add(e.source_url,e.notice_number,e.source_as_of,docs);
   }
   for(const e of [r.representative_point_evidence,boundary,r.previous_plan?.evidence,...listOf(r.rights_cutoff_history).map(h=>h.evidence)])add(e?.source_url,e?.notice_number,e?.source_as_of);
@@ -476,7 +492,7 @@ function summary(town,zone,intervals,badge,copyLink,comparison){
   identity.append(place,copy);header.append(identity);
   const stage=projectStage(town,zone);
   const badges=el('div',null,'summary-badges');
-  const stageNode=stage?badge(stage):el('span','추진 단계 '+pending,'status-tag unverified');
+  const stageNode=stage?badge(stage):el('span',zone?.field_evidence?.stage_review?unknownStageLabel(zone):'추진 단계 '+pending,'status-tag unverified');
   badges.append(stageNode);
   const rules=regulationLabels(r,town);
   const permit=el('span',null,'regulation-chip'+(rules.permit===pending?' unverified':''));

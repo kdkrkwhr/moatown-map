@@ -1,0 +1,5538 @@
+{
+  "checked_on": "2026-11-26",
+  "sources": [
+    "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+    "https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do",
+    "https://land.seoul.go.kr/land/map/land/map.do",
+    "https://cleanup.seoul.go.kr/cleanup/bsnssttus/lscrMainIndx.do?cpage=1&pageSize=2000",
+    "https://www.mois.go.kr/frt/bbs/type001/commonSelectBoardArticle.do?bbsId=BBSMSTR_000000000052&nttId=130674"
+  ],
+  "missing_points": [
+    {
+      "id": "mt-202603-resident-010",
+      "address": "중랑구 망우동 509",
+      "pnu": "1126010500105090000",
+      "reason": "본번 509 단독 필지가 지적도 색인에 없고(분할로 부번만 존재), 2026-09 서울시 도시계획사업 공간자료에는 509-1 가로주택정비사업 도형(7,564㎡)만 있어 명부 면적 14,541㎡와 대응하지 않습니다."
+    },
+    {
+      "id": "mt-202603-resident-019",
+      "address": "서대문구 연희동 520",
+      "pnu": "1141011700105200000",
+      "reason": "본번 520 단독 필지가 지적도 색인에 없고(분할로 부번만 존재), 2026-09 서울시 도시계획사업 공간자료에 해당 사업지 도형이 없습니다."
+    },
+    {
+      "id": "mt-202603-resident-037",
+      "address": "동작구 사당동 449",
+      "pnu": "1159010700104490000",
+      "reason": "본번 449 단독 필지가 지적도 색인에 없고(분할로 부번만 존재), 2026-09 서울시 도시계획사업 공간자료에 해당 사업지 도형이 없습니다."
+    },
+    {
+      "id": "mt-202603-resident-041",
+      "address": "구로구 개봉2동 304",
+      "pnu": "1153010700103040000",
+      "reason": "본번 304 단독 필지가 지적도 색인에 없고(분할로 부번만 존재), 2026-09 서울시 도시계획사업 공간자료에 해당 사업지 도형이 없습니다."
+    },
+    {
+      "id": "mt-202603-resident-042",
+      "address": "구로구 개봉2동 305",
+      "pnu": "1153010700103050000",
+      "reason": "본번 305 단독 필지가 지적도 색인에 없고(분할로 부번만 존재), 2026-09 서울시 도시계획사업 공간자료에 해당 사업지 도형이 없습니다."
+    }
+  ],
+  "unlinked_or_conflicting_features": [
+    {
+      "source_feature_id": "11530UQ120PS202608050002",
+      "name": "구로동 451번지 일대 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-047"
+      ],
+      "overlap_ratios": [
+        0.91974
+      ],
+      "address": "구로동 451번지 일대",
+      "reason": "사업 행 또는 95% 이상 겹치는 단일 상위 외곽 미확인"
+    },
+    {
+      "source_feature_id": "11290UQ120PS202604280001",
+      "name": "석관1-2구역",
+      "candidate_towns": [
+        "mt-202603-public-064"
+      ],
+      "overlap_ratios": [
+        1.0
+      ],
+      "address": "석관동 332-113번지 일대",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11260UQ120PS202608050001",
+      "name": "면목역3의8구역 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-015"
+      ],
+      "overlap_ratios": [
+        0.99993
+      ],
+      "address": "면목5동156-1번지 일대",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202411014066",
+      "name": "숭인동 61번지 일대 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-resident-001"
+      ],
+      "overlap_ratios": [
+        0.99964
+      ],
+      "address": "숭인동 61번지 일대",
+      "reason": "세부 대표 지번의 내부점과 사업 도형 불일치 또는 미수록"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310674",
+      "name": "(가칭) 고척동 250-158번지 일대 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-044"
+      ],
+      "overlap_ratios": [
+        0.99995
+      ],
+      "address": "고척2동 250-158번지 일대",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310803",
+      "name": "석수빌라 소규모재건축정비사업",
+      "candidate_towns": [
+        "mt-202603-public-024"
+      ],
+      "overlap_ratios": [
+        1.0
+      ],
+      "address": "시흥동 1004",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310301",
+      "name": "(가칭)번동 416-48번지 일대 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-036"
+      ],
+      "overlap_ratios": [
+        0.99994
+      ],
+      "address": "번동 416-48번지 일원",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310302",
+      "name": "(가칭)번동 443-12번지 일대 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-036"
+      ],
+      "overlap_ratios": [
+        1.0
+      ],
+      "address": "번동 443-12번지 일원",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11290UQ120PS202603120001",
+      "name": "정릉동 223-1 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-resident-013"
+      ],
+      "overlap_ratios": [
+        0.99995
+      ],
+      "address": "정릉동 223-1번지 일대",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310256",
+      "name": "불광동 171-42번지 일대 가로주택정비사업(예정)",
+      "candidate_towns": [
+        "mt-202603-public-071"
+      ],
+      "overlap_ratios": [
+        1.0
+      ],
+      "address": "불광동 171-42번지 일대",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310498",
+      "name": "(가칭)면목동 453-1 일대 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-023"
+      ],
+      "overlap_ratios": [
+        1.0
+      ],
+      "address": "면목3.8동 453-1번지 일대",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310264",
+      "name": "(가칭)마장동 458-11번지 일대 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-042"
+      ],
+      "overlap_ratios": [
+        1.0
+      ],
+      "address": "마장동 458-11번지 일대",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310265",
+      "name": "마장동 460번지 일원 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-042"
+      ],
+      "overlap_ratios": [
+        1.0
+      ],
+      "address": "마장동 460번지 일대",
+      "reason": "세부 대표 지번의 내부점과 사업 도형 불일치 또는 미수록"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310266",
+      "name": "(가칭)마장동 463번지 일원 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-042"
+      ],
+      "overlap_ratios": [
+        1.0
+      ],
+      "address": "마장동 463번지 일대",
+      "reason": "세부 대표 지번의 내부점과 사업 도형 불일치 또는 미수록"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310372",
+      "name": "(가칭)상계동 모아타운5구역 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-049"
+      ],
+      "overlap_ratios": [
+        0.99999
+      ],
+      "address": "상계2동 188-9번지 외 70필지",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310472",
+      "name": "면목역6의3구역 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-016"
+      ],
+      "overlap_ratios": [
+        0.99883
+      ],
+      "address": "면목본동 66-28번지 일대",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310473",
+      "name": "(가칭)면목역6의4구역 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-016"
+      ],
+      "overlap_ratios": [
+        0.99959
+      ],
+      "address": "면목본동 110-13번지 일대",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310660",
+      "name": "(가칭) 구로동 724일원 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-045"
+      ],
+      "overlap_ratios": [
+        0.99999
+      ],
+      "address": "구로2동 724 일원",
+      "reason": "세부 대표 지번의 내부점과 사업 도형 불일치 또는 미수록"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310675",
+      "name": "고척동 241-23번지 일대 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-044"
+      ],
+      "overlap_ratios": [
+        1.0
+      ],
+      "address": "고척2동 241-23번지 일대",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310599",
+      "name": "(가칭)성산동 200-149번지 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-030"
+      ],
+      "overlap_ratios": [
+        0.99998
+      ],
+      "address": "성산동 200-149번지 일대",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310814",
+      "name": "인정아파트소규모재건축정비사업",
+      "candidate_towns": [
+        "mt-202603-public-059"
+      ],
+      "overlap_ratios": [
+        0.99997
+      ],
+      "address": "사당동 196",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310704",
+      "name": "정릉동 559-43 일대",
+      "candidate_towns": [
+        "mt-202603-resident-012"
+      ],
+      "overlap_ratios": [
+        0.99049
+      ],
+      "address": "정릉동 559-43 일대",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310461",
+      "name": "(가칭)면목동 1-4번지 일원 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-014"
+      ],
+      "overlap_ratios": [
+        0.99964
+      ],
+      "address": null,
+      "reason": "사업 행 또는 95% 이상 겹치는 단일 상위 외곽 미확인"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310526",
+      "name": "신내동 493-13 일원 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-resident-009"
+      ],
+      "overlap_ratios": [
+        1.0
+      ],
+      "address": "신내1동 493-13번지 일대",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310527",
+      "name": "(가칭)신내동 494-1 일원 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-resident-009"
+      ],
+      "overlap_ratios": [
+        1.0
+      ],
+      "address": "신내1동 494-1번지 일대",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310528",
+      "name": "신내동 494-6 일원 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-resident-009"
+      ],
+      "overlap_ratios": [
+        1.0
+      ],
+      "address": "신내1동 494-6번지 일대",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310531",
+      "name": "면목동 10의2번지 일대 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-014"
+      ],
+      "overlap_ratios": [
+        1.0
+      ],
+      "address": "면목3.8동 10-2번지 일대",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11260UQ120PS202604130003",
+      "name": "상봉역5구역 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-013"
+      ],
+      "overlap_ratios": [
+        1.0
+      ],
+      "address": "상봉동 215-6번지 일대",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310533",
+      "name": "(가칭)망우본동 344-1번지 일대 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-017"
+      ],
+      "overlap_ratios": [
+        1.0
+      ],
+      "address": "망우본동 344-1번지 일대",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310478",
+      "name": "중화역 2의2구역 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-018"
+      ],
+      "overlap_ratios": [
+        0.99999
+      ],
+      "address": "중화2동 329-58번지 일대",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310377",
+      "name": "방배동 977번지 일원 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-080"
+      ],
+      "overlap_ratios": [
+        0.99986
+      ],
+      "address": "방배동 977-4 외 16필지",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310298",
+      "name": "(가칭)번동 411-21번지 일대 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-036"
+      ],
+      "overlap_ratios": [
+        1.0
+      ],
+      "address": "번동 411-21번지 일원",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202512310009",
+      "name": "쌍문동 모아타운 2-2구역 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-051"
+      ],
+      "overlap_ratios": [
+        0.99998
+      ],
+      "address": "쌍문동 484-7 일대",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202512310007",
+      "name": "쌍문동 모아타운 1-2구역 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-052"
+      ],
+      "overlap_ratios": [
+        1.0
+      ],
+      "address": "쌍문동 496-8 일대",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202512310006",
+      "name": "쌍문동 모아타운 1-1구역 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-052"
+      ],
+      "overlap_ratios": [
+        0.99999
+      ],
+      "address": "쌍문동 494-22 일대",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202512310008",
+      "name": "쌍문동 모아타운 2-1구역 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-051"
+      ],
+      "overlap_ratios": [
+        0.99995
+      ],
+      "address": "쌍문동 522-4 일대",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310267",
+      "name": "(가칭)마장동 464번지 일대 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-042"
+      ],
+      "overlap_ratios": [
+        1.0
+      ],
+      "address": "마장동 464번지 일대",
+      "reason": "세부 대표 지번의 내부점과 사업 도형 불일치 또는 미수록"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310577",
+      "name": "(가칭)망원동 461번지 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-031"
+      ],
+      "overlap_ratios": [
+        0.99957
+      ],
+      "address": "망원동 461번지 일대",
+      "reason": "세부 대표 지번의 내부점과 사업 도형 불일치 또는 미수록"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310578",
+      "name": "(가칭) 망원동 455번지 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-031"
+      ],
+      "overlap_ratios": [
+        1.0
+      ],
+      "address": "망원동 455번지 일대",
+      "reason": "세부 대표 지번의 내부점과 사업 도형 불일치 또는 미수록"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310185",
+      "name": "청기와훼미리 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-024"
+      ],
+      "overlap_ratios": [
+        0.99981
+      ],
+      "address": "시흥동 937-11번지 일대",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310743",
+      "name": "석관1-3구역",
+      "candidate_towns": [
+        "mt-202603-public-064"
+      ],
+      "overlap_ratios": [
+        1.0
+      ],
+      "address": "석관동 261-98번지 일대",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310744",
+      "name": "석관1-4구역",
+      "candidate_towns": [
+        "mt-202603-public-064"
+      ],
+      "overlap_ratios": [
+        0.97405
+      ],
+      "address": "석관동 340-115번지 일대",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310745",
+      "name": "석관1-7(B)구역",
+      "candidate_towns": [
+        "mt-202603-public-064"
+      ],
+      "overlap_ratios": [
+        0.99989
+      ],
+      "address": "석관동 332-46번지 일대",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310540",
+      "name": "(가칭)묵동 247-1번지 일원 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-020"
+      ],
+      "overlap_ratios": [
+        0.99982
+      ],
+      "address": "묵2동 242-16번지 일대",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310604",
+      "name": "(가칭)신월3동 163번지 일대 가로주택정비사업(미등록)",
+      "candidate_towns": [
+        "mt-202603-public-066"
+      ],
+      "overlap_ratios": [
+        1.0
+      ],
+      "address": "신월3동 163-1 외 94필지",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310605",
+      "name": "(가칭)신월3동 183번지 일대 가로주택정비사업(미등록)",
+      "candidate_towns": [
+        "mt-202603-public-066"
+      ],
+      "overlap_ratios": [
+        1.0
+      ],
+      "address": "신월3동 183-1 외 98필지",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310318",
+      "name": "(가칭)수유동 171-6번지 일대 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-039"
+      ],
+      "overlap_ratios": [
+        0.99992
+      ],
+      "address": "수유동 171-6번지 일원",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310451",
+      "name": "대명삼보연립 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-013"
+      ],
+      "overlap_ratios": [
+        0.99999
+      ],
+      "address": "중화1동 1-1번지 일대",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310452",
+      "name": "(가칭)중화1동 2구역 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-013"
+      ],
+      "overlap_ratios": [
+        1.0
+      ],
+      "address": "중화1동 4-30번지 일대",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310746",
+      "name": "석관1-8구역",
+      "candidate_towns": [
+        "mt-202603-public-065"
+      ],
+      "overlap_ratios": [
+        0.99984
+      ],
+      "address": "석관동 332-179번지 일대",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310663",
+      "name": "구로동 454번지 일원 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-047"
+      ],
+      "overlap_ratios": [
+        0.99959
+      ],
+      "address": "구로2동 454번지 일대",
+      "reason": "세부 대표 지번의 내부점과 사업 도형 불일치 또는 미수록"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310662",
+      "name": "(가칭)구로동 445-2번지 일원 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-047"
+      ],
+      "overlap_ratios": [
+        1.0
+      ],
+      "address": "구로2동 445-2번지 일대",
+      "reason": "세부 대표 지번의 내부점과 사업 도형 불일치 또는 미수록"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310678",
+      "name": "(가칭)개봉동 108-5번지 일대 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-044"
+      ],
+      "overlap_ratios": [
+        0.99997
+      ],
+      "address": "개봉동 108-5번지 일대",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202512310010",
+      "name": "쌍문동 모아타운 2-3구역 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-051"
+      ],
+      "overlap_ratios": [
+        0.99996
+      ],
+      "address": "쌍문동 524-87 일대",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202512310011",
+      "name": "쌍문동 모아타운 2-4구역 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-051"
+      ],
+      "overlap_ratios": [
+        1.0
+      ],
+      "address": "쌍문동 486-1 일대",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202512310012",
+      "name": "쌍문동 모아타운 2-5구역 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-051"
+      ],
+      "overlap_ratios": [
+        0.99997
+      ],
+      "address": "쌍문동 486-18 일대",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202512310013",
+      "name": "(가칭)면목3.8동 1구역 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-011"
+      ],
+      "overlap_ratios": [
+        1.0
+      ],
+      "address": "면목3.8동 42-2번지 일대",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310884",
+      "name": "쌍문동 460-194 외 3",
+      "candidate_towns": [
+        "mt-202603-public-054"
+      ],
+      "overlap_ratios": [
+        0.99997
+      ],
+      "address": "쌍문동 460-194 외 3(735, 735-1)",
+      "reason": "세부 대표 지번의 내부점과 사업 도형 불일치 또는 미수록"
+    },
+    {
+      "source_feature_id": "11305UQ120PS202604090001",
+      "name": "번동3-1구역 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-036"
+      ],
+      "overlap_ratios": [
+        0.99999
+      ],
+      "address": "번동 413-44번지 일원",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310262",
+      "name": "(가칭)마장동 444-1번지 일대 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-042"
+      ],
+      "overlap_ratios": [
+        1.0
+      ],
+      "address": "마장동 444-1번지 일대",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310364",
+      "name": "(가칭)노원역4구역 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-049"
+      ],
+      "overlap_ratios": [
+        1.0
+      ],
+      "address": "상계2동 387-114 일대",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310365",
+      "name": "(가칭)노원역5구역 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-049"
+      ],
+      "overlap_ratios": [
+        1.0
+      ],
+      "address": "싱계2동 322-47외 52필지",
+      "reason": "세부 대표 지번의 내부점과 사업 도형 불일치 또는 미수록"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310443",
+      "name": "(가칭)면목3.8동 4구역 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-011"
+      ],
+      "overlap_ratios": [
+        0.99883
+      ],
+      "address": "면목3.8동 23-2번지 일대",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11740UQ120PS202603260001",
+      "name": "둔촌2동모아주택1구역",
+      "candidate_towns": [
+        "mt-202603-public-056"
+      ],
+      "overlap_ratios": [
+        0.99992
+      ],
+      "address": "둔촌동 470-1번지 일대",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11500UQ120PS202603130005",
+      "name": "화곡1동 354번지 일대 모아타운 [A2-5구역] 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-002"
+      ],
+      "overlap_ratios": [
+        0.99995
+      ],
+      "address": "화곡동 354-2 일대",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310292",
+      "name": "천호동 221번지 일대",
+      "candidate_towns": [
+        "mt-202603-public-057"
+      ],
+      "overlap_ratios": [
+        0.99936
+      ],
+      "address": "천호동 221번지 일대",
+      "reason": "세부 대표 지번의 내부점과 사업 도형 불일치 또는 미수록"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310293",
+      "name": "천호동 98번지 일대",
+      "candidate_towns": [
+        "mt-202603-public-057"
+      ],
+      "overlap_ratios": [
+        1.0
+      ],
+      "address": "천호동 98번지 일대",
+      "reason": "세부 대표 지번의 내부점과 사업 도형 불일치 또는 미수록"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310294",
+      "name": "천호동 84번지 일대",
+      "candidate_towns": [
+        "mt-202603-public-057"
+      ],
+      "overlap_ratios": [
+        1.0
+      ],
+      "address": "천호동 84번지 일대",
+      "reason": "세부 대표 지번의 내부점과 사업 도형 불일치 또는 미수록"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310295",
+      "name": "천호동 105번지 일대",
+      "candidate_towns": [
+        "mt-202603-public-057"
+      ],
+      "overlap_ratios": [
+        0.99991
+      ],
+      "address": "천호동 105번지 일대",
+      "reason": "세부 대표 지번의 내부점과 사업 도형 불일치 또는 미수록"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310471",
+      "name": "(가칭)면목역6의2구역 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-016"
+      ],
+      "overlap_ratios": [
+        1.0
+      ],
+      "address": "면목본동 65-28번지 일대",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310647",
+      "name": "(가칭)봉천동 1528번지 일원 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-073"
+      ],
+      "overlap_ratios": [
+        0.27812
+      ],
+      "address": "봉천동 1528번지 일원",
+      "reason": "사업 행 또는 95% 이상 겹치는 단일 상위 외곽 미확인"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310337",
+      "name": "(가칭)수유동 180-29번지 일대 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-039"
+      ],
+      "overlap_ratios": [
+        0.99994
+      ],
+      "address": "수유동 180-29번지 일원",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310338",
+      "name": "(가칭)수유동 23-5번지 일대 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-041"
+      ],
+      "overlap_ratios": [
+        0.99998
+      ],
+      "address": "수유동 23-5번지 일원",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310339",
+      "name": "(가칭)수유동 172-202번지 일대 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-039"
+      ],
+      "overlap_ratios": [
+        1.0
+      ],
+      "address": "수유동 172-202번지 일원",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310296",
+      "name": "천호동 107-33번지 일대",
+      "candidate_towns": [
+        "mt-202603-public-057"
+      ],
+      "overlap_ratios": [
+        0.99993
+      ],
+      "address": "천호동 107-33번지 일대",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310268",
+      "name": "마장동 466번지 일원 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-042"
+      ],
+      "overlap_ratios": [
+        1.0
+      ],
+      "address": "마장동 466번지 일대",
+      "reason": "세부 대표 지번의 내부점과 사업 도형 불일치 또는 미수록"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310317",
+      "name": "(가칭)수유동 169-7번지 일대 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-039"
+      ],
+      "overlap_ratios": [
+        0.99997
+      ],
+      "address": "수유동 169-7번지 일원",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310904",
+      "name": "면목동 297-28, -12",
+      "candidate_towns": [
+        "mt-202603-public-012"
+      ],
+      "overlap_ratios": [
+        1.0
+      ],
+      "address": "면목동 297-28, -12(1554)",
+      "reason": "세부 대표 지번의 내부점과 사업 도형 불일치 또는 미수록"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310463",
+      "name": "면목역 3의2구역 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-015"
+      ],
+      "overlap_ratios": [
+        1.0
+      ],
+      "address": "면목5동 153-51번지 일대",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310464",
+      "name": "면목역 3의3구역 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-015"
+      ],
+      "overlap_ratios": [
+        1.0
+      ],
+      "address": "면목5동 154-31번지 일대",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310467",
+      "name": "(가칭)면목역 3의6구역 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-015"
+      ],
+      "overlap_ratios": [
+        0.99903
+      ],
+      "address": "면목5동 149-36번지 일대",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202412014008",
+      "name": "(가칭) 원효로4가 66-5번지 일대 가로주택정비사업 (미등록)",
+      "candidate_towns": [
+        "mt-202603-public-085"
+      ],
+      "overlap_ratios": [
+        1.0
+      ],
+      "address": "원효로4가 66-5 일대",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202412014009",
+      "name": "(가칭) 원효로4가 71번지 일대 가로주택정비사업 (미등록)",
+      "candidate_towns": [
+        "mt-202603-public-085"
+      ],
+      "overlap_ratios": [
+        1.0
+      ],
+      "address": "원효로4가 71 일대",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202412014010",
+      "name": "원효로4가 30-1번지 일대 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-085"
+      ],
+      "overlap_ratios": [
+        1.0
+      ],
+      "address": "원효로4가 30-1 일대",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310145",
+      "name": "관악효신연립 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-073"
+      ],
+      "overlap_ratios": [
+        1.0
+      ],
+      "address": "봉천동 1535-10",
+      "reason": "세부 대표 지번의 내부점과 사업 도형 불일치 또는 미수록"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310432",
+      "name": "신남성연립 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-059"
+      ],
+      "overlap_ratios": [
+        1.0
+      ],
+      "address": "사당동 192-1번지",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11500UQ120PS202603130004",
+      "name": "화곡1동 354번지 일대 모아타운 [A2-4구역] 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-002"
+      ],
+      "overlap_ratios": [
+        1.0
+      ],
+      "address": "화곡1동 354-79 일대",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310466",
+      "name": "(가칭)면목역 3의5구역 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-015"
+      ],
+      "overlap_ratios": [
+        0.99912
+      ],
+      "address": "면목5동 150-2번지 일대",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310616",
+      "name": "(가칭)신월동 109-1번지 일원 가로주택정비사업(미등록)",
+      "candidate_towns": [
+        "mt-202603-public-067"
+      ],
+      "overlap_ratios": [
+        1.0
+      ],
+      "address": "신월1동 109-1번지",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202503310011",
+      "name": "방화동 삼일빌라가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-007"
+      ],
+      "overlap_ratios": [
+        0.99956
+      ],
+      "address": "방화동 581 일원",
+      "reason": "세부 대표 지번의 내부점과 사업 도형 불일치 또는 미수록"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310299",
+      "name": "(가칭)번동 411-108번지 일대 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-036"
+      ],
+      "overlap_ratios": [
+        1.0
+      ],
+      "address": "번동 411-108번지 일원",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310516",
+      "name": "세광하니타운 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-021"
+      ],
+      "overlap_ratios": [
+        1.0
+      ],
+      "address": "중화2동 296-44번지 일대",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310496",
+      "name": "(가칭)면목동 433 일대 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-023"
+      ],
+      "overlap_ratios": [
+        0.99997
+      ],
+      "address": "면목3.8동 433-7번지 일대",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310518",
+      "name": "(가칭)중화역 3의1구역 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-021"
+      ],
+      "overlap_ratios": [
+        0.99999
+      ],
+      "address": "중화2동 296-84번지 일대",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310519",
+      "name": "(가칭)중화역 3의2구역 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-021"
+      ],
+      "overlap_ratios": [
+        1.0
+      ],
+      "address": "중화2동 299-48번지 일대",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310538",
+      "name": "(가칭)면목동 1-1번지 일원 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-014"
+      ],
+      "overlap_ratios": [
+        1.0
+      ],
+      "address": null,
+      "reason": "사업 행 또는 95% 이상 겹치는 단일 상위 외곽 미확인"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310539",
+      "name": "(가칭)묵동 242-16번지 일원 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-020"
+      ],
+      "overlap_ratios": [
+        0.99997
+      ],
+      "address": "묵2동 247-1번지 일대",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310396",
+      "name": "망원동 459번지 일대 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-031"
+      ],
+      "overlap_ratios": [
+        0.99966
+      ],
+      "address": "망원동 459번지 일대",
+      "reason": "세부 대표 지번의 내부점과 사업 도형 불일치 또는 미수록"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310344",
+      "name": "(가칭)수유동49-62번지 일대 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-037"
+      ],
+      "overlap_ratios": [
+        0.99992
+      ],
+      "address": "수유동 49-62번지 일원",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310637",
+      "name": "(가칭)봉천동 635-184번지 일원 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-076"
+      ],
+      "overlap_ratios": [
+        0.9999
+      ],
+      "address": "봉천동 635-184번지 일원",
+      "reason": "세부 대표 지번의 내부점과 사업 도형 불일치 또는 미수록"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310638",
+      "name": "(가칭)봉천동 635-39번지 일원 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-075"
+      ],
+      "overlap_ratios": [
+        0.99995
+      ],
+      "address": "봉천동 635-39번지 일원",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310639",
+      "name": "(가칭)봉천동 635-1번지 일원 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-076"
+      ],
+      "overlap_ratios": [
+        0.99997
+      ],
+      "address": "봉천동 635-1번지 일원",
+      "reason": "세부 대표 지번의 내부점과 사업 도형 불일치 또는 미수록"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310640",
+      "name": "(가칭)봉천동 635-191번지 일원 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-075"
+      ],
+      "overlap_ratios": [
+        0.99997
+      ],
+      "address": "봉천동 635-191번지 일원",
+      "reason": "세부 대표 지번의 내부점과 사업 도형 불일치 또는 미수록"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310641",
+      "name": "(가칭)봉천동 635-298번지 일원 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-075"
+      ],
+      "overlap_ratios": [
+        0.99989
+      ],
+      "address": "봉천동 635-298번지 일원",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310642",
+      "name": "(가칭)봉천동 635-540번지 일원 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-075"
+      ],
+      "overlap_ratios": [
+        0.99971
+      ],
+      "address": "봉천동 635-540번지 일원",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310257",
+      "name": "불광동 170-38번지 일대 가로주택정비사업(예정)",
+      "candidate_towns": [
+        "mt-202603-public-071"
+      ],
+      "overlap_ratios": [
+        0.99164
+      ],
+      "address": "불광동 170-38번지 일대",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310643",
+      "name": "(가칭)봉천동 645-1번지 일원 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-075"
+      ],
+      "overlap_ratios": [
+        0.99993
+      ],
+      "address": "봉천동 645-1번지 일원",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310534",
+      "name": "(가칭)망우본동 342-2번지 일대 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-017"
+      ],
+      "overlap_ratios": [
+        0.9992
+      ],
+      "address": "망우본동 342-2번지 일대",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310445",
+      "name": "(가칭)면목3.8동 7구역 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-011"
+      ],
+      "overlap_ratios": [
+        1.0
+      ],
+      "address": "면목3.8동 50-16번지 일대",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310474",
+      "name": "(가칭)면목역6의5구역 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-016"
+      ],
+      "overlap_ratios": [
+        0.99961
+      ],
+      "address": "면목본동 113-1번지 일대",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310475",
+      "name": "중화역 2의5구역 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-018"
+      ],
+      "overlap_ratios": [
+        0.99997
+      ],
+      "address": "중화2동 317-45번지 일대",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310476",
+      "name": "중화역2의6구역 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-018"
+      ],
+      "overlap_ratios": [
+        1.0
+      ],
+      "address": "중화동 315-74번지 일대",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310553",
+      "name": "창동 522-19번지 일원 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-055"
+      ],
+      "overlap_ratios": [
+        1.0
+      ],
+      "address": "창동 522-19번지 일원",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310554",
+      "name": "창동 529-1번지 일원 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-055"
+      ],
+      "overlap_ratios": [
+        1.0
+      ],
+      "address": "창동 529-1번지 일원",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310841",
+      "name": "창동아파트 소규모재건축사업",
+      "candidate_towns": [
+        "mt-202603-public-048"
+      ],
+      "overlap_ratios": [
+        1.0
+      ],
+      "address": "개봉동 20-1,5",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310479",
+      "name": "중화역 2의3구역 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-018"
+      ],
+      "overlap_ratios": [
+        1.0
+      ],
+      "address": "중화2동 327-49번지 일대",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310481",
+      "name": "(가칭)묵동 246-1 일원 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-020"
+      ],
+      "overlap_ratios": [
+        0.99989
+      ],
+      "address": "묵2동 246-1번지 일대",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310747",
+      "name": "석관2-2구역",
+      "candidate_towns": [
+        "mt-202603-public-065"
+      ],
+      "overlap_ratios": [
+        1.0
+      ],
+      "address": "석관동 332-366번지 일대",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310748",
+      "name": "석관2-4구역",
+      "candidate_towns": [
+        "mt-202603-public-065"
+      ],
+      "overlap_ratios": [
+        0.99999
+      ],
+      "address": "석관동332-337번지 일대",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310263",
+      "name": "마장동 457번지 일원 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-042"
+      ],
+      "overlap_ratios": [
+        1.0
+      ],
+      "address": "마장동 457번지 일대",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310520",
+      "name": "중화역 3의3구역 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-021"
+      ],
+      "overlap_ratios": [
+        1.0
+      ],
+      "address": "중화2동 299-129번지 일대",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310521",
+      "name": "(가칭)중화역 3의4구역 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-021"
+      ],
+      "overlap_ratios": [
+        0.99995
+      ],
+      "address": "중화2동 302-43번지 일대",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310522",
+      "name": "(가칭)중화역 3의5구역 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-021"
+      ],
+      "overlap_ratios": [
+        1.0
+      ],
+      "address": "중화2동 301-48번지 일대",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310500",
+      "name": "(가칭)면목동 463-1 일대 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-023"
+      ],
+      "overlap_ratios": [
+        0.90399
+      ],
+      "address": "면목3.8동 463-1번지 일대",
+      "reason": "사업 행 또는 95% 이상 겹치는 단일 상위 외곽 미확인"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310501",
+      "name": "(가칭)면목동 449-1 일대 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-023"
+      ],
+      "overlap_ratios": [
+        1.0
+      ],
+      "address": "면목3.8동 449-1번지 일대",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310343",
+      "name": "(가칭)수유동 57-4번지 일대 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-037"
+      ],
+      "overlap_ratios": [
+        0.99988
+      ],
+      "address": "수유동 57-4번지 일원",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505319013",
+      "name": "(가칭)상계3구역 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-049"
+      ],
+      "overlap_ratios": [
+        1.0
+      ],
+      "address": "상계2동 382외 92필지",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310887",
+      "name": "쌍문동 460-281 외 4",
+      "candidate_towns": [
+        "mt-202603-public-054"
+      ],
+      "overlap_ratios": [
+        0.99981
+      ],
+      "address": "쌍문동 460-281 외 4(737-1)",
+      "reason": "세부 대표 지번의 내부점과 사업 도형 불일치 또는 미수록"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310352",
+      "name": "(가칭)수유동 172-99번지 일대 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-038"
+      ],
+      "overlap_ratios": [
+        1.0
+      ],
+      "address": "수유동 172-99번지 일원",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310353",
+      "name": "(가칭)수유동 392-70번지 일대 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-038"
+      ],
+      "overlap_ratios": [
+        0.99996
+      ],
+      "address": "수유동 392-70번지 일원",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310354",
+      "name": "(가칭)수유동 56-25번지 일대 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-037"
+      ],
+      "overlap_ratios": [
+        1.0
+      ],
+      "address": "수유동 56-25번지 일원",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310676",
+      "name": "(가칭)고척동 241-157번지 일대 가로주택정비사업(7,8,9 통합)",
+      "candidate_towns": [
+        "mt-202603-public-044"
+      ],
+      "overlap_ratios": [
+        1.0
+      ],
+      "address": "고척2동 241-157번지 일대",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310619",
+      "name": "(가칭)신월3동 186번지 일원 가로주택정비사업(미등록)",
+      "candidate_towns": [
+        "mt-202603-public-066"
+      ],
+      "overlap_ratios": [
+        1.0
+      ],
+      "address": "신월3동 186번지 일원",
+      "reason": "세부 대표 지번의 내부점과 사업 도형 불일치 또는 미수록"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310655",
+      "name": "(가칭)신림동 655-4번지 일원 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-resident-025"
+      ],
+      "overlap_ratios": [
+        0.89785
+      ],
+      "address": "신림동 655-4 일대",
+      "reason": "사업 행 또는 95% 이상 겹치는 단일 상위 외곽 미확인"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310620",
+      "name": "(가칭)신월3동 173번지 일대 가로주택정비사업(미등록)",
+      "candidate_towns": [
+        "mt-202603-public-066"
+      ],
+      "overlap_ratios": [
+        1.0
+      ],
+      "address": "신월3동 173번지 일원",
+      "reason": "세부 대표 지번의 내부점과 사업 도형 불일치 또는 미수록"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310615",
+      "name": "(가칭)신월동 99-1번지 일원 가로주태정비사업(미등록)",
+      "candidate_towns": [
+        "mt-202603-public-067"
+      ],
+      "overlap_ratios": [
+        0.99997
+      ],
+      "address": null,
+      "reason": "사업 행 또는 95% 이상 겹치는 단일 상위 외곽 미확인"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310594",
+      "name": "(가칭)성산동 200-413번지 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-030"
+      ],
+      "overlap_ratios": [
+        0.98063
+      ],
+      "address": "성산동 200-413번지 일대",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310525",
+      "name": "(가칭)신내동 493-73 일원 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-resident-009"
+      ],
+      "overlap_ratios": [
+        1.0
+      ],
+      "address": "신내1동 493-73번지 일대",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310497",
+      "name": "(가칭)면목동 465-1 일대 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-023"
+      ],
+      "overlap_ratios": [
+        0.93356
+      ],
+      "address": "면목3.8동 465-1번지 일대",
+      "reason": "사업 행 또는 95% 이상 겹치는 단일 상위 외곽 미확인"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310536",
+      "name": "(가칭)망우본동 357-1번지 일대 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-017"
+      ],
+      "overlap_ratios": [
+        0.99997
+      ],
+      "address": "망우본동 357-1번지 일대",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310552",
+      "name": "창동 521-1번지 일원 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-055"
+      ],
+      "overlap_ratios": [
+        1.0
+      ],
+      "address": "창동 521-1번지 일원",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310895",
+      "name": "신월동 1083",
+      "candidate_towns": [
+        "mt-202603-public-066"
+      ],
+      "overlap_ratios": [
+        1.0
+      ],
+      "address": "신월동 1083",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505319018",
+      "name": "(가칭) 합정동 369 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-032"
+      ],
+      "overlap_ratios": [
+        1.0
+      ],
+      "address": "합정동 369번지 일대",
+      "reason": "세부 대표 지번의 내부점과 사업 도형 불일치 또는 미수록"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505319020",
+      "name": "(가칭)합정동 91-50번지 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-032"
+      ],
+      "overlap_ratios": [
+        1.0
+      ],
+      "address": "합정동 91-50번지 일대",
+      "reason": "관리계획 A-1~4와 GIS 후보의 개별 경계 대조 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505319021",
+      "name": "(가칭) 성산동 200-351번지 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-030"
+      ],
+      "overlap_ratios": [
+        1.0
+      ],
+      "address": "성산동 200-351번지 일대",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505319022",
+      "name": "(가칭)합정동369-50번지 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-032"
+      ],
+      "overlap_ratios": [
+        1.0
+      ],
+      "address": "합정동369-50번지 일대",
+      "reason": "관리계획 A-1~4와 GIS 후보의 개별 경계 대조 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310361",
+      "name": "(가칭)노원역2구역 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-049"
+      ],
+      "overlap_ratios": [
+        0.99952
+      ],
+      "address": "상계2동 387-73외 75필지",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310303",
+      "name": "(가칭)번동 444-80번지 일대 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-036"
+      ],
+      "overlap_ratios": [
+        0.99994
+      ],
+      "address": "번동 444-80번지 일원",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310186",
+      "name": "오성빌라 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-049"
+      ],
+      "overlap_ratios": [
+        1.0
+      ],
+      "address": "상계2동 322-9외 2필지",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310315",
+      "name": "(가칭)수유동 52-1번지 일대 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-037"
+      ],
+      "overlap_ratios": [
+        0.99999
+      ],
+      "address": "수유동 52-1번지 일원",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310297",
+      "name": "천호동 110번지 일대 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-057"
+      ],
+      "overlap_ratios": [
+        0.99986
+      ],
+      "address": "천호동 110번지 일대",
+      "reason": "세부 대표 지번의 내부점과 사업 도형 불일치 또는 미수록"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310499",
+      "name": "(가칭)면목동 454-1 일대 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-023"
+      ],
+      "overlap_ratios": [
+        0.99993
+      ],
+      "address": "면목3.8동 454-1번지 일대",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310241",
+      "name": "시흥동 858번지 일대 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-027"
+      ],
+      "overlap_ratios": [
+        1.0
+      ],
+      "address": "시흥1동 858 일대",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310242",
+      "name": "시흥동 951번지 일대 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-028"
+      ],
+      "overlap_ratios": [
+        0.99999
+      ],
+      "address": "시흥3동 951 일대",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310243",
+      "name": "시흥동 959번지 일대 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-028"
+      ],
+      "overlap_ratios": [
+        1.0
+      ],
+      "address": "시흥3동 959 일대",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310244",
+      "name": "시흥동 948번지 일대 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-028"
+      ],
+      "overlap_ratios": [
+        1.0
+      ],
+      "address": "시흥3동 948 일대",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310245",
+      "name": "시흥동 957번지 일대 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-028"
+      ],
+      "overlap_ratios": [
+        0.99999
+      ],
+      "address": "시흥3동 957 일대",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505319996",
+      "name": "(가칭)노원역3구역 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-049"
+      ],
+      "overlap_ratios": [
+        1.0
+      ],
+      "address": "상계2동 382외 92필지",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310596",
+      "name": "(가칭)성산동 200-81번지 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-030"
+      ],
+      "overlap_ratios": [
+        0.99981
+      ],
+      "address": "성산동 200-81번지 일대",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310597",
+      "name": "(가칭)성산동 200-258번지 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-030"
+      ],
+      "overlap_ratios": [
+        1.0
+      ],
+      "address": "성산동 200-258번지 일대",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310214",
+      "name": "천록빌라 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-resident-023"
+      ],
+      "overlap_ratios": [
+        0.95975
+      ],
+      "address": "시흥3동 973-2",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310249",
+      "name": "대조동 91-100번지 일대 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-072"
+      ],
+      "overlap_ratios": [
+        1.0
+      ],
+      "address": "대조동 91-100번지 일대",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310576",
+      "name": "(가칭) 망원동 453-44번지 일대 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-031"
+      ],
+      "overlap_ratios": [
+        0.99962
+      ],
+      "address": "망원동 453-44번지 일대",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202411014056",
+      "name": "서울빌라 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-007"
+      ],
+      "overlap_ratios": [
+        0.9995
+      ],
+      "address": "방화동 584-1",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202412014006",
+      "name": "보성,옥주빌라 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-007"
+      ],
+      "overlap_ratios": [
+        1.0
+      ],
+      "address": "방화동 593-30 외5필지",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310163",
+      "name": "면목부림연립 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-011"
+      ],
+      "overlap_ratios": [
+        1.0
+      ],
+      "address": "면목3.8동 44-6번지 일대",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310239",
+      "name": "시흥동 859번지 일대 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-027"
+      ],
+      "overlap_ratios": [
+        1.0
+      ],
+      "address": "시흥1동 859 일대",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310677",
+      "name": "(가칭)고척동 344일원 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-044"
+      ],
+      "overlap_ratios": [
+        0.99992
+      ],
+      "address": "고척2동 344 일원",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505317006",
+      "name": "(가칭)마장동 464번지 일원 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-042"
+      ],
+      "overlap_ratios": [
+        1.0
+      ],
+      "address": "마장동 464번지 일대",
+      "reason": "세부 대표 지번의 내부점과 사업 도형 불일치 또는 미수록"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310635",
+      "name": "(가칭)봉천동 622-5번지 일원 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-076"
+      ],
+      "overlap_ratios": [
+        0.99877
+      ],
+      "address": "봉천동 622-5번지 일원",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310614",
+      "name": "(가칭)신월동 143-1번지 일원 가로주택정비사업(미등록)",
+      "candidate_towns": [
+        "mt-202603-public-067"
+      ],
+      "overlap_ratios": [
+        0.99999
+      ],
+      "address": "신월1동 143-1번지",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310488",
+      "name": "(가칭)면목역 2의4구역 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-022"
+      ],
+      "overlap_ratios": [
+        0.99804
+      ],
+      "address": "면목2동 143-57번지 일대",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310223",
+      "name": "석수역세권 특별계획가능구역2 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-resident-023"
+      ],
+      "overlap_ratios": [
+        1.0
+      ],
+      "address": "시흥3동 972번지",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310238",
+      "name": "시흥동 946번지 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-024"
+      ],
+      "overlap_ratios": [
+        1.0
+      ],
+      "address": "시흥3동 946 일대",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310486",
+      "name": "(가칭)면목역 2의2구역 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-022"
+      ],
+      "overlap_ratios": [
+        1.0
+      ],
+      "address": "면목2동 140-44번지 일대",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310487",
+      "name": "면목역 2의3구역 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-022"
+      ],
+      "overlap_ratios": [
+        0.99989
+      ],
+      "address": "면목2동 141-17번지 일대",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310291",
+      "name": "천호동 217번지 일대",
+      "candidate_towns": [
+        "mt-202603-public-057"
+      ],
+      "overlap_ratios": [
+        0.99991
+      ],
+      "address": "천호동 217번지 일대",
+      "reason": "세부 대표 지번의 내부점과 사업 도형 불일치 또는 미수록"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505319034",
+      "name": "(가칭) 합정동 367-17번지 일대 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-032"
+      ],
+      "overlap_ratios": [
+        1.0
+      ],
+      "address": "합정동 367-17번지 일대",
+      "reason": "관리계획 A-1~4와 GIS 후보의 개별 경계 대조 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505319035",
+      "name": "(가칭)합정동 361-9번지 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-032"
+      ],
+      "overlap_ratios": [
+        0.99964
+      ],
+      "address": "합정동 361-9번지 일대",
+      "reason": "관리계획 A-1~4와 GIS 후보의 개별 경계 대조 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505319036",
+      "name": "(가칭)합정동 367-8번지 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-032"
+      ],
+      "overlap_ratios": [
+        1.0
+      ],
+      "address": "합정동 367-8번지 일대",
+      "reason": "관리계획 A-1~4와 GIS 후보의 개별 경계 대조 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505319037",
+      "name": "(가칭) 합정동 370 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-032"
+      ],
+      "overlap_ratios": [
+        1.0
+      ],
+      "address": "합정동 370번지 일대",
+      "reason": "세부 대표 지번의 내부점과 사업 도형 불일치 또는 미수록"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505319038",
+      "name": "성산동 165-72 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-030"
+      ],
+      "overlap_ratios": [
+        1.0
+      ],
+      "address": "성산동 165-72번지 일대",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202411014084",
+      "name": "거여동 555번지 일원 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-063"
+      ],
+      "overlap_ratios": [
+        0.99974
+      ],
+      "address": "거여동 555번지 일원",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505319017",
+      "name": "(가칭)합정동 81-26번지 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-032"
+      ],
+      "overlap_ratios": [
+        1.0
+      ],
+      "address": "합정동 81-26번지 일대",
+      "reason": "관리계획 A-1~4와 GIS 후보의 개별 경계 대조 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505319033",
+      "name": "(가칭)합정동370-8번지 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-032"
+      ],
+      "overlap_ratios": [
+        0.99973
+      ],
+      "address": "합정동370-8번지 일대",
+      "reason": "관리계획 A-1~4와 GIS 후보의 개별 경계 대조 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202412014024",
+      "name": "공항동 55-327 일원 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-008"
+      ],
+      "overlap_ratios": [
+        1.0
+      ],
+      "address": "공항동 55-327일대",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310240",
+      "name": "시흥동 864-1번지 일대 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-027"
+      ],
+      "overlap_ratios": [
+        1.0
+      ],
+      "address": "시흥1동 864-1 일대",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310669",
+      "name": "홍진은성우정연립 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-044"
+      ],
+      "overlap_ratios": [
+        0.99994
+      ],
+      "address": "고척동 241-2 외 6필지",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505319029",
+      "name": "석관 2-4(B)구역",
+      "candidate_towns": [
+        "mt-202603-public-065"
+      ],
+      "overlap_ratios": [
+        1.0
+      ],
+      "address": "석관동 332-269번지 일대",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310313",
+      "name": "(가칭)수유동 130-64번지 일대 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-038"
+      ],
+      "overlap_ratios": [
+        0.99997
+      ],
+      "address": "수유동 130-64번지 일원",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310314",
+      "name": "(가칭)수유동 52-68번지 일대 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-037"
+      ],
+      "overlap_ratios": [
+        1.0
+      ],
+      "address": "수유동 52-68번지 일원",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310671",
+      "name": "고척6구역 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-044"
+      ],
+      "overlap_ratios": [
+        1.0
+      ],
+      "address": "고척동 241-63번지 일대",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310673",
+      "name": "고척동 241-337 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-044"
+      ],
+      "overlap_ratios": [
+        1.0
+      ],
+      "address": "고척2동 241-337 일원",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310581",
+      "name": "(가칭)망원동419번지 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-031"
+      ],
+      "overlap_ratios": [
+        0.99975
+      ],
+      "address": "망원동 419번지 일대",
+      "reason": "세부 대표 지번의 내부점과 사업 도형 불일치 또는 미수록"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310468",
+      "name": "(가칭)면목역 3의7구역 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-015"
+      ],
+      "overlap_ratios": [
+        0.99998
+      ],
+      "address": "면목5동158-1번지 일대",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310786",
+      "name": "복권아파트 소규모재건축사업",
+      "candidate_towns": [
+        "mt-202603-public-075"
+      ],
+      "overlap_ratios": [
+        0.99993
+      ],
+      "address": "보라매동 645-88 외2",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310340",
+      "name": "(가칭)번동 443-4번지 일대 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-036"
+      ],
+      "overlap_ratios": [
+        0.99991
+      ],
+      "address": "번동443-4번지 일원",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310342",
+      "name": "(가칭)수유동 56-31번지 일대 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-037"
+      ],
+      "overlap_ratios": [
+        0.99991
+      ],
+      "address": "수유동 56-31번지 일원",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310568",
+      "name": "(가칭)대흥동 535-2번지 일대 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-029"
+      ],
+      "overlap_ratios": [
+        0.99984
+      ],
+      "address": "대흥동 535-2번지 일대",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310888",
+      "name": "상도동 244-266 외 10",
+      "candidate_towns": [
+        "mt-202603-public-060"
+      ],
+      "overlap_ratios": [
+        1.0
+      ],
+      "address": "상도동 244-266 외 10(244-267)",
+      "reason": "세부 대표 지번의 내부점과 사업 도형 불일치 또는 미수록"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310221",
+      "name": "시흥3동 938,943,944,945 일대 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-024"
+      ],
+      "overlap_ratios": [
+        1.0
+      ],
+      "address": "시흥3동 938,943,944,945 일대",
+      "reason": "세부 대표 지번의 내부점과 사업 도형 불일치 또는 미수록"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310222",
+      "name": "시흥동 1003번지 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-024"
+      ],
+      "overlap_ratios": [
+        0.99999
+      ],
+      "address": "시흥3동 1003",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310224",
+      "name": "시흥동 973,974번지 일대 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-resident-023"
+      ],
+      "overlap_ratios": [
+        0.99047
+      ],
+      "address": "시흥3동 973?974번지",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310444",
+      "name": "(가칭)면목3.8동 6구역 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-011"
+      ],
+      "overlap_ratios": [
+        1.0
+      ],
+      "address": "면목3.8동 20-2번지 일대",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310810",
+      "name": "쌍문동우이그린빌라소규모재건축사업",
+      "candidate_towns": [
+        "mt-202603-public-051"
+      ],
+      "overlap_ratios": [
+        0.99999
+      ],
+      "address": "쌍문동 486-18",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310454",
+      "name": "(가칭)상봉역 6구역 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-013"
+      ],
+      "overlap_ratios": [
+        1.0
+      ],
+      "address": "상봉1동 190-97번지 일대",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310455",
+      "name": "상봉역 4구역 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-013"
+      ],
+      "overlap_ratios": [
+        0.99997
+      ],
+      "address": "상봉동 304-4번지 일대",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310457",
+      "name": "(가칭)망우동 436-1번지 일원 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-014"
+      ],
+      "overlap_ratios": [
+        0.99994
+      ],
+      "address": "망우3동 436-1번지 일대",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310465",
+      "name": "(가칭)면목역 3의4구역 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-015"
+      ],
+      "overlap_ratios": [
+        1.0
+      ],
+      "address": "면목5동 155-33번지 일대",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310593",
+      "name": "(가칭) 합정동 361-51번지일대 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-032"
+      ],
+      "overlap_ratios": [
+        0.99991
+      ],
+      "address": "합정동 361-51 일대",
+      "reason": "관리계획 A-1~4와 GIS 후보의 개별 경계 대조 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310885",
+      "name": "쌍문동 460-46,232",
+      "candidate_towns": [
+        "mt-202603-public-054"
+      ],
+      "overlap_ratios": [
+        0.99997
+      ],
+      "address": "쌍문동 460-46,232(738)",
+      "reason": "세부 대표 지번의 내부점과 사업 도형 불일치 또는 미수록"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310886",
+      "name": "쌍문동 460-296외 7",
+      "candidate_towns": [
+        "mt-202603-public-054"
+      ],
+      "overlap_ratios": [
+        1.0
+      ],
+      "address": "쌍문동 460-296외 7(736)",
+      "reason": "세부 대표 지번의 내부점과 사업 도형 불일치 또는 미수록"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310458",
+      "name": "(가칭)망우동 432번지 일원 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-014"
+      ],
+      "overlap_ratios": [
+        0.99998
+      ],
+      "address": "망우3동 432-1번지 일대",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310459",
+      "name": "(가칭)망우동 427-1 일원 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-014"
+      ],
+      "overlap_ratios": [
+        0.99998
+      ],
+      "address": "망우3동 427-1번지 일대",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310460",
+      "name": "(가칭)면목동 3-1번지 일원 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-014"
+      ],
+      "overlap_ratios": [
+        0.99996
+      ],
+      "address": "면목3.8동 3-1번지 일대",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310355",
+      "name": "(가칭)수유동 56-98번지 일대 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-037"
+      ],
+      "overlap_ratios": [
+        1.0
+      ],
+      "address": "수유동 56-98번지 일원",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310304",
+      "name": "(가칭)번동 415-55번지 일대 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-036"
+      ],
+      "overlap_ratios": [
+        0.99995
+      ],
+      "address": "번동 415-55번지 일원",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310648",
+      "name": "(가칭)봉천동 1533-1 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-073"
+      ],
+      "overlap_ratios": [
+        0.99999
+      ],
+      "address": "봉천동 1533-1번지 일원",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310649",
+      "name": "봉천동 1535번지 일원 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-073"
+      ],
+      "overlap_ratios": [
+        1.0
+      ],
+      "address": "봉천동 1535번지",
+      "reason": "세부 대표 지번의 내부점과 사업 도형 불일치 또는 미수록"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310650",
+      "name": "(가칭)봉천동 1536의 1번지 일원 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-073"
+      ],
+      "overlap_ratios": [
+        0.99996
+      ],
+      "address": "봉천동 1536번지 일대",
+      "reason": "세부 대표 지번의 내부점과 사업 도형 불일치 또는 미수록"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310598",
+      "name": "(가칭)성산동 200-281번지 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-030"
+      ],
+      "overlap_ratios": [
+        1.0
+      ],
+      "address": "성산동 200-281번지 일대",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310247",
+      "name": "불광동 147번지 일대 가로주택정비사업(예정)",
+      "candidate_towns": [
+        "mt-202603-public-071"
+      ],
+      "overlap_ratios": [
+        0.99945
+      ],
+      "address": "불광동 147번지 일대",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310254",
+      "name": "대조동 208번지 일대 가로주택정비사업(예정)",
+      "candidate_towns": [
+        "mt-202603-public-072"
+      ],
+      "overlap_ratios": [
+        0.99994
+      ],
+      "address": "대조동 208-5번지 일대",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310255",
+      "name": "대조동 92-5번지 일대 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-072"
+      ],
+      "overlap_ratios": [
+        0.99997
+      ],
+      "address": "대조동 92-5번지 일대",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310659",
+      "name": "(가칭) 구로동 706-30일원 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-045"
+      ],
+      "overlap_ratios": [
+        0.99993
+      ],
+      "address": "구로2동 706 일원",
+      "reason": "세부 대표 지번의 내부점과 사업 도형 불일치 또는 미수록"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310909",
+      "name": "중화동 327-87, -88",
+      "candidate_towns": [
+        "mt-202603-public-018"
+      ],
+      "overlap_ratios": [
+        1.0
+      ],
+      "address": "중화동 327-87, -88(461)",
+      "reason": "세부 대표 지번의 내부점과 사업 도형 불일치 또는 미수록"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310470",
+      "name": "면목역 6의1구역 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-016"
+      ],
+      "overlap_ratios": [
+        1.0
+      ],
+      "address": "면목동 63-28 일대",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310579",
+      "name": "망원동456 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-031"
+      ],
+      "overlap_ratios": [
+        1.0
+      ],
+      "address": "망원동 456-2번지 일대",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    },
+    {
+      "source_feature_id": "11000UQ120PS202505310188",
+      "name": "사당동 206대시1번지 일원 가로주택정비사업",
+      "candidate_towns": [
+        "mt-202603-public-059"
+      ],
+      "overlap_ratios": [
+        0.99957
+      ],
+      "address": "사당동 206-1번지",
+      "reason": "상위 대표 지번·사업장 대조 또는 관리계획의 세부 구역 확인 필요"
+    }
+  ],
+  "unmatched_notice_rows": [
+    {
+      "address": "노원구 월계동 500",
+      "field": "rights_cutoff_date",
+      "reason": "연장 고시 대상지 명부와 일대일 연결 보류",
+      "source_url": "https://event.seoul.go.kr/seoulsibo/fileDownload.do?fileName=seoulsibo_20241017085543_69127.pdf"
+    },
+    {
+      "address": "강남구 일원동 720",
+      "field": "land_transaction_permit",
+      "reason": "공고 대표 지번과 선정지 일대일 연결 미확인",
+      "source_url": "https://land.seoul.go.kr/land/other/downloadAppointPbancFile.do?fileUuid=59d9172df7a70038e063621d0f8d00381085108"
+    }
+  ],
+  "missing_fields": {
+    "town_rights_cutoff_date": [
+      "mt-202603-public-001",
+      "mt-202603-public-002",
+      "mt-202603-public-003",
+      "mt-202603-public-004",
+      "mt-202603-public-005",
+      "mt-202603-public-006",
+      "mt-202603-public-007",
+      "mt-202603-public-009",
+      "mt-202603-public-010",
+      "mt-202603-public-011",
+      "mt-202603-public-012",
+      "mt-202603-public-013",
+      "mt-202603-public-014",
+      "mt-202603-public-017",
+      "mt-202603-public-018",
+      "mt-202603-public-019",
+      "mt-202603-public-020",
+      "mt-202603-public-021",
+      "mt-202603-public-022",
+      "mt-202603-public-023",
+      "mt-202603-public-024",
+      "mt-202603-public-025",
+      "mt-202603-public-026",
+      "mt-202603-public-027",
+      "mt-202603-public-028",
+      "mt-202603-public-029",
+      "mt-202603-public-030",
+      "mt-202603-public-031",
+      "mt-202603-public-032",
+      "mt-202603-public-033",
+      "mt-202603-public-034",
+      "mt-202603-public-035",
+      "mt-202603-public-036",
+      "mt-202603-public-037",
+      "mt-202603-public-038",
+      "mt-202603-public-039",
+      "mt-202603-public-040",
+      "mt-202603-public-041",
+      "mt-202603-public-043",
+      "mt-202603-public-044",
+      "mt-202603-public-047",
+      "mt-202603-public-048",
+      "mt-202603-public-049",
+      "mt-202603-public-051",
+      "mt-202603-public-052",
+      "mt-202603-public-053",
+      "mt-202603-public-054",
+      "mt-202603-public-055",
+      "mt-202603-public-056",
+      "mt-202603-public-057",
+      "mt-202603-public-059",
+      "mt-202603-public-060",
+      "mt-202603-public-061",
+      "mt-202603-public-062",
+      "mt-202603-public-063",
+      "mt-202603-public-064",
+      "mt-202603-public-065",
+      "mt-202603-public-066",
+      "mt-202603-public-067",
+      "mt-202603-public-068",
+      "mt-202603-public-069",
+      "mt-202603-public-070",
+      "mt-202603-public-071",
+      "mt-202603-public-072",
+      "mt-202603-public-073",
+      "mt-202603-public-074",
+      "mt-202603-public-075",
+      "mt-202603-public-076",
+      "mt-202603-public-077",
+      "mt-202603-public-078",
+      "mt-202603-public-079",
+      "mt-202603-public-080",
+      "mt-202603-public-081",
+      "mt-202603-public-082",
+      "mt-202603-public-083",
+      "mt-202603-public-087",
+      "mt-202603-resident-001",
+      "mt-202603-resident-002",
+      "mt-202603-resident-003",
+      "mt-202603-resident-005",
+      "mt-202603-resident-006",
+      "mt-202603-resident-007",
+      "mt-202603-resident-008",
+      "mt-202603-resident-009",
+      "mt-202603-resident-010",
+      "mt-202603-resident-011",
+      "mt-202603-resident-012",
+      "mt-202603-resident-013",
+      "mt-202603-resident-014",
+      "mt-202603-resident-015",
+      "mt-202603-resident-017",
+      "mt-202603-resident-018",
+      "mt-202603-resident-019",
+      "mt-202603-resident-020",
+      "mt-202603-resident-021",
+      "mt-202603-resident-022",
+      "mt-202603-resident-023",
+      "mt-202603-resident-024",
+      "mt-202603-resident-025",
+      "mt-202603-resident-026",
+      "mt-202603-resident-027",
+      "mt-202603-resident-028",
+      "mt-202603-resident-029",
+      "mt-202603-resident-030",
+      "mt-202603-resident-031",
+      "mt-202603-resident-032",
+      "mt-202603-resident-033",
+      "mt-202603-resident-034",
+      "mt-202603-resident-035",
+      "mt-202603-resident-036",
+      "mt-202603-resident-037",
+      "mt-202603-resident-038",
+      "mt-202603-resident-039",
+      "mt-202603-resident-040",
+      "mt-202603-resident-041",
+      "mt-202603-resident-042",
+      "mt-202603-resident-043",
+      "mt-202603-resident-044",
+      "mt-2026-extra-001",
+      "mt-2026-extra-002",
+      "mt-2026-extra-003",
+      "mt-2026-extra-004",
+      "mt-2026-extra-005",
+      "mt-2026-extra-006",
+      "mt-2026-extra-007",
+      "mt-2026-extra-008",
+      "mt-2026-extra-009",
+      "mt-2026-extra-010",
+      "mt-2026-extra-011"
+    ],
+    "town_land_transaction_permit": [
+      "mt-202603-public-043",
+      "mt-202603-public-063",
+      "mt-202603-public-070",
+      "mt-202603-public-080",
+      "mt-202603-public-081",
+      "mt-202603-public-082",
+      "mt-202603-public-087",
+      "mt-202603-resident-019"
+    ],
+    "town_zoning": [
+      "mt-202603-public-009",
+      "mt-202603-public-087",
+      "mt-202603-resident-007",
+      "mt-202603-resident-010",
+      "mt-202603-resident-019",
+      "mt-202603-resident-035",
+      "mt-202603-resident-037",
+      "mt-202603-resident-041",
+      "mt-202603-resident-042",
+      "mt-2026-extra-007",
+      "mt-2026-extra-008",
+      "mt-2026-extra-009",
+      "mt-2026-extra-010",
+      "mt-2026-extra-011"
+    ],
+    "town_without_linked_zone": [
+      "mt-202603-public-004",
+      "mt-202603-public-020",
+      "mt-202603-public-021",
+      "mt-202603-public-036",
+      "mt-202603-public-038",
+      "mt-202603-public-039",
+      "mt-202603-public-040",
+      "mt-202603-public-041",
+      "mt-202603-public-043",
+      "mt-202603-public-048",
+      "mt-202603-public-057",
+      "mt-202603-public-059",
+      "mt-202603-public-061",
+      "mt-202603-public-063",
+      "mt-202603-public-068",
+      "mt-202603-public-069",
+      "mt-202603-public-071",
+      "mt-202603-public-074",
+      "mt-202603-public-075",
+      "mt-202603-public-076",
+      "mt-202603-public-078",
+      "mt-202603-public-081",
+      "mt-202603-public-082",
+      "mt-202603-public-087",
+      "mt-202603-public-088",
+      "mt-202603-resident-001",
+      "mt-202603-resident-003",
+      "mt-202603-resident-007",
+      "mt-202603-resident-010",
+      "mt-202603-resident-013",
+      "mt-202603-resident-014",
+      "mt-202603-resident-015",
+      "mt-202603-resident-019",
+      "mt-202603-resident-021",
+      "mt-202603-resident-022",
+      "mt-202603-resident-023",
+      "mt-202603-resident-024",
+      "mt-202603-resident-026",
+      "mt-202603-resident-028",
+      "mt-202603-resident-029",
+      "mt-202603-resident-030",
+      "mt-202603-resident-031",
+      "mt-202603-resident-032",
+      "mt-202603-resident-033",
+      "mt-202603-resident-034",
+      "mt-202603-resident-035",
+      "mt-202603-resident-036",
+      "mt-202603-resident-037",
+      "mt-202603-resident-038",
+      "mt-202603-resident-039",
+      "mt-202603-resident-040",
+      "mt-202603-resident-041",
+      "mt-202603-resident-042",
+      "mt-202603-resident-043",
+      "mt-202603-resident-044",
+      "mt-2026-extra-001",
+      "mt-2026-extra-002",
+      "mt-2026-extra-003",
+      "mt-2026-extra-004",
+      "mt-2026-extra-005",
+      "mt-2026-extra-006",
+      "mt-2026-extra-007",
+      "mt-2026-extra-008",
+      "mt-2026-extra-009",
+      "mt-2026-extra-010",
+      "mt-2026-extra-011"
+    ],
+    "zone_stage": [
+      "mz-seoul-11500uq120ps202603130003",
+      "mz-seoul-11000uq120ps202505310449",
+      "mz-plan-584564-1144010800105350002",
+      "mz-plan-584823-b2",
+      "mz-plan-584823-b4",
+      "mz-plan-584823-b5",
+      "mz-plan-586349-a-1",
+      "mz-plan-586349-a-2",
+      "mz-plan-587121-a-2",
+      "mz-plan-594346-a-1",
+      "mz-plan-594579-a1",
+      "mz-plan-594579-a3",
+      "mz-plan-601717-a1",
+      "mz-plan-601972-a-3",
+      "mz-plan-601972-a-8",
+      "mz-plan-602403-a-1",
+      "mz-plan-602403-a-2",
+      "mz-plan-607655-a4",
+      "mz-plan-607655-a5",
+      "mz-plan-607655-a6",
+      "mz-plan-607899-c1",
+      "mz-plan-607899-c2",
+      "mz-plan-607900-a2",
+      "mz-plan-607900-a3",
+      "mz-plan-607900-a4",
+      "mz-plan-607900-a5",
+      "mz-plan-610807-a-1",
+      "mz-plan-610807-a-2",
+      "mz-plan-610807-a-3",
+      "mz-plan-610807-a-4",
+      "mz-plan-610807-a-5",
+      "mz-plan-612838-1135010200105340117",
+      "mz-plan-612838-1135010200105340004",
+      "mz-plan-613956-1126010100100640014",
+      "mz-plan-613956-1126010100101100036",
+      "mz-plan-616239-1117011800100710000",
+      "mz-plan-625571-a1",
+      "mz-plan-625571-a2",
+      "mz-plan-628523-a-2",
+      "mz-plan-638669-a1",
+      "mz-plan-638669-a2",
+      "mz-plan-641915-a1",
+      "mz-plan-645471-a-1",
+      "mz-plan-584518-a-2",
+      "mz-plan-584797-1165010100109770000",
+      "mz-plan-614691-a-2",
+      "mz-plan-614691-a-3",
+      "mz-plan-628093-a-1",
+      "mz-plan-614147-project-1",
+      "mz-plan-614147-project-2",
+      "mz-plan-614147-project-4",
+      "mz-plan-584263-a1",
+      "mz-plan-584263-a2",
+      "mz-plan-584263-a3",
+      "mz-plan-584263-a4",
+      "mz-plan-584263-a5",
+      "mz-plan-584263-b1",
+      "mz-plan-645351-a1",
+      "mz-plan-645351-a2",
+      "mz-plan-645351-a3",
+      "mz-plan-645351-a4",
+      "mz-plan-645351-a5",
+      "mz-plan-619723-a1",
+      "mz-plan-619723-a2",
+      "mz-plan-610051-a-1",
+      "mz-plan-610051-a-2",
+      "mz-plan-610051-a-3",
+      "mz-plan-610051-a-4",
+      "mz-plan-644471-a-1",
+      "mz-plan-644471-a-2",
+      "mz-plan-587169-project-1",
+      "mz-plan-587169-project-2",
+      "mz-plan-587169-project-3",
+      "mz-plan-587169-project-4",
+      "mz-plan-596685-2-1",
+      "mz-plan-596685-2-2",
+      "mz-plan-596685-2-3",
+      "mz-plan-596685-2-4",
+      "mz-plan-596685-2-5",
+      "mz-plan-596684-1-1",
+      "mz-plan-596684-1-2",
+      "mz-plan-public-056-a-1",
+      "mz-plan-public-056-a-2",
+      "mz-plan-public-056-b-1",
+      "mz-plan-public-046-a-1",
+      "mz-plan-public-046-a-2",
+      "mz-plan-public-073-a1",
+      "mz-plan-public-073-b1",
+      "mz-plan-public-073-b2",
+      "mz-plan-public-073-b3",
+      "mz-notice-public-006-a-1",
+      "mz-notice-public-006-a-2",
+      "mz-notice-public-006-a-4",
+      "mz-notice-public-011-a1",
+      "mz-notice-resident-027-a1"
+    ],
+    "zone_selected_contractor": [
+      "mz-seoul-11000uq120ps202503310030",
+      "mz-seoul-11000uq120ps202503310031",
+      "mz-seoul-11000uq120ps202503310029",
+      "mz-seoul-11500uq120ps202603130001",
+      "mz-seoul-11500uq120ps202603130003",
+      "mz-seoul-11000uq120ps202503310014",
+      "mz-seoul-11000uq120ps202503310013",
+      "mz-seoul-11000uq120ps202503310012",
+      "mz-seoul-11000uq120ps202503310025",
+      "mz-seoul-11000uq120ps202503310023",
+      "mz-seoul-11000uq120ps202503310024",
+      "mz-seoul-11000uq120ps202505310449",
+      "mz-seoul-11000uq120ps202505310446",
+      "mz-seoul-11410uq120ps202607270001",
+      "mz-seoul-11000uq120ps202505310709",
+      "mz-seoul-11000uq120ps202411014068",
+      "mz-seoul-11000uq120ps202505310382",
+      "mz-seoul-11530uq120ps202607230001",
+      "mz-mapohapjeong-2026-111-a1",
+      "mz-mapohapjeong-2026-111-a2",
+      "mz-mapohapjeong-2026-111-a3",
+      "mz-mapohapjeong-2026-111-a4",
+      "mz-plan-584443-a2",
+      "mz-plan-584443-a3",
+      "mz-plan-584443-a4",
+      "mz-plan-584564-1144010800105350002",
+      "mz-plan-584823-b1",
+      "mz-plan-584823-b2",
+      "mz-plan-584823-b3",
+      "mz-plan-584823-b4",
+      "mz-plan-584823-b5",
+      "mz-plan-586349-a-1",
+      "mz-plan-586349-a-2",
+      "mz-plan-587121-a-1",
+      "mz-plan-587121-a-2",
+      "mz-plan-587121-a-4",
+      "mz-plan-587121-a-5",
+      "mz-plan-587121-a-8",
+      "mz-plan-594346-a-1",
+      "mz-plan-594346-a-2",
+      "mz-plan-594346-a-3",
+      "mz-plan-594346-a-4",
+      "mz-plan-594346-a-5",
+      "mz-plan-594579-a1",
+      "mz-plan-594579-a2",
+      "mz-plan-594579-a3",
+      "mz-plan-594579-a4",
+      "mz-plan-601717-a1",
+      "mz-plan-601822-a-3",
+      "mz-plan-601822-a-4",
+      "mz-plan-601972-a-3",
+      "mz-plan-601972-a-7",
+      "mz-plan-601972-a-8",
+      "mz-plan-602403-a-1",
+      "mz-plan-602403-a-2",
+      "mz-plan-602403-a-3",
+      "mz-plan-606937-a-1",
+      "mz-plan-607655-a4",
+      "mz-plan-607655-a5",
+      "mz-plan-607655-a6",
+      "mz-plan-607899-c1",
+      "mz-plan-607899-c2",
+      "mz-plan-607900-a2",
+      "mz-plan-607900-a3",
+      "mz-plan-607900-a4",
+      "mz-plan-607900-a5",
+      "mz-plan-610807-a-1",
+      "mz-plan-610807-a-2",
+      "mz-plan-610807-a-3",
+      "mz-plan-610807-a-4",
+      "mz-plan-610807-a-5",
+      "mz-plan-612838-1135010200105340117",
+      "mz-plan-612838-1135010200105340004",
+      "mz-plan-613956-1126010100100640014",
+      "mz-plan-613956-1126010100100650002",
+      "mz-plan-613956-1126010100101130079",
+      "mz-plan-613956-1126010100101100036",
+      "mz-plan-615059-a1",
+      "mz-plan-615059-a2",
+      "mz-plan-615059-a3",
+      "mz-plan-615059-a4",
+      "mz-plan-615059-a5",
+      "mz-plan-616239-1117011800100710000",
+      "mz-plan-625571-a1",
+      "mz-plan-625571-a2",
+      "mz-plan-626249-a-1",
+      "mz-plan-628097-a1",
+      "mz-plan-628097-a2",
+      "mz-plan-628097-a3",
+      "mz-plan-628097-a4",
+      "mz-plan-628523-a-1",
+      "mz-plan-628523-a-2",
+      "mz-plan-628523-a-3",
+      "mz-plan-630320-1141011100103220000",
+      "mz-plan-638669-a1",
+      "mz-plan-638669-a2",
+      "mz-plan-639882-1121510500106520000",
+      "mz-plan-639882-1121510500106370000",
+      "mz-plan-639882-1121510500106480000",
+      "mz-plan-639882-1121510500106460000",
+      "mz-plan-639882-1121510500106400000",
+      "mz-plan-640708-a-3",
+      "mz-plan-640709-a-1",
+      "mz-plan-640709-a-2",
+      "mz-plan-641915-a1",
+      "mz-plan-641915-a2",
+      "mz-plan-645471-a-1",
+      "mz-plan-584518-a-2",
+      "mz-plan-584449-a3-1",
+      "mz-plan-584449-a3-2",
+      "mz-plan-584449-a3-3",
+      "mz-plan-584797-1165010100109770000",
+      "mz-plan-614691-a-1",
+      "mz-plan-614691-a-2",
+      "mz-plan-614691-a-3",
+      "mz-plan-628093-a-1",
+      "mz-plan-614147-project-1",
+      "mz-plan-614147-project-2",
+      "mz-plan-614147-project-3",
+      "mz-plan-614147-project-4",
+      "mz-plan-584263-a1",
+      "mz-plan-584263-a2",
+      "mz-plan-584263-a3",
+      "mz-plan-584263-a4",
+      "mz-plan-584263-a5",
+      "mz-plan-584263-a6",
+      "mz-plan-584263-b1",
+      "mz-plan-645351-a1",
+      "mz-plan-645351-a2",
+      "mz-plan-645351-a3",
+      "mz-plan-645351-a4",
+      "mz-plan-645351-a5",
+      "mz-plan-619723-a1",
+      "mz-plan-619723-a2",
+      "mz-plan-610051-a-1",
+      "mz-plan-610051-a-2",
+      "mz-plan-610051-a-3",
+      "mz-plan-610051-a-4",
+      "mz-plan-644471-a-1",
+      "mz-plan-644471-a-2",
+      "mz-plan-587169-project-1",
+      "mz-plan-587169-project-2",
+      "mz-plan-587169-project-3",
+      "mz-plan-587169-project-4",
+      "mz-plan-596685-2-1",
+      "mz-plan-596685-2-2",
+      "mz-plan-596685-2-3",
+      "mz-plan-596685-2-4",
+      "mz-plan-596685-2-5",
+      "mz-plan-596684-1-1",
+      "mz-plan-596684-1-2",
+      "mz-plan-public-056-a-1",
+      "mz-plan-public-056-a-2",
+      "mz-plan-public-056-b-1",
+      "mz-plan-public-046-a-1",
+      "mz-plan-public-046-a-2",
+      "mz-plan-public-073-a1",
+      "mz-plan-public-073-b1",
+      "mz-plan-public-073-b2",
+      "mz-plan-public-073-b3",
+      "mz-notice-public-026-a-2",
+      "mz-notice-public-026-a-3",
+      "mz-notice-public-026-a-4",
+      "mz-notice-public-026-a-5",
+      "mz-notice-public-026-a-6",
+      "mz-notice-public-026-a-7",
+      "mz-notice-public-026-a-8",
+      "mz-notice-public-006-a-1",
+      "mz-notice-public-006-a-2",
+      "mz-notice-public-006-a-4",
+      "mz-notice-public-011-a1",
+      "mz-notice-resident-027-a1"
+    ],
+    "zone_planned_units_total": [],
+    "zone_owner_count": [
+      "mz-seoul-11000uq120ps202503310030",
+      "mz-seoul-11000uq120ps202503310031",
+      "mz-seoul-11000uq120ps202503310029",
+      "mz-seoul-11500uq120ps202603130001",
+      "mz-seoul-11500uq120ps202603130003",
+      "mz-seoul-11000uq120ps202503310013",
+      "mz-seoul-11000uq120ps202503310025",
+      "mz-seoul-11000uq120ps202503310023",
+      "mz-seoul-11000uq120ps202503310024",
+      "mz-seoul-11000uq120ps202505310449",
+      "mz-seoul-11000uq120ps202505310446",
+      "mz-seoul-11000uq120ps202505310462",
+      "mz-seoul-11000uq120ps202505310741",
+      "mz-seoul-11000uq120ps202505310585",
+      "mz-seoul-11000uq120ps202505310709",
+      "mz-seoul-11000uq120ps202505310477",
+      "mz-seoul-11000uq120ps202505310485",
+      "mz-seoul-11000uq120ps202505310382",
+      "mz-plan-584443-a1",
+      "mz-plan-584443-a2",
+      "mz-plan-584443-a3",
+      "mz-plan-584443-a4",
+      "mz-plan-587121-a-1",
+      "mz-plan-587121-a-2",
+      "mz-plan-587121-a-3",
+      "mz-plan-587121-a-4",
+      "mz-plan-587121-a-5",
+      "mz-plan-587121-a-6",
+      "mz-plan-587121-a-7",
+      "mz-plan-587121-a-8",
+      "mz-plan-594579-a1",
+      "mz-plan-594579-a2",
+      "mz-plan-594579-a3",
+      "mz-plan-594579-a4",
+      "mz-plan-601717-a3",
+      "mz-plan-601972-a-1",
+      "mz-plan-601972-a-2",
+      "mz-plan-601972-a-3",
+      "mz-plan-601972-a-4",
+      "mz-plan-601972-a-5",
+      "mz-plan-601972-a-6",
+      "mz-plan-601972-a-7",
+      "mz-plan-601972-a-8",
+      "mz-plan-602403-a-1",
+      "mz-plan-602403-a-2",
+      "mz-plan-602403-a-3",
+      "mz-plan-606937-a-1",
+      "mz-plan-607655-a2",
+      "mz-plan-607655-a3",
+      "mz-plan-607655-a4",
+      "mz-plan-607655-a5",
+      "mz-plan-607655-a6",
+      "mz-plan-610807-a-1",
+      "mz-plan-610807-a-2",
+      "mz-plan-610807-a-3",
+      "mz-plan-610807-a-4",
+      "mz-plan-610807-a-5",
+      "mz-plan-612838-1135010200105340117",
+      "mz-plan-612838-1135010200105340004",
+      "mz-plan-613956-1126010100100640014",
+      "mz-plan-613956-1126010100100650002",
+      "mz-plan-613956-1126010100101130079",
+      "mz-plan-613956-1126010100101100036",
+      "mz-plan-615059-a1",
+      "mz-plan-615059-a2",
+      "mz-plan-615059-a3",
+      "mz-plan-615059-a4",
+      "mz-plan-615059-a5",
+      "mz-plan-616239-1117011800100710000",
+      "mz-plan-626249-a-1",
+      "mz-plan-628097-a1",
+      "mz-plan-628097-a2",
+      "mz-plan-628097-a3",
+      "mz-plan-628097-a4",
+      "mz-plan-628523-a-1",
+      "mz-plan-628523-a-2",
+      "mz-plan-628523-a-3",
+      "mz-plan-638669-a1",
+      "mz-plan-638669-a2",
+      "mz-plan-645471-a-1",
+      "mz-plan-584518-a-1",
+      "mz-plan-584518-a-2",
+      "mz-plan-584518-a-3",
+      "mz-plan-584518-a-4",
+      "mz-plan-584449-a3-1",
+      "mz-plan-584449-a3-2",
+      "mz-plan-584449-a3-3",
+      "mz-plan-584797-1165010100109770000",
+      "mz-plan-614691-a-1",
+      "mz-plan-614691-a-2",
+      "mz-plan-614691-a-3",
+      "mz-plan-628093-a-1",
+      "mz-junghwa-2-2",
+      "mz-junghwa-2-3",
+      "mz-junghwa-2-5",
+      "mz-plan-614147-project-1",
+      "mz-plan-614147-project-2",
+      "mz-plan-614147-project-3",
+      "mz-plan-614147-project-4",
+      "mz-plan-584263-a1",
+      "mz-plan-584263-a2",
+      "mz-plan-584263-a3",
+      "mz-plan-584263-a4",
+      "mz-plan-584263-a5",
+      "mz-plan-584263-a6",
+      "mz-plan-584263-b1",
+      "mz-plan-645351-a1",
+      "mz-plan-645351-a2",
+      "mz-plan-645351-a3",
+      "mz-plan-645351-a4",
+      "mz-plan-645351-a5",
+      "mz-plan-610051-a-1",
+      "mz-plan-610051-a-2",
+      "mz-plan-610051-a-3",
+      "mz-plan-610051-a-4",
+      "mz-plan-587169-project-1",
+      "mz-plan-587169-project-2",
+      "mz-plan-587169-project-3",
+      "mz-plan-587169-project-4",
+      "mz-plan-public-056-a-1",
+      "mz-plan-public-056-a-2",
+      "mz-plan-public-056-b-1",
+      "mz-plan-public-046-a-1",
+      "mz-plan-public-046-a-2",
+      "mz-plan-public-073-a1",
+      "mz-plan-public-073-b1",
+      "mz-plan-public-073-b2",
+      "mz-plan-public-073-b3",
+      "mz-notice-public-026-a-1",
+      "mz-notice-public-026-a-2",
+      "mz-notice-public-026-a-3",
+      "mz-notice-public-026-a-4",
+      "mz-notice-public-026-a-5",
+      "mz-notice-public-026-a-6",
+      "mz-notice-public-026-a-7",
+      "mz-notice-public-026-a-8",
+      "mz-notice-public-006-a-1",
+      "mz-notice-public-006-a-2",
+      "mz-notice-public-006-a-4",
+      "mz-notice-public-011-a1"
+    ],
+    "zone_allocation_members_general": [
+      "mz-info-305900000750u59",
+      "mz-seoul-11000uq120ps202503310030",
+      "mz-seoul-11000uq120ps202503310031",
+      "mz-seoul-11000uq120ps202503310029",
+      "mz-seoul-11500uq120ps202603130001",
+      "mz-seoul-11500uq120ps202603130002",
+      "mz-seoul-11500uq120ps202603130003",
+      "mz-seoul-11000uq120ps202503310014",
+      "mz-seoul-11000uq120ps202503310013",
+      "mz-seoul-11000uq120ps202503310012",
+      "mz-seoul-11000uq120ps202411014070",
+      "mz-seoul-11000uq120ps202503310025",
+      "mz-seoul-11000uq120ps202503310023",
+      "mz-seoul-11000uq120ps202503310024",
+      "mz-seoul-11000uq120ps202505310439",
+      "mz-seoul-11000uq120ps202505310440",
+      "mz-seoul-11000uq120ps202505310448",
+      "mz-seoul-11000uq120ps202505310449",
+      "mz-seoul-11260uq120ps202603060001",
+      "mz-seoul-11000uq120ps202505310446",
+      "mz-seoul-11000uq120ps202505310447",
+      "mz-seoul-11000uq120ps202505310212",
+      "mz-seoul-11000uq120ps202505310171",
+      "mz-seoul-11000uq120ps202505310172",
+      "mz-seoul-11000uq120ps202505310173",
+      "mz-seoul-11000uq120ps202505310174",
+      "mz-seoul-11000uq120ps202505310290",
+      "mz-seoul-11000uq120ps202505310308",
+      "mz-seoul-11000uq120ps202505310289",
+      "mz-seoul-11410uq120ps202607270001",
+      "mz-seoul-11000uq120ps202505310462",
+      "mz-seoul-11000uq120ps202505310741",
+      "mz-seoul-11000uq120ps202505310435",
+      "mz-seoul-11000uq120ps202505310397",
+      "mz-seoul-11000uq120ps202505310585",
+      "mz-seoul-11545uq120ps202604200002",
+      "mz-seoul-11000uq120ps202505310709",
+      "mz-seoul-11000uq120ps202505310551",
+      "mz-seoul-11000uq120ps202505310654",
+      "mz-seoul-11000uq120ps202505310477",
+      "mz-seoul-11000uq120ps202505310485",
+      "mz-seoul-11000uq120ps202411014068",
+      "mz-seoul-11000uq120ps202505310382",
+      "mz-seoul-11530uq120ps202607230001",
+      "mz-mapohapjeong-2026-111-a1",
+      "mz-mapohapjeong-2026-111-a2",
+      "mz-mapohapjeong-2026-111-a3",
+      "mz-mapohapjeong-2026-111-a4",
+      "mz-plan-584443-a1",
+      "mz-plan-584443-a2",
+      "mz-plan-584443-a3",
+      "mz-plan-584443-a4",
+      "mz-plan-584564-1144010800105350002",
+      "mz-plan-584823-b1",
+      "mz-plan-584823-b2",
+      "mz-plan-584823-b3",
+      "mz-plan-584823-b4",
+      "mz-plan-584823-b5",
+      "mz-plan-586349-a-1",
+      "mz-plan-586349-a-2",
+      "mz-plan-587121-a-1",
+      "mz-plan-587121-a-2",
+      "mz-plan-587121-a-3",
+      "mz-plan-587121-a-4",
+      "mz-plan-587121-a-5",
+      "mz-plan-587121-a-6",
+      "mz-plan-587121-a-7",
+      "mz-plan-587121-a-8",
+      "mz-plan-594346-a-1",
+      "mz-plan-594346-a-2",
+      "mz-plan-594346-a-3",
+      "mz-plan-594346-a-4",
+      "mz-plan-594346-a-5",
+      "mz-plan-594579-a1",
+      "mz-plan-594579-a2",
+      "mz-plan-594579-a3",
+      "mz-plan-594579-a4",
+      "mz-plan-601717-a1",
+      "mz-plan-601717-a2",
+      "mz-plan-601717-a3",
+      "mz-plan-601822-a-1",
+      "mz-plan-601822-a-2",
+      "mz-plan-601822-a-3",
+      "mz-plan-601822-a-4",
+      "mz-plan-601822-a-5",
+      "mz-plan-601972-a-1",
+      "mz-plan-601972-a-2",
+      "mz-plan-601972-a-3",
+      "mz-plan-601972-a-4",
+      "mz-plan-601972-a-5",
+      "mz-plan-601972-a-6",
+      "mz-plan-601972-a-7",
+      "mz-plan-601972-a-8",
+      "mz-plan-602403-a-1",
+      "mz-plan-602403-a-2",
+      "mz-plan-602403-a-3",
+      "mz-plan-606937-a-1",
+      "mz-plan-607655-a1",
+      "mz-plan-607655-a2",
+      "mz-plan-607655-a3",
+      "mz-plan-607655-a4",
+      "mz-plan-607655-a5",
+      "mz-plan-607655-a6",
+      "mz-plan-607899-c1",
+      "mz-plan-607899-c2",
+      "mz-plan-607900-a2",
+      "mz-plan-607900-a3",
+      "mz-plan-607900-a4",
+      "mz-plan-607900-a5",
+      "mz-plan-610807-a-1",
+      "mz-plan-610807-a-2",
+      "mz-plan-610807-a-3",
+      "mz-plan-610807-a-4",
+      "mz-plan-610807-a-5",
+      "mz-plan-612838-1135010200105340117",
+      "mz-plan-612838-1135010200105340004",
+      "mz-plan-613956-1126010100100640014",
+      "mz-plan-613956-1126010100100650002",
+      "mz-plan-613956-1126010100101130079",
+      "mz-plan-613956-1126010100101100036",
+      "mz-plan-615059-a1",
+      "mz-plan-615059-a2",
+      "mz-plan-615059-a3",
+      "mz-plan-615059-a4",
+      "mz-plan-615059-a5",
+      "mz-plan-616239-1117011800100710000",
+      "mz-plan-625571-a1",
+      "mz-plan-625571-a2",
+      "mz-plan-626249-a-1",
+      "mz-plan-628097-a1",
+      "mz-plan-628097-a2",
+      "mz-plan-628097-a3",
+      "mz-plan-628097-a4",
+      "mz-plan-628523-a-1",
+      "mz-plan-628523-a-2",
+      "mz-plan-628523-a-3",
+      "mz-plan-630320-1141011100103220000",
+      "mz-plan-638669-a1",
+      "mz-plan-638669-a2",
+      "mz-plan-639882-1121510500106520000",
+      "mz-plan-639882-1121510500106370000",
+      "mz-plan-639882-1121510500106480000",
+      "mz-plan-639882-1121510500106460000",
+      "mz-plan-639882-1121510500106400000",
+      "mz-plan-640708-a-3",
+      "mz-plan-640709-a-1",
+      "mz-plan-640709-a-2",
+      "mz-plan-641915-a1",
+      "mz-plan-641915-a2",
+      "mz-plan-645471-a-1",
+      "mz-plan-584518-a-1",
+      "mz-plan-584518-a-2",
+      "mz-plan-584518-a-3",
+      "mz-plan-584518-a-4",
+      "mz-plan-584449-a3-1",
+      "mz-plan-584449-a3-2",
+      "mz-plan-584449-a3-3",
+      "mz-plan-584797-1165010100109770000",
+      "mz-plan-614691-a-1",
+      "mz-plan-614691-a-2",
+      "mz-plan-614691-a-3",
+      "mz-plan-628093-a-1",
+      "mz-junghwa-2-2",
+      "mz-junghwa-2-3",
+      "mz-junghwa-2-5",
+      "mz-plan-614147-project-1",
+      "mz-plan-614147-project-2",
+      "mz-plan-614147-project-3",
+      "mz-plan-614147-project-4",
+      "mz-plan-584263-a1",
+      "mz-plan-584263-a2",
+      "mz-plan-584263-a3",
+      "mz-plan-584263-a4",
+      "mz-plan-584263-a5",
+      "mz-plan-584263-a6",
+      "mz-plan-584263-b1",
+      "mz-plan-645351-a1",
+      "mz-plan-645351-a2",
+      "mz-plan-645351-a3",
+      "mz-plan-645351-a4",
+      "mz-plan-645351-a5",
+      "mz-plan-619723-a1",
+      "mz-plan-619723-a2",
+      "mz-plan-610051-a-1",
+      "mz-plan-610051-a-2",
+      "mz-plan-610051-a-3",
+      "mz-plan-610051-a-4",
+      "mz-plan-644471-a-1",
+      "mz-plan-644471-a-2",
+      "mz-plan-587169-project-1",
+      "mz-plan-587169-project-2",
+      "mz-plan-587169-project-3",
+      "mz-plan-587169-project-4",
+      "mz-plan-596685-2-1",
+      "mz-plan-596685-2-2",
+      "mz-plan-596685-2-3",
+      "mz-plan-596685-2-4",
+      "mz-plan-596685-2-5",
+      "mz-plan-596684-1-1",
+      "mz-plan-596684-1-2",
+      "mz-plan-public-056-a-1",
+      "mz-plan-public-056-a-2",
+      "mz-plan-public-056-b-1",
+      "mz-plan-public-046-a-1",
+      "mz-plan-public-046-a-2",
+      "mz-plan-public-073-a1",
+      "mz-plan-public-073-b1",
+      "mz-plan-public-073-b2",
+      "mz-plan-public-073-b3",
+      "mz-notice-public-026-a-1",
+      "mz-notice-public-026-a-2",
+      "mz-notice-public-026-a-3",
+      "mz-notice-public-026-a-4",
+      "mz-notice-public-026-a-5",
+      "mz-notice-public-026-a-6",
+      "mz-notice-public-026-a-7",
+      "mz-notice-public-026-a-8",
+      "mz-notice-public-006-a-1",
+      "mz-notice-public-006-a-2",
+      "mz-notice-public-006-a-4",
+      "mz-notice-public-011-a1",
+      "mz-notice-resident-027-a1"
+    ],
+    "zone_planned_units_per_owner": [
+      "mz-seoul-11000uq120ps202503310030",
+      "mz-seoul-11000uq120ps202503310031",
+      "mz-seoul-11000uq120ps202503310029",
+      "mz-seoul-11500uq120ps202603130001",
+      "mz-seoul-11500uq120ps202603130002",
+      "mz-seoul-11500uq120ps202603130003",
+      "mz-seoul-11000uq120ps202503310014",
+      "mz-seoul-11000uq120ps202503310013",
+      "mz-seoul-11000uq120ps202503310012",
+      "mz-seoul-11000uq120ps202503310025",
+      "mz-seoul-11000uq120ps202503310023",
+      "mz-seoul-11000uq120ps202503310024",
+      "mz-seoul-11000uq120ps202505310161",
+      "mz-seoul-11000uq120ps202505310439",
+      "mz-seoul-11000uq120ps202505310440",
+      "mz-seoul-11000uq120ps202505310160",
+      "mz-seoul-11000uq120ps202505310448",
+      "mz-seoul-11000uq120ps202505310449",
+      "mz-seoul-11260uq120ps202603060001",
+      "mz-seoul-11000uq120ps202505310446",
+      "mz-seoul-11000uq120ps202505310447",
+      "mz-seoul-11000uq120ps202505310290",
+      "mz-seoul-11000uq120ps202505310308",
+      "mz-seoul-11000uq120ps202505310289",
+      "mz-seoul-11410uq120ps202607270001",
+      "mz-seoul-11000uq120ps202505310462",
+      "mz-seoul-11000uq120ps202505310741",
+      "mz-seoul-11000uq120ps202505310397",
+      "mz-seoul-11000uq120ps202505310585",
+      "mz-seoul-11000uq120ps202505310709",
+      "mz-seoul-11000uq120ps202505310551",
+      "mz-seoul-11000uq120ps202505310654",
+      "mz-seoul-11000uq120ps202505310477",
+      "mz-seoul-11000uq120ps202505310485",
+      "mz-seoul-11000uq120ps202411014068",
+      "mz-seoul-11000uq120ps202505310382",
+      "mz-seoul-11530uq120ps202607230001",
+      "mz-plan-584443-a1",
+      "mz-plan-584443-a2",
+      "mz-plan-584443-a3",
+      "mz-plan-584443-a4",
+      "mz-plan-587121-a-1",
+      "mz-plan-587121-a-2",
+      "mz-plan-587121-a-3",
+      "mz-plan-587121-a-4",
+      "mz-plan-587121-a-5",
+      "mz-plan-587121-a-6",
+      "mz-plan-587121-a-7",
+      "mz-plan-587121-a-8",
+      "mz-plan-594579-a1",
+      "mz-plan-594579-a2",
+      "mz-plan-594579-a3",
+      "mz-plan-594579-a4",
+      "mz-plan-601717-a3",
+      "mz-plan-601972-a-1",
+      "mz-plan-601972-a-2",
+      "mz-plan-601972-a-3",
+      "mz-plan-601972-a-4",
+      "mz-plan-601972-a-5",
+      "mz-plan-601972-a-6",
+      "mz-plan-601972-a-7",
+      "mz-plan-601972-a-8",
+      "mz-plan-602403-a-1",
+      "mz-plan-602403-a-2",
+      "mz-plan-602403-a-3",
+      "mz-plan-606937-a-1",
+      "mz-plan-607655-a2",
+      "mz-plan-607655-a3",
+      "mz-plan-607655-a4",
+      "mz-plan-607655-a5",
+      "mz-plan-607655-a6",
+      "mz-plan-610807-a-1",
+      "mz-plan-610807-a-2",
+      "mz-plan-610807-a-3",
+      "mz-plan-610807-a-4",
+      "mz-plan-610807-a-5",
+      "mz-plan-612838-1135010200105340117",
+      "mz-plan-612838-1135010200105340004",
+      "mz-plan-613956-1126010100100640014",
+      "mz-plan-613956-1126010100100650002",
+      "mz-plan-613956-1126010100101130079",
+      "mz-plan-613956-1126010100101100036",
+      "mz-plan-615059-a1",
+      "mz-plan-615059-a2",
+      "mz-plan-615059-a3",
+      "mz-plan-615059-a4",
+      "mz-plan-615059-a5",
+      "mz-plan-616239-1117011800100710000",
+      "mz-plan-626249-a-1",
+      "mz-plan-628097-a1",
+      "mz-plan-628097-a2",
+      "mz-plan-628097-a3",
+      "mz-plan-628097-a4",
+      "mz-plan-628523-a-1",
+      "mz-plan-628523-a-2",
+      "mz-plan-628523-a-3",
+      "mz-plan-638669-a1",
+      "mz-plan-638669-a2",
+      "mz-plan-645471-a-1",
+      "mz-plan-584518-a-1",
+      "mz-plan-584518-a-2",
+      "mz-plan-584518-a-3",
+      "mz-plan-584518-a-4",
+      "mz-plan-584449-a3-1",
+      "mz-plan-584449-a3-2",
+      "mz-plan-584449-a3-3",
+      "mz-plan-584797-1165010100109770000",
+      "mz-plan-614691-a-1",
+      "mz-plan-614691-a-2",
+      "mz-plan-614691-a-3",
+      "mz-plan-628093-a-1",
+      "mz-junghwa-2-2",
+      "mz-junghwa-2-3",
+      "mz-junghwa-2-5",
+      "mz-plan-614147-project-1",
+      "mz-plan-614147-project-2",
+      "mz-plan-614147-project-3",
+      "mz-plan-614147-project-4",
+      "mz-plan-584263-a1",
+      "mz-plan-584263-a2",
+      "mz-plan-584263-a3",
+      "mz-plan-584263-a4",
+      "mz-plan-584263-a5",
+      "mz-plan-584263-a6",
+      "mz-plan-584263-b1",
+      "mz-plan-645351-a1",
+      "mz-plan-645351-a2",
+      "mz-plan-645351-a3",
+      "mz-plan-645351-a4",
+      "mz-plan-645351-a5",
+      "mz-plan-610051-a-1",
+      "mz-plan-610051-a-2",
+      "mz-plan-610051-a-3",
+      "mz-plan-610051-a-4",
+      "mz-plan-587169-project-1",
+      "mz-plan-587169-project-2",
+      "mz-plan-587169-project-3",
+      "mz-plan-587169-project-4",
+      "mz-plan-public-056-a-1",
+      "mz-plan-public-056-a-2",
+      "mz-plan-public-056-b-1",
+      "mz-plan-public-046-a-1",
+      "mz-plan-public-046-a-2",
+      "mz-plan-public-073-a1",
+      "mz-plan-public-073-b1",
+      "mz-plan-public-073-b2",
+      "mz-plan-public-073-b3",
+      "mz-notice-public-026-a-1",
+      "mz-notice-public-026-a-2",
+      "mz-notice-public-026-a-3",
+      "mz-notice-public-026-a-4",
+      "mz-notice-public-026-a-5",
+      "mz-notice-public-026-a-6",
+      "mz-notice-public-026-a-7",
+      "mz-notice-public-026-a-8",
+      "mz-notice-public-006-a-1",
+      "mz-notice-public-006-a-2",
+      "mz-notice-public-006-a-4",
+      "mz-notice-public-011-a1"
+    ],
+    "zone_zoning": [
+      "mz-seoul-11000uq120ps202503310030",
+      "mz-seoul-11000uq120ps202503310031",
+      "mz-seoul-11000uq120ps202503310029",
+      "mz-seoul-11500uq120ps202603130001",
+      "mz-seoul-11500uq120ps202603130003",
+      "mz-seoul-11000uq120ps202503310013",
+      "mz-seoul-11000uq120ps202503310025",
+      "mz-seoul-11000uq120ps202503310023",
+      "mz-seoul-11000uq120ps202503310024",
+      "mz-seoul-11000uq120ps202505310161",
+      "mz-seoul-11000uq120ps202505310449",
+      "mz-seoul-11000uq120ps202505310446",
+      "mz-seoul-11000uq120ps202505310462",
+      "mz-seoul-11000uq120ps202505310741",
+      "mz-seoul-11000uq120ps202505310709",
+      "mz-seoul-11000uq120ps202505310477",
+      "mz-seoul-11000uq120ps202505310485",
+      "mz-seoul-11000uq120ps202505310382",
+      "mz-mapohapjeong-2026-111-a1",
+      "mz-mapohapjeong-2026-111-a2",
+      "mz-mapohapjeong-2026-111-a3",
+      "mz-mapohapjeong-2026-111-a4",
+      "mz-plan-584443-a1",
+      "mz-plan-584443-a2",
+      "mz-plan-584443-a3",
+      "mz-plan-584443-a4",
+      "mz-plan-584564-1144010800105350002",
+      "mz-plan-584823-b1",
+      "mz-plan-584823-b2",
+      "mz-plan-584823-b3",
+      "mz-plan-584823-b4",
+      "mz-plan-584823-b5",
+      "mz-plan-586349-a-1",
+      "mz-plan-586349-a-2",
+      "mz-plan-587121-a-1",
+      "mz-plan-587121-a-2",
+      "mz-plan-587121-a-3",
+      "mz-plan-587121-a-4",
+      "mz-plan-587121-a-5",
+      "mz-plan-587121-a-6",
+      "mz-plan-587121-a-7",
+      "mz-plan-587121-a-8",
+      "mz-plan-594346-a-1",
+      "mz-plan-594346-a-2",
+      "mz-plan-594346-a-3",
+      "mz-plan-594346-a-4",
+      "mz-plan-594346-a-5",
+      "mz-plan-594579-a1",
+      "mz-plan-594579-a2",
+      "mz-plan-594579-a3",
+      "mz-plan-594579-a4",
+      "mz-plan-601717-a1",
+      "mz-plan-601717-a2",
+      "mz-plan-601717-a3",
+      "mz-plan-601822-a-1",
+      "mz-plan-601822-a-2",
+      "mz-plan-601822-a-3",
+      "mz-plan-601822-a-4",
+      "mz-plan-601822-a-5",
+      "mz-plan-601972-a-1",
+      "mz-plan-601972-a-2",
+      "mz-plan-601972-a-3",
+      "mz-plan-601972-a-4",
+      "mz-plan-601972-a-5",
+      "mz-plan-601972-a-6",
+      "mz-plan-601972-a-7",
+      "mz-plan-601972-a-8",
+      "mz-plan-602403-a-1",
+      "mz-plan-602403-a-2",
+      "mz-plan-602403-a-3",
+      "mz-plan-606937-a-1",
+      "mz-plan-607655-a1",
+      "mz-plan-607655-a2",
+      "mz-plan-607655-a3",
+      "mz-plan-607655-a4",
+      "mz-plan-607655-a5",
+      "mz-plan-607655-a6",
+      "mz-plan-607899-c1",
+      "mz-plan-607899-c2",
+      "mz-plan-607900-a2",
+      "mz-plan-607900-a3",
+      "mz-plan-607900-a4",
+      "mz-plan-607900-a5",
+      "mz-plan-610807-a-1",
+      "mz-plan-610807-a-2",
+      "mz-plan-610807-a-3",
+      "mz-plan-610807-a-4",
+      "mz-plan-610807-a-5",
+      "mz-plan-612838-1135010200105340117",
+      "mz-plan-612838-1135010200105340004",
+      "mz-plan-613956-1126010100100640014",
+      "mz-plan-613956-1126010100100650002",
+      "mz-plan-613956-1126010100101130079",
+      "mz-plan-613956-1126010100101100036",
+      "mz-plan-615059-a1",
+      "mz-plan-615059-a2",
+      "mz-plan-615059-a3",
+      "mz-plan-615059-a4",
+      "mz-plan-615059-a5",
+      "mz-plan-616239-1117011800100710000",
+      "mz-plan-625571-a1",
+      "mz-plan-625571-a2",
+      "mz-plan-626249-a-1",
+      "mz-plan-628097-a1",
+      "mz-plan-628097-a2",
+      "mz-plan-628097-a3",
+      "mz-plan-628097-a4",
+      "mz-plan-628523-a-1",
+      "mz-plan-628523-a-2",
+      "mz-plan-628523-a-3",
+      "mz-plan-630320-1141011100103220000",
+      "mz-plan-638669-a1",
+      "mz-plan-638669-a2",
+      "mz-plan-639882-1121510500106520000",
+      "mz-plan-639882-1121510500106370000",
+      "mz-plan-639882-1121510500106480000",
+      "mz-plan-639882-1121510500106460000",
+      "mz-plan-639882-1121510500106400000",
+      "mz-plan-640708-a-3",
+      "mz-plan-640709-a-1",
+      "mz-plan-640709-a-2",
+      "mz-plan-641915-a1",
+      "mz-plan-641915-a2",
+      "mz-plan-645471-a-1",
+      "mz-plan-584518-a-1",
+      "mz-plan-584518-a-2",
+      "mz-plan-584518-a-3",
+      "mz-plan-584518-a-4",
+      "mz-plan-584449-a3-1",
+      "mz-plan-584449-a3-2",
+      "mz-plan-584449-a3-3",
+      "mz-plan-584797-1165010100109770000",
+      "mz-plan-614691-a-1",
+      "mz-plan-614691-a-2",
+      "mz-plan-614691-a-3",
+      "mz-plan-628093-a-1",
+      "mz-junghwa-2-2",
+      "mz-junghwa-2-3",
+      "mz-junghwa-2-5",
+      "mz-plan-614147-project-1",
+      "mz-plan-614147-project-2",
+      "mz-plan-614147-project-3",
+      "mz-plan-614147-project-4",
+      "mz-plan-584263-a1",
+      "mz-plan-584263-a2",
+      "mz-plan-584263-a3",
+      "mz-plan-584263-a4",
+      "mz-plan-584263-a5",
+      "mz-plan-584263-a6",
+      "mz-plan-584263-b1",
+      "mz-plan-645351-a1",
+      "mz-plan-645351-a2",
+      "mz-plan-645351-a3",
+      "mz-plan-645351-a4",
+      "mz-plan-645351-a5",
+      "mz-plan-619723-a1",
+      "mz-plan-619723-a2",
+      "mz-plan-610051-a-1",
+      "mz-plan-610051-a-2",
+      "mz-plan-610051-a-3",
+      "mz-plan-610051-a-4",
+      "mz-plan-644471-a-1",
+      "mz-plan-644471-a-2",
+      "mz-plan-587169-project-1",
+      "mz-plan-587169-project-2",
+      "mz-plan-587169-project-3",
+      "mz-plan-587169-project-4",
+      "mz-plan-596685-2-1",
+      "mz-plan-596685-2-2",
+      "mz-plan-596685-2-3",
+      "mz-plan-596685-2-4",
+      "mz-plan-596685-2-5",
+      "mz-plan-596684-1-1",
+      "mz-plan-596684-1-2",
+      "mz-plan-public-056-a-1",
+      "mz-plan-public-056-a-2",
+      "mz-plan-public-056-b-1",
+      "mz-plan-public-046-a-1",
+      "mz-plan-public-046-a-2",
+      "mz-plan-public-073-a1",
+      "mz-plan-public-073-b1",
+      "mz-plan-public-073-b2",
+      "mz-plan-public-073-b3",
+      "mz-notice-public-026-a-1",
+      "mz-notice-public-026-a-2",
+      "mz-notice-public-026-a-3",
+      "mz-notice-public-026-a-4",
+      "mz-notice-public-026-a-5",
+      "mz-notice-public-026-a-6",
+      "mz-notice-public-026-a-7",
+      "mz-notice-public-026-a-8",
+      "mz-notice-public-006-a-1",
+      "mz-notice-public-006-a-2",
+      "mz-notice-public-006-a-4",
+      "mz-notice-public-011-a1",
+      "mz-notice-resident-027-a1"
+    ],
+    "zone_point_or_boundary": [
+      "mz-plan-587121-a-1",
+      "mz-plan-587121-a-4",
+      "mz-plan-587121-a-5",
+      "mz-plan-587121-a-6",
+      "mz-plan-587121-a-7",
+      "mz-plan-610807-a-1",
+      "mz-plan-584797-1165010100109770000",
+      "mz-plan-584263-a1",
+      "mz-plan-584263-a2",
+      "mz-plan-584263-a3",
+      "mz-plan-public-056-a-1",
+      "mz-plan-public-056-a-2",
+      "mz-plan-public-056-b-1",
+      "mz-plan-public-046-a-1",
+      "mz-plan-public-046-a-2",
+      "mz-plan-public-073-a1",
+      "mz-plan-public-073-b1",
+      "mz-plan-public-073-b2",
+      "mz-plan-public-073-b3",
+      "mz-notice-public-026-a-8"
+    ],
+    "town_rights_cutoff_history": [
+      "mt-202603-public-025",
+      "mt-202603-public-034",
+      "mt-202603-resident-002",
+      "mt-202603-resident-011",
+      "mt-202603-resident-018",
+      "mt-2026-extra-003",
+      "mt-2026-extra-007"
+    ],
+    "town_planned_units": [
+      "mt-202603-public-004",
+      "mt-202603-public-022",
+      "mt-202603-public-040",
+      "mt-202603-public-041",
+      "mt-202603-public-056",
+      "mt-202603-public-081",
+      "mt-202603-public-082",
+      "mt-202603-resident-007",
+      "mt-202603-resident-011",
+      "mt-202603-resident-014",
+      "mt-202603-resident-018",
+      "mt-202603-resident-021",
+      "mt-202603-resident-024",
+      "mt-202603-resident-026",
+      "mt-202603-resident-030",
+      "mt-202603-resident-032",
+      "mt-202603-resident-033",
+      "mt-202603-resident-034",
+      "mt-202603-resident-035",
+      "mt-202603-resident-036",
+      "mt-202603-resident-037",
+      "mt-202603-resident-038",
+      "mt-202603-resident-039",
+      "mt-202603-resident-040",
+      "mt-202603-resident-041",
+      "mt-202603-resident-042",
+      "mt-202603-resident-043",
+      "mt-202603-resident-044",
+      "mt-2026-extra-001",
+      "mt-2026-extra-002",
+      "mt-2026-extra-003",
+      "mt-2026-extra-004",
+      "mt-2026-extra-005",
+      "mt-2026-extra-006",
+      "mt-2026-extra-007",
+      "mt-2026-extra-008",
+      "mt-2026-extra-009",
+      "mt-2026-extra-010",
+      "mt-2026-extra-011"
+    ],
+    "town_existing_units": [
+      "mt-202603-public-004",
+      "mt-202603-public-011",
+      "mt-202603-public-012",
+      "mt-202603-public-013",
+      "mt-202603-public-014",
+      "mt-202603-public-015",
+      "mt-202603-public-016",
+      "mt-202603-public-017",
+      "mt-202603-public-019",
+      "mt-202603-public-020",
+      "mt-202603-public-021",
+      "mt-202603-public-022",
+      "mt-202603-public-023",
+      "mt-202603-public-024",
+      "mt-202603-public-025",
+      "mt-202603-public-026",
+      "mt-202603-public-031",
+      "mt-202603-public-040",
+      "mt-202603-public-041",
+      "mt-202603-public-043",
+      "mt-202603-public-053",
+      "mt-202603-public-054",
+      "mt-202603-public-058",
+      "mt-202603-public-059",
+      "mt-202603-public-060",
+      "mt-202603-public-061",
+      "mt-202603-public-062",
+      "mt-202603-public-063",
+      "mt-202603-public-064",
+      "mt-202603-public-065",
+      "mt-202603-public-066",
+      "mt-202603-public-067",
+      "mt-202603-public-069",
+      "mt-202603-public-071",
+      "mt-202603-public-078",
+      "mt-202603-public-080",
+      "mt-202603-public-081",
+      "mt-202603-public-082",
+      "mt-202603-public-084",
+      "mt-202603-public-087",
+      "mt-202603-resident-003",
+      "mt-202603-resident-005",
+      "mt-202603-resident-006",
+      "mt-202603-resident-007",
+      "mt-202603-resident-009",
+      "mt-202603-resident-011",
+      "mt-202603-resident-014",
+      "mt-202603-resident-016",
+      "mt-202603-resident-018",
+      "mt-202603-resident-019",
+      "mt-202603-resident-021",
+      "mt-202603-resident-024",
+      "mt-202603-resident-025",
+      "mt-202603-resident-026",
+      "mt-202603-resident-027",
+      "mt-202603-resident-029",
+      "mt-202603-resident-030",
+      "mt-202603-resident-031",
+      "mt-202603-resident-032",
+      "mt-202603-resident-033",
+      "mt-202603-resident-034",
+      "mt-202603-resident-035",
+      "mt-202603-resident-036",
+      "mt-202603-resident-037",
+      "mt-202603-resident-038",
+      "mt-202603-resident-039",
+      "mt-202603-resident-040",
+      "mt-202603-resident-041",
+      "mt-202603-resident-042",
+      "mt-202603-resident-043",
+      "mt-202603-resident-044",
+      "mt-2026-extra-001",
+      "mt-2026-extra-002",
+      "mt-2026-extra-003",
+      "mt-2026-extra-004",
+      "mt-2026-extra-005",
+      "mt-2026-extra-006",
+      "mt-2026-extra-007",
+      "mt-2026-extra-008",
+      "mt-2026-extra-009",
+      "mt-2026-extra-010",
+      "mt-2026-extra-011"
+    ],
+    "town_aging_ratio": [
+      "mt-202603-public-004",
+      "mt-202603-public-022",
+      "mt-202603-public-039",
+      "mt-202603-public-040",
+      "mt-202603-public-041",
+      "mt-202603-public-042",
+      "mt-202603-public-043",
+      "mt-202603-public-069",
+      "mt-202603-public-081",
+      "mt-202603-public-082",
+      "mt-202603-resident-002",
+      "mt-202603-resident-003",
+      "mt-202603-resident-007",
+      "mt-202603-resident-011",
+      "mt-202603-resident-014",
+      "mt-202603-resident-015",
+      "mt-202603-resident-018",
+      "mt-202603-resident-021",
+      "mt-202603-resident-023",
+      "mt-202603-resident-024",
+      "mt-202603-resident-026",
+      "mt-202603-resident-030",
+      "mt-202603-resident-032",
+      "mt-202603-resident-033",
+      "mt-202603-resident-034",
+      "mt-202603-resident-035",
+      "mt-202603-resident-036",
+      "mt-202603-resident-037",
+      "mt-202603-resident-038",
+      "mt-202603-resident-039",
+      "mt-202603-resident-040",
+      "mt-202603-resident-041",
+      "mt-202603-resident-042",
+      "mt-202603-resident-043",
+      "mt-202603-resident-044",
+      "mt-2026-extra-001",
+      "mt-2026-extra-002",
+      "mt-2026-extra-003",
+      "mt-2026-extra-004",
+      "mt-2026-extra-005",
+      "mt-2026-extra-006",
+      "mt-2026-extra-007",
+      "mt-2026-extra-008",
+      "mt-2026-extra-009",
+      "mt-2026-extra-010",
+      "mt-2026-extra-011"
+    ],
+    "town_owner_count": [
+      "mt-202603-public-001",
+      "mt-202603-public-003",
+      "mt-202603-public-004",
+      "mt-202603-public-005",
+      "mt-202603-public-006",
+      "mt-202603-public-007",
+      "mt-202603-public-008",
+      "mt-202603-public-009",
+      "mt-202603-public-013",
+      "mt-202603-public-014",
+      "mt-202603-public-015",
+      "mt-202603-public-016",
+      "mt-202603-public-017",
+      "mt-202603-public-018",
+      "mt-202603-public-019",
+      "mt-202603-public-020",
+      "mt-202603-public-021",
+      "mt-202603-public-022",
+      "mt-202603-public-023",
+      "mt-202603-public-024",
+      "mt-202603-public-025",
+      "mt-202603-public-026",
+      "mt-202603-public-030",
+      "mt-202603-public-031",
+      "mt-202603-public-039",
+      "mt-202603-public-040",
+      "mt-202603-public-041",
+      "mt-202603-public-042",
+      "mt-202603-public-043",
+      "mt-202603-public-044",
+      "mt-202603-public-045",
+      "mt-202603-public-048",
+      "mt-202603-public-053",
+      "mt-202603-public-054",
+      "mt-202603-public-055",
+      "mt-202603-public-058",
+      "mt-202603-public-059",
+      "mt-202603-public-060",
+      "mt-202603-public-061",
+      "mt-202603-public-062",
+      "mt-202603-public-063",
+      "mt-202603-public-065",
+      "mt-202603-public-066",
+      "mt-202603-public-067",
+      "mt-202603-public-068",
+      "mt-202603-public-069",
+      "mt-202603-public-071",
+      "mt-202603-public-074",
+      "mt-202603-public-078",
+      "mt-202603-public-080",
+      "mt-202603-public-081",
+      "mt-202603-public-082",
+      "mt-202603-public-085",
+      "mt-202603-public-087",
+      "mt-202603-public-088",
+      "mt-202603-resident-002",
+      "mt-202603-resident-003",
+      "mt-202603-resident-007",
+      "mt-202603-resident-009",
+      "mt-202603-resident-010",
+      "mt-202603-resident-011",
+      "mt-202603-resident-014",
+      "mt-202603-resident-015",
+      "mt-202603-resident-016",
+      "mt-202603-resident-018",
+      "mt-202603-resident-019",
+      "mt-202603-resident-021",
+      "mt-202603-resident-022",
+      "mt-202603-resident-023",
+      "mt-202603-resident-024",
+      "mt-202603-resident-025",
+      "mt-202603-resident-026",
+      "mt-202603-resident-028",
+      "mt-202603-resident-029",
+      "mt-202603-resident-030",
+      "mt-202603-resident-031",
+      "mt-202603-resident-032",
+      "mt-202603-resident-033",
+      "mt-202603-resident-034",
+      "mt-202603-resident-035",
+      "mt-202603-resident-036",
+      "mt-202603-resident-037",
+      "mt-202603-resident-038",
+      "mt-202603-resident-039",
+      "mt-202603-resident-040",
+      "mt-202603-resident-041",
+      "mt-202603-resident-042",
+      "mt-202603-resident-043",
+      "mt-202603-resident-044",
+      "mt-2026-extra-001",
+      "mt-2026-extra-002",
+      "mt-2026-extra-003",
+      "mt-2026-extra-004",
+      "mt-2026-extra-005",
+      "mt-2026-extra-006",
+      "mt-2026-extra-007",
+      "mt-2026-extra-008",
+      "mt-2026-extra-009",
+      "mt-2026-extra-010",
+      "mt-2026-extra-011"
+    ]
+  },
+  "sub_area_notice_review": [
+    {
+      "town_id": "mt-202603-public-004",
+      "town": "화곡동 424",
+      "status": "개별 구역·대표 지번 대조자료 미확인",
+      "candidate_notices": [],
+      "checked_on": "2026-11-24"
+    },
+    {
+      "town_id": "mt-202603-public-009",
+      "town": "화곡6동 957",
+      "status": "고시·공람 원문과 연결",
+      "candidate_notices": [],
+      "checked_on": "2026-11-25",
+      "resolved_zone_ids": [
+        "mz-plan-614147-project-1",
+        "mz-plan-614147-project-2",
+        "mz-plan-614147-project-3",
+        "mz-plan-614147-project-4"
+      ]
+    },
+    {
+      "town_id": "mt-202603-public-011",
+      "town": "면목3·8동 44-6",
+      "status": "고시·공람 원문과 연결",
+      "candidate_notices": [],
+      "checked_on": "2026-11-25",
+      "resolved_zone_ids": [
+        "mz-notice-public-011-a1"
+      ]
+    },
+    {
+      "town_id": "mt-202603-public-013",
+      "town": "중화1동 4-30",
+      "status": "고시·공람 원문과 연결",
+      "candidate_notices": [],
+      "checked_on": "2026-11-25",
+      "resolved_zone_ids": [
+        "mz-plan-587169-project-1",
+        "mz-plan-587169-project-2",
+        "mz-plan-587169-project-3",
+        "mz-plan-587169-project-4"
+      ]
+    },
+    {
+      "town_id": "mt-202603-public-014",
+      "town": "망우3동 427-5",
+      "status": "고시·공람 원문과 연결",
+      "candidate_notices": [],
+      "checked_on": "2026-11-25",
+      "resolved_zone_ids": [
+        "mz-plan-584263-a1",
+        "mz-plan-584263-a2",
+        "mz-plan-584263-a3",
+        "mz-plan-584263-a4",
+        "mz-plan-584263-a5",
+        "mz-plan-584263-a6",
+        "mz-plan-584263-b1"
+      ]
+    },
+    {
+      "town_id": "mt-202603-public-020",
+      "town": "묵2동 243-7",
+      "status": "개별 구역·대표 지번 대조자료 미확인",
+      "candidate_notices": [],
+      "checked_on": "2026-11-24"
+    },
+    {
+      "town_id": "mt-202603-public-021",
+      "town": "중화2동 299-8",
+      "status": "개별 구역·대표 지번 대조자료 미확인",
+      "candidate_notices": [],
+      "checked_on": "2026-11-24"
+    },
+    {
+      "town_id": "mt-202603-public-023",
+      "town": "면목3·8동 453-1",
+      "status": "고시·공람 원문과 연결",
+      "candidate_notices": [],
+      "checked_on": "2026-11-25",
+      "resolved_zone_ids": [
+        "mz-plan-645351-a1",
+        "mz-plan-645351-a2",
+        "mz-plan-645351-a3",
+        "mz-plan-645351-a4",
+        "mz-plan-645351-a5"
+      ]
+    },
+    {
+      "town_id": "mt-202603-public-026",
+      "town": "시흥5동 922-61",
+      "status": "고시·공람 원문과 연결",
+      "candidate_notices": [],
+      "checked_on": "2026-11-25",
+      "resolved_zone_ids": [
+        "mz-notice-public-026-a-1",
+        "mz-notice-public-026-a-2",
+        "mz-notice-public-026-a-3",
+        "mz-notice-public-026-a-4",
+        "mz-notice-public-026-a-5",
+        "mz-notice-public-026-a-6",
+        "mz-notice-public-026-a-7",
+        "mz-notice-public-026-a-8"
+      ]
+    },
+    {
+      "town_id": "mt-202603-public-036",
+      "town": "번동 411",
+      "status": "개별 구역·대표 지번 대조자료 미확인",
+      "candidate_notices": [],
+      "checked_on": "2026-11-24"
+    },
+    {
+      "town_id": "mt-202603-public-037",
+      "town": "수유동 52-1",
+      "status": "고시·공람 원문과 연결",
+      "candidate_notices": [],
+      "checked_on": "2026-11-25",
+      "resolved_zone_ids": [
+        "mz-plan-619723-a1",
+        "mz-plan-619723-a2"
+      ]
+    },
+    {
+      "town_id": "mt-202603-public-038",
+      "town": "수유동 392-9",
+      "status": "개별 구역·대표 지번 대조자료 미확인",
+      "candidate_notices": [],
+      "checked_on": "2026-11-24"
+    },
+    {
+      "town_id": "mt-202603-public-039",
+      "town": "수유동 141",
+      "status": "개별 구역·대표 지번 대조자료 미확인",
+      "candidate_notices": [],
+      "checked_on": "2026-11-24"
+    },
+    {
+      "town_id": "mt-202603-public-040",
+      "town": "번동 469",
+      "status": "개별 구역·대표 지번 대조자료 미확인",
+      "candidate_notices": [],
+      "checked_on": "2026-11-24"
+    },
+    {
+      "town_id": "mt-202603-public-041",
+      "town": "수유동 31-10",
+      "status": "개별 구역·대표 지번 대조자료 미확인",
+      "candidate_notices": [],
+      "checked_on": "2026-11-24"
+    },
+    {
+      "town_id": "mt-202603-public-043",
+      "town": "응봉동 265",
+      "status": "개별 구역·대표 지번 대조자료 미확인",
+      "candidate_notices": [],
+      "checked_on": "2026-11-24"
+    },
+    {
+      "town_id": "mt-202603-public-046",
+      "town": "개봉동 270-38",
+      "status": "고시·공람 원문과 연결",
+      "candidate_notices": [],
+      "checked_on": "2026-11-25",
+      "resolved_zone_ids": [
+        "mz-plan-public-046-a-1",
+        "mz-plan-public-046-a-2"
+      ]
+    },
+    {
+      "town_id": "mt-202603-public-048",
+      "town": "개봉동 20",
+      "status": "개별 구역·대표 지번 대조자료 미확인",
+      "candidate_notices": [],
+      "checked_on": "2026-11-24"
+    },
+    {
+      "town_id": "mt-202603-public-051",
+      "town": "쌍문동 524-87",
+      "status": "고시·공람 원문과 연결",
+      "candidate_notices": [],
+      "checked_on": "2026-11-25",
+      "resolved_zone_ids": [
+        "mz-plan-596685-2-1",
+        "mz-plan-596685-2-2",
+        "mz-plan-596685-2-3",
+        "mz-plan-596685-2-4",
+        "mz-plan-596685-2-5"
+      ]
+    },
+    {
+      "town_id": "mt-202603-public-052",
+      "town": "쌍문동 494-22",
+      "status": "고시·공람 원문과 연결",
+      "candidate_notices": [],
+      "checked_on": "2026-11-25",
+      "resolved_zone_ids": [
+        "mz-plan-596684-1-1",
+        "mz-plan-596684-1-2"
+      ]
+    },
+    {
+      "town_id": "mt-202603-public-054",
+      "town": "쌍문1동 460",
+      "status": "고시·공람 원문과 연결",
+      "candidate_notices": [],
+      "checked_on": "2026-11-25",
+      "resolved_zone_ids": [
+        "mz-plan-610051-a-1",
+        "mz-plan-610051-a-2",
+        "mz-plan-610051-a-3",
+        "mz-plan-610051-a-4"
+      ]
+    },
+    {
+      "town_id": "mt-202603-public-056",
+      "town": "둔촌동 77-41",
+      "status": "고시·공람 원문과 연결",
+      "candidate_notices": [],
+      "checked_on": "2026-11-25",
+      "resolved_zone_ids": [
+        "mz-plan-public-056-a-1",
+        "mz-plan-public-056-a-2",
+        "mz-plan-public-056-b-1"
+      ]
+    },
+    {
+      "town_id": "mt-202603-public-057",
+      "town": "천호동 113-2",
+      "status": "개별 구역·대표 지번 대조자료 미확인",
+      "candidate_notices": [],
+      "checked_on": "2026-11-24"
+    },
+    {
+      "town_id": "mt-202603-public-059",
+      "town": "사당동 202-29",
+      "status": "개별 구역·대표 지번 대조자료 미확인",
+      "candidate_notices": [],
+      "checked_on": "2026-11-24"
+    },
+    {
+      "town_id": "mt-202603-public-061",
+      "town": "상도동 279",
+      "status": "개별 구역·대표 지번 대조자료 미확인",
+      "candidate_notices": [],
+      "checked_on": "2026-11-24"
+    },
+    {
+      "town_id": "mt-202603-public-063",
+      "town": "거여동 555",
+      "status": "개별 구역·대표 지번 대조자료 미확인",
+      "candidate_notices": [],
+      "checked_on": "2026-11-24"
+    },
+    {
+      "town_id": "mt-202603-public-068",
+      "town": "목4동 724-1",
+      "status": "개별 구역·대표 지번 대조자료 미확인",
+      "candidate_notices": [],
+      "checked_on": "2026-11-24"
+    },
+    {
+      "town_id": "mt-202603-public-069",
+      "town": "목2동 231-27",
+      "status": "개별 구역·대표 지번 대조자료 미확인",
+      "candidate_notices": [],
+      "checked_on": "2026-11-24"
+    },
+    {
+      "town_id": "mt-202603-public-071",
+      "town": "불광동 170",
+      "status": "개별 구역·대표 지번 대조자료 미확인",
+      "candidate_notices": [],
+      "checked_on": "2026-11-24"
+    },
+    {
+      "town_id": "mt-202603-public-073",
+      "town": "청룡동 1535",
+      "status": "고시·공람 원문과 연결",
+      "candidate_notices": [],
+      "checked_on": "2026-11-25",
+      "resolved_zone_ids": [
+        "mz-plan-public-073-a1",
+        "mz-plan-public-073-b1",
+        "mz-plan-public-073-b2",
+        "mz-plan-public-073-b3"
+      ]
+    },
+    {
+      "town_id": "mt-202603-public-074",
+      "town": "성현동 1021",
+      "status": "개별 구역·대표 지번 대조자료 미확인",
+      "candidate_notices": [],
+      "checked_on": "2026-11-24"
+    },
+    {
+      "town_id": "mt-202603-public-075",
+      "town": "은천동 635-540",
+      "status": "개별 구역·대표 지번 대조자료 미확인",
+      "candidate_notices": [],
+      "checked_on": "2026-11-24"
+    },
+    {
+      "town_id": "mt-202603-public-076",
+      "town": "은천동 938-5",
+      "status": "개별 구역·대표 지번 대조자료 미확인",
+      "candidate_notices": [],
+      "checked_on": "2026-11-24"
+    },
+    {
+      "town_id": "mt-202603-public-078",
+      "town": "자양1동 799",
+      "status": "개별 구역·대표 지번 대조자료 미확인",
+      "candidate_notices": [],
+      "checked_on": "2026-11-24"
+    },
+    {
+      "town_id": "mt-202603-public-081",
+      "town": "양재2동 374",
+      "status": "개별 구역·대표 지번 대조자료 미확인",
+      "candidate_notices": [],
+      "checked_on": "2026-11-24"
+    },
+    {
+      "town_id": "mt-202603-public-082",
+      "town": "양재2동 382",
+      "status": "개별 구역·대표 지번 대조자료 미확인",
+      "candidate_notices": [],
+      "checked_on": "2026-11-24"
+    },
+    {
+      "town_id": "mt-202603-public-087",
+      "town": "일원동 619-641",
+      "status": "개별 구역·대표 지번 대조자료 미확인",
+      "candidate_notices": [],
+      "checked_on": "2026-11-24"
+    },
+    {
+      "town_id": "mt-202603-public-088",
+      "town": "답십리동 489",
+      "status": "개별 구역·대표 지번 대조자료 미확인",
+      "candidate_notices": [],
+      "checked_on": "2026-11-24"
+    },
+    {
+      "town_id": "mt-202603-resident-001",
+      "town": "숭인동 61",
+      "status": "개별 구역·대표 지번 대조자료 미확인",
+      "candidate_notices": [],
+      "checked_on": "2026-11-24"
+    },
+    {
+      "town_id": "mt-202603-resident-003",
+      "town": "금호동1가 129",
+      "status": "개별 구역·대표 지번 대조자료 미확인",
+      "candidate_notices": [],
+      "checked_on": "2026-11-24"
+    },
+    {
+      "town_id": "mt-202603-resident-007",
+      "town": "광장동 264-1",
+      "status": "개별 구역·대표 지번 대조자료 미확인",
+      "candidate_notices": [],
+      "checked_on": "2026-11-24"
+    },
+    {
+      "town_id": "mt-202603-resident-008",
+      "town": "구의3동 587-58",
+      "status": "고시·공람 원문과 연결",
+      "candidate_notices": [],
+      "checked_on": "2026-11-25",
+      "resolved_zone_ids": [
+        "mz-plan-644471-a-1",
+        "mz-plan-644471-a-2"
+      ]
+    },
+    {
+      "town_id": "mt-202603-resident-010",
+      "town": "망우동 509",
+      "status": "개별 구역·대표 지번 대조자료 미확인",
+      "candidate_notices": [],
+      "checked_on": "2026-11-24"
+    },
+    {
+      "town_id": "mt-202603-resident-013",
+      "town": "정릉동 226-1",
+      "status": "개별 구역·대표 지번 대조자료 미확인",
+      "candidate_notices": [],
+      "checked_on": "2026-11-24"
+    },
+    {
+      "town_id": "mt-202603-resident-014",
+      "town": "정릉동 199-1",
+      "status": "개별 구역·대표 지번 대조자료 미확인",
+      "candidate_notices": [],
+      "checked_on": "2026-11-24"
+    },
+    {
+      "town_id": "mt-202603-resident-015",
+      "town": "미아동 791-1134",
+      "status": "개별 구역·대표 지번 대조자료 미확인",
+      "candidate_notices": [],
+      "checked_on": "2026-11-24"
+    },
+    {
+      "town_id": "mt-202603-resident-019",
+      "town": "연희동 520",
+      "status": "개별 구역·대표 지번 대조자료 미확인",
+      "candidate_notices": [],
+      "checked_on": "2026-11-24"
+    },
+    {
+      "town_id": "mt-202603-resident-021",
+      "town": "망원동 464-1",
+      "status": "개별 구역·대표 지번 대조자료 미확인",
+      "candidate_notices": [],
+      "checked_on": "2026-11-24"
+    },
+    {
+      "town_id": "mt-202603-resident-022",
+      "town": "목동 644-1",
+      "status": "개별 구역·대표 지번 대조자료 미확인",
+      "candidate_notices": [],
+      "checked_on": "2026-11-24"
+    },
+    {
+      "town_id": "mt-202603-resident-023",
+      "town": "시흥3동 972",
+      "status": "개별 구역·대표 지번 대조자료 미확인",
+      "candidate_notices": [],
+      "checked_on": "2026-11-24"
+    },
+    {
+      "town_id": "mt-202603-resident-024",
+      "town": "동작동 102-8",
+      "status": "개별 구역·대표 지번 대조자료 미확인",
+      "candidate_notices": [],
+      "checked_on": "2026-11-24"
+    },
+    {
+      "town_id": "mt-202603-resident-026",
+      "town": "우면동 2",
+      "status": "개별 구역·대표 지번 대조자료 미확인",
+      "candidate_notices": [],
+      "checked_on": "2026-11-24"
+    },
+    {
+      "town_id": "mt-202603-resident-027",
+      "town": "천호동 338번지",
+      "status": "고시·공람 원문과 연결",
+      "candidate_notices": [],
+      "checked_on": "2026-11-25",
+      "resolved_zone_ids": [
+        "mz-notice-resident-027-a1"
+      ]
+    },
+    {
+      "town_id": "mt-202603-resident-028",
+      "town": "하월곡동 40-107",
+      "status": "개별 구역·대표 지번 대조자료 미확인",
+      "candidate_notices": [],
+      "checked_on": "2026-11-24"
+    },
+    {
+      "town_id": "mt-202603-resident-029",
+      "town": "장위동 219-15",
+      "status": "개별 구역·대표 지번 대조자료 미확인",
+      "candidate_notices": [],
+      "checked_on": "2026-11-24"
+    },
+    {
+      "town_id": "mt-202603-resident-030",
+      "town": "삼선동3가 42-7",
+      "status": "개별 구역·대표 지번 대조자료 미확인",
+      "candidate_notices": [],
+      "checked_on": "2026-11-24"
+    },
+    {
+      "town_id": "mt-202603-resident-031",
+      "town": "면목동 127-26",
+      "status": "개별 구역·대표 지번 대조자료 미확인",
+      "candidate_notices": [],
+      "checked_on": "2026-11-24"
+    },
+    {
+      "town_id": "mt-202603-resident-032",
+      "town": "응암동 227",
+      "status": "개별 구역·대표 지번 대조자료 미확인",
+      "candidate_notices": [],
+      "checked_on": "2026-11-24"
+    },
+    {
+      "town_id": "mt-202603-resident-033",
+      "town": "면목동 377-4",
+      "status": "개별 구역·대표 지번 대조자료 미확인",
+      "candidate_notices": [],
+      "checked_on": "2026-11-24"
+    },
+    {
+      "town_id": "mt-202603-resident-034",
+      "town": "서초동 1506-6",
+      "status": "개별 구역·대표 지번 대조자료 미확인",
+      "candidate_notices": [],
+      "checked_on": "2026-11-24"
+    },
+    {
+      "town_id": "mt-202603-resident-035",
+      "town": "장위동 65-107",
+      "status": "개별 구역·대표 지번 대조자료 미확인",
+      "candidate_notices": [],
+      "checked_on": "2026-11-24"
+    },
+    {
+      "town_id": "mt-202603-resident-036",
+      "town": "자양2동 593",
+      "status": "개별 구역·대표 지번 대조자료 미확인",
+      "candidate_notices": [],
+      "checked_on": "2026-11-24"
+    },
+    {
+      "town_id": "mt-202603-resident-037",
+      "town": "사당동 449",
+      "status": "개별 구역·대표 지번 대조자료 미확인",
+      "candidate_notices": [],
+      "checked_on": "2026-11-24"
+    },
+    {
+      "town_id": "mt-202603-resident-038",
+      "town": "잠실동 329",
+      "status": "개별 구역·대표 지번 대조자료 미확인",
+      "candidate_notices": [],
+      "checked_on": "2026-11-24"
+    },
+    {
+      "town_id": "mt-202603-resident-039",
+      "town": "신월동 480-1",
+      "status": "개별 구역·대표 지번 대조자료 미확인",
+      "candidate_notices": [],
+      "checked_on": "2026-11-24"
+    },
+    {
+      "town_id": "mt-202603-resident-040",
+      "town": "삼성동 84",
+      "status": "개별 구역·대표 지번 대조자료 미확인",
+      "candidate_notices": [],
+      "checked_on": "2026-11-24"
+    },
+    {
+      "town_id": "mt-202603-resident-041",
+      "town": "개봉2동 304",
+      "status": "개별 구역·대표 지번 대조자료 미확인",
+      "candidate_notices": [],
+      "checked_on": "2026-11-24"
+    },
+    {
+      "town_id": "mt-202603-resident-042",
+      "town": "개봉2동 305",
+      "status": "개별 구역·대표 지번 대조자료 미확인",
+      "candidate_notices": [],
+      "checked_on": "2026-11-24"
+    },
+    {
+      "town_id": "mt-202603-resident-043",
+      "town": "구의3동 224-54",
+      "status": "개별 구역·대표 지번 대조자료 미확인",
+      "candidate_notices": [],
+      "checked_on": "2026-11-24"
+    },
+    {
+      "town_id": "mt-202603-resident-044",
+      "town": "자양동 663",
+      "status": "개별 구역·대표 지번 대조자료 미확인",
+      "candidate_notices": [],
+      "checked_on": "2026-11-24"
+    },
+    {
+      "town_id": "mt-2026-extra-001",
+      "town": "양재동 77",
+      "status": "개별 구역·대표 지번 대조자료 미확인",
+      "candidate_notices": [],
+      "checked_on": "2026-11-24"
+    },
+    {
+      "town_id": "mt-2026-extra-002",
+      "town": "신창동 76-1",
+      "status": "개별 구역·대표 지번 대조자료 미확인",
+      "candidate_notices": [],
+      "checked_on": "2026-11-24"
+    },
+    {
+      "town_id": "mt-2026-extra-003",
+      "town": "노량진동 84-24",
+      "status": "개별 구역·대표 지번 대조자료 미확인",
+      "candidate_notices": [],
+      "checked_on": "2026-11-24"
+    },
+    {
+      "town_id": "mt-2026-extra-004",
+      "town": "신림동 661-2",
+      "status": "개별 구역·대표 지번 대조자료 미확인",
+      "candidate_notices": [],
+      "checked_on": "2026-11-24"
+    },
+    {
+      "town_id": "mt-2026-extra-005",
+      "town": "방이동 162",
+      "status": "개별 구역·대표 지번 대조자료 미확인",
+      "candidate_notices": [],
+      "checked_on": "2026-11-24"
+    },
+    {
+      "town_id": "mt-2026-extra-006",
+      "town": "석관동 207-1",
+      "status": "개별 구역·대표 지번 대조자료 미확인",
+      "candidate_notices": [],
+      "checked_on": "2026-11-24"
+    },
+    {
+      "town_id": "mt-2026-extra-007",
+      "town": "암사동 495",
+      "status": "개별 구역·대표 지번 대조자료 미확인",
+      "candidate_notices": [],
+      "checked_on": "2026-11-24"
+    }
+  ],
+  "stage_identity_review": [
+    {
+      "zone_id": "mz-plan-584564-1144010800105350002",
+      "source_feature_id": "11000UQ120PS202505310568",
+      "reason": "대장 사업의 범위와 고시 구역 동일성 재확인",
+      "evidence": {
+        "kind": "seoul_small_housing_register",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+        "source_as_of": "2026-10-13",
+        "checked_on": "2026-11-24",
+        "row_id": "8376.00",
+        "address": "대흥동 535-2번지 일대",
+        "pnu": "1144010800105350002",
+        "source_feature_id": "11000UQ120PS202505310568",
+        "parent_overlap_ratio": 0.99984
+      }
+    },
+    {
+      "zone_id": "mz-plan-584823-b2",
+      "source_feature_id": "11000UQ120PS202505310361",
+      "reason": "대장 사업의 범위와 고시 구역 동일성 재확인",
+      "evidence": {
+        "kind": "seoul_small_housing_register",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+        "source_as_of": "2026-10-13",
+        "checked_on": "2026-11-24",
+        "row_id": "8287.00",
+        "address": "상계2동 387-73외 75필지",
+        "pnu": "1135010500103870073",
+        "source_feature_id": "11000UQ120PS202505310361",
+        "parent_overlap_ratio": 0.99952
+      }
+    },
+    {
+      "zone_id": "mz-plan-584823-b3",
+      "source_feature_id": "11000UQ120PS202505310364",
+      "reason": "대장 사업의 범위와 고시 구역 동일성 재확인",
+      "evidence": {
+        "kind": "seoul_small_housing_register",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+        "source_as_of": "2026-10-13",
+        "checked_on": "2026-11-24",
+        "row_id": "8289.00",
+        "address": "상계2동 387-114 일대",
+        "pnu": "1135010500103870114",
+        "source_feature_id": "11000UQ120PS202505310364",
+        "parent_overlap_ratio": 1.0
+      }
+    },
+    {
+      "zone_id": "mz-plan-584823-b5",
+      "source_feature_id": "11000UQ120PS202505310372",
+      "reason": "대장 사업의 범위와 고시 구역 동일성 재확인",
+      "evidence": {
+        "kind": "seoul_small_housing_register",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+        "source_as_of": "2026-10-13",
+        "checked_on": "2026-11-24",
+        "row_id": "8298.00",
+        "address": "상계2동 188-9번지 외 70필지",
+        "pnu": "1135010500101880009",
+        "source_feature_id": "11000UQ120PS202505310372",
+        "parent_overlap_ratio": 0.99999
+      }
+    },
+    {
+      "zone_id": "mz-plan-587121-a-2",
+      "source_feature_id": "11000UQ120PS202505310576",
+      "reason": "대장 사업의 범위와 고시 구역 동일성 재확인",
+      "evidence": {
+        "kind": "seoul_small_housing_register",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+        "source_as_of": "2026-10-13",
+        "checked_on": "2026-11-24",
+        "row_id": "8380.00",
+        "address": "망원동 453-44번지 일대",
+        "pnu": "1144012300104530044",
+        "source_feature_id": "11000UQ120PS202505310576",
+        "parent_overlap_ratio": 0.99962
+      }
+    },
+    {
+      "zone_id": "mz-plan-594346-a-2",
+      "source_feature_id": "11000UQ120PS202505310242",
+      "reason": "대장 사업의 범위와 고시 구역 동일성 재확인",
+      "evidence": {
+        "kind": "seoul_small_housing_register",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+        "source_as_of": "2026-10-13",
+        "checked_on": "2026-11-24",
+        "row_id": "8276.00",
+        "address": "시흥3동 951 일대",
+        "pnu": "1154510300109510000",
+        "source_feature_id": "11000UQ120PS202505310242",
+        "parent_overlap_ratio": 0.99999
+      }
+    },
+    {
+      "zone_id": "mz-plan-594346-a-3",
+      "source_feature_id": "11000UQ120PS202505310244",
+      "reason": "대장 사업의 범위와 고시 구역 동일성 재확인",
+      "evidence": {
+        "kind": "seoul_small_housing_register",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+        "source_as_of": "2026-10-13",
+        "checked_on": "2026-11-24",
+        "row_id": "8278.00",
+        "address": "시흥3동 948 일대",
+        "pnu": "1154510300109480000",
+        "source_feature_id": "11000UQ120PS202505310244",
+        "parent_overlap_ratio": 1.0
+      }
+    },
+    {
+      "zone_id": "mz-plan-594346-a-4",
+      "source_feature_id": "11000UQ120PS202505310243",
+      "reason": "대장 사업의 범위와 고시 구역 동일성 재확인",
+      "evidence": {
+        "kind": "seoul_small_housing_register",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+        "source_as_of": "2026-10-13",
+        "checked_on": "2026-11-24",
+        "row_id": "8277.00",
+        "address": "시흥3동 959 일대",
+        "pnu": "1154510300109590000",
+        "source_feature_id": "11000UQ120PS202505310243",
+        "parent_overlap_ratio": 1.0
+      }
+    },
+    {
+      "zone_id": "mz-plan-594346-a-5",
+      "source_feature_id": "11000UQ120PS202505310245",
+      "reason": "대장 사업의 범위와 고시 구역 동일성 재확인",
+      "evidence": {
+        "kind": "seoul_small_housing_register",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+        "source_as_of": "2026-10-13",
+        "checked_on": "2026-11-24",
+        "row_id": "8279.00",
+        "address": "시흥3동 957 일대",
+        "pnu": "1154510300109570000",
+        "source_feature_id": "11000UQ120PS202505310245",
+        "parent_overlap_ratio": 0.99999
+      }
+    },
+    {
+      "zone_id": "mz-plan-594579-a1",
+      "source_feature_id": "11000UQ120PS202505310604",
+      "reason": "대장 사업의 범위와 고시 구역 동일성 재확인",
+      "evidence": {
+        "kind": "seoul_small_housing_register",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+        "source_as_of": "2026-10-13",
+        "checked_on": "2026-11-24",
+        "row_id": "8598.00",
+        "address": "신월3동 163-1 외 94필지",
+        "pnu": "1147010300101630001",
+        "source_feature_id": "11000UQ120PS202505310604",
+        "parent_overlap_ratio": 1.0
+      }
+    },
+    {
+      "zone_id": "mz-plan-594579-a3",
+      "source_feature_id": "11000UQ120PS202505310605",
+      "reason": "대장 사업의 범위와 고시 구역 동일성 재확인",
+      "evidence": {
+        "kind": "seoul_small_housing_register",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+        "source_as_of": "2026-10-13",
+        "checked_on": "2026-11-24",
+        "row_id": "8600.00",
+        "address": "신월3동 183-1 외 98필지",
+        "pnu": "1147010300101830001",
+        "source_feature_id": "11000UQ120PS202505310605",
+        "parent_overlap_ratio": 1.0
+      }
+    },
+    {
+      "zone_id": "mz-plan-601717-a1",
+      "source_feature_id": "11000UQ120PS202505310254",
+      "reason": "대장 사업의 범위와 고시 구역 동일성 재확인",
+      "evidence": {
+        "kind": "seoul_small_housing_register",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+        "source_as_of": "2026-10-13",
+        "checked_on": "2026-11-24",
+        "row_id": "8651.00",
+        "address": "대조동 208-5번지 일대",
+        "pnu": "1138010600102080005",
+        "source_feature_id": "11000UQ120PS202505310254",
+        "parent_overlap_ratio": 0.99994
+      }
+    },
+    {
+      "zone_id": "mz-plan-601717-a2",
+      "source_feature_id": "11000UQ120PS202505310255",
+      "reason": "대장 사업의 범위와 고시 구역 동일성 재확인",
+      "evidence": {
+        "kind": "seoul_small_housing_register",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+        "source_as_of": "2026-10-13",
+        "checked_on": "2026-11-24",
+        "row_id": "8652.00",
+        "address": "대조동 92-5번지 일대",
+        "pnu": "1138010600100920005",
+        "source_feature_id": "11000UQ120PS202505310255",
+        "parent_overlap_ratio": 0.99997
+      }
+    },
+    {
+      "zone_id": "mz-plan-601717-a3",
+      "source_feature_id": "11000UQ120PS202505310249",
+      "reason": "대장 사업의 범위와 고시 구역 동일성 재확인",
+      "evidence": {
+        "kind": "seoul_small_housing_register",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+        "source_as_of": "2026-10-13",
+        "checked_on": "2026-11-24",
+        "row_id": "8645.00",
+        "address": "대조동 91-100번지 일대",
+        "pnu": "1138010600100910100",
+        "source_feature_id": "11000UQ120PS202505310249",
+        "parent_overlap_ratio": 1.0
+      }
+    },
+    {
+      "zone_id": "mz-plan-601822-a-1",
+      "source_feature_id": "11000UQ120PS202505310240",
+      "reason": "대장 사업의 범위와 고시 구역 동일성 재확인",
+      "evidence": {
+        "kind": "seoul_small_housing_register",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+        "source_as_of": "2026-10-13",
+        "checked_on": "2026-11-24",
+        "row_id": "8274.00",
+        "address": "시흥1동 864-1 일대",
+        "pnu": "1154510300108640001",
+        "source_feature_id": "11000UQ120PS202505310240",
+        "parent_overlap_ratio": 1.0
+      }
+    },
+    {
+      "zone_id": "mz-plan-601822-a-2",
+      "source_feature_id": "11000UQ120PS202505310239",
+      "reason": "대장 사업의 범위와 고시 구역 동일성 재확인",
+      "evidence": {
+        "kind": "seoul_small_housing_register",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+        "source_as_of": "2026-10-13",
+        "checked_on": "2026-11-24",
+        "row_id": "8273.00",
+        "address": "시흥1동 859 일대",
+        "pnu": "1154510300108590000",
+        "source_feature_id": "11000UQ120PS202505310239",
+        "parent_overlap_ratio": 1.0
+      }
+    },
+    {
+      "zone_id": "mz-plan-601822-a-3",
+      "source_feature_id": "11000UQ120PS202505310241",
+      "reason": "대장 사업의 범위와 고시 구역 동일성 재확인",
+      "evidence": {
+        "kind": "seoul_small_housing_register",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+        "source_as_of": "2026-10-13",
+        "checked_on": "2026-11-24",
+        "row_id": "8275.00",
+        "address": "시흥1동 858 일대",
+        "pnu": "1154510300108580000",
+        "source_feature_id": "11000UQ120PS202505310241",
+        "parent_overlap_ratio": 1.0
+      }
+    },
+    {
+      "zone_id": "mz-plan-601972-a-1",
+      "source_feature_id": "11000UQ120PS202505310669",
+      "reason": "대장 사업의 범위와 고시 구역 동일성 재확인",
+      "evidence": {
+        "kind": "seoul_small_housing_register",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+        "source_as_of": "2026-10-13",
+        "checked_on": "2026-11-24",
+        "row_id": "8227.00",
+        "address": "고척동 241-2 외 6필지",
+        "pnu": "1153010600102410002",
+        "source_feature_id": "11000UQ120PS202505310669",
+        "parent_overlap_ratio": 0.99994
+      }
+    },
+    {
+      "zone_id": "mz-plan-607900-a4",
+      "source_feature_id": "11000UQ120PS202505310745",
+      "reason": "대장 사업의 범위와 고시 구역 동일성 재확인",
+      "evidence": {
+        "kind": "seoul_small_housing_register",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+        "source_as_of": "2026-10-13",
+        "checked_on": "2026-11-24",
+        "row_id": "8553.00",
+        "address": "석관동 332-46번지 일대",
+        "pnu": "1129013900103320046",
+        "source_feature_id": "11000UQ120PS202505310745",
+        "parent_overlap_ratio": 0.99989
+      }
+    },
+    {
+      "zone_id": "mz-plan-616239-1117011800100710000",
+      "source_feature_id": "11000UQ120PS202412014009",
+      "reason": "대장 사업의 범위와 고시 구역 동일성 재확인",
+      "evidence": {
+        "kind": "seoul_small_housing_register",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+        "source_as_of": "2026-10-13",
+        "checked_on": "2026-11-24",
+        "row_id": "8626.00",
+        "address": "원효로4가 71 일대",
+        "pnu": "1117011800100710000",
+        "source_feature_id": "11000UQ120PS202412014009",
+        "parent_overlap_ratio": 1.0
+      }
+    },
+    {
+      "zone_id": "mz-plan-628523-a-2",
+      "source_feature_id": "11000UQ120PS202505310536",
+      "reason": "대장 사업의 범위와 고시 구역 동일성 재확인",
+      "evidence": {
+        "kind": "seoul_small_housing_register",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+        "source_as_of": "2026-10-13",
+        "checked_on": "2026-11-24",
+        "row_id": "8766.00",
+        "address": "망우본동 357-1번지 일대",
+        "pnu": "1126010500103570001",
+        "source_feature_id": "11000UQ120PS202505310536",
+        "parent_overlap_ratio": 0.99997
+      }
+    },
+    {
+      "zone_id": "mz-plan-638669-a1",
+      "source_feature_id": "11000UQ120PS202505310526",
+      "reason": "대장 사업의 범위와 고시 구역 동일성 재확인",
+      "evidence": {
+        "kind": "seoul_small_housing_register",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+        "source_as_of": "2026-10-13",
+        "checked_on": "2026-11-24",
+        "row_id": "8756.00",
+        "address": "신내1동 493-13번지 일대",
+        "pnu": "1126010600104930013",
+        "source_feature_id": "11000UQ120PS202505310526",
+        "parent_overlap_ratio": 1.0
+      }
+    },
+    {
+      "zone_id": "mz-plan-638669-a2",
+      "source_feature_id": "11000UQ120PS202505310528",
+      "reason": "대장 사업의 범위와 고시 구역 동일성 재확인",
+      "evidence": {
+        "kind": "seoul_small_housing_register",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+        "source_as_of": "2026-10-13",
+        "checked_on": "2026-11-24",
+        "row_id": "8758.00",
+        "address": "신내1동 494-6번지 일대",
+        "pnu": "1126010600104940006",
+        "source_feature_id": "11000UQ120PS202505310528",
+        "parent_overlap_ratio": 1.0
+      }
+    },
+    {
+      "zone_id": "mz-plan-645471-a-1",
+      "source_feature_id": "11000UQ120PS202505310704",
+      "reason": "대장 사업의 범위와 고시 구역 동일성 재확인",
+      "evidence": {
+        "kind": "seoul_small_housing_register",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+        "source_as_of": "2026-10-13",
+        "checked_on": "2026-11-24",
+        "row_id": "8494.00",
+        "address": "정릉동 559-43 일대",
+        "pnu": "1129013300105590043",
+        "source_feature_id": "11000UQ120PS202505310704",
+        "parent_overlap_ratio": 0.99049
+      }
+    },
+    {
+      "zone_id": "mz-plan-584518-a-1",
+      "source_feature_id": "11000UQ120PS202505319038",
+      "reason": "대장 사업의 범위와 고시 구역 동일성 재확인",
+      "evidence": {
+        "kind": "seoul_small_housing_register",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+        "source_as_of": "2026-10-13",
+        "checked_on": "2026-11-24",
+        "row_id": "8399.00",
+        "address": "성산동 165-72번지 일대",
+        "pnu": "1144012500101650072",
+        "source_feature_id": "11000UQ120PS202505319038",
+        "parent_overlap_ratio": 1.0
+      }
+    },
+    {
+      "zone_id": "mz-plan-584518-a-2",
+      "source_feature_id": "11000UQ120PS202505310596",
+      "reason": "대장 사업의 범위와 고시 구역 동일성 재확인",
+      "evidence": {
+        "kind": "seoul_small_housing_register",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+        "source_as_of": "2026-10-13",
+        "checked_on": "2026-11-24",
+        "row_id": "8405.00",
+        "address": "성산동 200-81번지 일대",
+        "pnu": "1144012500102000081",
+        "source_feature_id": "11000UQ120PS202505310596",
+        "parent_overlap_ratio": 0.99981
+      }
+    },
+    {
+      "zone_id": "mz-plan-584518-a-4",
+      "source_feature_id": "11000UQ120PS202505310597",
+      "reason": "대장 사업의 범위와 고시 구역 동일성 재확인",
+      "evidence": {
+        "kind": "seoul_small_housing_register",
+        "source_url": "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+        "source_as_of": "2026-10-13",
+        "checked_on": "2026-11-24",
+        "row_id": "8406.00",
+        "address": "성산동 200-258번지 일대",
+        "pnu": "1144012500102000258",
+        "source_feature_id": "11000UQ120PS202505310597",
+        "parent_overlap_ratio": 1.0
+      }
+    },
+    {
+      "zone_id": "mz-seoul-11500uq120ps202603130003",
+      "reason": "변경 전 A2-3(366-38)에 변경 후 A2-3(354-128)의 추진 단계를 연결했던 기록을 해제했다.",
+      "previously_linked_source": "https://www.gangseo.seoul.kr/build/bui070102/322507?srchCtgry=2",
+      "evidence": {
+        "kind": "management_plan_scope_review",
+        "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=645315",
+        "source_title": "서울시 제2026-233호 변경고시",
+        "source_as_of": "2026-04-30",
+        "checked_on": "2026-11-26",
+        "note": "이 지도에 수록한 A2-3은 화곡동 366-38의 변경 전 구역이다. 강서구가 사업인가 진행 중으로 표시한 곳은 변경 후 A2-3인 354-128이다. 해당 지번의 대표점은 이 참고 경계 밖에 있어 이전 구역의 단계는 미확인으로 정정했다.",
+        "supporting_sources": [
+          {
+            "url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=584450",
+            "title": "변경 전 관리계획"
+          },
+          {
+            "url": "https://www.gangseo.seoul.kr/build/bui070102/324767",
+            "title": "강서구 변경 후 추진현황"
+          },
+          {
+            "url": "https://data.seoul.go.kr/dataList/OA-23113/S/1/datasetView.do",
+            "title": "서울시 소규모정비사업 대장"
+          }
+        ],
+        "state": "scope_mismatch"
+      }
+    }
+  ],
+  "parcel_union_review": [
+    {
+      "zone_id": "mz-plan-584443-a2",
+      "official_notice": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=644883",
+      "checked_on": "2026-11-24",
+      "source_url": "https://land.seoul.go.kr/land/map/land/map.do",
+      "evidence": "notice_parcel_list_vs_municipal_geometry",
+      "parcel_count": 77,
+      "source_as_of": "2026-10-29",
+      "parcel_area_sqm": 15927.2,
+      "notice_area_sqm": 13237.5,
+      "reason": "필지 전체 합산 면적과 인가 면적 불일치",
+      "resolution": "인가 고시도에 표시된 사업시행구역을 참고 경계로 수록",
+      "boundary_source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=644883"
+    },
+    {
+      "zone_id": "mz-plan-584443-a3",
+      "official_notice": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=640660",
+      "checked_on": "2026-11-24",
+      "source_url": "https://land.seoul.go.kr/land/map/land/map.do",
+      "evidence": "notice_parcel_list_vs_municipal_geometry",
+      "parcel_count": 142,
+      "source_as_of": "2026-08-13",
+      "parcel_area_sqm": 27661.8,
+      "notice_area_sqm": 23770.3,
+      "reason": "필지 전체 합산 면적과 인가 면적 불일치",
+      "resolution": "인가 고시도에 표시된 사업시행구역을 참고 경계로 수록",
+      "boundary_source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=640660"
+    }
+  ],
+  "contractor_scope_review": [
+    {
+      "zone_ids": [
+        "mz-plan-607900-a2",
+        "mz-plan-607900-a3",
+        "mz-plan-607900-a4"
+      ],
+      "project_names": [
+        "석관1-2구역",
+        "석관1-7구역"
+      ],
+      "source_url": "https://www.hanwha.co.kr/newsroom/media_center/news/news_view.do?seq=16446",
+      "source_as_of": "2026-11-19",
+      "checked_on": "2026-11-24",
+      "kind": "company_announcement",
+      "reason": "기존 조합명 기준 한화 수주 확인. 관리계획 변경·통합 후 A2~A4 각각의 계약 적용 범위 대조 필요."
+    },
+    {
+      "zone_ids": [],
+      "town_id": "mt-202603-public-002",
+      "project_names": [
+        "화곡1동 354 모아타운 제2-4구역"
+      ],
+      "source_url": "https://news.nate.com/view/20260824n11563",
+      "source_as_of": "2026-08-24",
+      "checked_on": "2026-11-24",
+      "kind": "reported_selection",
+      "reason": "제일건설 선정 보도 확인. 현 스냅샷의 A2-1~A2-3과 별도의 조합으로 동일한 구역 레코드가 없음."
+    }
+  ],
+  "enrichment_2026_11_24": {
+    "management_plan_notices": "eum.go.kr 고시정보에서 서울특별시 「모아타운 관리계획」 고시 100건(2022-12-22~2026-10-29)을 받아 지번 대조로 78곳에 연결했습니다. 명부 지번과 고시 지번이 다른 1곳(화곡6동 957 ↔ 957-1)은 사업 면적이 같아 연결하고 사유를 필드에 남겼습니다.",
+    "land_transaction_permit": "서울부동산정보광장 토지거래허가구역 지정현황(서울시) 2026-11-03 기준 표와 서울특별시 공고 제2024-2557호 공고문을 대조해, 법정동 단위로 지정된 73곳에 지목 도로 한정 지정 기록을 추가했습니다. 사업지 개별 공고가 있는 48곳의 기록은 그대로 두었습니다.",
+    "representative_points": "2026년 9월 서울플랜+ 공간자료의 모아타운(BZ201) 2곳에서 대표점을 구했다. 화곡6동 957-1과 일원동 대청마을 북측구역은 각각 명부 면적과 공간자료 등록 면적(DGM_AR)이 일치한다. 도형 좌표로 측정한 면적은 각 대상지의 대표점 근거 필드에 기록했다. 대표 지번의 단독 필지나 사업 도형을 찾지 못한 5곳은 보류했다.",
+    "plan_zoning": "서울시보 제4016호(2024-10-17) 고시 전문의 「용도지역·용도지구의 지정 및 변경 계획(안)」표에서 쌍문동 494-22(고시 제2024-491호 107쪽)와 쌍문동 524-87(고시 제2024-492호 131쪽)의 기정·변경후 면적을 옮겼습니다. 고시 표의 사업구역 면적은 명부 면적과 차이가 있어 함께 남겼습니다. 나머지 관리계획 고시의 계획 용도지역은 eum.go.kr 첨부 PDF 내려받기가 서버 오류(HTTP 500)로 막혀 전수 파싱하지 못했습니다."
+  },
+  "resolved_notice_rows": [
+    {
+      "address": "광진구 자양1동 655",
+      "field": "land_transaction_permit",
+      "reason": "공고 대표 지번과 선정지 일대일 연결 미확인",
+      "source_url": "https://land.seoul.go.kr/land/other/downloadAppointPbancFile.do?fileUuid=59eaca13115b00d0e063621d0f8d00d01085136",
+      "town_id": "mt-2026-extra-008",
+      "resolved_on": "2026-11-25",
+      "resolution": "공고상 모아타운 후보지"
+    },
+    {
+      "address": "성북구 정릉동 266-108",
+      "field": "land_transaction_permit",
+      "reason": "공고 대표 지번과 선정지 일대일 연결 미확인",
+      "source_url": "https://land.seoul.go.kr/land/other/downloadAppointPbancFile.do?fileUuid=59eaca13115b00d0e063621d0f8d00d01085136",
+      "town_id": "mt-2026-extra-009",
+      "resolved_on": "2026-11-25",
+      "resolution": "공고상 모아타운 후보지"
+    },
+    {
+      "address": "노원구 하계동 65-1",
+      "field": "land_transaction_permit",
+      "reason": "공고 대표 지번과 선정지 일대일 연결 미확인",
+      "source_url": "https://land.seoul.go.kr/land/other/downloadAppointPbancFile.do?fileUuid=5b6e17b0aef500ece063621d0f8d00ec1085755",
+      "town_id": "mt-2026-extra-010",
+      "resolved_on": "2026-11-25",
+      "resolution": "공고상 모아타운 후보지"
+    },
+    {
+      "address": "서초구 방배동 920-1",
+      "field": "land_transaction_permit",
+      "reason": "공고 대표 지번과 선정지 일대일 연결 미확인",
+      "source_url": "https://land.seoul.go.kr/land/other/downloadAppointPbancFile.do?fileUuid=5b6e17b0aef500ece063621d0f8d00ec1085755",
+      "town_id": "mt-2026-extra-011",
+      "resolved_on": "2026-11-25",
+      "resolution": "공고상 모아타운 후보지"
+    }
+  ],
+  "conflicting_plan_totals": [
+    {
+      "town_id": "mt-202603-resident-013",
+      "kind": "conflicting_published_units",
+      "source_url": "https://event.seoul.go.kr/seoulsibo/fileDownload.do?fileName=seoulsibo_20260610160855_86574.pdf#page=185",
+      "source_as_of": "2026-06-11",
+      "checked_on": "2026-11-25",
+      "scope": "정릉동 226-1 일대",
+      "note": "2026년 3월 승인고시의 공급 합계 721세대와 두 행의 합계 779세대(574+205)가 다릅니다. 6월 변경고시는 공급계획 변경 없음으로 표기했습니다. 상세에 표시한 782세대는 2025년 심의 당시 수치입니다."
+    }
+  ]
+}

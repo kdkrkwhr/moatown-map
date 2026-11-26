@@ -9,12 +9,12 @@ function officialSources(record){
   function add(url,label){
     if(typeof url!=='string' || sources.has(url) || !URL.canParse(url))return;
     const source=new URL(url);
-    if(source.protocol==='https:' && /\.(?:go|seoul)\.kr$/.test(source.hostname)){
+    if(source.protocol==='https:' && (/\.(?:go|seoul)\.kr$/.test(source.hostname) || ['dart.fss.or.kr','kind.krx.co.kr'].includes(source.hostname))){
       sources.set(url,label || source.hostname);
     }
   }
   const evidence=record.field_evidence??{};
-  for(const e of [evidence.stage,evidence.management_plan_stage,evidence.identity,record.selection_evidence]){
+  for(const e of [evidence.stage??evidence.stage_review,evidence.selected_contractor??evidence.contractor_review,evidence.management_plan_stage,evidence.identity,record.selection_evidence]){
     if(e)add(e.source_url,e.notice_number??e.source_title);
   }
   for(const link of record.official_links??[])add(link.url,link.title);
@@ -35,6 +35,8 @@ export function projectHtml(template,town,zone,children,snapshot,root){
   const links=zone?[[projectUrl(town,null,root).pathname,town.name]]:children.map(child=>[projectUrl(town,child,root).pathname,child.name]);
   const summary='<article class="published-project"><p>'+escape(zone?town.district+' · '+town.name:town.district)+'</p><h2>'+escape(record.name)+'</h2>'
     +'<dl class="facts"><div><dt>'+(zone?'추진 단계':'관리계획 단계')+'</dt><dd>'+escape(stage)+(term?'<small>'+escape(term.summary)+'</small>':'')+'</dd></div>'
+    +(record.field_evidence?.stage_review?'<div><dt>구역 대조 결과</dt><dd>'+escape(record.field_evidence.stage_review.note)+'</dd></div>':'')
+    +(zone?'<div><dt>시공사</dt><dd>'+escape(zone.selected_contractor??(zone.field_evidence?.contractor_review?'선정 결과 미확인':'미고시'))+'</dd></div>':'')
     +'<div><dt>대표 지번</dt><dd>'+escape(zone?zone.registered_address??'미확인':town.address??town.name)+'</dd></div>'
     +'<div><dt>자료 기준일</dt><dd><time datetime="'+escape(snapshot)+'">'+escape(formatValue(snapshot,'date'))+'</time></dd></div></dl>'
     +'<h3>공식 출처</h3>'+(sources.length?list(sources):'<p>구역별 원문 미확인</p>')

@@ -1,11 +1,32 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
-import {parseLot,matchingDistricts} from '../address-reference.mjs';
+import {parseLot,matchingDistricts,positionInGeometry} from '../address-reference.mjs';
 
 const read=file=>JSON.parse(readFileSync(new URL('../moatown-data/'+file,import.meta.url),'utf8'));
 const {files,coverage}=read('latest.json');
 const towns=read(files.towns),zones=read(files.zones),index=read(files.parcel_index);
+
+test('Siheung contractor selection and contract dates belong to separate associations',()=>{
+  const a1=zones.find(z=>z.id==='mz-notice-public-026-a-1');
+  const a5=zones.find(z=>z.id==='mz-plan-601822-a-5');
+  assert.equal(a1.selected_contractor,'쌍용건설');
+  assert.equal(a1.field_evidence.selected_contractor.selection_date,'2024-04-28');
+  assert.equal(a5.selected_contractor,'신원종합개발');
+  assert.equal(a5.field_evidence.selected_contractor.contract_date,'2022-05-25');
+  assert.match(a5.field_evidence.selected_contractor.source_url,/rcpNo=20220526900050/);
+  assert.equal(a5.timeline.find(e=>e.stage==='사업시행계획인가').date,'2024-04-09');
+});
+
+test('the revised Hwagok A2-3 lot lies outside the historical zone with the same label',()=>{
+  const historical=zones.find(z=>z.id==='mz-seoul-11500uq120ps202603130003');
+  const boundary=read(files.boundaries).features.find(f=>f.properties.entity_id===historical.id);
+  const lots=read('addresses/11500.json').points['화곡동'];
+  assert.equal(positionInGeometry(lots['366-38'],boundary.geometry),'inside');
+  assert.equal(positionInGeometry(lots['354-128'],boundary.geometry),'outside');
+  assert.notEqual(historical.field_evidence.stage?.source_url,'https://www.gangseo.seoul.kr/build/bui070102/324767');
+  assert.equal(historical.field_evidence.stage_review.state,'scope_mismatch');
+});
 
 test('missing-field lists and published coverage describe the same snapshot',()=>{
   const missing=read(files.review).missing_fields;

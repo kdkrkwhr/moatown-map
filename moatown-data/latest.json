@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "snapshot_date": "2026-11-25",
+  "snapshot_date": "2026-11-26",
   "timezone": "Asia/Seoul",
   "coverage": {
     "status": "partial",
@@ -30,12 +30,12 @@
     "zone_records_with_plan_numbers": 224,
     "towns_with_management_plan_notices": 88,
     "management_plan_notice_records": 166,
-    "zones_with_contractor": 50,
+    "zones_with_contractor": 52,
     "zones_with_unit_types": 2,
     "indexed_parcels": 896467,
     "indexed_districts": 25,
     "towns_with_linked_zones": 76,
-    "zones_with_stage": 130,
+    "zones_with_stage": 129,
     "zones_with_owner_count": 84,
     "towns_with_cutoff_history": 135,
     "towns_with_single_cutoff_date": 13,
@@ -76,7 +76,7 @@
   },
   "files": {
     "towns": "snapshots/2026-11-25/towns.json",
-    "zones": "snapshots/2026-11-25/zones.json",
+    "zones": "snapshots/2026-11-26/zones.json",
     "boundaries": "snapshots/2026-11-24/boundaries.geojson",
     "excluded": "snapshots/2026-11-24/excluded.json",
     "parcel_index": "addresses/index.json",
@@ -100,7 +100,7 @@
     "sinwol_design": "plans/sinwol/design-evidence.json",
     "sinwol_layout": "plans/sinwol/a3-layout.geojson",
     "pilot_plans": "snapshots/2026-11-25/pilot-plans.json",
-    "review": "snapshots/2026-11-25/review.json",
+    "review": "snapshots/2026-11-26/review.json",
     "registry_heights": "buildings/registry-heights.json",
     "unplaced_programs": "plans/unplaced-programs.json",
     "beon_public_space": "plans/beon/public-space.geojson",
@@ -328,7 +328,7 @@
       "notice_number": "서울특별시 공고 제2026-2810호"
     }
   },
-  "checked_on": "2026-11-25",
+  "checked_on": "2026-11-26",
   "pilot_3d": {
     "town_ids": [
       "mt-202603-public-001",
@@ -540,7 +540,7 @@
     ],
     "hashes": {
       "towns": "bd49d8dbd6c6c52eaf2c1965de9b547965f1cc422ff1bf84e7c2bab1a71e3d1a",
-      "zones": "a9de03cf6ba7fff22217fd9e7d30d6946e6ea0526b92d8ce737642849da21314",
+      "zones": "d499ee372df360178fd598147e990250dd712a32a556858210499b1490c8eb76",
       "boundaries": "d5de1e504651c2703b9c08d51cb3aea9e3f856c084c47eb85c41b0ce5b412252",
       "buildings": "ace09a96ffa7fc70328ed7995791fd8d86e9ad0bffae90ee21b6cf1a13178795",
       "pilot_plans": "356e909dd659cc5046716573b8e5ef30ee1a1f14fa5b1d1297245d6389d2c633",

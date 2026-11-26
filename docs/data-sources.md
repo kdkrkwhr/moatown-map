@@ -1,5 +1,20 @@
 # 데이터 출처와 수집 범위
 
+## 2026.11.26 시공사·추진 단계 검수
+
+시공사가 비어 있던 세부구역 6곳의 대표 지번과 조합명을 구청·조합·기업공시에 대조했다. 전체 224개 세부구역에서 시공사를 확인한 곳은 50곳에서 52곳으로 늘었다. 추진 단계를 확인한 곳은 130곳에서 129곳으로 정정했다. 구역 통합 전후에 같은 번호가 다른 곳을 가리키는 사례가 1건 있었다. [11월 26일 세부구역 데이터](../moatown-data/snapshots/2026-11-26/zones.json) · [미확인 항목과 구역 대조 기록](../moatown-data/snapshots/2026-11-26/review.json)
+
+| 세부구역과 대표 지번 | 시공사 검수 결과 | 추진 단계와 근거 |
+| --- | --- | --- |
+| 시흥5동 922-61 A-1 · 시흥동 919 | 쌍용건설. 조합이 2024.04.28 시공자로 선정했다. [조합 추진경과](https://cleanup.seoul.go.kr/cafe/mainIndx/cleanup-prtnelapse/vscr.do?cafeId=545900001113T86&bsnsPk=11545-900001113) | 2026.02.26 통합심의 완료. 구청 11월 자료에서 12월 인가 접수는 향후 일정이다. [금천구 사업현황](https://www.geumcheon.go.kr/portal/rebuildWebView.do?key=4266&rebuildId=39) |
+| 시흥1동 864 A-5 · 시흥연립 | 신원종합개발. 2022.05.25 계약서의 계약 상대방과 인가 고시의 조합명이 일치한다. [도급계약 공시](https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20220526900050) | 2024.04.09 사업시행계획인가. 2026년 3분기 보고서에 이주 진행을 기재했다. [인가 고시](https://www.geumcheon.go.kr/portal/tblSeolGosiDetailView.do?key=294&notAncmtMgtNo=32038) · [분기보고서의 계약 진행 현황](https://dart.fss.or.kr/report/viewer.do?rcpNo=20261116000335&dcmNo=11657587&eleId=90&offset=816339&length=33662&dtd=dart4.xsd) |
+| 등촌2동 제1-1 · 515-8 | 선정 결과 미확인. 조합 공개 명부에서 시공자 항목을 찾지 못했다. [조합 협력업체](https://cleanup.seoul.go.kr/cafe/cleanup-entrpsinfo/execute.do?cafeId=500900001372z61) | 10월 1일 기준 사업시행계획인가 진행 중. [강서구 추진현황](https://www.gangseo.seoul.kr/build/bui070102/324767) |
+| 등촌2동 제1-3 · 515-44 | 선정 결과 미확인. 디와이건설은 조합 명부에 ‘기타’로 올라 있다. [조합 협력업체](https://cleanup.seoul.go.kr/cafe/cleanup-entrpsinfo/execute.do?cafeId=500900001301P17) | 10월 1일 기준 사업시행계획인가 진행 중. [강서구 추진현황](https://www.gangseo.seoul.kr/build/bui070102/324767) |
+| 화곡1동 A2-1 · 362-59 | 해당 사업의 선정·계약 자료 미확인. [서울시 조합 사업장 명부](https://cleanup.seoul.go.kr/cleanup/bsnssttus/lscrMainIndx.do?cpage=1&pageSize=2000) | 10월 1일 기준 사업시행계획인가 진행 중. 대표 지번은 유지됐고 지도 경계는 변경 전 계획에 해당한다. [강서구 추진현황](https://www.gangseo.seoul.kr/build/bui070102/324767) · [서울시 변경고시](https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=645315) |
+| 화곡1동 변경 전 A2-3 · 366-38 | 변경 전 구역에 적용되는 시공사 미확인. [변경 전 관리계획](https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=584450) | 기존 ‘인가 진행 중’ 표시를 정정했다. 변경고시의 A2-3은 354-128이며 그 필지 대표점은 366-38의 참고 경계 밖에 있다. [서울시 변경고시](https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=645315) · [강서구 추진현황](https://www.gangseo.seoul.kr/build/bui070102/324767) |
+
+## 2026.11.25 전체 데이터 검수
+
 2026.11.25 기준 지도에는 대상지·후보지 142곳, 세부 사업구역 224곳을 수록했다. 상세 화면의 사업성 지표는 해당 고시·공람안·사업개요의 적용 범위와 기준일을 따른다. 주택 공급표, 용도지역 결정조서, 권리산정 고시, 사업시행인가와 폐지 고시를 대조했고, 공고에 명시된 신규 후보지 4곳은 선정일을 비워 두었다. [11월 25일 검수 결과와 전후 비교](data-audit-2026-11-25.md) · [서울시보](https://event.seoul.go.kr/seoulsibo/) · [토지거래허가구역 지정현황](https://land.seoul.go.kr/land/other/appointStatusSeoul.do)
 
 세부 사업구역의 색은 각 구역 원자료의 추진 단계를 따릅니다. 확인일과 단계 변경일은 구분합니다. 번동 429-114의 통합심의 통과, 사업시행계획인가, 착공 행사 연월은 [서울시 2024년 12월 16일 발표](https://www.seoul.go.kr/news/news_report.do?nttNo=424981)에 근거한 번동 모아주택 1~5구역 공동 이력입니다. 기간은 연월 단위 차이로 계산합니다.
