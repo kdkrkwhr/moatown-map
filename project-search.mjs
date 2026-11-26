@@ -1,4 +1,4 @@
-import {dayNumber,projectEvents} from './detail-format.mjs?v=208c3fc8754e';
+import {dayNumber,projectEvents,contractorProcedure} from './detail-format.mjs?v=a65454dac88c';
 
 export const managementFilters=[
   ['selected','선정 대상지 전체'],['draft','관리계획 수립 중'],['approved','관리계획 승인'],
@@ -56,6 +56,7 @@ export function recentProjectDates(towns,groups,excluded,today){
     }
     for(const zone of groups.get(town.id)??[]){
       include(zone.id,zone.last_verified_at);
+      include(zone.id,contractorProcedure(zone)?.checked_on);
       for(const event of projectEvents(town,zone))include(zone.id,event.date);
       if(dates.has(zone.id))include(town.id,dates.get(zone.id));
     }
@@ -99,13 +100,17 @@ export function searchProjects(towns,groups,excluded,{query='',district='',plan=
         rows.push({town,association});
     }
     for(const zone of groups.get(town.id) ?? []){
-      if(!eligible(zone.selected_contractor))continue;
+      const procedure=contractorProcedure(zone);
+      if(contractor==='pending'?!procedure:!eligible(zone.selected_contractor))continue;
       if(recentDates && !recentDates.has(zone.id))continue;
       const stage=zone.stage || '미확인';
       const def=progressFilters.find(([,label])=>label===stage);
       if(progress && progress!==def?.[0])continue;
       const code=zone.drawing_code?.replace(/^([A-Z])-?(?=\d)/,'$1');
       const zoneFields=[zone.name,zone.registered_address,zone.drawing_code,code,code?.replace(/^([A-Z])(?=\d)/,'$1-'),stage,def?.[2],...contractorTerms(zone.selected_contractor)];
+      if(procedure && (!contractor || contractor==='pending')){
+        zoneFields.push(procedure.stage,...procedure.participants.flatMap(p=>[p.role,...p.names]));
+      }
       if(def && def[0]!=='unknown')zoneFields.push(stage+' 단계');
       if(stage==='사업시행계획인가')zoneFields.push('사업시행계획인가 완료','사업시행인가 완료');
       if(stage==='사업시행계획인가 진행 중')zoneFields.push('사업시행인가 진행 중');

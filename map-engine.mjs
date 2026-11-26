@@ -1,5 +1,6 @@
-import {createMarkerClusters} from './marker-clusters.mjs?v=208c3fc8754e';
-import {contractorName} from './project-search.mjs?v=208c3fc8754e';
+import {createMarkerClusters} from './marker-clusters.mjs?v=a65454dac88c';
+import {contractorName} from './project-search.mjs?v=a65454dac88c';
+import {contractorProcedure} from './detail-format.mjs?v=a65454dac88c';
 const SDK='https://oapi.map.naver.com/openapi/v3/maps.js';
 export function loadMaps(onAuthError){
   window.navermap_authFailure=onAuthError;
@@ -55,9 +56,11 @@ export function createProjectMap(m,container,{townById,zoneById,boundaries,distr
   const clusters=createMarkerClusters(m,map,container,{setVisible,padding,measuring:()=>measuring,measure,
     choose(member){if(member.district)selectDistrict(member.district);else select(member.townId,member.zoneId);}
   });
-  function markerText(text,cls,company){
+  function markerText(text,cls,record){
     const caption=node('span','map-caption '+cls,text);
-    if(company)caption.append(node('small','map-company',contractorName(company)));
+    if(record?.selected_contractor)caption.append(node('small','map-company',contractorName(record.selected_contractor)));
+    const procedure=contractorProcedure(record);
+    if(procedure)caption.append(node('small','map-procedure',procedure.stage));
     return caption;
   }
   function selectLayer(townId,zoneId){if(!measuring)select(townId,zoneId);}
@@ -77,7 +80,7 @@ export function createProjectMap(m,container,{townById,zoneById,boundaries,distr
       polygons.push(polygon);
     }
     const stage=isTown?null:zoneStage(record.stage);
-    const label=markerText(record.drawing_code??record.name,isTown?'town-caption':'zone-caption',record.selected_contractor);
+    const label=markerText(record.drawing_code??record.name,isTown?'town-caption':'zone-caption',record);
     if(stage){
       label.style.setProperty('--stage-ink',stage.ink);
       label.append(node('small','',stage.short));
@@ -92,7 +95,7 @@ export function createProjectMap(m,container,{townById,zoneById,boundaries,distr
     const point=zone.representative_point;
     if(shapes.has(zone.id) || point?.type!=='Point' || !point.coordinates?.every(Number.isFinite) || point.coordinates.length!==2)continue;
     const stage=zoneStage(zone.stage);
-    const label=markerText(zone.drawing_code??zone.name,'zone-point-caption',zone.selected_contractor);
+    const label=markerText(zone.drawing_code??zone.name,'zone-point-caption',zone);
     label.style.setProperty('--stage-ink',stage.ink);
     label.append(node('small','','대표 지번'));
     const pin=marker(ll(point.coordinates),label,110,zone.name+' · '+zone.registered_address,true);
@@ -128,7 +131,8 @@ export function createProjectMap(m,container,{townById,zoneById,boundaries,distr
   function render(){
     if(signal?.aborted)return;
     const {current,visible,visibleZones,townHits,filtered,contractor,rows}=view();
-    container.classList.toggle('contractor-map',Boolean(contractor));
+    container.classList.toggle('contractor-map',Boolean(contractor) && contractor!=='pending');
+    container.classList.toggle('procedure-map',contractor==='pending');
     if(rows!==measuredRows){clusters.resetSizes();measuredRows=rows;}
     const townCompanies=new Map();
     if(contractor)for(const {town,association} of rows){
@@ -156,7 +160,8 @@ export function createProjectMap(m,container,{townById,zoneById,boundaries,distr
         const companyLabel=label.querySelector('.map-company'),text=companies?[...companies].join(' · '):'';
         if(companyLabel && companyLabel.textContent!==text)companyLabel.textContent=text;
       }
-      const description=zone?[town.district,town.name,zone.stage,contractorName(zone.selected_contractor)].filter(Boolean).join(' · '):[town.district,'모아타운 대상지',...(companies??[])].join(' · ');
+      const status=contractor==='pending'?contractorProcedure(zone)?.stage:contractorName(zone?.selected_contractor);
+      const description=zone?[town.district,town.name,zone.stage,status].filter(Boolean).join(' · '):[town.district,'모아타운 대상지',...(companies??[])].join(' · ');
       candidates.push({id,pin,townId,zoneId,selected,name:zone?.name??town.name,description});
     }
     for(const [id,shape] of shapes){

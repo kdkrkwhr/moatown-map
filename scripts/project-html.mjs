@@ -1,4 +1,4 @@
-import {formatValue,projectMetadata,projectStage} from '../detail-format.mjs';
+import {formatValue,projectMetadata,projectStage,contractorProcedure,procedureParticipants,procedureSchedule} from '../detail-format.mjs';
 import {projectUrl} from '../project-url.mjs';
 import {translateStage} from '../glossary-translator.mjs';
 
@@ -38,7 +38,12 @@ export function projectHtml(template,town,zone,children,snapshot,root){
     const source=proof?.startsWith('https://')?'<small><a href="'+escape(proof)+'">'+escape(evidence.source_title??'시공사 확인 근거')+'</a></small>':'';
     return '<div><dt>'+escape(name)+'</dt><dd>'+escape(value)+(note?'<small>'+escape(note)+'</small>':'')+source+'</dd></div>';
   };
-  const contractors=record.contractor_projects?.length
+  const procedure=contractorProcedure(record);
+  const contractors=procedure
+    ?'<div><dt>시공사 선정 절차</dt><dd>'+escape(procedure.stage)
+      +[...procedureParticipants(procedure),procedureSchedule(procedure.schedule,null).label,'자료 확인 '+formatValue(procedure.checked_on,'date')].map(text=>'<small>'+escape(text)+'</small>').join('')
+      +list(procedure.sources.map(s=>[s.url,s.title]))+'</dd></div>'
+    :record.contractor_projects?.length
     ?record.contractor_projects.map(p=>contractorFact(p.project_name+' 시공사',p.selected_contractor,p.registered_address,p.field_evidence.selected_contractor)).join('')
     :zone||contractor?contractorFact('시공사',record.selected_contractor??(contractor?'선정 결과 미확인':'미고시'),contractor?.note,contractor):'';
   const links=zone?[[projectUrl(town,null,root).pathname,town.name]]:children.map(child=>[projectUrl(town,child,root).pathname,child.name]);

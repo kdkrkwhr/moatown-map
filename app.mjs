@@ -1,15 +1,15 @@
-import {projectUrl,renderProjectDetail,showUnplacedProgram} from './detail-view.mjs?v=208c3fc8754e';
-import {durationSamples,elapsedMonths,formatValue,projectMetadata} from './detail-format.mjs?v=208c3fc8754e';
-import {projectParams,setProjectPath} from './project-url.mjs?v=208c3fc8754e';
+import {projectUrl,renderProjectDetail,showUnplacedProgram,procedureScheduleLine} from './detail-view.mjs?v=a65454dac88c';
+import {durationSamples,elapsedMonths,formatValue,projectMetadata,contractorProcedure,procedureParticipants,procedureSchedule} from './detail-format.mjs?v=a65454dac88c';
+import {projectParams,setProjectPath} from './project-url.mjs?v=a65454dac88c';
 export {elapsedMonths};
-import {loadMaps,createProjectMap} from './map-engine.mjs?v=208c3fc8754e';
-export {showReferencePin} from './map-engine.mjs?v=208c3fc8754e';
-import {loadNews,matchNews,newsCard,sourceLabels} from './news.mjs?v=208c3fc8754e';
-import {searchProjects,managementFilters,progressFilters,recentProjectDates,contractorName,associationReviewKey} from './project-search.mjs?v=208c3fc8754e';
-import {mountAddressLookup} from './address-reference.mjs?v=208c3fc8754e';
-import {hasPublicLayout,mountPilotViewer} from './pilot-viewer.mjs?v=208c3fc8754e';
-import {metricGlossary,translateStage} from './glossary-translator.mjs?v=208c3fc8754e';
-import {decorativeEmoji,toolIcon} from './ui-icons.mjs?v=208c3fc8754e';
+import {loadMaps,createProjectMap} from './map-engine.mjs?v=a65454dac88c';
+export {showReferencePin} from './map-engine.mjs?v=a65454dac88c';
+import {loadNews,matchNews,newsCard,sourceLabels} from './news.mjs?v=a65454dac88c';
+import {searchProjects,managementFilters,progressFilters,recentProjectDates,contractorName,associationReviewKey} from './project-search.mjs?v=a65454dac88c';
+import {mountAddressLookup} from './address-reference.mjs?v=a65454dac88c';
+import {hasPublicLayout,mountPilotViewer} from './pilot-viewer.mjs?v=a65454dac88c';
+import {metricGlossary,translateStage} from './glossary-translator.mjs?v=a65454dac88c';
+import {decorativeEmoji,toolIcon} from './ui-icons.mjs?v=a65454dac88c';
 const mobileMapQuery='(max-width: 768px)';
 function initialSheetHeight(selection,hasFilters,mobile){
   if(!mobile)return 1;
@@ -78,6 +78,13 @@ function sourceLink(url,label='출처') {
   link.href=url; link.target='_blank'; link.rel='noopener noreferrer';link.append(toolIcon('external'));return link;
 }
 const displayDate=value=>formatValue(value,'date');
+function showContractorMode(mode){
+  document.getElementById('contractor-tools').hidden=!mode;
+  document.getElementById('contractor-companies').hidden=mode==='pending';
+  for(const button of document.querySelectorAll('#contractor-modes button')){
+    button.setAttribute('aria-pressed',String(button.value===(mode==='pending'?'pending':'all')));
+  }
+}
 const stages=[
   {label:'동의서 징구',short:'동의서 징구',ink:'#66547b',fill:'#baabcd',shape:'circle'},
   {label:'조합설립인가 반려',short:'조합인가 반려',ink:'#924f6a',fill:'#d89aaf',shape:'diamond'},
@@ -219,7 +226,7 @@ export function mount({manifest,towns,zones,boundaries,excluded=[]},sdk,mapSigna
     const params=projectParams(new URL(location.href));
     recentOnly=params.get('recent')==='1';
     const company=contractorName(params.get('contractor'));
-    contractor=company==='all'||allCompanies.has(company)?company:'';
+    contractor=company==='all'||company==='pending'||allCompanies.has(company)?company:'';
     search.value=params.get('q') ?? '';
     const region=params.get('district');
     district.value=region ?? '';
@@ -230,7 +237,12 @@ export function mount({manifest,towns,zones,boundaries,excluded=[]},sdk,mapSigna
     if(chosen.plan==='canceled'){chosen.progress='';contractor='';}
     current=resolveSelection(params,townById,zoneById);
     const award=params.get('award');
-    if(current.zoneId && award==='1' && zoneById.get(current.zoneId).selected_contractor)current.award=award;
+    const zone=zoneById.get(current.zoneId);
+    if(zone?.selected_contractor && (award==='1' || award==='procedure')){
+      current.award='1';
+      if(contractor==='pending')contractor='all';
+    }
+    else if(award==='procedure' && contractorProcedure(zone))current.award=award;
     else if(!current.zoneId && townById.get(current.townId)?.contractor_projects?.some(p=>p.project_name===award))current.award=award;
     if(!current.townId && cancellations.has(params.get('cancellation'))){
       current.cancellation=params.get('cancellation');chosen.plan='canceled';chosen.progress='';contractor='';
@@ -310,11 +322,12 @@ export function mount({manifest,towns,zones,boundaries,excluded=[]},sdk,mapSigna
     map?.showAddress(result);
   },()=>Boolean(map));
   function renderList(){
-    rows=results(contractor?'all':'');
+    const pendingMode=contractor==='pending';
+    rows=results(pendingMode?'pending':contractor?'all':'');
     awardButton.setAttribute('aria-pressed',String(Boolean(contractor)));
-    get('contractor-tools').hidden=!contractor;
-    get('results-title').textContent=contractor?'시공사 선정 사업':'검색 결과';
-    if(contractor){
+    showContractorMode(contractor);
+    get('results-title').textContent=pendingMode?'시공사 선정 절차 확인':contractor?'시공사 선정 완료':'검색 결과';
+    if(contractor && !pendingMode){
       const counts=new Map();
       for(const row of rows){const name=awardName(row);counts.set(name,(counts.get(name)??0)+1);}
       if(contractor!=='all' && !counts.has(contractor))counts.set(contractor,0);
@@ -360,8 +373,10 @@ export function mount({manifest,towns,zones,boundaries,excluded=[]},sdk,mapSigna
       }
       const button=el('a',undefined,'town-item');
       const resultUrl=new URL(projectUrl(town,zone).pathname,location.origin);
-      const award=association?.project_name??(contractor && zone?.selected_contractor?'1':'');
+      const procedure=contractorProcedure(zone);
+      const award=association?.project_name??(procedure?'procedure':contractor && zone?.selected_contractor?'1':'');
       if(award)resultUrl.searchParams.set('award',award);
+      if(contractor)resultUrl.searchParams.set('contractor',contractor);
       button.href=resultUrl.pathname+resultUrl.search;button.dataset.town=town.id;
       if(association)button.dataset.association=association.project_name;
       button.addEventListener('click',event=>{
@@ -382,6 +397,16 @@ export function mount({manifest,towns,zones,boundaries,excluded=[]},sdk,mapSigna
         if(company){
           const line=el('span',company,'contractor-line');
           line.prepend(el('small','시공사'));button.append(line);
+        }
+        if(procedure){
+          button.append(el('span',procedure.stage,'procedure-stage'));
+          for(const text of procedureParticipants(procedure))button.append(el('span',text,'procedure-actors'));
+          button.append(procedureScheduleLine(procedure),el('small','자료 확인 '+displayDate(procedure.checked_on),'location-note'));
+          const card=el('article',null,'procedure-card');card.append(button);
+          for(const proof of procedure.sources){
+            const link=sourceLink(proof.url,proof.title);if(link)card.append(link);
+          }
+          fragment.append(card);continue;
         }
         if(zone)button.append(stageBadge(zone.stage));
         else if(association.registered_address)button.append(el('small',association.registered_address,'location-note'));
@@ -408,7 +433,7 @@ export function mount({manifest,towns,zones,boundaries,excluded=[]},sdk,mapSigna
     if(!rows.length){
       const note=el('div',undefined,'empty empty-search');
       const image=el('img');image.src='./assets/empty-search.svg?v=67579da3a801';image.alt='';image.width=112;image.height=70;
-      note.append(image,el('strong',contractor?'이 조건에서 시공사가 확인된 사업이 없어요.':'검색 조건에 맞는 구역이 없어요.'),el('p','다른 검색어를 입력하거나 선택한 조건을 지워 보세요.'));
+      note.append(image,el('strong',pendingMode?'이 조건에서 선정 절차가 확인된 구역이 없어요.':contractor?'이 조건에서 시공사가 확인된 사업이 없어요.':'검색 조건에 맞는 구역이 없어요.'),el('p','다른 검색어를 입력하거나 선택한 조건을 지워 보세요.'));
       const clear=el('button','검색 조건 지우기');
       clear.type='button';clear.addEventListener('click',reset);
       note.append(clear);fragment.append(note);
@@ -523,6 +548,10 @@ export function mount({manifest,towns,zones,boundaries,excluded=[]},sdk,mapSigna
   });
   recentButton.disabled=false;
   awardButton.disabled=false;companySelect.disabled=false;
+  for(const button of get('contractor-modes').querySelectorAll('button')){
+    button.disabled=false;
+    button.addEventListener('click',()=>{contractor=button.value;updateFilters(false);});
+  }
   awardButton.addEventListener('click',()=>{
     contractor=contractor?'':'all';
     if(contractor && chosen.plan==='canceled')chosen.plan='';
@@ -538,6 +567,19 @@ export function mount({manifest,towns,zones,boundaries,excluded=[]},sdk,mapSigna
   }
   document.addEventListener('visibilitychange',()=>{if(!document.hidden)refreshRecentDates();});
   window.addEventListener('focus',refreshRecentDates);
+  const cutoffs=zones.map(zone=>procedureSchedule(contractorProcedure(zone)?.schedule).cutoff).filter(Number.isFinite);
+  let scheduleTimer;
+  function refreshSchedules(){
+    clearTimeout(scheduleTimer);
+    const now=Date.now();
+    for(const line of document.querySelectorAll('.procedure-schedule[data-cutoff]')){
+      line.textContent=line.dataset.schedule+(now>=Number(line.dataset.cutoff)?' · 결과 확인 중':' 예정');
+    }
+    const next=Math.min(...cutoffs.filter(time=>time>now));
+    if(Number.isFinite(next))scheduleTimer=setTimeout(refreshSchedules,Math.min(next-now,2147483647));
+  }
+  refreshSchedules();
+  document.addEventListener('visibilitychange',()=>{if(!document.hidden)refreshSchedules();});
   district.addEventListener('change',()=>updateFilters(false));
   get('clear-filters').addEventListener('click',reset);
   get('stage-filter-box').addEventListener('toggle',()=>{if(mobile.matches && get('stage-filter-box').open)setSheetHeight(2);});
@@ -582,7 +624,7 @@ export function mount({manifest,towns,zones,boundaries,excluded=[]},sdk,mapSigna
       select(townId,zoneId){
         if(!contractor){select(townId,zoneId);return;}
         const projects=rows.filter(row=>row.town?.id===townId && row.association);
-        const award=zoneId?'1':projects.length===1?projects[0].association.project_name:'';
+        const award=zoneId?(contractorProcedure(zoneById.get(zoneId))?'procedure':'1'):projects.length===1?projects[0].association.project_name:'';
         select(townId,zoneId,null,zoneId?'business':'areas',award);
       },
       selectDistrict(name){search.value='';district.value=name;updateFilters(false);},
@@ -622,8 +664,8 @@ function prepareLoading(){
   $('recent-filter').setAttribute('aria-pressed',String(params.get('recent')==='1'));
   const contractor=params.get('contractor');
   $('contractor-toggle').setAttribute('aria-pressed',String(Boolean(contractor)));
-  $('contractor-tools').hidden=!contractor;
-  if(contractor && contractor!=='all')$('contractor-company').add(new Option(contractor,contractor,true,true));
+  showContractorMode(contractor);
+  if(contractor && contractor!=='all' && contractor!=='pending')$('contractor-company').add(new Option(contractor,contractor,true,true));
   const region=params.get('district');
   if(region)$('district-filter').add(new Option(region,region,true,true));
   const selected=[];

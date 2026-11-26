@@ -25,6 +25,23 @@ export function dayNumber(value){
   return Number.isFinite(time) && new Date(time).toISOString().slice(0,10)===iso?time/dayMs:null;
 }
 
+export function contractorProcedure(record){
+  return record?.selected_contractor?null:record?.field_evidence?.contractor_review?.procedure??null;
+}
+
+export function procedureParticipants(procedure){
+  if(!procedure.participants?.length)return ['참여 업체 미확인'];
+  return procedure.participants.map(({role,names})=>role+' · '+(names?.join(', ')||'업체명 미확인'));
+}
+
+export function procedureSchedule(schedule,now=Date.now()){
+  if(dayNumber(schedule?.date)===null)return {label:'다음 일정 미확인',cutoff:null};
+  const clock=schedule.time;
+  const cutoff=Date.parse(schedule.date+'T'+(clock??'00:00')+':00+09:00')+(clock?0:dayMs);
+  const deadline=schedule.label+' '+formatValue(schedule.date,'date')+(clock?' '+clock:'');
+  return {cutoff,label:deadline+(now===null?'':now>=cutoff?' · 결과 확인 중':' 예정')};
+}
+
 export function formatValue(value,unit=''){
   if(unit==='date'){
     if(dayNumber(value)!==null)return value.replaceAll('-','.');

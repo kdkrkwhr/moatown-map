@@ -198,3 +198,18 @@
 | 금천구 시흥3동 1005 | 중앙시흥하이츠 한화. 2025년 2월 업무계획의 업체 표기 기준 | [금천구의회 업무계획 PDF 76쪽](https://council.geumcheon.go.kr/council/viewer/minutes/pdf.do?group=appendix&uid=5722) |
 
 고척 A-2는 구로구 고시의 고척2구역 조합명과 사업 대표 지번(241-23)을 확인하고 관리계획 지번(241-177)의 필지점이 서울시 해당 사업 도형 내부에 있는지 확인했다. 고척 4·5·6구역은 공시 계약명에 세 구역이 명시되어 있다. 석관1-2·1-7의 한화 수주와 화곡 제2-4의 제일건설 선정은 원문 사업장 단위로 확인했으나, 현재 지도 구역번호와 계약 적용 범위를 더 대조해야 하는 건을 `contractor_scope_review`에 남겼다.
+
+
+### 2026.11.26 시공사 선정 절차가 확인된 9개 세부구역
+
+시공사 미확인 세부구역 155곳 중 최근 입찰·협상 경과를 구역에 연결할 수 있는 9곳을 `field_evidence.contractor_review.procedure`에 수록했다. `participants`는 역할과 업체명, `schedule`은 공고 일정(한국 시간), `sources`는 근거 원문의 제목·주소·기준일·출처 유형을 담는다. `checked_on`은 검수일이다. 업체명이 미공개인 경우 이름 배열을 비워 두고, 후속 일정이 미확인인 경우 `schedule`은 `null`이다. 시공사 선정 의결 또는 계약이 확인되면 해당 구역의 `selected_contractor`와 선정 근거를 갱신한다. 화면은 이 값을 우선한다.
+
+| 구역 | 수록한 절차와 근거 |
+| --- | --- |
+| 서대문 현저동 1-5 | 동아건설산업 우선협상대상자 선정, 11월 28일 선정총회 예정. [SM그룹 발표](https://www.smgroup.co.kr/media/news/view.do?IDX=666) · [총회 일정 보도](https://www.housingherald.co.kr/news/articleView.html?idxno=63509) |
+| 영등포 대림동 모아주택1구역 | 11월 25일 입찰 마감. 두산건설·대우산업개발 응찰. [조합 입찰공고](https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01794390&bidPbancOrd=000) · [조합이 밝힌 입찰 결과](https://www.newslock.co.kr/news/articleView.html?idxno=140966) |
+| 구로동 511 | 11월 30일 14시 재입찰 마감 예정. [조합 재공고](https://cleanup.seoul.go.kr/assc/bidpblanc/vscr.do?othbcListSn=1093468) |
+| 중랑 면목역6의1 | DL건설과 종전 계약 이력. 새 시공자 입찰 마감은 12월 11일 14시. [조합 추진경과](https://cleanup.seoul.go.kr/cafe/mainIndx/cleanup-prtnelapse/vscr.do?cafeId=260900001177I74&bsnsPk=11260-900001177) · [재공고](https://www.g2b.go.kr/link/PNPE027_01/single/?bidPbancNo=R26BK01824664&bidPbancOrd=001) |
+| 서대문 홍은동 10-18 A-1 | 조합 공개목록에서 우선협상대상자 선정 통보를 확인했다. 통보 대상 업체명과 총회일은 미확인이다. [조합 공개문서 목록](https://cleanup.seoul.go.kr/service/opendata/othbcDocInput/RecentlscrOpen.do?cafeId=410900001523C46&cpage=1&pageSize=200) |
+| 관악난곡 A2 | 제일건설·두산건설·남광토건이 2차 현장설명회에 참석했다. 공고된 입찰 마감일은 11월 3일이다. [주민대표회의 설명회·마감일 보도](https://www.arunews.com/news/articleView.html?idxno=68065) |
+| 강동 둔촌동 A-1·A-2·B-1 | 세 구역이 유찰 이후 수의계약을 추진했다. 현장설명회 참석 업체와 확인된 절차를 구역별로 표시했다. [강동구 추진 현황](https://www.gangdong.go.kr/web/newportal/bbs/b_140) · [수의계약 추진](https://m.wikileaks-kr.org/news/articleView.html?idxno=193321) · [1·3구역 설명회](https://www.g-enews.com/article/Real-Estate/2026/08/2026082115485692414b1077807_1) · [2구역 설명회](https://www.arunews.com/news/articleView.html?idxno=65857) |

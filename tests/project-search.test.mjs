@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import {searchProjects,progressFilters,recentProjectDates} from '../project-search.mjs';
 import {planIntervals} from '../app.mjs';
+import {contractorProcedure,procedureSchedule,procedureParticipants} from '../detail-format.mjs';
 import {parseLot,positionInGeometry} from '../address-reference.mjs';
 
 const read=path=>JSON.parse(readFileSync(new URL(path,import.meta.url),'utf8'));
@@ -11,6 +12,38 @@ const snapshot=key=>read('../moatown-data/'+manifest.files[key]);
 const towns=snapshot('towns'),zones=snapshot('zones'),archive=snapshot('excluded');
 const groups=new Map(towns.map(town=>[town.id,zones.filter(zone=>zone.town_id===town.id)]));
 const search=options=>searchProjects(towns,groups,archive,options);
+
+test('procedure results only contain documented, unawarded projects and preserve company roles',()=>{
+  const pending=search({contractor:'pending'});
+  assert.equal(pending.length,manifest.coverage.zones_with_contractor_procedure);
+  assert.equal(pending.length,9);
+  const awards=new Set(search({contractor:'all'}).map(r=>r.zone?.id));
+  for(const {zone} of pending){
+    const p=contractorProcedure(zone);
+    assert.ok(!awards.has(zone.id) && p.stage && p.checked_on && p.sources.length);
+    assert.ok(p.sources.every(s=>s.url.startsWith('https://') && s.title && s.as_of && s.evidence));
+  }
+  const [daerim]=search({contractor:'pending',district:'영등포구',query:'대우산업개발'});
+  assert.deepEqual(procedureParticipants(contractorProcedure(daerim.zone)),['입찰 참여 · 두산건설, 대우산업개발']);
+  const [hyeonjeo]=search({contractor:'pending',district:'서대문구',query:'동아건설산업'});
+  const company='동아건설산업',promoted={...hyeonjeo.zone,selected_contractor:company};
+  const filter=contractor=>searchProjects([hyeonjeo.town],new Map([[hyeonjeo.town.id,[promoted]]]),[],{contractor});
+  assert.equal(contractorProcedure(promoted),null);
+  assert.equal(filter('pending').length,0);
+  assert.equal(filter(company)[0].zone.id,promoted.id);
+});
+
+test('contractor schedules use the advertised Korean time or the entire local calendar date',()=>{
+  const deadline={label:'입찰 마감',date:'2026-11-30',time:'14:00'};
+  const end=Date.parse('2026-11-30T05:00:00Z');
+  assert.match(procedureSchedule(deadline,end-1).label,/14:00 예정$/);
+  assert.match(procedureSchedule(deadline,end).label,/결과 확인 중$/);
+  const vote={label:'선정총회',date:'2026-11-28',time:null};
+  assert.match(procedureSchedule(vote,Date.parse('2026-11-28T14:59:59Z')).label,/28 예정$/);
+  assert.match(procedureSchedule(vote,Date.parse('2026-11-28T15:00:00Z')).label,/결과 확인 중$/);
+  assert.equal(procedureSchedule(vote,null).label,'선정총회 2026.11.28');
+  assert.equal(procedureSchedule(null).label,'다음 일정 미확인');
+});
 
 test('contractor discovery lists each awarded zone or named association exactly once',()=>{
   const found=search({contractor:'all'});

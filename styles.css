@@ -157,7 +157,16 @@ a.town-item { color: inherit; text-decoration: none; }
 .search-line .search-box { flex: 1; min-width: 0; }
 #contractor-toggle { flex: none; min-height: 42px; padding: 0 12px; border: 1px solid #a8c6bb; border-radius: 10px; color: #155a46; background: #f1f8f4; font-size: 13px; font-weight: 700; }
 #contractor-toggle[aria-pressed=true] { color: white; background: #17604a; border-color: #17604a; }
-#contractor-tools:not([hidden]) { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-top: 6px; }
+#contractor-tools:not([hidden]) { display: grid; gap: 8px; margin-top: 6px; }
+#contractor-modes { display: flex; gap: 2px; padding: 3px; border-radius: 9px; background: #ecf1ef; }
+#contractor-modes button { flex: 1; min-height: 36px; font-size: 13px; border-radius: 7px; color: #46574f; }
+#contractor-modes button[aria-pressed=true] { color: #134d3d; font-weight: 700; background: white; box-shadow: 0 1px 3px #143a2926; }
+#contractor-companies:not([hidden]) { display: flex; align-items: center; gap: 10px; }
+.procedure-card { border-bottom: 1px solid var(--line); padding-bottom: 6px; }
+.procedure-card > .town-item { padding-bottom: 4px; }
+.procedure-card > .source-link { display: inline-flex; align-items: center; min-height: 32px; margin-inline-start: var(--gutter); font-size: 12px; }
+.procedure-stage { justify-self: start; border-radius: 5px; padding: 2px 6px; color: #76450e; background: #fff1d7; font-size: 12px; font-weight: 700; }
+.procedure-actors, .procedure-schedule { font-size: 13px; overflow-wrap: anywhere; }
 #contractor-tools label { color: var(--sub); font-size: 13px; font-weight: 650; white-space: nowrap; }
 #contractor-company { flex: 1; min-width: 0; min-height: 36px; border: 1px solid var(--line); border-radius: 8px; padding: 3px 8px; background: white; color: var(--ink); font: inherit; font-size: 14px; }
 .contractor-line { display: block; color: #155a46; font-size: 13px; font-weight: 650; overflow-wrap: anywhere; }
@@ -470,6 +479,9 @@ a.town-item { color: inherit; text-decoration: none; }
 .map-caption { display: block; position: absolute; transform: translate(-50%,-100%); width: max-content; max-width: min(155px,45vw); white-space: normal; overflow-wrap: anywhere; word-break: keep-all; border-radius: 6px; background: #fffffff2; border: 1px solid #b5c5d3; padding: 3px 6px; box-shadow: 0 2px 5px #1e37481c; color: #233e51; font: 650 12px/1.35 Pretendard,sans-serif; }
 .map-caption small { display: block; color: var(--stage-ink,var(--sub)); font-size: 10px; }
 .map-caption .map-company { display: none; }
+.map-caption .map-procedure { display: none; }
+.procedure-map .map-caption .map-procedure { display: block; color: #774510; }
+.procedure-map .map-caption.selected-caption .map-procedure { color: white; }
 .contractor-map .map-caption .map-company:not(:empty) { display: block; color: #146148; font-weight: 750; }
 .contractor-map .map-caption.selected-caption .map-company { color: white; }
 .map-caption.selected-caption { color: white; background: var(--stage-ink,#205975); border-color: white; box-shadow: 0 0 0 2px var(--stage-ink,#205975),0 3px 8px #23364144; }
