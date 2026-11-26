@@ -28,6 +28,45 @@ test('the revised Hwagok A2-3 lot lies outside the historical zone with the same
   assert.equal(historical.field_evidence.stage_review.state,'scope_mismatch');
 });
 
+test('the contractor audit covers every previously empty zone and preserves existing selections',()=>{
+  const release='snapshots/2026-11-26/contractors/';
+  const audit=read(release+'review.json').contractor_audit;
+  const earlier=read(audit.baseline_zone_file);
+  const updated=new Map(read(release+'zones.json').map(z=>[z.id,z]));
+  assert.deepEqual(audit.zone_reviews.map(row=>row.zone_id).sort(),earlier.filter(z=>!z.selected_contractor).map(z=>z.id).sort());
+  for(const z of earlier.filter(z=>z.selected_contractor))assert.deepEqual(updated.get(z.id),z);
+  for(const row of audit.zone_reviews){
+    const z=updated.get(row.zone_id);
+    assert.equal(Boolean(z.selected_contractor),row.outcome==='verified');
+    const evidence=z.field_evidence[z.selected_contractor?'selected_contractor':'contractor_review'];
+    assert.equal(evidence.checked_on,audit.checked_on);
+    assert.ok(evidence.note && evidence.source_title && /^https:\/\//.test(evidence.source_url),z.name);
+  }
+  const preferred=updated.get('mz-seoul-11410uq120ps202607270001');
+  assert.equal(preferred.selected_contractor,null);
+  assert.match(preferred.field_evidence.contractor_review.note,/우선협상/);
+});
+
+test('awards for towns without zone cards identify each contracting project separately',()=>{
+  const release='snapshots/2026-11-26/contractors/';
+  const audit=read(release+'review.json').contractor_audit;
+  const hasZones=new Set(read(audit.baseline_zone_file).map(z=>z.town_id));
+  const towns=read(release+'towns.json');
+  const target=towns.filter(t=>!hasZones.has(t.id));
+  assert.deepEqual(audit.town_reviews.map(row=>row.town_id).sort(),target.map(t=>t.id).sort());
+  for(const town of target){
+    assert.ok(!town.selected_contractor);
+    const awards=town.contractor_projects??[];
+    assert.equal(awards.length,audit.town_reviews.find(r=>r.town_id===town.id).confirmed_projects);
+    if(!awards.length)assert.equal(town.field_evidence.contractor_review.checked_on,audit.checked_on);
+    for(const project of awards){
+      assert.ok(project.project_name && project.registered_address && project.selected_contractor);
+      const e=project.field_evidence.selected_contractor;
+      assert.ok(e.source_url.startsWith('https://') && e.supporting_sources.length && e.checked_on===audit.checked_on);
+    }
+  }
+});
+
 test('missing-field lists and published coverage describe the same snapshot',()=>{
   const missing=read(files.review).missing_fields;
   for(const [rows,absent,count,pick] of [

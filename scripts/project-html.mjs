@@ -32,11 +32,20 @@ export function projectHtml(template,town,zone,children,snapshot,root){
   const place=[town.district,town.name,...(zone?[zone.name]:[])].join(' · ');
   const sources=officialSources(record);
   const list=entries=>'<ul>'+entries.map(([href,label])=>'<li><a href="'+escape(href)+'">'+escape(label)+'</a></li>').join('')+'</ul>';
+  const contractor=record.field_evidence?.selected_contractor??record.field_evidence?.contractor_review;
+  const contractorFact=(name,value,note,evidence)=>{
+    const proof=evidence?.source_url;
+    const source=proof?.startsWith('https://')?'<small><a href="'+escape(proof)+'">'+escape(evidence.source_title??'시공사 확인 근거')+'</a></small>':'';
+    return '<div><dt>'+escape(name)+'</dt><dd>'+escape(value)+(note?'<small>'+escape(note)+'</small>':'')+source+'</dd></div>';
+  };
+  const contractors=record.contractor_projects?.length
+    ?record.contractor_projects.map(p=>contractorFact(p.project_name+' 시공사',p.selected_contractor,p.registered_address,p.field_evidence.selected_contractor)).join('')
+    :zone||contractor?contractorFact('시공사',record.selected_contractor??(contractor?'선정 결과 미확인':'미고시'),contractor?.note,contractor):'';
   const links=zone?[[projectUrl(town,null,root).pathname,town.name]]:children.map(child=>[projectUrl(town,child,root).pathname,child.name]);
   const summary='<article class="published-project"><p>'+escape(zone?town.district+' · '+town.name:town.district)+'</p><h2>'+escape(record.name)+'</h2>'
     +'<dl class="facts"><div><dt>'+(zone?'추진 단계':'관리계획 단계')+'</dt><dd>'+escape(stage)+(term?'<small>'+escape(term.summary)+'</small>':'')+'</dd></div>'
     +(record.field_evidence?.stage_review?'<div><dt>구역 대조 결과</dt><dd>'+escape(record.field_evidence.stage_review.note)+'</dd></div>':'')
-    +(zone?'<div><dt>시공사</dt><dd>'+escape(zone.selected_contractor??(zone.field_evidence?.contractor_review?'선정 결과 미확인':'미고시'))+'</dd></div>':'')
+    +contractors
     +'<div><dt>대표 지번</dt><dd>'+escape(zone?zone.registered_address??'미확인':town.address??town.name)+'</dd></div>'
     +'<div><dt>자료 기준일</dt><dd><time datetime="'+escape(snapshot)+'">'+escape(formatValue(snapshot,'date'))+'</time></dd></div></dl>'
     +'<h3>공식 출처</h3>'+(sources.length?list(sources):'<p>구역별 원문 미확인</p>')

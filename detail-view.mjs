@@ -1,7 +1,7 @@
-import {formatValue,unitsChange,projectIntervals,compareInterval,projectStage} from './detail-format.mjs?v=fac4593c626c';
-import {projectUrl} from './project-url.mjs?v=fac4593c626c';
-import {metricGlossary,translateStage} from './glossary-translator.mjs?v=fac4593c626c';
-import {decorativeEmoji,toolIcon} from './ui-icons.mjs?v=fac4593c626c';
+import {formatValue,unitsChange,projectIntervals,compareInterval,projectStage} from './detail-format.mjs?v=de1b422a2bc2';
+import {projectUrl} from './project-url.mjs?v=de1b422a2bc2';
+import {metricGlossary,translateStage} from './glossary-translator.mjs?v=de1b422a2bc2';
+import {decorativeEmoji,toolIcon} from './ui-icons.mjs?v=de1b422a2bc2';
 export {projectUrl};
 
 const pending='미고시';
@@ -199,7 +199,23 @@ function regulations(card,r,town,zone,boundary,cityRule,openTownRules){
 const reviewedContractorLabel='선정 결과 미확인';
 const unknownStageLabel=r=>r?.field_evidence?.stage_review?.state==='scope_mismatch'?'변경 전 구역 · 단계 미확인':pending;
 
+function associationFields(grid,projects){
+  for(const project of projects){
+    const row=field(grid,project.project_name+' 시공사',project.selected_contractor);
+    const evidence=project.field_evidence.selected_contractor;
+    const dates=[evidence.selection_date && '선정일 '+date(evidence.selection_date),evidence.contract_date && '계약일 '+date(evidence.contract_date)];
+    row.append(el('small',[project.registered_address,...dates].filter(Boolean).join(' · ')));
+    if(evidence.note)row.append(el('small',evidence.note));
+    const source=link(evidence.source_url,evidence.source_title);
+    if(source)row.append(source);
+  }
+}
+
 function contractorField(grid,r,children){
+  if(r.contractor_projects?.length){
+    associationFields(grid,r.contractor_projects);
+    if(!children.length && !r.selected_contractor)return;
+  }
   const confirmed=children.filter(child=>child.selected_contractor);
   if(!r.selected_contractor && confirmed.length){
     const names=[...new Set(confirmed.map(child=>child.selected_contractor.replace(/주식회사|㈜|\(주\)/g,'').trim()))];
@@ -224,6 +240,7 @@ function contractorField(grid,r,children){
   if(!e)return;
   const source=link(e.source_url,e.source_title??'시공사 확인 자료');
   if(e.selection_date)row.append(el('small','선정일 '+date(e.selection_date)));
+  if(e.note)row.append(el('small',e.note));
   if(source)row.append(source);
 }
 
@@ -251,7 +268,7 @@ function metrics(panel,r,children){
   contractorField(grid,r,children);
   const contract=e.selected_contractor??{};
   const contractLabel=contract.contract_date?'시공사 계약일':contract.source_as_of?'시공사 자료 기준일':'시공사 자료 확인일';
-  field(grid,contractLabel,date(contract.contract_date??contract.source_as_of??contract.checked_on??e.contractor_review?.checked_on));
+  field(grid,contractLabel,date(contract.contract_date??contract.source_as_of??contract.checked_on??e.contractor_review?.checked_on??r.contractor_projects?.[0]?.field_evidence?.selected_contractor?.checked_on));
   field(grid,'계획 자료 기준일',date(e.plan?.source_as_of));
   if(r.previous_plan)citedField(grid,'이전 계획',formatValue(r.previous_plan.planned_units_total,'세대'),r.previous_plan.evidence);
   const types=[...listOf(r.unit_types),...listOf(r.published_private_area_bands)];
@@ -388,6 +405,13 @@ function comparisonTable(town,children,zone,select,badge){
 }
 
 function subAreas(panel,town,zone,children,boundaries,select,badge){
+  if(!children.length && town.contractor_projects?.length){
+    const card=section(panel,'association-contractors','조합별 시공사');
+    const facts=el('dl',null,'metrics');
+    card.append(el('p','조합이 발주한 사업별로 선정 업체와 대표 지번을 표시합니다.'),facts);
+    associationFields(facts,town.contractor_projects);
+    return;
+  }
   if(!children.length){panel.append(notice(town.risk_info?.is_canceled?'세부 구역 미고시 · 대상지 선정 취소':'대상지 단위 추진 중 (세부 구역 미고시)'));return;}
   const ordered=[...children].sort((a,b)=>(a.drawing_code??a.name).localeCompare(b.drawing_code??b.name,'ko',{numeric:true}));
   panel.append(comparisonTable(town,ordered,zone,select,badge));
@@ -456,6 +480,11 @@ function sources(card,r,snapshot,boundary,events,registryUrl,reportUrl){
     add(e.source_url,e.source_title??e.notice_number??labels[key],e.source_as_of);
     for(const item of listOf(e.supporting_sources))add(item.url,item.title,item.source_as_of);
     if(e.notice_number)add(e.source_url,e.notice_number,e.source_as_of,docs);
+  }
+  for(const project of listOf(r.contractor_projects)){
+    const e=project.field_evidence.selected_contractor;
+    add(e.source_url,project.project_name+' · '+project.selected_contractor,e.source_as_of);
+    for(const item of listOf(e.supporting_sources))add(item.url,item.title,item.source_as_of);
   }
   for(const e of [r.representative_point_evidence,boundary,r.previous_plan?.evidence,...listOf(r.rights_cutoff_history).map(h=>h.evidence)])add(e?.source_url,e?.notice_number,e?.source_as_of);
   for(const e of events)add(e.source_url,e.stage+' 이력',null);
@@ -534,7 +563,7 @@ function summary(town,zone,intervals,badge,copyLink,comparison){
   header.append(kpis);return header;
 }
 
-function detailTabs(container,children,designated){
+function detailTabs(container,areasLabel,designated){
   const nav=el('div',null,'detail-tabs'),buttons=[],panels={};
   nav.setAttribute('role','tablist');nav.setAttribute('aria-label','구역 상세 정보');
   container.append(nav);
@@ -553,7 +582,7 @@ function detailTabs(container,children,designated){
       }
     }
   }
-  for(const [key,label] of [['schedule','추진·일정'],['business','사업성·규제'],['areas','세부구역 ('+children.length+')']]){
+  for(const [key,label] of [['schedule','추진·일정'],['business','사업성·규제'],['areas',areasLabel]]){
     const button=el('button',label),panel=el('div',null,'detail-pane');
     button.type='button';button.id='tab-'+key;button.dataset.tab=key;
     button.setAttribute('role','tab');button.setAttribute('aria-controls','pane-'+key);
@@ -588,7 +617,8 @@ export function renderProjectDetail(container,{town,zone,children,boundaries,sna
     header.querySelector('.copy-link').before(button);
   }
   container.append(header);
-  const {panels,activate}=detailTabs(container,children,r.land_transaction_permit?.designated===true);
+  const areasLabel=!children.length && town.contractor_projects?.length?'사업조합 ('+town.contractor_projects.length+')':'세부구역 ('+children.length+')';
+  const {panels,activate}=detailTabs(container,areasLabel,r.land_transaction_permit?.designated===true);
   if(comparison){
     const cta=el('button',null,'compare-areas');cta.type='button';cta.setAttribute('aria-controls','pane-areas');
     cta.append(el('strong','세부구역 '+children.length+'곳 '+(children.length===1?'보기':'비교')),el('span','계획 세대수 '+comparison.known+'곳 확인'));

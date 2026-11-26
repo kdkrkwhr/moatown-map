@@ -30,7 +30,7 @@
     "zone_records_with_plan_numbers": 224,
     "towns_with_management_plan_notices": 88,
     "management_plan_notice_records": 166,
-    "zones_with_contractor": 52,
+    "zones_with_contractor": 69,
     "zones_with_unit_types": 2,
     "indexed_parcels": 896467,
     "indexed_districts": 25,
@@ -56,7 +56,9 @@
     "towns_with_owner_count": 42,
     "towns_with_aging_ratio": 96,
     "towns_with_plan_floors": 61,
-    "towns_with_rental_units": 91
+    "towns_with_rental_units": 91,
+    "towns_with_association_contractor_records": 12,
+    "association_contractor_records_without_zone_cards": 20
   },
   "source_urls": {
     "official_baseline": "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status",
@@ -75,8 +77,8 @@
     "seoul_gazette_4016": "https://event.seoul.go.kr/seoulsibo/fileDownload.do?fileName=seoulsibo_20241017085543_69127.pdf"
   },
   "files": {
-    "towns": "snapshots/2026-11-25/towns.json",
-    "zones": "snapshots/2026-11-26/zones.json",
+    "towns": "snapshots/2026-11-26/contractors/towns.json",
+    "zones": "snapshots/2026-11-26/contractors/zones.json",
     "boundaries": "snapshots/2026-11-24/boundaries.geojson",
     "excluded": "snapshots/2026-11-24/excluded.json",
     "parcel_index": "addresses/index.json",
@@ -100,7 +102,7 @@
     "sinwol_design": "plans/sinwol/design-evidence.json",
     "sinwol_layout": "plans/sinwol/a3-layout.geojson",
     "pilot_plans": "snapshots/2026-11-25/pilot-plans.json",
-    "review": "snapshots/2026-11-26/review.json",
+    "review": "snapshots/2026-11-26/contractors/review.json",
     "registry_heights": "buildings/registry-heights.json",
     "unplaced_programs": "plans/unplaced-programs.json",
     "beon_public_space": "plans/beon/public-space.geojson",
@@ -539,8 +541,8 @@
       "mt-202603-resident-027"
     ],
     "hashes": {
-      "towns": "bd49d8dbd6c6c52eaf2c1965de9b547965f1cc422ff1bf84e7c2bab1a71e3d1a",
-      "zones": "d499ee372df360178fd598147e990250dd712a32a556858210499b1490c8eb76",
+      "towns": "62efd8c80dd201377df6fc1471995e065854ee9fbaf5a5e10e99619bc76d3a4f",
+      "zones": "59130091a577843885f86da43cc816bb842ed000dc4f384b953ad1f9d7310a75",
       "boundaries": "d5de1e504651c2703b9c08d51cb3aea9e3f856c084c47eb85c41b0ce5b412252",
       "buildings": "ace09a96ffa7fc70328ed7995791fd8d86e9ad0bffae90ee21b6cf1a13178795",
       "pilot_plans": "356e909dd659cc5046716573b8e5ef30ee1a1f14fa5b1d1297245d6389d2c633",
