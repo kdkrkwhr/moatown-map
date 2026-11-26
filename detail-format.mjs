@@ -29,6 +29,21 @@ export function contractorProcedure(record){
   return record?.selected_contractor?null:record?.field_evidence?.contractor_review?.procedure??null;
 }
 
+export function awardHistories(record){
+  const histories=[];
+  for(const owner of [record,...(record.contractor_projects??[])]){
+    const evidence=owner.field_evidence?.selected_contractor;
+    if(!owner.selected_contractor || !evidence)continue;
+    const events=[];
+    if(evidence.selection_date)events.push({label:'시공사 선정',date:evidence.selection_date});
+    if(evidence.contract_date)events.push({label:evidence.agreement_type??'시공사 계약',date:evidence.contract_date});
+    if(!events.length)continue;
+    const sources=[{url:evidence.source_url,title:evidence.source_title??'선정·계약 근거'},...(evidence.supporting_sources??[])];
+    histories.push({company:owner.selected_contractor,scope:owner===record?null:owner.project_name,events,sources});
+  }
+  return histories;
+}
+
 export function procedureParticipants(procedure){
   if(!procedure.participants?.length)return ['참여 업체 미확인'];
   return procedure.participants.map(({role,names})=>role+' · '+(names?.join(', ')||'업체명 미확인'));
@@ -138,7 +153,7 @@ export function projectEvents(town,zone){
     const date=e.approval_date??e.review_date??e.milestone_date??(notice?e.source_as_of:null);
     const events=shared?history.events.map(v=>({stage:v.label,date:v.month,source_url:history.source_url})):[];
     if(!shared || date && String(date).slice(0,7)>String(events.at(-1)?.date).slice(0,7)){
-      events.push({stage:(zone.stage??'사업 추진 단계')+(notice?' 고시':''),date,source_url:e.source_url});
+      events.push({stage:e.milestone_label??((zone.stage??'사업 추진 단계')+(notice?' 고시':'')),date,source_url:e.source_url});
       if(e.approval_date && e.state==='approved_project_plan' && e.source_as_of && e.approval_date!==e.source_as_of)
         events.push({stage:'인가 고시',date:e.source_as_of,source_url:e.source_url});
     }

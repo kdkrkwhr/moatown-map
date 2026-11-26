@@ -1,7 +1,7 @@
-import {formatValue,unitsChange,projectIntervals,compareInterval,projectStage,contractorProcedure,procedureParticipants,procedureSchedule} from './detail-format.mjs?v=e8ffbcf7f855';
-import {projectUrl} from './project-url.mjs?v=e8ffbcf7f855';
-import {metricGlossary,translateStage} from './glossary-translator.mjs?v=e8ffbcf7f855';
-import {decorativeEmoji,toolIcon} from './ui-icons.mjs?v=e8ffbcf7f855';
+import {formatValue,unitsChange,projectIntervals,compareInterval,projectStage,awardHistories,contractorProcedure,procedureParticipants,procedureSchedule} from './detail-format.mjs?v=0bc4fef5da11';
+import {projectUrl} from './project-url.mjs?v=0bc4fef5da11';
+import {metricGlossary,translateStage} from './glossary-translator.mjs?v=0bc4fef5da11';
+import {decorativeEmoji,toolIcon} from './ui-icons.mjs?v=0bc4fef5da11';
 export {projectUrl};
 
 const pending='미고시';
@@ -197,7 +197,7 @@ function regulations(card,r,town,zone,boundary,cityRule,openTownRules){
 }
 
 const reviewedContractorLabel='선정 결과 미확인';
-const unknownStageLabel=r=>r?.field_evidence?.stage_review?.state==='scope_mismatch'?'변경 전 구역 · 단계 미확인':pending;
+const unknownStageLabel=r=>r?.field_evidence?.stage_review?.state==='scope_mismatch'?'변경 전 구역 · 단계 미확인':r?.field_evidence?.stage_review?'구역 전체 단계 미확인':pending;
 
 function associationFields(grid,projects){
   for(const project of projects){
@@ -361,9 +361,12 @@ function timeline(card,town,zone,snapshot,stats,intervals){
     const {event,label}=step,item=el('li'),head=el('div',null,'milestone-head');
     const name=el('strong',event.stage),term=translateStage(event.stage)??translateStage(event.stage?.replace(/ 고시$/,''));
     if(term){name.prepend(decorativeEmoji(term.emoji));name.title=term.summary;}
-    head.append(name,el('time',date(event.date)));
-    item.append(head,el('span',label,'duration '+(label.includes('진행 중')?'in-progress':label===pending?'unverified':'')));
+    head.append(name,el('time',event.date?date(event.date):'단계 일자 미확인'));
+    item.append(head);
+    if(event.date || label!==pending)item.append(el('span',label,'duration '+(label.includes('진행 중')?'in-progress':label===pending?'unverified':'')));
     if(event.scope)item.append(el('small',event.scope));
+    const proof=link(event.source_url,'단계 원문');
+    if(proof)item.append(proof);
     const match=compareInterval(step,town,zone,stats.samples);
     if(match)item.append(comparison(match.difference,match.count,'일'));
     else if(!zone && event.stage==='대상지 선정' && step.next?.stage==='관리계획 승인고시' && stats.months.has(town.id) && stats.months.size>1){
@@ -391,6 +394,28 @@ function timeline(card,town,zone,snapshot,stats,intervals){
     card.append(item);
   }
   if(e?.association_site)card.append(el('small','인가 고시 지번 · '+e.association_site,'detail-caption'));
+  const scoped=zone?.field_evidence?.stage_review?.scoped_events??zone?.field_evidence?.stage?.scoped_events??[];
+  if(scoped.length){
+    card.append(el('h4','관련 사업별 확인 이력'));
+    for(const event of scoped){
+      const row=notice([event.project_name,event.stage,event.date && date(event.date)].filter(Boolean).join(' · '));
+      const proof=link(event.source_url,'이력 원문');
+      if(proof)row.append(el('br'),proof);
+      card.append(row);
+    }
+  }
+  const awards=awardHistories(zone??town);
+  if(awards.length)card.append(el('h4','시공사 선정·계약 이력'));
+  for(const award of awards){
+    const group=el('div',null,'award-history');
+    group.append(el('strong',[award.scope && award.scope+' (조합 범위)',award.company].filter(Boolean).join(' · ')));
+    for(const event of award.events)group.append(el('small',event.label+' · '+date(event.date)));
+    for(const source of award.sources){
+      const proof=link(source.url,source.title);
+      if(proof)group.append(proof);
+    }
+    card.append(group);
+  }
 }
 
 export function comparePlans(children){

@@ -1,4 +1,4 @@
-import {formatValue,projectMetadata,projectStage,contractorProcedure,procedureParticipants,procedureSchedule} from '../detail-format.mjs';
+import {formatValue,projectMetadata,projectStage,awardHistories,contractorProcedure,procedureParticipants,procedureSchedule} from '../detail-format.mjs';
 import {projectUrl} from '../project-url.mjs';
 import {translateStage} from '../glossary-translator.mjs';
 
@@ -47,10 +47,17 @@ export function projectHtml(template,town,zone,children,snapshot,root){
     ?record.contractor_projects.map(p=>contractorFact(p.project_name+' 시공사',p.selected_contractor,[p.registered_address,p.scope_note].filter(Boolean).join(' · '),p.field_evidence.selected_contractor)).join('')
     :zone||contractor?contractorFact('시공사',record.selected_contractor??(contractor?'선정 결과 미확인':'미고시'),contractor?.note,contractor):'';
   const links=zone?[[projectUrl(town,null,root).pathname,town.name]]:children.map(child=>[projectUrl(town,child,root).pathname,child.name]);
+  const stageEvidence=record.field_evidence?.stage??record.field_evidence?.stage_review;
+  const stageFact=zone && record.field_evidence?.stage;
+  const stageDate=stageFact?.milestone_date??stageFact?.approval_date??stageFact?.review_date;
+  const stageRef=stageEvidence?.source_url?.startsWith('https://')?list([[stageEvidence.source_url,'단계 확인 원문']]):'';
+  const scoped=stageEvidence?.scoped_events??[];
+  const scopedHtml=scoped.map(e=>'<div><dt>'+escape(e.project_name)+'</dt><dd>'+escape(e.stage)+(e.date?' · '+escape(formatValue(e.date,'date')):'')+list([[e.source_url,'이력 원문']])+'</dd></div>').join('');
+  const awardHtml=awardHistories(record).map(h=>'<div><dt>'+escape([h.scope,'시공사 선정·계약 이력'].filter(Boolean).join(' · '))+'</dt><dd>'+escape(h.company)+h.events.map(e=>'<small>'+escape(e.label+' · '+formatValue(e.date,'date'))+'</small>').join('')+list(h.sources.filter(s=>s.url).map(s=>[s.url,s.title]))+'</dd></div>').join('');
   const summary='<article class="published-project"><p>'+escape(zone?town.district+' · '+town.name:town.district)+'</p><h2>'+escape(record.name)+'</h2>'
     +'<dl class="facts"><div><dt>'+(zone?'추진 단계':'관리계획 단계')+'</dt><dd>'+escape(stage)+(term?'<small>'+escape(term.summary)+'</small>':'')+'</dd></div>'
-    +(record.field_evidence?.stage_review?'<div><dt>구역 대조 결과</dt><dd>'+escape(record.field_evidence.stage_review.note)+'</dd></div>':'')
-    +contractors
+    +(stageEvidence?.note?'<div><dt>'+(stageFact?'최근 확인된 행정 단계':'구역 대조 결과')+'</dt><dd>'+escape(stageEvidence.note)+(stageDate?'<small>'+escape((stageFact.milestone_label??stage)+' · '+formatValue(stageDate,'date'))+'</small>':'')+(stageEvidence.source_as_of?'<small>자료 기준 '+escape(formatValue(stageEvidence.source_as_of,'date'))+'</small>':'')+stageRef+'</dd></div>':'')
+    +scopedHtml+contractors+awardHtml
     +'<div><dt>대표 지번</dt><dd>'+escape(zone?zone.registered_address??'미확인':town.address??town.name)+'</dd></div>'
     +'<div><dt>자료 기준일</dt><dd><time datetime="'+escape(snapshot)+'">'+escape(formatValue(snapshot,'date'))+'</time></dd></div></dl>'
     +'<h3>공식 출처</h3>'+(sources.length?list(sources):'<p>구역별 원문 미확인</p>')

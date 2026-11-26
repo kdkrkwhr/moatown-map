@@ -1,4 +1,4 @@
-﻿import earcut from './vendor/earcut-3.0.2/earcut.mjs?v=e8ffbcf7f855';
+﻿import earcut from './vendor/earcut-3.0.2/earcut.mjs?v=0bc4fef5da11';
 
 const DEG = Math.PI / 180;
 const GROUND = '#f1f3ef';

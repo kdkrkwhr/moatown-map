@@ -1,10 +1,16 @@
-import {dayNumber,projectEvents,contractorProcedure} from './detail-format.mjs?v=e8ffbcf7f855';
+import {dayNumber,projectEvents,contractorProcedure} from './detail-format.mjs?v=0bc4fef5da11';
 
 export const managementFilters=[
   ['selected','선정 대상지 전체'],['draft','관리계획 수립 중'],['approved','관리계획 승인'],
   ['unknown','관리계획 미확인'],['canceled','취소 이력']
 ];
 export const progressFilters=[
+  ['project-type-review','사업유형 검토 중','방식 검토 중'],
+  ['before-consent','조합설립 동의서 검인 전','동의서 검인 전'],
+  ['resident-consent','주민동의 확보 중','주민동의 확보'],
+  ['association-inspection','조합설립인가 전 주민공람','조합인가 전 공람'],
+  ['association-change','조합설립 변경 추진 중','조합 변경 추진'],
+  ['review-requested','통합심의 신청','통합심의 신청'],
   ['consent','동의서 징구','동의서 징구'],['association-returned','조합설립인가 반려','조합인가 반려'],
   ['implementer','사업시행자 지정','시행자 지정'],
   ['association','조합설립 진행 중','조합설립 중'],

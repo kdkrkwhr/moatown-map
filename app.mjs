@@ -1,15 +1,15 @@
-import {projectUrl,renderProjectDetail,showUnplacedProgram,procedureScheduleLine} from './detail-view.mjs?v=e8ffbcf7f855';
-import {durationSamples,elapsedMonths,formatValue,projectMetadata,contractorProcedure,procedureParticipants,procedureSchedule} from './detail-format.mjs?v=e8ffbcf7f855';
-import {projectParams,setProjectPath} from './project-url.mjs?v=e8ffbcf7f855';
+import {projectUrl,renderProjectDetail,showUnplacedProgram,procedureScheduleLine} from './detail-view.mjs?v=0bc4fef5da11';
+import {durationSamples,elapsedMonths,formatValue,projectMetadata,contractorProcedure,procedureParticipants,procedureSchedule} from './detail-format.mjs?v=0bc4fef5da11';
+import {projectParams,setProjectPath} from './project-url.mjs?v=0bc4fef5da11';
 export {elapsedMonths};
-import {loadMaps,createProjectMap} from './map-engine.mjs?v=e8ffbcf7f855';
-export {showReferencePin} from './map-engine.mjs?v=e8ffbcf7f855';
-import {loadNews,matchNews,newsCard,sourceLabels} from './news.mjs?v=e8ffbcf7f855';
-import {searchProjects,managementFilters,progressFilters,recentProjectDates,contractorName,associationReviewKey} from './project-search.mjs?v=e8ffbcf7f855';
-import {mountAddressLookup} from './address-reference.mjs?v=e8ffbcf7f855';
-import {hasPublicLayout,mountPilotViewer} from './pilot-viewer.mjs?v=e8ffbcf7f855';
-import {metricGlossary,translateStage} from './glossary-translator.mjs?v=e8ffbcf7f855';
-import {decorativeEmoji,toolIcon} from './ui-icons.mjs?v=e8ffbcf7f855';
+import {loadMaps,createProjectMap} from './map-engine.mjs?v=0bc4fef5da11';
+export {showReferencePin} from './map-engine.mjs?v=0bc4fef5da11';
+import {loadNews,matchNews,newsCard,sourceLabels} from './news.mjs?v=0bc4fef5da11';
+import {searchProjects,managementFilters,progressFilters,recentProjectDates,contractorName,associationReviewKey} from './project-search.mjs?v=0bc4fef5da11';
+import {mountAddressLookup} from './address-reference.mjs?v=0bc4fef5da11';
+import {hasPublicLayout,mountPilotViewer} from './pilot-viewer.mjs?v=0bc4fef5da11';
+import {metricGlossary,translateStage} from './glossary-translator.mjs?v=0bc4fef5da11';
+import {decorativeEmoji,toolIcon} from './ui-icons.mjs?v=0bc4fef5da11';
 const mobileMapQuery='(max-width: 768px)';
 function initialSheetHeight(selection,hasFilters,mobile){
   if(!mobile)return 1;
@@ -86,6 +86,12 @@ function showContractorMode(mode){
   }
 }
 const stages=[
+  {label:'사업유형 검토 중',short:'방식 검토 중',ink:'#545d6e',fill:'#b3bcc9',shape:'circle'},
+  {label:'조합설립 동의서 검인 전',short:'동의서 검인 전',ink:'#655483',fill:'#c4b7d1',shape:'circle'},
+  {label:'주민동의 확보 중',short:'주민동의 확보',ink:'#67527d',fill:'#c9b5cd',shape:'circle'},
+  {label:'조합설립인가 전 주민공람',short:'조합인가 전 공람',ink:'#634395',fill:'#ad93c9',shape:'circle'},
+  {label:'조합설립 변경 추진 중',short:'조합 변경 추진',ink:'#59468a',fill:'#ab90ce',shape:'circle'},
+  {label:'통합심의 신청',short:'통합심의 신청',ink:'#845820',fill:'#e9c08a',shape:'diamond'},
   {label:'동의서 징구',short:'동의서 징구',ink:'#66547b',fill:'#baabcd',shape:'circle'},
   {label:'조합설립인가 반려',short:'조합인가 반려',ink:'#924f6a',fill:'#d89aaf',shape:'diamond'},
   {label:'사업시행자 지정',short:'시행자 지정',ink:'#4a618e',fill:'#94aacf',shape:'circle'},

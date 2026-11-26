@@ -2,10 +2,45 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import {parseLot,matchingDistricts,positionInGeometry} from '../address-reference.mjs';
+import {awardHistories,projectEvents} from '../detail-format.mjs';
 
 const read=file=>JSON.parse(readFileSync(new URL('../moatown-data/'+file,import.meta.url),'utf8'));
 const {files,coverage}=read('latest.json');
 const towns=read(files.towns),zones=read(files.zones),index=read(files.parcel_index);
+
+test('every blank stage in the audit baseline has a scoped, sourced outcome',()=>{
+  const release='snapshots/2026-11-26/stage-audit/';
+  const audit=read(release+'review.json').stage_audit;
+  const before=read(audit.baseline_zone_file);
+  const after=new Map(read(release+'zones.json').map(z=>[z.id,z]));
+  const reviewed=[...audit.verified_zone_ids,...audit.related_history_only_ids,...audit.pending_zone_ids];
+  assert.equal(reviewed.length,audit.reviewed);
+  assert.deepEqual(reviewed.sort(),before.filter(z=>!z.stage).map(z=>z.id).sort());
+  for(const old of before){
+    const z=after.get(old.id);
+    if(old.stage){assert.deepEqual(z,old);continue;}
+    const isDirect=audit.verified_zone_ids.includes(z.id);
+    const e=isDirect?z.field_evidence.stage:z.field_evidence.stage_review;
+    assert.equal(Boolean(z.stage),isDirect,z.id);
+    assert.ok(e.source_url.startsWith('https://') && e.note && e.checked_on===audit.checked_on,z.id);
+    if(audit.related_history_only_ids.includes(z.id))assert.ok(e.scoped_events?.length,z.id);
+    for(const event of e.scoped_events??[])assert.ok(event.project_name && event.stage && event.source_url.startsWith('https://'),z.id);
+  }
+});
+
+test('source dates, scoped events and contracting events do not become administrative milestones',()=>{
+  const group=zones.find(z=>z.id==='mz-plan-641915-a1');
+  const reviewed=zones.find(z=>z.id==='mz-plan-587169-project-2');
+  const tender=zones.find(z=>z.id==='mz-plan-613956-1126010100101100036');
+  const t=id=>towns.find(row=>row.id===id);
+  assert.equal(projectEvents(t(group.town_id),group)[0].stage,'조합설립인가 전 주민공람 시작');
+  assert.equal(reviewed.stage,null);
+  assert.ok(reviewed.field_evidence.stage_review.scoped_events.length);
+  assert.deepEqual(awardHistories(tender).flatMap(h=>h.events.map(e=>e.date)),['2026-05-16','2026-05-28']);
+  assert.ok(!projectEvents(t(tender.town_id),tender).some(e=>e.date==='2026-05-28'));
+  const bangbae=zones.find(z=>z.id.includes('584797'));
+  assert.equal(projectEvents(t(bangbae.town_id),bangbae).at(-1).date,null);
+});
 
 test('Siheung contractor selection and contract dates belong to separate associations',()=>{
   const a1=zones.find(z=>z.id==='mz-notice-public-026-a-1');
