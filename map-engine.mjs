@@ -1,6 +1,6 @@
-import {createMarkerClusters} from './marker-clusters.mjs?v=a65454dac88c';
-import {contractorName} from './project-search.mjs?v=a65454dac88c';
-import {contractorProcedure} from './detail-format.mjs?v=a65454dac88c';
+import {createMarkerClusters} from './marker-clusters.mjs?v=e8ffbcf7f855';
+import {contractorName} from './project-search.mjs?v=e8ffbcf7f855';
+import {contractorProcedure} from './detail-format.mjs?v=e8ffbcf7f855';
 const SDK='https://oapi.map.naver.com/openapi/v3/maps.js';
 export function loadMaps(onAuthError){
   window.navermap_authFailure=onAuthError;
@@ -134,11 +134,13 @@ export function createProjectMap(m,container,{townById,zoneById,boundaries,distr
     container.classList.toggle('contractor-map',Boolean(contractor) && contractor!=='pending');
     container.classList.toggle('procedure-map',contractor==='pending');
     if(rows!==measuredRows){clusters.resetSizes();measuredRows=rows;}
-    const townCompanies=new Map();
-    if(contractor)for(const {town,association} of rows){
+    const associationNames=new Map();
+    if(contractor)for(const {town,zone,association} of rows){
       if(!association)continue;
-      if(!townCompanies.has(town.id))townCompanies.set(town.id,new Set());
-      townCompanies.get(town.id).add(contractorName(association.selected_contractor));
+      const id=zone?.id??town.id;
+      if(!associationNames.has(id))associationNames.set(id,new Set());
+      const name=contractorName(association.selected_contractor);
+      associationNames.get(id).add(zone?association.project_name+' · '+name:name);
     }
     const wide=map.getZoom()<=12;
     const overview=wide && !filtered && !current.townId && districts.length>0;
@@ -153,15 +155,15 @@ export function createProjectMap(m,container,{townById,zoneById,boundaries,distr
       const id=zoneId??townId,selected=id===(current.zoneId??current.townId);
       if(overview || !show){setVisible(pin,false);return;}
       const town=townById.get(townId),zone=zoneById.get(zoneId);
-      const companies=townCompanies.get(townId);
-      if(!zone){
+      const companies=associationNames.get(id);
+      if(!zone || zone.contractor_projects?.length){
         const label=pin.getIcon().content;
         if(companies && !label.querySelector('.map-company'))label.append(node('small','map-company',''));
-        const companyLabel=label.querySelector('.map-company'),text=companies?[...companies].join(' · '):'';
+        const companyLabel=label.querySelector('.map-company'),text=companies?[...companies].join(' · '):contractorName(zone?.selected_contractor);
         if(companyLabel && companyLabel.textContent!==text)companyLabel.textContent=text;
       }
       const status=contractor==='pending'?contractorProcedure(zone)?.stage:contractorName(zone?.selected_contractor);
-      const description=zone?[town.district,town.name,zone.stage,status].filter(Boolean).join(' · '):[town.district,'모아타운 대상지',...(companies??[])].join(' · ');
+      const description=zone?[town.district,town.name,zone.stage,status,...(companies??[])].filter(Boolean).join(' · '):[town.district,'모아타운 대상지',...(companies??[])].join(' · ');
       candidates.push({id,pin,townId,zoneId,selected,name:zone?.name??town.name,description});
     }
     for(const [id,shape] of shapes){
@@ -171,7 +173,7 @@ export function createProjectMap(m,container,{townById,zoneById,boundaries,distr
       const selected=id===(current.zoneId??current.townId);
       const focusedChild=!isTown && current.townId===townId;
       const style={strokeColor:stage?.ink??(selected?'#155778':'#345b75'),fillColor:stage?.fill??'#a3c9dc',
-        fillOpacity:wide?0:isTown?.14:selected?.65:.44,strokeWeight:wide?1:selected?4:hit?3:focusedChild?2.5:1.6,
+        fillOpacity:wide || (!isTown && associationNames.has(id))?0:isTown?.14:selected?.65:.44,strokeWeight:wide?1:selected?4:hit?3:focusedChild?2.5:1.6,
         strokeOpacity:wide?.65:1,zIndex:isTown?1:selected?5:3};
       for(const poly of shape.polygons){
         setVisible(poly,show);

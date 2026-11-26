@@ -59,7 +59,8 @@
     "towns_with_rental_units": 91,
     "towns_with_association_contractor_records": 12,
     "association_contractor_records_without_zone_cards": 20,
-    "zones_with_contractor_procedure": 9
+    "zones_with_contractor_procedure": 9,
+    "association_contractor_records_within_zones": 3
   },
   "source_urls": {
     "official_baseline": "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status",
@@ -79,7 +80,7 @@
   },
   "files": {
     "towns": "snapshots/2026-11-26/contractors/towns.json",
-    "zones": "snapshots/2026-11-26/contractor-procedures/zones.json",
+    "zones": "snapshots/2026-11-26/association-scope/zones.json",
     "boundaries": "snapshots/2026-11-24/boundaries.geojson",
     "excluded": "snapshots/2026-11-24/excluded.json",
     "parcel_index": "addresses/index.json",
@@ -543,7 +544,7 @@
     ],
     "hashes": {
       "towns": "62efd8c80dd201377df6fc1471995e065854ee9fbaf5a5e10e99619bc76d3a4f",
-      "zones": "4230c0c5afb2a4ab57d4124a841262b8a9a828723bcd738f1e3ac0a6b9f5a4e1",
+      "zones": "ffa6e5a1a7f21fbc17e0c2b24468294a5fa7e4090430e3101e7b3fe7c6c5b5bc",
       "boundaries": "d5de1e504651c2703b9c08d51cb3aea9e3f856c084c47eb85c41b0ce5b412252",
       "buildings": "ace09a96ffa7fc70328ed7995791fd8d86e9ad0bffae90ee21b6cf1a13178795",
       "pilot_plans": "356e909dd659cc5046716573b8e5ef30ee1a1f14fa5b1d1297245d6389d2c633",

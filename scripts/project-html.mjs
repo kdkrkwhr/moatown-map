@@ -44,7 +44,7 @@ export function projectHtml(template,town,zone,children,snapshot,root){
       +[...procedureParticipants(procedure),procedureSchedule(procedure.schedule,null).label,'자료 확인 '+formatValue(procedure.checked_on,'date')].map(text=>'<small>'+escape(text)+'</small>').join('')
       +list(procedure.sources.map(s=>[s.url,s.title]))+'</dd></div>'
     :record.contractor_projects?.length
-    ?record.contractor_projects.map(p=>contractorFact(p.project_name+' 시공사',p.selected_contractor,p.registered_address,p.field_evidence.selected_contractor)).join('')
+    ?record.contractor_projects.map(p=>contractorFact(p.project_name+' 시공사',p.selected_contractor,[p.registered_address,p.scope_note].filter(Boolean).join(' · '),p.field_evidence.selected_contractor)).join('')
     :zone||contractor?contractorFact('시공사',record.selected_contractor??(contractor?'선정 결과 미확인':'미고시'),contractor?.note,contractor):'';
   const links=zone?[[projectUrl(town,null,root).pathname,town.name]]:children.map(child=>[projectUrl(town,child,root).pathname,child.name]);
   const summary='<article class="published-project"><p>'+escape(zone?town.district+' · '+town.name:town.district)+'</p><h2>'+escape(record.name)+'</h2>'

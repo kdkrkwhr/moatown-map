@@ -1,7 +1,7 @@
-import {formatValue,unitsChange,projectIntervals,compareInterval,projectStage,contractorProcedure,procedureParticipants,procedureSchedule} from './detail-format.mjs?v=a65454dac88c';
-import {projectUrl} from './project-url.mjs?v=a65454dac88c';
-import {metricGlossary,translateStage} from './glossary-translator.mjs?v=a65454dac88c';
-import {decorativeEmoji,toolIcon} from './ui-icons.mjs?v=a65454dac88c';
+import {formatValue,unitsChange,projectIntervals,compareInterval,projectStage,contractorProcedure,procedureParticipants,procedureSchedule} from './detail-format.mjs?v=e8ffbcf7f855';
+import {projectUrl} from './project-url.mjs?v=e8ffbcf7f855';
+import {metricGlossary,translateStage} from './glossary-translator.mjs?v=e8ffbcf7f855';
+import {decorativeEmoji,toolIcon} from './ui-icons.mjs?v=e8ffbcf7f855';
 export {projectUrl};
 
 const pending='미고시';
@@ -205,11 +205,20 @@ function associationFields(grid,projects){
     row.dataset.award=project.project_name;
     const evidence=project.field_evidence.selected_contractor;
     const dates=[evidence.selection_date && '선정일 '+date(evidence.selection_date),evidence.contract_date && '계약일 '+date(evidence.contract_date)];
+    if(project.scope_note)row.append(el('small',project.scope_note,'scope-note'));
     row.append(el('small',[project.registered_address,...dates].filter(Boolean).join(' · ')));
     if(evidence.note)row.append(el('small',evidence.note));
     const source=link(evidence.source_url,evidence.source_title);
     if(source)row.append(source);
+    if(project.scope_note)for(const proof of evidence.supporting_sources??[]){
+      const supporting=link(proof.url,proof.title);if(supporting)row.append(supporting);
+    }
   }
+}
+
+function zoneContractorText(zone){
+  if(zone.selected_contractor)return zone.selected_contractor;
+  return (zone.contractor_projects??[]).map(p=>p.project_name+' · '+p.selected_contractor+' (조합 범위)').join(', ')||null;
 }
 
 export function procedureScheduleLine(procedure){
@@ -419,7 +428,8 @@ function comparisonTable(town,children,zone,select,badge){
     button.addEventListener('click',selectChild);
     row.addEventListener('click',event=>{if(!event.target.closest('button'))selectChild();});
     row.insertCell().append(child.stage?badge(child.stage,true):el('span',unknownStageLabel(child),'unverified'));
-    row.insertCell().append(el('span',child.selected_contractor??contractorProcedure(child)?.stage??(child.field_evidence?.contractor_review?reviewedContractorLabel:pending),child.selected_contractor||contractorProcedure(child)?'':'unverified'));
+    const contractor=zoneContractorText(child)??contractorProcedure(child)?.stage;
+    row.insertCell().append(el('span',contractor??(child.field_evidence?.contractor_review?reviewedContractorLabel:pending),contractor?'':'unverified'));
     const n=values(child).planned,asOf=child.field_evidence?.plan?.source_as_of;
     const origin=child.stage==='사업시행계획 폐지'?'폐지 전 계획':planLabel(child.field_evidence?.plan);
     row.insertCell().append(el('strong',formatValue(n,'세대')),el('small',[origin,asOf?date(asOf):'기준일 미고시'].filter(Boolean).join(' · ')));
@@ -447,7 +457,7 @@ function subAreas(panel,town,zone,children,boundaries,select,badge){
     if(child.drawing_code && !child.name.includes(child.drawing_code))head.firstChild.prepend(child.drawing_code+' · ');
     button.append(head);
     const sizes=values(child);
-    const entries=[['대표 지번',child.registered_address],['계획',formatValue(sizes.planned,'세대')],['면적',formatValue(sizes.area,'㎡')],['시공사',child.selected_contractor??contractorProcedure(child)?.stage],['지도 위치',boundaryLabel(boundaries.get(child.id))??(child.representative_point?'대표 지번 핀':null)]];
+    const entries=[['대표 지번',child.registered_address],['계획',formatValue(sizes.planned,'세대')],['면적',formatValue(sizes.area,'㎡')],['시공사',zoneContractorText(child)??contractorProcedure(child)?.stage],['지도 위치',boundaryLabel(boundaries.get(child.id))??(child.representative_point?'대표 지번 핀':null)]];
     for(const [label,value] of entries.sort((a,b)=>Number(!a[1]||a[1]===pending)-Number(!b[1]||b[1]===pending))){
       const fallback=label==='시공사' && child.field_evidence?.contractor_review?reviewedContractorLabel:pending;
       const line=el('span',null,'sub-card-field');line.append(el('span',label),el('span',value||fallback,!value||value===pending?'unverified':null));button.append(line);

@@ -1,15 +1,15 @@
-import {projectUrl,renderProjectDetail,showUnplacedProgram,procedureScheduleLine} from './detail-view.mjs?v=a65454dac88c';
-import {durationSamples,elapsedMonths,formatValue,projectMetadata,contractorProcedure,procedureParticipants,procedureSchedule} from './detail-format.mjs?v=a65454dac88c';
-import {projectParams,setProjectPath} from './project-url.mjs?v=a65454dac88c';
+import {projectUrl,renderProjectDetail,showUnplacedProgram,procedureScheduleLine} from './detail-view.mjs?v=e8ffbcf7f855';
+import {durationSamples,elapsedMonths,formatValue,projectMetadata,contractorProcedure,procedureParticipants,procedureSchedule} from './detail-format.mjs?v=e8ffbcf7f855';
+import {projectParams,setProjectPath} from './project-url.mjs?v=e8ffbcf7f855';
 export {elapsedMonths};
-import {loadMaps,createProjectMap} from './map-engine.mjs?v=a65454dac88c';
-export {showReferencePin} from './map-engine.mjs?v=a65454dac88c';
-import {loadNews,matchNews,newsCard,sourceLabels} from './news.mjs?v=a65454dac88c';
-import {searchProjects,managementFilters,progressFilters,recentProjectDates,contractorName,associationReviewKey} from './project-search.mjs?v=a65454dac88c';
-import {mountAddressLookup} from './address-reference.mjs?v=a65454dac88c';
-import {hasPublicLayout,mountPilotViewer} from './pilot-viewer.mjs?v=a65454dac88c';
-import {metricGlossary,translateStage} from './glossary-translator.mjs?v=a65454dac88c';
-import {decorativeEmoji,toolIcon} from './ui-icons.mjs?v=a65454dac88c';
+import {loadMaps,createProjectMap} from './map-engine.mjs?v=e8ffbcf7f855';
+export {showReferencePin} from './map-engine.mjs?v=e8ffbcf7f855';
+import {loadNews,matchNews,newsCard,sourceLabels} from './news.mjs?v=e8ffbcf7f855';
+import {searchProjects,managementFilters,progressFilters,recentProjectDates,contractorName,associationReviewKey} from './project-search.mjs?v=e8ffbcf7f855';
+import {mountAddressLookup} from './address-reference.mjs?v=e8ffbcf7f855';
+import {hasPublicLayout,mountPilotViewer} from './pilot-viewer.mjs?v=e8ffbcf7f855';
+import {metricGlossary,translateStage} from './glossary-translator.mjs?v=e8ffbcf7f855';
+import {decorativeEmoji,toolIcon} from './ui-icons.mjs?v=e8ffbcf7f855';
 const mobileMapQuery='(max-width: 768px)';
 function initialSheetHeight(selection,hasFilters,mobile){
   if(!mobile)return 1;
@@ -175,8 +175,8 @@ export function mount({manifest,towns,zones,boundaries,excluded=[]},sdk,mapSigna
   const newsCounts=new Map();
   get('map-totals').textContent=new Set(towns.map(town=>town.district)).size+'개 자치구 · 선정 대상지 '+towns.length+'곳';
   const groups=groupSubAreas(towns,zones);
-  function awardName(row){return contractorName((row.zone??row.association)?.selected_contractor);}
-  const allCompanies=new Set([...zones,...towns.flatMap(t=>t.contractor_projects??[])].map(r=>contractorName(r.selected_contractor)).filter(Boolean));
+  function awardName(row){return contractorName((row.association??row.zone)?.selected_contractor);}
+  const allCompanies=new Set([...zones,...[...towns,...zones].flatMap(r=>r.contractor_projects??[])].map(r=>contractorName(r.selected_contractor)).filter(Boolean));
   const pilot=mountPilotViewer({manifest,boundaries,townById,groups});
   const calendar=new Intl.DateTimeFormat('sv-SE',{timeZone:'Asia/Seoul',year:'numeric',month:'2-digit',day:'2-digit'});
   let recentOnly=false,recentDay=calendar.format(Date.now());
@@ -243,7 +243,7 @@ export function mount({manifest,towns,zones,boundaries,excluded=[]},sdk,mapSigna
       if(contractor==='pending')contractor='all';
     }
     else if(award==='procedure' && contractorProcedure(zone))current.award=award;
-    else if(!current.zoneId && townById.get(current.townId)?.contractor_projects?.some(p=>p.project_name===award))current.award=award;
+    else if((zone??townById.get(current.townId))?.contractor_projects?.some(p=>p.project_name===award))current.award=award;
     if(!current.townId && cancellations.has(params.get('cancellation'))){
       current.cancellation=params.get('cancellation');chosen.plan='canceled';chosen.progress='';contractor='';
     }
@@ -344,7 +344,8 @@ export function mount({manifest,towns,zones,boundaries,excluded=[]},sdk,mapSigna
     const canceled=rows.filter(row=>row.excluded).length;
     const townCount=rows.filter(row=>row.town && !row.zone && !row.association).length;
     const associationCount=rows.filter(row=>row.association).length;
-    get('result-count').textContent=[townCount && '대상지 '+townCount+'곳',visibleZones.size && '구역 '+visibleZones.size+'곳',associationCount && '조합 '+associationCount+'곳',canceled && '취소 이력 '+canceled+'건'].filter(Boolean).join(' · ') || '0건';
+    const zoneCount=rows.filter(row=>row.zone && !row.association).length;
+    get('result-count').textContent=[townCount && '대상지 '+townCount+'곳',zoneCount && '구역 '+zoneCount+'곳',associationCount && '조합 '+associationCount+'곳',canceled && '취소 이력 '+canceled+'건'].filter(Boolean).join(' · ') || '0건';
     get('clear-filters').hidden=!filtered();
     const active=Object.values(chosen).filter(Boolean).length;
     const group=chosen.progress?'progress':'plan';
@@ -355,7 +356,7 @@ export function mount({manifest,towns,zones,boundaries,excluded=[]},sdk,mapSigna
     }
     const fragment=document.createDocumentFragment();
     for(const {town,zone,association,excluded:archived} of rows){
-      const date=recentDates.get(association?associationReviewKey(town,association):archived?.address_raw??zone?.id??town?.id);
+      const date=recentDates.get(association?associationReviewKey(zone??town,association):archived?.address_raw??zone?.id??town?.id);
       const badge=date?el('span','최근 갱신','recent-badge'):null;
       if(badge){
         badge.prepend(decorativeEmoji(metricGlossary.recent.emoji));
@@ -372,8 +373,9 @@ export function mount({manifest,towns,zones,boundaries,excluded=[]},sdk,mapSigna
         fragment.append(entry);continue;
       }
       const button=el('a',undefined,'town-item');
-      const resultUrl=new URL(projectUrl(town,zone).pathname,location.origin);
-      const procedure=contractorProcedure(zone);
+      const resultUrl=setProjectPath(new URL(location.href),town,zone);
+      for(const key of ['award','view','mode','layout','cancellation'])resultUrl.searchParams.delete(key);
+      const procedure=association?null:contractorProcedure(zone);
       const award=association?.project_name??(procedure?'procedure':contractor && zone?.selected_contractor?'1':'');
       if(award)resultUrl.searchParams.set('award',award);
       if(contractor)resultUrl.searchParams.set('contractor',contractor);
@@ -392,12 +394,14 @@ export function mount({manifest,towns,zones,boundaries,excluded=[]},sdk,mapSigna
       if(zone || association){
         if(zone)button.dataset.zone=zone.id;
         meta.append(el('span',town.name));
-        button.append(el('strong',zone?.name??association.project_name),meta);
-        const project=zone??association,company=contractorName(project.selected_contractor);
+        if(association && zone)meta.append(el('span',zone.name));
+        button.append(el('strong',association?.project_name??zone.name),meta);
+        const project=association??zone,company=contractorName(project.selected_contractor);
         if(company){
           const line=el('span',company,'contractor-line');
           line.prepend(el('small','시공사'));button.append(line);
         }
+        if(association?.scope_note)button.append(el('small',association.scope_note,'location-note'));
         if(procedure){
           button.append(el('span',procedure.stage,'procedure-stage'));
           for(const text of procedureParticipants(procedure))button.append(el('span',text,'procedure-actors'));
@@ -408,8 +412,8 @@ export function mount({manifest,towns,zones,boundaries,excluded=[]},sdk,mapSigna
           }
           fragment.append(card);continue;
         }
-        if(zone)button.append(stageBadge(zone.stage));
-        else if(association.registered_address)button.append(el('small',association.registered_address,'location-note'));
+        if(association?.registered_address)button.append(el('small',association.registered_address,'location-note'));
+        else if(zone)button.append(stageBadge(zone.stage));
         fragment.append(button);continue;
       }
       if(town.selected_date)meta.append(el('span',displayDate(town.selected_date)+' 선정'));
@@ -525,7 +529,9 @@ export function mount({manifest,towns,zones,boundaries,excluded=[]},sdk,mapSigna
     const direct=zoneId && visibleZones.has(zoneId);
     select(zoneId && !direct?townId:null,null,null,zoneId && !direct?'areas':undefined);
     if(cancellation){list.querySelector('[data-cancellation="'+CSS.escape(cancellation)+'"]')?.focus();return;}
-    const target=zoneId ? (direct?list:detail).querySelector('[data-zone="'+CSS.escape(zoneId)+'"]') : award?list.querySelector('[data-association="'+CSS.escape(award)+'"]'):list.querySelector('[data-town="'+CSS.escape(townId)+'"]');
+    const owner=zoneId?'[data-zone="'+CSS.escape(zoneId)+'"]':'[data-town="'+CSS.escape(townId)+'"]';
+    const association=award && list.querySelector(owner+'[data-association="'+CSS.escape(award)+'"]');
+    const target=association || (zoneId && !direct?detail:list).querySelector(owner);
     target?.focus();
   });
   function updateFilters(replace=true){
@@ -623,8 +629,9 @@ export function mount({manifest,towns,zones,boundaries,excluded=[]},sdk,mapSigna
     map=createProjectMap(maps,get('map'),{townById,zoneById,boundaries,districtCounts,districtStages,zoneStage,signal:mapSignal,
       select(townId,zoneId){
         if(!contractor){select(townId,zoneId);return;}
-        const projects=rows.filter(row=>row.town?.id===townId && row.association);
-        const award=zoneId?(contractorProcedure(zoneById.get(zoneId))?'procedure':'1'):projects.length===1?projects[0].association.project_name:'';
+        const projects=rows.filter(row=>row.town?.id===townId && row.association && (row.zone?.id??null)===(zoneId??null));
+        const zone=zoneById.get(zoneId);
+        const award=projects.length===1?projects[0].association.project_name:zone?.selected_contractor?'1':contractorProcedure(zone)?'procedure':'';
         select(townId,zoneId,null,zoneId?'business':'areas',award);
       },
       selectDistrict(name){search.value='';district.value=name;updateFilters(false);},

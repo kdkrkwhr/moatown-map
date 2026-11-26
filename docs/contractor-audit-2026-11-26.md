@@ -225,3 +225,39 @@
 | 강동구 | 천호동 338번지 · 천호동 A1구역 | 천호동 338번지 사업의 관리계획을 확인했다. 인근 가로주택 조합과 구분해 조회했으며, 이 구역의 시공자 선정·도급계약 원문은 확인되지 않았다. | [강동구 · 천호동 338번지 일대 관리계획](https://www.gangdong.go.kr/web/newportal/contents/gdp_005_107_004_002_003) |
 
 세부구역 카드가 없는 66개 대상지별 조사와 구역 범위 보류 내역은 검수 파일의 `contractor_audit.town_reviews`에 수록했다. 세부구역 172개는 `zone_reviews`에서 검색어, 사업장 명부에서 일치한 사업명, 확인한 입찰공고를 볼 수 있다. [전수 검수 기록](../moatown-data/snapshots/2026-11-26/contractors/review.json) · [세부구역 데이터](../moatown-data/snapshots/2026-11-26/contractors/zones.json) · [대상지별 조합 자료](../moatown-data/snapshots/2026-11-26/contractors/towns.json)
+
+
+## 조합 선정과 지도 구역 범위 재검수
+
+2026.11.26 기준으로 세부구역 전체와 발주 조합의 범위를 대조했다. 조합이 선정한 업체를 표시하는 경우에도 지도 외곽은 관리계획 참고 경계다.
+
+| 지도 구역 | 확인된 조합·시공사 | 확인한 계약 범위 |
+| --- | --- | --- |
+| 석관동 A2 | 석관1의2구역 조합 · 한화 건설부문, 2026.11.07 선정 | 입찰공고는 석관동 332-113 일대 14,156.02㎡, 관리계획 A2는 15,376.1㎡다. [한화 수주 내역](https://m.hanwhacorp.co.kr/hanwha/media/coverage_more.do?pageNum=1&search_param1=0&search_param2=&seq=3932) · [조합 재공고](https://www.arunews.com/news/articleView.html?idxno=66975) |
+| 면목동 사업추진구역2 | 면목역6의3구역 조합 · 호반건설, 2026.05.23 선정, 08.19 계약 | 조합은 면목동 66-28, 관리계획은 65-2 일대다. 선정총회에 구역 확대가 함께 상정됐지만 확대 범위에 대한 변경도급은 미확인이다. [조합 추진경과](https://cleanup.seoul.go.kr/cafe/mainIndx/cleanup-prtnelapse/vscr.do?cafeId=260900001418b49&bsnsPk=11260-900001418) · [조합 총회](https://cleanup.seoul.go.kr/assc/bbs/lscrKyulOpenDataList.do?cafeId=260900001418b49) |
+| 중화1동 사업추진구역2 | 상봉역4구역 조합 · 우미건설, 2024.11.30 선정, 12.06 계약 | 수주 발표 대상은 상봉동 304-4 일대 225세대다. 관리계획은 중화동 133-7을 포함해 496세대다. [조합 추진경과](https://cleanup.seoul.go.kr/cafe/mainIndx/cleanup-prtnelapse/vscr.do?cafeId=260900001180x95&bsnsPk=11260-900001180) · [관리계획](https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=587169) |
+
+### 추가 대조 25곳
+
+계획서의 구역번호·대표 지번과 검색된 입찰·수주 자료의 발주자를 대조했다. 아래 구역에 귀속시킬 수 있는 추가 선정 업체는 확인되지 않았다.
+
+| 대상 구역 | 구역 수 | 대조 결과와 근거 |
+| --- | ---: | --- |
+| 합정동 A-1~A-4 | 4 | 370, 361-9, 91-50, 81-26 일대다. 447 일대 사업과 지번이 다르다. [관리계획](https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=631937) |
+| 대흥동 모아주택 1구역 | 1 | 같은 535-2 지번에서 과거 업체를 물색한 사업은 91세대, 승인 계획은 270세대다. [서울시 계획](https://mediahub.seoul.go.kr/archives/2010430) |
+| 풍납동 A-1·A-2 | 2 | 서울시 최신 소개는 483-10 일대 1개 구역이다. 강변현대 299-1 사업과 구분했다. [서울시 기록](https://news.seoul.go.kr/citybuild/archives/538517) |
+| 망원동 A-1·A-2·A-5 | 3 | 419, 453-44, 461 일대다. 인접한 454-3·456·459 사업의 시공자 자료를 제외했다. [서울시 기록](https://news.seoul.go.kr/citybuild/archives/538816) |
+| 대조동 A1 | 1 | 208-5 일대다. 한신공영 선정은 A2·A3에서 확인된다. [서울시 기록](https://news.seoul.go.kr/citybuild/archives/539063) |
+| 마장동 A4~A6 | 3 | 서울시의 5개 구역과 기존 6개 구역 코드, 코오롱글로벌 공시의 발주 지번을 대조했다. [서울시 기록](https://news.seoul.go.kr/citybuild/archives/538948) · [거래소 계약 공시](https://kind.krx.co.kr/external/2025/06/25/000467/20250625001387/91370.htm) |
+| 원효로4가 사업가능구역1 | 1 | 71 일대 통합 계획과 30-1 조합의 11월 조합설립변경 공개 자료를 대조했다. [서울시 기록](https://news.seoul.go.kr/citybuild/archives/538956) · [30-1 조합](https://cleanup.seoul.go.kr/assc/scrin-bbs/execute.do?cafeId=170900001394K36) |
+| 구기동 A1·A2 | 2 | LH의 역할은 구역별 조합설립 지원이다. [종로구의회 업무보고](https://bookcouncil.jongno.go.kr/attach/record/JONGNO/appendix/a09/A0012038.pdf) |
+| 신림동 A1 | 1 | A1은 692-7 일대다. LH 공공시행·시공사 모집은 687-2 일대 A2다. [관악구 발표](https://www.gwanak.go.kr/site/media/mediaVod6.do?Idx=CID20260413095813050) |
+| 성산동 A-2 | 1 | 대우건설의 11월 발표는 1·3·4구역 수주를 명시했다. [대우건설 발표](https://m.daewooenc.com/news/news-view?idx=15642) |
+| 구의3동 사업가능구역1·2 | 2 | 고시의 591-18·587-72와 한양연립 592-39의 사업을 대조했다. [관리계획](https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=644471) |
+| 청룡동 A1·B1·B2·B3 | 4 | 봉천동 1535 조합의 입찰과 11월 24일 청룡동 1536-1 일대 4,142.98㎡의 조합설립 공람은 각각 다른 사업명으로 공개됐다. 이를 4개 계획구역에 연결할 변경도급 또는 선정 자료는 미확인이다. [1536 공람 원문](https://www.gwanak.go.kr/site/gwanak/ex/bbsNew/View.do?not_ancmt_mgt_no=42368&typeCode=1) · [1535 조합](https://cleanup.seoul.go.kr/assc/scrin-bbs/execute.do?cafeId=620900000992k85) |
+
+### 선정 절차 후속 확인
+
+- 대림동 모아주택1구역은 11월 25일 두산건설·대우산업개발의 응찰까지 확인했다. 다음 확인 자료는 조합의 시공자 선정총회 의결 또는 계약 공시다. [응찰 결과](https://www.newslock.co.kr/news/articleView.html?idxno=140966) · [조합 공개현황](https://cleanup.seoul.go.kr/assc/bbs/lscrKyulOpenDataList.do?cafeId=560900001042q95)
+- 관악난곡 A2는 10월 27일 주민대표회의와 제일건설이 입찰참가 확약서 제출을 확인했다. 11월 3일 마감 후 최종 응찰·선정 결과는 미확인이다. 11월 10일 주민대표회의 의사록은 공개목록에 있고 본문 열람에는 로그인이 필요하다. [당사자 인터뷰](https://www.asiatime.co.kr/article/20261027500325) · [주민대표회의 공개목록](https://cleanup.seoul.go.kr/service/opendata/othbcDocInput/RecentlscrOpen.do?cafeId=620900001519t19&cpage=1&pageSize=100)
+- 현저동 1-5는 11월 26일 현재 동아건설산업이 우선협상대상자다. 다음 확인 자료는 11월 28일 예정 총회의 결과다. [업체 발표](https://www.smgroup.co.kr/media/news/view.do?IDX=666) · [총회 일정](https://www.housingherald.co.kr/news/articleView.html?idxno=63509)

@@ -48,8 +48,8 @@ test('contractor schedules use the advertised Korean time or the entire local ca
 test('contractor discovery lists each awarded zone or named association exactly once',()=>{
   const found=search({contractor:'all'});
   const assigned=zones.filter(z=>z.selected_contractor);
-  const associations=towns.flatMap(t=>t.contractor_projects??[]);
-  assert.deepEqual(found.filter(r=>r.zone).map(r=>r.zone.id).sort(),assigned.map(z=>z.id).sort());
+  const associations=[...towns,...zones].flatMap(t=>t.contractor_projects??[]);
+  assert.deepEqual(found.filter(r=>r.zone && !r.association).map(r=>r.zone.id).sort(),assigned.map(z=>z.id).sort());
   assert.deepEqual(found.filter(r=>r.association).map(r=>r.association.project_name).sort(),associations.map(a=>a.project_name).sort());
   assert.equal(found.length,assigned.length+associations.length);
   assert.deepEqual(search({contractor:'all',plan:'canceled'}),[]);
@@ -58,6 +58,29 @@ test('contractor discovery lists each awarded zone or named association exactly 
   assert.deepEqual(search({query:'금천구 동부건설'}),byCompany);
   assert.deepEqual(search({query:'디엘건설'}),search({contractor:'DL건설'}));
   assert.ok(search({contractor:'all',progress:'construction'}).every(r=>r.zone?.selected_contractor && r.zone.stage==='착공'));
+});
+
+test('scoped awards link a named association to a zone without assigning its contractor to the whole zone',()=>{
+  const expected=[
+    ['석관1의2구역 조합','석관동 332-113','한화 건설부문'],
+    ['면목역6의3구역 조합','면목동 66-28','호반건설'],
+    ['상봉역4구역 조합','상봉동 304-4','우미건설']
+  ];
+  const scoped=search({contractor:'all'}).filter(r=>r.association && r.zone);
+  assert.equal(scoped.length,manifest.coverage.association_contractor_records_within_zones);
+  for(const [project_name,address,company] of expected){
+    const matches=search({contractor:company,query:address});
+    assert.equal(matches.length,1);
+    const [{zone,town,association}]=matches;
+    assert.equal(association.project_name,project_name);
+    assert.ok(association.scope_note && association.field_evidence.selected_contractor.selection_date);
+    assert.ok(!zone.selected_contractor);
+    assert.ok(search({query:company}).some(row=>row.zone===zone && row.association===association));
+    assert.deepEqual(search({query:project_name.replace(/(\d)의/,'$1-'),district:town.district}),matches);
+    assert.deepEqual(search({contractor:'pending',query:project_name}),[]);
+    const recentDates=recentProjectDates(towns,groups,archive,association.field_evidence.selected_contractor.checked_on);
+    assert.deepEqual(search({query:address,contractor:company,recentDates}),matches);
+  }
 });
 
 test('recency uses seven calendar dates, rolls child updates up to the parent and composes with filters',()=>{
