@@ -1,15 +1,15 @@
-import {projectUrl,renderProjectDetail,showUnplacedProgram} from './detail-view.mjs?v=53a1cfa6c179';
-import {durationSamples,elapsedMonths,formatValue,projectMetadata} from './detail-format.mjs?v=53a1cfa6c179';
-import {projectParams,setProjectPath} from './project-url.mjs?v=53a1cfa6c179';
+import {projectUrl,renderProjectDetail,showUnplacedProgram} from './detail-view.mjs?v=7cd8d39c8a68';
+import {durationSamples,elapsedMonths,formatValue,projectMetadata} from './detail-format.mjs?v=7cd8d39c8a68';
+import {projectParams,setProjectPath} from './project-url.mjs?v=7cd8d39c8a68';
 export {elapsedMonths};
-import {loadMaps,createProjectMap} from './map-engine.mjs?v=53a1cfa6c179';
-export {showReferencePin} from './map-engine.mjs?v=53a1cfa6c179';
-import {loadNews,matchNews,newsCard,sourceLabels} from './news.mjs?v=53a1cfa6c179';
-import {searchProjects,managementFilters,progressFilters,recentProjectDates} from './project-search.mjs?v=53a1cfa6c179';
-import {mountAddressLookup} from './address-reference.mjs?v=53a1cfa6c179';
-import {hasPublicLayout,mountPilotViewer} from './pilot-viewer.mjs?v=53a1cfa6c179';
-import {metricGlossary,translateStage} from './glossary-translator.mjs?v=53a1cfa6c179';
-import {decorativeEmoji,toolIcon} from './ui-icons.mjs?v=53a1cfa6c179';
+import {loadMaps,createProjectMap} from './map-engine.mjs?v=7cd8d39c8a68';
+export {showReferencePin} from './map-engine.mjs?v=7cd8d39c8a68';
+import {loadNews,matchNews,newsCard,sourceLabels} from './news.mjs?v=7cd8d39c8a68';
+import {searchProjects,managementFilters,progressFilters,recentProjectDates} from './project-search.mjs?v=7cd8d39c8a68';
+import {mountAddressLookup} from './address-reference.mjs?v=7cd8d39c8a68';
+import {hasPublicLayout,mountPilotViewer} from './pilot-viewer.mjs?v=7cd8d39c8a68';
+import {metricGlossary,translateStage} from './glossary-translator.mjs?v=7cd8d39c8a68';
+import {decorativeEmoji,toolIcon} from './ui-icons.mjs?v=7cd8d39c8a68';
 const mobileMapQuery='(max-width: 768px)';
 function initialSheetHeight(selection,hasFilters,mobile){
   if(!mobile)return 1;
