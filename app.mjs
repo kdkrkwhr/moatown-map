@@ -1,13 +1,15 @@
-import {projectUrl,renderProjectDetail,showUnplacedProgram} from './detail-view.mjs?v=4cb305b9d366';
-import {durationSamples,elapsedMonths,formatValue,projectMetadata} from './detail-format.mjs?v=4cb305b9d366';
-import {projectParams,setProjectPath} from './project-url.mjs?v=4cb305b9d366';
+import {projectUrl,renderProjectDetail,showUnplacedProgram} from './detail-view.mjs?v=f2003da4e393';
+import {durationSamples,elapsedMonths,formatValue,projectMetadata} from './detail-format.mjs?v=f2003da4e393';
+import {projectParams,setProjectPath} from './project-url.mjs?v=f2003da4e393';
 export {elapsedMonths};
-import {loadMaps,createProjectMap} from './map-engine.mjs?v=4cb305b9d366';
-export {showReferencePin} from './map-engine.mjs?v=4cb305b9d366';
-import {loadNews,matchNews,newsCard,sourceLabels} from './news.mjs?v=4cb305b9d366';
-import {searchProjects,managementFilters,progressFilters,recentProjectDates} from './project-search.mjs?v=4cb305b9d366';
-import {mountAddressLookup} from './address-reference.mjs?v=4cb305b9d366';
-import {hasPublicLayout,mountPilotViewer} from './pilot-viewer.mjs?v=4cb305b9d366';
+import {loadMaps,createProjectMap} from './map-engine.mjs?v=f2003da4e393';
+export {showReferencePin} from './map-engine.mjs?v=f2003da4e393';
+import {loadNews,matchNews,newsCard,sourceLabels} from './news.mjs?v=f2003da4e393';
+import {searchProjects,managementFilters,progressFilters,recentProjectDates} from './project-search.mjs?v=f2003da4e393';
+import {mountAddressLookup} from './address-reference.mjs?v=f2003da4e393';
+import {hasPublicLayout,mountPilotViewer} from './pilot-viewer.mjs?v=f2003da4e393';
+import {metricGlossary,translateStage} from './glossary-translator.mjs?v=f2003da4e393';
+import {decorativeEmoji,toolIcon} from './ui-icons.mjs?v=f2003da4e393';
 const mobileMapQuery='(max-width: 768px)';
 function initialSheetHeight(selection,hasFilters,mobile){
   if(!mobile)return 1;
@@ -73,23 +75,23 @@ function sourceLink(url,label='출처') {
   if(!url) return null;
   try { if(new URL(url).protocol!=='https:') return null; } catch { return null; }
   const link=el('a',label,'source-link');
-  link.href=url; link.target='_blank'; link.rel='noopener noreferrer';return link;
+  link.href=url; link.target='_blank'; link.rel='noopener noreferrer';link.append(toolIcon('external'));return link;
 }
 const displayDate=value=>formatValue(value,'date');
 const stages=[
-  {label:'동의서 징구',short:'동의서 징구',ink:'#66547b',fill:'#baabcd',shape:'circle',description:'고시의 사업 추진현황에 동의서 징구로 기재되어 있습니다.'},
-  {label:'조합설립인가 반려',short:'조합인가 반려',ink:'#924f6a',fill:'#d89aaf',shape:'diamond',description:'관할 기관의 공개 자료에 조합설립인가 신청 반려가 기록되어 있습니다.'},
-  {label:'사업시행자 지정',short:'시행자 지정',ink:'#4a618e',fill:'#94aacf',shape:'circle',description:'관할 기관이 해당 사업의 시행자를 지정했습니다.'},
-  {label:'조합설립 진행 중',short:'조합설립 중',ink:'#6746a3',fill:'#aa8bd9',shape:'circle',description:'주민들이 사업을 추진할 조합을 설립하는 단계입니다.'},
-  {label:'조합설립인가',short:'조합설립인가',ink:'#523394',fill:'#9572ce',shape:'circle',description:'관할 구청이 조합 설립을 인가했습니다.'},
-  {label:'건축심의',short:'건축심의',ink:'#87582a',fill:'#e8bd87',shape:'diamond',description:'공개 사업 현황에 건축심의 단계로 기록되어 있습니다.'},
-  {label:'통합심의 완료',short:'통합심의 완료',ink:'#915421',fill:'#d5a369',shape:'diamond',description:'관련 사항에 대한 통합심의를 마쳤습니다.'},
-  {label:'사업시행계획인가 진행 중',short:'사업인가 진행 중',ink:'#995117',fill:'#edac56',shape:'diamond',description:'사업시행계획의 인가 절차를 진행하는 단계입니다.'},
-  {label:'사업시행계획인가',short:'사업인가 완료',ink:'#265d99',fill:'#80a9dd',shape:'triangle',description:'관할 구청이 사업시행계획을 인가했습니다. 구역 상세에서 인가일과 고시를 확인할 수 있습니다.'},
-  {label:'착공',short:'착공',ink:'#006e62',fill:'#4bb8a1',shape:'square',description:'공사를 시작한 것으로 공개 자료에 표시된 단계입니다.'},
-  {label:'사업시행계획 폐지',short:'시행계획 폐지',ink:'#98463e',fill:'#cf938b',shape:'square',description:'관할 기관이 이 사업구역의 사업시행계획 폐지를 고시했습니다.'},
-  {label:'미확인',short:'미확인',ink:'#586474',fill:'#a4adb8',shape:'ring',description:'해당 구역의 추진 단계를 확인할 공개 자료가 아직 없습니다.'}
-];
+  {label:'동의서 징구',short:'동의서 징구',ink:'#66547b',fill:'#baabcd',shape:'circle'},
+  {label:'조합설립인가 반려',short:'조합인가 반려',ink:'#924f6a',fill:'#d89aaf',shape:'diamond'},
+  {label:'사업시행자 지정',short:'시행자 지정',ink:'#4a618e',fill:'#94aacf',shape:'circle'},
+  {label:'조합설립 진행 중',short:'조합설립 중',ink:'#6746a3',fill:'#aa8bd9',shape:'circle'},
+  {label:'조합설립인가',short:'조합설립인가',ink:'#523394',fill:'#9572ce',shape:'circle'},
+  {label:'건축심의',short:'건축심의',ink:'#87582a',fill:'#e8bd87',shape:'diamond'},
+  {label:'통합심의 완료',short:'통합심의 완료',ink:'#915421',fill:'#d5a369',shape:'diamond'},
+  {label:'사업시행계획인가 진행 중',short:'사업인가 진행 중',ink:'#995117',fill:'#edac56',shape:'diamond'},
+  {label:'사업시행계획인가',short:'사업인가 완료',ink:'#265d99',fill:'#80a9dd',shape:'triangle'},
+  {label:'착공',short:'착공',ink:'#006e62',fill:'#4bb8a1',shape:'square'},
+  {label:'사업시행계획 폐지',short:'시행계획 폐지',ink:'#98463e',fill:'#cf938b',shape:'square'},
+  {label:'미확인',short:'미확인',ink:'#586474',fill:'#a4adb8',shape:'ring'}
+].map(stage=>({...stage,description:translateStage(stage.label).detail}));
 export function zoneStage(value){
   return stages.find(stage=>stage.label===value) ?? stages.at(-1);
 }
@@ -98,6 +100,12 @@ function stageBadge(value,short=false){
   const badge=el('span',value==null?'확인 중':short?stage.short:shown(value),'stage-badge');
   badge.dataset.shape=stage.shape;
   badge.style.setProperty('--stage-ink',stage.ink);
+  const term=translateStage(value);
+  if(term){
+    badge.title=term.summary;
+    badge.classList.add('has-term-icon');
+    badge.prepend(decorativeEmoji(term.emoji));
+  }
   return badge;
 }
 export function planIntervals(towns){
@@ -119,7 +127,7 @@ export function groupSubAreas(towns,zones){
   return new Map([...groups].map(([id,children])=>[id,[...children]]));
 }
 
-export function mount({manifest,towns,zones,boundaries,excluded=[]},sdk){
+export function mount({manifest,towns,zones,boundaries,excluded=[]},sdk,mapSignal){
   const get=id=>document.getElementById(id);
   const list=get('town-list'),detail=get('town-detail'),search=get('search-input'),district=get('district-filter');
   const recentButton=get('recent-filter');
@@ -175,7 +183,7 @@ export function mount({manifest,towns,zones,boundaries,excluded=[]},sdk){
   for(const stage of stages){
 
     const item=el('div');
-    item.append(stageBadge(stage.label),el('span',stage.description));
+    item.append(stageBadge(stage.label),el('span',translateStage(stage.label).summary));
     get('stage-definitions').append(item);
   }
   district.replaceChildren(new Option('서울 전체',''));
@@ -312,7 +320,10 @@ export function mount({manifest,towns,zones,boundaries,excluded=[]},sdk){
     for(const {town,zone,excluded:archived} of rows){
       const date=recentDates.get(archived?.address_raw??zone?.id??town?.id);
       const badge=date?el('span','최근 갱신','recent-badge'):null;
-      if(badge)badge.title=displayDate(date)+' 확인·변동'+(!zone && town?' (세부구역 포함)':'');
+      if(badge){
+        badge.prepend(decorativeEmoji(metricGlossary.recent.emoji));
+        badge.title=displayDate(date)+' · '+metricGlossary.recent.summary+(!zone && town?' (세부구역 포함)':'');
+      }
       if(archived){
         const entry=el('article',undefined,'archive-item');
         const button=el('button',archived.name_raw,'archive-detail');
@@ -355,7 +366,9 @@ export function mount({manifest,towns,zones,boundaries,excluded=[]},sdk){
       fragment.append(button);
     }
     if(!rows.length){
-      const note=el('div','검색 조건에 맞는 대상지가 없습니다.','empty');
+      const note=el('div',undefined,'empty empty-search');
+      const image=el('img');image.src='./assets/empty-search.svg?v=67579da3a801';image.alt='';image.width=112;image.height=70;
+      note.append(image,el('strong','검색 조건에 맞는 구역이 없어요.'),el('p','동·지번을 다시 입력하거나 선택한 조건을 지워 보세요.'));
       const clear=el('button','검색 조건 지우기');
       clear.type='button';clear.addEventListener('click',reset);
       note.append(clear);fragment.append(note);
@@ -516,8 +529,9 @@ export function mount({manifest,towns,zones,boundaries,excluded=[]},sdk){
     brief.append(head,link);brief.hidden=false;
   });
   sdk.then(maps=>{
-    if(!maps)return;
-    map=createProjectMap(maps,get('map'),{townById,zoneById,boundaries,districtCounts,districtStages,zoneStage,select,
+    if(!maps || mapSignal?.aborted)return;
+    mapSignal?.addEventListener('abort',()=>{map=null;},{once:true});
+    map=createProjectMap(maps,get('map'),{townById,zoneById,boundaries,districtCounts,districtStages,zoneStage,select,signal:mapSignal,
       selectDistrict(name){search.value='';district.value=name;updateFilters(false);},
       view:()=>({current,rows,visible,visibleZones,townHits,filtered:filtered()})});
   }).catch(()=>{mapStatus.textContent='네이버 지도를 열 수 없습니다. 검색 결과와 구역 상세는 목록에서 확인하세요.';});
@@ -532,11 +546,11 @@ function placeMobileControls(){
     if(mobile.matches){
       document.querySelector('.sheet-tools').after(search);dock.append(get('layer-open'));
       options.append(address);dialog.append(options);document.querySelector('.sheet-tools').prepend(back);
-      searchInput.placeholder='어느 동네·구역을 찾으세요?';address.textContent='주소 판별';
+      searchInput.placeholder='어느 동네·구역을 찾으세요?';
     }else{
       document.querySelector('.results-head').before(search);search.querySelector('.filter-row').append(get('layer-open'));mapStage.append(options,address);
       get('detail-view').prepend(back);
-      searchInput.placeholder='주소, 구역명 또는 사업 단계';address.textContent='주소 위치 확인';
+      searchInput.placeholder='주소, 구역명 또는 사업 단계';
     }
   }
   mobile.addEventListener('change',place);place();
@@ -548,6 +562,7 @@ function placeMobileControls(){
 }
 function prepareLoading(){
   const $=id=>document.getElementById(id);
+  for(const slot of document.querySelectorAll('[data-tool-icon]'))slot.replaceWith(toolIcon(slot.dataset.toolIcon));
   const params=projectParams(new URL(location.href));
   placeMobileControls();
   $('search-input').value=params.get('q')??'';
@@ -579,9 +594,14 @@ function prepareLoading(){
 }
 if(typeof document!=='undefined'){
   prepareLoading();
-  const sdk=loadMaps(()=>{document.getElementById('map-status').textContent='네이버 지도 인증을 확인할 수 없습니다.';})
+  const mapAccess=new AbortController();
+  const sdk=loadMaps(()=>{
+    mapAccess.abort();
+    for(const button of document.querySelectorAll('[data-map-style],#cadastral,#measure,#zoom-in,#zoom-out'))button.disabled=true;
+    document.getElementById('map-status').textContent='네이버 지도 인증을 확인할 수 없습니다. 목록에서 구역을 확인할 수 있습니다.';
+  })
     .catch(()=>{document.getElementById('map-status').textContent='네이버 지도 연결에 실패했습니다. 목록에서 구역을 확인할 수 있습니다.';return null;});
-  loadSnapshot(document.baseURI).then(data=>mount(data,sdk)).catch(error=>{
+  loadSnapshot(document.baseURI).then(data=>mount(data,sdk,mapAccess.signal)).catch(error=>{
     const published=document.querySelector('.published-project');
     document.getElementById('detail-view').hidden=!published;document.getElementById('list-view').hidden=Boolean(published);
     displaySheetHeight(1);document.getElementById('back-results').hidden=true;

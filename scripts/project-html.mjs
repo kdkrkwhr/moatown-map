@@ -1,5 +1,6 @@
 import {formatValue,projectMetadata,projectStage} from '../detail-format.mjs';
 import {projectUrl} from '../project-url.mjs';
+import {translateStage} from '../glossary-translator.mjs';
 
 const escape=value=>String(value).replace(/[&<>"']/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
 
@@ -26,13 +27,14 @@ function officialSources(record){
 
 export function projectHtml(template,town,zone,children,snapshot,root){
   const record=zone??town,url=projectUrl(town,zone,root);
+  const stage=projectStage(town,zone)??'미확인',term=translateStage(stage);
   const {title,description}=projectMetadata(town,zone,snapshot);
   const place=[town.district,town.name,...(zone?[zone.name]:[])].join(' · ');
   const sources=officialSources(record);
   const list=entries=>'<ul>'+entries.map(([href,label])=>'<li><a href="'+escape(href)+'">'+escape(label)+'</a></li>').join('')+'</ul>';
   const links=zone?[[projectUrl(town,null,root).pathname,town.name]]:children.map(child=>[projectUrl(town,child,root).pathname,child.name]);
   const summary='<article class="published-project"><p>'+escape(zone?town.district+' · '+town.name:town.district)+'</p><h2>'+escape(record.name)+'</h2>'
-    +'<dl class="facts"><div><dt>'+(zone?'추진 단계':'관리계획 단계')+'</dt><dd>'+escape(projectStage(town,zone)??'미확인')+'</dd></div>'
+    +'<dl class="facts"><div><dt>'+(zone?'추진 단계':'관리계획 단계')+'</dt><dd>'+escape(stage)+(term?'<small>'+escape(term.summary)+'</small>':'')+'</dd></div>'
     +'<div><dt>대표 지번</dt><dd>'+escape(zone?zone.registered_address??'미확인':town.address??town.name)+'</dd></div>'
     +'<div><dt>자료 기준일</dt><dd><time datetime="'+escape(snapshot)+'">'+escape(formatValue(snapshot,'date'))+'</time></dd></div></dl>'
     +'<h3>공식 출처</h3>'+(sources.length?list(sources):'<p>구역별 원문 미확인</p>')

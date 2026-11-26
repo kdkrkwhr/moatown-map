@@ -6,7 +6,7 @@ const percent=new Intl.NumberFormat('ko-KR',{minimumFractionDigits:1,maximumFrac
 const approximate=new Intl.NumberFormat('ko-KR',{maximumFractionDigits:1});
 
 export function projectStage(town,zone){
-  return zone?zone.stage:town.management_plan_stage??(town.management_plan_notices?.length?'관리계획 승인고시':town.candidate_status);
+  return zone?zone.stage:town.management_plan_stage??(town.management_plan_notices?.length?'관리계획 승인고시':town.candidate_status??(town.selected_date?'대상지 선정':null));
 }
 
 export function projectMetadata(town,zone,snapshot){

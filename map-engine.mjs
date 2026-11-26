@@ -1,4 +1,4 @@
-import {createMarkerClusters} from './marker-clusters.mjs?v=4cb305b9d366';
+import {createMarkerClusters} from './marker-clusters.mjs?v=f2003da4e393';
 const SDK='https://oapi.map.naver.com/openapi/v3/maps.js';
 export function loadMaps(onAuthError){
   window.navermap_authFailure=onAuthError;
@@ -40,7 +40,7 @@ export function showReferencePin(id,selectedId,townHits,shapes){
 const node=(tag,cls,text)=>{
   const el=document.createElement(tag);el.className=cls;if(text!=null)el.textContent=text;return el;
 };
-export function createProjectMap(m,container,{townById,zoneById,boundaries,districtCounts,districtStages,zoneStage,select,selectDistrict,view}){
+export function createProjectMap(m,container,{townById,zoneById,boundaries,districtCounts,districtStages,zoneStage,select,selectDistrict,view,signal}){
   const $=id=>document.getElementById(id),ll=([x,y])=>new m.LatLng(y,x);
   const map=new m.Map(container,{center:ll([126.978,37.565]),zoom:11,minZoom:7,maxZoom:21,keyboardShortcuts:true,
     mapTypeId:mapSettings(location.search).hybrid?m.MapTypeId.HYBRID:m.MapTypeId.NORMAL});
@@ -101,6 +101,7 @@ export function createProjectMap(m,container,{townById,zoneById,boundaries,distr
     pins.set(town.id,pin);
   }
   fetch(new URL('./moatown-data/basemap/seoul-context.geojson',import.meta.url)).then(r=>{if(!r.ok)throw Error();return r.json();}).then(data=>{
+    if(signal?.aborted)return;
     for(const f of data.features.filter(f=>f.properties.kind==='label')){
       const name=f.properties.name,count=districtCounts.get(name)??0;
       const content=node('span','district-label'),plate=node('span','district-nameplate',name);
@@ -119,6 +120,7 @@ export function createProjectMap(m,container,{townById,zoneById,boundaries,distr
     districts.sort((a,b)=>b.count-a.count);render();
   }).catch(()=>{$('map-status').textContent='자치구 집계 마커를 불러오지 못했습니다. 목록에서 자치구를 선택해 주세요.';});
   function render(){
+    if(signal?.aborted)return;
     const {current,visible,visibleZones,townHits,filtered}=view();
     const wide=map.getZoom()<=12;
     const overview=wide && !filtered && !current.townId && districts.length>0;
@@ -165,6 +167,7 @@ export function createProjectMap(m,container,{townById,zoneById,boundaries,distr
     clusters.render(candidates);
   }
   function fit(){
+    if(signal?.aborted)return;
     const {current,rows,filtered}=view();
     const opts=padding();
     if(opts.top+opts.bottom>=container.clientHeight-24)return;
@@ -243,11 +246,13 @@ export function createProjectMap(m,container,{townById,zoneById,boundaries,distr
   $('zoom-in').onclick=()=>map.setZoom(map.getZoom()+1,true);
   $('zoom-out').onclick=()=>map.setZoom(map.getZoom()-1,true);
   const resize=new ResizeObserver(entries=>{
+    if(signal?.aborted)return;
     const canvasChanged=entries.some(entry=>entry.target===container);
     if(canvasChanged){clusters.resetSizes();map.autoResize();render();}
     if(canvasChanged || $('map-search-dock').offsetHeight)fit();
   });
   for(const element of [container,$('explorer'),$('map-search-dock')])resize.observe(element);
+  signal?.addEventListener('abort',()=>resize.disconnect(),{once:true});
   document.fonts?.ready.then(()=>{clusters.resetSizes();render();});
   settings();fit();render();
   return {fit,render,settings,clearAddress,showAddress};

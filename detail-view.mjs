@@ -1,5 +1,7 @@
-import {formatValue,unitsChange,projectIntervals,compareInterval,projectStage} from './detail-format.mjs?v=4cb305b9d366';
-import {projectUrl} from './project-url.mjs?v=4cb305b9d366';
+import {formatValue,unitsChange,projectIntervals,compareInterval,projectStage} from './detail-format.mjs?v=f2003da4e393';
+import {projectUrl} from './project-url.mjs?v=f2003da4e393';
+import {metricGlossary,translateStage} from './glossary-translator.mjs?v=f2003da4e393';
+import {decorativeEmoji,toolIcon} from './ui-icons.mjs?v=f2003da4e393';
 export {projectUrl};
 
 const pending='미고시';
@@ -12,11 +14,28 @@ function el(tag,text,cls){
 }
 function link(url,title){
   try{if(new URL(url).protocol!=='https:')return null;}catch{return null;}
-  const a=el('a',title,'source-link');a.href=url;a.target='_blank';a.rel='noopener noreferrer';return a;
+  const a=el('a',title,'source-link');a.href=url;a.target='_blank';a.rel='noopener noreferrer';a.append(toolIcon('external'));return a;
+}
+function termButton(title,term,note,proof){
+  const button=el('button');
+  button.type='button';button.title=term.detail;
+  button.setAttribute('aria-haspopup','dialog');button.setAttribute('aria-controls','metric-dialog');
+  button.addEventListener('click',()=>{
+    const dialog=document.getElementById('metric-dialog');
+    dialog.querySelector('h2').textContent=title;
+    const body=dialog.querySelector('.metric-description');
+    body.replaceChildren(el('p',term.summary,'term-lead'),el('p',term.detail));
+    if(note)body.append(el('p',note));
+    const source=link(proof,'근거 자료 열기');if(source)body.append(source);
+    dialog.querySelector('.stage-walkthrough').open=false;
+    dialog.showModal();
+  });
+  return button;
 }
 function field(list,label,value){
   const row=el('div'),v=value==null || value===''?pending:value;
   row.append(el('dt',label),el('dd',v,v===pending?'unverified':''));
+  if(v===pending)row.lastElementChild.title=metricGlossary.missing.summary;
   row.dataset.known=String(v!==pending);
   const firstMissing=list.querySelector('[data-known="false"]');
   list.insertBefore(row,v!==pending?firstMissing:null);
@@ -270,10 +289,15 @@ function comparison(difference,count,unit){
 }
 
 function timeline(card,town,zone,snapshot,stats,intervals){
+  const speed=metricGlossary.speed,help=termButton(speed.label,speed);
+  help.className='glossary-help';help.append(decorativeEmoji(speed.emoji),speed.label+' 읽는 법');
+  card.append(help);
   const items=el('ol',null,'milestone-list');
   for(const step of intervals){
     const {event,label}=step,item=el('li'),head=el('div',null,'milestone-head');
-    head.append(el('strong',event.stage),el('time',date(event.date)));
+    const name=el('strong',event.stage),term=translateStage(event.stage)??translateStage(event.stage?.replace(/ 고시$/,''));
+    if(term){name.prepend(decorativeEmoji(term.emoji));name.title=term.summary;}
+    head.append(name,el('time',date(event.date)));
     item.append(head,el('span',label,'duration '+(label.includes('진행 중')?'in-progress':label===pending?'unverified':'')));
     if(event.scope)item.append(el('small',event.scope));
     const match=compareInterval(step,town,zone,stats.samples);
@@ -458,25 +482,23 @@ function summary(town,zone,intervals,badge,copyLink,comparison){
   const permit=el('span',null,'regulation-chip'+(rules.permit===pending?' unverified':''));
   permit.append('토지거래허가구역 ',el('b',rules.permit));badges.append(permit);
   header.append(badges);
+  const stageTerm=translateStage(stage??'미확인');
+  if(stageTerm){
+    const guide=termButton(stage??'추진 단계 미확인',stageTerm,null,(zone??town).field_evidence?.[zone?'stage':'management_plan_stage']?.source_url);
+    guide.className='stage-explainer';
+    guide.append(el('strong','쉽게 이해하기'),el('span',stageTerm.summary));
+    header.append(guide);
+  }
   const stats=r.aging_reference,metricCards=el('div',null,'decision-metrics');
-  const ageTip='수록된 건축물 연식 데이터 기반 참고 수치이며, 법적 노후·불량건축물 비율은 고시문을 확인하세요.';
-  const rightsTip='이 날짜 이후 신축된 건축물은 분양권(입주권) 대신 현금청산 대상이 될 수 있습니다. 필지별 적용 범위와 예외는 해당 고시에서 확인하세요.';
   const ages=stats?stats.year+'년 기준 · 내부 '+countBuildings(stats.total)+' 중 사용승인 후 30년 이상으로 확인된 건물 '+countBuildings(stats.over_30)+'. 20년 이상 '+formatValue(stats.rate_20,'%')+' · 연식 미상 '+countBuildings(stats.unknown):'참고 경계와 건물 연식을 대조할 자료가 필요합니다.';
   function countBuildings(n){return formatValue(n,'동');}
-  for(const [label,value,tip,note,proof] of [
-    ['권리산정기준일',rules.cutoff,rightsTip,r.rights_notice_no??r.field_evidence?.rights_cutoff_date?.notice_number,r.field_evidence?.rights_cutoff_date?.source_url],
-    ['참고 노후도 · 30년',Number.isFinite(r.aging_rate)?formatValue(r.aging_rate,'%'):'산출중',ageTip,ages,stats?.source_url]
+  for(const [term,value,note,proof] of [
+    [metricGlossary.rights,rules.cutoff,r.rights_notice_no??r.field_evidence?.rights_cutoff_date?.notice_number,r.field_evidence?.rights_cutoff_date?.source_url],
+    [metricGlossary.age,Number.isFinite(r.aging_rate)?formatValue(r.aging_rate,'%'):'산출중',ages,stats?.source_url]
   ]){
-    const button=el('button');button.type='button';button.title=tip;button.setAttribute('aria-haspopup','dialog');
-    button.append(el('small',label),el('strong',value));metricCards.append(button);
-    button.addEventListener('click',()=>{
-      const dialog=document.getElementById('metric-dialog');
-      dialog.querySelector('h2').textContent=label+' · '+value;
-      const body=dialog.querySelector('.metric-description');body.replaceChildren(el('p',tip));
-      if(note)body.append(el('p',note));
-      const ref=link(proof,'근거 자료 열기');if(ref)body.append(ref);
-      dialog.showModal();
-    });
+    const button=termButton(term.label+' · '+value,term,note,proof);
+    const label=el('small');label.append(decorativeEmoji(term.emoji),term.label);
+    button.append(label,el('strong',value));metricCards.append(button);
   }
   header.append(metricCards);
   if(r.risk_info?.is_canceled===true)header.append(el('p','선정 취소·철회 · '+(r.risk_info.cancel_reason??'사유 미고시'),'cancel-notice'));
@@ -544,6 +566,7 @@ export function renderProjectDetail(container,{town,zone,children,boundaries,sna
   const header=summary(town,zone,intervals,badge,copyLink,comparison);
   if(openPilot){
     const button=el('button',association?'공개 배치도 3D':'3D 보기','pilot-entry');
+    button.prepend(toolIcon('cube'));
     button.type='button';button.setAttribute('aria-haspopup','dialog');button.setAttribute('aria-controls','pilot-viewer');
     button.addEventListener('click',openPilot);
     header.querySelector('.copy-link').before(button);
@@ -558,15 +581,20 @@ export function renderProjectDetail(container,{town,zone,children,boundaries,sna
   }
   const steps=section(panels.schedule,'timeline','추진 타임라인');
   if(openPlan){
-    const button=el('button',association?'공개 배치도 3D 보기 ›':'건축 후 예상 3D 보기 ›','pilot-text-button');
+    const button=el('button',association?'공개 배치도 3D 보기':'건축 후 예상 3D 보기','pilot-text-button');button.prepend(toolIcon('cube'));
     button.type='button';button.setAttribute('aria-haspopup','dialog');button.setAttribute('aria-controls','pilot-viewer');
     button.onclick=openPlan;steps.append(button);
   }
   timeline(steps,town,zone,snapshot,stats,intervals);
+  const diagram=document.querySelector('#metric-dialog .stage-walkthrough').cloneNode(true);
+  diagram.open=false;steps.append(diagram);
   section(panels.schedule,'news','사업 소식').append(el('div',null,'related-news'));
   const records=section(panels.schedule,'sources','출처 및 기준일');
   sources(records,r,snapshot,boundary,intervals.map(step=>step.event),registryUrl,reportIssueUrl(town,zone));
   metrics(panels.business,r,zone?[]:children);
+  const missing=metricGlossary.missing,missingButton=termButton(missing.label,missing);
+  missingButton.className='glossary-help missing-help';missingButton.textContent='‘미고시’는 무슨 뜻인가요?';
+  if(panels.business.querySelector('.unverified'))panels.business.prepend(missingButton);
   regulations(section(panels.business,'regulation','거래·규제 상세'),r,town,zone,boundary,cityRule,openTownRules);
   subAreas(panels.areas,town,zone,children,boundaries,select,badge);
   activate(initialTab??(zone?'areas':'schedule'));

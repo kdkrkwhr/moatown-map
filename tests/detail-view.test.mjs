@@ -1,17 +1,32 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
-import {compareInterval,durationSamples,formatValue,intervalBadge,projectEvents,projectIntervals,unitsChange} from '../detail-format.mjs';
+import {compareInterval,durationSamples,formatValue,intervalBadge,projectEvents,projectIntervals,projectStage,unitsChange} from '../detail-format.mjs';
 import {groupSubAreas} from '../app.mjs';
 import {boundaryLabel,comparePlans,reportIssueUrl} from '../detail-view.mjs';
 import {searchProjects} from '../project-search.mjs';
 import {positionInGeometry} from '../address-reference.mjs';
 import {projectHtml} from '../scripts/project-html.mjs';
 import {projectParams} from '../project-url.mjs';
+import {translateStage} from '../glossary-translator.mjs';
 
 const read=file=>JSON.parse(readFileSync(new URL('../moatown-data/'+file,import.meta.url),'utf8'));
 const {files,coverage}=read('latest.json'),towns=read(files.towns),zones=read(files.zones);
 const groups=groupSubAreas(towns,zones);
+
+test('plain-language stage explanations cover published records without promoting pending decisions',()=>{
+  for(const town of towns)assert.ok(translateStage(projectStage(town)??'미확인'));
+  for(const zone of zones)assert.ok(translateStage(zone.stage??'미확인'));
+  const approval=translateStage('조합설립인가').summary;
+  assert.match(approval,/인가를 받았/);
+  assert.match(translateStage('조합설립 진행 중').summary,/만드는 중/);
+  assert.match(translateStage('조합설립인가 반려').summary,/반려/);
+  assert.match(translateStage('대상지 철회 관련 주민설명회 공고').summary,/설명회/);
+  assert.match(translateStage('사업시행계획인가 진행 중').summary,/절차/);
+  assert.notEqual(translateStage('사업시행계획인가').summary,translateStage('착공').summary);
+  assert.equal(translateStage('조합설립인가 변경 신청 검토'),null);
+  assert.equal(projectStage({selected_date:'2023-04-01'},{stage:null}),null);
+});
 
 test('boundary descriptions retain the source distinction between selected and approved sites',()=>{
   for(const reference_label of ['선정 대상지 · 서울플랜+ 참고 외곽','관리계획 승인고시 대상지 · 서울플랜+ 참고 외곽']){

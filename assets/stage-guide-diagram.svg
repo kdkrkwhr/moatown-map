@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="188" viewBox="0 0 420 188" role="img" aria-labelledby="title desc">
+  <title id="title">모아타운과 세부구역의 주요 단계</title>
+  <desc id="desc">모아타운 전체는 대상지 선정과 관리계획 승인, 개별 모아주택은 조합설립인가와 사업시행계획인가, 착공을 거칩니다. 구역별 일정은 다릅니다.</desc>
+  <rect width="420" height="86" rx="14" fill="#edf4f9"/>
+  <rect y="94" width="420" height="94" rx="14" fill="#edf6f1"/>
+  <g font-family="system-ui, sans-serif" font-size="16" font-weight="700">
+    <text x="17" y="25" fill="#345e76">모아타운 전체</text>
+    <text x="17" y="119" fill="#246455">개별 모아주택</text>
+  </g>
+  <g fill="white" stroke="#c5d9df"><rect x="18" y="36" width="140" height="36" rx="10"/><rect x="195" y="36" width="204" height="36" rx="10"/></g>
+  <g fill="white" stroke="#bedacc"><rect x="18" y="135" width="112" height="37" rx="10"/><rect x="153" y="135" width="144" height="37" rx="10"/><rect x="320" y="135" width="79" height="37" rx="10"/></g>
+  <g fill="none" stroke="#57747b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M169 54h14m-5-5 5 5-5 5M135 153h12m-4-4 4 4-4 4m160-4h11m-4-4 4 4-4 4"/>
+    <path d="M37 50a5 5 0 1 1 10 0c0 4-5 9-5 9s-5-5-5-9Z" stroke="#347495"/>
+    <path d="m215 47 5-2 6 2 5-2v12l-5 2-6-2-5 2Zm5-2v12m6-10v12" stroke="#347495"/>
+  </g>
+  <g fill="#233e49" font-family="system-ui, sans-serif" font-size="15" font-weight="650" text-anchor="middle">
+    <text x="97" y="60">대상지 선정</text><text x="312" y="60">관리계획 승인</text>
+    <text x="74" y="159">조합설립인가</text><text x="225" y="159">사업시행계획인가</text><text x="359" y="159">착공</text>
+  </g>
+</svg>

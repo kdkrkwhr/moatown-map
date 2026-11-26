@@ -18,8 +18,8 @@
   <meta property="og:image" content="https://moatownmap.com/assets/seoul-panorama.webp">
   <meta property="og:image:alt" content="서울 시가지 전경">
   <link rel="sitemap" type="application/xml" href="/sitemap.xml">
-  <link rel="stylesheet" href="./styles.css?v=4cb305b9d366">
-  <script type="module" src="./app.mjs?v=4cb305b9d366"></script>
+  <link rel="stylesheet" href="./styles.css?v=f2003da4e393">
+  <script type="module" src="./app.mjs?v=f2003da4e393"></script>
 </head>
 <body data-loading="true">
 <a class="skip" href="#explorer">대상지 탐색으로 바로가기</a>
@@ -31,15 +31,18 @@
   </div>
 </header>
 <dialog id="guide-dialog" aria-labelledby="guide-heading">
-      <div class="dialog-head"><h2 id="guide-heading">지도에 수록된 자료</h2><button type="button" id="guide-close">닫기</button></div>
+      <div class="guide-banner"><img src="./assets/onboarding-banner.webp?v=ac70accdebcb" width="600" height="200" loading="lazy" alt=""><button type="button" id="guide-close">닫기</button></div>
+      <h2 id="guide-heading">서울 모아타운, 한눈에 쉽게 찾아보세요!</h2>
+      <p class="guide-intro">주소를 검색해 우리 집이 참고 경계 어디쯤에 있는지 살펴보세요. 동네별 추진 단계와 공개 자료가 있는 곳의 3D도 볼 수 있어요.</p>
+      <h3>지도에 수록된 자료</h3>
       <p id="coverage-note">서울시 선정 명부와 이후 확인된 변동을 반영한 부분 자료입니다.</p>
-      <p>사업 외곽과 대표 위치는 참고용입니다. 필지 포함 여부는 관할 기관의 최신 고시·공고를 확인하세요.</p>
-      <p>상세 화면의 ‘미고시’는 수록 자료에서 값을 확인하지 못했다는 뜻입니다. 추진 속도는 같은 구간을 거친 서울 수록 사업장의 기간과 비교합니다.</p>
+      <p>‘미고시’는 이 지도에 수록된 자료에서 아직 확인되지 않은 값이에요. 추진 속도는 같은 두 단계를 거친 다른 수록 구역과 소요 기간을 비교해요.</p>
       <p id="recent-help">‘최근 갱신’은 오늘을 포함한 최근 7일(서울 기준)에 자료 확인 또는 추진 이력이 기록된 곳입니다. 대상지 카드에는 세부구역의 갱신도 포함합니다.</p>
       <nav aria-label="관련 자료"><a href="./docs/product-spec.html">프로젝트 안내</a><a href="./docs/data-sources.md">데이터 출처</a><a href="./moatown-data/latest.json">스냅샷 보기</a><a href="./sitemap.xml">사이트맵</a></nav>
       <p class="photo-credit">서울 전경 사진 · <a href="https://commons.wikimedia.org/wiki/File:Seoul_from_Namsan.jpg">kallerna</a> · <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a> · 축소 및 WebP 변환</p>
-      <section class="guide-stages"><h3>세부 사업구역의 추진 단계</h3><div id="stage-definitions"></div>
-      <p>‘강북구 착공’처럼 검색하거나 사업 단계 필터를 선택하세요. 관리계획 승인은 대상지 단위, 조합설립·사업인가·착공은 세부 구역 단위입니다.</p></section>
+      <details class="guide-stages"><summary>세부 사업구역의 추진 단계</summary><div id="stage-definitions"></div>
+      <p>‘강북구 착공’처럼 검색하거나 사업 단계 필터를 선택하세요. 같은 동네에서도 세부구역별 일정은 다를 수 있어요.</p></details>
+      <small class="guide-disclaimer">※ 지도의 사업 외곽은 참고용입니다. 정확한 필지 포함 여부는 관할 구청의 최신 고시·공고를 확인해 주세요.</small>
 </dialog>
 <main class="workspace">
   <div id="map-search-dock"></div>
@@ -55,9 +58,9 @@
           <p id="map-totals">선정 대상지 현황</p></div>
         </div>
         <div class="search-block" id="project-search">
-          <div class="search-line"><label class="search-box"><span class="search-icon" aria-hidden="true"></span><span class="sr-only">주소·구역명·사업 단계 검색</span><input id="search-input" type="search" placeholder="주소, 구역명 또는 사업 단계" autocomplete="off" enterkeyhint="search"></label></div>
+          <div class="search-line"><label class="search-box"><span data-tool-icon="search"></span><span class="sr-only">주소·구역명·사업 단계 검색</span><input id="search-input" type="search" placeholder="주소, 구역명 또는 사업 단계" autocomplete="off" enterkeyhint="search"></label></div>
           <div class="filter-row"><label class="sr-only" for="district-filter">자치구</label><select id="district-filter"><option value="">서울 전체</option></select>
-            <details class="stage-filters" id="stage-filter-box"><summary><span id="filter-label">사업 단계</span></summary>
+            <details class="stage-filters" id="stage-filter-box"><summary><span data-tool-icon="filter"></span><span id="filter-label">사업 단계</span></summary>
               <div class="filter-menu">
                 <fieldset><legend>대상지 관리계획</legend><div id="plan-chips" class="filter-chips"></div></fieldset>
                 <fieldset><legend>세부 사업구역 추진 단계</legend><div id="progress-chips" class="filter-chips"></div></fieldset>
@@ -65,7 +68,7 @@
               </div>
             </details>
             <button type="button" id="recent-filter" aria-pressed="false" aria-describedby="recent-help" disabled>최근 변동</button>
-            <button type="button" id="layer-open" aria-haspopup="dialog" aria-controls="layer-dialog"><span class="layer-icon" aria-hidden="true"></span>레이어·범례</button>
+            <button type="button" id="layer-open" aria-haspopup="dialog" aria-controls="layer-dialog"><span data-tool-icon="layers"></span>레이어·범례</button>
           </div>
         </div>
         <div class="results-head"><h3>검색 결과</h3><button type="button" id="clear-filters" hidden>조건 지우기</button><span id="result-count" role="status"></span></div>
@@ -84,9 +87,9 @@
     <div class="map-style-picker" role="group" aria-label="배경지도 선택">
       <button type="button" data-map-style="normal" aria-pressed="true" disabled>일반 지도</button><button type="button" data-map-style="hybrid" aria-pressed="false" disabled>위성 지도</button>
     </div>
-    <button type="button" id="cadastral" role="switch" aria-checked="false" disabled><span aria-hidden="true"></span>지적편집도</button>
+    <button type="button" id="cadastral" role="switch" aria-checked="false" disabled><span data-tool-icon="layers"></span>지적편집도<span class="layer-switch" aria-hidden="true"></span></button>
     <div class="map-tools"><button type="button" id="reset-map" title="검색 조건을 지우고 서울 전체 보기">서울 전체</button>
-      <button type="button" id="measure" aria-pressed="false" disabled>거리 재기</button>
+      <button type="button" id="measure" aria-pressed="false" disabled><span data-tool-icon="ruler"></span>거리 재기</button>
       <div class="map-zoom"><button id="zoom-in" aria-label="확대" disabled>+</button><button id="zoom-out" aria-label="축소" disabled>−</button></div>
     </div>
     <details class="legend"><summary>지도 범례</summary><ul>
@@ -101,7 +104,7 @@
     <p id="measure-status" role="status"></p>
     <p id="map-status" role="status"></p>
     <aside id="map-brief" aria-label="최신 사업 소식" hidden></aside>
-    <button type="button" id="address-open" aria-haspopup="dialog">주소 위치 확인</button>
+    <button type="button" id="address-open" aria-haspopup="dialog"><span data-tool-icon="pin"></span>주소 위치 확인</button>
     <noscript><p class="map-note">지도를 이용하려면 JavaScript를 켜 주세요. <a href="./moatown-data/latest.json">최신 데이터</a></p></noscript>
   </section>
 </main>
@@ -109,6 +112,7 @@
 <dialog id="metric-dialog" aria-labelledby="metric-heading">
   <div class="dialog-head"><h2 id="metric-heading">지표 기준</h2><form method="dialog"><button>닫기</button></form></div>
   <div class="metric-description"></div>
+  <details class="stage-walkthrough"><summary>단계별 안내 펼치기</summary><img src="./assets/stage-guide-diagram.svg?v=341e7a8fec58" width="420" height="188" loading="lazy" alt="모아타운 전체는 대상지 선정과 관리계획 승인, 개별 모아주택은 조합설립인가, 사업시행계획인가, 착공 순으로 주요 단계를 살펴볼 수 있어요."><p>주요 단계만 표시했어요. 심의 등 세부 절차와 일정은 구역마다 다를 수 있어요.</p></details>
 </dialog>
 <dialog id="cluster-dialog" aria-labelledby="cluster-heading">
   <div class="dialog-head"><h2 id="cluster-heading">겹친 마커</h2><button type="button">닫기</button></div>
