@@ -1,4 +1,4 @@
-﻿import earcut from './vendor/earcut-3.0.2/earcut.mjs?v=9dd69d08e58e';
+﻿import earcut from './vendor/earcut-3.0.2/earcut.mjs?v=4cb305b9d366';
 
 const DEG = Math.PI / 180;
 const GROUND = '#f1f3ef';
@@ -77,7 +77,30 @@ function localPart(raw, project) {
   return part;
 }
 
-function buildModel(town, zones, buildings, simulation, publicSpace) {
+function tracedTower(building,ring,project,height,code){
+  const part=localPart([ring],project);
+  return {kind:'tower',association:true,props:building,id:building.id,code,height,parts:[part],anchor:part.anchor};
+}
+function tracedSpace(space,ring,project,code){
+  return {id:space.id,name:space.label,kind:({community:'facility',pedestrian:'walkway'})[space.kind]??space.kind,
+    parts:[localPart([ring],project)],lines:[],code,fromLayout:true,height:0};
+}
+
+// Drawing coordinates have their own origin and units. Only verified geographic rings enter the map projection.
+export function buildDrawingModel(layout){
+  const footprints=layout.buildings.flatMap(building=>building.ring),sourceSpaces=layout.spaces??[];
+  const blocksBox=extent(footprints),box=extent(footprints.concat(sourceSpaces.flatMap(s=>s.ring)));
+  const cx=(box[0]+box[2])/2,cy=(box[1]+box[3])/2;
+  const span=Math.max(box[2]-box[0],box[3]-box[1]),unit=240/span;
+  const project=([x,y])=>[(x-cx)*unit,(cy-y)*unit];
+  const longSide=unit*Math.max(blocksBox[2]-blocksBox[0],blocksBox[3]-blocksBox[1]);
+  const towers=layout.buildings.map((b,i)=>tracedTower(b,b.ring,project,longSide*(b.floors==null ? .08 : b.floors*.008),i+1));
+  const spaces=sourceSpaces.map((s,i)=>tracedSpace(s,s.ring,project,towers.length+i+1));
+  return {perimeter:null,areas:[],blocks:[],spaces,simulatedZones:new Set(),towers,
+    focusPoints:[...towers,...spaces].flatMap(f=>f.parts[0].rings[0]),pixelsPerUnit:1/unit};
+}
+
+export function buildGeographicModel(town, zones, buildings, simulation, publicSpace, association) {
   const candidates = [town, ...zones, ...buildings].filter(Boolean);
   const reference = candidates.find(item => polygonRings(item.geometry).length);
   if (!reference) throw new Error('표시할 건물 또는 참고 경계 도형이 없습니다.');
@@ -113,6 +136,15 @@ function buildModel(town, zones, buildings, simulation, publicSpace) {
     towers.push(tower);
     simulatedZones.add(zone);
   }
+  if(association){
+    const zone=zonesById.get(association.zone_id);
+    for(const b of association.buildings.filter(b=>b.geographic_ring)){
+      const tower=tracedTower(b,b.geographic_ring,project,b.floors==null?6:b.floors*3,next++);
+      tower.zone=zone;
+      towers.push(tower);
+    }
+    if(zone)simulatedZones.add(zone);
+  }
   const spaces = [];
   for (const raw of publicSpace?.features || []) {
     const { kind, name, width_m } = raw.properties || {};
@@ -128,7 +160,9 @@ function buildModel(town, zones, buildings, simulation, publicSpace) {
       spaces.push({ kind, name, parts, lines, point, width: Number.isFinite(width_m) && width_m > 0 ? width_m : null });
     }
   }
-  const focus = perimeter ? [perimeter] : areas.length ? areas : blocks;
+  const mappedSpaces=(association?.spaces??[]).filter(s=>s.geographic_ring).map(s=>tracedSpace(s,s.geographic_ring,project,next++));
+  spaces.push(...mappedSpaces);
+  const focus = association && (towers.length||mappedSpaces.length) ? [...towers,...mappedSpaces] : perimeter ? [perimeter] : areas.length ? areas : blocks;
   const focusPoints = focus.flatMap(item => item.parts.flatMap(part => part.rings[0]));
   return { perimeter, areas, blocks, towers, spaces, simulatedZones, focusPoints };
 }
@@ -257,7 +291,8 @@ function geometry(model, existingDetail, partialPlan) {
 
   const ground = rgb('#e6ebe2'), selectedArea = rgb('#90c6b9');
   const wholePlan=model.simulatedZones.has(model.perimeter);
-  const modeledParts=partialPlan?[...model.simulatedZones].flatMap(area=>area.parts):[];
+  const modeledParts=partialPlan?[...model.simulatedZones].flatMap(area=>area.parts).concat(
+    model.towers.filter(t=>t.association&&!t.zone).flatMap(t=>t.parts),model.spaces.filter(s=>s.fromLayout).flatMap(s=>s.parts)):[];
   const townFill = material(ground, rgb(wholePlan?'#deebd9':'#e0e8df'), ground);
   const townLine = material(rgb('#466d64'), rgb('#47776c'), rgb('#466d64'), { lift: 2.1 });
   for (const part of model.perimeter?.parts || []) flat(part, 0, townFill, 0);
@@ -285,7 +320,8 @@ function geometry(model, existingDetail, partialPlan) {
   const walkBed = planPaint('#b99b79', .88), paving = planPaint('#ead2ac', .94);
   for (const space of model.spaces) {
     const park = space.kind === 'park' || space.kind === 'green', facility = space.kind === 'facility', road = space.kind === 'road';
-    const fill = park ? lawn : facility ? civicSite : road ? asphalt : space.kind==='playground'?planPaint('#e8ad86',.94):paving;
+    let fill = park ? lawn : facility ? civicSite : road ? asphalt : space.kind==='playground'?planPaint('#e8ad86',.94):paving;
+    if(space.fromLayout)fill=material(fill.current,fill.plan,shade(fill.plan,.77),{mode:'plan',lift:fill.lift+.6,code:space.code});
     const rim = park ? lawnEdge : facility ? civicEdge : road ? roadBed : walkBed;
     for (const part of space.parts) {
       flat(part, 0, fill, 2);
@@ -320,7 +356,7 @@ function geometry(model, existingDetail, partialPlan) {
       const c = shade(rgb(hex), gain);
       return material(c, c, c, { mode: 'plan' });
     }));
-  for (const space of model.spaces.filter(s => s.kind === 'park')) {
+  for (const space of model.spaces.filter(s => s.kind === 'park' && !s.fromLayout)) {
     for (const part of space.parts) {
       for (const { x, y, radius, index } of parkTrees(part, model.spaces, model.towers)) {
         const z = radius * 1.5, top = z + radius, tier = foliage[index % foliage.length];
@@ -421,6 +457,30 @@ function geometry(model, existingDetail, partialPlan) {
   }
 
   for (const [towerIndex, tower] of model.towers.entries()) {
+    if(tower.association){
+      const paint=(light,lift=0)=>material(shade(rgb('#96b8ab'),light),shade(rgb('#96b8ab'),light),shade(rgb('#3e8b79'),light),
+        {code:tower.code,mode:'plan',lift});
+      for(const part of tower.parts){
+        if(model.pixelsPerUnit){
+          const shadow=planPaint('#dce3dc'),dx=tower.height*.24,dy=-tower.height*.16;
+          const rings=part.rings.map(r=>r.map(([x,y])=>[x+dx,y+dy,0]));
+          add(rings,rings.flat(),part.indices,shadow,2);
+          walls(part,(a,b)=>quad([...a,0],[...b,0],[b[0]+dx,b[1]+dy,0],[a[0]+dx,a[1]+dy,0],shadow,2));
+        }
+        walls(part,(a,b,sun)=>{
+          const light=.85+.15*sun,face=paint(light);
+          quad([...a,0],[...b,0],[...b,tower.height],[...a,tower.height],face,6);
+          if(!tower.props.floors)return;
+          const step=tower.height/tower.props.floors,band=paint(light*.87,.03);
+          for(let floor=1;floor<tower.props.floors;floor++){
+            const z=floor*step;
+            quad([...a,z],[...b,z],[...b,z+.1*step],[...a,z+.1*step],band,6);
+          }
+        });
+        flat(part,tower.height,paint(1.12),6);
+      }
+      continue;
+    }
     const paints = new Map();
     function finish(hex, gain = 1, lift = 0) {
       const key = [hex, gain, lift].join('/');
@@ -896,7 +956,7 @@ function groundPoint(v, x, y) {
 
 // An orthographic ray is a segment on the ground between z=0 and each roof height.
 // The largest intersected z is the visible surface, including a courtyard's inner wall.
-function pick(view, model, sx, sy) {
+export function pickSceneFeature(view, model, sx, sy) {
   const [x, y] = groundPoint(view, sx, sy);
   const zoneAtPoint = () => view.plan && model.simulatedZones.has(model.perimeter)?null:
     model.areas.find(area => area.parts.some(part => contains(part, x, y)));
@@ -927,7 +987,8 @@ function pick(view, model, sx, sy) {
       }
     }
   }
-  return hit?.zone || hit || zoneAtPoint();
+  const drawnSpace=!hit && view.plan && model.spaces.find(s=>s.fromLayout && s.parts.some(p=>contains(p,x,y)));
+  return hit?.association ? hit : hit?.zone || hit || drawnSpace || zoneAtPoint();
 }
 
 const SCENE_STYLE = `
@@ -939,6 +1000,8 @@ const SCENE_STYLE = `
 .pilot-space-label {position:absolute;top:0;left:0;pointer-events:none;color:#425344;
   font-family:inherit;font-size:10px;font-weight:650;line-height:1.3;white-space:nowrap;
   text-shadow:-1px -1px 1px #f7f7eb,1px 1px 1px #f7f7eb,1px -1px 1px #f7f7eb,-1px 1px 1px #f7f7eb}
+.pilot-space-label.pilot-drawing-space {pointer-events:auto;cursor:pointer;border:0;padding:3px 4px;margin:0;background:transparent}
+.pilot-drawing-space[aria-pressed="true"] {text-decoration:underline}
 .pilot-world-label {position:absolute;left:0;top:0;display:grid;place-items:center;gap:1px;pointer-events:auto;
   min-height:24px;max-width:145px;margin:0;padding:3px 8px;border:1px solid #a0b2a9;border-radius:5px;
   background:#ffffffed;color:#314d42;box-shadow:0 1px 4px #1b45371a;font:inherit;line-height:1.25;white-space:nowrap;
@@ -967,15 +1030,21 @@ function labelText(props) {
   return fields.length ? fields.join(' · ') : '층수·높이 미확인';
 }
 
-export async function createPilotScene(container, { buildings, town, zones, simulation, publicSpace,
+export function showTowerLabel(building,selected){
+  return selected || Boolean(building.label && !/^도면\s*주거동\s*\d+$/.test(building.label.trim()));
+}
+
+export function createPilotScene(container, { buildings, town, zones, simulation, publicSpace,associationLayout,drawingFrame=false,
   initialBearing, initialPitch, selectedZoneId = null, existingDetail = false, partialPlan=false, onSelect } = {}) {
-  const model = buildModel(town, zones?.features || [], buildings?.features || [], simulation, publicSpace);
+  const model = drawingFrame ? buildDrawingModel(associationLayout) :
+    buildGeographicModel(town, zones?.features || [], buildings?.features || [], simulation, publicSpace,associationLayout);
   let surfaces = geometry(model, existingDetail, partialPlan);
   const host = document.createElement('div');
   host.className = 'pilot-world';
   host.tabIndex = 0;
   host.setAttribute('role', 'group');
-  host.setAttribute('aria-label', '3D 지도. 방향키로 이동, Q와 E로 회전, Shift와 위아래 방향키로 기울기, 더하기와 빼기로 확대·축소, Home으로 초기화.');
+  host.dataset.frame=drawingFrame?'drawing':'map';
+  host.setAttribute('aria-label', (drawingFrame?'공개 배치도 3D':'3D 지도')+'. 방향키로 이동, Q와 E로 회전, Shift와 위아래 방향키로 기울기, 더하기와 빼기로 확대·축소, Home으로 초기화.');
   const style = document.createElement('style');
   style.textContent = SCENE_STYLE;
   let canvas = makeCanvas();
@@ -985,6 +1054,7 @@ export async function createPilotScene(container, { buildings, town, zones, simu
   measure.className = 'pilot-world-measure';
   measure.setAttribute('aria-hidden', 'true');
   measure.innerHTML = '<span class="pilot-world-north"><b>N</b><i></i></span><span class="pilot-world-scale"><span></span><i></i></span>';
+  if(drawingFrame)measure.querySelector('b').textContent='도면 위';
   const north = measure.querySelector('.pilot-world-north i');
   const scaleText = measure.querySelector('.pilot-world-scale span');
   const scaleLine = measure.querySelector('.pilot-world-scale i');
@@ -1010,7 +1080,7 @@ export async function createPilotScene(container, { buildings, town, zones, simu
     throw error;
   }
 
-  let frame = 0, destroyed = false, mode = 'current', activeBuilding = null;
+  let frame = 0, destroyed = false, mode = associationLayout?'plan':'current', activeBuilding = null;
   let currentStyle = existingDetail ? 'exterior' : 'age';
   const maxZoom = existingDetail ? 32 : 12;
   let activeZone = model.areas.find(zone => zone.id === selectedZoneId);
@@ -1018,7 +1088,11 @@ export async function createPilotScene(container, { buildings, town, zones, simu
   const tilt = Number.isFinite(initialPitch) ? clamp(initialPitch, 10, 74) * DEG : DEFAULT_PITCH;
   const camera = { x: 0, y: 0, bearing, pitch: tilt, zoom: 1 };
   const cosDefault = Math.cos(bearing), sinDefault = Math.sin(bearing);
-  const focusBox = extent(model.focusPoints.map(([x, y]) => [cosDefault * x + sinDefault * y, -sinDefault * x + cosDefault * y]));
+  const focusPoints=model.focusPoints.map(([x, y]) => [cosDefault * x + sinDefault * y, -sinDefault * x + cosDefault * y]);
+  if(associationLayout)for(const tower of model.towers){
+    for(const [x,y] of tower.parts[0].rings[0])focusPoints.push([cosDefault*x+sinDefault*y,-sinDefault*x+cosDefault*y+tower.height*Math.tan(tilt)]);
+  }
+  const focusBox = extent(focusPoints);
   const defaultEast = (focusBox[0] + focusBox[2]) / 2, defaultNorth = (focusBox[1] + focusBox[3]) / 2;
   const home = { x: cosDefault * defaultEast - sinDefault * defaultNorth,
     y: sinDefault * defaultEast + cosDefault * defaultNorth };
@@ -1040,32 +1114,39 @@ export async function createPilotScene(container, { buildings, town, zones, simu
       building: activeBuilding?.code || 0, plan: mode === 'plan', exterior: currentStyle === 'exterior',
     };
   }
-  const labels = model.areas.map(zone => {
+  const labels = (associationLayout?model.towers:model.areas).map(zone => {
     const button = document.createElement('button');
     button.className = 'pilot-world-label';
     button.type = 'button';
-    button.dataset.zoneId = zone.id;
+    if(associationLayout)button.dataset.buildingId=zone.id;
+    else button.dataset.zoneId = zone.id;
     const title = document.createElement('span'), metrics = document.createElement('small');
     const n = zone.props;
     const short = n.source_label?.match(/A\d+|(?:\d+)구역/i)?.[0];
-    title.textContent = n.label || n.name || short || n.source_label || '세부구역';
-    metrics.textContent = labelText(n);
+    title.textContent = associationLayout?(n.label||n.id):(n.label || n.name || short || n.source_label || '세부구역');
+    metrics.textContent = associationLayout?(n.floors==null?'층수 미확인':'최고 '+n.floors+'층'):labelText(n);
     button.title = title.textContent;
+    if(associationLayout)button.setAttribute('aria-label',title.textContent+' · '+metrics.textContent);
     button.append(title, metrics);
     button.addEventListener('click', () => choose(zone), options);
     overlay.append(button);
     return { zone, button, metrics };
   });
   const spaceLabels = [];
-  const named = model.spaces.filter(s => s.name);
+  const named = model.spaces.filter(s => s.name && !s.fromLayout);
   const park = named.filter(s => ['park','green','open_space'].includes(s.kind) && s.parts.length).sort((a, b) =>
     Math.max(...b.parts.map(p => p.area)) - Math.max(...a.parts.map(p => p.area)))[0];
   const facility = named.find(s => s.kind === 'facility');
   const axis = named.find(s => s.kind === 'walkway') || named.find(s => s.kind === 'road');
-  for (const space of new Set([park, facility, axis, ...named.filter(s => s.point)].filter(Boolean))) {
-    const node = document.createElement('span');
+  const visibleSpaces=new Set([...model.spaces.filter(s=>s.fromLayout),park,facility,axis,...named.filter(s=>s.point)].filter(Boolean));
+  for (const space of visibleSpaces) {
+    const node = document.createElement(space.fromLayout?'button':'span');
     node.className = 'pilot-space-label';
-    node.textContent = space.name;
+    if(space.fromLayout){
+      node.type='button';node.dataset.spaceId=space.id;node.classList.add('pilot-drawing-space');
+      node.addEventListener('click',()=>choose(space),options);
+    }
+    node.textContent = (associationLayout&&!drawingFrame?(space.fromLayout?'배치도 · ':'도시계획 · '):'')+space.name;
     const part = space.parts.reduce((best, p) => !best || p.area > best.area ? p : best, null);
     let at = space.point || part?.anchor;
     if (!at) {
@@ -1081,27 +1162,30 @@ export async function createPilotScene(container, { buildings, town, zones, simu
         left -= lengths[i];
       }
     }
-    if (at) { overlay.append(node); spaceLabels.push({ node, at, part }); }
+    if (at) { overlay.append(node); spaceLabels.push({ node, at, part,space }); }
   }
 
   function choose(feature) {
     if (!feature) return;
+    if(associationLayout && !feature.association && !feature.fromLayout)return;
     if (feature.kind === 'town') return;
     if (feature.kind === 'zone') { activeZone = feature; activeBuilding = null; }
     else activeBuilding = feature;
     schedule();
-    onSelect?.({ kind: feature.kind, id: feature.id });
+    onSelect?.({ kind: feature.fromLayout?'space':feature.kind, id: feature.id });
   }
 
   function placeLabels(v) {
     const taken = [];
-    const ordered = [...labels].sort((a, b) => Number(b.zone === activeZone) - Number(a.zone === activeZone));
+    const selection=associationLayout?activeBuilding:activeZone;
+    const ordered = [...labels].sort((a, b) => Number(b.zone === selection) - Number(a.zone === selection));
     for (const { zone, button, metrics } of ordered) {
+      if(associationLayout && !showTowerLabel(zone.props,zone===selection)){button.hidden=true;continue;}
       if(v.plan && model.simulatedZones.has(model.perimeter)){button.hidden=true;continue;}
-      button.setAttribute('aria-pressed', String(zone === activeZone));
-      metrics.hidden = !v.plan || model.simulatedZones.has(zone);
+      button.setAttribute('aria-pressed', String(zone === selection));
+      metrics.hidden = Boolean(associationLayout) || !v.plan || model.simulatedZones.has(zone);
       button.hidden = false;
-      const [x, y] = screenPoint(v, ...zone.anchor);
+      const [x, y] = screenPoint(v, ...zone.anchor, associationLayout?zone.height:0);
       const w = button.offsetWidth, h = button.offsetHeight;
       // Compact offsets prevent adjacent districts' names from obscuring one another.
       const positions = [[0, 0], [0, -h * .85], [0, h * .85], [-w * .55, 0], [w * .55, 0]];
@@ -1118,7 +1202,8 @@ export async function createPilotScene(container, { buildings, town, zones, simu
         taken.push(position);
       } else button.hidden = true;
     }
-    for (const { node, at, part } of spaceLabels) {
+    for (const { node, at, part,space } of spaceLabels) {
+      if(space.fromLayout)node.setAttribute('aria-pressed',String(activeBuilding===space));
       node.hidden = !v.plan;
       if (node.hidden) continue;
       const [x, y] = screenPoint(v, ...at), w = node.offsetWidth, h = node.offsetHeight;
@@ -1149,12 +1234,12 @@ export async function createPilotScene(container, { buildings, town, zones, simu
     renderer.draw(v);
     placeLabels(v);
     north.style.transform = 'rotate(' + Math.atan2(v.sinB, v.cosB * v.cosP) + 'rad)';
-    const limit = 70 / v.scale;
+    const unit=model.pixelsPerUnit??1,limit = 70 * unit / v.scale;
     const decade = 10 ** Math.floor(Math.log10(limit));
     const multiple = limit / decade >= 5 ? 5 : limit / decade >= 2 ? 2 : 1;
     const meters = decade * multiple;
-    scaleText.textContent = (meters >= 1000 ? meters / 1000 + ' km' : +meters.toFixed(2) + ' m');
-    scaleLine.style.width = Math.round(meters * v.scale) + 'px';
+    scaleText.textContent = drawingFrame?meters+' px':(meters >= 1000 ? meters / 1000 + ' km' : +meters.toFixed(2) + ' m');
+    scaleLine.style.width = Math.round(meters * v.scale / unit) + 'px';
   }
   function schedule() {
     if (!frame && !destroyed) frame = requestAnimationFrame(render);
@@ -1172,7 +1257,7 @@ export async function createPilotScene(container, { buildings, town, zones, simu
         for (const [x, y] of part.rings[0]) {
           const east = v.cosB * x + v.sinB * y, north = (-v.sinB * x + v.cosB * y) * v.cosP;
           points.push([east, north + height * v.sinP]);
-          if (features.length === 1 && feature.kind === 'building') points.push([east, north]);
+          if (features.length === 1 && (feature.kind === 'building'||feature.association)) points.push([east, north]);
         }
       }
     }
@@ -1192,6 +1277,11 @@ export async function createPilotScene(container, { buildings, town, zones, simu
     frameFeatures([zone, ...structures], 1, 1);
   }
   function focusBuilding(id) {
+    if(associationLayout){
+      const tower=model.towers.find(t=>t.id===id);
+      if(tower){frameFeatures([tower],50,40);choose(tower);}
+      return;
+    }
     if (!existingDetail || mode !== 'current') return;
     const block = model.blocks.find(b => b.id === id);
     if (!block) return;
@@ -1270,7 +1360,7 @@ export async function createPilotScene(container, { buildings, town, zones, simu
     const pointer = pointers.get(event.pointerId);
     if (!pointer) return;
     pointers.delete(event.pointerId);
-    if (!canceled && !multi && !pointer.orbit && !pointer.moved) choose(pick(view(), model, ...xy(event)));
+    if (!canceled && !multi && !pointer.orbit && !pointer.moved) choose(pickSceneFeature(view(), model, ...xy(event)));
     if (!pointers.size) {
       multi = false;
       delete host.dataset.dragging;
@@ -1316,7 +1406,7 @@ export async function createPilotScene(container, { buildings, town, zones, simu
     setMode(next) {
       if (next !== 'current' && next !== 'plan') return;
       mode = next;
-      if (mode === 'plan') activeBuilding = null;
+      if (mode === 'plan'&&!associationLayout) activeBuilding = null;
       schedule();
     },
     setCurrentStyle(next) {
@@ -1330,6 +1420,10 @@ export async function createPilotScene(container, { buildings, town, zones, simu
       schedule();
     },
     rotate, zoom: adjustZoom, pitch, pan, reset, focusZone, focusBuilding,
+    focusSpace(id){
+      const space=model.spaces.find(s=>s.fromLayout&&s.id===id);
+      if(space){frameFeatures([space],65,45);choose(space);}
+    },
     getCamera() {
       return { centerX: camera.x, centerY: camera.y, bearing: camera.bearing / DEG,
         pitch: camera.pitch / DEG, zoom: camera.zoom, pixelsPerMeter: view().scale };

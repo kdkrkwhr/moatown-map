@@ -18,8 +18,8 @@
   <meta property="og:image" content="https://moatownmap.com/assets/seoul-panorama.webp">
   <meta property="og:image:alt" content="서울 시가지 전경">
   <link rel="sitemap" type="application/xml" href="/sitemap.xml">
-  <link rel="stylesheet" href="./styles.css?v=9dd69d08e58e">
-  <script type="module" src="./app.mjs?v=9dd69d08e58e"></script>
+  <link rel="stylesheet" href="./styles.css?v=4cb305b9d366">
+  <script type="module" src="./app.mjs?v=4cb305b9d366"></script>
 </head>
 <body data-loading="true">
 <a class="skip" href="#explorer">대상지 탐색으로 바로가기</a>
@@ -155,10 +155,11 @@
           <button type="button" data-current-style="age" aria-pressed="false">연식 색상</button>
         </div>
         <div id="pilot-placement" class="pilot-display-switch" role="group" aria-label="건축 후 배치 방식" hidden>
+          <button type="button" data-placement="association" aria-pressed="false" hidden>공개 배치도</button>
           <button type="button" data-placement="design" aria-pressed="true">계획자료 반영</button>
           <button type="button" data-placement="spaced" aria-pressed="false">35m 간격 예시</button>
-          <button type="button" data-placement="zones" aria-pressed="false" hidden>세부구역별</button>
-          <button type="button" data-placement="town" aria-pressed="false" hidden>대상지 전체</button>
+          <button type="button" data-placement="zones" aria-pressed="false" hidden>구역별 예시</button>
+          <button type="button" data-placement="town" aria-pressed="false" hidden>전체 예시</button>
         </div>
         <div id="pilot-tools" aria-label="3D 시점 조절">
           <button type="button" data-camera="in" aria-label="3D 확대">＋</button>

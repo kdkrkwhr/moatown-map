@@ -1,5 +1,5 @@
-import {formatValue,unitsChange,projectIntervals,compareInterval,projectStage} from './detail-format.mjs?v=9dd69d08e58e';
-import {projectUrl} from './project-url.mjs?v=9dd69d08e58e';
+import {formatValue,unitsChange,projectIntervals,compareInterval,projectStage} from './detail-format.mjs?v=4cb305b9d366';
+import {projectUrl} from './project-url.mjs?v=4cb305b9d366';
 export {projectUrl};
 
 const pending='미고시';
@@ -538,12 +538,12 @@ function detailTabs(container,children,designated){
   return {panels,activate};
 }
 
-export function renderProjectDetail(container,{town,zone,children,boundaries,snapshot,cityRule,registryUrl,stats,select,badge,copyLink,expandDetail,initialTab,openPilot,openPlan,openTownRules}){
+export function renderProjectDetail(container,{town,zone,children,boundaries,snapshot,cityRule,registryUrl,stats,select,badge,copyLink,expandDetail,initialTab,openPilot,openPlan,openTownRules,association}){
   const r=zone??town,boundary=boundaries.get(r.id),intervals=projectIntervals(town,zone,snapshot);
   const comparison=!zone && children.length?comparePlans(children):null;
   const header=summary(town,zone,intervals,badge,copyLink,comparison);
   if(openPilot){
-    const button=el('button','3D 보기','pilot-entry');
+    const button=el('button',association?'공개 배치도 3D':'3D 보기','pilot-entry');
     button.type='button';button.setAttribute('aria-haspopup','dialog');button.setAttribute('aria-controls','pilot-viewer');
     button.addEventListener('click',openPilot);
     header.querySelector('.copy-link').before(button);
@@ -558,7 +558,7 @@ export function renderProjectDetail(container,{town,zone,children,boundaries,sna
   }
   const steps=section(panels.schedule,'timeline','추진 타임라인');
   if(openPlan){
-    const button=el('button','건축 후 예상 3D 보기 ›','pilot-text-button');
+    const button=el('button',association?'공개 배치도 3D 보기 ›':'건축 후 예상 3D 보기 ›','pilot-text-button');
     button.type='button';button.setAttribute('aria-haspopup','dialog');button.setAttribute('aria-controls','pilot-viewer');
     button.onclick=openPlan;steps.append(button);
   }

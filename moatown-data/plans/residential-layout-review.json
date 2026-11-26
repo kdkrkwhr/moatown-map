@@ -1,0 +1,2109 @@
+{
+  "checked_on": "2026-11-26",
+  "method": "서울시 보도자료 제목 모아타운·모아주택을 검색하고, 대상지기록 페이지의 본문 이미지와 캐시된 고시 도면을 육안 대조. 보도자료별 주소 매칭 목록은 대상지 별칭 등으로 일부 누락 가능.",
+  "expanded_towns": 93,
+  "town_results": {
+    "ground_plan_unverified": 58,
+    "association_ground_plan": 21,
+    "additional_ground_plan": 14
+  },
+  "press_releases": 131,
+  "press_attachments": {
+    "other": 34,
+    "pdf": 97
+  },
+  "municipal_profiles": 69,
+  "municipal_profile_images": 553,
+  "gazette_drawing_assets": 244,
+  "details": [
+    {
+      "town_id": "mt-202603-public-001",
+      "address": "강서구 화곡동 1087",
+      "result": "ground_plan_unverified",
+      "city_profiles": [
+        {
+          "url": "https://news.seoul.go.kr/citybuild/archives/538350",
+          "images_reviewed": 8
+        }
+      ],
+      "press_matches": [
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=401745",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=455098"
+      ],
+      "notice_drawings_reviewed": 1,
+      "notice_sources": [
+        "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=584446"
+      ],
+      "review_notes": [
+        "수록된 고시 도면은 토지이용·기반시설 또는 구역 결정도로, 주동 외곽 확인 근거로 사용하지 않음.",
+        "서울시 대상지기록의 해당 이미지에서 판독 가능한 주거동 중심 평면을 확인하지 못함.",
+        "보도자료 첨부 시각자료에서 위치도·조감도 또는 현황도를 넘어서는 판독 가능한 주동 평면을 확인하지 못함."
+      ]
+    },
+    {
+      "town_id": "mt-202603-public-002",
+      "address": "강서구 화곡동 354",
+      "result": "association_ground_plan",
+      "city_profiles": [
+        {
+          "url": "https://news.seoul.go.kr/citybuild/archives/538366",
+          "images_reviewed": 8
+        }
+      ],
+      "press_matches": [
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=401745",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=424562",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=452319"
+      ],
+      "notice_drawings_reviewed": 4,
+      "notice_sources": [
+        "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=584450",
+        "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=645315"
+      ],
+      "review_notes": [
+        "수록된 고시 도면은 토지이용·기반시설 또는 구역 결정도로, 주동 외곽 확인 근거로 사용하지 않음."
+      ]
+    },
+    {
+      "town_id": "mt-202603-public-003",
+      "address": "강서구 화곡동 359",
+      "result": "ground_plan_unverified",
+      "city_profiles": [
+        {
+          "url": "https://news.seoul.go.kr/citybuild/archives/538386",
+          "images_reviewed": 8
+        }
+      ],
+      "press_matches": [
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=401745",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=455098"
+      ],
+      "notice_drawings_reviewed": 2,
+      "notice_sources": [
+        "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=584449"
+      ],
+      "review_notes": [
+        "수록된 고시 도면은 토지이용·기반시설 또는 구역 결정도로, 주동 외곽 확인 근거로 사용하지 않음.",
+        "서울시 대상지기록의 해당 이미지에서 판독 가능한 주거동 중심 평면을 확인하지 못함.",
+        "보도자료 첨부 시각자료에서 위치도·조감도 또는 현황도를 넘어서는 판독 가능한 주동 평면을 확인하지 못함.",
+        "서울시 주동 계획은 층수가 붙은 사시도로, 지붕과 지면 외곽을 구분하기 어려워 평면으로 디지타이즈하지 않음."
+      ]
+    },
+    {
+      "town_id": "mt-202603-public-005",
+      "address": "강서구 등촌2동 515-44",
+      "result": "association_ground_plan",
+      "city_profiles": [
+        {
+          "url": "https://news.seoul.go.kr/citybuild/archives/538402",
+          "images_reviewed": 8
+        }
+      ],
+      "press_matches": [
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=392973",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=424562",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=455098"
+      ],
+      "notice_drawings_reviewed": 3,
+      "notice_sources": [
+        "https://www.gangseo.seoul.kr/comm/getFile?srvcId=MEDIA&upperNo=WEONkR8WSgb*9uvj0hTbBg%3d%3d&fileTy=MEDIA&fileNo=rsuFv6BGM0P1J6eeXHc1QQ%3d%3d"
+      ],
+      "review_notes": [
+        "수록된 고시 도면은 토지이용·기반시설 또는 구역 결정도로, 주동 외곽 확인 근거로 사용하지 않음."
+      ]
+    },
+    {
+      "town_id": "mt-202603-public-006",
+      "address": "강서구 화곡6동 1130-7",
+      "result": "ground_plan_unverified",
+      "city_profiles": [
+        {
+          "url": "https://news.seoul.go.kr/citybuild/archives/538421",
+          "images_reviewed": 8
+        }
+      ],
+      "press_matches": [
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=401745",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=455098",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=467891"
+      ],
+      "notice_drawings_reviewed": 0,
+      "notice_sources": [],
+      "review_notes": [
+        "서울시 대상지기록의 해당 이미지에서 판독 가능한 주거동 중심 평면을 확인하지 못함.",
+        "보도자료 첨부 시각자료에서 위치도·조감도 또는 현황도를 넘어서는 판독 가능한 주동 평면을 확인하지 못함."
+      ]
+    },
+    {
+      "town_id": "mt-202603-public-007",
+      "address": "강서구 방화동 592-1",
+      "result": "ground_plan_unverified",
+      "city_profiles": [
+        {
+          "url": "https://news.seoul.go.kr/citybuild/archives/538441",
+          "images_reviewed": 8
+        }
+      ],
+      "press_matches": [
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=407274",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=455098"
+      ],
+      "notice_drawings_reviewed": 2,
+      "notice_sources": [
+        "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=594582"
+      ],
+      "review_notes": [
+        "수록된 고시 도면은 토지이용·기반시설 또는 구역 결정도로, 주동 외곽 확인 근거로 사용하지 않음.",
+        "서울시 대상지기록의 해당 이미지에서 판독 가능한 주거동 중심 평면을 확인하지 못함.",
+        "보도자료 첨부 시각자료에서 위치도·조감도 또는 현황도를 넘어서는 판독 가능한 주동 평면을 확인하지 못함."
+      ]
+    },
+    {
+      "town_id": "mt-202603-public-008",
+      "address": "강서구 공항동 55-327",
+      "result": "ground_plan_unverified",
+      "city_profiles": [
+        {
+          "url": "https://news.seoul.go.kr/citybuild/archives/538456",
+          "images_reviewed": 8
+        }
+      ],
+      "press_matches": [
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=373144",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=433331"
+      ],
+      "notice_drawings_reviewed": 6,
+      "notice_sources": [
+        "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=615059"
+      ],
+      "review_notes": [
+        "수록된 고시 도면은 토지이용·기반시설 또는 구역 결정도로, 주동 외곽 확인 근거로 사용하지 않음.",
+        "서울시 대상지기록의 해당 이미지에서 판독 가능한 주거동 중심 평면을 확인하지 못함.",
+        "보도자료 첨부 시각자료에서 위치도·조감도 또는 현황도를 넘어서는 판독 가능한 주동 평면을 확인하지 못함."
+      ]
+    },
+    {
+      "town_id": "mt-202603-public-009",
+      "address": "강서구 화곡6동 957",
+      "result": "ground_plan_unverified",
+      "city_profiles": [
+        {
+          "url": "https://news.seoul.go.kr/citybuild/archives/538467",
+          "images_reviewed": 8
+        }
+      ],
+      "press_matches": [
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=373144",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=455098"
+      ],
+      "notice_drawings_reviewed": 2,
+      "notice_sources": [
+        "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=614147"
+      ],
+      "review_notes": [
+        "수록된 고시 도면은 토지이용·기반시설 또는 구역 결정도로, 주동 외곽 확인 근거로 사용하지 않음.",
+        "서울시 대상지기록의 해당 이미지에서 판독 가능한 주거동 중심 평면을 확인하지 못함.",
+        "보도자료 첨부 시각자료에서 위치도·조감도 또는 현황도를 넘어서는 판독 가능한 주동 평면을 확인하지 못함."
+      ]
+    },
+    {
+      "town_id": "mt-202603-public-011",
+      "address": "중랑구 면목3·8동 44-6",
+      "result": "ground_plan_unverified",
+      "city_profiles": [
+        {
+          "url": "https://news.seoul.go.kr/citybuild/archives/538669",
+          "images_reviewed": 8
+        }
+      ],
+      "press_matches": [
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=365919",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=392973"
+      ],
+      "notice_drawings_reviewed": 3,
+      "notice_sources": [
+        "https://event.seoul.go.kr/seoulsibo/fileDownload.do?fileName=seoulsibo_20250115172613_99070.pdf#page=39",
+        "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=604352"
+      ],
+      "review_notes": [
+        "수록된 고시 도면은 토지이용·기반시설 또는 구역 결정도로, 주동 외곽 확인 근거로 사용하지 않음.",
+        "서울시 대상지기록의 해당 이미지에서 판독 가능한 주거동 중심 평면을 확인하지 못함.",
+        "보도자료 첨부 시각자료에서 위치도·조감도 또는 현황도를 넘어서는 판독 가능한 주동 평면을 확인하지 못함."
+      ]
+    },
+    {
+      "town_id": "mt-202603-public-012",
+      "address": "중랑구 면목본동 297-28",
+      "result": "association_ground_plan",
+      "city_profiles": [
+        {
+          "url": "https://news.seoul.go.kr/citybuild/archives/538733",
+          "images_reviewed": 8
+        }
+      ],
+      "press_matches": [
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=365919",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=392973",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=412744",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=427503",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=447664",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=453623",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=455098"
+      ],
+      "notice_drawings_reviewed": 1,
+      "notice_sources": [
+        "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=590037"
+      ],
+      "review_notes": [
+        "수록된 고시 도면은 토지이용·기반시설 또는 구역 결정도로, 주동 외곽 확인 근거로 사용하지 않음."
+      ]
+    },
+    {
+      "town_id": "mt-202603-public-013",
+      "address": "중랑구 중화1동 4-30",
+      "result": "additional_ground_plan",
+      "city_profiles": [
+        {
+          "url": "https://news.seoul.go.kr/citybuild/archives/538746",
+          "images_reviewed": 8
+        }
+      ],
+      "press_matches": [
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=365919",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=392973",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=406214",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=453623",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=455098"
+      ],
+      "notice_drawings_reviewed": 2,
+      "notice_sources": [
+        "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=587169"
+      ],
+      "review_notes": [
+        "수록된 고시 도면은 토지이용·기반시설 또는 구역 결정도로, 주동 외곽 확인 근거로 사용하지 않음."
+      ],
+      "traced_buildings": 20,
+      "published_source": "https://news.seoul.go.kr/citybuild/archives/538746"
+    },
+    {
+      "town_id": "mt-202603-public-014",
+      "address": "중랑구 망우3동 427-5",
+      "result": "ground_plan_unverified",
+      "city_profiles": [
+        {
+          "url": "https://news.seoul.go.kr/citybuild/archives/538758",
+          "images_reviewed": 8
+        }
+      ],
+      "press_matches": [
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=365919",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=392973",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=406214",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=453623",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=455098"
+      ],
+      "notice_drawings_reviewed": 1,
+      "notice_sources": [
+        "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=584263"
+      ],
+      "review_notes": [
+        "수록된 고시 도면은 토지이용·기반시설 또는 구역 결정도로, 주동 외곽 확인 근거로 사용하지 않음.",
+        "서울시 대상지기록의 해당 이미지에서 판독 가능한 주거동 중심 평면을 확인하지 못함.",
+        "보도자료 첨부 시각자료에서 위치도·조감도 또는 현황도를 넘어서는 판독 가능한 주동 평면을 확인하지 못함."
+      ]
+    },
+    {
+      "town_id": "mt-202603-public-015",
+      "address": "중랑구 면목동 152-1",
+      "result": "association_ground_plan",
+      "city_profiles": [
+        {
+          "url": "https://news.seoul.go.kr/citybuild/archives/538769",
+          "images_reviewed": 8
+        }
+      ],
+      "press_matches": [
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=373144",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=425340",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=453623",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=455098"
+      ],
+      "notice_drawings_reviewed": 3,
+      "notice_sources": [
+        "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=605445"
+      ],
+      "review_notes": [
+        "수록된 고시 도면은 토지이용·기반시설 또는 구역 결정도로, 주동 외곽 확인 근거로 사용하지 않음."
+      ]
+    },
+    {
+      "town_id": "mt-202603-public-016",
+      "address": "중랑구 면목동 63-1",
+      "result": "additional_ground_plan",
+      "city_profiles": [
+        {
+          "url": "https://news.seoul.go.kr/citybuild/archives/538782",
+          "images_reviewed": 8
+        }
+      ],
+      "press_matches": [
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=373144",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=412744",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=427503",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=453623",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=455098"
+      ],
+      "notice_drawings_reviewed": 1,
+      "notice_sources": [
+        "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=613956"
+      ],
+      "review_notes": [
+        "수록된 고시 도면은 토지이용·기반시설 또는 구역 결정도로, 주동 외곽 확인 근거로 사용하지 않음."
+      ],
+      "traced_buildings": 27,
+      "published_source": "https://news.seoul.go.kr/citybuild/archives/538782"
+    },
+    {
+      "town_id": "mt-202603-public-017",
+      "address": "중랑구 망우본동 354-2",
+      "result": "additional_ground_plan",
+      "city_profiles": [
+        {
+          "url": "https://news.seoul.go.kr/citybuild/archives/542225",
+          "images_reviewed": 8
+        }
+      ],
+      "press_matches": [
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=395331",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=443532",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=455098"
+      ],
+      "notice_drawings_reviewed": 4,
+      "notice_sources": [
+        "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=628523"
+      ],
+      "review_notes": [
+        "수록된 고시 도면은 토지이용·기반시설 또는 구역 결정도로, 주동 외곽 확인 근거로 사용하지 않음."
+      ],
+      "traced_buildings": 16,
+      "published_source": "https://news.seoul.go.kr/citybuild/archives/542225"
+    },
+    {
+      "town_id": "mt-202603-public-018",
+      "address": "중랑구 중화동 329-38",
+      "result": "association_ground_plan",
+      "city_profiles": [
+        {
+          "url": "https://news.seoul.go.kr/citybuild/archives/538794",
+          "images_reviewed": 8
+        }
+      ],
+      "press_matches": [
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=395331",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=418841",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=447068",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=447514",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=470317"
+      ],
+      "notice_drawings_reviewed": 6,
+      "notice_sources": [
+        "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=618072"
+      ],
+      "review_notes": [
+        "수록된 고시 도면은 토지이용·기반시설 또는 구역 결정도로, 주동 외곽 확인 근거로 사용하지 않음."
+      ]
+    },
+    {
+      "town_id": "mt-202603-public-019",
+      "address": "중랑구 망우3동 474-29",
+      "result": "additional_ground_plan",
+      "city_profiles": [],
+      "press_matches": [
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=400927",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=442941",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=455098"
+      ],
+      "notice_drawings_reviewed": 5,
+      "notice_sources": [
+        "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=628097"
+      ],
+      "review_notes": [
+        "수록된 고시 도면은 토지이용·기반시설 또는 구역 결정도로, 주동 외곽 확인 근거로 사용하지 않음."
+      ],
+      "traced_buildings": 27,
+      "published_source": "https://www.seoul.go.kr/news/news_report.do?nttNo=442941"
+    },
+    {
+      "town_id": "mt-202603-public-020",
+      "address": "중랑구 묵2동 243-7",
+      "result": "ground_plan_unverified",
+      "city_profiles": [
+        {
+          "url": "https://news.seoul.go.kr/citybuild/archives/542152",
+          "images_reviewed": 12
+        }
+      ],
+      "press_matches": [
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=400927",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=446533",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=455098"
+      ],
+      "notice_drawings_reviewed": 2,
+      "notice_sources": [
+        "https://event.seoul.go.kr/snews/data/CN_MST/seoulsibo_20260513152445_75058.pdf#page=105"
+      ],
+      "review_notes": [
+        "수록된 고시 도면은 토지이용·기반시설 또는 구역 결정도로, 주동 외곽 확인 근거로 사용하지 않음.",
+        "서울시 대상지기록의 해당 이미지에서 판독 가능한 주거동 중심 평면을 확인하지 못함.",
+        "보도자료 첨부 시각자료에서 위치도·조감도 또는 현황도를 넘어서는 판독 가능한 주동 평면을 확인하지 못함."
+      ]
+    },
+    {
+      "town_id": "mt-202603-public-021",
+      "address": "중랑구 중화2동 299-8",
+      "result": "ground_plan_unverified",
+      "city_profiles": [],
+      "press_matches": [
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=405711",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=447946",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=470317"
+      ],
+      "notice_drawings_reviewed": 2,
+      "notice_sources": [
+        "https://event.seoul.go.kr/snews/data/CN_MST/seoulsibo_20260910094304_20028.pdf#page=63"
+      ],
+      "review_notes": [
+        "수록된 고시 도면은 토지이용·기반시설 또는 구역 결정도로, 주동 외곽 확인 근거로 사용하지 않음.",
+        "보도자료 첨부 시각자료에서 위치도·조감도 또는 현황도를 넘어서는 판독 가능한 주동 평면을 확인하지 못함."
+      ]
+    },
+    {
+      "town_id": "mt-202603-public-022",
+      "address": "중랑구 면목2동 139-52",
+      "result": "association_ground_plan",
+      "city_profiles": [],
+      "press_matches": [
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=405711",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=414956"
+      ],
+      "notice_drawings_reviewed": 0,
+      "notice_sources": [],
+      "review_notes": []
+    },
+    {
+      "town_id": "mt-202603-public-023",
+      "address": "중랑구 면목3·8동 453-1",
+      "result": "additional_ground_plan",
+      "city_profiles": [
+        {
+          "url": "https://news.seoul.go.kr/citybuild/archives/542207",
+          "images_reviewed": 11
+        }
+      ],
+      "press_matches": [
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=458142"
+      ],
+      "notice_drawings_reviewed": 2,
+      "notice_sources": [
+        "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=645351"
+      ],
+      "review_notes": [
+        "수록된 고시 도면은 토지이용·기반시설 또는 구역 결정도로, 주동 외곽 확인 근거로 사용하지 않음."
+      ],
+      "traced_buildings": 31,
+      "published_source": "https://news.seoul.go.kr/citybuild/archives/542207"
+    },
+    {
+      "town_id": "mt-202603-public-024",
+      "address": "금천구 시흥3동 1005",
+      "result": "ground_plan_unverified",
+      "city_profiles": [
+        {
+          "url": "https://news.seoul.go.kr/citybuild/archives/538539",
+          "images_reviewed": 8
+        }
+      ],
+      "press_matches": [
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=404696",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=414545",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=439883",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=447068",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=447664",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=455098",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=462415"
+      ],
+      "notice_drawings_reviewed": 7,
+      "notice_sources": [
+        "https://event.seoul.go.kr/snews/data/CN_MST/seoulsibo_20251119162712_66715.pdf#page=64",
+        "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=560541",
+        "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=584437"
+      ],
+      "review_notes": [
+        "수록된 고시 도면은 토지이용·기반시설 또는 구역 결정도로, 주동 외곽 확인 근거로 사용하지 않음.",
+        "서울시 대상지기록의 해당 이미지에서 판독 가능한 주거동 중심 평면을 확인하지 못함.",
+        "보도자료 첨부 시각자료에서 위치도·조감도 또는 현황도를 넘어서는 판독 가능한 주동 평면을 확인하지 못함."
+      ]
+    },
+    {
+      "town_id": "mt-202603-public-025",
+      "address": "금천구 시흥4동 817",
+      "result": "association_ground_plan",
+      "city_profiles": [
+        {
+          "url": "https://news.seoul.go.kr/citybuild/archives/538550",
+          "images_reviewed": 8
+        }
+      ],
+      "press_matches": [
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=382291",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=439883",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=453623"
+      ],
+      "notice_drawings_reviewed": 10,
+      "notice_sources": [
+        "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=571863",
+        "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=631492"
+      ],
+      "review_notes": [
+        "수록된 고시 도면은 토지이용·기반시설 또는 구역 결정도로, 주동 외곽 확인 근거로 사용하지 않음."
+      ]
+    },
+    {
+      "town_id": "mt-202603-public-026",
+      "address": "금천구 시흥5동 922-61",
+      "result": "additional_ground_plan",
+      "city_profiles": [
+        {
+          "url": "https://news.seoul.go.kr/citybuild/archives/538561",
+          "images_reviewed": 8
+        }
+      ],
+      "press_matches": [
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=453623"
+      ],
+      "notice_drawings_reviewed": 1,
+      "notice_sources": [
+        "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=560543"
+      ],
+      "review_notes": [
+        "수록된 고시 도면은 토지이용·기반시설 또는 구역 결정도로, 주동 외곽 확인 근거로 사용하지 않음."
+      ],
+      "traced_buildings": 17,
+      "published_source": "https://news.seoul.go.kr/citybuild/archives/538561"
+    },
+    {
+      "town_id": "mt-202603-public-027",
+      "address": "금천구 시흥1동 864",
+      "result": "ground_plan_unverified",
+      "city_profiles": [
+        {
+          "url": "https://news.seoul.go.kr/citybuild/archives/538575",
+          "images_reviewed": 8
+        }
+      ],
+      "press_matches": [
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=373144",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=418072"
+      ],
+      "notice_drawings_reviewed": 3,
+      "notice_sources": [
+        "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=584430",
+        "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=601822"
+      ],
+      "review_notes": [
+        "수록된 고시 도면은 토지이용·기반시설 또는 구역 결정도로, 주동 외곽 확인 근거로 사용하지 않음.",
+        "서울시 대상지기록의 해당 이미지에서 판독 가능한 주거동 중심 평면을 확인하지 못함.",
+        "보도자료 첨부 시각자료에서 위치도·조감도 또는 현황도를 넘어서는 판독 가능한 주동 평면을 확인하지 못함."
+      ]
+    },
+    {
+      "town_id": "mt-202603-public-028",
+      "address": "금천구 시흥3동 950",
+      "result": "ground_plan_unverified",
+      "city_profiles": [
+        {
+          "url": "https://news.seoul.go.kr/citybuild/archives/538586",
+          "images_reviewed": 8
+        }
+      ],
+      "press_matches": [
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=373144",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=414545",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=455098"
+      ],
+      "notice_drawings_reviewed": 3,
+      "notice_sources": [
+        "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=584429",
+        "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=594346"
+      ],
+      "review_notes": [
+        "수록된 고시 도면은 토지이용·기반시설 또는 구역 결정도로, 주동 외곽 확인 근거로 사용하지 않음.",
+        "서울시 대상지기록의 해당 이미지에서 판독 가능한 주거동 중심 평면을 확인하지 못함.",
+        "보도자료 첨부 시각자료에서 위치도·조감도 또는 현황도를 넘어서는 판독 가능한 주동 평면을 확인하지 못함."
+      ]
+    },
+    {
+      "town_id": "mt-202603-public-029",
+      "address": "마포구 대흥동 535-2",
+      "result": "ground_plan_unverified",
+      "city_profiles": [],
+      "press_matches": [
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=406214"
+      ],
+      "notice_drawings_reviewed": 2,
+      "notice_sources": [
+        "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=584564"
+      ],
+      "review_notes": [
+        "수록된 고시 도면은 토지이용·기반시설 또는 구역 결정도로, 주동 외곽 확인 근거로 사용하지 않음.",
+        "보도자료 첨부 시각자료에서 위치도·조감도 또는 현황도를 넘어서는 판독 가능한 주동 평면을 확인하지 못함."
+      ]
+    },
+    {
+      "town_id": "mt-202603-public-030",
+      "address": "마포구 성산동 160-4",
+      "result": "association_ground_plan",
+      "city_profiles": [
+        {
+          "url": "https://news.seoul.go.kr/citybuild/archives/538805",
+          "images_reviewed": 8
+        }
+      ],
+      "press_matches": [
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=365919",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=439883",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=447664",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=453623"
+      ],
+      "notice_drawings_reviewed": 2,
+      "notice_sources": [
+        "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=584518"
+      ],
+      "review_notes": [
+        "수록된 고시 도면은 토지이용·기반시설 또는 구역 결정도로, 주동 외곽 확인 근거로 사용하지 않음."
+      ]
+    },
+    {
+      "town_id": "mt-202603-public-031",
+      "address": "마포구 망원동 456-6",
+      "result": "association_ground_plan",
+      "city_profiles": [
+        {
+          "url": "https://news.seoul.go.kr/citybuild/archives/538816",
+          "images_reviewed": 8
+        }
+      ],
+      "press_matches": [
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=365919",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=410482",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=429201",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=435154",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=453623"
+      ],
+      "notice_drawings_reviewed": 4,
+      "notice_sources": [
+        "https://event.seoul.go.kr/snews/data/CN_MST/seoulsibo_20260618110232_60397.pdf#page=32",
+        "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=588911"
+      ],
+      "review_notes": [
+        "수록된 고시 도면은 토지이용·기반시설 또는 구역 결정도로, 주동 외곽 확인 근거로 사용하지 않음."
+      ]
+    },
+    {
+      "town_id": "mt-202603-public-032",
+      "address": "마포구 합정동 369",
+      "result": "ground_plan_unverified",
+      "city_profiles": [],
+      "press_matches": [
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=373144",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=448116"
+      ],
+      "notice_drawings_reviewed": 4,
+      "notice_sources": [
+        "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=631937"
+      ],
+      "review_notes": [
+        "수록된 고시 도면은 토지이용·기반시설 또는 구역 결정도로, 주동 외곽 확인 근거로 사용하지 않음.",
+        "보도자료 첨부 시각자료에서 위치도·조감도 또는 현황도를 넘어서는 판독 가능한 주동 평면을 확인하지 못함."
+      ]
+    },
+    {
+      "town_id": "mt-202603-public-033",
+      "address": "마포구 중동 78",
+      "result": "ground_plan_unverified",
+      "city_profiles": [
+        {
+          "url": "https://news.seoul.go.kr/citybuild/archives/538836",
+          "images_reviewed": 8
+        }
+      ],
+      "press_matches": [
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=373144",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=431853"
+      ],
+      "notice_drawings_reviewed": 2,
+      "notice_sources": [
+        "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=611308"
+      ],
+      "review_notes": [
+        "수록된 고시 도면은 토지이용·기반시설 또는 구역 결정도로, 주동 외곽 확인 근거로 사용하지 않음.",
+        "서울시 대상지기록의 해당 이미지에서 판독 가능한 주거동 중심 평면을 확인하지 못함.",
+        "보도자료 첨부 시각자료에서 위치도·조감도 또는 현황도를 넘어서는 판독 가능한 주동 평면을 확인하지 못함."
+      ]
+    },
+    {
+      "town_id": "mt-202603-public-035",
+      "address": "강북구 번동 454-61",
+      "result": "association_ground_plan",
+      "city_profiles": [
+        {
+          "url": "https://news.seoul.go.kr/citybuild/archives/538967",
+          "images_reviewed": 8
+        }
+      ],
+      "press_matches": [
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=365919",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=424502",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=424981",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=447664",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=455098"
+      ],
+      "notice_drawings_reviewed": 2,
+      "notice_sources": [
+        "https://event.seoul.go.kr/snews/data/CN_MST/seoulsibo_20260708113419_91414.pdf#page=48"
+      ],
+      "review_notes": [
+        "수록된 고시 도면은 토지이용·기반시설 또는 구역 결정도로, 주동 외곽 확인 근거로 사용하지 않음."
+      ]
+    },
+    {
+      "town_id": "mt-202603-public-036",
+      "address": "강북구 번동 411",
+      "result": "ground_plan_unverified",
+      "city_profiles": [
+        {
+          "url": "https://news.seoul.go.kr/citybuild/archives/538981",
+          "images_reviewed": 8
+        }
+      ],
+      "press_matches": [
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=373144",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=418841",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=453623",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=455098"
+      ],
+      "notice_drawings_reviewed": 1,
+      "notice_sources": [
+        "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=597544"
+      ],
+      "review_notes": [
+        "수록된 고시 도면은 토지이용·기반시설 또는 구역 결정도로, 주동 외곽 확인 근거로 사용하지 않음.",
+        "서울시 대상지기록의 해당 이미지에서 판독 가능한 주거동 중심 평면을 확인하지 못함.",
+        "보도자료 첨부 시각자료에서 위치도·조감도 또는 현황도를 넘어서는 판독 가능한 주동 평면을 확인하지 못함.",
+        "생활SOC 공급계획 그림은 시설 심벌을 3차원 모형 위에 올린 도면으로 주거동 바닥선이 불명확함."
+      ]
+    },
+    {
+      "town_id": "mt-202603-public-037",
+      "address": "강북구 수유동 52-1",
+      "result": "additional_ground_plan",
+      "city_profiles": [
+        {
+          "url": "https://news.seoul.go.kr/citybuild/archives/538992",
+          "images_reviewed": 8
+        }
+      ],
+      "press_matches": [
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=373144",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=418841",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=441512",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=455098"
+      ],
+      "notice_drawings_reviewed": 3,
+      "notice_sources": [
+        "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=619723"
+      ],
+      "review_notes": [
+        "수록된 고시 도면은 토지이용·기반시설 또는 구역 결정도로, 주동 외곽 확인 근거로 사용하지 않음."
+      ],
+      "traced_buildings": 16,
+      "published_source": "https://www.seoul.go.kr/news/news_report.do?nttNo=441512"
+    },
+    {
+      "town_id": "mt-202603-public-038",
+      "address": "강북구 수유동 392-9",
+      "result": "ground_plan_unverified",
+      "city_profiles": [
+        {
+          "url": "https://news.seoul.go.kr/citybuild/archives/542001",
+          "images_reviewed": 11
+        }
+      ],
+      "press_matches": [
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=405711",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=447946",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=455098"
+      ],
+      "notice_drawings_reviewed": 1,
+      "notice_sources": [
+        "https://event.seoul.go.kr/snews/data/CN_MST/seoulsibo_20260520112133_47006.pdf#page=6"
+      ],
+      "review_notes": [
+        "수록된 고시 도면은 토지이용·기반시설 또는 구역 결정도로, 주동 외곽 확인 근거로 사용하지 않음.",
+        "서울시 대상지기록의 해당 이미지에서 판독 가능한 주거동 중심 평면을 확인하지 못함.",
+        "보도자료 첨부 시각자료에서 위치도·조감도 또는 현황도를 넘어서는 판독 가능한 주동 평면을 확인하지 못함."
+      ]
+    },
+    {
+      "town_id": "mt-202603-public-042",
+      "address": "성동구 마장동 457",
+      "result": "ground_plan_unverified",
+      "city_profiles": [
+        {
+          "url": "https://news.seoul.go.kr/citybuild/archives/538948",
+          "images_reviewed": 5
+        }
+      ],
+      "press_matches": [
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=365919",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=421581",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=447664",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=453623",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=455098"
+      ],
+      "notice_drawings_reviewed": 4,
+      "notice_sources": [
+        "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=607655"
+      ],
+      "review_notes": [
+        "수록된 고시 도면은 토지이용·기반시설 또는 구역 결정도로, 주동 외곽 확인 근거로 사용하지 않음.",
+        "서울시 대상지기록의 해당 이미지에서 판독 가능한 주거동 중심 평면을 확인하지 못함.",
+        "보도자료 첨부 시각자료에서 위치도·조감도 또는 현황도를 넘어서는 판독 가능한 주동 평면을 확인하지 못함."
+      ]
+    },
+    {
+      "town_id": "mt-202603-public-043",
+      "address": "성동구 응봉동 265",
+      "result": "ground_plan_unverified",
+      "city_profiles": [],
+      "press_matches": [
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=373144",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=424562"
+      ],
+      "notice_drawings_reviewed": 0,
+      "notice_sources": [],
+      "review_notes": [
+        "보도자료 첨부 시각자료에서 위치도·조감도 또는 현황도를 넘어서는 판독 가능한 주동 평면을 확인하지 못함."
+      ]
+    },
+    {
+      "town_id": "mt-202603-public-044",
+      "address": "구로구 고척동 241",
+      "result": "additional_ground_plan",
+      "city_profiles": [
+        {
+          "url": "https://news.seoul.go.kr/citybuild/archives/538599",
+          "images_reviewed": 8
+        }
+      ],
+      "press_matches": [
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=365919",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=419941",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=455098"
+      ],
+      "notice_drawings_reviewed": 2,
+      "notice_sources": [
+        "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=601972"
+      ],
+      "review_notes": [
+        "수록된 고시 도면은 토지이용·기반시설 또는 구역 결정도로, 주동 외곽 확인 근거로 사용하지 않음."
+      ],
+      "traced_buildings": 30,
+      "published_source": "https://news.seoul.go.kr/citybuild/archives/538599"
+    },
+    {
+      "town_id": "mt-202603-public-045",
+      "address": "구로구 구로동 728",
+      "result": "additional_ground_plan",
+      "city_profiles": [
+        {
+          "url": "https://news.seoul.go.kr/citybuild/archives/538610",
+          "images_reviewed": 8
+        }
+      ],
+      "press_matches": [
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=365919",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=418841",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=455098"
+      ],
+      "notice_drawings_reviewed": 3,
+      "notice_sources": [
+        "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=602403"
+      ],
+      "review_notes": [
+        "수록된 고시 도면은 토지이용·기반시설 또는 구역 결정도로, 주동 외곽 확인 근거로 사용하지 않음."
+      ],
+      "traced_buildings": 17,
+      "published_source": "https://news.seoul.go.kr/citybuild/archives/538610"
+    },
+    {
+      "town_id": "mt-202603-public-046",
+      "address": "구로구 개봉동 270-38",
+      "result": "ground_plan_unverified",
+      "city_profiles": [
+        {
+          "url": "https://news.seoul.go.kr/citybuild/archives/538623",
+          "images_reviewed": 6
+        }
+      ],
+      "press_matches": [
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=373144",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=443532",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=455098"
+      ],
+      "notice_drawings_reviewed": 2,
+      "notice_sources": [
+        "https://event.seoul.go.kr/seoulsibo/fileDownload.do?fileName=seoulsibo_20251217162958_75587.pdf#page=328"
+      ],
+      "review_notes": [
+        "수록된 고시 도면은 토지이용·기반시설 또는 구역 결정도로, 주동 외곽 확인 근거로 사용하지 않음.",
+        "서울시 대상지기록의 해당 이미지에서 판독 가능한 주거동 중심 평면을 확인하지 못함.",
+        "보도자료 첨부 시각자료에서 위치도·조감도 또는 현황도를 넘어서는 판독 가능한 주동 평면을 확인하지 못함."
+      ]
+    },
+    {
+      "town_id": "mt-202603-public-047",
+      "address": "구로구 구로동 511",
+      "result": "association_ground_plan",
+      "city_profiles": [
+        {
+          "url": "https://news.seoul.go.kr/citybuild/archives/538637",
+          "images_reviewed": 6
+        }
+      ],
+      "press_matches": [
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=400927",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=442941",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=455098"
+      ],
+      "notice_drawings_reviewed": 4,
+      "notice_sources": [
+        "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=628525"
+      ],
+      "review_notes": [
+        "수록된 고시 도면은 토지이용·기반시설 또는 구역 결정도로, 주동 외곽 확인 근거로 사용하지 않음."
+      ]
+    },
+    {
+      "town_id": "mt-202603-public-049",
+      "address": "노원구 상계2동 177-66",
+      "result": "ground_plan_unverified",
+      "city_profiles": [
+        {
+          "url": "https://news.seoul.go.kr/citybuild/archives/538087",
+          "images_reviewed": 8
+        }
+      ],
+      "press_matches": [
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=365919",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=404696",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=455098"
+      ],
+      "notice_drawings_reviewed": 1,
+      "notice_sources": [
+        "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=584823"
+      ],
+      "review_notes": [
+        "수록된 고시 도면은 토지이용·기반시설 또는 구역 결정도로, 주동 외곽 확인 근거로 사용하지 않음.",
+        "서울시 대상지기록의 해당 이미지에서 판독 가능한 주거동 중심 평면을 확인하지 못함.",
+        "보도자료 첨부 시각자료에서 위치도·조감도 또는 현황도를 넘어서는 판독 가능한 주동 평면을 확인하지 못함."
+      ]
+    },
+    {
+      "town_id": "mt-202603-public-050",
+      "address": "노원구 월계동 534",
+      "result": "ground_plan_unverified",
+      "city_profiles": [
+        {
+          "url": "https://news.seoul.go.kr/citybuild/archives/538250",
+          "images_reviewed": 8
+        }
+      ],
+      "press_matches": [
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=373144",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=382091",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=435853",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=455098"
+      ],
+      "notice_drawings_reviewed": 4,
+      "notice_sources": [
+        "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=614146"
+      ],
+      "review_notes": [
+        "수록된 고시 도면은 토지이용·기반시설 또는 구역 결정도로, 주동 외곽 확인 근거로 사용하지 않음.",
+        "서울시 대상지기록의 해당 이미지에서 판독 가능한 주거동 중심 평면을 확인하지 못함.",
+        "보도자료 첨부 시각자료에서 위치도·조감도 또는 현황도를 넘어서는 판독 가능한 주동 평면을 확인하지 못함."
+      ]
+    },
+    {
+      "town_id": "mt-202603-public-051",
+      "address": "도봉구 쌍문동 524-87",
+      "result": "ground_plan_unverified",
+      "city_profiles": [
+        {
+          "url": "https://news.seoul.go.kr/citybuild/archives/538267",
+          "images_reviewed": 8
+        }
+      ],
+      "press_matches": [
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=365919",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=382091",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=418072",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=455098"
+      ],
+      "notice_drawings_reviewed": 3,
+      "notice_sources": [
+        "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=584507",
+        "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=596685"
+      ],
+      "review_notes": [
+        "수록된 고시 도면은 토지이용·기반시설 또는 구역 결정도로, 주동 외곽 확인 근거로 사용하지 않음.",
+        "서울시 대상지기록의 해당 이미지에서 판독 가능한 주거동 중심 평면을 확인하지 못함.",
+        "보도자료 첨부 시각자료에서 위치도·조감도 또는 현황도를 넘어서는 판독 가능한 주동 평면을 확인하지 못함."
+      ]
+    },
+    {
+      "town_id": "mt-202603-public-052",
+      "address": "도봉구 쌍문동 494-22",
+      "result": "ground_plan_unverified",
+      "city_profiles": [
+        {
+          "url": "https://news.seoul.go.kr/citybuild/archives/538267",
+          "images_reviewed": 8
+        }
+      ],
+      "press_matches": [
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=365919",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=382091",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=418072",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=455098"
+      ],
+      "notice_drawings_reviewed": 3,
+      "notice_sources": [
+        "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=584503",
+        "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=596684"
+      ],
+      "review_notes": [
+        "수록된 고시 도면은 토지이용·기반시설 또는 구역 결정도로, 주동 외곽 확인 근거로 사용하지 않음.",
+        "서울시 대상지기록의 해당 이미지에서 판독 가능한 주거동 중심 평면을 확인하지 못함.",
+        "보도자료 첨부 시각자료에서 위치도·조감도 또는 현황도를 넘어서는 판독 가능한 주동 평면을 확인하지 못함."
+      ]
+    },
+    {
+      "town_id": "mt-202603-public-053",
+      "address": "도봉구 방학동 618",
+      "result": "ground_plan_unverified",
+      "city_profiles": [
+        {
+          "url": "https://news.seoul.go.kr/citybuild/archives/538280",
+          "images_reviewed": 8
+        }
+      ],
+      "press_matches": [
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=397195",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=424562",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=429201",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=455098"
+      ],
+      "notice_drawings_reviewed": 5,
+      "notice_sources": [
+        "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=610807"
+      ],
+      "review_notes": [
+        "수록된 고시 도면은 토지이용·기반시설 또는 구역 결정도로, 주동 외곽 확인 근거로 사용하지 않음.",
+        "서울시 대상지기록의 해당 이미지에서 판독 가능한 주거동 중심 평면을 확인하지 못함.",
+        "보도자료 첨부 시각자료에서 위치도·조감도 또는 현황도를 넘어서는 판독 가능한 주동 평면을 확인하지 못함."
+      ]
+    },
+    {
+      "town_id": "mt-202603-public-054",
+      "address": "도봉구 쌍문1동 460",
+      "result": "ground_plan_unverified",
+      "city_profiles": [
+        {
+          "url": "https://news.seoul.go.kr/citybuild/archives/538292",
+          "images_reviewed": 8
+        }
+      ],
+      "press_matches": [
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=397195",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=429201",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=455098"
+      ],
+      "notice_drawings_reviewed": 4,
+      "notice_sources": [
+        "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=610051"
+      ],
+      "review_notes": [
+        "수록된 고시 도면은 토지이용·기반시설 또는 구역 결정도로, 주동 외곽 확인 근거로 사용하지 않음.",
+        "서울시 대상지기록의 해당 이미지에서 판독 가능한 주거동 중심 평면을 확인하지 못함.",
+        "보도자료 첨부 시각자료에서 위치도·조감도 또는 현황도를 넘어서는 판독 가능한 주동 평면을 확인하지 못함."
+      ]
+    },
+    {
+      "town_id": "mt-202603-public-055",
+      "address": "도봉구 창3동 501-13",
+      "result": "association_ground_plan",
+      "city_profiles": [
+        {
+          "url": "https://news.seoul.go.kr/citybuild/archives/538303",
+          "images_reviewed": 8
+        }
+      ],
+      "press_matches": [
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=365919",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=403539",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=438068",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=455098"
+      ],
+      "notice_drawings_reviewed": 2,
+      "notice_sources": [
+        "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=618698"
+      ],
+      "review_notes": [
+        "수록된 고시 도면은 토지이용·기반시설 또는 구역 결정도로, 주동 외곽 확인 근거로 사용하지 않음."
+      ]
+    },
+    {
+      "town_id": "mt-202603-public-057",
+      "address": "강동구 천호동 113-2",
+      "result": "ground_plan_unverified",
+      "city_profiles": [],
+      "press_matches": [
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=373144",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=448116",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=455098"
+      ],
+      "notice_drawings_reviewed": 1,
+      "notice_sources": [
+        "https://event.seoul.go.kr/snews/data/CN_MST/seoulsibo_20260624163152_83531.pdf#page=63"
+      ],
+      "review_notes": [
+        "수록된 고시 도면은 토지이용·기반시설 또는 구역 결정도로, 주동 외곽 확인 근거로 사용하지 않음.",
+        "보도자료 첨부 시각자료에서 위치도·조감도 또는 현황도를 넘어서는 판독 가능한 주동 평면을 확인하지 못함."
+      ]
+    },
+    {
+      "town_id": "mt-202603-public-058",
+      "address": "동작구 노량진동 221-24",
+      "result": "ground_plan_unverified",
+      "city_profiles": [
+        {
+          "url": "https://news.seoul.go.kr/citybuild/archives/539074",
+          "images_reviewed": 8
+        }
+      ],
+      "press_matches": [
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=373144",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=444792"
+      ],
+      "notice_drawings_reviewed": 2,
+      "notice_sources": [
+        "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=628093"
+      ],
+      "review_notes": [
+        "수록된 고시 도면은 토지이용·기반시설 또는 구역 결정도로, 주동 외곽 확인 근거로 사용하지 않음.",
+        "서울시 대상지기록의 해당 이미지에서 판독 가능한 주거동 중심 평면을 확인하지 못함.",
+        "보도자료 첨부 시각자료에서 위치도·조감도 또는 현황도를 넘어서는 판독 가능한 주동 평면을 확인하지 못함."
+      ]
+    },
+    {
+      "town_id": "mt-202603-public-059",
+      "address": "동작구 사당동 202-29",
+      "result": "additional_ground_plan",
+      "city_profiles": [
+        {
+          "url": "https://news.seoul.go.kr/citybuild/archives/541969",
+          "images_reviewed": 10
+        }
+      ],
+      "press_matches": [
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=373144",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=448116",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=468710"
+      ],
+      "notice_drawings_reviewed": 4,
+      "notice_sources": [
+        "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=584434",
+        "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=626238"
+      ],
+      "review_notes": [
+        "수록된 고시 도면은 토지이용·기반시설 또는 구역 결정도로, 주동 외곽 확인 근거로 사용하지 않음."
+      ],
+      "traced_buildings": 9,
+      "published_source": "https://news.seoul.go.kr/citybuild/archives/541969"
+    },
+    {
+      "town_id": "mt-202603-public-060",
+      "address": "동작구 상도동 242",
+      "result": "ground_plan_unverified",
+      "city_profiles": [
+        {
+          "url": "https://news.seoul.go.kr/citybuild/archives/539085",
+          "images_reviewed": 8
+        }
+      ],
+      "press_matches": [
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=397195",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=433331"
+      ],
+      "notice_drawings_reviewed": 4,
+      "notice_sources": [
+        "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=614691"
+      ],
+      "review_notes": [
+        "수록된 고시 도면은 토지이용·기반시설 또는 구역 결정도로, 주동 외곽 확인 근거로 사용하지 않음.",
+        "서울시 대상지기록의 해당 이미지에서 판독 가능한 주거동 중심 평면을 확인하지 못함.",
+        "보도자료 첨부 시각자료에서 위치도·조감도 또는 현황도를 넘어서는 판독 가능한 주동 평면을 확인하지 못함."
+      ]
+    },
+    {
+      "town_id": "mt-202603-public-061",
+      "address": "동작구 상도동 279",
+      "result": "ground_plan_unverified",
+      "city_profiles": [],
+      "press_matches": [
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=405711",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=424562"
+      ],
+      "notice_drawings_reviewed": 0,
+      "notice_sources": [],
+      "review_notes": [
+        "보도자료 첨부 시각자료에서 위치도·조감도 또는 현황도를 넘어서는 판독 가능한 주동 평면을 확인하지 못함."
+      ]
+    },
+    {
+      "town_id": "mt-202603-public-062",
+      "address": "송파구 풍납동 483-10",
+      "result": "additional_ground_plan",
+      "city_profiles": [
+        {
+          "url": "https://news.seoul.go.kr/citybuild/archives/538517",
+          "images_reviewed": 8
+        }
+      ],
+      "press_matches": [
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=365919",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=382091",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=407274",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=453141"
+      ],
+      "notice_drawings_reviewed": 2,
+      "notice_sources": [
+        "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=586349"
+      ],
+      "review_notes": [
+        "수록된 고시 도면은 토지이용·기반시설 또는 구역 결정도로, 주동 외곽 확인 근거로 사용하지 않음."
+      ],
+      "traced_buildings": 11,
+      "published_source": "https://news.seoul.go.kr/citybuild/archives/538517"
+    },
+    {
+      "town_id": "mt-202603-public-063",
+      "address": "송파구 거여동 555",
+      "result": "ground_plan_unverified",
+      "city_profiles": [
+        {
+          "url": "https://news.seoul.go.kr/citybuild/archives/538528",
+          "images_reviewed": 8
+        }
+      ],
+      "press_matches": [
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=365919",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=402234"
+      ],
+      "notice_drawings_reviewed": 2,
+      "notice_sources": [
+        "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=584607"
+      ],
+      "review_notes": [
+        "수록된 고시 도면은 토지이용·기반시설 또는 구역 결정도로, 주동 외곽 확인 근거로 사용하지 않음.",
+        "서울시 대상지기록의 해당 이미지에서 판독 가능한 주거동 중심 평면을 확인하지 못함.",
+        "보도자료 첨부 시각자료에서 위치도·조감도 또는 현황도를 넘어서는 판독 가능한 주동 평면을 확인하지 못함."
+      ]
+    },
+    {
+      "town_id": "mt-202603-public-064",
+      "address": "성북구 석관동 334-69",
+      "result": "association_ground_plan",
+      "city_profiles": [
+        {
+          "url": "https://news.seoul.go.kr/citybuild/archives/539033",
+          "images_reviewed": 15
+        }
+      ],
+      "press_matches": [
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=373144",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=382091",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=428608",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=447664",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=453623",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=455098"
+      ],
+      "notice_drawings_reviewed": 1,
+      "notice_sources": [
+        "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=584515"
+      ],
+      "review_notes": [
+        "수록된 고시 도면은 토지이용·기반시설 또는 구역 결정도로, 주동 외곽 확인 근거로 사용하지 않음."
+      ]
+    },
+    {
+      "town_id": "mt-202603-public-065",
+      "address": "성북구 석관동 261-22",
+      "result": "ground_plan_unverified",
+      "city_profiles": [
+        {
+          "url": "https://news.seoul.go.kr/citybuild/archives/539044",
+          "images_reviewed": 8
+        }
+      ],
+      "press_matches": [
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=373144",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=382091",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=428608",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=447664",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=453623",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=455098"
+      ],
+      "notice_drawings_reviewed": 1,
+      "notice_sources": [
+        "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=584516"
+      ],
+      "review_notes": [
+        "수록된 고시 도면은 토지이용·기반시설 또는 구역 결정도로, 주동 외곽 확인 근거로 사용하지 않음.",
+        "서울시 대상지기록의 해당 이미지에서 판독 가능한 주거동 중심 평면을 확인하지 못함.",
+        "보도자료 첨부 시각자료에서 위치도·조감도 또는 현황도를 넘어서는 판독 가능한 주동 평면을 확인하지 못함."
+      ]
+    },
+    {
+      "town_id": "mt-202603-public-066",
+      "address": "양천구 신월동 173",
+      "result": "ground_plan_unverified",
+      "city_profiles": [
+        {
+          "url": "https://news.seoul.go.kr/citybuild/archives/538482",
+          "images_reviewed": 8
+        }
+      ],
+      "press_matches": [
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=365919",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=406214",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=455098"
+      ],
+      "notice_drawings_reviewed": 4,
+      "notice_sources": [
+        "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=594578",
+        "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=594579"
+      ],
+      "review_notes": [
+        "수록된 고시 도면은 토지이용·기반시설 또는 구역 결정도로, 주동 외곽 확인 근거로 사용하지 않음.",
+        "서울시 대상지기록의 해당 이미지에서 판독 가능한 주거동 중심 평면을 확인하지 못함.",
+        "보도자료 첨부 시각자료에서 위치도·조감도 또는 현황도를 넘어서는 판독 가능한 주동 평면을 확인하지 못함."
+      ]
+    },
+    {
+      "town_id": "mt-202603-public-068",
+      "address": "양천구 목4동 724-1",
+      "result": "ground_plan_unverified",
+      "city_profiles": [
+        {
+          "url": "https://news.seoul.go.kr/citybuild/archives/538504",
+          "images_reviewed": 8
+        }
+      ],
+      "press_matches": [
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=391486",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=425340"
+      ],
+      "notice_drawings_reviewed": 4,
+      "notice_sources": [
+        "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=625604"
+      ],
+      "review_notes": [
+        "수록된 고시 도면은 토지이용·기반시설 또는 구역 결정도로, 주동 외곽 확인 근거로 사용하지 않음.",
+        "서울시 대상지기록의 해당 이미지에서 판독 가능한 주거동 중심 평면을 확인하지 못함.",
+        "보도자료 첨부 시각자료에서 위치도·조감도 또는 현황도를 넘어서는 판독 가능한 주동 평면을 확인하지 못함."
+      ]
+    },
+    {
+      "town_id": "mt-202603-public-070",
+      "address": "영등포구 대림3동 786",
+      "result": "ground_plan_unverified",
+      "city_profiles": [
+        {
+          "url": "https://news.seoul.go.kr/citybuild/archives/539096",
+          "images_reviewed": 8
+        }
+      ],
+      "press_matches": [
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=373144",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=424502"
+      ],
+      "notice_drawings_reviewed": 1,
+      "notice_sources": [
+        "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=601902"
+      ],
+      "review_notes": [
+        "수록된 고시 도면은 토지이용·기반시설 또는 구역 결정도로, 주동 외곽 확인 근거로 사용하지 않음.",
+        "서울시 대상지기록의 해당 이미지에서 판독 가능한 주거동 중심 평면을 확인하지 못함.",
+        "보도자료 첨부 시각자료에서 위치도·조감도 또는 현황도를 넘어서는 판독 가능한 주동 평면을 확인하지 못함."
+      ]
+    },
+    {
+      "town_id": "mt-202603-public-071",
+      "address": "은평구 불광동 170",
+      "result": "additional_ground_plan",
+      "city_profiles": [
+        {
+          "url": "https://news.seoul.go.kr/citybuild/archives/539055",
+          "images_reviewed": 5
+        }
+      ],
+      "press_matches": [
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=373144",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=441512",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=455098"
+      ],
+      "notice_drawings_reviewed": 3,
+      "notice_sources": [
+        "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=584511",
+        "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=623053"
+      ],
+      "review_notes": [
+        "수록된 고시 도면은 토지이용·기반시설 또는 구역 결정도로, 주동 외곽 확인 근거로 사용하지 않음."
+      ],
+      "traced_buildings": 22,
+      "published_source": "https://news.seoul.go.kr/citybuild/archives/539055"
+    },
+    {
+      "town_id": "mt-202603-public-072",
+      "address": "은평구 대조동 89",
+      "result": "association_ground_plan",
+      "city_profiles": [
+        {
+          "url": "https://news.seoul.go.kr/citybuild/archives/539063",
+          "images_reviewed": 8
+        }
+      ],
+      "press_matches": [
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=373144",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=422804",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=455098"
+      ],
+      "notice_drawings_reviewed": 3,
+      "notice_sources": [
+        "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=584512",
+        "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=601717"
+      ],
+      "review_notes": [
+        "수록된 고시 도면은 토지이용·기반시설 또는 구역 결정도로, 주동 외곽 확인 근거로 사용하지 않음."
+      ]
+    },
+    {
+      "town_id": "mt-202603-public-073",
+      "address": "관악구 청룡동 1535",
+      "result": "ground_plan_unverified",
+      "city_profiles": [],
+      "press_matches": [
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=373144",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=401745",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=446533",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=455098"
+      ],
+      "notice_drawings_reviewed": 2,
+      "notice_sources": [
+        "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=631139"
+      ],
+      "review_notes": [
+        "수록된 고시 도면은 토지이용·기반시설 또는 구역 결정도로, 주동 외곽 확인 근거로 사용하지 않음.",
+        "보도자료 첨부 시각자료에서 위치도·조감도 또는 현황도를 넘어서는 판독 가능한 주동 평면을 확인하지 못함.",
+        "2025-11-11 보도자료 446533의 참고자료 6 제목에 배치도가 있으나, PDF 11쪽은 위치도 한 장뿐임."
+      ]
+    },
+    {
+      "town_id": "mt-202603-public-074",
+      "address": "관악구 성현동 1021",
+      "result": "ground_plan_unverified",
+      "city_profiles": [
+        {
+          "url": "https://news.seoul.go.kr/citybuild/archives/539107",
+          "images_reviewed": 8
+        }
+      ],
+      "press_matches": [
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=391486",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=435154",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=447946",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=455098"
+      ],
+      "notice_drawings_reviewed": 1,
+      "notice_sources": [
+        "https://event.seoul.go.kr/seoulsibo/fileDownload.do?fileName=seoulsibo_20251226131847_53209.pdf#page=109"
+      ],
+      "review_notes": [
+        "수록된 고시 도면은 토지이용·기반시설 또는 구역 결정도로, 주동 외곽 확인 근거로 사용하지 않음.",
+        "서울시 대상지기록의 해당 이미지에서 판독 가능한 주거동 중심 평면을 확인하지 못함.",
+        "보도자료 첨부 시각자료에서 위치도·조감도 또는 현황도를 넘어서는 판독 가능한 주동 평면을 확인하지 못함."
+      ]
+    },
+    {
+      "town_id": "mt-202603-public-075",
+      "address": "관악구 은천동 635-540",
+      "result": "ground_plan_unverified",
+      "city_profiles": [],
+      "press_matches": [
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=397195",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=448116",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=455098"
+      ],
+      "notice_drawings_reviewed": 2,
+      "notice_sources": [
+        "https://event.seoul.go.kr/snews/data/CN_MST/seoulsibo_20260422155953_77596.pdf#page=65"
+      ],
+      "review_notes": [
+        "수록된 고시 도면은 토지이용·기반시설 또는 구역 결정도로, 주동 외곽 확인 근거로 사용하지 않음.",
+        "보도자료 첨부 시각자료에서 위치도·조감도 또는 현황도를 넘어서는 판독 가능한 주동 평면을 확인하지 못함."
+      ]
+    },
+    {
+      "town_id": "mt-202603-public-076",
+      "address": "관악구 은천동 938-5",
+      "result": "ground_plan_unverified",
+      "city_profiles": [],
+      "press_matches": [
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=397195",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=448116",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=455098"
+      ],
+      "notice_drawings_reviewed": 2,
+      "notice_sources": [
+        "https://event.seoul.go.kr/snews/data/CN_MST/seoulsibo_20260422155953_77596.pdf#page=83"
+      ],
+      "review_notes": [
+        "수록된 고시 도면은 토지이용·기반시설 또는 구역 결정도로, 주동 외곽 확인 근거로 사용하지 않음.",
+        "보도자료 첨부 시각자료에서 위치도·조감도 또는 현황도를 넘어서는 판독 가능한 주동 평면을 확인하지 못함."
+      ]
+    },
+    {
+      "town_id": "mt-202603-public-077",
+      "address": "관악구 난곡동 697-20",
+      "result": "ground_plan_unverified",
+      "city_profiles": [],
+      "press_matches": [
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=424562",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=444792",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=455098"
+      ],
+      "notice_drawings_reviewed": 3,
+      "notice_sources": [
+        "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=641915"
+      ],
+      "review_notes": [
+        "수록된 고시 도면은 토지이용·기반시설 또는 구역 결정도로, 주동 외곽 확인 근거로 사용하지 않음.",
+        "보도자료 첨부 시각자료에서 위치도·조감도 또는 현황도를 넘어서는 판독 가능한 주동 평면을 확인하지 못함."
+      ]
+    },
+    {
+      "town_id": "mt-202603-public-078",
+      "address": "광진구 자양1동 799",
+      "result": "ground_plan_unverified",
+      "city_profiles": [],
+      "press_matches": [
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=455098"
+      ],
+      "notice_drawings_reviewed": 4,
+      "notice_sources": [
+        "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=639881"
+      ],
+      "review_notes": [
+        "수록된 고시 도면은 토지이용·기반시설 또는 구역 결정도로, 주동 외곽 확인 근거로 사용하지 않음.",
+        "보도자료 첨부 시각자료에서 위치도·조감도 또는 현황도를 넘어서는 판독 가능한 주동 평면을 확인하지 못함."
+      ]
+    },
+    {
+      "town_id": "mt-202603-public-079",
+      "address": "광진구 자양2동 649",
+      "result": "ground_plan_unverified",
+      "city_profiles": [],
+      "press_matches": [
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=446533",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=455098"
+      ],
+      "notice_drawings_reviewed": 4,
+      "notice_sources": [
+        "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=639882"
+      ],
+      "review_notes": [
+        "수록된 고시 도면은 토지이용·기반시설 또는 구역 결정도로, 주동 외곽 확인 근거로 사용하지 않음.",
+        "보도자료 첨부 시각자료에서 위치도·조감도 또는 현황도를 넘어서는 판독 가능한 주동 평면을 확인하지 못함."
+      ]
+    },
+    {
+      "town_id": "mt-202603-public-080",
+      "address": "서초구 방배동 977",
+      "result": "ground_plan_unverified",
+      "city_profiles": [
+        {
+          "url": "https://news.seoul.go.kr/citybuild/archives/538336",
+          "images_reviewed": 8
+        }
+      ],
+      "press_matches": [
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=356048",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=447664",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=453623"
+      ],
+      "notice_drawings_reviewed": 1,
+      "notice_sources": [
+        "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=584797"
+      ],
+      "review_notes": [
+        "수록된 고시 도면은 토지이용·기반시설 또는 구역 결정도로, 주동 외곽 확인 근거로 사용하지 않음.",
+        "서울시 대상지기록의 해당 이미지에서 판독 가능한 주거동 중심 평면을 확인하지 못함.",
+        "보도자료 첨부 시각자료에서 위치도·조감도 또는 현황도를 넘어서는 판독 가능한 주동 평면을 확인하지 못함."
+      ]
+    },
+    {
+      "town_id": "mt-202603-public-083",
+      "address": "서대문구 천연동 89-16",
+      "result": "association_ground_plan",
+      "city_profiles": [
+        {
+          "url": "https://news.seoul.go.kr/citybuild/archives/538896",
+          "images_reviewed": 8
+        }
+      ],
+      "press_matches": [
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=365919",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=425340",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=455098"
+      ],
+      "notice_drawings_reviewed": 2,
+      "notice_sources": [
+        "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=606937"
+      ],
+      "review_notes": [
+        "수록된 고시 도면은 토지이용·기반시설 또는 구역 결정도로, 주동 외곽 확인 근거로 사용하지 않음."
+      ]
+    },
+    {
+      "town_id": "mt-202603-public-084",
+      "address": "서대문구 홍제동 322",
+      "result": "association_ground_plan",
+      "city_profiles": [
+        {
+          "url": "https://news.seoul.go.kr/citybuild/archives/538913",
+          "images_reviewed": 8
+        }
+      ],
+      "press_matches": [
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=401504",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=424562",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=444792",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=455098"
+      ],
+      "notice_drawings_reviewed": 4,
+      "notice_sources": [
+        "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=630320"
+      ],
+      "review_notes": [
+        "수록된 고시 도면은 토지이용·기반시설 또는 구역 결정도로, 주동 외곽 확인 근거로 사용하지 않음."
+      ]
+    },
+    {
+      "town_id": "mt-202603-public-085",
+      "address": "용산구 원효로4가 71",
+      "result": "ground_plan_unverified",
+      "city_profiles": [
+        {
+          "url": "https://news.seoul.go.kr/citybuild/archives/538956",
+          "images_reviewed": 8
+        }
+      ],
+      "press_matches": [],
+      "notice_drawings_reviewed": 4,
+      "notice_sources": [
+        "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=616239"
+      ],
+      "review_notes": [
+        "수록된 고시 도면은 토지이용·기반시설 또는 구역 결정도로, 주동 외곽 확인 근거로 사용하지 않음.",
+        "서울시 대상지기록의 해당 이미지에서 판독 가능한 주거동 중심 평면을 확인하지 못함."
+      ]
+    },
+    {
+      "town_id": "mt-202603-public-086",
+      "address": "종로구 구기동 100-48",
+      "result": "ground_plan_unverified",
+      "city_profiles": [
+        {
+          "url": "https://news.seoul.go.kr/citybuild/archives/538316",
+          "images_reviewed": 8
+        }
+      ],
+      "press_matches": [
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=365919",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=424562",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=444792",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=455098"
+      ],
+      "notice_drawings_reviewed": 3,
+      "notice_sources": [
+        "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=630726"
+      ],
+      "review_notes": [
+        "수록된 고시 도면은 토지이용·기반시설 또는 구역 결정도로, 주동 외곽 확인 근거로 사용하지 않음.",
+        "서울시 대상지기록의 해당 이미지에서 판독 가능한 주거동 중심 평면을 확인하지 못함.",
+        "보도자료 첨부 시각자료에서 위치도·조감도 또는 현황도를 넘어서는 판독 가능한 주동 평면을 확인하지 못함."
+      ]
+    },
+    {
+      "town_id": "mt-202603-public-088",
+      "address": "동대문구 답십리동 489",
+      "result": "ground_plan_unverified",
+      "city_profiles": [
+        {
+          "url": "https://news.seoul.go.kr/citybuild/archives/542051",
+          "images_reviewed": 6
+        }
+      ],
+      "press_matches": [
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=401504",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=447946",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=455098"
+      ],
+      "notice_drawings_reviewed": 2,
+      "notice_sources": [
+        "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=641694"
+      ],
+      "review_notes": [
+        "수록된 고시 도면은 토지이용·기반시설 또는 구역 결정도로, 주동 외곽 확인 근거로 사용하지 않음.",
+        "서울시 대상지기록의 해당 이미지에서 판독 가능한 주거동 중심 평면을 확인하지 못함.",
+        "보도자료 첨부 시각자료에서 위치도·조감도 또는 현황도를 넘어서는 판독 가능한 주동 평면을 확인하지 못함."
+      ]
+    },
+    {
+      "town_id": "mt-202603-resident-001",
+      "address": "종로구 숭인동 61",
+      "result": "ground_plan_unverified",
+      "city_profiles": [],
+      "press_matches": [
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=448524",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=455098"
+      ],
+      "notice_drawings_reviewed": 3,
+      "notice_sources": [
+        "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=639883"
+      ],
+      "review_notes": [
+        "수록된 고시 도면은 토지이용·기반시설 또는 구역 결정도로, 주동 외곽 확인 근거로 사용하지 않음.",
+        "보도자료 첨부 시각자료에서 위치도·조감도 또는 현황도를 넘어서는 판독 가능한 주동 평면을 확인하지 못함."
+      ]
+    },
+    {
+      "town_id": "mt-202603-resident-002",
+      "address": "용산구 서계동 116",
+      "result": "ground_plan_unverified",
+      "city_profiles": [],
+      "press_matches": [
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=453623",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=467891"
+      ],
+      "notice_drawings_reviewed": 0,
+      "notice_sources": [],
+      "review_notes": [
+        "보도자료 첨부 시각자료에서 위치도·조감도 또는 현황도를 넘어서는 판독 가능한 주동 평면을 확인하지 못함."
+      ]
+    },
+    {
+      "town_id": "mt-202603-resident-003",
+      "address": "성동구 금호동1가 129",
+      "result": "ground_plan_unverified",
+      "city_profiles": [],
+      "press_matches": [
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=373144"
+      ],
+      "notice_drawings_reviewed": 0,
+      "notice_sources": [],
+      "review_notes": [
+        "보도자료 첨부 시각자료에서 위치도·조감도 또는 현황도를 넘어서는 판독 가능한 주동 평면을 확인하지 못함."
+      ]
+    },
+    {
+      "town_id": "mt-202603-resident-005",
+      "address": "광진구 자양1동 772-1",
+      "result": "association_ground_plan",
+      "city_profiles": [],
+      "press_matches": [
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=458142"
+      ],
+      "notice_drawings_reviewed": 4,
+      "notice_sources": [
+        "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=640709"
+      ],
+      "review_notes": [
+        "수록된 고시 도면은 토지이용·기반시설 또는 구역 결정도로, 주동 외곽 확인 근거로 사용하지 않음."
+      ]
+    },
+    {
+      "town_id": "mt-202603-resident-006",
+      "address": "광진구 자양1동 226-1",
+      "result": "ground_plan_unverified",
+      "city_profiles": [],
+      "press_matches": [
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=458142"
+      ],
+      "notice_drawings_reviewed": 4,
+      "notice_sources": [
+        "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=640708"
+      ],
+      "review_notes": [
+        "수록된 고시 도면은 토지이용·기반시설 또는 구역 결정도로, 주동 외곽 확인 근거로 사용하지 않음.",
+        "보도자료 첨부 시각자료에서 위치도·조감도 또는 현황도를 넘어서는 판독 가능한 주동 평면을 확인하지 못함."
+      ]
+    },
+    {
+      "town_id": "mt-202603-resident-008",
+      "address": "광진구 구의3동 587-58",
+      "result": "ground_plan_unverified",
+      "city_profiles": [],
+      "press_matches": [
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=464807"
+      ],
+      "notice_drawings_reviewed": 2,
+      "notice_sources": [
+        "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=644471"
+      ],
+      "review_notes": [
+        "수록된 고시 도면은 토지이용·기반시설 또는 구역 결정도로, 주동 외곽 확인 근거로 사용하지 않음.",
+        "보도자료 첨부 시각자료에서 위치도·조감도 또는 현황도를 넘어서는 판독 가능한 주동 평면을 확인하지 못함."
+      ]
+    },
+    {
+      "town_id": "mt-202603-resident-009",
+      "address": "중랑구 신내동 493-13",
+      "result": "additional_ground_plan",
+      "city_profiles": [
+        {
+          "url": "https://news.seoul.go.kr/citybuild/archives/542189",
+          "images_reviewed": 11
+        }
+      ],
+      "press_matches": [
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=446533",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=455098"
+      ],
+      "notice_drawings_reviewed": 2,
+      "notice_sources": [
+        "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=638669"
+      ],
+      "review_notes": [
+        "수록된 고시 도면은 토지이용·기반시설 또는 구역 결정도로, 주동 외곽 확인 근거로 사용하지 않음."
+      ],
+      "traced_buildings": 13,
+      "published_source": "https://news.seoul.go.kr/citybuild/archives/542189"
+    },
+    {
+      "town_id": "mt-202603-resident-011",
+      "address": "성북구 종암동 125-1",
+      "result": "ground_plan_unverified",
+      "city_profiles": [],
+      "press_matches": [],
+      "notice_drawings_reviewed": 0,
+      "notice_sources": [],
+      "review_notes": [
+        "검토한 대상지기록·서울시 보도자료의 주소 일치 목록에 대조할 평면을 찾지 못함. 다른 공개자료 존재 여부는 미확인."
+      ]
+    },
+    {
+      "town_id": "mt-202603-resident-012",
+      "address": "성북구 정릉동 559-43",
+      "result": "ground_plan_unverified",
+      "city_profiles": [],
+      "press_matches": [
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=454046"
+      ],
+      "notice_drawings_reviewed": 3,
+      "notice_sources": [
+        "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=645471"
+      ],
+      "review_notes": [
+        "수록된 고시 도면은 토지이용·기반시설 또는 구역 결정도로, 주동 외곽 확인 근거로 사용하지 않음.",
+        "보도자료 첨부 시각자료에서 위치도·조감도 또는 현황도를 넘어서는 판독 가능한 주동 평면을 확인하지 못함."
+      ]
+    },
+    {
+      "town_id": "mt-202603-resident-013",
+      "address": "성북구 정릉동 226-1",
+      "result": "ground_plan_unverified",
+      "city_profiles": [],
+      "press_matches": [
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=447946"
+      ],
+      "notice_drawings_reviewed": 4,
+      "notice_sources": [
+        "https://event.seoul.go.kr/snews/data/CN_MST/seoulsibo_20260325161105_54413.pdf#page=68",
+        "https://event.seoul.go.kr/snews/data/CN_MST/seoulsibo_20260610160855_86574.pdf#page=185"
+      ],
+      "review_notes": [
+        "수록된 고시 도면은 토지이용·기반시설 또는 구역 결정도로, 주동 외곽 확인 근거로 사용하지 않음.",
+        "보도자료 첨부 시각자료에서 위치도·조감도 또는 현황도를 넘어서는 판독 가능한 주동 평면을 확인하지 못함."
+      ]
+    },
+    {
+      "town_id": "mt-202603-resident-016",
+      "address": "서대문구 현저동 1-5",
+      "result": "association_ground_plan",
+      "city_profiles": [
+        {
+          "url": "https://news.seoul.go.kr/citybuild/archives/538925",
+          "images_reviewed": 4
+        }
+      ],
+      "press_matches": [
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=435853",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=441535",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=455098"
+      ],
+      "notice_drawings_reviewed": 2,
+      "notice_sources": [
+        "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=616203"
+      ],
+      "review_notes": [
+        "수록된 고시 도면은 토지이용·기반시설 또는 구역 결정도로, 주동 외곽 확인 근거로 사용하지 않음."
+      ]
+    },
+    {
+      "town_id": "mt-202603-resident-017",
+      "address": "서대문구 홍은동 10-18",
+      "result": "association_ground_plan",
+      "city_profiles": [
+        {
+          "url": "https://news.seoul.go.kr/citybuild/archives/538936",
+          "images_reviewed": 9
+        }
+      ],
+      "press_matches": [
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=442941",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=455098"
+      ],
+      "notice_drawings_reviewed": 4,
+      "notice_sources": [
+        "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=626249"
+      ],
+      "review_notes": [
+        "수록된 고시 도면은 토지이용·기반시설 또는 구역 결정도로, 주동 외곽 확인 근거로 사용하지 않음."
+      ]
+    },
+    {
+      "town_id": "mt-202603-resident-018",
+      "address": "서대문구 홍은동 11-360",
+      "result": "ground_plan_unverified",
+      "city_profiles": [],
+      "press_matches": [],
+      "notice_drawings_reviewed": 0,
+      "notice_sources": [],
+      "review_notes": [
+        "검토한 대상지기록·서울시 보도자료의 주소 일치 목록에 대조할 평면을 찾지 못함. 다른 공개자료 존재 여부는 미확인."
+      ]
+    },
+    {
+      "town_id": "mt-202603-resident-020",
+      "address": "마포구 창전동 46-1",
+      "result": "association_ground_plan",
+      "city_profiles": [
+        {
+          "url": "https://news.seoul.go.kr/citybuild/archives/538878",
+          "images_reviewed": 8
+        }
+      ],
+      "press_matches": [
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=447946"
+      ],
+      "notice_drawings_reviewed": 6,
+      "notice_sources": [
+        "https://event.seoul.go.kr/seoulsibo/fileDownload.do?fileName=seoulsibo_20251226131847_53209.pdf#page=294",
+        "https://event.seoul.go.kr/seoulsibo/fileDownload.do?fileName=seoulsibo_20251226131847_53209.pdf#page=299",
+        "https://event.seoul.go.kr/seoulsibo/fileDownload.do?fileName=seoulsibo_20251226131847_53209.pdf#page=301"
+      ],
+      "review_notes": [
+        "수록된 고시 도면은 토지이용·기반시설 또는 구역 결정도로, 주동 외곽 확인 근거로 사용하지 않음."
+      ]
+    },
+    {
+      "town_id": "mt-202603-resident-022",
+      "address": "양천구 목동 644-1",
+      "result": "additional_ground_plan",
+      "city_profiles": [],
+      "press_matches": [
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=452319"
+      ],
+      "notice_drawings_reviewed": 0,
+      "notice_sources": [],
+      "review_notes": [],
+      "traced_buildings": 8,
+      "published_source": "https://www.seoul.go.kr/news/news_report.do?nttNo=452319"
+    },
+    {
+      "town_id": "mt-202603-resident-023",
+      "address": "금천구 시흥3동 972",
+      "result": "ground_plan_unverified",
+      "city_profiles": [],
+      "press_matches": [
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=466168"
+      ],
+      "notice_drawings_reviewed": 0,
+      "notice_sources": [],
+      "review_notes": [
+        "보도자료 첨부 시각자료에서 위치도·조감도 또는 현황도를 넘어서는 판독 가능한 주동 평면을 확인하지 못함."
+      ]
+    },
+    {
+      "town_id": "mt-202603-resident-025",
+      "address": "관악구 신림동 655-78",
+      "result": "association_ground_plan",
+      "city_profiles": [
+        {
+          "url": "https://news.seoul.go.kr/citybuild/archives/539118",
+          "images_reviewed": 8
+        }
+      ],
+      "press_matches": [
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=419941",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=455098"
+      ],
+      "notice_drawings_reviewed": 2,
+      "notice_sources": [
+        "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=599593"
+      ],
+      "review_notes": [
+        "수록된 고시 도면은 토지이용·기반시설 또는 구역 결정도로, 주동 외곽 확인 근거로 사용하지 않음."
+      ]
+    },
+    {
+      "town_id": "mt-202603-resident-027",
+      "address": "강동구 천호동 338번지",
+      "result": "ground_plan_unverified",
+      "city_profiles": [],
+      "press_matches": [
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=448524",
+        "https://www.seoul.go.kr/news/news_report.do?nttNo=455098"
+      ],
+      "notice_drawings_reviewed": 0,
+      "notice_sources": [],
+      "review_notes": [
+        "보도자료 첨부 시각자료에서 위치도·조감도 또는 현황도를 넘어서는 판독 가능한 주동 평면을 확인하지 못함."
+      ]
+    }
+  ]
+}

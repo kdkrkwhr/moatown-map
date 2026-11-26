@@ -1,4 +1,4 @@
-import {projectUrl} from './project-url.mjs?v=9dd69d08e58e';
+import {projectUrl} from './project-url.mjs?v=4cb305b9d366';
 
 export const sourceLabels={official:'공식 자료',media:'언론 보도'};
 

@@ -1,6 +1,6 @@
 import {createHash} from 'node:crypto';
-import {mkdirSync,readFileSync,readdirSync,unlinkSync,writeFileSync} from 'node:fs';
-import {buildExpandedLayouts} from './expanded-layouts.mjs';
+import {existsSync,mkdirSync,readFileSync,readdirSync,unlinkSync,writeFileSync} from 'node:fs';
+import {buildExpandedLayouts,validateAssociationLayouts} from './expanded-layouts.mjs';
 import {generateSimulation} from '../pilot-simulation.mjs';
 
 const root=new URL('../moatown-data/',import.meta.url), output=new URL('plans/scenes/',root);
@@ -25,7 +25,15 @@ const facilities=new Map(readdirSync(facilityDir).filter(f=>f.endsWith('.geojson
   if(file!==input.town_id+'.geojson'||!input.features.length)throw Error('시설 파일 불일치 '+file);
   return [input.town_id,input];
 }));
-const checkedOn=[city.checked_on,supplement.checked_on,local.checked_on,...Array.from(facilities.values(),f=>f.checked_on)].filter(Boolean).sort().at(-1);
+const layoutDir=new URL('plans/association-layouts/',root);
+const associations=new Map();
+for(const file of existsSync(layoutDir)?readdirSync(layoutDir).filter(f=>f.endsWith('.json')).sort():[]){
+  const input=read('plans/association-layouts/'+file);
+  if(file!==input.town_id+'.json'||!shapes.has(input.town_id))throw Error('공개 배치도 대상지 불일치 '+file);
+  associations.set(input.town_id,validateAssociationLayouts(input,zones));
+}
+const checkedOn=[city.checked_on,supplement.checked_on,local.checked_on,...Array.from(facilities.values(),f=>f.checked_on),
+  ...[...associations.values()].flatMap(layouts=>layouts.map(l=>l.checked_on))].filter(Boolean).sort().at(-1);
 const index={checked_on:checkedOn,towns:{}},rows=[];
 const saved=new Set();
 const heldPrograms={};
@@ -53,20 +61,28 @@ for(const town of towns){
   const plan=sourced(town.id);
   const previous=plan?.scope_geometry_mismatch && (plan.previous_geometry_profile?city.towns[town.id]:plan.previous_geometry_program);
   const displayPlan=previous?{...previous,previous_geometry:true}:plan;
-  const scene=pilot[town.id]?null:buildExpandedLayouts(town,children,shapes,displayPlan,local.zones,local.previous_geometry_programs,facilities.get(town.id));
+  const layouts=associations.get(town.id)??[],associationIds=layouts.map(layout=>layout.zone_id);
+  const scene=pilot[town.id]?null:buildExpandedLayouts(town,children,shapes,displayPlan,local.zones,local.previous_geometry_programs,facilities.get(town.id),layouts);
   const state={id:town.id,district:town.district,name:town.name};
   if(pilot[town.id]){
     state.status='도면·계획 기반 구역별 배치';
     const result=generateSimulation(pinned.map(z=>shapes.get(z.id)),new Map(children.map(z=>[z.id,z])),pilot[town.id],originalInputs.get(town.id));
     const placed=Object.values(result.summaries).filter(s=>s.blocks>0);
+    state.pilotDrawing=placed.some(s=>s.sourceLayout);
     state.zones=placed.length;state.zoneBlocks=result.features.length;state.assumptions=placed.some(s=>s.capSource==='default');
+    if(layouts.length){
+      const path='plans/association-layouts/'+town.id+'.json';
+      const content=readFileSync(new URL(path,root),'utf8').replaceAll('\r\n','\n');
+      (index.pilot_associations??={})[town.id]={association_path:path,association_sha256:createHash('sha256').update(content).digest('hex'),association_zone_ids:associationIds};
+    }
   }
   else if(scene){
     if(previous)scene.updated_town=plan;
     const path='plans/scenes/'+town.id+'.json',content=JSON.stringify(scene)+'\n';
     emit(new URL(path,root),content);saved.add(town.id+'.json');
     const modes=Object.keys(scene.modes),zoneIds=Object.keys(scene.modes.zones?.summaries??{}).filter(id=>scene.modes.zones.summaries[id].blocks);
-    index.towns[town.id]={path,sha256:createHash('sha256').update(content).digest('hex'),modes,zone_ids:zoneIds};
+    index.towns[town.id]={path,sha256:createHash('sha256').update(content).digest('hex'),modes:layouts.length?['association',...modes]:modes,zone_ids:zoneIds,
+      ...(layouts.length?{association_zone_ids:associationIds}:{})};
     state.status=modes.length===2?'구역별 / 대상지 전체':modes[0]==='town'?'대상지 전체':'구역별';
     state.zones=zoneIds.length;state.zoneBlocks=scene.modes.zones?.features.length;state.townBlocks=scene.modes.town?.features.length;
     state.assumptions=Object.values(scene.modes).some(mode=>Object.values(mode.summaries).some(s=>s.blocks && s.capSource==='default'));
@@ -74,6 +90,11 @@ for(const town of towns){
     !pinned.length && children.length?'세부구역 경계 및 대상지 전체 계획 수치 추가 대조':'배치에 쓸 공개 계획 수치·적용 범위 추가 대조';
   if(plan && !pilot[town.id] && (!scene?.modes.town||previous)){
     heldPrograms[town.id]={...plan,reason:!shapes.has(town.id)?'대상지 참고 외곽 미수록':'사업 범위와 참고 외곽 추가 대조'};
+  }
+  if(layouts.length){
+    const traced=layouts.reduce((n,l)=>n+l.buildings.length,0);
+    const scopes=layouts.map(l=>l.zone_id===town.id?'대상지 통합':l.zone_name);
+    state.status=['공개 배치도 ('+scopes.join(' · ')+', '+traced+'동)',...((scene&&!Object.keys(scene.modes).length)?[]:[state.status])].join(' / ');
   }
   rows.push(state);
 }
@@ -96,13 +117,22 @@ const heldZones=zones.filter(z=>!pilot[z.town_id]&&(!index.towns[z.town_id]?.zon
 });
 emit(new URL('plans/unplaced-programs.json',root),JSON.stringify(heldPrograms)+'\n');
 const number=n=>n==null?'—':String(n);
+const drawingRows=[...associations.values()].flat();
+const pilotDrawingTowns=rows.filter(r=>r.pilotDrawing).map(r=>r.id);
+const drawingTownCount=new Set([...pilotDrawingTowns,...associations.keys()]).size;
+const drawingSpaces=drawingRows.reduce((n,l)=>n+(l.spaces?.length??0),0);
+const mappedSpaces=drawingRows.reduce((n,l)=>n+(l.spaces?.filter(s=>s.geographic_ring).length??0),0);
 const report=[
-  '# 건축 후 예상 3D 수록 현황','',
-  '계획 자료 대조일 '+checkedOn+'. '+towns.length+'개 대상지를 검토해 '+published+'곳에서 건축 후 3D를 제공한다. 기존 '+Object.keys(pilot).length+'곳과 추가 '+linked.length+'곳을 합한 수치다.','',
-  '세부구역 단위로 볼 수 있는 대상지는 '+rows.filter(r=>r.zones>0).length+'곳이며, 해당 세부구역은 모두 '+rows.reduce((n,r)=>n+(r.zones??0),0)+'곳이다. 대상지 전체 예시를 제공하는 곳은 '+rows.filter(r=>r.townBlocks>0).length+'곳이다. 한 가지 이상의 보기에서 층수 기본 가정을 사용하는 대상지는 '+rows.filter(r=>r.assumptions).length+'곳이다.','',
+  '# 건축 후 3D 수록 현황','',
+  '계획 자료 대조일 '+checkedOn+'. '+towns.length+'개 대상지 중 '+published+'곳에서 건축 후 3D를 제공한다. 시범 대상지 '+Object.keys(pilot).length+'곳과 확장 대상지 '+linked.length+'곳을 포함한다.','',
+  '구역별 계획 모형은 '+rows.filter(r=>r.zones>0).length+'개 대상지의 '+rows.reduce((n,r)=>n+(r.zones??0),0)+'개 세부구역에 있다. 대상지 전체 예시를 제공하는 곳은 '+rows.filter(r=>r.townBlocks>0).length+'곳이다. 한 가지 이상의 보기에서 층수 기본 가정을 사용하는 대상지는 '+rows.filter(r=>r.assumptions).length+'곳이다.','',
   '건축 후 3D를 보류한 '+(rows.length-published)+'곳 중 '+rows.filter(r=>!shapes.has(r.id)).length+'곳은 참고 외곽을 기다리고 있다. 나머지는 공개 규모나 그 수치에 맞는 사업 범위의 확인이 필요하다.','',
+  '공개 배치도에 근거한 주거동을 볼 수 있는 대상지는 총 '+drawingTownCount+'곳이다. 기존 시범 도면 '+pilotDrawingTowns.length+'곳에 이번에 '+(drawingTownCount-pilotDrawingTowns.length)+'곳을 추가했다. 건축 후 3D를 제공하는 나머지 '+(published-drawingTownCount)+'곳에는 가상 배치만 수록했다.','',
+  ...(drawingRows.length?['이번에 수록한 대상지 통합 도면과 개별 구역 도면 '+drawingRows.length+'개 범위에서 주거동 '+drawingRows.reduce((n,l)=>n+l.buildings.length,0)+'동의 윤곽을 옮겼다. '+
+    (drawingSpaces?'도면에 표시된 공원·시설 등 '+drawingSpaces+'개 공간을 도면 좌표로 옮겼으며, 이 중 '+mappedSpaces+'개는 지도 좌표로도 볼 수 있다. ':'')+
+    '도면 좌표 보기는 원본 픽셀을 사용하며, 지도 좌표가 확인된 동은 지리 공간에서도 볼 수 있다. 3D 화면에서 도면의 출처·범위·높이 환산 기준을 확인할 수 있다.','']:[]),
   '대상지 전체 예시는 전체 외곽과 그 대상지에 발표된 규모를 사용한다. 구역별 예시는 세부구역의 경계와 그곳의 사업 수치를 사용한다. 같은 대상지의 두 보기는 대안이므로 모형 수를 합산하지 않는다.','',
-  '동 수가 공개된 곳은 발표된 수를 목표로 배치한다. 그 밖에는 계획 세대수와 층당 4세대를 사용하고, 층수만 확인한 곳은 참고 경계에 들어가는 예시 동을 표시한다. 공개 층수 또는 확인된 대상지 상한이 없으면 예시 상한을 20층으로 명시한다. 기본 동은 42×14m, 경계 여백 10m, 동간 거리 35m다. 이 조건으로 계획 규모를 담기 어려우면 32×16m 또는 24×12m(경계 5m·동간 10m), 80세대 이하 소규모 필지에는 16×9m(경계 3m·동간 10m) 예시를 적용할 수 있다. 구역별로 실제 적용한 간격을 표시한다. 개별 동의 위치·입면·높이는 추정이다.','',
+  '가상 배치는 공개 동 수를 목표로 한다. 그 밖에는 계획 세대수와 층당 4세대를 사용하고, 층수만 확인한 곳은 참고 경계에 들어가는 예시 동을 표시한다. 공개 층수 또는 확인된 대상지 상한이 없으면 예시 상한을 20층으로 명시한다. 기본 동은 42×14m, 경계 여백 10m, 동간 거리 35m다. 이 조건으로 계획 규모를 담기 어려우면 32×16m 또는 24×12m(경계 5m·동간 10m), 80세대 이하 소규모 필지에는 16×9m(경계 3m·동간 10m) 예시를 적용할 수 있다. 구역별로 실제 적용한 간격을 표시한다. 가상 배치의 동 위치·입면·높이는 추정이다.','',
   '| 자치구 · 대상지 | 제공 범위 또는 보류 이유 | 모델링 세부구역 | 구역별 모형 | 전체 예시 모형 | 층수 기본 가정 포함 |',
   '| --- | --- | ---: | ---: | ---: | --- |',
   ...rows.map(r=>'| '+(r.zones!=null||pilot[r.id]?'['+r.district+' '+r.name+'](https://moatownmap.com/?town='+r.id+'&view=3d&mode=after)':r.district+' '+r.name)+' | '+r.status+' | '+number(r.zones)+' | '+number(r.zoneBlocks)+' | '+number(r.townBlocks)+' | '+(r.zones==null?'—':r.assumptions?'예':'아니오')+' |'),

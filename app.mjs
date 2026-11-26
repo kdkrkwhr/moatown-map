@@ -1,13 +1,13 @@
-import {projectUrl,renderProjectDetail,showUnplacedProgram} from './detail-view.mjs?v=9dd69d08e58e';
-import {durationSamples,elapsedMonths,formatValue,projectMetadata} from './detail-format.mjs?v=9dd69d08e58e';
-import {projectParams,setProjectPath} from './project-url.mjs?v=9dd69d08e58e';
+import {projectUrl,renderProjectDetail,showUnplacedProgram} from './detail-view.mjs?v=4cb305b9d366';
+import {durationSamples,elapsedMonths,formatValue,projectMetadata} from './detail-format.mjs?v=4cb305b9d366';
+import {projectParams,setProjectPath} from './project-url.mjs?v=4cb305b9d366';
 export {elapsedMonths};
-import {loadMaps,createProjectMap} from './map-engine.mjs?v=9dd69d08e58e';
-export {showReferencePin} from './map-engine.mjs?v=9dd69d08e58e';
-import {loadNews,matchNews,newsCard,sourceLabels} from './news.mjs?v=9dd69d08e58e';
-import {searchProjects,managementFilters,progressFilters,recentProjectDates} from './project-search.mjs?v=9dd69d08e58e';
-import {mountAddressLookup} from './address-reference.mjs?v=9dd69d08e58e';
-import {mountPilotViewer} from './pilot-viewer.mjs?v=9dd69d08e58e';
+import {loadMaps,createProjectMap} from './map-engine.mjs?v=4cb305b9d366';
+export {showReferencePin} from './map-engine.mjs?v=4cb305b9d366';
+import {loadNews,matchNews,newsCard,sourceLabels} from './news.mjs?v=4cb305b9d366';
+import {searchProjects,managementFilters,progressFilters,recentProjectDates} from './project-search.mjs?v=4cb305b9d366';
+import {mountAddressLookup} from './address-reference.mjs?v=4cb305b9d366';
+import {hasPublicLayout,mountPilotViewer} from './pilot-viewer.mjs?v=4cb305b9d366';
 const mobileMapQuery='(max-width: 768px)';
 function initialSheetHeight(selection,hasFilters,mobile){
   if(!mobile)return 1;
@@ -332,7 +332,8 @@ export function mount({manifest,towns,zones,boundaries,excluded=[]},sdk){
       const meta=el('span',undefined,'row-meta');
       meta.append(el('span',town.district,'district-name'));
       const simulation=manifest.pilot_3d?.simulation_inputs?.[town.id];
-      if(pilot.supports(town.id))meta.append(el('span',simulation?(zone&&!simulation.zone_ids.includes(zone.id)?'대상지 3D':'건축 후 3D'):'기존 건물 3D','pilot-list-label'));
+      const drawing=hasPublicLayout(simulation,town.id,zone?.id);
+      if(pilot.supports(town.id))meta.append(el('span',drawing?'공개 배치도 3D':simulation?(zone&&!simulation.zone_ids.includes(zone.id)?'대상지 3D':'건축 후 3D'):'기존 건물 3D','pilot-list-label'));
       if(badge)meta.append(badge);
       if(zone){
         button.dataset.zone=zone.id;
@@ -397,12 +398,14 @@ export function mount({manifest,towns,zones,boundaries,excluded=[]},sdk){
     const direct=zone && visibleZones.has(zone.id);
     get('back-label').textContent=zone && !direct ? town.name : (query?query+' · ':'')+'검색 결과 '+rows.length+'건';
     const children=groups.get(town.id)??[];
+    const simulation=manifest.pilot_3d?.simulation_inputs?.[town.id];
+    const association=hasPublicLayout(simulation,town.id,zone?.id);
     renderProjectDetail(detail,{town,zone,children,boundaries:boundaryProps,snapshot:manifest.snapshot_date,cityRule:current.cancellation?null:manifest.seoul_road_permit,
       registryUrl:manifest.source_urls?.official_project_registry,stats:planStats,select:(townId,zoneId,preview)=>select(townId,zoneId,null,preview?undefined:'areas'),
       expandDetail:()=>{if(mobile.matches)setSheetHeight(2);},badge:stageBadge,copyLink,initialTab,
       openTownRules:zone?()=>select(town.id,null,null,'business'):null,
-      openPilot:pilot.supports(town.id)?()=>pilot.open(town.id,zone?.id):null,
-      openPlan:manifest.pilot_3d?.simulation_inputs?.[town.id] && (!zone||manifest.pilot_3d.simulation_inputs[town.id].zone_ids.includes(zone.id))?
+      association,openPilot:pilot.supports(town.id)?()=>pilot.open(town.id,zone?.id,true,association?'after':null):null,
+      openPlan:simulation && (!zone||association||simulation.zone_ids.includes(zone.id))?
         ()=>pilot.open(town.id,zone?.id,true,'after'):null});
     renderRelatedNews();
     const pane=detail.querySelector('#pane-business'),id=(zone??town).id;

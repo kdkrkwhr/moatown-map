@@ -9,7 +9,7 @@ const buildings=JSON.parse(read('buildings')).towns,plans=JSON.parse(read('pilot
 const town_ids=Object.keys(buildings).sort();
 const boundaries=JSON.parse(read('boundaries')).features;
 const boundaryIds=boundaries.filter(f=>f.properties.entity_type==='town').map(f=>f.properties.entity_id).sort();
-const expanded=JSON.parse(readFileSync(new URL('plans/expanded-index.json',root),'utf8')).towns;
+const {towns:expanded,pilot_associations={}}=JSON.parse(readFileSync(new URL('plans/expanded-index.json',root),'utf8'));
 const plan_town_ids=[...Object.keys(plans),...Object.keys(expanded)].sort();
 if(!town_ids.length || boundaryIds.join()!==town_ids.join() || !plan_town_ids.every(id=>town_ids.includes(id)))
   throw Error('대상지 참고 경계, 건물, 계획의 범위를 확인하세요.');
@@ -36,9 +36,17 @@ for(const id of Object.keys(plans).sort()){
   const zone_ids=Object.entries(town.zones??{}).filter(([zone,record])=>
     zoneTown.get(zone)===id && zoneShapes.has(zone) && [record?.floors,town.plan?.floors].some(n=>Number.isInteger(n)&&n>0)).map(([zone])=>zone);
   if(zone_ids.length)simulation_inputs[id]={zone_ids,design:designs[id]??null,layout:layouts[id]??null,public_space:publicSpaces[id]??null};
+  if(pilot_associations[id]){
+    const association=pilot_associations[id];
+    const content=readFileSync(new URL(association.association_path,root),'utf8').replaceAll('\r\n','\n');
+    if(createHash('sha256').update(content).digest('hex')!==association.association_sha256 ||
+      association.association_zone_ids.some(zone=>zone!==id&&zoneTown.get(zone)!==id))throw Error('공개 배치도 파일 불일치 '+id);
+    Object.assign(simulation_inputs[id],association,{modes:['association','design','spaced']});
+  }
 }
 for(const [id,entry] of Object.entries(expanded)){
-  if(simulation_inputs[id]||!entry.modes?.length||entry.zone_ids.some(zone=>zoneTown.get(zone)!==id || !zoneShapes.has(zone)))
+  if(simulation_inputs[id]||!entry.modes?.length||entry.zone_ids.some(zone=>zoneTown.get(zone)!==id || !zoneShapes.has(zone))||
+    entry.association_zone_ids?.some(zone=>zone!==id&&zoneTown.get(zone)!==id))
     throw Error('추가 3D 장면 범위 불일치 '+id);
   const scene=readFileSync(new URL(entry.path,root),'utf8').replaceAll('\r\n','\n');
   if(JSON.parse(scene).town_id!==id||createHash('sha256').update(scene).digest('hex')!==entry.sha256)throw Error('예상 배치 파일 검증 실패 '+id);
