@@ -8,6 +8,29 @@ const read=file=>JSON.parse(readFileSync(new URL('../moatown-data/'+file,import.
 const {files,coverage}=read('latest.json');
 const towns=read(files.towns),zones=read(files.zones),index=read(files.parcel_index);
 
+test('the five-town release preserves all 25 parcel points and identifies the housing site within each project',()=>{
+  const dir='snapshots/2026-11-27/five-town-boundaries/';
+  const audit=read(dir+'review.json').five_town_boundary_review;
+  const before=new Set(read(audit.baseline_boundaries).features.map(f=>f.properties.entity_id));
+  const old=read(audit.baseline_zones).filter(z=>audit.town_ids.includes(z.town_id) && z.representative_point && !before.has(z.id));
+  const records=new Map(read(dir+'zones.json').map(z=>[z.id,z]));
+  const shapes=new Map(read(dir+'boundaries.geojson').features.map(f=>[f.properties.entity_id,f]));
+  assert.equal(old.length,25);
+  assert.deepEqual(audit.results.map(row=>row.zone_id).sort(),old.map(z=>z.id).sort());
+  for(const z of old){
+    const updated=records.get(z.id),feature=shapes.get(z.id);
+    assert.deepEqual(updated.representative_point,z.representative_point);
+    assert.equal(feature.properties.source_url,updated.boundary_evidence.source_url);
+    assert.equal(feature.properties.boundary_status,'reference_only');
+    assert.equal(positionInGeometry(feature.properties.label_point.coordinates,feature.geometry,0),'inside',z.id);
+    assert.ok(updated.housing_site_area_m2>0 && updated.field_evidence.housing_site_area_m2.source_url);
+  }
+  assert.equal(shapes.get('mz-plan-594346-a-2').geometry.type,'MultiPolygon');
+  const jayang=records.get('mz-plan-639882-1121510500106400000');
+  assert.equal(jayang.project_area_m2,20436.6);
+  assert.equal(jayang.association_boundaries[0].properties.source_area_m2,20639.8);
+});
+
 test('the four-town boundary review accounts for every previously pin-only zone and preserves its parcel point',()=>{
   const dir='snapshots/2026-11-27/four-town-boundaries/';
   const audit=read(dir+'review.json').zone_pin_boundary_review;
