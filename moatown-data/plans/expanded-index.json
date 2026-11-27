@@ -424,6 +424,22 @@
       ],
       "zone_ids": []
     },
+    "mt-202603-public-039": {
+      "path": "plans/scenes/mt-202603-public-039.json",
+      "sha256": "c646c05284f1ae20bd195b47eff971bd07322558c008f2612b199c3f4f7dce9d",
+      "modes": [
+        "town",
+        "zones"
+      ],
+      "zone_ids": [
+        "mz-notice-public-039-1",
+        "mz-notice-public-039-2",
+        "mz-notice-public-039-3",
+        "mz-notice-public-039-4",
+        "mz-notice-public-039-5",
+        "mz-notice-public-039-6"
+      ]
+    },
     "mt-202603-public-042": {
       "path": "plans/scenes/mt-202603-public-042.json",
       "sha256": "2431fec39ebb79ff52b0bd21c3395b9bff7333c43367e54ce0d4742fddfbb5fd",
@@ -491,6 +507,18 @@
       ],
       "association_zone_ids": [
         "mz-seoul-11530uq120ps202607230001"
+      ]
+    },
+    "mt-202603-public-048": {
+      "path": "plans/scenes/mt-202603-public-048.json",
+      "sha256": "8646124548d578adbaca558443d3cfc85372ebeca15cfbeb879aa5388ea1d927",
+      "modes": [
+        "town",
+        "zones"
+      ],
+      "zone_ids": [
+        "mz-notice-public-048-a1",
+        "mz-notice-public-048-a2"
       ]
     },
     "mt-202603-public-049": {
@@ -668,6 +696,19 @@
         "town"
       ],
       "zone_ids": []
+    },
+    "mt-202603-public-069": {
+      "path": "plans/scenes/mt-202603-public-069.json",
+      "sha256": "ced500a8609315d75f12a4749ecd40d0cbd555d4f22e81247391dcf1923089b5",
+      "modes": [
+        "town",
+        "zones"
+      ],
+      "zone_ids": [
+        "mz-notice-public-069-a1",
+        "mz-notice-public-069-a2",
+        "mz-notice-public-069-a3"
+      ]
     },
     "mt-202603-public-070": {
       "path": "plans/scenes/mt-202603-public-070.json",
@@ -1052,6 +1093,17 @@
       ],
       "zone_ids": [
         "mz-notice-resident-031-a1"
+      ]
+    },
+    "mt-202603-resident-035": {
+      "path": "plans/scenes/mt-202603-resident-035.json",
+      "sha256": "069e0852a239873c5f3c3107ff6fa365d0161415cc15db7a3290189f9bbd2131",
+      "modes": [
+        "zones"
+      ],
+      "zone_ids": [
+        "mz-seoul-11000uq120ps202505310733",
+        "mz-seoul-11000uq120ps202505310734"
       ]
     }
   }

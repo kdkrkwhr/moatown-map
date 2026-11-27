@@ -8,6 +8,26 @@ const read=file=>JSON.parse(readFileSync(new URL('../moatown-data/'+file,import.
 const {files,coverage}=read('latest.json');
 const towns=read(files.towns),zones=read(files.zones),index=read(files.parcel_index);
 
+test('November review preserves the three town totals and dates the earlier allocations separately',()=>{
+  const boundaries=new Map(read(files.boundaries).features.map(f=>[f.properties.entity_id,f.geometry]));
+  for(const [suffix,n,latest,draft,rental] of [['039',6,2441,2447,441],['048',2,1485,1489,240],['069',3,1786,1788,284]]){
+    const town=towns.find(t=>t.id==='mt-202603-public-'+suffix),children=zones.filter(z=>z.town_id===town.id);
+    assert.equal(children.length,n);
+    assert.equal(town.metrics.planned_units,latest);
+    assert.equal(children.reduce((sum,z)=>sum+z.previous_plan.planned_units_total,0),draft);
+    assert.equal(children.reduce((sum,z)=>sum+z.previous_plan.rental_units,0),rental);
+    for(const z of children){
+      assert.equal(z.planned_units_total,null);
+      assert.equal(z.previous_plan.evidence.source_as_of,z.boundary_evidence.source_as_of);
+      assert.equal(positionInGeometry(z.representative_point.coordinates,boundaries.get(z.id),0),'inside');
+      if(suffix==='048')assert.equal(z.registered_address,null);
+    }
+  }
+  const jangwi=zones.filter(z=>z.town_id==='mt-202603-resident-035');
+  assert.deepEqual(jangwi.map(z=>[z.drawing_code,z.selected_contractor,z.planned_units_total,z.metrics.owner_count??null]),
+    [['11-3','계룡건설산업',176,null],['11-4','금호건설',210,133]]);
+});
+
 test('every blank stage in the audit baseline has a scoped, sourced outcome',()=>{
   const release='snapshots/2026-11-26/stage-audit/';
   const audit=read(release+'review.json').stage_audit;

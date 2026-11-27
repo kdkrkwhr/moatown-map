@@ -47,6 +47,21 @@ const shapes=new Map([['town',shape('town',127,.006)],['z',shape('z',127.001,.00
 const record={floors:15,units:800,scope:'대상지',source_url:'https://example.com/town',source_as_of:'2026-02-01'};
 const build=(townPlan,rows=[zone],zoneRecords={},geometries=shapes)=>buildExpandedLayouts(town,rows,geometries,townPlan,zoneRecords);
 
+test('both simulation modes place blocks within the residential sites marked on the inspection drawings',()=>{
+  const root=new URL('../moatown-data/plans/scenes/',import.meta.url);
+  for(const suffix of ['039','048','069']){
+    const scene=JSON.parse(readFileSync(new URL('mt-202603-public-'+suffix+'.json',root)));
+    const sites=Object.values(scene.zones).map(record=>record.residential_site.geometry);
+    for(const [mode,result] of Object.entries(scene.modes)){
+      assert.ok(result.features.length>0);
+      for(const f of result.features){
+        const candidates=mode==='town'?sites:[scene.zones[f.properties.zone_id].residential_site.geometry];
+        assert.ok(candidates.some(site=>f.geometry.coordinates[0].every(p=>booleanPointInPolygon(p,site))),f.id);
+      }
+    }
+  }
+});
+
 test('whole-town and child illustrations preserve independent boundaries, quantities and sources',()=>{
   const scene=build(record);
   assert.equal(scene.modes.town.summaries.town.units,800);

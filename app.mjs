@@ -1,15 +1,15 @@
-import {projectUrl,renderProjectDetail,showUnplacedProgram,procedureScheduleLine} from './detail-view.mjs?v=5518809422cb';
-import {durationSamples,elapsedMonths,formatValue,projectMetadata,contractorProcedure,procedureParticipants,procedureSchedule} from './detail-format.mjs?v=5518809422cb';
-import {projectParams,setProjectPath} from './project-url.mjs?v=5518809422cb';
+import {projectUrl,renderProjectDetail,showUnplacedProgram,procedureScheduleLine} from './detail-view.mjs?v=1c27586b7e92';
+import {durationSamples,elapsedMonths,formatValue,projectMetadata,contractorProcedure,procedureParticipants,procedureSchedule} from './detail-format.mjs?v=1c27586b7e92';
+import {projectParams,setProjectPath} from './project-url.mjs?v=1c27586b7e92';
 export {elapsedMonths};
-import {loadMaps,createProjectMap} from './map-engine.mjs?v=5518809422cb';
-export {showReferencePin} from './map-engine.mjs?v=5518809422cb';
-import {loadNews,matchNews,newsCard,sourceLabels} from './news.mjs?v=5518809422cb';
-import {searchProjects,managementFilters,progressFilters,recentProjectDates,contractorName,associationReviewKey} from './project-search.mjs?v=5518809422cb';
-import {mountAddressLookup} from './address-reference.mjs?v=5518809422cb';
-import {hasPublicLayout,mountPilotViewer} from './pilot-viewer.mjs?v=5518809422cb';
-import {metricGlossary,translateStage} from './glossary-translator.mjs?v=5518809422cb';
-import {decorativeEmoji,toolIcon} from './ui-icons.mjs?v=5518809422cb';
+import {loadMaps,createProjectMap} from './map-engine.mjs?v=1c27586b7e92';
+export {showReferencePin} from './map-engine.mjs?v=1c27586b7e92';
+import {loadNews,matchNews,newsCard,sourceLabels} from './news.mjs?v=1c27586b7e92';
+import {searchProjects,managementFilters,progressFilters,recentProjectDates,contractorName,associationReviewKey} from './project-search.mjs?v=1c27586b7e92';
+import {mountAddressLookup} from './address-reference.mjs?v=1c27586b7e92';
+import {hasPublicLayout,mountPilotViewer} from './pilot-viewer.mjs?v=1c27586b7e92';
+import {metricGlossary,translateStage} from './glossary-translator.mjs?v=1c27586b7e92';
+import {decorativeEmoji,toolIcon} from './ui-icons.mjs?v=1c27586b7e92';
 const mobileMapQuery='(max-width: 768px)';
 function initialSheetHeight(selection,hasFilters,mobile){
   if(!mobile)return 1;
@@ -246,15 +246,20 @@ export function mount({manifest,towns,zones,boundaries,excluded=[]},sdk,mapSigna
     current=resolveSelection(params,townById,zoneById);
     const award=params.get('award');
     const zone=zoneById.get(current.zoneId);
-    if(zone?.selected_contractor && (award==='1' || award==='procedure')){
+    if(zone?.selected_contractor && (award==='1' || award==='procedure' || award && award===zone.project_name)){
       current.award='1';
       if(contractor==='pending')contractor='all';
     }
     else if(award==='procedure' && contractorProcedure(zone))current.award=award;
     else if((zone??townById.get(current.townId))?.contractor_projects?.some(p=>p.project_name===award))current.award=award;
     else if(!zone && award && current.townId){
-      const matches=(groups.get(current.townId)??[]).filter(child=>child.contractor_projects?.some(p=>p.project_name===award));
-      if(matches.length===1){current.zoneId=matches[0].id;current.award=award;}
+      const matches=(groups.get(current.townId)??[]).filter(child=>
+        (child.selected_contractor && child.project_name===award) || child.contractor_projects?.some(p=>p.project_name===award));
+      if(matches.length===1){
+        const child=matches[0];
+        current.zoneId=child.id;
+        current.award=child.selected_contractor && child.project_name===award?'1':award;
+      }
     }
     if(!current.townId && cancellations.has(params.get('cancellation'))){
       current.cancellation=params.get('cancellation');chosen.plan='canceled';chosen.progress='';contractor='';

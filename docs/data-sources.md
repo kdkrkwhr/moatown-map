@@ -1,5 +1,16 @@
 # 데이터 출처와 수집 범위
 
+## 2026.11.27 수유·목2·개봉·장위의 세부구역 13곳
+
+세부구역을 확인한 대상지는 142곳 중 100곳이다. 세부구역 카드 302개 중 94개에는 개별 참고 경계가 있고, 274개에는 확인된 필지의 핀이 있다. 구역선과 공동주택용지는 서로 다른 도형이다. 지도는 사업구역 전체를 표시하며 수유·목2·개봉의 가상 주거동은 공람도에 표시된 공동주택용지 안에 배치한다. 원문, 도면 좌표 보정과 면적 검측은 검수 기록의 `november_plan_zone_review`에 수록했다. [원문 및 도면 대조 기록](../moatown-data/snapshots/2026-11-27/november-review/review.json)
+
+| 대상지 | 구역별로 확인한 내용 | 최신 자료의 범위 |
+|---|---|---|
+| 강북구 수유동 141 | 7월 6일 공람안 1~6구역의 대표 지번, 동의서 징구 단계, 사업구역 면적과 공동주택용지 | 11월 17일 심의 결과는 전체 2,441세대, 임대 453세대다. 7월 공람 당시 합계는 2,447세대, 임대 441세대였다. [강북구 공람안](https://www.eum.go.kr/web/cp/hr/hrPeopleHearDet.jsp?seq=5376) · [서울시 통합심의 결과](https://www.seoul.go.kr/news/news_report.do?nttNo=470585) |
+| 양천구 목2동 231-27 | 7월 30일 공람안 A1~A3의 사업구역선과 대표 필지. 조서의 16,780.60㎡·14,303.64㎡·19,973.45㎡는 각각 공동주택용지 면적이다. | 11월 심의 전체 1,786세대, 임대 287세대. 7월 공람안은 1,788세대, 임대 284세대였다. [양천구 공람안](https://www.eum.go.kr/web/cp/hr/hrPeopleHearDet.jsp?seq=5537) · [서울시 통합심의 결과](https://www.seoul.go.kr/news/news_report.do?nttNo=470585) |
+| 구로구 개봉동 20 | 9월 3일 공람안 A1·A2. 구역별 토지등소유자는 670명·331명이고 중복을 제외한 전체는 991명이다. 대표 지번이 명시되지 않아 공람조서와 지적도에서 확인한 구역 안 필지에 지도 핀을 표시한다. | 11월 심의 전체 1,485세대. 공람안은 1,489세대, 임대 240세대였다. A1은 SH 참여 선정 이력이 있다. [구로구 공람안](https://www.guro.go.kr/www/selectBbsNttGosiView.do?bbsNo=663&key=1791&nttNo=51244) · [서울시 통합심의 결과](https://www.seoul.go.kr/news/news_report.do?nttNo=470585) |
+| 성북구 장위동 65-107 | 11-3·11-4 조합 사업구역, 대표 지번, 조합설립인가와 시공사. 11-3의 176세대는 6,328㎡ 사업대장 기준이다. 11-4 사업개요는 210세대, 토지등소유자 133명이다. | 11-3은 계룡건설산업, 11-4는 금호건설 선정으로 기록했다. 11-3의 별도 8,486㎡ 사업개요에 나온 소유자 수는 6,328㎡ 구역에 적용하지 않았다. [성북구 변경인가 고시](https://www.sb.go.kr/www/selectEminwonView.do?menuFlag=01&notAncmtMgtNo=39896&key=6977) · [서울시 사업구역 GIS](https://data.seoul.go.kr/dataList/OA-22712/F/1/datasetView.do) · [11-3 조합 추진경과](https://cleanup.seoul.go.kr/cafe/mainIndx/cleanup-prtnelapse/vscr.do?cafeId=290900000812w90&bsnsPk=11290-900000812) · [11-4 조합 사업개요](https://cleanup.seoul.go.kr/cafe/mastr-cleanup-bsnsSumry/execute.do?cafeId=290900000971T25&div=sumry&stepSeCode=102) |
+
 ## 2026.11.27 주민제안 대상지 네 곳의 사업구역 도면
 
 142개 대상지 가운데 세부구역을 연결한 곳이 92곳에서 96곳으로 늘었다. 추가한 6개 구역 모두 도면 번호, 대표 필지, 공급·임대 세대수와 참고 경계가 있다. 세부구역은 총 289곳, 지번 핀은 261곳, 구역별 참고 경계는 81곳이다. 도면의 지정선과 서울시 연속지적도의 필지선을 맞춘 방법, 원문 쪽수와 검측 결과는 대상지 ID별로 기록했다. [좌표등록 및 원문 대조 기록](../moatown-data/snapshots/2026-11-27/management-plans/review.json) · [서울시 연속지적도](https://land.seoul.go.kr/land/map/land/map.do)

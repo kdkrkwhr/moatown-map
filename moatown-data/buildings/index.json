@@ -10,7 +10,7 @@
   "source_as_of": "2024-12-31",
   "checked_on": "2026-11-27",
   "snapshot_date": "2026-11-27",
-  "boundary_sha256": "2966bd049ea1d774114c7375ca0b50522a62cc5b7fe3c38c874e85d2e58ac6c7",
+  "boundary_sha256": "175797b60d2119506506c11ad7b0fc76679bc2ad9ffd2ef507ebafee5a8cc2d2",
   "buffer_m": 150,
   "source_fields": {
     "geom": "건물 전체 도형 (EPSG:5179, m)",
@@ -2104,44 +2104,44 @@
       "files": [
         {
           "path": "mt-202603-public-039.geojson",
-          "sha256": "aa9449bf3fe67770784ec5331144ec4098f48aff3e0fd51233054ce97281696b",
-          "bytes": 467331,
-          "gzip_bytes": 57713,
-          "count": 1156
+          "sha256": "dfd8c7fababa5f96cbfdc2c64d50ee032cc69159d43c9ea4dc73e30f2a2f7c65",
+          "bytes": 479965,
+          "gzip_bytes": 59366,
+          "count": 1186
         }
       ],
       "stats": {
-        "total": 1156,
-        "inside": 330,
-        "crossing": 39,
-        "nearby": 787,
-        "inside_known_year": 316,
-        "inside_unknown_year": 14,
-        "inside_30_plus": 206,
-        "registry_linked": 1045,
-        "official_height": 712,
-        "estimated_height": 334,
-        "unknown_height": 110
+        "total": 1186,
+        "inside": 447,
+        "crossing": 23,
+        "nearby": 716,
+        "inside_known_year": 428,
+        "inside_unknown_year": 19,
+        "inside_30_plus": 284,
+        "registry_linked": 1070,
+        "official_height": 728,
+        "estimated_height": 343,
+        "unknown_height": 115
       },
       "audit": {
-        "bbox_count": 1812,
+        "bbox_count": 1861,
         "wfs_pages": [
           {
             "start_index": 0,
             "number_returned": 1000,
-            "timestamp": "2026-11-25T02:25:54.227Z",
-            "sha256": "cfbae50c42931d7194953ba3487a680ef8968f0f1f949635857fe24e9ed4507b"
+            "timestamp": "2026-11-27T04:42:30.154Z",
+            "sha256": "90f7327002f510a363317c06f1c196c7d69bfa968c8dbc634fced9ff5d4bd41b"
           },
           {
             "start_index": 1000,
-            "number_returned": 812,
-            "timestamp": "2026-11-25T02:25:54.679Z",
-            "sha256": "5c8037d64b5d20ee961ddc8b4903789b77e9a95e3ac53f2e88a27bb7eace411e"
+            "number_returned": 861,
+            "timestamp": "2026-11-27T04:42:30.286Z",
+            "sha256": "3b2bb6310d8ee58cdcaed0281448827d46a853b84777c5e9162bd212dcee626a"
           }
         ],
-        "matched_unique_ids": 1156,
+        "matched_unique_ids": 1186,
         "duplicate_ids_outside_buffer": [],
-        "matched_ids_sha256": "5c8314f5d763a38484c2a7794eb4ac330c5a8544482ee53e9a4c2258cb83d47d",
+        "matched_ids_sha256": "960276934d2218ce5094c2b397e64dabf129bd01f0edd55433659331cb4d2114",
         "rounded_geometry_reviews": [],
         "withheld": []
       }
@@ -2622,38 +2622,38 @@
       "files": [
         {
           "path": "mt-202603-public-048.geojson",
-          "sha256": "d8c5e273b04bf4ab0306376b5b631da34de8a4da09f49935528749dfed1fec22",
-          "bytes": 284943,
-          "gzip_bytes": 37978,
-          "count": 622
+          "sha256": "d850ee5d824d8199586796a156fcc40c7227e6aa4c262f4968b3545da9caf1e0",
+          "bytes": 313473,
+          "gzip_bytes": 41876,
+          "count": 683
         }
       ],
       "stats": {
-        "total": 622,
-        "inside": 172,
-        "crossing": 20,
-        "nearby": 430,
-        "inside_known_year": 169,
+        "total": 683,
+        "inside": 180,
+        "crossing": 14,
+        "nearby": 489,
+        "inside_known_year": 177,
         "inside_unknown_year": 3,
-        "inside_30_plus": 116,
-        "registry_linked": 565,
-        "official_height": 286,
-        "estimated_height": 279,
-        "unknown_height": 57
+        "inside_30_plus": 126,
+        "registry_linked": 625,
+        "official_height": 319,
+        "estimated_height": 306,
+        "unknown_height": 58
       },
       "audit": {
-        "bbox_count": 862,
+        "bbox_count": 876,
         "wfs_pages": [
           {
             "start_index": 0,
-            "number_returned": 862,
-            "timestamp": "2026-11-25T02:26:11.308Z",
-            "sha256": "d33e4759c1a0da6ae44901c41bc3f123f6f2069576f6eecf208a94e2bd0cfeee"
+            "number_returned": 876,
+            "timestamp": "2026-11-27T04:42:30.146Z",
+            "sha256": "070372821a16b926beb3937b705abeffa6923f8163357f205c387ab4d510e6f0"
           }
         ],
-        "matched_unique_ids": 622,
+        "matched_unique_ids": 683,
         "duplicate_ids_outside_buffer": [],
-        "matched_ids_sha256": "18d15318fd0e6cabdb9bd4fcf6e2fea8eb63913b43a3df86728eacf13d1de9e6",
+        "matched_ids_sha256": "9c5ebe4aabd837aa38d0c232b3fddec60e8b7385e35150192a9801faead6d3ca",
         "rounded_geometry_reviews": [
           {
             "id": "1991186049504445178400000000",
@@ -3708,38 +3708,44 @@
       "files": [
         {
           "path": "mt-202603-public-069.geojson",
-          "sha256": "a44b3d498cc017f5207dc6c6de1223cdd7eae7f1aac303d4b4230c7d82565c1c",
-          "bytes": 280840,
-          "gzip_bytes": 39056,
-          "count": 587
+          "sha256": "a5db0332dba246daa145b2ced7fd29fecc3f488e872b912ec580a044582c7058",
+          "bytes": 301239,
+          "gzip_bytes": 42194,
+          "count": 625
         }
       ],
       "stats": {
-        "total": 587,
-        "inside": 185,
+        "total": 625,
+        "inside": 197,
         "crossing": 19,
-        "nearby": 383,
-        "inside_known_year": 184,
+        "nearby": 409,
+        "inside_known_year": 196,
         "inside_unknown_year": 1,
-        "inside_30_plus": 96,
-        "registry_linked": 544,
-        "official_height": 329,
-        "estimated_height": 213,
-        "unknown_height": 45
+        "inside_30_plus": 103,
+        "registry_linked": 576,
+        "official_height": 346,
+        "estimated_height": 228,
+        "unknown_height": 51
       },
       "audit": {
-        "bbox_count": 907,
+        "bbox_count": 1028,
         "wfs_pages": [
           {
             "start_index": 0,
-            "number_returned": 907,
-            "timestamp": "2026-11-25T02:26:38.025Z",
-            "sha256": "8ec4618fd62c4e50c9ad377471a311069d9ecd692977204dc7354c0caf320d56"
+            "number_returned": 1000,
+            "timestamp": "2026-11-27T04:42:32.550Z",
+            "sha256": "0553886bddd57f1b56eab09bbe7c989f691a3802d9dedf44343ce471617161b0"
+          },
+          {
+            "start_index": 1000,
+            "number_returned": 28,
+            "timestamp": "2026-11-27T04:42:32.917Z",
+            "sha256": "72ea990f3fc90ceb593ebc1e49d3a05926f0ee27a8bd562c9db48dcb74b6604d"
           }
         ],
-        "matched_unique_ids": 587,
+        "matched_unique_ids": 625,
         "duplicate_ids_outside_buffer": [],
-        "matched_ids_sha256": "45058b6c1184c9cfb637ea075d6d4361ae81931d10528d644f437a6d4193dee2",
+        "matched_ids_sha256": "0807cd6e020232548ea03e648e4fcb9f8da0ac8e3a54b20934a4acee35e71e8c",
         "rounded_geometry_reviews": [],
         "withheld": [
           {
@@ -5694,6 +5700,47 @@
         "matched_unique_ids": 714,
         "duplicate_ids_outside_buffer": [],
         "matched_ids_sha256": "8eacbfc6d2e30fc0642e5627e6a453a60ea26d440d1b03fbfe1ebc96a064a5fd",
+        "rounded_geometry_reviews": [],
+        "withheld": []
+      }
+    },
+    "mt-202603-resident-035": {
+      "source_as_of": "2024-12-31",
+      "files": [
+        {
+          "path": "mt-202603-resident-035.geojson",
+          "sha256": "bf706bad96360c6a75d7015bbbfdf0642b7b1a983913db545ceefefd138508e0",
+          "bytes": 211640,
+          "gzip_bytes": 26233,
+          "count": 513
+        }
+      ],
+      "stats": {
+        "total": 513,
+        "inside": 87,
+        "crossing": 14,
+        "nearby": 412,
+        "inside_known_year": 85,
+        "inside_unknown_year": 2,
+        "inside_30_plus": 73,
+        "registry_linked": 441,
+        "official_height": 178,
+        "estimated_height": 263,
+        "unknown_height": 72
+      },
+      "audit": {
+        "bbox_count": 717,
+        "wfs_pages": [
+          {
+            "start_index": 0,
+            "number_returned": 717,
+            "timestamp": "2026-11-27T04:42:30.145Z",
+            "sha256": "e11d8c5727475b20a65d2962a13b5a0018ca17aee0c1d921db0ab252fd09f3d5"
+          }
+        ],
+        "matched_unique_ids": 513,
+        "duplicate_ids_outside_buffer": [],
+        "matched_ids_sha256": "c66dda1f1334633ce43a9ebcffa1db418065113edbe01051084d72ea34e864b8",
         "rounded_geometry_reviews": [],
         "withheld": []
       }

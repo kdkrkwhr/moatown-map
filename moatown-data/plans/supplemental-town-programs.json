@@ -133,13 +133,17 @@
       "source_as_of": "2026-11-18",
       "evidence": "기존 1,373세대에서 2,441세대로 늘리는 계획에 임대주택 453세대가 포함된다.",
       "site_area_m2": 93814.5,
-      "scope_geometry_mismatch": true,
-      "note": "현재 수록된 참고 외곽 면적(약 73,638㎡)과 심의 범위(93,814.5㎡)가 다르다.",
+      "note": "전체 공급 규모는 11월 17일 통합심의 결과입니다. 지도에 표시한 구역 경계와 구역별 배분은 2026-07-06 주민공람안 기준입니다.",
       "field_evidence": {
         "boundary_revision": {
           "source_url": "https://event.seoul.go.kr/seoulsibo/fileDownload.do?fileName=seoulsibo_20260805144233_10330.pdf#page=54",
           "source_as_of": "2026-08-06",
           "evidence": "서울시 고시 제2026-449호의 권리산정 범위 추가 편입. 권리산정 면적과 11월 관리지역 면적은 각각 별도로 발표됐다."
+        },
+        "reference_boundary": {
+          "source_url": "https://www.eum.go.kr/web/cp/hr/hrPeopleHearDet.jsp?seq=5376",
+          "source_as_of": "2026-07-06",
+          "evidence": "주민공람 계획도에서 읽은 관리지역 외곽. 11월 심의의 전체 면적과 대조."
         }
       }
     },
@@ -193,13 +197,17 @@
       "source_as_of": "2026-11-18",
       "evidence": "서울시는 개봉동 20 일대 기존 1,161세대를 1,485세대 규모로 정비하는 계획을 발표했다.",
       "site_area_m2": 65416.6,
-      "scope_geometry_mismatch": true,
-      "note": "현재 수록된 참고 외곽 면적(약 61,733㎡)과 심의 범위(65,416.6㎡)가 다르다.",
+      "note": "전체 공급 규모는 11월 17일 통합심의 결과입니다. 지도에 표시한 구역 경계와 구역별 배분은 2026-09-03 주민공람안 기준입니다.",
       "field_evidence": {
         "boundary_revision": {
           "source_url": "https://event.seoul.go.kr/snews/data/CN_MST/seoulsibo_20260828163709_74413.pdf#page=31",
           "source_as_of": "2026-08-27",
           "evidence": "서울시 고시 제2026-478호, 30쪽. 제척 조정 후 59,776.2㎡에 5,640.4㎡를 추가해 65,416.6㎡로 변경했다."
+        },
+        "reference_boundary": {
+          "source_url": "https://www.guro.go.kr/www/selectBbsNttGosiView.do?bbsNo=663&key=1791&nttNo=51244",
+          "source_as_of": "2026-09-03",
+          "evidence": "주민공람 계획도에서 읽은 관리지역 외곽. 11월 심의의 전체 면적과 대조."
         }
       }
     },
@@ -289,14 +297,18 @@
       "source_url": "https://www.seoul.go.kr/news/news_report.do?nttNo=470585",
       "source_as_of": "2026-11-18",
       "evidence": "전체 1,786세대이며 단지 최고 높이는 지상 22층이다. 용왕산 및 북측 저층주거지와 맞닿은 곳은 15층 이하로 계획했다.",
-      "site_area_m2": 72347,
-      "scope_geometry_mismatch": true,
-      "note": "현재 수록된 참고 외곽 면적(약 64,368㎡)과 심의 범위(72,347㎡)가 다르다.",
+      "site_area_m2": 72347.16,
+      "note": "전체 공급 규모는 11월 17일 통합심의 결과입니다. 지도에 표시한 구역 경계와 구역별 배분은 2026-07-30 주민공람안 기준입니다.",
       "field_evidence": {
         "review": {
           "source_url": "https://www.eum.go.kr/web/cp/hr/hrPeopleHearDet.jsp?seq=5537",
           "source_as_of": "2026-07-30",
           "evidence": "서울특별시 양천구 공고 제2026-1317호, 관리계획 공람 면적은 72,347.16㎡다."
+        },
+        "reference_boundary": {
+          "source_url": "https://www.eum.go.kr/web/cp/hr/hrPeopleHearDet.jsp?seq=5537",
+          "source_as_of": "2026-07-30",
+          "evidence": "주민공람 계획도에서 읽은 관리지역 외곽. 11월 심의의 전체 면적과 대조."
         }
       }
     },

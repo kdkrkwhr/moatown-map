@@ -1,4 +1,4 @@
-import {projectParams,setProjectPath} from './project-url.mjs?v=5518809422cb';
+import {projectParams,setProjectPath} from './project-url.mjs?v=1c27586b7e92';
 
 const collection=features=>({type:'FeatureCollection',features});
 const count=value=>value.toLocaleString('ko-KR');
@@ -658,10 +658,16 @@ export function mountPilotViewer({manifest,boundaries,townById,groups}){
     const expanded=active.data?.expanded;
     const earlier=expanded&&(active.placement==='town'?expanded.plan?.previous_geometry:
       active.zoneId?expanded.updated_zones?.[active.zoneId]:Object.keys(expanded.updated_zones??{}).length);
+    const displayedPrograms=expanded && active.placement!=='town'?
+      (active.zoneId?[expanded.zones?.[active.zoneId]]:Object.values(expanded.zones??{})):[];
+    const inspection=displayedPrograms.find(record=>record?.kind==='historical_public_inspection');
+    const site=Object.values(expanded?.zones??{}).find(record=>record.residential_site)?.residential_site;
     const association=associationView(active);
     notice.textContent=association?(association.layout.zone_id===active.town.id?'대상지 전체 통합 배치도':'공개 배치도에서 확인한 주거동')+
       (association.frame==='drawing'?' · 원본 도면의 픽셀 좌표이며 높이는 참고용입니다.':' · 지도에 맞춘 외곽이며 높이는 참고용입니다.'):
       expanded?(active.placement==='town'?'대상지 전체':'세부구역')+' 참고 경계 안의 가상 배치입니다. 동 위치·높이·외관은 예시입니다.'+
+      (site?' 주거동 배치 범위는 '+date(site.source_as_of)+' 공람도의 공동주택용지입니다.':'')+
+      (inspection?' 세대수는 '+date(inspection.source_as_of)+' 공람안 기준이며 심의 후 구역별 배분은 미확인입니다.':'')+
       (earlier?' 범위가 변경된 곳은 수록 경계에 맞는 이전 공개안을 표시합니다.':'')+
       (summaries.some(s=>s.capSource==='default')?' 공개 층수가 없는 곳은 20층 상한을 가정했습니다.':''):
       drawn?'공식 배치도에서 옮긴 주거동 위치와 윤곽입니다. 높이와 외관은 공개 계획을 바탕으로 추정했습니다.':
@@ -782,7 +788,7 @@ export function mountPilotViewer({manifest,boundaries,townById,groups}){
       const indexUrl=new URL(manifest.files.buildings,base),planUrl=new URL(manifest.files.pilot_plans,base);
       const inputsForTown=config.simulation_inputs?.[town.id];
       const [index,planBook,{createPilotScene},expanded,pilotAssociations]=await Promise.all([fetchJson(indexUrl,signal,config.hashes.buildings),
-        session.hasPlan && !inputsForTown?.path?fetchJson(planUrl,signal,config.hashes.pilot_plans):null,import('./pilot-scene.mjs?v=5518809422cb'),
+        session.hasPlan && !inputsForTown?.path?fetchJson(planUrl,signal,config.hashes.pilot_plans):null,import('./pilot-scene.mjs?v=1c27586b7e92'),
         inputsForTown?.path?fetchJson(new URL(inputsForTown.path,base),signal,inputsForTown.sha256):null,
         inputsForTown?.association_path?fetchJson(new URL(inputsForTown.association_path,base),signal,inputsForTown.association_sha256):null]);
       if(expanded && expanded.town_id!==town.id)throw Error('예상 배치의 대상지 ID가 다릅니다.');
@@ -825,7 +831,7 @@ export function mountPilotViewer({manifest,boundaries,townById,groups}){
         session.simulate=key=>expanded.modes[key];
       }else if(session.canSimulate){
         const modelAreas=areas.filter(a=>inputsForTown.zone_ids.includes(a.properties.entity_id));
-        const [module,inputs]=await Promise.all([import('./pilot-simulation.mjs?v=5518809422cb'),
+        const [module,inputs]=await Promise.all([import('./pilot-simulation.mjs?v=1c27586b7e92'),
           Promise.all([inputsForTown.design,inputsForTown.public_space,inputsForTown.layout].map(key=>key?fetchInput(key):null)).catch(error=>{designError=error;return null;})]);
         if(active!==session)return;
         const layout=inputs?.[2];

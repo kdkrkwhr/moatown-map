@@ -73,9 +73,20 @@ export function buildExpandedLayouts(town,children,shapes,whole,zoneSources,prev
     for(const f of result.features)f.geometry.coordinates[0]=f.geometry.coordinates[0].map(xy=>xy.map(n=>Number(n.toFixed(7))));
     modes[key]=result;
   }
-  if(plan&&!plan.scope_geometry_mismatch)addMode('town',[{...town,planned_units_total:plan.units}],[shapes.get(town.id)]);
+  const siteShape=z=>{
+    const boundary=shapes.get(z.id),site=zones[z.id]?.residential_site;
+    return site?{...boundary,geometry:site.geometry}:boundary;
+  };
+  if(plan&&!plan.scope_geometry_mismatch){
+    const boundary=shapes.get(town.id);
+    const sites=children.map(z=>zones[z.id]?.residential_site);
+    const allSites=sites.length && sites.every(site=>site?.geometry);
+    const parts=allSites?sites.flatMap(({geometry})=>geometry.type==='Polygon'?[geometry.coordinates]:geometry.coordinates):[];
+    const area=parts.length?{...boundary,geometry:{type:'MultiPolygon',coordinates:parts}}:boundary;
+    addMode('town',[{...town,planned_units_total:plan.units}],[area]);
+  }
   const modeled=children.filter(z=>shapes.has(z.id)&&zones[z.id]&&!zones[z.id].scope_geometry_mismatch);
-  addMode('zones',modeled,modeled.map(z=>shapes.get(z.id)));
+  addMode('zones',modeled,modeled.map(siteShape));
   return Object.keys(modes).length||associationLayouts.length?{town_id:town.id,plan,zones,modes,
     ...(associationLayouts.length?{association_layouts:associationLayouts}:{}),
     ...(publicSpace?{public_space:publicSpace}:{}),
