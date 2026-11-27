@@ -1,7 +1,7 @@
-import {formatValue,unitsChange,projectIntervals,compareInterval,projectStage,awardHistories,contractorProcedure,procedureParticipants,procedureSchedule} from './detail-format.mjs?v=1c27586b7e92';
-import {projectUrl} from './project-url.mjs?v=1c27586b7e92';
-import {metricGlossary,translateStage} from './glossary-translator.mjs?v=1c27586b7e92';
-import {decorativeEmoji,toolIcon} from './ui-icons.mjs?v=1c27586b7e92';
+import {formatValue,unitsChange,projectIntervals,compareInterval,projectStage,awardHistories,contractorProcedure,procedureParticipants,procedureSchedule} from './detail-format.mjs?v=49b66672088f';
+import {projectUrl} from './project-url.mjs?v=49b66672088f';
+import {metricGlossary,translateStage} from './glossary-translator.mjs?v=49b66672088f';
+import {decorativeEmoji,toolIcon} from './ui-icons.mjs?v=49b66672088f';
 export {projectUrl};
 
 const pending='미고시';
@@ -198,7 +198,12 @@ function regulations(card,r,town,zone,boundary,cityRule,openTownRules){
 }
 
 const reviewedContractorLabel='선정 결과 미확인';
-const unknownStageLabel=r=>r?.field_evidence?.stage_review?.state==='scope_mismatch'?'변경 전 구역 · 단계 미확인':r?.field_evidence?.stage_review?'구역 전체 단계 미확인':pending;
+function unknownStageLabel(record){
+  const review=record?.field_evidence?.stage_review;
+  if(review?.state==='town_planning_context')return review.context_label+' · 개별 단계 미확인';
+  if(review?.state==='scope_mismatch')return '변경 전 구역 · 단계 미확인';
+  return review?'구역 전체 단계 미확인':pending;
+}
 
 function associationFields(grid,projects){
   for(const project of projects){
@@ -499,10 +504,37 @@ function comparisonTable(town,children,zone,select,badge){
 
 function previousPlanLabel(record){
   const previous=record.previous_plan;
-  return ['이전 공람안',date(previous.evidence?.source_as_of),formatValue(previous.planned_units_total,'세대')].filter(Boolean).join(' · ');
+  return [previous.label??'이전 공람안',date(previous.evidence?.source_as_of),formatValue(previous.planned_units_total,'세대')].filter(Boolean).join(' · ');
 }
 
 function subAreas(panel,town,zone,children,boundaries,select,badge){
+  const review=town.sub_area_review;
+  if(review?.note){
+    const info=notice(review.note);
+    const refs=(review.sources??[]).map(source=>link(source.url,source.title??'구역 확인 원문')).filter(Boolean);
+    if(refs.length===1)info.append(el('br'),refs[0]);
+    if(refs.length>1){
+      const sources=el('details',null,'pilot-evidence');
+      sources.append(el('summary','확인 원문 '+refs.length+'건'));
+      for(const ref of refs){const row=el('p');row.append(ref);sources.append(row);}
+      info.append(sources);
+    }
+    panel.append(info);
+  }
+  const refs=(zone??town).registered_project_references;
+  if(refs?.length){
+    const block=el('details',null,'pilot-evidence');
+    block.append(el('summary','서울시 대장에서 대조한 사업장 '+refs.length+'곳'));
+    for(const ref of refs){
+      const row=el('p');
+      row.append(el('strong',ref.name),el('br'),ref.address+' · '+ref.match_label);
+      if(ref.area_sqm)row.append(el('br'),'대장 면적 '+formatValue(ref.area_sqm,'㎡'));
+      if(ref.stage)row.append(el('br'),'대장 기재 단계 '+ref.stage);
+      row.append(el('br'),link(ref.source_url,'서울시 사업대장 · '+date(ref.source_as_of)));
+      block.append(row);
+    }
+    panel.append(block);
+  }
   if(town.contractor_projects?.length){
     const card=section(panel,'association-contractors','조합별 시공사');
     const facts=el('dl',null,'metrics');
@@ -510,7 +542,10 @@ function subAreas(panel,town,zone,children,boundaries,select,badge){
     associationFields(facts,town.contractor_projects);
     if(!children.length)return;
   }
-  if(!children.length){panel.append(notice(town.risk_info?.is_canceled?'세부 구역 미고시 · 대상지 선정 취소':'대상지 단위 추진 중 (세부 구역 미고시)'));return;}
+  if(!children.length){
+    if(!review?.note)panel.append(notice(town.risk_info?.is_canceled?'세부 구역 미고시 · 대상지 선정 취소':'대상지 단위 추진 중 (세부 구역 미고시)'));
+    return;
+  }
   const ordered=[...children].sort((a,b)=>(a.drawing_code??a.name).localeCompare(b.drawing_code??b.name,'ko',{numeric:true}));
   panel.append(comparisonTable(town,ordered,zone,select,badge));
   const list=el('ul',null,'sub-area-cards');list.setAttribute('aria-label',town.name+' 세부 사업구역');
@@ -524,7 +559,7 @@ function subAreas(panel,town,zone,children,boundaries,select,badge){
     const sizes=values(child);
     const siteOnly=sizes.area==null && Number.isFinite(child.housing_site_area_m2);
     const entries=[['대표 지번',child.registered_address],['계획',sizes.planned==null && child.previous_plan?'최신 배분 미확인':formatValue(sizes.planned,'세대')],[siteOnly?'공동주택용지':child.project_area_label??'면적',formatValue(siteOnly?child.housing_site_area_m2:sizes.area,'㎡')],['시공사',zoneContractorText(child)??contractorProcedure(child)?.stage],['지도 위치',boundaryLabel(boundaries.get(child.id))??(child.representative_point?'대표 지번 핀':null)]];
-    if(sizes.planned==null && child.previous_plan)entries.push(['공람 당시',previousPlanLabel(child)]);
+    if(sizes.planned==null && child.previous_plan)entries.push(['이전 계획',previousPlanLabel(child)]);
     if(!child.registered_address && child.representative_point_evidence?.address)entries.push(['지도 표시용 필지',child.representative_point_evidence.address]);
     for(const [label,value] of entries.sort((a,b)=>Number(!a[1]||a[1]===pending)-Number(!b[1]||b[1]===pending))){
       const fallback=label==='시공사' && child.field_evidence?.contractor_review?reviewedContractorLabel:pending;
@@ -718,7 +753,8 @@ export function renderProjectDetail(container,{town,zone,children,boundaries,sna
     header.querySelector('.copy-link').before(button);
   }
   container.append(header);
-  const areasLabel=!children.length && town.contractor_projects?.length?'사업조합 ('+town.contractor_projects.length+')':'세부구역 ('+children.length+')';
+  const areasLabel=children.length?'세부구역 ('+children.length+')':town.sub_area_review?.reported_count?
+    '공개 구역 ('+town.sub_area_review.reported_count+')':town.contractor_projects?.length?'사업조합 ('+town.contractor_projects.length+')':'세부구역 (0)';
   const {panels,activate}=detailTabs(container,areasLabel,r.land_transaction_permit?.designated===true);
   if(comparison){
     const cta=el('button',null,'compare-areas');cta.type='button';cta.setAttribute('aria-controls','pane-areas');

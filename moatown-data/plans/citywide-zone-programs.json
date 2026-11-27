@@ -3881,6 +3881,26 @@
           ]
         }
       }
+    },
+    "mz-linked-resident-021-01": {
+      "units": 153,
+      "floors": 10,
+      "scope": "망원동 464-1번지 일원 가로주택정비사업",
+      "kind": "공개 사업계획",
+      "source_url": "https://cleanup.seoul.go.kr/cafe/mastr-cleanup-bsnsSumry/execute.do?cafeId=440900001453f24&div=sumry&stepSeCode=102",
+      "source_as_of": null,
+      "checked_on": "2026-11-27",
+      "evidence": "조합 사업개요의 3,992.2㎡, 분양 122세대, 임대 11+20세대."
+    },
+    "mz-linked-extra-002-01": {
+      "units": 154,
+      "floors": 7,
+      "scope": "신창동 76-1번지 일대 가로주택정비사업",
+      "kind": "공개 사업계획",
+      "source_url": "https://cleanup.seoul.go.kr/cafe/mastr-cleanup-bsnsSumry/execute.do?cafeId=170900001315p91&div=sumry&stepSeCode=102",
+      "source_as_of": null,
+      "checked_on": "2026-11-27",
+      "evidence": "조합 사업개요의 6,071.1㎡, 분양 75+63세대, 임대 16세대(추정)."
     }
   },
   "previous_geometry_programs": {

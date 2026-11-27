@@ -1,10 +1,14 @@
-import {dayNumber,projectEvents,contractorProcedure} from './detail-format.mjs?v=1c27586b7e92';
+import {dayNumber,projectEvents,contractorProcedure} from './detail-format.mjs?v=49b66672088f';
 
 export const managementFilters=[
   ['selected','선정 대상지 전체'],['draft','관리계획 수립 중'],['approved','관리계획 승인'],
   ['unknown','관리계획 미확인'],['canceled','취소 이력']
 ];
 export const progressFilters=[
+  ['resident-resurvey','주민 찬반 재조사','주민 찬반 재조사'],
+  ['consent-planned','동의서 징구 예정','동의서 징구 예정'],
+  ['founding-meeting','조합창립총회 완료','창립총회 완료'],
+  ['association-change-approved','조합설립변경인가','조합 변경인가'],
   ['project-type-review','사업유형 검토 중','방식 검토 중'],
   ['before-consent','조합설립 동의서 검인 전','동의서 검인 전'],
   ['resident-consent','주민동의 확보 중','주민동의 확보'],
@@ -121,7 +125,7 @@ export function searchProjects(towns,groups,excluded,{query='',district='',plan=
       const def=progressFilters.find(([,label])=>label===stage);
       if(progress && progress!==def?.[0])continue;
       const code=zone.drawing_code?.replace(/^([A-Z])-?(?=\d)/,'$1');
-      const zoneFields=[zone.name,zone.project_name,zone.registered_address,zone.drawing_code,code,code?.replace(/^([A-Z])(?=\d)/,'$1-'),stage,zone.field_evidence?.stage?.source_label,def?.[2],...contractorTerms(zone.selected_contractor)];
+      const zoneFields=[zone.name,zone.project_name,zone.registered_address,zone.drawing_code,code,code?.replace(/^([A-Z])(?=\d)/,'$1-'),stage,zone.field_evidence?.stage?.source_label,zone.field_evidence?.stage_review?.context_label,def?.[2],...contractorTerms(zone.selected_contractor)];
       if(procedure && (!contractor || contractor==='pending')){
         zoneFields.push(procedure.stage,...procedure.participants.flatMap(p=>[p.role,...p.names]));
       }

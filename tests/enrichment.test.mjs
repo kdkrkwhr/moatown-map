@@ -288,3 +288,33 @@ test('all linked projects have a unique ID and the Hapjeong plan reconciles acro
   assert.equal(sum(z=>z.housing_allocation.rental),129);
   assert.ok(group.every(z=>z.housing_allocation.members===null && z.housing_allocation.general===null));
 });
+test('the citywide audit covers every previously unlinked town and GIS review row',()=>{
+  const previous=read('snapshots/2026-11-27/november-review/towns.json');
+  const previousReview=read('snapshots/2026-11-27/november-review/review.json');
+  const current=read(files.review);
+  const audit=current.citywide_link_audit;
+  const byTown=new Map(towns.map(t=>[t.id,t]));
+  const before=previous.filter(t=>!t.sub_areas?.length).map(t=>t.id).sort();
+  assert.deepEqual(audit.town_reviews.map(r=>r.town_id).sort(),before);
+  for(const entry of audit.town_reviews){
+    const t=byTown.get(entry.town_id);
+    assert.deepEqual(entry.linked_zone_ids,t.sub_areas);
+    assert.ok(t.sub_area_review.note && t.sub_area_review.sources.some(s=>s.url?.startsWith('https://')));
+  }
+  const reviewed=new Map(audit.feature_reviews.map(r=>[r.feature_id,r]));
+  assert.equal(reviewed.size,audit.feature_reviews.length);
+  assert.deepEqual(audit.previously_unlinked_feature_ids,previousReview.unlinked_or_conflicting_features.map(r=>r.source_feature_id).sort());
+  for(const id of audit.previously_unlinked_feature_ids)assert.ok(reviewed.get(id)?.outcome);
+  const refs=[...towns,...zones].flatMap(r=>r.registered_project_references??[]);
+  assert.equal(new Set(refs.map(r=>r.feature_id)).size,refs.length);
+  for(const r of refs)assert.ok(r.register_row && r.parcel_pnu && r.geometry_source && r.source_url && reviewed.has(r.feature_id));
+  const gaebong=byTown.get('mt-202603-resident-042');
+  assert.ok(gaebong.sub_area_review.reported_count===3 && !gaebong.sub_areas.length);
+  const ilwon=byTown.get('mt-2026-extra-012');
+  assert.equal(ilwon.name,'일원동 720');
+  assert.deepEqual(ilwon.rights_cutoff_history.map(x=>x.date),['2024-06-05','2025-07-25']);
+  assert.equal(ilwon.rights_cutoff_date,null);
+  assert.ok(ilwon.land_transaction_permit.roads_only);
+  assert.ok(byTown.get('mt-202603-public-087').name.includes('619-641'));
+  assert.ok(current.resolved_notice_rows.some(x=>x.matched_excluded_address?.includes('월계동 500')));
+});

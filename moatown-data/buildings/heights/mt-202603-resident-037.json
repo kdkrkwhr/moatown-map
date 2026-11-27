@@ -1,0 +1,67 @@
+{
+  "town_id": "mt-202603-resident-037",
+  "source": "서울특별시 서울부동산정보광장 건물 지도",
+  "source_url": "https://land.seoul.go.kr/land/map/land/map.do",
+  "wfs_url": "https://land.seoul.go.kr/land/geoserver/wfs.do",
+  "source_as_of": null,
+  "checked_on": "2026-11-27",
+  "date_note": "source_record_date는 원천 도형의 h_date이다. 지도 전체의 기준일은 확인되지 않았다.",
+  "method_note": "EPSG:5179에서 두 건물 도형의 교집합 면적을 합집합 면적으로 나눈 값(IoU)이 0.9 이상이어야 한다. 양방향에서 IoU 0.1 초과 후보가 하나여야 하며 도로명주소 건물(gro_flo_co, IoU 0.6 이상)과 층수가 다르면 보류한다. 지도 층수에 3m를 곱한 추정 높이다.",
+  "coverage": {
+    "originally_missing": 39,
+    "matched": 1,
+    "still_missing": 38
+  },
+  "records": {
+    "0000197253984416770700000000": {
+      "floors": 1,
+      "height_m": 3,
+      "height_source": "estimated_from_floors",
+      "source_url": "https://land.seoul.go.kr/land/map/land/map.do",
+      "source_layer": "landbiz:tl_nrm_buld",
+      "source_field": "flr_num",
+      "source_id": "1000376120544B00110000000000000392",
+      "source_as_of": null,
+      "source_record_date": "2024-06-24",
+      "method": "unique_footprint_iou",
+      "overlap_iou": 0.9371
+    }
+  },
+  "audit": {
+    "building_chunks": [
+      "7d8ba59b96e1f395da738e399583b0dd5007071ab888b58c2de18a710de6d51a"
+    ],
+    "bbox_epsg_5179": [
+      952903,
+      1941712,
+      953877,
+      1942508
+    ],
+    "wfs_pages_sha256": {
+      "landbiz:tl_nrm_buld": [
+        "652113afec8896e360f9e3866a25f53d16f84262657b8c28723d234e634f80cd",
+        "89a9140315cc2156f0da318c8506ce3e94678ee3c627360f676be69f2c50a780",
+        "4a4d14db43129f55c97eeee393fee0749b9ed2c55a8c7ec8c55b6e0a3b6ad445"
+      ],
+      "landbiz:tl_sdw_buld": [
+        "2a029371f4d0d4ba98b32d186f2ad875d12706e9cc422602bb965d6ea2aa0bd5",
+        "c82a0bb148cda0b90093e2bffd505f0f705433cbe30f0bf0047bebc5fa4374fd",
+        "2081c615f4e6c9dd345d428b73d88510350775699f9a5d1efc38c5610e35a28f"
+      ]
+    },
+    "method_version": 1,
+    "topographic_rows": 2782,
+    "road_rows": 2105,
+    "nonunique_source_ids": [],
+    "originally_missing_by_area": {
+      "inside": 5,
+      "crossing": 0,
+      "nearby": 34
+    },
+    "matched_by_area": {
+      "inside": 0,
+      "crossing": 0,
+      "nearby": 1
+    }
+  }
+}

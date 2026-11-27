@@ -6,62 +6,62 @@
     "status": "partial",
     "baseline_as_of": "2026-03-31",
     "official_baseline_rows": 132,
-    "town_records": 142,
-    "post_baseline_additions": 11,
+    "town_records": 143,
+    "post_baseline_additions": 12,
     "districts_with_records": 24,
     "official_cancellations_reviewed": 11,
     "baseline_rows_removed_by_confirmed_cancellation": 1,
-    "zone_records": 302,
-    "boundary_features": 206,
-    "representative_points": 138,
+    "zone_records": 340,
+    "boundary_features": 279,
+    "representative_points": 143,
     "limitations": [
       "2026-03-31 명부와 확인된 취소 자료에 근거한 초기 자료이며, 현재 전체 명부가 아닙니다.",
       "확인된 후속 공식 선정 일부를 추가했습니다. 최신 전체 선정·정정, 전체 사업구역 상세와 경계는 전수 확인하지 못했습니다.",
       "서울시 공간자료와 고시 도면에서 확인한 참고 경계를 표시합니다. 개별 필지의 법정 구역 포함 여부는 관할 기관의 최신 고시로 확인해야 합니다."
     ],
-    "representative_points_unmatched_or_unchecked": 4,
+    "representative_points_unmatched_or_unchecked": 0,
     "representative_points_by_kind": {
       "official_project_geometry_reference_point": 100,
-      "representative_parcel_interior": 38
+      "representative_parcel_interior": 43
     },
-    "town_reference_boundaries": 112,
-    "zone_reference_boundaries": 94,
+    "town_reference_boundaries": 143,
+    "zone_reference_boundaries": 136,
     "legal_boundary_features": 0,
-    "zone_records_with_plan_numbers": 291,
+    "zone_records_with_plan_numbers": 311,
     "towns_with_management_plan_notices": 89,
     "management_plan_notice_records": 167,
-    "zones_with_contractor": 71,
+    "zones_with_contractor": 73,
     "zones_with_unit_types": 2,
     "indexed_parcels": 896467,
     "indexed_districts": 25,
-    "towns_with_linked_zones": 100,
-    "zones_with_stage": 225,
-    "zones_with_owner_count": 145,
-    "towns_with_cutoff_history": 135,
+    "towns_with_linked_zones": 128,
+    "zones_with_stage": 239,
+    "zones_with_owner_count": 154,
+    "towns_with_cutoff_history": 136,
     "towns_with_single_cutoff_date": 13,
-    "towns_with_permit_notice": 53,
+    "towns_with_permit_notice": 54,
     "towns_with_zoning": 129,
     "zones_with_zoning": 31,
-    "zones_with_allocation": 247,
-    "zones_with_planned_units_per_owner": 118,
+    "zones_with_allocation": 263,
+    "zones_with_planned_units_per_owner": 122,
     "zones_with_member_general_rental": 2,
-    "zone_representative_points": 274,
-    "zone_point_only": 188,
+    "zone_representative_points": 292,
+    "zone_point_only": 178,
     "towns_with_permit_legal_dong_notice": 81,
-    "towns_with_permit_record": 134,
+    "towns_with_permit_record": 135,
     "towns_with_plan_zoning": 37,
-    "towns_with_permit_site_notice": 53,
+    "towns_with_permit_site_notice": 54,
     "towns_with_planned_units": 103,
     "towns_with_existing_units": 60,
     "towns_with_owner_count": 43,
     "towns_with_aging_ratio": 96,
     "towns_with_plan_floors": 61,
-    "towns_with_rental_units": 91,
-    "towns_with_association_contractor_records": 3,
-    "association_contractor_records_without_zone_cards": 2,
+    "towns_with_rental_units": 90,
+    "towns_with_association_contractor_records": 1,
+    "association_contractor_records_without_zone_cards": 0,
     "zones_with_contractor_procedure": 9,
     "association_contractor_records_within_zones": 17,
-    "association_contractor_records_at_town_level": 4
+    "association_contractor_records_at_town_level": 2
   },
   "source_urls": {
     "official_baseline": "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status",
@@ -80,10 +80,10 @@
     "seoul_gazette_4016": "https://event.seoul.go.kr/seoulsibo/fileDownload.do?fileName=seoulsibo_20241017085543_69127.pdf"
   },
   "files": {
-    "towns": "snapshots/2026-11-27/november-review/towns.json",
-    "zones": "snapshots/2026-11-27/november-review/zones.json",
-    "boundaries": "snapshots/2026-11-27/november-review/boundaries.geojson",
-    "excluded": "snapshots/2026-11-24/excluded.json",
+    "towns": "snapshots/2026-11-27/citywide-links/towns.json",
+    "zones": "snapshots/2026-11-27/citywide-links/zones.json",
+    "boundaries": "snapshots/2026-11-27/citywide-links/boundaries.geojson",
+    "excluded": "snapshots/2026-11-27/citywide-links/excluded.json",
     "parcel_index": "addresses/index.json",
     "buildings": "buildings/index.json",
     "current_site_sources": "plans/current-site-sources.json",
@@ -105,11 +105,35 @@
     "sinwol_design": "plans/sinwol/design-evidence.json",
     "sinwol_layout": "plans/sinwol/a3-layout.geojson",
     "pilot_plans": "snapshots/2026-11-25/pilot-plans.json",
-    "review": "snapshots/2026-11-27/november-review/review.json",
+    "review": "snapshots/2026-11-27/citywide-links/review.json",
     "registry_heights": "buildings/registry-heights.json",
     "unplaced_programs": "plans/unplaced-programs.json",
     "beon_public_space": "plans/beon/public-space.geojson",
     "myeonmok_public_space": "plans/myeonmok/public-space.geojson",
+    "building_town_details_mt-2026-extra-001": "buildings/details/mt-2026-extra-001.json",
+    "building_town_heights_mt-2026-extra-001": "buildings/heights/mt-2026-extra-001.json",
+    "building_town_details_mt-2026-extra-002": "buildings/details/mt-2026-extra-002.json",
+    "building_town_heights_mt-2026-extra-002": "buildings/heights/mt-2026-extra-002.json",
+    "building_town_details_mt-2026-extra-003": "buildings/details/mt-2026-extra-003.json",
+    "building_town_heights_mt-2026-extra-003": "buildings/heights/mt-2026-extra-003.json",
+    "building_town_details_mt-2026-extra-004": "buildings/details/mt-2026-extra-004.json",
+    "building_town_heights_mt-2026-extra-004": "buildings/heights/mt-2026-extra-004.json",
+    "building_town_details_mt-2026-extra-005": "buildings/details/mt-2026-extra-005.json",
+    "building_town_heights_mt-2026-extra-005": "buildings/heights/mt-2026-extra-005.json",
+    "building_town_details_mt-2026-extra-006": "buildings/details/mt-2026-extra-006.json",
+    "building_town_heights_mt-2026-extra-006": "buildings/heights/mt-2026-extra-006.json",
+    "building_town_details_mt-2026-extra-007": "buildings/details/mt-2026-extra-007.json",
+    "building_town_heights_mt-2026-extra-007": "buildings/heights/mt-2026-extra-007.json",
+    "building_town_details_mt-2026-extra-008": "buildings/details/mt-2026-extra-008.json",
+    "building_town_heights_mt-2026-extra-008": "buildings/heights/mt-2026-extra-008.json",
+    "building_town_details_mt-2026-extra-009": "buildings/details/mt-2026-extra-009.json",
+    "building_town_heights_mt-2026-extra-009": "buildings/heights/mt-2026-extra-009.json",
+    "building_town_details_mt-2026-extra-010": "buildings/details/mt-2026-extra-010.json",
+    "building_town_heights_mt-2026-extra-010": "buildings/heights/mt-2026-extra-010.json",
+    "building_town_details_mt-2026-extra-011": "buildings/details/mt-2026-extra-011.json",
+    "building_town_heights_mt-2026-extra-011": "buildings/heights/mt-2026-extra-011.json",
+    "building_town_details_mt-2026-extra-012": "buildings/details/mt-2026-extra-012.json",
+    "building_town_heights_mt-2026-extra-012": "buildings/heights/mt-2026-extra-012.json",
     "building_town_details_mt-202603-public-001": "buildings/details/mt-202603-public-001.json",
     "building_town_heights_mt-202603-public-001": "buildings/heights/mt-202603-public-001.json",
     "building_town_details_mt-202603-public-002": "buildings/details/mt-202603-public-002.json",
@@ -276,6 +300,8 @@
     "building_town_heights_mt-202603-public-085": "buildings/heights/mt-202603-public-085.json",
     "building_town_details_mt-202603-public-086": "buildings/details/mt-202603-public-086.json",
     "building_town_heights_mt-202603-public-086": "buildings/heights/mt-202603-public-086.json",
+    "building_town_details_mt-202603-public-087": "buildings/details/mt-202603-public-087.json",
+    "building_town_heights_mt-202603-public-087": "buildings/heights/mt-202603-public-087.json",
     "building_town_details_mt-202603-public-088": "buildings/details/mt-202603-public-088.json",
     "building_town_heights_mt-202603-public-088": "buildings/heights/mt-202603-public-088.json",
     "building_town_details_mt-202603-resident-001": "buildings/details/mt-202603-resident-001.json",
@@ -288,6 +314,8 @@
     "building_town_heights_mt-202603-resident-005": "buildings/heights/mt-202603-resident-005.json",
     "building_town_details_mt-202603-resident-006": "buildings/details/mt-202603-resident-006.json",
     "building_town_heights_mt-202603-resident-006": "buildings/heights/mt-202603-resident-006.json",
+    "building_town_details_mt-202603-resident-007": "buildings/details/mt-202603-resident-007.json",
+    "building_town_heights_mt-202603-resident-007": "buildings/heights/mt-202603-resident-007.json",
     "building_town_details_mt-202603-resident-008": "buildings/details/mt-202603-resident-008.json",
     "building_town_heights_mt-202603-resident-008": "buildings/heights/mt-202603-resident-008.json",
     "building_town_details_mt-202603-resident-009": "buildings/details/mt-202603-resident-009.json",
@@ -300,18 +328,28 @@
     "building_town_heights_mt-202603-resident-012": "buildings/heights/mt-202603-resident-012.json",
     "building_town_details_mt-202603-resident-013": "buildings/details/mt-202603-resident-013.json",
     "building_town_heights_mt-202603-resident-013": "buildings/heights/mt-202603-resident-013.json",
+    "building_town_details_mt-202603-resident-014": "buildings/details/mt-202603-resident-014.json",
+    "building_town_heights_mt-202603-resident-014": "buildings/heights/mt-202603-resident-014.json",
+    "building_town_details_mt-202603-resident-015": "buildings/details/mt-202603-resident-015.json",
+    "building_town_heights_mt-202603-resident-015": "buildings/heights/mt-202603-resident-015.json",
     "building_town_details_mt-202603-resident-016": "buildings/details/mt-202603-resident-016.json",
     "building_town_heights_mt-202603-resident-016": "buildings/heights/mt-202603-resident-016.json",
     "building_town_details_mt-202603-resident-017": "buildings/details/mt-202603-resident-017.json",
     "building_town_heights_mt-202603-resident-017": "buildings/heights/mt-202603-resident-017.json",
     "building_town_details_mt-202603-resident-018": "buildings/details/mt-202603-resident-018.json",
     "building_town_heights_mt-202603-resident-018": "buildings/heights/mt-202603-resident-018.json",
+    "building_town_details_mt-202603-resident-019": "buildings/details/mt-202603-resident-019.json",
+    "building_town_heights_mt-202603-resident-019": "buildings/heights/mt-202603-resident-019.json",
     "building_town_details_mt-202603-resident-020": "buildings/details/mt-202603-resident-020.json",
     "building_town_heights_mt-202603-resident-020": "buildings/heights/mt-202603-resident-020.json",
+    "building_town_details_mt-202603-resident-021": "buildings/details/mt-202603-resident-021.json",
+    "building_town_heights_mt-202603-resident-021": "buildings/heights/mt-202603-resident-021.json",
     "building_town_details_mt-202603-resident-022": "buildings/details/mt-202603-resident-022.json",
     "building_town_heights_mt-202603-resident-022": "buildings/heights/mt-202603-resident-022.json",
     "building_town_details_mt-202603-resident-023": "buildings/details/mt-202603-resident-023.json",
     "building_town_heights_mt-202603-resident-023": "buildings/heights/mt-202603-resident-023.json",
+    "building_town_details_mt-202603-resident-024": "buildings/details/mt-202603-resident-024.json",
+    "building_town_heights_mt-202603-resident-024": "buildings/heights/mt-202603-resident-024.json",
     "building_town_details_mt-202603-resident-025": "buildings/details/mt-202603-resident-025.json",
     "building_town_heights_mt-202603-resident-025": "buildings/heights/mt-202603-resident-025.json",
     "building_town_details_mt-202603-resident-026": "buildings/details/mt-202603-resident-026.json",
@@ -320,12 +358,36 @@
     "building_town_heights_mt-202603-resident-027": "buildings/heights/mt-202603-resident-027.json",
     "building_town_details_mt-202603-resident-028": "buildings/details/mt-202603-resident-028.json",
     "building_town_heights_mt-202603-resident-028": "buildings/heights/mt-202603-resident-028.json",
+    "building_town_details_mt-202603-resident-029": "buildings/details/mt-202603-resident-029.json",
+    "building_town_heights_mt-202603-resident-029": "buildings/heights/mt-202603-resident-029.json",
+    "building_town_details_mt-202603-resident-030": "buildings/details/mt-202603-resident-030.json",
+    "building_town_heights_mt-202603-resident-030": "buildings/heights/mt-202603-resident-030.json",
     "building_town_details_mt-202603-resident-031": "buildings/details/mt-202603-resident-031.json",
     "building_town_heights_mt-202603-resident-031": "buildings/heights/mt-202603-resident-031.json",
+    "building_town_details_mt-202603-resident-032": "buildings/details/mt-202603-resident-032.json",
+    "building_town_heights_mt-202603-resident-032": "buildings/heights/mt-202603-resident-032.json",
+    "building_town_details_mt-202603-resident-033": "buildings/details/mt-202603-resident-033.json",
+    "building_town_heights_mt-202603-resident-033": "buildings/heights/mt-202603-resident-033.json",
+    "building_town_details_mt-202603-resident-034": "buildings/details/mt-202603-resident-034.json",
+    "building_town_heights_mt-202603-resident-034": "buildings/heights/mt-202603-resident-034.json",
     "building_town_details_mt-202603-resident-035": "buildings/details/mt-202603-resident-035.json",
     "building_town_heights_mt-202603-resident-035": "buildings/heights/mt-202603-resident-035.json",
     "building_town_details_mt-202603-resident-036": "buildings/details/mt-202603-resident-036.json",
     "building_town_heights_mt-202603-resident-036": "buildings/heights/mt-202603-resident-036.json",
+    "building_town_details_mt-202603-resident-037": "buildings/details/mt-202603-resident-037.json",
+    "building_town_heights_mt-202603-resident-037": "buildings/heights/mt-202603-resident-037.json",
+    "building_town_details_mt-202603-resident-038": "buildings/details/mt-202603-resident-038.json",
+    "building_town_heights_mt-202603-resident-038": "buildings/heights/mt-202603-resident-038.json",
+    "building_town_details_mt-202603-resident-039": "buildings/details/mt-202603-resident-039.json",
+    "building_town_heights_mt-202603-resident-039": "buildings/heights/mt-202603-resident-039.json",
+    "building_town_details_mt-202603-resident-040": "buildings/details/mt-202603-resident-040.json",
+    "building_town_heights_mt-202603-resident-040": "buildings/heights/mt-202603-resident-040.json",
+    "building_town_details_mt-202603-resident-041": "buildings/details/mt-202603-resident-041.json",
+    "building_town_heights_mt-202603-resident-041": "buildings/heights/mt-202603-resident-041.json",
+    "building_town_details_mt-202603-resident-042": "buildings/details/mt-202603-resident-042.json",
+    "building_town_heights_mt-202603-resident-042": "buildings/heights/mt-202603-resident-042.json",
+    "building_town_details_mt-202603-resident-043": "buildings/details/mt-202603-resident-043.json",
+    "building_town_heights_mt-202603-resident-043": "buildings/heights/mt-202603-resident-043.json",
     "building_town_details_mt-202603-resident-044": "buildings/details/mt-202603-resident-044.json",
     "building_town_heights_mt-202603-resident-044": "buildings/heights/mt-202603-resident-044.json"
   },
@@ -344,6 +406,18 @@
   "checked_on": "2026-11-27",
   "pilot_3d": {
     "town_ids": [
+      "mt-2026-extra-001",
+      "mt-2026-extra-002",
+      "mt-2026-extra-003",
+      "mt-2026-extra-004",
+      "mt-2026-extra-005",
+      "mt-2026-extra-006",
+      "mt-2026-extra-007",
+      "mt-2026-extra-008",
+      "mt-2026-extra-009",
+      "mt-2026-extra-010",
+      "mt-2026-extra-011",
+      "mt-2026-extra-012",
       "mt-202603-public-001",
       "mt-202603-public-002",
       "mt-202603-public-003",
@@ -430,34 +504,58 @@
       "mt-202603-public-084",
       "mt-202603-public-085",
       "mt-202603-public-086",
+      "mt-202603-public-087",
       "mt-202603-public-088",
       "mt-202603-resident-001",
       "mt-202603-resident-002",
       "mt-202603-resident-003",
       "mt-202603-resident-005",
       "mt-202603-resident-006",
+      "mt-202603-resident-007",
       "mt-202603-resident-008",
       "mt-202603-resident-009",
       "mt-202603-resident-010",
       "mt-202603-resident-011",
       "mt-202603-resident-012",
       "mt-202603-resident-013",
+      "mt-202603-resident-014",
+      "mt-202603-resident-015",
       "mt-202603-resident-016",
       "mt-202603-resident-017",
       "mt-202603-resident-018",
+      "mt-202603-resident-019",
       "mt-202603-resident-020",
+      "mt-202603-resident-021",
       "mt-202603-resident-022",
       "mt-202603-resident-023",
+      "mt-202603-resident-024",
       "mt-202603-resident-025",
       "mt-202603-resident-026",
       "mt-202603-resident-027",
       "mt-202603-resident-028",
+      "mt-202603-resident-029",
+      "mt-202603-resident-030",
       "mt-202603-resident-031",
+      "mt-202603-resident-032",
+      "mt-202603-resident-033",
+      "mt-202603-resident-034",
       "mt-202603-resident-035",
       "mt-202603-resident-036",
+      "mt-202603-resident-037",
+      "mt-202603-resident-038",
+      "mt-202603-resident-039",
+      "mt-202603-resident-040",
+      "mt-202603-resident-041",
+      "mt-202603-resident-042",
+      "mt-202603-resident-043",
       "mt-202603-resident-044"
     ],
     "plan_town_ids": [
+      "mt-2026-extra-002",
+      "mt-2026-extra-003",
+      "mt-2026-extra-004",
+      "mt-2026-extra-006",
+      "mt-2026-extra-007",
       "mt-202603-public-001",
       "mt-202603-public-002",
       "mt-202603-public-003",
@@ -496,6 +594,7 @@
       "mt-202603-public-037",
       "mt-202603-public-038",
       "mt-202603-public-039",
+      "mt-202603-public-041",
       "mt-202603-public-042",
       "mt-202603-public-043",
       "mt-202603-public-044",
@@ -538,6 +637,7 @@
       "mt-202603-public-084",
       "mt-202603-public-085",
       "mt-202603-public-086",
+      "mt-202603-public-087",
       "mt-202603-public-088",
       "mt-202603-resident-001",
       "mt-202603-resident-002",
@@ -550,27 +650,33 @@
       "mt-202603-resident-011",
       "mt-202603-resident-012",
       "mt-202603-resident-013",
+      "mt-202603-resident-014",
+      "mt-202603-resident-015",
       "mt-202603-resident-016",
       "mt-202603-resident-017",
       "mt-202603-resident-018",
+      "mt-202603-resident-019",
       "mt-202603-resident-020",
+      "mt-202603-resident-021",
       "mt-202603-resident-022",
       "mt-202603-resident-023",
       "mt-202603-resident-025",
       "mt-202603-resident-027",
       "mt-202603-resident-028",
+      "mt-202603-resident-029",
       "mt-202603-resident-031",
+      "mt-202603-resident-033",
       "mt-202603-resident-035"
     ],
     "hashes": {
-      "towns": "850335fe30d0c6def3a1d9ea02f3b0230dcaf9864a9f4e8d5643d95d52d77f28",
-      "zones": "a63e37aa9132ea403abff0ef63e211998b3484fd56f2cec7bc771f9ef2fa46a9",
-      "boundaries": "175797b60d2119506506c11ad7b0fc76679bc2ad9ffd2ef507ebafee5a8cc2d2",
-      "buildings": "669de9df67f6d7756576319355b1edd3b06b811558efd119476f47a1aa80ab04",
+      "towns": "0ffbd11b534e511cf86a4659d8b0952ed2a7565dea658e094080e3ef2a6edde7",
+      "zones": "8b0964404362069a139cb38a66c36d113d70a70fd77bf160ce946193b8a8ca1c",
+      "boundaries": "fc520afdb135fffd981425a5247f9bb31a867ed79cc3534ff9431f3725342105",
+      "buildings": "1218bf0efd898bc78094aee334ca14fae2aa53fb5584cea63003e4c15d83d2c3",
       "pilot_plans": "356e909dd659cc5046716573b8e5ef30ee1a1f14fa5b1d1297245d6389d2c633",
-      "building_height_review": "7e49579a271b7bddde35b0b3cce600592d01b3721c1d0abadc73965c4595637d",
+      "building_height_review": "293fdcbb2f089f9e331330fdd19c3d89e50d25e1ba506333fefa68197ea287d4",
       "registry_heights": "8a682c9f625e80dfc837fbf64390d583daae4a57ad8a735b13702e351829245c",
-      "unplaced_programs": "91b68715d9bf2024154afa66453e70104b4fa55f0f59e35c6a0085d3ca2b5b20",
+      "unplaced_programs": "b4c578df94888d983b626269a236c29a89bd98fec2d021d8214a04548f89c9b5",
       "beon_design": "5021c7f9a009d4e1d24d70faa334a827402e900ad21ae312acff5bb74c873f91",
       "myeonmok_design": "f6ce114c85fc8e6e56282cd14a0a0b756db4730c5498acbc6d9da578241a0231",
       "sinwol_design": "66e8e6c28451472105e64bb292299fbd4afe815900d3cdced928e2057a192bfa",
@@ -586,6 +692,18 @@
       "beon_current_details": "a168e5a7622f8792f3477188953fe5ca760bf961536cd374eb4fce78cdc76c45",
       "myeonmok_current_details": "af300f3c7f4e28dea1d044373b0065095c1f63d98e152afad5a3c92dc53bb279",
       "sinwol_current_details": "3af3b79ca334c8fce74bc05d460cb3ff94785be9bfc1dd93c2082dab10ffa01f",
+      "building_town_details_mt-2026-extra-001": "6a84173255a98bfb1a31fae58a3a0cdca84ffdeaf8ce5758e4e8fb89f4991c4c",
+      "building_town_details_mt-2026-extra-002": "f2f9d1c53d770895ba99ce62c6d9ee3638d10454db0be1ee1866579e76ee1be0",
+      "building_town_details_mt-2026-extra-003": "281031e5e55e3b64b304674a96314279af152424281d7cd41654b805465642aa",
+      "building_town_details_mt-2026-extra-004": "ec489311204b2e67f703e87c306e4e14a350b4a6ff012d9615d2776aa4e0d032",
+      "building_town_details_mt-2026-extra-005": "6e88006e7e97722b23143cd5557b4312c4e8ca5284fde46a288823b2ad03801f",
+      "building_town_details_mt-2026-extra-006": "54a90074adbff7572c8616dbfec13ead2f23ae7246d09c020247d841f19d12ca",
+      "building_town_details_mt-2026-extra-007": "13d0998facf4f91bca070057449809d77323b91077ec819f0afb16dfddc0bc09",
+      "building_town_details_mt-2026-extra-008": "632293fe8d239a35de323e9f083ec24726284d4e09321988c7fec3fac7dc62a8",
+      "building_town_details_mt-2026-extra-009": "0902cb5c2ee24e822a90cfd55229b78b38cb77604ec623b40d571ad7411daf6c",
+      "building_town_details_mt-2026-extra-010": "ee31f0e1b46cfa3d2a4c13edccf58a43d9ef8bc40c66dc116f9346379a222f5f",
+      "building_town_details_mt-2026-extra-011": "661f2d457cdd6a60847000e57171f7af2d655dbf5fdb7279c301aad97d167132",
+      "building_town_details_mt-2026-extra-012": "35a491c39900ac4e0b059b2618ca79a550013d359caf59a60ef59752a88adbb3",
       "building_town_details_mt-202603-public-001": "724fa77611c9d3fac79328f82e37760e5427bbff266caedb09bc8de9929a973f",
       "building_town_details_mt-202603-public-002": "adb031882f38b5459124f890cab4afbb607b4c879fedb065cf0348eb41e7dd9c",
       "building_town_details_mt-202603-public-003": "8c23b384e75b7e2fd99a17bfc045f4ffc6d05d91f1e68735662cb48f8a594efd",
@@ -669,35 +787,66 @@
       "building_town_details_mt-202603-public-084": "93bf2b372aa4af68a5158f06253bffcc7806a6926f9e5cc777ed6e79033def00",
       "building_town_details_mt-202603-public-085": "760f4170e8fefb142916da7bbd571699e3244ff9a3f6d18056cb9179bd8a08b8",
       "building_town_details_mt-202603-public-086": "68a5712da94509248e52391eaec355a70b1f7fba9f2a0ae56621b7be09919b9d",
+      "building_town_details_mt-202603-public-087": "12c7a4a5985596bdffd60bef485039158c14e8e24c93d8e9d657bf2fad76791d",
       "building_town_details_mt-202603-public-088": "d52b6f6791c90b7d943145588f6f98e70844d082a4e14bc2f7f3cdf86a16c3f9",
       "building_town_details_mt-202603-resident-001": "d72a7bb7bf5ece68b9fb13e3476dfc84be2223030a593d704c5430e3ebdf9f50",
       "building_town_details_mt-202603-resident-002": "7285162af1cd631ecc8087d89adb794fc2b13650dc14d3432ce518af81426132",
       "building_town_details_mt-202603-resident-003": "6e060b6e00b73a5668bccdf7665471908dfa664ad64f25e005f6ebb249da6f42",
       "building_town_details_mt-202603-resident-005": "d0fb1307b0bc8c4fbb6e849dfdb00972f10f52256d5ba878a1376b92dc756788",
       "building_town_details_mt-202603-resident-006": "108cfcfc400ead1d61c23afc89e8f4fd3db9b2396dc53e827fe472a10676afda",
+      "building_town_details_mt-202603-resident-007": "485672c95dcd13e37e4ddeed1030ec6c55b9b48a0a39c8f37ed334afbbe9a434",
       "building_town_details_mt-202603-resident-008": "a77a94b91bcaafa5a23ae755a4686b423e7cad19c7ec683f7ecbaaae19570819",
       "building_town_details_mt-202603-resident-009": "c9ee364c02a75e4483c44a3a02f9d6b9d83cd3f3a5c875239184f91987e15202",
       "building_town_details_mt-202603-resident-010": "1cc6dc6ab3adf011f405fff5e0a4eddd9336b89497110a5d0d1b1c18579f1361",
       "building_town_details_mt-202603-resident-011": "18d4dab1f39ab29b43b30de73ee6c975502b8a03b54c91c1e09c46ef7138f58a",
       "building_town_details_mt-202603-resident-012": "5bdb2457219c89df65cb5e700b00b49b5db4633a608a9ed231d88e86431beb44",
       "building_town_details_mt-202603-resident-013": "afccca164532aa42ce1b25987f2d548a903faefe9b64e6b10f7b413946bf9b6c",
+      "building_town_details_mt-202603-resident-014": "5161be16f163daaefd1570638cb818f60eeefa4d671bb00419a11975e3c39035",
+      "building_town_details_mt-202603-resident-015": "4d2f678cd0af7afe30d2aedbfd0a3ef0a8cd11bcf2c4981fbdc740545d2d2d9f",
       "building_town_details_mt-202603-resident-016": "5e0a850cfc27d843a45ebb090c220ed560af6f2181d942ee6ba06e657bb1c1da",
       "building_town_details_mt-202603-resident-017": "b64c1910ebc09da2831a7b10d9b7d9e05d2dc29ab6157ad640198ad3ba651f89",
       "building_town_details_mt-202603-resident-018": "733d960d1e30dd1d997e9eb2842c84b89d0ec58c65b1d24859f02bfbb1a6ef0a",
+      "building_town_details_mt-202603-resident-019": "493974d7c78a7d43ea4c92456e1b86e9e97fa36c4622b2d5c2cb89b0c2f25c42",
       "building_town_details_mt-202603-resident-020": "958a3b845b8cfb9d11004394b4dbe0a53bacae8ff38b390e568607830cfdd1fd",
+      "building_town_details_mt-202603-resident-021": "0e08843b4ad876da1b6bc89ed63d71d29612f58e6defe62eceb56bbc2885d8b9",
       "building_town_details_mt-202603-resident-022": "8845a4efad66fb2b1c5f80e9bea5572b7da9132428bad05e12235f77a594e0c8",
       "building_town_details_mt-202603-resident-023": "4fa2644c0443ebbd18c214fac0db58b2ad2541047efeae0652bafc93f2a42e89",
+      "building_town_details_mt-202603-resident-024": "5f90f3dd531b05f6b4fee265d28fdd9047935bbfe01cf0d23fcf020cbea58eaa",
       "building_town_details_mt-202603-resident-025": "1d26c1f5dce5967a0e595194e05a8a3a47ebecf3e7d4ef5ec4f566e365d59d9d",
       "building_town_details_mt-202603-resident-026": "48cd8eccc8c081a37218a4a66c5d2852c6673abb9929a51ba681d6c0d45a6401",
       "building_town_details_mt-202603-resident-027": "04709638960438845de00fba096db9a095ac5e55bdb282f88786c4f11862b82a",
       "building_town_details_mt-202603-resident-028": "c47194327a49bef3162f8dd234d3682340054042ba94108bd8c7600175f672e1",
+      "building_town_details_mt-202603-resident-029": "828e8b32b79f27152981851f297c91f8e4382c81682f10682d019a7d6f9b1b23",
+      "building_town_details_mt-202603-resident-030": "3fc92dd702396be689d55cff72e573633255faa2c103bd32a1843d07e5277fc4",
       "building_town_details_mt-202603-resident-031": "a7570d4ba113bdf92557e0581a61588f1a51166b24215d436244dfae6718f924",
+      "building_town_details_mt-202603-resident-032": "b0401311e55b5d23b3adf5dd2ca7cc27bc64c5b638116d4fb564a8f4db821623",
+      "building_town_details_mt-202603-resident-033": "2354dc1a319d8cb9473b856f508f037dc6401f0e85e16d1fc91e2cf7ac8f2db0",
+      "building_town_details_mt-202603-resident-034": "d48cf0c346dbfa496158e8fd3358cd36f66fe40742e943f40b8f8a92bbf3136d",
       "building_town_details_mt-202603-resident-035": "48f61e8e6696abdcc0cd66cd856052ff107413fd3a08b77f3f4c69daccda6cb4",
       "building_town_details_mt-202603-resident-036": "959fb08caeb1121c124726cc3e708ba1944b8dd1fcee46a4887e1f028739d977",
+      "building_town_details_mt-202603-resident-037": "3c3a0896a3164a102b7ab97700ab67bb1edce1de9d47db37cf0feb11127270a1",
+      "building_town_details_mt-202603-resident-038": "09cc149e010824373ebb7994656b850cc7cd5f271493d935ddedc93d008658d8",
+      "building_town_details_mt-202603-resident-039": "3ae32b0f0c578fafe1665e07897fa47beb57c60e9f4f096d4ca5d1213375f785",
+      "building_town_details_mt-202603-resident-040": "16d5e145b693239c1f255da415452ae88575d3aa927c6469c9444bbcdb39cb73",
+      "building_town_details_mt-202603-resident-041": "c123e107d1c489d656b89bbbeec6fd53b62a612d102e9e089c341ba9fca231a0",
+      "building_town_details_mt-202603-resident-042": "9e74187af34cf8836a06e368e536e8dcd7fd916db8b05f1c13da6e6a2698c80f",
+      "building_town_details_mt-202603-resident-043": "6fda6c3fd6006bd8697ec582c9511aa97b8010f384643934d8cfe712dfb6fb94",
       "building_town_details_mt-202603-resident-044": "d0e0dafc2e294959cd820354d9adec1f7f9f30a0bd3badcb401e7fcf53644eec",
       "beon_height_evidence": "9bd1f42064ac6979fb697e717d46a0e081ea5fd3c0315fc269ea864c9be06919",
       "myeonmok_height_evidence": "7daa9104e6c6afa9c72ae9f7793fed3fc7c1eb824d42275bf0ebefd000b0404b",
       "sinwol_height_evidence": "84edad18f79539356ffd63dac4732f0469bc751c7edcdb20b47398c6c8cfd60d",
+      "building_town_heights_mt-2026-extra-001": "2d991d3fbd57b1374fa3d32fe6dba9dab94869943150563ee6ca5944fbe1667f",
+      "building_town_heights_mt-2026-extra-002": "db1506f2e65a7e86d132daf166fb29b2b3871e48c5e06a96165d4718bee55383",
+      "building_town_heights_mt-2026-extra-003": "7714bb4d5a5ed5a4160364f35b800571d9dc7e0cb14b594e49ec74e26050267e",
+      "building_town_heights_mt-2026-extra-004": "be1f4142bd729070d7230a40f8ac5e1c1b9afe0e27ca4e2503a7b44c43c54563",
+      "building_town_heights_mt-2026-extra-005": "55f6676ecb9c852b321b576713307165e93033540a7402bd5aaa0e6b269ba39e",
+      "building_town_heights_mt-2026-extra-006": "570ba0021fc568c384782dd5b535151f1514530c763628a394a1ef59fdb2d88b",
+      "building_town_heights_mt-2026-extra-007": "5dbc6d3c8c72435895ed8113e0918e889d97ee6e4ee08c91b6c142d5e09d2a1e",
+      "building_town_heights_mt-2026-extra-008": "6ea1407902b6a635c63d3ab18547cf9c9d8d596d534296482a38c554e30fe914",
+      "building_town_heights_mt-2026-extra-009": "21e6f6f0596df6f2c37beb4b2c3fc9da4980f8121aa20235b0585bcf0004880e",
+      "building_town_heights_mt-2026-extra-010": "1217b3b6b8ca18b1d60371000c4d66bde4fd62e45dce9d632cacc209c9348ea9",
+      "building_town_heights_mt-2026-extra-011": "ff655dbbc444de929c81103043fb7f7c59e3a8d105bd5e2f035fb5d4495641e9",
+      "building_town_heights_mt-2026-extra-012": "ca9e8af193261cd7f00d053541999cea357fcdc1d5393ccb110cf40bfdc80ade",
       "building_town_heights_mt-202603-public-001": "d8ed91760dc334aa54291e0befc3028ca29140898a186a07be99b1a4a5e451cf",
       "building_town_heights_mt-202603-public-002": "eb4f6b6c562cd77655f2d9df61de07029977b2a06ef623316f9d83d50182a8a7",
       "building_town_heights_mt-202603-public-003": "11d79d43cf7cada4ace0ebdada797e54c3ba3901824838efe55f1540305a0d6b",
@@ -781,31 +930,50 @@
       "building_town_heights_mt-202603-public-084": "3108b68aaf7ea07459bfb0fb8f9a432464c0871e25138276a43b84c6b1e0cf38",
       "building_town_heights_mt-202603-public-085": "78aa8a9af0022f2d3e6349ada19d9c467d3b46155e94d3d2e77cad1b3d6752c0",
       "building_town_heights_mt-202603-public-086": "58bc66845203f677c4e4648876c64196c3110415dec1095ac3c584d2b6897c4a",
+      "building_town_heights_mt-202603-public-087": "3241fea2b973c3e2552cc74d0ec8570a2c9c24ed27440b6d20df1ec8e1447230",
       "building_town_heights_mt-202603-public-088": "ac1b810b2318d5b890f20a7bf87b654a0071db5d380083e3022eca26475ce9c3",
       "building_town_heights_mt-202603-resident-001": "18376ac9e0af5dc2ed29f8e773e1ffa6f3bccb34144541446caac6dce0586115",
       "building_town_heights_mt-202603-resident-002": "54b830cb8eae4b67e57ac06cc84bfc6ef015b8523c1ecf05e38d1e87571ff3ee",
       "building_town_heights_mt-202603-resident-003": "8c32e14026b1d700dca411275372006a161d2e987fd3f68941f3c96c1766d755",
       "building_town_heights_mt-202603-resident-005": "36bf8746f59f65149f266918bba0706c905baed280beb32eb4feaa2086ac5614",
       "building_town_heights_mt-202603-resident-006": "eb70b0089d0bec9cf6e47c4f50468150e8a6c1206613e50b4d2ed87a6eef8950",
+      "building_town_heights_mt-202603-resident-007": "3a8bdfd2ca0d3fa1adac9bba2799567ec62260b68ed993667e45afc3619a2532",
       "building_town_heights_mt-202603-resident-008": "f2ab41f7a57cdf39033588b4bcee1532c27ab6d41f7864cd369b8eefcf0e7cad",
       "building_town_heights_mt-202603-resident-009": "dbc1056b030339ace55032f80b549753d51da7e429884c7a6caee21491dd7c00",
       "building_town_heights_mt-202603-resident-010": "e63f93e92dda453b6713046838887272a9cd79d01807417c57fc3ff85ef03b8f",
       "building_town_heights_mt-202603-resident-011": "7416edd80061fa7303300202d0112831211fe57f11bcb9cf4763e84ff814b3bd",
       "building_town_heights_mt-202603-resident-012": "5527b432fb0d7c255a96d78a182674eb86e9cba591adb5c4ee8221ebc1403446",
       "building_town_heights_mt-202603-resident-013": "abd5f39777d31802ee44d0753ceffac9fe4fb9a0850b6644704096a16bcfdfcc",
+      "building_town_heights_mt-202603-resident-014": "6efadbad502cbb14d9eef89804fbe0c36e1fab9d6ece36d45938e47a234c365e",
+      "building_town_heights_mt-202603-resident-015": "873470d0949dda6bb39c7cb71a0b9be0b90fd725b7c14da005babc7dd9e9fd0e",
       "building_town_heights_mt-202603-resident-016": "06b60f75d428263fc1c9c717fc7f92ff743f82802235a24452a595765237722e",
       "building_town_heights_mt-202603-resident-017": "b3b145e6086ae1e9f425d0122a73eb93b0ae217b333e0a81b41aa3b90c2f3dd2",
       "building_town_heights_mt-202603-resident-018": "ff85cfce038e4ea85ec8483e7b584d5a4ed3061aa3991b6f813a57b315dbb1f4",
+      "building_town_heights_mt-202603-resident-019": "fb6d21daa26457ca5bee3290c3ab8642026b1670a5645b1de2243510b8d1c1c9",
       "building_town_heights_mt-202603-resident-020": "7f8d9469947fe481c0f5f171a83971e1c66cf25526763f6860fdc67d4f9c2448",
+      "building_town_heights_mt-202603-resident-021": "3be59a747b56a3dc8329fb8f4e6737b3beb45dbe29a04652f251018b140f5b99",
       "building_town_heights_mt-202603-resident-022": "a407a75d5ac12a7c93c94080e1af5cd26e8b6bce4fddf6d9ab52870e1b4e99fd",
       "building_town_heights_mt-202603-resident-023": "7dee85e710d97653461b6f234a916d63415ba8a974d15a9580d31d3725a82815",
+      "building_town_heights_mt-202603-resident-024": "d7729d045ff693568dc7891643ee051332ec8a3871fa59ae2f35d86525458622",
       "building_town_heights_mt-202603-resident-025": "e3ab66d9fd29719d2ed58e82129b607e10497975dea28e3d99c4d1994e7e960b",
       "building_town_heights_mt-202603-resident-026": "51943f4fa6b81e7722412c7a4fffc818c3b84a8cae210ccf2b71f157b2cf6fb3",
       "building_town_heights_mt-202603-resident-027": "e2c325b8471c72158edf14ce6fd9fcf9836e1c60bf9fc7e60c6b72adb7a5fe0a",
       "building_town_heights_mt-202603-resident-028": "b2d7347412dfa418afdf637a414943f95f6e6b5860f488a7a706a14ec6243292",
+      "building_town_heights_mt-202603-resident-029": "b62835498260a5ab6eeae484053d12f0af55556557539de4351e9927e580b876",
+      "building_town_heights_mt-202603-resident-030": "84607dad382434181e8131a7c4344d59a339278c40659bebd732391f78f1fa37",
       "building_town_heights_mt-202603-resident-031": "74fd8be7ce68f70523d55758730e19690ee4ab8399dab6a1f3be9c3d3fcf94c8",
+      "building_town_heights_mt-202603-resident-032": "d7f59bf1258128e2082ff54d0ef16c4844326b9dec93260ed146dfdf3ea2eec5",
+      "building_town_heights_mt-202603-resident-033": "e4ddcfa476aa3b077a0aa2737a2ef7c814d2cf1e819feb0c431a1c7c0015ad04",
+      "building_town_heights_mt-202603-resident-034": "092c94dab7e12f1c83a4107d6139ac48de1bc9b4e465c8e75c0a3041812722bf",
       "building_town_heights_mt-202603-resident-035": "61102e1132893802ad6b4439c94fdf066cace9b1f5909de78691d42b71b8b5d5",
       "building_town_heights_mt-202603-resident-036": "ea9b6ef767afb759d63b2701c1220c18ae06a31f88d1005da3e8acffb332fea6",
+      "building_town_heights_mt-202603-resident-037": "60816b94a728a4d21c81762d23b1818494486c0a27173520f08a3d4ebce913df",
+      "building_town_heights_mt-202603-resident-038": "716e8b779f7248bdf7b23c563a2494eab77019ab313fbd0724ee82186179abb3",
+      "building_town_heights_mt-202603-resident-039": "cc0e16b83e3ba8ff749f44f55659eaecf723d721b9af460a6608b8f9e7e7d626",
+      "building_town_heights_mt-202603-resident-040": "b4157eaee65e00b40a400381cc85829ec84bbb8f644354c73e011efd0660610e",
+      "building_town_heights_mt-202603-resident-041": "ca5108c473fcef9a3986ac2bbd541c5bad4cbd8a301ac552e4f1cd73501f8590",
+      "building_town_heights_mt-202603-resident-042": "332e58ea69b06aa371d777ee6138940e15e738f7d27eba9c65abcd22372bb0e3",
+      "building_town_heights_mt-202603-resident-043": "d1f0f53c88adf22681f3d3bdd35588c28bb188e689434e170b71823b6a2e2035",
       "building_town_heights_mt-202603-resident-044": "e249199a8be8545e1ff3f043788edbea899f8fe2bb483dee7d3f8bbeca3a628a",
       "current_site_sources": "33b7f555e3837a705e0fabc95e4a4d6fe5c1a5dfc15fb84d3344c85a92f958c0"
     },
@@ -815,6 +983,11 @@
       "mt-202603-public-067": "sinwol_visuals"
     },
     "simulation_town_ids": [
+      "mt-2026-extra-002",
+      "mt-2026-extra-003",
+      "mt-2026-extra-004",
+      "mt-2026-extra-006",
+      "mt-2026-extra-007",
       "mt-202603-public-001",
       "mt-202603-public-002",
       "mt-202603-public-003",
@@ -853,6 +1026,7 @@
       "mt-202603-public-037",
       "mt-202603-public-038",
       "mt-202603-public-039",
+      "mt-202603-public-041",
       "mt-202603-public-042",
       "mt-202603-public-043",
       "mt-202603-public-044",
@@ -895,6 +1069,7 @@
       "mt-202603-public-084",
       "mt-202603-public-085",
       "mt-202603-public-086",
+      "mt-202603-public-087",
       "mt-202603-public-088",
       "mt-202603-resident-001",
       "mt-202603-resident-002",
@@ -907,16 +1082,22 @@
       "mt-202603-resident-011",
       "mt-202603-resident-012",
       "mt-202603-resident-013",
+      "mt-202603-resident-014",
+      "mt-202603-resident-015",
       "mt-202603-resident-016",
       "mt-202603-resident-017",
       "mt-202603-resident-018",
+      "mt-202603-resident-019",
       "mt-202603-resident-020",
+      "mt-202603-resident-021",
       "mt-202603-resident-022",
       "mt-202603-resident-023",
       "mt-202603-resident-025",
       "mt-202603-resident-027",
       "mt-202603-resident-028",
+      "mt-202603-resident-029",
       "mt-202603-resident-031",
+      "mt-202603-resident-033",
       "mt-202603-resident-035"
     ],
     "simulation_inputs": {
@@ -1393,6 +1574,16 @@
           "mz-notice-public-039-6"
         ]
       },
+      "mt-202603-public-041": {
+        "path": "plans/scenes/mt-202603-public-041.json",
+        "sha256": "b1a4827b0307380d3ce085260f1fbf942414a242c411ae95ff3a3532a58e2501",
+        "modes": [
+          "zones"
+        ],
+        "zone_ids": [
+          "mz-linked-public-041-01"
+        ]
+      },
       "mt-202603-public-042": {
         "path": "plans/scenes/mt-202603-public-042.json",
         "sha256": "2431fec39ebb79ff52b0bd21c3395b9bff7333c43367e54ce0d4742fddfbb5fd",
@@ -1403,7 +1594,7 @@
       },
       "mt-202603-public-043": {
         "path": "plans/scenes/mt-202603-public-043.json",
-        "sha256": "6bcbd850fde65eec136ec38b7c95a27470c65e45832f8ed2be45bf36e6300013",
+        "sha256": "2452882b9f5841adb28976038bf48fdc0bca5f44c9eec0ff5a1d77e9f0102f1c",
         "modes": [
           "town"
         ],
@@ -1476,13 +1667,14 @@
       },
       "mt-202603-public-049": {
         "path": "plans/scenes/mt-202603-public-049.json",
-        "sha256": "0b3f35c2f216be36a1942f2aedaa7dbe94ac46e4354d44a6c19906db81294b22",
+        "sha256": "3c6bd6299c0c3d1d58a3cd7a30b76edb40b63743741bf365e19b67a20b792e43",
         "modes": [
           "town",
           "zones"
         ],
         "zone_ids": [
-          "mz-plan-584823-b1"
+          "mz-plan-584823-b1",
+          "mz-plan-584823-b5"
         ]
       },
       "mt-202603-public-050": {
@@ -1495,19 +1687,30 @@
       },
       "mt-202603-public-051": {
         "path": "plans/scenes/mt-202603-public-051.json",
-        "sha256": "86b6bef064519870859b00349c8cb0263ac203d844f8a070e751ba9e5414f0e0",
+        "sha256": "e94901cd97a60b19f156bb4bd58096e09f81cc3930192fdf78c1656a2df4c3f8",
         "modes": [
-          "town"
+          "town",
+          "zones"
         ],
-        "zone_ids": []
+        "zone_ids": [
+          "mz-plan-596685-2-1",
+          "mz-plan-596685-2-2",
+          "mz-plan-596685-2-3",
+          "mz-plan-596685-2-4",
+          "mz-plan-596685-2-5"
+        ]
       },
       "mt-202603-public-052": {
         "path": "plans/scenes/mt-202603-public-052.json",
-        "sha256": "5cf2fead394ff168001695d52651cc7bb644bbadec9d16f857f537445229fa44",
+        "sha256": "2a6a0090cfbf84911f6c22ac6c57f0406f92fcd12e64c1880852bdc15a5cfae9",
         "modes": [
-          "town"
+          "town",
+          "zones"
         ],
-        "zone_ids": []
+        "zone_ids": [
+          "mz-plan-596684-1-1",
+          "mz-plan-596684-1-2"
+        ]
       },
       "mt-202603-public-053": {
         "path": "plans/scenes/mt-202603-public-053.json",
@@ -1582,11 +1785,14 @@
       },
       "mt-202603-public-061": {
         "path": "plans/scenes/mt-202603-public-061.json",
-        "sha256": "c931a86bce7f255f05e2773ebfb5c76f90519f764ff0beca3a8c651718d64855",
+        "sha256": "a59ec5cedd6fa10476fd7ca1c15a77fbf1bc47e7883134100e02211d5ab7d82e",
         "modes": [
-          "town"
+          "town",
+          "zones"
         ],
-        "zone_ids": []
+        "zone_ids": [
+          "mz-linked-public-061-01"
+        ]
       },
       "mt-202603-public-062": {
         "path": "plans/scenes/mt-202603-public-062.json",
@@ -1693,12 +1899,16 @@
       },
       "mt-202603-public-072": {
         "path": "plans/scenes/mt-202603-public-072.json",
-        "sha256": "65b94ecd1b568ba67d1be9f0af809407e9b5987551613fdac7bcb21d013da08c",
+        "sha256": "9d503b3afd2ff9cff6918c56ffe87d6bba38a59754377c1c8ac5105dd8c78393",
         "modes": [
           "association",
-          "town"
+          "town",
+          "zones"
         ],
-        "zone_ids": [],
+        "zone_ids": [
+          "mz-plan-601717-a1",
+          "mz-plan-601717-a2"
+        ],
         "association_zone_ids": [
           "mz-plan-601717-a2",
           "mz-plan-601717-a3"
@@ -1814,6 +2024,18 @@
         ],
         "zone_ids": []
       },
+      "mt-202603-public-087": {
+        "path": "plans/scenes/mt-202603-public-087.json",
+        "sha256": "48ad44ffb58a435eaf4f18c95bdb34aca3beda71c173a6edcd903a78f4b26dab",
+        "modes": [
+          "town",
+          "zones"
+        ],
+        "zone_ids": [
+          "mz-linked-public-087-01",
+          "mz-linked-public-087-02"
+        ]
+      },
       "mt-202603-public-088": {
         "path": "plans/scenes/mt-202603-public-088.json",
         "sha256": "fd299e2804e7d73dfd309ff79ff1b4c2b9c3975fefcd829c4137393da274e899",
@@ -1846,11 +2068,14 @@
       },
       "mt-202603-resident-003": {
         "path": "plans/scenes/mt-202603-resident-003.json",
-        "sha256": "82933ade9190dc3db265b3cedbba6e06842aeee629ba3b06445123b85d2c452a",
+        "sha256": "c7d3202cc25f442a23aa1fa3a9e4d0cc57b9b1296fb50a0accbda5d275d46436",
         "modes": [
-          "town"
+          "town",
+          "zones"
         ],
-        "zone_ids": []
+        "zone_ids": [
+          "mz-linked-resident-003-01"
+        ]
       },
       "mt-202603-resident-005": {
         "path": "plans/scenes/mt-202603-resident-005.json",
@@ -1929,6 +2154,27 @@
         ],
         "zone_ids": []
       },
+      "mt-202603-resident-014": {
+        "path": "plans/scenes/mt-202603-resident-014.json",
+        "sha256": "a31e32099f4a9f3900fb5a577855900f5ce2207b0f2a73c43162aa7c1e96799f",
+        "modes": [
+          "zones"
+        ],
+        "zone_ids": [
+          "mz-linked-resident-014-01"
+        ]
+      },
+      "mt-202603-resident-015": {
+        "path": "plans/scenes/mt-202603-resident-015.json",
+        "sha256": "47fc6bd0dd35b8c3d892a313d3e9ce50809ae6168c77cf39497588aa09a60d99",
+        "modes": [
+          "town",
+          "zones"
+        ],
+        "zone_ids": [
+          "mz-linked-resident-015-01"
+        ]
+      },
       "mt-202603-resident-016": {
         "path": "plans/scenes/mt-202603-resident-016.json",
         "sha256": "956dba9bb46152bf7768de2991e1ed6272b1f102b4ac5e1006fde2a46a8a088f",
@@ -1966,6 +2212,17 @@
           "mz-seoul-11000uq120ps202505310435"
         ]
       },
+      "mt-202603-resident-019": {
+        "path": "plans/scenes/mt-202603-resident-019.json",
+        "sha256": "389c37632f9ff771db61bcea30c6a0533f5522615f255f157c51a58de2675bdd",
+        "modes": [
+          "town",
+          "zones"
+        ],
+        "zone_ids": [
+          "mz-linked-resident-019-01"
+        ]
+      },
       "mt-202603-resident-020": {
         "path": "plans/scenes/mt-202603-resident-020.json",
         "sha256": "f56b2f9b1a7acf3781b2984ee270c19aa9df714bb45ea5376b66584ae0100ea4",
@@ -1976,6 +2233,16 @@
         "zone_ids": [],
         "association_zone_ids": [
           "mt-202603-resident-020"
+        ]
+      },
+      "mt-202603-resident-021": {
+        "path": "plans/scenes/mt-202603-resident-021.json",
+        "sha256": "d1f117b45654c1272a0d159b4616fce89a0d94b2f9bf92abda7f1bc69b95e42e",
+        "modes": [
+          "zones"
+        ],
+        "zone_ids": [
+          "mz-linked-resident-021-01"
         ]
       },
       "mt-202603-resident-022": {
@@ -2037,6 +2304,18 @@
           "mz-notice-resident-028-a-1"
         ]
       },
+      "mt-202603-resident-029": {
+        "path": "plans/scenes/mt-202603-resident-029.json",
+        "sha256": "fc34b79b4bb42518f1929dece051428c65370e2415ed4b4308fccf0c10f4f9f3",
+        "modes": [
+          "town",
+          "zones"
+        ],
+        "zone_ids": [
+          "mz-linked-resident-029-01",
+          "mz-linked-resident-029-02"
+        ]
+      },
       "mt-202603-resident-031": {
         "path": "plans/scenes/mt-202603-resident-031.json",
         "sha256": "acdf7db4daada30d4c7e10be1db4d74b25084ec0e5447f3f6a07c437bb535f3a",
@@ -2046,6 +2325,17 @@
         ],
         "zone_ids": [
           "mz-notice-resident-031-a1"
+        ]
+      },
+      "mt-202603-resident-033": {
+        "path": "plans/scenes/mt-202603-resident-033.json",
+        "sha256": "2086cf9471f6960f75aac54a902a3d21dbd3f137c0b91e5808983d05837c85b6",
+        "modes": [
+          "zones"
+        ],
+        "zone_ids": [
+          "mz-linked-resident-033-01",
+          "mz-linked-resident-033-02"
         ]
       },
       "mt-202603-resident-035": {
@@ -2058,12 +2348,75 @@
           "mz-seoul-11000uq120ps202505310733",
           "mz-seoul-11000uq120ps202505310734"
         ]
+      },
+      "mt-2026-extra-002": {
+        "path": "plans/scenes/mt-2026-extra-002.json",
+        "sha256": "a1652dbd53d1d1deefeda4b2c739ff1d173d7c6b1005c0f16585270519f5c54d",
+        "modes": [
+          "zones"
+        ],
+        "zone_ids": [
+          "mz-linked-extra-002-01"
+        ]
+      },
+      "mt-2026-extra-003": {
+        "path": "plans/scenes/mt-2026-extra-003.json",
+        "sha256": "63e2a41efcd35d403fc8232900545427c722093c0ad970edff7ed3e0dea4400a",
+        "modes": [
+          "zones"
+        ],
+        "zone_ids": [
+          "mz-linked-extra-003-01"
+        ]
+      },
+      "mt-2026-extra-004": {
+        "path": "plans/scenes/mt-2026-extra-004.json",
+        "sha256": "68f2ced19cf9f5e4e6d0a12b5286aa063e794c353a01da5498478107b74162eb",
+        "modes": [
+          "zones"
+        ],
+        "zone_ids": [
+          "mz-linked-extra-004-01",
+          "mz-linked-extra-004-02"
+        ]
+      },
+      "mt-2026-extra-006": {
+        "path": "plans/scenes/mt-2026-extra-006.json",
+        "sha256": "ada0f29fc2b9b72953997418ee4ca2c5ae66eb2a84a7ba222f5746b54528a639",
+        "modes": [
+          "zones"
+        ],
+        "zone_ids": [
+          "mz-linked-extra-006-01"
+        ]
+      },
+      "mt-2026-extra-007": {
+        "path": "plans/scenes/mt-2026-extra-007.json",
+        "sha256": "da85dd5e3ef755dac2f6b6dade306b39df6ee6f5fa610511a6c3ddca47d142b8",
+        "modes": [
+          "zones"
+        ],
+        "zone_ids": [
+          "mz-linked-extra-007-01"
+        ]
       }
     },
     "current_details": {
       "mt-202603-public-034": "beon_current_details",
       "mt-202603-public-010": "myeonmok_current_details",
       "mt-202603-public-067": "sinwol_current_details",
+      "mt-2026-extra-001": "building_town_details_mt-2026-extra-001",
+      "mt-2026-extra-002": "building_town_details_mt-2026-extra-002",
+      "mt-2026-extra-003": "building_town_details_mt-2026-extra-003",
+      "mt-2026-extra-004": "building_town_details_mt-2026-extra-004",
+      "mt-2026-extra-005": "building_town_details_mt-2026-extra-005",
+      "mt-2026-extra-006": "building_town_details_mt-2026-extra-006",
+      "mt-2026-extra-007": "building_town_details_mt-2026-extra-007",
+      "mt-2026-extra-008": "building_town_details_mt-2026-extra-008",
+      "mt-2026-extra-009": "building_town_details_mt-2026-extra-009",
+      "mt-2026-extra-010": "building_town_details_mt-2026-extra-010",
+      "mt-2026-extra-011": "building_town_details_mt-2026-extra-011",
+      "mt-2026-extra-012": "building_town_details_mt-2026-extra-012",
       "mt-202603-public-001": "building_town_details_mt-202603-public-001",
       "mt-202603-public-002": "building_town_details_mt-202603-public-002",
       "mt-202603-public-003": "building_town_details_mt-202603-public-003",
@@ -2147,37 +2500,68 @@
       "mt-202603-public-084": "building_town_details_mt-202603-public-084",
       "mt-202603-public-085": "building_town_details_mt-202603-public-085",
       "mt-202603-public-086": "building_town_details_mt-202603-public-086",
+      "mt-202603-public-087": "building_town_details_mt-202603-public-087",
       "mt-202603-public-088": "building_town_details_mt-202603-public-088",
       "mt-202603-resident-001": "building_town_details_mt-202603-resident-001",
       "mt-202603-resident-002": "building_town_details_mt-202603-resident-002",
       "mt-202603-resident-003": "building_town_details_mt-202603-resident-003",
       "mt-202603-resident-005": "building_town_details_mt-202603-resident-005",
       "mt-202603-resident-006": "building_town_details_mt-202603-resident-006",
+      "mt-202603-resident-007": "building_town_details_mt-202603-resident-007",
       "mt-202603-resident-008": "building_town_details_mt-202603-resident-008",
       "mt-202603-resident-009": "building_town_details_mt-202603-resident-009",
       "mt-202603-resident-010": "building_town_details_mt-202603-resident-010",
       "mt-202603-resident-011": "building_town_details_mt-202603-resident-011",
       "mt-202603-resident-012": "building_town_details_mt-202603-resident-012",
       "mt-202603-resident-013": "building_town_details_mt-202603-resident-013",
+      "mt-202603-resident-014": "building_town_details_mt-202603-resident-014",
+      "mt-202603-resident-015": "building_town_details_mt-202603-resident-015",
       "mt-202603-resident-016": "building_town_details_mt-202603-resident-016",
       "mt-202603-resident-017": "building_town_details_mt-202603-resident-017",
       "mt-202603-resident-018": "building_town_details_mt-202603-resident-018",
+      "mt-202603-resident-019": "building_town_details_mt-202603-resident-019",
       "mt-202603-resident-020": "building_town_details_mt-202603-resident-020",
+      "mt-202603-resident-021": "building_town_details_mt-202603-resident-021",
       "mt-202603-resident-022": "building_town_details_mt-202603-resident-022",
       "mt-202603-resident-023": "building_town_details_mt-202603-resident-023",
+      "mt-202603-resident-024": "building_town_details_mt-202603-resident-024",
       "mt-202603-resident-025": "building_town_details_mt-202603-resident-025",
       "mt-202603-resident-026": "building_town_details_mt-202603-resident-026",
       "mt-202603-resident-027": "building_town_details_mt-202603-resident-027",
       "mt-202603-resident-028": "building_town_details_mt-202603-resident-028",
+      "mt-202603-resident-029": "building_town_details_mt-202603-resident-029",
+      "mt-202603-resident-030": "building_town_details_mt-202603-resident-030",
       "mt-202603-resident-031": "building_town_details_mt-202603-resident-031",
+      "mt-202603-resident-032": "building_town_details_mt-202603-resident-032",
+      "mt-202603-resident-033": "building_town_details_mt-202603-resident-033",
+      "mt-202603-resident-034": "building_town_details_mt-202603-resident-034",
       "mt-202603-resident-035": "building_town_details_mt-202603-resident-035",
       "mt-202603-resident-036": "building_town_details_mt-202603-resident-036",
+      "mt-202603-resident-037": "building_town_details_mt-202603-resident-037",
+      "mt-202603-resident-038": "building_town_details_mt-202603-resident-038",
+      "mt-202603-resident-039": "building_town_details_mt-202603-resident-039",
+      "mt-202603-resident-040": "building_town_details_mt-202603-resident-040",
+      "mt-202603-resident-041": "building_town_details_mt-202603-resident-041",
+      "mt-202603-resident-042": "building_town_details_mt-202603-resident-042",
+      "mt-202603-resident-043": "building_town_details_mt-202603-resident-043",
       "mt-202603-resident-044": "building_town_details_mt-202603-resident-044"
     },
     "current_heights": {
       "mt-202603-public-034": "beon_height_evidence",
       "mt-202603-public-010": "myeonmok_height_evidence",
       "mt-202603-public-067": "sinwol_height_evidence",
+      "mt-2026-extra-001": "building_town_heights_mt-2026-extra-001",
+      "mt-2026-extra-002": "building_town_heights_mt-2026-extra-002",
+      "mt-2026-extra-003": "building_town_heights_mt-2026-extra-003",
+      "mt-2026-extra-004": "building_town_heights_mt-2026-extra-004",
+      "mt-2026-extra-005": "building_town_heights_mt-2026-extra-005",
+      "mt-2026-extra-006": "building_town_heights_mt-2026-extra-006",
+      "mt-2026-extra-007": "building_town_heights_mt-2026-extra-007",
+      "mt-2026-extra-008": "building_town_heights_mt-2026-extra-008",
+      "mt-2026-extra-009": "building_town_heights_mt-2026-extra-009",
+      "mt-2026-extra-010": "building_town_heights_mt-2026-extra-010",
+      "mt-2026-extra-011": "building_town_heights_mt-2026-extra-011",
+      "mt-2026-extra-012": "building_town_heights_mt-2026-extra-012",
       "mt-202603-public-001": "building_town_heights_mt-202603-public-001",
       "mt-202603-public-002": "building_town_heights_mt-202603-public-002",
       "mt-202603-public-003": "building_town_heights_mt-202603-public-003",
@@ -2261,34 +2645,55 @@
       "mt-202603-public-084": "building_town_heights_mt-202603-public-084",
       "mt-202603-public-085": "building_town_heights_mt-202603-public-085",
       "mt-202603-public-086": "building_town_heights_mt-202603-public-086",
+      "mt-202603-public-087": "building_town_heights_mt-202603-public-087",
       "mt-202603-public-088": "building_town_heights_mt-202603-public-088",
       "mt-202603-resident-001": "building_town_heights_mt-202603-resident-001",
       "mt-202603-resident-002": "building_town_heights_mt-202603-resident-002",
       "mt-202603-resident-003": "building_town_heights_mt-202603-resident-003",
       "mt-202603-resident-005": "building_town_heights_mt-202603-resident-005",
       "mt-202603-resident-006": "building_town_heights_mt-202603-resident-006",
+      "mt-202603-resident-007": "building_town_heights_mt-202603-resident-007",
       "mt-202603-resident-008": "building_town_heights_mt-202603-resident-008",
       "mt-202603-resident-009": "building_town_heights_mt-202603-resident-009",
       "mt-202603-resident-010": "building_town_heights_mt-202603-resident-010",
       "mt-202603-resident-011": "building_town_heights_mt-202603-resident-011",
       "mt-202603-resident-012": "building_town_heights_mt-202603-resident-012",
       "mt-202603-resident-013": "building_town_heights_mt-202603-resident-013",
+      "mt-202603-resident-014": "building_town_heights_mt-202603-resident-014",
+      "mt-202603-resident-015": "building_town_heights_mt-202603-resident-015",
       "mt-202603-resident-016": "building_town_heights_mt-202603-resident-016",
       "mt-202603-resident-017": "building_town_heights_mt-202603-resident-017",
       "mt-202603-resident-018": "building_town_heights_mt-202603-resident-018",
+      "mt-202603-resident-019": "building_town_heights_mt-202603-resident-019",
       "mt-202603-resident-020": "building_town_heights_mt-202603-resident-020",
+      "mt-202603-resident-021": "building_town_heights_mt-202603-resident-021",
       "mt-202603-resident-022": "building_town_heights_mt-202603-resident-022",
       "mt-202603-resident-023": "building_town_heights_mt-202603-resident-023",
+      "mt-202603-resident-024": "building_town_heights_mt-202603-resident-024",
       "mt-202603-resident-025": "building_town_heights_mt-202603-resident-025",
       "mt-202603-resident-026": "building_town_heights_mt-202603-resident-026",
       "mt-202603-resident-027": "building_town_heights_mt-202603-resident-027",
       "mt-202603-resident-028": "building_town_heights_mt-202603-resident-028",
+      "mt-202603-resident-029": "building_town_heights_mt-202603-resident-029",
+      "mt-202603-resident-030": "building_town_heights_mt-202603-resident-030",
       "mt-202603-resident-031": "building_town_heights_mt-202603-resident-031",
+      "mt-202603-resident-032": "building_town_heights_mt-202603-resident-032",
+      "mt-202603-resident-033": "building_town_heights_mt-202603-resident-033",
+      "mt-202603-resident-034": "building_town_heights_mt-202603-resident-034",
       "mt-202603-resident-035": "building_town_heights_mt-202603-resident-035",
       "mt-202603-resident-036": "building_town_heights_mt-202603-resident-036",
+      "mt-202603-resident-037": "building_town_heights_mt-202603-resident-037",
+      "mt-202603-resident-038": "building_town_heights_mt-202603-resident-038",
+      "mt-202603-resident-039": "building_town_heights_mt-202603-resident-039",
+      "mt-202603-resident-040": "building_town_heights_mt-202603-resident-040",
+      "mt-202603-resident-041": "building_town_heights_mt-202603-resident-041",
+      "mt-202603-resident-042": "building_town_heights_mt-202603-resident-042",
+      "mt-202603-resident-043": "building_town_heights_mt-202603-resident-043",
       "mt-202603-resident-044": "building_town_heights_mt-202603-resident-044"
     },
     "height_review_town_ids": [
+      "mt-2026-extra-001",
+      "mt-2026-extra-003",
       "mt-202603-public-002",
       "mt-202603-public-005",
       "mt-202603-public-007",
@@ -2319,7 +2724,11 @@
       "mt-202603-public-082",
       "mt-202603-resident-002",
       "mt-202603-resident-009",
+      "mt-202603-resident-010",
+      "mt-202603-resident-015",
       "mt-202603-resident-036",
+      "mt-202603-resident-039",
+      "mt-202603-resident-043",
       "mt-202603-resident-044"
     ],
     "registry_height_town_ids": [

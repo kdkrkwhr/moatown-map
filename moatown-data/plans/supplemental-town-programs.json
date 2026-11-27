@@ -161,14 +161,14 @@
     },
     "mt-202603-public-043": {
       "floors": null,
-      "units": 1379,
+      "units": 1397,
       "site_area_m2": 37287,
       "kind": "공공관리사업 업무보고",
-      "scope": "성동구 응봉동 265 일대 2개 구역 전체",
-      "source_url": "https://ms.smc.seoul.kr/record/appendixDownload.do?key=e25a852e59718208ff328964a368ec2ca59952d5099dd0fff0b7001609f8aad327950e10edaf6fd6",
-      "source_as_of": "2025-04-22",
-      "evidence": "서울시의회 제330회 주택공간위원회 제2차 서울주택도시공사 업무보고. 응봉동 265 일대 공공관리 현황에 관리면적 37,287㎡와 2개 구역 1,379세대(임대 287세대)가 기재됐다.",
-      "note": "공공관리 업무보고 시점의 계획 규모이며 2개 구역을 하나로 통합하는 절차를 추진 중이었다."
+      "scope": "응봉동 265 일대 모아타운 사업구역",
+      "source_url": "https://seoulboard.seoul.go.kr/comm/getFile?srvcId=BBSTY1&upperNo=446181&fileTy=ATTACH&fileNo=2&bbsNo=158",
+      "source_as_of": "2025-11-06",
+      "evidence": "사업구역 1개 행의 세대수 1,397호. 2025년 11월 SH 계획치.",
+      "note": "SH의 2025년 4월 보고서 PDF 20쪽은 2개 구역과 1개로 통합하는 과정을 기록했다. 11월 보고서는 1개 구역 1,397세대로 집계했다. 종전 2개 구역의 임대 합계 287세대는 통합안에 적용하지 않았다. 2026년 10월 연장고시 관계도는 관리지역 외곽만 표시한다."
     },
     "mt-202603-public-046": {
       "floors": 26,

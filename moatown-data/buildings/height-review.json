@@ -1,5 +1,5 @@
 {
-  "checked_on": "2026-11-25",
+  "checked_on": "2026-11-27",
   "source_as_of": "2024-12-31",
   "source_url": "https://land.seoul.go.kr/land/map/land/map.do",
   "registry_url": "https://data.seoul.go.kr/dataList/OA-22424/S/1/datasetView.do",
@@ -8,9 +8,9 @@
   "wfs_pages": [
     {
       "first_id": "1970192574394495974700000000",
-      "count": 36,
-      "timestamp": "2026-11-25T03:41:39.309Z",
-      "sha256": "7ebf0e4e8240fb2a26c4fb8f46e1e0e097a03c4ea6672766b14e03c52995232e"
+      "count": 43,
+      "timestamp": "2026-11-27T06:02:43.762Z",
+      "sha256": "ae0b11e9ca7a71e7d64d30e839b9e16c92d635a21d325437166cc58b9c50d6f1"
     }
   ],
   "district_csv": {
@@ -54,6 +54,10 @@
       "sha256": "a5e759180b4ea8232a76e51d8b079d3b8f70a8f562cc212eb6c7c95e3ee32a01",
       "serial_prefix": "10251"
     },
+    "양천구": {
+      "sha256": "f4a94a580a7c1afa91cab509425ea33141dfda1772b6e6481868b5b1e2536125",
+      "serial_prefix": "10161"
+    },
     "용산구": {
       "sha256": "acfaa26e84264ecb5b242732ae23868e62d1f4edeeccaeb0ed1634f8f6992336",
       "serial_prefix": "10041"
@@ -78,6 +82,18 @@
       "registry_collected_on": "2024-11-19",
       "registry_serial": "1015123609",
       "pnu": "1144012200104120005",
+      "decision": "sources_agree"
+    },
+    "1970194792864456908200000000": {
+      "town_ids": [
+        "mt-2026-extra-003"
+      ],
+      "reported_height_m": 6.6,
+      "floors": 6,
+      "registry_height_m": 6.6,
+      "registry_collected_on": "2024-11-19",
+      "registry_serial": "1021121823",
+      "pnu": "1159010100100590029",
       "decision": "sources_agree"
     },
     "1971210588614483303300000000": {
@@ -114,6 +130,18 @@
       "registry_collected_on": "2024-11-19",
       "registry_serial": "1021129465",
       "pnu": "1159010700102020002",
+      "decision": "sources_agree"
+    },
+    "1980186244944470317100000000": {
+      "town_ids": [
+        "mt-202603-resident-039"
+      ],
+      "reported_height_m": 1,
+      "floors": 2,
+      "registry_height_m": 1.0,
+      "registry_collected_on": "2024-11-19",
+      "registry_serial": "101615667",
+      "pnu": "1147010300104660013",
       "decision": "sources_agree"
     },
     "1984207684574538915200000000": {
@@ -200,6 +228,30 @@
       "pnu": "1174010600100700055",
       "decision": "sources_agree"
     },
+    "1989203055394418680500000000": {
+      "town_ids": [
+        "mt-2026-extra-001"
+      ],
+      "reported_height_m": 1,
+      "floors": 2,
+      "registry_height_m": 1.0,
+      "registry_collected_on": "2024-11-19",
+      "registry_serial": "102318252",
+      "pnu": "1165010200100570002",
+      "decision": "sources_agree"
+    },
+    "1989208402254549243300000000": {
+      "town_ids": [
+        "mt-202603-resident-010"
+      ],
+      "reported_height_m": 2.6,
+      "floors": 3,
+      "registry_height_m": 2.6,
+      "registry_collected_on": "2024-11-19",
+      "registry_serial": "1008128813",
+      "pnu": "1126010500105120031",
+      "decision": "sources_agree"
+    },
     "1990194791154427552300000000": {
       "town_ids": [
         "mt-202603-public-076"
@@ -210,6 +262,18 @@
       "registry_collected_on": "2024-11-19",
       "registry_serial": "102215791",
       "pnu": "1162010100106330014",
+      "decision": "sources_agree"
+    },
+    "1990201448544582205100000000": {
+      "town_ids": [
+        "mt-202603-resident-015"
+      ],
+      "reported_height_m": 95,
+      "floors": 3,
+      "registry_height_m": 95.0,
+      "registry_collected_on": "2024-11-19",
+      "registry_serial": "1010110593",
+      "pnu": "1130510100107911179",
       "decision": "sources_agree"
     },
     "1990207679754537001000000000": {
@@ -239,6 +303,7 @@
     },
     "1991194919714455078900000000": {
       "town_ids": [
+        "mt-2026-extra-003",
         "mt-202603-public-058"
       ],
       "reported_height_m": 2.6,
@@ -482,6 +547,18 @@
       "pnu": "1165010200103970011",
       "decision": "use_registry_height"
     },
+    "2003186474324466736400000000": {
+      "town_ids": [
+        "mt-202603-resident-039"
+      ],
+      "reported_height_m": 47.9,
+      "floors": 1,
+      "registry_height_m": 47.9,
+      "registry_collected_on": "2024-11-19",
+      "registry_serial": "101619076",
+      "pnu": "1147010100111940003",
+      "decision": "sources_agree"
+    },
     "2005201504404594058600000000": {
       "town_ids": [
         "mt-202603-public-038"
@@ -492,6 +569,18 @@
       "registry_collected_on": "2024-11-19",
       "registry_serial": "1010123718",
       "pnu": "1130510300103990029",
+      "decision": "sources_agree"
+    },
+    "2005208137574489075800000000": {
+      "town_ids": [
+        "mt-202603-resident-043"
+      ],
+      "reported_height_m": 149.3,
+      "floors": 7,
+      "registry_height_m": 149.3,
+      "registry_collected_on": "2024-11-19",
+      "registry_serial": "1006114674",
+      "pnu": "1121510300102050018",
       "decision": "sources_agree"
     },
     "2011194256924439658300000000": {
@@ -506,5 +595,6 @@
       "pnu": "1159010200102640172",
       "decision": "sources_agree"
     }
-  }
+  },
+  "membership_checked_on": "2026-11-27"
 }

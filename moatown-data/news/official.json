@@ -1,8 +1,56 @@
 {
   "schema_version": 1,
   "source_type": "official",
-  "collected_on": "2026-11-25",
+  "collected_on": "2026-11-27",
   "items": [
+    {
+      "id": "official-cac6a9feae1633ef",
+      "title": "서울시 조경과-15842 상도동 279 소규모주택정비 관리계획(안) 협의 검토보고",
+      "source": "서울시 정보소통광장",
+      "published_on": "2026-11-26",
+      "url": "https://opengov.seoul.go.kr/sanction/37514104",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-061",
+          "zone_id": null,
+          "match_basis": "reviewed_official_document"
+        }
+      ],
+      "verified_on": "2026-11-27"
+    },
+    {
+      "id": "official-875e5427d6cb432c",
+      "title": "서울시 공원조성과-13673 상도동 279 소규모주택정비 관리계획 협의 회신",
+      "source": "서울시 정보소통광장",
+      "published_on": "2026-11-25",
+      "url": "https://opengov.seoul.go.kr/sanction/37501332",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-061",
+          "zone_id": null,
+          "match_basis": "reviewed_official_document"
+        }
+      ],
+      "verified_on": "2026-11-27"
+    },
+    {
+      "id": "official-70206c676054fc97",
+      "title": "서울시 공원조성과-13656 상도동 279 관리계획 협의 검토보고, 관리지역 사업개요 1,120세대",
+      "source": "서울시 정보소통광장",
+      "published_on": "2026-11-25",
+      "url": "https://opengov.seoul.go.kr/sanction/37500526",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-061",
+          "zone_id": null,
+          "match_basis": "reviewed_official_document"
+        }
+      ],
+      "verified_on": "2026-11-27"
+    },
     {
       "id": "official-d9321f7d2748fd1b",
       "title": "사당동 202-29번지 일대 소규모주택정비 관리계획(모아타운 관리계획) 변경(안) 주민 재공람 공고",
@@ -48,6 +96,24 @@
           "match_basis": "exact_borough_dong_lot"
         }
       ]
+    },
+    {
+      "id": "official-c3f358312d580b56",
+      "title": "화곡6동 957 A1 조합설립변경인가 고시",
+      "source": "강서구 고시",
+      "published_on": "2026-11-18",
+      "url": "https://www.gangseo.seoul.kr/gs040301/view?mgtNo=69004",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-009",
+          "zone_id": "mz-plan-614147-project-1",
+          "match_basis": "verified_notice_and_project_scope"
+        }
+      ],
+      "notice_number": "강서구 고시 제2026-153호",
+      "notice_on": "2026-11-18",
+      "verified_on": "2026-11-27"
     },
     {
       "id": "official-89ba7c21fa8652c4",
@@ -162,6 +228,24 @@
       "notice_on": "2026-10-29"
     },
     {
+      "id": "official-1a0a2fbc433e70e6",
+      "title": "방이동 162 권리산정기준일 고시",
+      "source": "서울특별시 고시",
+      "published_on": "2026-10-29",
+      "url": "https://event.seoul.go.kr/snews/data/CN_MST/seoulsibo_20261029105535_58338.pdf#page=264",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-2026-extra-005",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        }
+      ],
+      "notice_number": "서울특별시 고시 제2026-593호",
+      "notice_on": "2026-10-29",
+      "verified_on": "2026-11-27"
+    },
+    {
       "id": "official-201b50dcbef33d87",
       "title": "화곡6동 957-1 일대 모아타운 [A3구역] 가로주택정비사업 조합설립인가 및 지형도면 고시",
       "source": "강서구 고시(서울시 공식 목록)",
@@ -180,6 +264,96 @@
       "unresolved_site_mentions": [
         "A3구역의 개별 ID 미확인"
       ]
+    },
+    {
+      "id": "official-ce0b4039120446a5",
+      "title": "응봉동 265 권리산정기준일 관련 변경 고시",
+      "source": "서울특별시 고시",
+      "published_on": "2026-10-22",
+      "url": "https://event.seoul.go.kr/snews/data/CN_MST/seoulsibo_20261022163229_82397.pdf#page=38",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-043",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        }
+      ],
+      "notice_number": "서울특별시 고시 제2026-583호",
+      "notice_on": "2026-10-22",
+      "verified_on": "2026-11-27"
+    },
+    {
+      "id": "official-a381f04e247c75b0",
+      "title": "금호동1가 129 권리산정기준일 관련 변경 고시",
+      "source": "서울특별시 고시",
+      "published_on": "2026-10-22",
+      "url": "https://event.seoul.go.kr/snews/data/CN_MST/seoulsibo_20261022163229_82397.pdf#page=43",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-resident-003",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        }
+      ],
+      "notice_number": "서울특별시 고시 제2026-585호",
+      "notice_on": "2026-10-22",
+      "verified_on": "2026-11-27"
+    },
+    {
+      "id": "official-4acf7d53846a2e9c",
+      "title": "방배동 920-1 권리산정기준일 고시",
+      "source": "서울특별시 고시",
+      "published_on": "2026-10-22",
+      "url": "https://event.seoul.go.kr/snews/data/CN_MST/seoulsibo_20261022163229_82397.pdf#page=46",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-2026-extra-011",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        }
+      ],
+      "notice_number": "서울특별시 고시 제2026-586호",
+      "notice_on": "2026-10-22",
+      "verified_on": "2026-11-27"
+    },
+    {
+      "id": "official-3ed1d2bb4a9abf22",
+      "title": "번동 429-114 관리계획 고시",
+      "source": "서울특별시 고시",
+      "published_on": "2026-10-15",
+      "url": "https://event.seoul.go.kr/seoulsibo/fileDownload.do?fileName=seoulsibo_20261014155938_38180.pdf#page=67",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-034",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        }
+      ],
+      "notice_number": "서울특별시 고시 제2026-566호",
+      "notice_on": "2026-10-15",
+      "verified_on": "2026-11-27"
+    },
+    {
+      "id": "official-6d8bba72347ebba0",
+      "title": "일원동 619-641 권리산정기준일 고시",
+      "source": "서울특별시 고시",
+      "published_on": "2026-10-15",
+      "url": "https://event.seoul.go.kr/snews/data/CN_MST/seoulsibo_20261014155938_38180.pdf#page=64",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-087",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        }
+      ],
+      "notice_number": "서울특별시 고시 제2026-565호",
+      "notice_on": "2026-10-15",
+      "verified_on": "2026-11-27"
     },
     {
       "id": "official-8f95d93c933f8e2c",
@@ -221,6 +395,42 @@
       ]
     },
     {
+      "id": "official-959c05951b8aaee3",
+      "title": "하계동 65-1 권리산정기준일 고시",
+      "source": "서울특별시 고시",
+      "published_on": "2026-10-08",
+      "url": "https://event.seoul.go.kr/snews/data/CN_MST/seoulsibo_20261007142751_12293.pdf#page=8",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-2026-extra-010",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        }
+      ],
+      "notice_number": "서울특별시 고시 제2026-563호",
+      "notice_on": "2026-10-08",
+      "verified_on": "2026-11-27"
+    },
+    {
+      "id": "official-1f572ab8bcaa8374",
+      "title": "광장동 264-1 권리산정기준일 관련 변경 고시",
+      "source": "서울특별시 고시",
+      "published_on": "2026-10-01",
+      "url": "https://event.seoul.go.kr/snews/data/CN_MST/seoulsibo_20261007143103_93103.pdf#page=104",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-resident-007",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        }
+      ],
+      "notice_number": "서울특별시 고시 제2026-545호",
+      "notice_on": "2026-10-01",
+      "verified_on": "2026-11-27"
+    },
+    {
       "id": "official-5141a5526aad2ebe",
       "title": "현저동 1-5번지 일대 모아타운(소규모주택정비 관리지역) 가로주택정비사업 시공자 선정 재 입찰공고",
       "source": "현저동 1-5 모아타운 조합 (정비사업 정보몽땅)",
@@ -247,6 +457,23 @@
       "verified_on": "2026-11-25"
     },
     {
+      "id": "official-5b9e89bd92d2230c",
+      "title": "번동 469 · 강북구 공고 제2026-1381호 번동4지역 일부 구역 제외 및 A-3 재조사",
+      "source": "강북구",
+      "published_on": "2026-09-21",
+      "url": "https://child.gangbuk.go.kr/portal/bbs/B0000245/view.do?menuNo=200082&nttId=185055&pageIndex=",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-040",
+          "zone_id": null,
+          "match_basis": "reviewed_official_document"
+        }
+      ],
+      "verified_on": "2026-11-27",
+      "notice_number": "2026-1381"
+    },
+    {
       "id": "official-e377ca9ba384c4eb",
       "title": "금천구 시흥3동 972번지 모아타운 통합심의 통과…모아주택 3곳 총586세대 공급",
       "source": "서울특별시",
@@ -261,6 +488,155 @@
         }
       ],
       "verified_on": "2026-11-25"
+    },
+    {
+      "id": "official-25cc5f1d6c30666f",
+      "title": "하계동 65-1 등 2곳 토지거래허가구역 공고",
+      "source": "서울특별시 공고",
+      "published_on": "2026-09-11",
+      "url": "https://land.seoul.go.kr/land/other/downloadAppointPbancFile.do?fileUuid=5b6e17b0aef500ece063621d0f8d00ec1085755",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-2026-extra-010",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-2026-extra-011",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        }
+      ],
+      "notice_number": "서울특별시 공고 제2026-2609호",
+      "notice_on": "2026-09-11",
+      "verified_on": "2026-11-27"
+    },
+    {
+      "id": "official-6b3393477ad57fd9",
+      "title": "중화2동 299-8 관리계획 고시",
+      "source": "서울특별시 고시",
+      "published_on": "2026-09-10",
+      "url": "https://event.seoul.go.kr/snews/data/CN_MST/seoulsibo_20260910094304_20028.pdf#page=63",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-021",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        }
+      ],
+      "notice_number": "서울특별시 고시 제2026-509호",
+      "notice_on": "2026-09-10",
+      "verified_on": "2026-11-27"
+    },
+    {
+      "id": "official-8dc85d45e57cc39f",
+      "title": "면목3·8동 453-1 권리산정기준일 고시",
+      "source": "서울특별시 고시",
+      "published_on": "2026-09-10",
+      "url": "https://event.seoul.go.kr/snews/data/CN_MST/seoulsibo_20260910094304_20028.pdf#page=43",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-023",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        }
+      ],
+      "notice_number": "서울특별시 고시 제2026-504호",
+      "notice_on": "2026-09-10",
+      "verified_on": "2026-11-27"
+    },
+    {
+      "id": "official-91dcd5452d6e38f1",
+      "title": "수유동 31-10 권리산정기준일 고시",
+      "source": "서울특별시 고시",
+      "published_on": "2026-09-10",
+      "url": "https://event.seoul.go.kr/snews/data/CN_MST/seoulsibo_20260910094304_20028.pdf#page=53",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-041",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        }
+      ],
+      "notice_number": "서울특별시 고시 제2026-507호",
+      "notice_on": "2026-09-10",
+      "verified_on": "2026-11-27"
+    },
+    {
+      "id": "official-652302a6925b4efe",
+      "title": "삼선동3가 42-7 권리산정기준일 고시",
+      "source": "서울특별시 고시",
+      "published_on": "2026-09-10",
+      "url": "https://event.seoul.go.kr/snews/data/CN_MST/seoulsibo_20260910094304_20028.pdf#page=50",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-resident-030",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        }
+      ],
+      "notice_number": "서울특별시 고시 제2026-506호",
+      "notice_on": "2026-09-10",
+      "verified_on": "2026-11-27"
+    },
+    {
+      "id": "official-bab099368f4f5f6e",
+      "title": "자양1동 655 권리산정기준일 고시",
+      "source": "서울특별시 고시",
+      "published_on": "2026-09-10",
+      "url": "https://event.seoul.go.kr/snews/data/CN_MST/seoulsibo_20260910094304_20028.pdf#page=105",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-2026-extra-008",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        }
+      ],
+      "notice_number": "서울특별시 고시 제2026-511호",
+      "notice_on": "2026-09-10",
+      "verified_on": "2026-11-27"
+    },
+    {
+      "id": "official-2454d21ca25b7a2d",
+      "title": "정릉동 266-108 권리산정기준일 고시",
+      "source": "서울특별시 고시",
+      "published_on": "2026-09-10",
+      "url": "https://event.seoul.go.kr/snews/data/CN_MST/seoulsibo_20260910094304_20028.pdf#page=47",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-2026-extra-009",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        }
+      ],
+      "notice_number": "서울특별시 고시 제2026-505호",
+      "notice_on": "2026-09-10",
+      "verified_on": "2026-11-27"
+    },
+    {
+      "id": "official-095257270f2bfc8c",
+      "title": "개봉동 20 관리계획안 공람",
+      "source": "구로구 공고",
+      "published_on": "2026-09-03",
+      "url": "https://news.seoul.go.kr/citybuild/archives/542335#:~:text=2026-1561",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-048",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        }
+      ],
+      "notice_number": "구로구 공고 제2026-1561호",
+      "notice_on": "2026-09-03",
+      "verified_on": "2026-11-27"
     },
     {
       "id": "official-ccace41def044fd5",
@@ -387,6 +763,83 @@
       "verified_on": "2026-11-25"
     },
     {
+      "id": "official-7eb198cc3876ef68",
+      "title": "시흥5동 922-61 관리계획 고시",
+      "source": "서울특별시 고시",
+      "published_on": "2026-08-27",
+      "url": "https://event.seoul.go.kr/seoulsibo/fileDownload.do?fileName=seoulsibo_20260828163709_74413.pdf#page=47",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-026",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        }
+      ],
+      "notice_number": "서울특별시 고시 제2026-480호",
+      "notice_on": "2026-08-27",
+      "verified_on": "2026-11-27"
+    },
+    {
+      "id": "official-b04ab3b801c5f7a9",
+      "title": "자양1동 655 등 2곳 토지거래허가구역 공고",
+      "source": "서울특별시 공고",
+      "published_on": "2026-08-27",
+      "url": "https://land.seoul.go.kr/land/other/downloadAppointPbancFile.do?fileUuid=59eaca13115b00d0e063621d0f8d00d01085136",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-2026-extra-008",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-2026-extra-009",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        }
+      ],
+      "notice_number": "서울특별시 공고 제2026-2452호",
+      "notice_on": "2026-08-27",
+      "verified_on": "2026-11-27"
+    },
+    {
+      "id": "official-21f0635d8f1fce17",
+      "title": "중화동 329-38 관리계획안 공람",
+      "source": "중랑구 공고",
+      "published_on": "2026-08-20",
+      "url": "https://news.seoul.go.kr/citybuild/archives/541797#:~:text=2026-1212",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-018",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        }
+      ],
+      "notice_number": "중랑구 공고 제2026-1212호",
+      "notice_on": "2026-08-20",
+      "verified_on": "2026-11-27"
+    },
+    {
+      "id": "official-85a36dbe2f018b3a",
+      "title": "망우동 509 관리계획안 공람",
+      "source": "중랑구 공고",
+      "published_on": "2026-08-20",
+      "url": "https://news.seoul.go.kr/citybuild/archives/541797#:~:text=2026-1231",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-resident-010",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        }
+      ],
+      "notice_number": "중랑구 공고 제2026-1231호",
+      "notice_on": "2026-08-20",
+      "verified_on": "2026-11-27"
+    },
+    {
       "id": "official-b81dcc61e0690752",
       "title": "신월1동 99-1번지 일원 가로주택정비사업 조합설립인가 및 지형도면 고시",
       "source": "서울특별시 양천구",
@@ -423,6 +876,100 @@
       "notice_on": "2026-08-06"
     },
     {
+      "id": "official-4d6121d17ee9069e",
+      "title": "수유동 141 권리산정기준일 관련 변경 고시",
+      "source": "서울특별시 고시",
+      "published_on": "2026-08-06",
+      "url": "https://event.seoul.go.kr/snews/data/CN_MST/seoulsibo_20260805144233_10330.pdf#page=54",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-039",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        }
+      ],
+      "notice_number": "서울특별시 고시 제2026-449호",
+      "notice_on": "2026-08-06",
+      "verified_on": "2026-11-27"
+    },
+    {
+      "id": "official-85d04fbd1a288b67",
+      "title": "번동 469 권리산정기준일 관련 변경 고시",
+      "source": "서울특별시 고시",
+      "published_on": "2026-08-06",
+      "url": "https://event.seoul.go.kr/snews/data/CN_MST/seoulsibo_20260805144233_10330.pdf#page=51",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-040",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        }
+      ],
+      "notice_number": "서울특별시 고시 제2026-448호",
+      "notice_on": "2026-08-06",
+      "verified_on": "2026-11-27"
+    },
+    {
+      "id": "official-db3dc83c14f900d8",
+      "title": "노량진동 84-24 등 9곳 토지거래허가구역 공고",
+      "source": "서울특별시 공고",
+      "published_on": "2026-08-06",
+      "url": "https://land.seoul.go.kr/land/other/downloadAppointPbancFile.do?fileUuid=59d9172df7980038e063621d0f8d00381085093",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-2026-extra-003",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-2026-extra-006",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-2026-extra-007",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-041",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-083",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-resident-010",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-resident-028",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-resident-029",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-resident-030",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        }
+      ],
+      "notice_number": "서울특별시 공고 제2026-2289호",
+      "notice_on": "2026-08-06",
+      "verified_on": "2026-11-27"
+    },
+    {
       "id": "official-dfcac17dbffd695a",
       "title": "서울시, 모아타운·신통기획 '취소 구역' 전면 공개로 투기거래 차단한다",
       "source": "서울특별시 모아주택과",
@@ -430,6 +977,75 @@
       "url": "https://www.seoul.go.kr/news/news_report.do?nttNo=463299",
       "classification": "common",
       "related_sites": []
+    },
+    {
+      "id": "official-f22fcc6c683fb5c1",
+      "title": "자양1동 772-1 관리계획 고시",
+      "source": "서울특별시 고시",
+      "published_on": "2026-07-30",
+      "url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=640709",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-resident-005",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-resident-005",
+          "zone_id": "mz-plan-640709-a-1",
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-resident-005",
+          "zone_id": "mz-plan-640709-a-2",
+          "match_basis": "verified_notice_and_project_scope"
+        }
+      ],
+      "notice_number": "서울특별시 고시 제2026-437호",
+      "notice_on": "2026-07-30",
+      "verified_on": "2026-11-27"
+    },
+    {
+      "id": "official-4dcac2ae3d198a03",
+      "title": "자양1동 226-1 관리계획 고시",
+      "source": "서울특별시 고시",
+      "published_on": "2026-07-30",
+      "url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=640708",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-resident-006",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-resident-006",
+          "zone_id": "mz-plan-640708-a-3",
+          "match_basis": "verified_notice_and_project_scope"
+        }
+      ],
+      "notice_number": "서울특별시 고시 제2026-438호",
+      "notice_on": "2026-07-30",
+      "verified_on": "2026-11-27"
+    },
+    {
+      "id": "official-92315815b6de351c",
+      "title": "석관동 207-1 권리산정기준일 고시",
+      "source": "서울특별시 고시",
+      "published_on": "2026-07-30",
+      "url": "https://event.seoul.go.kr/snews/data/CN_MST/seoulsibo_20260729143129_10900.pdf#page=105",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-2026-extra-006",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        }
+      ],
+      "notice_number": "서울특별시 고시 제2026-435호",
+      "notice_on": "2026-07-30",
+      "verified_on": "2026-11-27"
     },
     {
       "id": "official-f35c52e171761e59",
@@ -448,6 +1064,258 @@
       "verified_on": "2026-11-25",
       "notice_number": "서울특별시 고시 제2026-397호",
       "notice_on": "2026-07-09"
+    },
+    {
+      "id": "official-7cccc3a6763a1f22",
+      "title": "번동 454-61 관리계획 고시",
+      "source": "서울특별시 고시",
+      "published_on": "2026-07-09",
+      "url": "https://event.seoul.go.kr/seoulsibo/fileDownload.do?fileName=seoulsibo_20260708113419_91414.pdf#page=48",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-035",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        }
+      ],
+      "notice_number": "서울특별시 고시 제2026-385호",
+      "notice_on": "2026-07-09",
+      "verified_on": "2026-11-27"
+    },
+    {
+      "id": "official-e1efb6bce3d17969",
+      "title": "신림동 661-2 권리산정기준일 고시",
+      "source": "서울특별시 고시",
+      "published_on": "2026-07-09",
+      "url": "https://event.seoul.go.kr/snews/data/CN_MST/seoulsibo_20260708113419_91414.pdf#page=143",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-2026-extra-004",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        }
+      ],
+      "notice_number": "서울특별시 고시 제2026-390호",
+      "notice_on": "2026-07-09",
+      "verified_on": "2026-11-27"
+    },
+    {
+      "id": "official-22cfc4fe9e1401ae",
+      "title": "목동 644-1 권리산정기준일 고시",
+      "source": "서울특별시 고시",
+      "published_on": "2026-07-02",
+      "url": "https://event.seoul.go.kr/snews/data/CN_MST/seoulsibo_20260702134507_70882.pdf#page=5",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-resident-022",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        }
+      ],
+      "notice_number": "서울특별시 고시 제2026-371호",
+      "notice_on": "2026-07-02",
+      "verified_on": "2026-11-27"
+    },
+    {
+      "id": "official-8c9fe859d065b501",
+      "title": "하월곡동 40-107 권리산정기준일 고시",
+      "source": "서울특별시 고시",
+      "published_on": "2026-07-02",
+      "url": "https://event.seoul.go.kr/snews/data/CN_MST/seoulsibo_20260702134507_70882.pdf#page=11",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-resident-028",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        }
+      ],
+      "notice_number": "서울특별시 고시 제2026-374호",
+      "notice_on": "2026-07-02",
+      "verified_on": "2026-11-27"
+    },
+    {
+      "id": "official-94fd59fc56ea163f",
+      "title": "장위동 219-15 권리산정기준일 고시",
+      "source": "서울특별시 고시",
+      "published_on": "2026-07-02",
+      "url": "https://event.seoul.go.kr/snews/data/CN_MST/seoulsibo_20260702134507_70882.pdf#page=8",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-resident-029",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        }
+      ],
+      "notice_number": "서울특별시 고시 제2026-373호",
+      "notice_on": "2026-07-02",
+      "verified_on": "2026-11-27"
+    },
+    {
+      "id": "official-61db2b34f0ddeced",
+      "title": "천호동 113-2 관리계획 고시",
+      "source": "서울특별시 고시",
+      "published_on": "2026-06-25",
+      "url": "https://event.seoul.go.kr/snews/data/CN_MST/seoulsibo_20260624163152_83531.pdf#page=63",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-057",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        }
+      ],
+      "notice_number": "서울특별시 고시 제2026-345호",
+      "notice_on": "2026-06-25",
+      "verified_on": "2026-11-27"
+    },
+    {
+      "id": "official-4672c326a461179e",
+      "title": "천호동 338번지 관리계획 고시",
+      "source": "서울특별시 고시",
+      "published_on": "2026-06-25",
+      "url": "https://event.seoul.go.kr/seoulsibo/fileDownload.do?fileName=seoulsibo_20260624163152_83531.pdf#page=79",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-resident-027",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        }
+      ],
+      "notice_number": "서울특별시 고시 제2026-346호",
+      "notice_on": "2026-06-25",
+      "verified_on": "2026-11-27"
+    },
+    {
+      "id": "official-31e8683e4190f108",
+      "title": "양재동 77 등 5곳 토지거래허가구역 공고",
+      "source": "서울특별시 공고",
+      "published_on": "2026-06-25",
+      "url": "https://land.seoul.go.kr/land/other/downloadAppointPbancFile.do?fileUuid=59d9172df79a0038e063621d0f8d00381085095",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-2026-extra-001",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-2026-extra-002",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-2026-extra-003",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-2026-extra-004",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-2026-extra-005",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        }
+      ],
+      "notice_number": "서울특별시 공고 제2026-1910호",
+      "notice_on": "2026-06-25",
+      "verified_on": "2026-11-27"
+    },
+    {
+      "id": "official-906af8a836ffd823",
+      "title": "방배동 920-1 모아타운 주민의견 설문조사 결과",
+      "source": "서초구",
+      "published_on": "2026-06-25",
+      "url": "https://www.seocho.go.kr/site/seocho/ex/bbs/View.do?bcIdx=409831&cbIdx=57",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-2026-extra-011",
+          "zone_id": null,
+          "match_basis": "reviewed_official_document"
+        }
+      ],
+      "verified_on": "2026-11-27"
+    },
+    {
+      "id": "official-169fec060e64c60c",
+      "title": "망원동 456-6 관리계획 고시",
+      "source": "서울특별시 고시",
+      "published_on": "2026-06-18",
+      "url": "https://event.seoul.go.kr/snews/data/CN_MST/seoulsibo_20260618110232_60397.pdf#page=32",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-031",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        }
+      ],
+      "notice_number": "서울특별시 고시 제2026-340호",
+      "notice_on": "2026-06-18",
+      "verified_on": "2026-11-27"
+    },
+    {
+      "id": "official-dd5ae4cb4bca6fcd",
+      "title": "정릉동 226-1 관리계획 고시",
+      "source": "서울특별시 고시",
+      "published_on": "2026-06-11",
+      "url": "https://event.seoul.go.kr/seoulsibo/fileDownload.do?fileName=seoulsibo_20260610160855_86574.pdf#page=185",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-resident-013",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        }
+      ],
+      "notice_number": "서울특별시 고시 제2026-324호",
+      "notice_on": "2026-06-11",
+      "verified_on": "2026-11-27"
+    },
+    {
+      "id": "official-d0b3ca04a94918a9",
+      "title": "신창동 76-1 권리산정기준일 고시",
+      "source": "서울특별시 고시",
+      "published_on": "2026-06-04",
+      "url": "https://event.seoul.go.kr/snews/data/CN_MST/seoulsibo_20260604151847_53263.pdf#page=127",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-2026-extra-002",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        }
+      ],
+      "notice_number": "서울특별시 고시 제2026-309호",
+      "notice_on": "2026-06-04",
+      "verified_on": "2026-11-27"
+    },
+    {
+      "id": "official-a0238fdf514e8c03",
+      "title": "일원동 720 권리산정기준일 고시",
+      "source": "서울특별시 고시",
+      "published_on": "2026-06-04",
+      "url": "https://event.seoul.go.kr/snews/data/CN_MST/seoulsibo_20260604151847_53263.pdf#page=124",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-2026-extra-012",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        }
+      ],
+      "notice_number": "서울특별시 고시 제2026-307호",
+      "notice_on": "2026-06-04",
+      "verified_on": "2026-11-27"
     },
     {
       "id": "official-580b6ec944c0ceec",
@@ -486,6 +1354,277 @@
       "notice_on": "2026-05-21"
     },
     {
+      "id": "official-f9590fd84b656b7c",
+      "title": "화곡동 1087 등 48곳 관리계획 고시",
+      "source": "서울특별시 고시",
+      "published_on": "2026-05-21",
+      "url": "https://event.seoul.go.kr/snews/data/CN_MST/seoulsibo_20260520112133_47006.pdf#page=157",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-001",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-003",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-005",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-006",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-007",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-008",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-009",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-011",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-012",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-013",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-014",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-015",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-016",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-017",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-019",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-024",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-028",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-036",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-037",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-042",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-044",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-045",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-046",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-047",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-049",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-050",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-051",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-052",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-053",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-054",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-055",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-064",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-065",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-066",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-067",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-068",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-071",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-072",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-073",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-074",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-077",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-083",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-084",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-085",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-086",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-resident-016",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-resident-017",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-resident-025",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        }
+      ],
+      "notice_number": "서울특별시 고시 제2026-282호",
+      "notice_on": "2026-05-21",
+      "verified_on": "2026-11-27"
+    },
+    {
+      "id": "official-25935807c1e8adfd",
+      "title": "수유동 392-9 관리계획 고시",
+      "source": "서울특별시 고시",
+      "published_on": "2026-05-21",
+      "url": "https://event.seoul.go.kr/seoulsibo/fileDownload.do?fileName=seoulsibo_20260520112133_47006.pdf#page=6",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-038",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        }
+      ],
+      "notice_number": "서울특별시 고시 제2026-270호",
+      "notice_on": "2026-05-21",
+      "verified_on": "2026-11-27"
+    },
+    {
       "id": "official-68792088cfdb0566",
       "title": "서울시, 광진·중랑 모아타운 3곳 심의 통과…노후 주거지 정비에 지역 상생 더한다",
       "source": "서울특별시",
@@ -510,6 +1649,87 @@
         }
       ],
       "verified_on": "2026-11-25"
+    },
+    {
+      "id": "official-d77ee710fb3ef017",
+      "title": "묵2동 243-7 관리계획 고시",
+      "source": "서울특별시 고시",
+      "published_on": "2026-05-14",
+      "url": "https://event.seoul.go.kr/seoulsibo/fileDownload.do?fileName=seoulsibo_20260513152445_75058.pdf#page=105",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-020",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        }
+      ],
+      "notice_number": "서울특별시 고시 제2026-258호",
+      "notice_on": "2026-05-14",
+      "verified_on": "2026-11-27"
+    },
+    {
+      "id": "official-4017b80aa40234d9",
+      "title": "장위동 65-107 등 10곳 토지거래허가구역 공고",
+      "source": "서울특별시 공고",
+      "published_on": "2026-05-14",
+      "url": "https://land.seoul.go.kr/land/other/downloadAppointPbancFile.do?fileUuid=59d9172df79c0038e063621d0f8d00381085097",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-resident-035",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-resident-036",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-resident-037",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-resident-038",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-resident-039",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-resident-040",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-resident-041",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-resident-042",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-resident-043",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-resident-044",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        }
+      ],
+      "notice_number": "서울특별시 공고 제2026-1510호",
+      "notice_on": "2026-05-14",
+      "verified_on": "2026-11-27"
     },
     {
       "id": "official-64abe53c93ac305c",
@@ -548,6 +1768,154 @@
       "notice_on": "2026-04-30"
     },
     {
+      "id": "official-49b64b6ee31cc7ed",
+      "title": "자양2동 649 관리계획 고시",
+      "source": "서울특별시 고시",
+      "published_on": "2026-04-30",
+      "url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=639882",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-079",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-079",
+          "zone_id": "mz-plan-639882-1121510500106370000",
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-079",
+          "zone_id": "mz-plan-639882-1121510500106400000",
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-079",
+          "zone_id": "mz-plan-639882-1121510500106460000",
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-079",
+          "zone_id": "mz-plan-639882-1121510500106480000",
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-079",
+          "zone_id": "mz-plan-639882-1121510500106520000",
+          "match_basis": "verified_notice_and_project_scope"
+        }
+      ],
+      "notice_number": "서울특별시 고시 제2026-239호",
+      "notice_on": "2026-04-30",
+      "verified_on": "2026-11-27"
+    },
+    {
+      "id": "official-ef2fe620a58e41e3",
+      "title": "금호동1가 129 관리계획안 공람",
+      "source": "성동구 공고",
+      "published_on": "2026-04-30",
+      "url": "https://www.eum.go.kr/web/cp/hr/hrPeopleHearDet.jsp?seq=4681",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-resident-003",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        }
+      ],
+      "notice_number": "성동구 공고 제2026-661호",
+      "notice_on": "2026-04-30",
+      "verified_on": "2026-11-27"
+    },
+    {
+      "id": "official-17309736b510fc2f",
+      "title": "신내동 493-13 관리계획 고시",
+      "source": "서울특별시 고시",
+      "published_on": "2026-04-30",
+      "url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=638669",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-resident-009",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-resident-009",
+          "zone_id": "mz-plan-638669-a1",
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-resident-009",
+          "zone_id": "mz-plan-638669-a2",
+          "match_basis": "verified_notice_and_project_scope"
+        }
+      ],
+      "notice_number": "서울특별시 고시 제2026-244호",
+      "notice_on": "2026-04-30",
+      "verified_on": "2026-11-27"
+    },
+    {
+      "id": "official-8f1f6c8a15dadfc0",
+      "title": "정릉동 559-43 관리계획 고시",
+      "source": "서울특별시 고시",
+      "published_on": "2026-04-30",
+      "url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=645471",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-resident-012",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-resident-012",
+          "zone_id": "mz-plan-645471-a-1",
+          "match_basis": "verified_notice_and_project_scope"
+        }
+      ],
+      "notice_number": "서울특별시 고시 제2026-236호",
+      "notice_on": "2026-04-30",
+      "verified_on": "2026-11-27"
+    },
+    {
+      "id": "official-b8aa18580389eee2",
+      "title": "은천동 635-540 관리계획 고시",
+      "source": "서울특별시 고시",
+      "published_on": "2026-04-23",
+      "url": "https://event.seoul.go.kr/snews/data/CN_MST/seoulsibo_20260422155953_77596.pdf#page=65",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-075",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        }
+      ],
+      "notice_number": "서울특별시 고시 제2026-218호",
+      "notice_on": "2026-04-23",
+      "verified_on": "2026-11-27"
+    },
+    {
+      "id": "official-c32c8a8e4afd7300",
+      "title": "은천동 938-5 관리계획 고시",
+      "source": "서울특별시 고시",
+      "published_on": "2026-04-23",
+      "url": "https://event.seoul.go.kr/snews/data/CN_MST/seoulsibo_20260422155953_77596.pdf#page=83",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-076",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        }
+      ],
+      "notice_number": "서울특별시 고시 제2026-219호",
+      "notice_on": "2026-04-23",
+      "verified_on": "2026-11-27"
+    },
+    {
       "id": "official-4f6fe6d18ce9263a",
       "title": "대청마을 북측구역(일원동 619번지 일원) 소규모주택정비 관리계획(모아타운 관리계획) 수립(안) 주민공람 공고",
       "source": "서울특별시 강남구",
@@ -566,6 +1934,185 @@
       "notice_on": "2026-04-17"
     },
     {
+      "id": "official-7747a38bd0943aff",
+      "title": "중화동 329-38 관리계획 고시",
+      "source": "서울특별시 고시",
+      "published_on": "2026-04-16",
+      "url": "https://event.seoul.go.kr/snews/data/CN_MST/seoulsibo_20260415175605_91939.pdf#page=132",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-018",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        }
+      ],
+      "notice_number": "서울특별시 고시 제2026-195호",
+      "notice_on": "2026-04-16",
+      "verified_on": "2026-11-27"
+    },
+    {
+      "id": "official-2bbaf2cb4ad0fcfa",
+      "title": "자양1동 799 등 2곳 권리산정기준일 관련 변경 고시",
+      "source": "서울특별시 고시",
+      "published_on": "2026-04-16",
+      "url": "https://event.seoul.go.kr/snews/data/CN_MST/seoulsibo_20260415175605_91939.pdf#page=167",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-078",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-079",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        }
+      ],
+      "notice_number": "서울특별시 고시 제2026-201호",
+      "notice_on": "2026-04-16",
+      "verified_on": "2026-11-27"
+    },
+    {
+      "id": "official-503b716bd60d39de",
+      "title": "천호동 338번지 권리산정기준일 고시",
+      "source": "서울특별시 고시",
+      "published_on": "2026-04-16",
+      "url": "https://event.seoul.go.kr/snews/data/CN_MST/seoulsibo_20260415175605_91939.pdf#page=116",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-resident-027",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        }
+      ],
+      "notice_number": "서울특별시 고시 제2026-181호",
+      "notice_on": "2026-04-16",
+      "verified_on": "2026-11-27"
+    },
+    {
+      "id": "official-b120aae0d5d621ea",
+      "title": "구의3동 224-54 등 2곳 권리산정기준일 고시",
+      "source": "서울특별시 고시",
+      "published_on": "2026-04-09",
+      "url": "https://event.seoul.go.kr/snews/data/CN_MST/seoulsibo_20260408173138_09392.pdf#page=345",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-resident-043",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-resident-044",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        }
+      ],
+      "notice_number": "서울특별시 고시 제2026-187호",
+      "notice_on": "2026-04-09",
+      "verified_on": "2026-11-27"
+    },
+    {
+      "id": "official-fb1569bf33d2118c",
+      "title": "정릉동 226-1 관리계획 고시",
+      "source": "서울특별시 고시",
+      "published_on": "2026-03-26",
+      "url": "https://event.seoul.go.kr/seoulsibo/fileDownload.do?fileName=seoulsibo_20260325161105_54413.pdf#page=72",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-resident-013",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        }
+      ],
+      "notice_number": "서울특별시 고시 제2026-153호",
+      "notice_on": "2026-03-26",
+      "verified_on": "2026-11-27"
+    },
+    {
+      "id": "official-1d12d583ee5b9d96",
+      "title": "우면동 2 권리산정기준일 관련 변경 고시",
+      "source": "서울특별시 고시",
+      "published_on": "2026-03-12",
+      "url": "https://event.seoul.go.kr/snews/data/CN_MST/seoulsibo_20260316144825_65120.pdf#page=261",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-resident-026",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        }
+      ],
+      "notice_number": "서울특별시 고시 제2026-125호",
+      "notice_on": "2026-03-12",
+      "verified_on": "2026-11-27"
+    },
+    {
+      "id": "official-46f5533ac6ec72fd",
+      "title": "자양2동 593 권리산정기준일 고시",
+      "source": "서울특별시 고시",
+      "published_on": "2026-03-12",
+      "url": "https://event.seoul.go.kr/snews/data/CN_MST/seoulsibo_20260316144825_65120.pdf#page=19",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-resident-036",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        }
+      ],
+      "notice_number": "서울특별시 고시 제2026-109호",
+      "notice_on": "2026-03-12",
+      "verified_on": "2026-11-27"
+    },
+    {
+      "id": "official-4946300f7c3ad2f8",
+      "title": "사당동 449 등 6곳 권리산정기준일 고시",
+      "source": "서울특별시 고시",
+      "published_on": "2026-03-12",
+      "url": "https://event.seoul.go.kr/snews/data/CN_MST/seoulsibo_20260316144825_65120.pdf#page=172",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-resident-037",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-resident-038",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-resident-039",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-resident-040",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-resident-041",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-resident-042",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        }
+      ],
+      "notice_number": "서울특별시 고시 제2026-122호",
+      "notice_on": "2026-03-12",
+      "verified_on": "2026-11-27"
+    },
+    {
       "id": "official-c993a23020a84ebb",
       "title": "서울특별시 마포구 합정동 369번지 일대 소규모주택정비 관리계획(모아타운 관리계획) 지정을 위하여「빈집 및 소규모주택 정비에 관한 특례법」 제43조의2(소규모주택정비 관리계획의 수립)에 따라 소규모주택정비 관리계획(모아타운 관리계획) 승인 및 「토지이용규제기본법」제8조 및 같은 법 시행령 제7조 규정에 따라 지형도면을 고시합니다.",
       "source": "서울특별시",
@@ -577,11 +2124,110 @@
           "town_id": "mt-202603-public-032",
           "zone_id": null,
           "match_basis": "verified_management_plan_notice"
+        },
+        {
+          "town_id": "mt-202603-public-032",
+          "zone_id": "mz-mapohapjeong-2026-111-a1",
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-032",
+          "zone_id": "mz-mapohapjeong-2026-111-a2",
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-032",
+          "zone_id": "mz-mapohapjeong-2026-111-a3",
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-032",
+          "zone_id": "mz-mapohapjeong-2026-111-a4",
+          "match_basis": "verified_notice_and_project_scope"
         }
       ],
       "verified_on": "2026-11-25",
       "notice_number": "서울특별시 고시 제2026-111호",
       "notice_on": "2026-03-05"
+    },
+    {
+      "id": "official-f6988cf843ae62db",
+      "title": "장위동 65-107 권리산정기준일 고시",
+      "source": "서울특별시 고시",
+      "published_on": "2026-02-19",
+      "url": "https://event.seoul.go.kr/snews/data/CN_MST/seoulsibo_20260213141933_17969.pdf#page=39",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-resident-035",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        }
+      ],
+      "notice_number": "서울특별시 고시 제2026-81호",
+      "notice_on": "2026-02-19",
+      "verified_on": "2026-11-27"
+    },
+    {
+      "id": "official-293ade8a52d0aa04",
+      "title": "청룡동 1535 관리계획안 공람",
+      "source": "관악구 공고",
+      "published_on": "2026-02-12",
+      "url": "https://www.gwanak.go.kr/site/gwanak/ex/bbsNew/View.do?not_ancmt_mgt_no=40192&typeCode=1",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-073",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        }
+      ],
+      "notice_number": "관악구 공고 제2026-317호",
+      "notice_on": "2026-02-12",
+      "verified_on": "2026-11-27"
+    },
+    {
+      "id": "official-c45befb90bd079ba",
+      "title": "하월곡동 40-107 등 6곳 토지거래허가구역 공고",
+      "source": "서울특별시 공고",
+      "published_on": "2026-02-12",
+      "url": "https://land.seoul.go.kr/land/other/downloadAppointPbancFile.do?fileUuid=59d9172df7a20038e063621d0f8d00381085103",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-resident-028",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-resident-029",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-resident-030",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-resident-031",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-resident-032",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-resident-033",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        }
+      ],
+      "notice_number": "서울특별시 공고 제2026-456호",
+      "notice_on": "2026-02-12",
+      "verified_on": "2026-11-27"
     },
     {
       "id": "official-749ba3ddd5f316b7",
@@ -602,6 +2248,116 @@
       "notice_on": "2026-02-05"
     },
     {
+      "id": "official-6fee615e8083f340",
+      "title": "고척동 241 권리산정기준일 관련 변경 고시",
+      "source": "서울특별시 고시",
+      "published_on": "2026-01-22",
+      "url": "https://event.seoul.go.kr/snews/data/CN_MST/seoulsibo_20260121154014_41529.pdf#page=115",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-044",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        }
+      ],
+      "notice_number": "서울특별시 고시 제2026-45호",
+      "notice_on": "2026-01-22",
+      "verified_on": "2026-11-27"
+    },
+    {
+      "id": "official-bc154354e354d09e",
+      "title": "면목동 377-4 권리산정기준일 고시",
+      "source": "서울특별시 고시",
+      "published_on": "2026-01-15",
+      "url": "https://event.seoul.go.kr/snews/data/CN_MST/seoulsibo_20260114151534_54479.pdf#page=67",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-resident-033",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        }
+      ],
+      "notice_number": "서울특별시 고시 제2026-25호",
+      "notice_on": "2026-01-15",
+      "verified_on": "2026-11-27"
+    },
+    {
+      "id": "official-9a3f392679f1beba",
+      "title": "난곡동 697-20 관리계획 고시",
+      "source": "서울특별시 고시",
+      "published_on": "2026-01-08",
+      "url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=641915",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-077",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-077",
+          "zone_id": "mz-plan-641915-a1",
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-077",
+          "zone_id": "mz-plan-641915-a2",
+          "match_basis": "verified_notice_and_project_scope"
+        }
+      ],
+      "notice_number": "서울특별시 고시 제2026-17호",
+      "notice_on": "2026-01-08",
+      "verified_on": "2026-11-27"
+    },
+    {
+      "id": "official-295c03e1d592be22",
+      "title": "응암동 227 권리산정기준일 고시",
+      "source": "서울특별시 고시",
+      "published_on": "2026-01-08",
+      "url": "https://event.seoul.go.kr/snews/data/CN_MST/seoulsibo_20260107140412_45096.pdf#page=90",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-resident-032",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        }
+      ],
+      "notice_number": "서울특별시 고시 제2026-1호",
+      "notice_on": "2026-01-08",
+      "verified_on": "2026-11-27"
+    },
+    {
+      "id": "official-ae702237ccea46f4",
+      "title": "중화2동 299-8 등 3곳 권리산정기준일 관련 변경 고시",
+      "source": "서울특별시 고시",
+      "published_on": "2026-01-02",
+      "url": "https://event.seoul.go.kr/snews/data/CN_MST/seoulsibo_20251231133228_42449.pdf#page=50",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-021",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-022",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-061",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        }
+      ],
+      "notice_number": "서울특별시 고시 제2026-4호",
+      "notice_on": "2026-01-02",
+      "verified_on": "2026-11-27"
+    },
+    {
       "id": "official-6a17532504bfb32c",
       "title": "노량진동 221-24번지 일대 소규모주택정비 관리계획(모아타운 관리계획) 승인 및 지형도면 고시",
       "source": "서울특별시",
@@ -613,6 +2369,11 @@
           "town_id": "mt-202603-public-058",
           "zone_id": null,
           "match_basis": "verified_management_plan_notice"
+        },
+        {
+          "town_id": "mt-202603-public-058",
+          "zone_id": "mz-plan-628093-a-1",
+          "match_basis": "verified_notice_and_project_scope"
         }
       ],
       "verified_on": "2026-11-25",
@@ -631,11 +2392,185 @@
           "town_id": "mt-202603-public-084",
           "zone_id": null,
           "match_basis": "verified_management_plan_notice"
+        },
+        {
+          "town_id": "mt-202603-public-084",
+          "zone_id": "mz-plan-630320-1141011100103220000",
+          "match_basis": "verified_notice_and_project_scope"
         }
       ],
       "verified_on": "2026-11-25",
       "notice_number": "서울특별시 고시 제2025-743호",
       "notice_on": "2025-12-26"
+    },
+    {
+      "id": "official-1417b763f6c55a6c",
+      "title": "화곡동 424 등 2곳 권리산정기준일 관련 변경 고시",
+      "source": "서울특별시 고시",
+      "published_on": "2025-12-26",
+      "url": "https://event.seoul.go.kr/snews/data/CN_MST/seoulsibo_20251226131847_53209.pdf#page=291",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-004",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-069",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        }
+      ],
+      "notice_number": "서울특별시 고시 제2025-751호",
+      "notice_on": "2025-12-26",
+      "verified_on": "2026-11-27"
+    },
+    {
+      "id": "official-1d0fbffb405bdfd3",
+      "title": "망우본동 354-2 관리계획 고시",
+      "source": "서울특별시 고시",
+      "published_on": "2025-12-26",
+      "url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=628523",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-017",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-017",
+          "zone_id": "mz-plan-628523-a-1",
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-017",
+          "zone_id": "mz-plan-628523-a-2",
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-017",
+          "zone_id": "mz-plan-628523-a-3",
+          "match_basis": "verified_notice_and_project_scope"
+        }
+      ],
+      "notice_number": "서울특별시 고시 제2025-735호",
+      "notice_on": "2025-12-26",
+      "verified_on": "2026-11-27"
+    },
+    {
+      "id": "official-fffcd2b00d332a74",
+      "title": "망우3동 474-29 관리계획 고시",
+      "source": "서울특별시 고시",
+      "published_on": "2025-12-26",
+      "url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=628097",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-019",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-019",
+          "zone_id": "mz-plan-628097-a1",
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-019",
+          "zone_id": "mz-plan-628097-a2",
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-019",
+          "zone_id": "mz-plan-628097-a3",
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-019",
+          "zone_id": "mz-plan-628097-a4",
+          "match_basis": "verified_notice_and_project_scope"
+        }
+      ],
+      "notice_number": "서울특별시 고시 제2025-755호",
+      "notice_on": "2025-12-26",
+      "verified_on": "2026-11-27"
+    },
+    {
+      "id": "official-15c1b40a22f194a9",
+      "title": "성현동 1021 관리계획 고시",
+      "source": "서울특별시 고시",
+      "published_on": "2025-12-26",
+      "url": "https://event.seoul.go.kr/seoulsibo/fileDownload.do?fileName=seoulsibo_20251226131847_53209.pdf#page=109",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-074",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        }
+      ],
+      "notice_number": "서울특별시 고시 제2025-740호",
+      "notice_on": "2025-12-26",
+      "verified_on": "2026-11-27"
+    },
+    {
+      "id": "official-eda11306bbe4694b",
+      "title": "창전동 46-1 관리계획 고시",
+      "source": "서울특별시 고시",
+      "published_on": "2025-12-26",
+      "url": "https://event.seoul.go.kr/seoulsibo/fileDownload.do?fileName=seoulsibo_20251226131847_53209.pdf#page=294",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-resident-020",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        }
+      ],
+      "notice_number": "서울특별시 고시 제2025-752호",
+      "notice_on": "2025-12-26",
+      "verified_on": "2026-11-27"
+    },
+    {
+      "id": "official-5bc685ad5fbdbfae",
+      "title": "면목동 127-26 권리산정기준일 고시",
+      "source": "서울특별시 고시",
+      "published_on": "2025-12-26",
+      "url": "https://event.seoul.go.kr/snews/data/CN_MST/seoulsibo_20251226131847_53209.pdf#page=20",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-resident-031",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        }
+      ],
+      "notice_number": "서울특별시 고시 제2025-729호",
+      "notice_on": "2025-12-26",
+      "verified_on": "2026-11-27"
+    },
+    {
+      "id": "official-921c82bcdfefe9c9",
+      "title": "양재2동 374 · 양재2동 모아타운 주민의견 조사 결과 정정 PDF",
+      "source": "서초구",
+      "published_on": "2025-12-23",
+      "url": "https://www.seocho.go.kr/common/board/Download.do?bcIdx=403543&cbIdx=57&streFileNm=20251223105955_6serfxwm4h8kc9icesq1jzozkcc4cjcf.pdf",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-081",
+          "zone_id": null,
+          "match_basis": "reviewed_official_document"
+        },
+        {
+          "town_id": "mt-202603-public-082",
+          "zone_id": null,
+          "match_basis": "reviewed_official_document"
+        }
+      ],
+      "verified_on": "2026-11-27"
     },
     {
       "id": "official-03b5b4c912603a4b",
@@ -667,11 +2602,62 @@
           "town_id": "mt-202603-public-086",
           "zone_id": null,
           "match_basis": "verified_management_plan_notice"
+        },
+        {
+          "town_id": "mt-202603-public-086",
+          "zone_id": "mz-plan-625571-a1",
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-086",
+          "zone_id": "mz-plan-625571-a2",
+          "match_basis": "verified_notice_and_project_scope"
         }
       ],
       "verified_on": "2026-11-25",
       "notice_number": "서울특별시 고시 제2025-717호",
       "notice_on": "2025-12-18"
+    },
+    {
+      "id": "official-304e3875d254d74e",
+      "title": "개봉동 270-38 관리계획 고시",
+      "source": "서울특별시 고시",
+      "published_on": "2025-12-18",
+      "url": "https://event.seoul.go.kr/seoulsibo/fileDownload.do?fileName=seoulsibo_20251217162958_75587.pdf#page=320",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-046",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        }
+      ],
+      "notice_number": "서울특별시 고시 제2025-714호",
+      "notice_on": "2025-12-18",
+      "verified_on": "2026-11-27"
+    },
+    {
+      "id": "official-017163221d905ecd",
+      "title": "일원동 720 등 2곳 토지거래허가구역 공고",
+      "source": "서울특별시 공고",
+      "published_on": "2025-12-18",
+      "url": "https://land.seoul.go.kr/land/other/downloadAppointPbancFile.do?fileUuid=59d9172df7a70038e063621d0f8d00381085108",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-2026-extra-012",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-resident-021",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        }
+      ],
+      "notice_number": "서울특별시 공고 제2025-3548호",
+      "notice_on": "2025-12-18",
+      "verified_on": "2026-11-27"
     },
     {
       "id": "official-09dd3b37a14acb52",
@@ -703,11 +2689,34 @@
           "town_id": "mt-202603-resident-017",
           "zone_id": null,
           "match_basis": "verified_management_plan_notice"
+        },
+        {
+          "town_id": "mt-202603-resident-017",
+          "zone_id": "mz-plan-626249-a-1",
+          "match_basis": "verified_notice_and_project_scope"
         }
       ],
       "verified_on": "2026-11-25",
       "notice_number": "서울특별시 고시 제2025-666호",
       "notice_on": "2025-12-04"
+    },
+    {
+      "id": "official-8a0b4f6941161b07",
+      "title": "양재동 77 권리산정기준일 고시",
+      "source": "서울특별시 고시",
+      "published_on": "2025-12-04",
+      "url": "https://event.seoul.go.kr/snews/data/CN_MST/seoulsibo_20251203161424_82529.pdf#page=97",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-2026-extra-001",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        }
+      ],
+      "notice_number": "서울특별시 고시 제2025-665호",
+      "notice_on": "2025-12-04",
+      "verified_on": "2026-11-27"
     },
     {
       "id": "official-e84f8977d40b3290",
@@ -728,6 +2737,42 @@
       "notice_on": "2025-11-27"
     },
     {
+      "id": "official-96da10a8439868a1",
+      "title": "구로동 511 권리산정기준일 관련 변경 고시",
+      "source": "서울특별시 고시",
+      "published_on": "2025-11-27",
+      "url": "https://event.seoul.go.kr/snews/data/CN_MST/seoulsibo_20251126131329_88799.pdf#page=264",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-047",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        }
+      ],
+      "notice_number": "서울특별시 고시 제2025-660호",
+      "notice_on": "2025-11-27",
+      "verified_on": "2026-11-27"
+    },
+    {
+      "id": "official-91fc32ce5418f802",
+      "title": "시흥3동 1005 관리계획 고시",
+      "source": "서울특별시 고시",
+      "published_on": "2025-11-20",
+      "url": "https://event.seoul.go.kr/seoulsibo/fileDownload.do?fileName=seoulsibo_20251119162712_66715.pdf#page=64",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-024",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        }
+      ],
+      "notice_number": "서울특별시 고시 제2025-635호",
+      "notice_on": "2025-11-20",
+      "verified_on": "2026-11-27"
+    },
+    {
       "id": "official-83f614ae2411da33",
       "title": "불광동 170번지 일대 소규모주택정비 관리계획(모아타운 관리계획) 변경 승인 및 지형도면 고시",
       "source": "서울특별시",
@@ -744,6 +2789,24 @@
       "verified_on": "2026-11-25",
       "notice_number": "서울특별시 고시 제2025-604호",
       "notice_on": "2025-11-06"
+    },
+    {
+      "id": "official-217678ff01fbe1ba",
+      "title": "망원동 464-1 권리산정기준일 고시",
+      "source": "서울특별시 고시",
+      "published_on": "2025-10-30",
+      "url": "https://event.seoul.go.kr/snews/data/CN_MST/seoulsibo_20251030094702_15149.pdf#page=129",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-resident-021",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        }
+      ],
+      "notice_number": "서울특별시 고시 제2025-594호",
+      "notice_on": "2025-10-30",
+      "verified_on": "2026-11-27"
     },
     {
       "id": "official-8da2eb0fb4599ebc",
@@ -775,6 +2838,39 @@
         }
       ],
       "verified_on": "2026-11-25"
+    },
+    {
+      "id": "official-5b33961dd5edcb04",
+      "title": "망우3동 474-29 등 4곳 권리산정기준일 관련 변경 고시",
+      "source": "서울특별시 고시",
+      "published_on": "2025-10-16",
+      "url": "https://event.seoul.go.kr/snews/data/CN_MST/seoulsibo_20251015175009_73595.pdf#page=102",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-019",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-020",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-084",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-088",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        }
+      ],
+      "notice_number": "서울특별시 고시 제2025-565호",
+      "notice_on": "2025-10-16",
+      "verified_on": "2026-11-27"
     },
     {
       "id": "official-cbf40dec062152c6",
@@ -813,6 +2909,60 @@
       "notice_on": "2025-09-25"
     },
     {
+      "id": "official-a8fd465a3b33eebf",
+      "title": "망우동 509 권리산정기준일 고시",
+      "source": "서울특별시 고시",
+      "published_on": "2025-09-25",
+      "url": "https://event.seoul.go.kr/snews/data/CN_MST/seoulsibo_20250925101004_82404.pdf#page=26",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-resident-010",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        }
+      ],
+      "notice_number": "서울특별시 고시 제2025-531호",
+      "notice_on": "2025-09-25",
+      "verified_on": "2026-11-27"
+    },
+    {
+      "id": "official-b49649a09b463578",
+      "title": "정릉동 226-1 권리산정기준일 고시",
+      "source": "서울특별시 고시",
+      "published_on": "2025-09-25",
+      "url": "https://event.seoul.go.kr/snews/data/CN_MST/seoulsibo_20250925101004_82404.pdf#page=100",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-resident-013",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        }
+      ],
+      "notice_number": "서울특별시 고시 제2025-541호",
+      "notice_on": "2025-09-25",
+      "verified_on": "2026-11-27"
+    },
+    {
+      "id": "official-01683339ea96b01d",
+      "title": "정릉동 199-1 권리산정기준일 고시",
+      "source": "서울특별시 고시",
+      "published_on": "2025-09-25",
+      "url": "https://event.seoul.go.kr/snews/data/CN_MST/seoulsibo_20250925101004_82404.pdf#page=103",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-resident-014",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        }
+      ],
+      "notice_number": "서울특별시 고시 제2025-542호",
+      "notice_on": "2025-09-25",
+      "verified_on": "2026-11-27"
+    },
+    {
       "id": "official-d16539cac9b50fc5",
       "title": "중화동 329-38번지 일대 소규모주택정비 관리계획(모아타운 관리계획) 변경결정(경미한 변경) 및 지형도면 고시",
       "source": "서울특별시",
@@ -829,6 +2979,22 @@
       "verified_on": "2026-11-25",
       "notice_number": "서울특별시 고시 제2025-490호",
       "notice_on": "2025-09-04"
+    },
+    {
+      "id": "official-c7353cec2defac0f",
+      "title": "양재동 방아다리공원 일대 모아타운 주민의견 조사 결과",
+      "source": "서초구",
+      "published_on": "2025-09-01",
+      "url": "https://www.seocho.go.kr/site/seocho/ex/bbs/View.do?bcIdx=404007&cbIdx=57",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-2026-extra-001",
+          "zone_id": null,
+          "match_basis": "reviewed_official_document"
+        }
+      ],
+      "verified_on": "2026-11-27"
     },
     {
       "id": "official-72e4b0dba6350629",
@@ -849,6 +3015,72 @@
       "notice_on": "2025-08-28"
     },
     {
+      "id": "official-a1f93fa059eb6a98",
+      "title": "양재2동 374 등 2곳 권리산정기준일 관련 변경 고시",
+      "source": "서울특별시 고시",
+      "published_on": "2025-08-28",
+      "url": "https://event.seoul.go.kr/snews/data/CN_MST/seoulsibo_20250827172207_13584.pdf#page=888",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-081",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-082",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        }
+      ],
+      "notice_number": "서울특별시 고시 제2025-476호",
+      "notice_on": "2025-08-28",
+      "verified_on": "2026-11-27"
+    },
+    {
+      "id": "official-7e2f407152801e3f",
+      "title": "자양1동 226-1 등 6곳 토지거래허가구역 공고",
+      "source": "서울특별시 공고",
+      "published_on": "2025-08-28",
+      "url": "https://land.seoul.go.kr/land/other/downloadAppointPbancFile.do?fileUuid=59d9172df7ae0038e063621d0f8d00381085115",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-resident-006",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-resident-007",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-resident-008",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-resident-024",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-resident-027",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-resident-034",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        }
+      ],
+      "notice_number": "서울특별시 공고 제2025-2530호",
+      "notice_on": "2025-08-28",
+      "verified_on": "2026-11-27"
+    },
+    {
       "id": "official-e5c900e40732153e",
       "title": "원효로4가 71번지 일대 소규모주택정비 관리계획(모아타운 관리계획) 승인 및 지형도면 고시",
       "source": "서울특별시",
@@ -860,11 +3092,50 @@
           "town_id": "mt-202603-public-085",
           "zone_id": null,
           "match_basis": "verified_management_plan_notice"
+        },
+        {
+          "town_id": "mt-202603-public-085",
+          "zone_id": "mz-plan-616239-1117011800100710000",
+          "match_basis": "verified_notice_and_project_scope"
         }
       ],
       "verified_on": "2026-11-25",
       "notice_number": "서울특별시 고시 제2025-421호",
       "notice_on": "2025-07-31"
+    },
+    {
+      "id": "official-3eb716b68728199b",
+      "title": "양재동 방아다리공원 일대 주민제안안 주민설문지",
+      "source": "서초구",
+      "published_on": "2025-07-31",
+      "url": "https://www.seocho.go.kr/common/board/Download.do?bcIdx=403308&cbIdx=57&streFileNm=20250804103013_xbyz0tm0sciarguajxthu7l8maoapssd.hwpx",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-2026-extra-001",
+          "zone_id": null,
+          "match_basis": "reviewed_official_document"
+        }
+      ],
+      "verified_on": "2026-11-27"
+    },
+    {
+      "id": "official-61d628e5a281ec33",
+      "title": "서초동 1506-6 권리산정기준일 고시",
+      "source": "서울특별시 고시",
+      "published_on": "2025-07-24",
+      "url": "https://event.seoul.go.kr/snews/data/CN_MST/seoulsibo_20250729091154_03197.pdf#page=23",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-resident-034",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        }
+      ],
+      "notice_number": "서울특별시 고시 제2025-389호",
+      "notice_on": "2025-07-24",
+      "verified_on": "2026-11-27"
     },
     {
       "id": "official-2cd94e2ccea64d5b",
@@ -904,11 +3175,88 @@
           "town_id": "mt-202603-public-008",
           "zone_id": null,
           "match_basis": "verified_management_plan_notice"
+        },
+        {
+          "town_id": "mt-202603-public-008",
+          "zone_id": "mz-plan-615059-a1",
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-008",
+          "zone_id": "mz-plan-615059-a2",
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-008",
+          "zone_id": "mz-plan-615059-a3",
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-008",
+          "zone_id": "mz-plan-615059-a4",
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-008",
+          "zone_id": "mz-plan-615059-a5",
+          "match_basis": "verified_notice_and_project_scope"
         }
       ],
       "verified_on": "2026-11-25",
       "notice_number": "서울특별시 고시 제2025-388호",
       "notice_on": "2025-07-17"
+    },
+    {
+      "id": "official-d71e4d75b6e8b43d",
+      "title": "구의3동 587-58 권리산정기준일 고시",
+      "source": "서울특별시 고시",
+      "published_on": "2025-07-17",
+      "url": "https://event.seoul.go.kr/snews/data/CN_MST/seoulsibo_20250716160230_84527.pdf#page=80",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-resident-008",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        }
+      ],
+      "notice_number": "서울특별시 고시 제2025-384호",
+      "notice_on": "2025-07-17",
+      "verified_on": "2026-11-27"
+    },
+    {
+      "id": "official-3325dbf48a5f3819",
+      "title": "동작동 102-8 권리산정기준일 고시",
+      "source": "서울특별시 고시",
+      "published_on": "2025-07-10",
+      "url": "https://event.seoul.go.kr/snews/data/CN_MST/seoulsibo_20250709163824_31750.pdf#page=78",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-resident-024",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        }
+      ],
+      "notice_number": "서울특별시 고시 제2025-366호",
+      "notice_on": "2025-07-10",
+      "verified_on": "2026-11-27"
+    },
+    {
+      "id": "official-b1aaf8ac5a7d7564",
+      "title": "우면동 2 · 우면동 모아타운 주민의견 설문조사 결과",
+      "source": "서초구",
+      "published_on": "2025-07-07",
+      "url": "https://www.seocho.go.kr/site/seocho/ex/bbs/View.do?bcIdx=402617&cbIdx=57",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-resident-026",
+          "zone_id": null,
+          "match_basis": "reviewed_official_document"
+        }
+      ],
+      "verified_on": "2026-11-27"
     },
     {
       "id": "official-f45841494d7983f7",
@@ -940,11 +3288,97 @@
           "town_id": "mt-202603-public-050",
           "zone_id": null,
           "match_basis": "verified_management_plan_notice"
+        },
+        {
+          "town_id": "mt-202603-public-050",
+          "zone_id": "mz-plan-612838-1135010200105340004",
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-050",
+          "zone_id": "mz-plan-612838-1135010200105340117",
+          "match_basis": "verified_notice_and_project_scope"
         }
       ],
       "verified_on": "2026-11-25",
       "notice_number": "서울특별시 고시 제2025-342호",
       "notice_on": "2025-06-26"
+    },
+    {
+      "id": "official-9772b83261aab3ab",
+      "title": "면목동 63-1 관리계획 고시",
+      "source": "서울특별시 고시",
+      "published_on": "2025-06-26",
+      "url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=613956",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-016",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-016",
+          "zone_id": "mz-plan-613956-1126010100100640014",
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-016",
+          "zone_id": "mz-plan-613956-1126010100100650002",
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-016",
+          "zone_id": "mz-plan-613956-1126010100101100036",
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-016",
+          "zone_id": "mz-plan-613956-1126010100101130079",
+          "match_basis": "verified_notice_and_project_scope"
+        }
+      ],
+      "notice_number": "서울특별시 고시 제2025-346호",
+      "notice_on": "2025-06-26",
+      "verified_on": "2026-11-27"
+    },
+    {
+      "id": "official-2ef184b39836fdad",
+      "title": "망우본동 354-2 등 5곳 권리산정기준일 관련 변경 고시",
+      "source": "서울특별시 고시",
+      "published_on": "2025-06-26",
+      "url": "https://event.seoul.go.kr/snews/data/CN_MST/seoulsibo_20250625173816_40625.pdf#page=35",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-017",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-068",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-074",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-075",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-076",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        }
+      ],
+      "notice_number": "서울특별시 고시 제2025-333호",
+      "notice_on": "2025-06-26",
+      "verified_on": "2026-11-27"
     },
     {
       "id": "official-8b8e3144dde53a4f",
@@ -958,6 +3392,21 @@
           "town_id": "mt-202603-public-060",
           "zone_id": null,
           "match_basis": "verified_management_plan_notice"
+        },
+        {
+          "town_id": "mt-202603-public-060",
+          "zone_id": "mz-plan-614691-a-1",
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-060",
+          "zone_id": "mz-plan-614691-a-2",
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-060",
+          "zone_id": "mz-plan-614691-a-3",
+          "match_basis": "verified_notice_and_project_scope"
         }
       ],
       "verified_on": "2026-11-25",
@@ -981,6 +3430,22 @@
       "verified_on": "2026-11-25",
       "notice_number": "서울특별시 고시 제2025-322호",
       "notice_on": "2025-06-19"
+    },
+    {
+      "id": "official-b44857536b059a19",
+      "title": "우면동 2번지 주민제안 관리계획안 주민설문지",
+      "source": "서초구",
+      "published_on": "2025-06-12",
+      "url": "https://www.seocho.go.kr/common/board/Download.do?bcIdx=401907&cbIdx=57&streFileNm=20250612091238_ghjuwhym44oyoo3pmjmxr3uvso36ottp.hwpx",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-resident-026",
+          "zone_id": null,
+          "match_basis": "reviewed_official_document"
+        }
+      ],
+      "verified_on": "2026-11-27"
     },
     {
       "id": "official-b05afb3762334f78",
@@ -1012,11 +3477,72 @@
           "town_id": "mt-202603-public-053",
           "zone_id": null,
           "match_basis": "verified_management_plan_notice"
+        },
+        {
+          "town_id": "mt-202603-public-053",
+          "zone_id": "mz-plan-610807-a-1",
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-053",
+          "zone_id": "mz-plan-610807-a-2",
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-053",
+          "zone_id": "mz-plan-610807-a-3",
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-053",
+          "zone_id": "mz-plan-610807-a-4",
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-053",
+          "zone_id": "mz-plan-610807-a-5",
+          "match_basis": "verified_notice_and_project_scope"
         }
       ],
       "verified_on": "2026-11-25",
       "notice_number": "서울특별시 고시 제2025-238호",
       "notice_on": "2025-05-01"
+    },
+    {
+      "id": "official-3ec4ced749e673cc",
+      "title": "자양1동 226-1 권리산정기준일 고시",
+      "source": "서울특별시 고시",
+      "published_on": "2025-05-01",
+      "url": "https://event.seoul.go.kr/snews/data/CN_MST/seoulsibo_20250430162211_05117.pdf#page=31",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-resident-006",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        }
+      ],
+      "notice_number": "서울특별시 고시 제2025-234호",
+      "notice_on": "2025-05-01",
+      "verified_on": "2026-11-27"
+    },
+    {
+      "id": "official-a6080405802e7f45",
+      "title": "미아동 791-1134 권리산정기준일 고시",
+      "source": "서울특별시 고시",
+      "published_on": "2025-05-01",
+      "url": "https://event.seoul.go.kr/snews/data/CN_MST/seoulsibo_20250430162211_05117.pdf#page=34",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-resident-015",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        }
+      ],
+      "notice_number": "서울특별시 고시 제2025-235호",
+      "notice_on": "2025-05-01",
+      "verified_on": "2026-11-27"
     },
     {
       "id": "official-15a0d93b255c0429",
@@ -1035,6 +3561,101 @@
       "verified_on": "2026-11-25",
       "notice_number": "서울특별시 고시 제2025-224호",
       "notice_on": "2025-04-24"
+    },
+    {
+      "id": "official-369f09f9dd33755c",
+      "title": "연희동 520 등 2곳 권리산정기준일 고시",
+      "source": "서울특별시 고시",
+      "published_on": "2025-04-17",
+      "url": "https://event.seoul.go.kr/snews/data/CN_MST/seoulsibo_20250416152623_92404.pdf#page=38",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-resident-019",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-resident-020",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        }
+      ],
+      "notice_number": "서울특별시 고시 제2025-202호",
+      "notice_on": "2025-04-17",
+      "verified_on": "2026-11-27"
+    },
+    {
+      "id": "official-5b1dd2ad1cb9c4ae",
+      "title": "서초동 1506-6 모아타운 주민설문조사 결과",
+      "source": "서초구",
+      "published_on": "2025-04-11",
+      "url": "https://www.seocho.go.kr/site/seocho/ex/bbs/View.do?bcIdx=400051&cbIdx=57",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-resident-034",
+          "zone_id": null,
+          "match_basis": "reviewed_official_document"
+        }
+      ],
+      "verified_on": "2026-11-27"
+    },
+    {
+      "id": "official-e127a0df5bd1bf6e",
+      "title": "숭인동 61 등 5곳 토지거래허가구역 공고",
+      "source": "서울특별시 공고",
+      "published_on": "2025-04-10",
+      "url": "https://land.seoul.go.kr/land/other/downloadAppointPbancFile.do?fileUuid=59d9172df7b10038e063621d0f8d00381085118",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-resident-001",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-resident-014",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-resident-015",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-resident-018",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-resident-020",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        }
+      ],
+      "notice_number": "서울특별시 공고 제2025-1157호",
+      "notice_on": "2025-04-10",
+      "verified_on": "2026-11-27"
+    },
+    {
+      "id": "official-9eeb98d37ac2e72b",
+      "title": "시흥3동 972 권리산정기준일 고시",
+      "source": "서울특별시 고시",
+      "published_on": "2025-04-03",
+      "url": "https://event.seoul.go.kr/snews/data/CN_MST/seoulsibo_20250402163525_18531.pdf#page=114",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-resident-023",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        }
+      ],
+      "notice_number": "서울특별시 고시 제2025-176호",
+      "notice_on": "2025-04-03",
+      "verified_on": "2026-11-27"
     },
     {
       "id": "official-a6b99a3269edae6f",
@@ -1069,6 +3690,31 @@
           "town_id": "mt-202603-public-064",
           "zone_id": null,
           "match_basis": "verified_management_plan_notice"
+        },
+        {
+          "town_id": "mt-202603-public-064",
+          "zone_id": "mz-plan-607900-a2",
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-064",
+          "zone_id": "mz-plan-607900-a3",
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-064",
+          "zone_id": "mz-plan-607900-a4",
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-064",
+          "zone_id": "mz-plan-607900-a5",
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-064",
+          "zone_id": "mz-seoul-11000uq120ps202505310741",
+          "match_basis": "verified_notice_and_project_scope"
         }
       ],
       "verified_on": "2026-11-25",
@@ -1087,6 +3733,16 @@
           "town_id": "mt-202603-public-065",
           "zone_id": null,
           "match_basis": "verified_management_plan_notice"
+        },
+        {
+          "town_id": "mt-202603-public-065",
+          "zone_id": "mz-plan-607899-c1",
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-065",
+          "zone_id": "mz-plan-607899-c2",
+          "match_basis": "verified_notice_and_project_scope"
         }
       ],
       "verified_on": "2026-11-25",
@@ -1105,11 +3761,105 @@
           "town_id": "mt-202603-public-083",
           "zone_id": null,
           "match_basis": "verified_management_plan_notice"
+        },
+        {
+          "town_id": "mt-202603-public-083",
+          "zone_id": "mz-plan-606937-a-1",
+          "match_basis": "verified_notice_and_project_scope"
         }
       ],
       "verified_on": "2026-11-25",
       "notice_number": "서울특별시 고시 제2025-135호",
       "notice_on": "2025-03-13"
+    },
+    {
+      "id": "official-d1cd71aca66659a5",
+      "title": "서초동 1506-6 주민설문 안내문 및 설문조사지",
+      "source": "서초구",
+      "published_on": "2025-03-07",
+      "url": "https://www.seocho.go.kr/common/board/Download.do?bcIdx=398984&cbIdx=57&streFileNm=20250307144602_8cei5ktfjtcvfbyy8xbpevn9auh96zxq.hwpx",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-resident-034",
+          "zone_id": null,
+          "match_basis": "reviewed_official_document"
+        }
+      ],
+      "verified_on": "2026-11-27"
+    },
+    {
+      "id": "official-048e87fd9e38adc5",
+      "title": "수유동 141 등 12곳 토지거래허가구역 공고",
+      "source": "서울특별시 공고",
+      "published_on": "2025-02-13",
+      "url": "https://land.seoul.go.kr/land/other/downloadAppointPbancFile.do?fileUuid=59d9172df7b30038e063621d0f8d00381085120",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-039",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-040",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-041",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-048",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-069",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-079",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-resident-005",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-resident-009",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-resident-013",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-resident-017",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-resident-022",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-resident-026",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        }
+      ],
+      "notice_number": "서울특별시 공고 제2025-399호",
+      "notice_on": "2025-02-13",
+      "verified_on": "2026-11-27"
     },
     {
       "id": "official-ee8f8cd642ca9cac",
@@ -1175,6 +3925,36 @@
           "town_id": "mt-202603-public-042",
           "zone_id": null,
           "match_basis": "verified_management_plan_notice"
+        },
+        {
+          "town_id": "mt-202603-public-042",
+          "zone_id": "mz-plan-607655-a1",
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-042",
+          "zone_id": "mz-plan-607655-a2",
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-042",
+          "zone_id": "mz-plan-607655-a3",
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-042",
+          "zone_id": "mz-plan-607655-a4",
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-042",
+          "zone_id": "mz-plan-607655-a5",
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-042",
+          "zone_id": "mz-plan-607655-a6",
+          "match_basis": "verified_notice_and_project_scope"
         }
       ],
       "verified_on": "2026-11-25",
@@ -1193,6 +3973,46 @@
           "town_id": "mt-202603-public-044",
           "zone_id": null,
           "match_basis": "verified_management_plan_notice"
+        },
+        {
+          "town_id": "mt-202603-public-044",
+          "zone_id": "mz-plan-601972-a-1",
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-044",
+          "zone_id": "mz-plan-601972-a-2",
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-044",
+          "zone_id": "mz-plan-601972-a-3",
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-044",
+          "zone_id": "mz-plan-601972-a-4",
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-044",
+          "zone_id": "mz-plan-601972-a-5",
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-044",
+          "zone_id": "mz-plan-601972-a-6",
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-044",
+          "zone_id": "mz-plan-601972-a-7",
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-044",
+          "zone_id": "mz-plan-601972-a-8",
+          "match_basis": "verified_notice_and_project_scope"
         }
       ],
       "verified_on": "2026-11-25",
@@ -1211,6 +4031,21 @@
           "town_id": "mt-202603-public-045",
           "zone_id": null,
           "match_basis": "verified_management_plan_notice"
+        },
+        {
+          "town_id": "mt-202603-public-045",
+          "zone_id": "mz-plan-602403-a-1",
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-045",
+          "zone_id": "mz-plan-602403-a-2",
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-045",
+          "zone_id": "mz-plan-602403-a-3",
+          "match_basis": "verified_notice_and_project_scope"
         }
       ],
       "verified_on": "2026-11-25",
@@ -1247,6 +4082,21 @@
           "town_id": "mt-202603-public-072",
           "zone_id": null,
           "match_basis": "verified_management_plan_notice"
+        },
+        {
+          "town_id": "mt-202603-public-072",
+          "zone_id": "mz-plan-601717-a1",
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-072",
+          "zone_id": "mz-plan-601717-a2",
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-072",
+          "zone_id": "mz-plan-601717-a3",
+          "match_basis": "verified_notice_and_project_scope"
         }
       ],
       "verified_on": "2026-11-25",
@@ -1281,11 +4131,90 @@
           "town_id": "mt-202603-public-027",
           "zone_id": null,
           "match_basis": "verified_management_plan_notice"
+        },
+        {
+          "town_id": "mt-202603-public-027",
+          "zone_id": "mz-plan-601822-a-1",
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-027",
+          "zone_id": "mz-plan-601822-a-2",
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-027",
+          "zone_id": "mz-plan-601822-a-3",
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-027",
+          "zone_id": "mz-plan-601822-a-4",
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-027",
+          "zone_id": "mz-plan-601822-a-5",
+          "match_basis": "verified_notice_and_project_scope"
         }
       ],
       "verified_on": "2026-11-25",
       "notice_number": "서울특별시 고시 제2024-588호",
       "notice_on": "2024-12-05"
+    },
+    {
+      "id": "official-5d620ef30dc013ba",
+      "title": "홍은동 10-18 권리산정기준일 고시",
+      "source": "서울특별시 고시",
+      "published_on": "2024-11-28",
+      "url": "https://event.seoul.go.kr/snews/data/CN_MST/seoulsibo_20241210140443_24453.pdf#page=219",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-resident-017",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        }
+      ],
+      "notice_number": "서울특별시 고시 제2024-582호",
+      "notice_on": "2024-11-28",
+      "verified_on": "2026-11-27"
+    },
+    {
+      "id": "official-a5902f0f60779dd8",
+      "title": "숭인동 61 권리산정기준일 고시",
+      "source": "서울특별시 고시",
+      "published_on": "2024-11-21",
+      "url": "https://event.seoul.go.kr/snews/data/CN_MST/seoulsibo_20241120170112_06252.pdf#page=57",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-resident-001",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        }
+      ],
+      "notice_number": "서울특별시 고시 제2024-561호",
+      "notice_on": "2024-11-21",
+      "verified_on": "2026-11-27"
+    },
+    {
+      "id": "official-483035632e3c56c2",
+      "title": "자양1동 772-1 권리산정기준일 고시",
+      "source": "서울특별시 고시",
+      "published_on": "2024-11-21",
+      "url": "https://event.seoul.go.kr/snews/data/CN_MST/seoulsibo_20241120170112_06252.pdf#page=54",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-resident-005",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        }
+      ],
+      "notice_number": "서울특별시 고시 제2024-560호",
+      "notice_on": "2024-11-21",
+      "verified_on": "2026-11-27"
     },
     {
       "id": "official-f759c19355336892",
@@ -1324,6 +4253,42 @@
       "notice_on": "2024-11-14"
     },
     {
+      "id": "official-9d0d1d4e34c2314b",
+      "title": "개봉동 20 권리산정기준일 고시",
+      "source": "서울특별시 고시",
+      "published_on": "2024-11-07",
+      "url": "https://event.seoul.go.kr/snews/data/CN_MST/seoulsibo_20241107091400_74170.pdf#page=201",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-048",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        }
+      ],
+      "notice_number": "서울특별시 고시 제2024-533호",
+      "notice_on": "2024-11-07",
+      "verified_on": "2026-11-27"
+    },
+    {
+      "id": "official-0ec8f7bd56f7496f",
+      "title": "번동 411 관리계획 고시",
+      "source": "서울특별시 고시",
+      "published_on": "2024-10-31",
+      "url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=597544",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-036",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        }
+      ],
+      "notice_number": "서울특별시 고시 제2024-513호",
+      "notice_on": "2024-10-31",
+      "verified_on": "2026-11-27"
+    },
+    {
       "id": "official-737fe307e0e43490",
       "title": "쌍문동 524-87번지 일대소규모주택정비 관리계획(모아타운 관리계획) 변경 승인 및 지형도면 고시",
       "source": "서울특별시",
@@ -1360,6 +4325,135 @@
       "notice_on": "2024-10-17"
     },
     {
+      "id": "official-ad5507685863b2f8",
+      "title": "공항동 55-327 등 16곳 권리산정기준일 관련 변경 고시",
+      "source": "서울특별시 고시",
+      "published_on": "2024-10-17",
+      "url": "https://event.seoul.go.kr/seoulsibo/fileDownload.do?fileName=seoulsibo_20241017085543_69127.pdf",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-008",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-009",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-015",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-016",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-032",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-033",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-043",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-044",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-046",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-050",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-057",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-058",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-070",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-085",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-087",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-resident-003",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        }
+      ],
+      "notice_number": "서울특별시 고시 제2024-488호",
+      "notice_on": "2024-10-17",
+      "verified_on": "2026-11-27"
+    },
+    {
+      "id": "official-9087b7cd7c5bd14b",
+      "title": "(시범2호)면목동 86-3 관리계획 고시",
+      "source": "서울특별시 고시",
+      "published_on": "2024-10-17",
+      "url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=607739",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-010",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        }
+      ],
+      "notice_number": "서울특별시 고시 제2024-494호",
+      "notice_on": "2024-10-17",
+      "verified_on": "2026-11-27"
+    },
+    {
+      "id": "official-2e97226d6cee3b63",
+      "title": "쌍문1동 460 권리산정기준일 고시",
+      "source": "서울특별시 고시",
+      "published_on": "2024-10-04",
+      "url": "https://event.seoul.go.kr/snews/data/CN_MST/seoulsibo_20241003112307_91174.pdf#page=143",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-054",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        }
+      ],
+      "notice_number": "서울특별시 고시 제2024-471호",
+      "notice_on": "2024-10-04",
+      "verified_on": "2026-11-27"
+    },
+    {
       "id": "official-8793d6dcdde8d92b",
       "title": "시흥3동 950번지 일대 소규모주택정비 관리계획(모아타운 관리계획) 변경 승인 및 지형도면 고시",
       "source": "서울특별시",
@@ -1371,11 +4465,72 @@
           "town_id": "mt-202603-public-028",
           "zone_id": null,
           "match_basis": "verified_management_plan_notice"
+        },
+        {
+          "town_id": "mt-202603-public-028",
+          "zone_id": "mz-plan-594346-a-1",
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-028",
+          "zone_id": "mz-plan-594346-a-2",
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-028",
+          "zone_id": "mz-plan-594346-a-3",
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-028",
+          "zone_id": "mz-plan-594346-a-4",
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-028",
+          "zone_id": "mz-plan-594346-a-5",
+          "match_basis": "verified_notice_and_project_scope"
         }
       ],
       "verified_on": "2026-11-25",
       "notice_number": "서울특별시 고시 제2024-443호",
       "notice_on": "2024-09-19"
+    },
+    {
+      "id": "official-e9a0bc5a69bbf5b7",
+      "title": "신내동 493-13 권리산정기준일 고시",
+      "source": "서울특별시 고시",
+      "published_on": "2024-09-12",
+      "url": "https://event.seoul.go.kr/snews/data/CN_MST/seoulsibo_20240911172929_64461.pdf#page=25",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-resident-009",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        }
+      ],
+      "notice_number": "서울특별시 고시 제2024-431호",
+      "notice_on": "2024-09-12",
+      "verified_on": "2026-11-27"
+    },
+    {
+      "id": "official-997c85d39f5e4fac",
+      "title": "정릉동 559-43 권리산정기준일 고시",
+      "source": "서울특별시 고시",
+      "published_on": "2024-08-01",
+      "url": "https://event.seoul.go.kr/snews/data/CN_MST/seoulsibo_20240731171305_80435.pdf#page=97",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-resident-012",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        }
+      ],
+      "notice_number": "서울특별시 고시 제2024-374호",
+      "notice_on": "2024-08-01",
+      "verified_on": "2026-11-27"
     },
     {
       "id": "official-0965715c4f98c049",
@@ -1386,6 +4541,24 @@
       "classification": "common",
       "related_sites": [],
       "verified_on": "2026-11-25"
+    },
+    {
+      "id": "official-b50e4ba9e0430ab5",
+      "title": "난곡동 697-20 권리산정기준일 고시",
+      "source": "서울특별시 고시",
+      "published_on": "2024-07-18",
+      "url": "https://event.seoul.go.kr/snews/data/CN_MST/seoulsibo_20240717165852_44851.pdf#page=116",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-077",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        }
+      ],
+      "notice_number": "서울특별시 고시 제2024-353호",
+      "notice_on": "2024-07-18",
+      "verified_on": "2026-11-27"
     },
     {
       "id": "official-3614543dea7289ce",
@@ -1422,6 +4595,62 @@
       "notice_on": "2024-06-20"
     },
     {
+      "id": "official-97287f8676674481",
+      "title": "시흥1동 864 등 2곳 권리산정기준일 고시",
+      "source": "서울특별시 고시",
+      "published_on": "2024-06-20",
+      "url": "https://event.seoul.go.kr/snews/data/CN_MST/seoulsibo_20240619143759_67856.pdf#page=356",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-027",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-028",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        }
+      ],
+      "notice_number": "서울특별시 고시 제2024-301호",
+      "notice_on": "2024-06-20",
+      "verified_on": "2026-11-27"
+    },
+    {
+      "id": "official-1aec1ff0efcd9b39",
+      "title": "마장동 457 등 4곳 권리산정기준일 관련 변경 고시",
+      "source": "서울특별시 고시",
+      "published_on": "2024-06-13",
+      "url": "https://event.seoul.go.kr/snews/data/CN_MST/seoulsibo_20240612151130_31604.pdf#page=91",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-042",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-045",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-083",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-086",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        }
+      ],
+      "notice_number": "서울특별시 고시 제2024-288호",
+      "notice_on": "2024-06-13",
+      "verified_on": "2026-11-27"
+    },
+    {
       "id": "official-846381836599b1a1",
       "title": "방화2동 592-1번지 일대 소규모주택정비 관리계획(모아타운 관리계획) 승인 및 지형도면 고시",
       "source": "서울특별시",
@@ -1440,6 +4669,29 @@
       "notice_on": "2024-05-30"
     },
     {
+      "id": "official-ed98e3ad4379f575",
+      "title": "상도동 242 등 2곳 권리산정기준일 고시",
+      "source": "서울특별시 고시",
+      "published_on": "2024-05-23",
+      "url": "https://event.seoul.go.kr/snews/data/CN_MST/seoulsibo_20240522142027_06063.pdf#page=136",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-060",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-070",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        }
+      ],
+      "notice_number": "서울특별시 고시 제2024-256호",
+      "notice_on": "2024-05-23",
+      "verified_on": "2026-11-27"
+    },
+    {
       "id": "official-7d0b360423a0ec70",
       "title": "일원동 대청마을 북측구역 모아타운 관리계획 수립 추진 주민의견조사 실시(의견 정정 방법 추가안내)",
       "source": "서울특별시 강남구",
@@ -1456,6 +4708,34 @@
       "verified_on": "2026-11-25"
     },
     {
+      "id": "official-c0cdeb1821b74997",
+      "title": "합정동 369 등 3곳 권리산정기준일 고시",
+      "source": "서울특별시 고시",
+      "published_on": "2024-05-09",
+      "url": "https://event.seoul.go.kr/snews/data/CN_MST/seoulsibo_20240508132129_68566.pdf",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-032",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-033",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-resident-016",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        }
+      ],
+      "notice_number": "서울특별시 고시 제2024-233호",
+      "notice_on": "2024-05-09",
+      "verified_on": "2026-11-27"
+    },
+    {
       "id": "official-1995f12e173ec577",
       "title": "망원동 456-6번지 일대 소규모주택정비 관리계획(모아타운 관리계획) 승인 및 지형도면 고시",
       "source": "서울특별시",
@@ -1467,6 +4747,46 @@
           "town_id": "mt-202603-public-031",
           "zone_id": null,
           "match_basis": "verified_management_plan_notice"
+        },
+        {
+          "town_id": "mt-202603-public-031",
+          "zone_id": "mz-plan-587121-a-1",
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-031",
+          "zone_id": "mz-plan-587121-a-2",
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-031",
+          "zone_id": "mz-plan-587121-a-3",
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-031",
+          "zone_id": "mz-plan-587121-a-4",
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-031",
+          "zone_id": "mz-plan-587121-a-5",
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-031",
+          "zone_id": "mz-plan-587121-a-6",
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-031",
+          "zone_id": "mz-plan-587121-a-7",
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-031",
+          "zone_id": "mz-plan-587121-a-8",
+          "match_basis": "verified_notice_and_project_scope"
         }
       ],
       "verified_on": "2026-11-25",
@@ -1485,11 +4805,49 @@
           "town_id": "mt-202603-public-066",
           "zone_id": null,
           "match_basis": "verified_management_plan_notice"
+        },
+        {
+          "town_id": "mt-202603-public-066",
+          "zone_id": "mz-plan-594579-a1",
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-066",
+          "zone_id": "mz-plan-594579-a2",
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-066",
+          "zone_id": "mz-plan-594579-a3",
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-066",
+          "zone_id": "mz-plan-594579-a4",
+          "match_basis": "verified_notice_and_project_scope"
         }
       ],
       "verified_on": "2026-11-25",
       "notice_number": "서울특별시 고시 제2024-205호",
       "notice_on": "2024-04-25"
+    },
+    {
+      "id": "official-b541b03707ab0b8c",
+      "title": "신림동 655-78 권리산정기준일 고시",
+      "source": "서울특별시 고시",
+      "published_on": "2024-04-25",
+      "url": "https://event.seoul.go.kr/snews/data/CN_MST/seoulsibo_20240424140523_71311.pdf#page=143",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-resident-025",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        }
+      ],
+      "notice_number": "서울특별시 고시 제2024-212호",
+      "notice_on": "2024-04-25",
+      "verified_on": "2026-11-27"
     },
     {
       "id": "official-d74b732703c617fc",
@@ -1503,6 +4861,16 @@
           "town_id": "mt-202603-public-062",
           "zone_id": null,
           "match_basis": "verified_management_plan_notice"
+        },
+        {
+          "town_id": "mt-202603-public-062",
+          "zone_id": "mz-plan-586349-a-1",
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-062",
+          "zone_id": "mz-plan-586349-a-2",
+          "match_basis": "verified_notice_and_project_scope"
         }
       ],
       "verified_on": "2026-11-25",
@@ -1582,6 +4950,29 @@
       "notice_on": "2024-03-14"
     },
     {
+      "id": "official-4ed996f252852a82",
+      "title": "대흥동 535-2 관리계획 고시",
+      "source": "서울특별시 고시",
+      "published_on": "2024-03-14",
+      "url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=584564",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-029",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-029",
+          "zone_id": "mz-plan-584564-1144010800105350002",
+          "match_basis": "verified_notice_and_project_scope"
+        }
+      ],
+      "notice_number": "서울특별시 고시 제2024-130호",
+      "notice_on": "2024-03-14",
+      "verified_on": "2026-11-27"
+    },
+    {
       "id": "official-9fb9e7f67eafa910",
       "title": "시흥3동 1005번지 일대 소규모주택정비 관리계획(모아타운 관리계획) 변경승인 및 지형도면 고시",
       "source": "서울특별시",
@@ -1611,6 +5002,31 @@
           "town_id": "mt-202603-public-049",
           "zone_id": null,
           "match_basis": "verified_management_plan_notice"
+        },
+        {
+          "town_id": "mt-202603-public-049",
+          "zone_id": "mz-plan-584823-b1",
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-049",
+          "zone_id": "mz-plan-584823-b2",
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-049",
+          "zone_id": "mz-plan-584823-b3",
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-049",
+          "zone_id": "mz-plan-584823-b4",
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-049",
+          "zone_id": "mz-plan-584823-b5",
+          "match_basis": "verified_notice_and_project_scope"
         }
       ],
       "verified_on": "2026-11-25",
@@ -1629,11 +5045,85 @@
           "town_id": "mt-202603-public-030",
           "zone_id": null,
           "match_basis": "verified_management_plan_notice"
+        },
+        {
+          "town_id": "mt-202603-public-030",
+          "zone_id": "mz-plan-584518-a-1",
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-030",
+          "zone_id": "mz-plan-584518-a-2",
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-030",
+          "zone_id": "mz-plan-584518-a-3",
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-030",
+          "zone_id": "mz-plan-584518-a-4",
+          "match_basis": "verified_notice_and_project_scope"
         }
       ],
       "verified_on": "2026-11-25",
       "notice_number": "서울특별시 고시 제2024-95호",
       "notice_on": "2024-02-22"
+    },
+    {
+      "id": "official-1bb79f53d09ef7ad",
+      "title": "수유동 392-9 권리산정기준일 고시",
+      "source": "서울특별시 고시",
+      "published_on": "2024-02-22",
+      "url": "https://event.seoul.go.kr/snews/data/CN_MST/seoulsibo_20240221142609_31470.pdf#page=29",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-038",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        }
+      ],
+      "notice_number": "서울특별시 고시 제2024-90호",
+      "notice_on": "2024-02-22",
+      "verified_on": "2026-11-27"
+    },
+    {
+      "id": "official-6891464259a697de",
+      "title": "창3동 501-13 권리산정기준일 고시",
+      "source": "서울특별시 고시",
+      "published_on": "2024-01-18",
+      "url": "https://event.seoul.go.kr/snews/data/CN_MST/seoulsibo_20240118090248_00297.pdf#page=76",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-055",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        }
+      ],
+      "notice_number": "서울특별시 고시 제2024-40호",
+      "notice_on": "2024-01-18",
+      "verified_on": "2026-11-27"
+    },
+    {
+      "id": "official-4ae4e02b3f665461",
+      "title": "성산동 160-4 권리산정기준일 고시",
+      "source": "서울특별시 고시",
+      "published_on": "2024-01-11",
+      "url": "https://event.seoul.go.kr/snews/data/CN_MST/seoulsibo_20240110172620_08467.pdf#page=91",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-030",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        }
+      ],
+      "notice_number": "서울특별시 고시 제2024-19호",
+      "notice_on": "2024-01-11",
+      "verified_on": "2026-11-27"
     },
     {
       "id": "official-158ffba35f70ed69",
@@ -1683,6 +5173,21 @@
           "town_id": "mt-202603-public-003",
           "zone_id": null,
           "match_basis": "verified_management_plan_notice"
+        },
+        {
+          "town_id": "mt-202603-public-003",
+          "zone_id": "mz-plan-584449-a3-1",
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-003",
+          "zone_id": "mz-plan-584449-a3-2",
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-003",
+          "zone_id": "mz-plan-584449-a3-3",
+          "match_basis": "verified_notice_and_project_scope"
         }
       ],
       "verified_on": "2026-11-25",
@@ -1737,11 +5242,49 @@
           "town_id": "mt-202603-public-067",
           "zone_id": null,
           "match_basis": "verified_management_plan_notice"
+        },
+        {
+          "town_id": "mt-202603-public-067",
+          "zone_id": "mz-plan-584443-a1",
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-067",
+          "zone_id": "mz-plan-584443-a2",
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-067",
+          "zone_id": "mz-plan-584443-a3",
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-067",
+          "zone_id": "mz-plan-584443-a4",
+          "match_basis": "verified_notice_and_project_scope"
         }
       ],
       "verified_on": "2026-11-25",
       "notice_number": "서울특별시 고시 제2023-606호",
       "notice_on": "2023-12-28"
+    },
+    {
+      "id": "official-0e22174ef4ef091a",
+      "title": "신월동 102-33 권리산정기준일 고시",
+      "source": "서울특별시 고시",
+      "published_on": "2023-12-28",
+      "url": "https://event.seoul.go.kr/snews/data/CN_MST/seoulsibo_20231229092748_11156.pdf#page=486",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-067",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        }
+      ],
+      "notice_number": "서울특별시 고시 제2023-596호",
+      "notice_on": "2023-12-28",
+      "verified_on": "2026-11-27"
     },
     {
       "id": "official-fceff43bb55debb9",
@@ -1809,11 +5352,52 @@
           "town_id": "mt-202603-public-080",
           "zone_id": null,
           "match_basis": "verified_management_plan_notice"
+        },
+        {
+          "town_id": "mt-202603-public-080",
+          "zone_id": "mz-plan-584797-1165010100109770000",
+          "match_basis": "verified_notice_and_project_scope"
         }
       ],
       "verified_on": "2026-11-25",
       "notice_number": "서울특별시 고시 제2023-550호",
       "notice_on": "2023-12-14"
+    },
+    {
+      "id": "official-31eacc2aaacadde7",
+      "title": "등촌2동 515-44 권리산정기준일 고시",
+      "source": "서울특별시 고시",
+      "published_on": "2023-11-30",
+      "url": "https://event.seoul.go.kr/snews/data/CN_MST/seoulsibo_20231129113231_64868.pdf#page=73",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-005",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        }
+      ],
+      "notice_number": "서울특별시 고시 제2023-521호",
+      "notice_on": "2023-11-30",
+      "verified_on": "2026-11-27"
+    },
+    {
+      "id": "official-b27126310367ec08",
+      "title": "신월동 173 권리산정기준일 고시",
+      "source": "서울특별시 고시",
+      "published_on": "2023-11-30",
+      "url": "https://event.seoul.go.kr/snews/data/CN_MST/seoulsibo_20231129113231_64868.pdf#page=83",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-066",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        }
+      ],
+      "notice_number": "서울특별시 고시 제2023-525호",
+      "notice_on": "2023-11-30",
+      "verified_on": "2026-11-27"
     },
     {
       "id": "official-4ac784e674b79707",
@@ -1922,6 +5506,60 @@
       "verified_on": "2026-11-25",
       "notice_number": "서울특별시 고시 제2023-495호",
       "notice_on": "2023-11-16"
+    },
+    {
+      "id": "official-a54ea414dbb42320",
+      "title": "둔촌동 77-41 권리산정기준일 고시",
+      "source": "서울특별시 고시",
+      "published_on": "2023-11-02",
+      "url": "https://event.seoul.go.kr/snews/data/CN_MST/seoulsibo_20231101153440_65929.pdf#page=14",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-056",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        }
+      ],
+      "notice_number": "서울특별시 고시 제2023-470호",
+      "notice_on": "2023-11-02",
+      "verified_on": "2026-11-27"
+    },
+    {
+      "id": "official-6bf4d1e4283d23f8",
+      "title": "중화동 329-38 권리산정기준일 고시",
+      "source": "서울특별시 고시",
+      "published_on": "2023-09-27",
+      "url": "https://event.seoul.go.kr/snews/data/CN_MST/seoulsibo_20231017161204_68882.pdf#page=37",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-018",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        }
+      ],
+      "notice_number": "서울특별시 고시 제2023-430호",
+      "notice_on": "2023-09-27",
+      "verified_on": "2026-11-27"
+    },
+    {
+      "id": "official-66de3dfeed61dfea",
+      "title": "방학동 618 권리산정기준일 고시",
+      "source": "서울특별시 고시",
+      "published_on": "2023-09-27",
+      "url": "https://event.seoul.go.kr/snews/data/CN_MST/seoulsibo_20231017161204_68882.pdf#page=31",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-053",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        }
+      ],
+      "notice_number": "서울특별시 고시 제2023-429호",
+      "notice_on": "2023-09-27",
+      "verified_on": "2026-11-27"
     },
     {
       "id": "official-3caa8865d372802e",
@@ -2100,6 +5738,59 @@
       "notice_on": "2022-12-22"
     },
     {
+      "id": "official-18b9137b01e34a80",
+      "title": "번동 411 등 8곳 권리산정기준일 고시",
+      "source": "서울특별시 고시",
+      "published_on": "2022-10-27",
+      "url": "https://event.seoul.go.kr/snews/data/CN_MST/seoulsibo_20221026154753_61161.pdf#page=12",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-036",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-037",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-059",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-064",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-065",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-071",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-072",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-073",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        }
+      ],
+      "notice_number": "서울특별시 고시 제2022-427호",
+      "notice_on": "2022-10-27",
+      "verified_on": "2026-11-27"
+    },
+    {
       "id": "official-7c63d5f5f92c5416",
       "title": "저층주거지 개발 '모아타운'…추가 선정된 26곳은?",
       "source": "서울특별시 내 손안에 서울",
@@ -2236,6 +5927,99 @@
       "verified_on": "2026-11-25"
     },
     {
+      "id": "official-6c848771a8f6ae74",
+      "title": "화곡6동 1130-7 등 16곳 권리산정기준일 고시",
+      "source": "서울특별시 고시",
+      "published_on": "2022-06-23",
+      "url": "https://event.seoul.go.kr/snews/data/CN_MST/seoulsibo_20220622152625_88164.pdf#page=158",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-006",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-007",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-011",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-012",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-013",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-014",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-024",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-026",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-029",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-031",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-035",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-049",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-051",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-052",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-062",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-063",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        }
+      ],
+      "notice_number": "서울특별시 고시 제2022-274호",
+      "notice_on": "2022-06-23",
+      "verified_on": "2026-11-27"
+    },
+    {
       "id": "official-ca8a8155a4fa5f7c",
       "title": "면목, 쌍문 등 21곳에 '모아타운' 짓는다…7월 추가 공모",
       "source": "서울특별시 내 손안에 서울",
@@ -2361,6 +6145,44 @@
         }
       ],
       "verified_on": "2026-11-25"
+    },
+    {
+      "id": "official-ef4991b0b4cf31e2",
+      "title": "화곡동 1087 등 5곳 권리산정기준일 고시",
+      "source": "서울특별시 고시",
+      "published_on": "2022-01-20",
+      "url": "https://event.seoul.go.kr/snews/data/CN_MST/seoulsibo_20220119175304_48763.pdf#page=37",
+      "classification": "project",
+      "related_sites": [
+        {
+          "town_id": "mt-202603-public-001",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-002",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-003",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-010",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        },
+        {
+          "town_id": "mt-202603-public-080",
+          "zone_id": null,
+          "match_basis": "verified_notice_and_project_scope"
+        }
+      ],
+      "notice_number": "서울특별시 고시 제2022-38호",
+      "notice_on": "2022-01-20",
+      "verified_on": "2026-11-27"
     },
     {
       "id": "official-3a5f5f00e25b57bf",

@@ -1,0 +1,91 @@
+{
+  "town_id": "mt-202603-resident-041",
+  "source": "서울특별시 서울부동산정보광장 건물 지도",
+  "source_url": "https://land.seoul.go.kr/land/map/land/map.do",
+  "wfs_url": "https://land.seoul.go.kr/land/geoserver/wfs.do",
+  "source_as_of": null,
+  "checked_on": "2026-11-27",
+  "date_note": "source_record_date는 원천 도형의 h_date이다. 지도 전체의 기준일은 확인되지 않았다.",
+  "method_note": "EPSG:5179에서 두 건물 도형의 교집합 면적을 합집합 면적으로 나눈 값(IoU)이 0.9 이상이어야 한다. 양방향에서 IoU 0.1 초과 후보가 하나여야 하며 도로명주소 건물(gro_flo_co, IoU 0.6 이상)과 층수가 다르면 보류한다. 지도 층수에 3m를 곱한 추정 높이다.",
+  "coverage": {
+    "originally_missing": 41,
+    "matched": 3,
+    "still_missing": 38
+  },
+  "records": {
+    "0000186868344431819000000000": {
+      "floors": 2,
+      "height_m": 6,
+      "height_source": "estimated_from_floors",
+      "source_url": "https://land.seoul.go.kr/land/map/land/map.do",
+      "source_layer": "landbiz:tl_nrm_buld",
+      "source_field": "flr_num",
+      "source_id": "1000376120311B00110000000000000249",
+      "source_as_of": null,
+      "source_record_date": "2024-06-24",
+      "method": "unique_footprint_iou",
+      "overlap_iou": 0.9358
+    },
+    "0000187168674432256700000000": {
+      "floors": 1,
+      "height_m": 3,
+      "height_source": "estimated_from_floors",
+      "source_url": "https://land.seoul.go.kr/land/map/land/map.do",
+      "source_layer": "landbiz:tl_nrm_buld",
+      "source_field": "flr_num",
+      "source_id": "1000376120312B00110000000000000072",
+      "source_as_of": null,
+      "source_record_date": "2024-06-24",
+      "method": "unique_footprint_iou",
+      "overlap_iou": 0.9179
+    },
+    "1981187260164432959500000000": {
+      "floors": 3,
+      "height_m": 9,
+      "height_source": "estimated_from_floors",
+      "source_url": "https://land.seoul.go.kr/land/map/land/map.do",
+      "source_layer": "landbiz:tl_nrm_buld",
+      "source_field": "flr_num",
+      "source_id": "1000376120312B00110000000000000212",
+      "source_as_of": null,
+      "source_record_date": "2024-06-24",
+      "method": "unique_footprint_iou",
+      "overlap_iou": 0.9396
+    }
+  },
+  "audit": {
+    "building_chunks": [
+      "4ddf957abf1a0ed4ba8f9893a055a96ca1886bf48e4db3005a09ab8e1d59e798"
+    ],
+    "bbox_epsg_5179": [
+      942606,
+      1943529,
+      943270,
+      1944290
+    ],
+    "wfs_pages_sha256": {
+      "landbiz:tl_nrm_buld": [
+        "b9966fa6dcbb79e8041c92ef0e03afd2b3ac940503f9a3eef9a52d0a15fb82dd",
+        "7b371dbb6689943382ccafaa2b3fd6ef2fcb8d5891c2aeafe77afef719696446"
+      ],
+      "landbiz:tl_sdw_buld": [
+        "9640754ef387e2b087f5ca6826df18d99c77b215540164c01f431dbb09f8607f",
+        "52f3cad6c5df7a4add22d6900dec0208e9696b4ebe653fac6ea1113048809977"
+      ]
+    },
+    "method_version": 1,
+    "topographic_rows": 1648,
+    "road_rows": 1085,
+    "nonunique_source_ids": [],
+    "originally_missing_by_area": {
+      "inside": 3,
+      "crossing": 0,
+      "nearby": 38
+    },
+    "matched_by_area": {
+      "inside": 0,
+      "crossing": 0,
+      "nearby": 3
+    }
+  }
+}
