@@ -1,4 +1,4 @@
-import {dayNumber,projectEvents,contractorProcedure} from './detail-format.mjs?v=e5ec1d1f8c10';
+import {dayNumber,projectEvents,contractorProcedure} from './detail-format.mjs?v=5518809422cb';
 
 export const managementFilters=[
   ['selected','선정 대상지 전체'],['draft','관리계획 수립 중'],['approved','관리계획 승인'],
@@ -41,7 +41,7 @@ export const associationReviewKey=(owner,project)=>owner.id+'/'+project.project_
 function management(town){
   const stage=town.management_plan_stage;
   if(['관리계획 승인','관리계획 승인고시'].includes(stage) || town.management_plan_notices?.length)return 'approved';
-  if(['관리계획 수립','관리계획 수립 중','관리계획 통합심의 통과','관리계획 수립안 주민공람','관리계획 수립안 주민 재공람'].includes(stage))return 'draft';
+  if(['관리계획 수립','관리계획 수립 중','관리계획 통합심의 통과','관리계획 수립안 주민공람','관리계획 수립안 주민 재공람','관리계획 수립안 주민 재공람 종료'].includes(stage))return 'draft';
   return stage?'':'unknown';
 }
 export function recentProjectDates(towns,groups,excluded,today){

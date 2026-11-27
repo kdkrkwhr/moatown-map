@@ -955,6 +955,45 @@
         "source_as_of": null,
         "checked_on": "2026-11-27"
       }
+    },
+    "mz-notice-resident-010-a-1": {
+      "units": 450,
+      "height_m": 72,
+      "scope": "망우동 509 A-1",
+      "kind": "관리계획 승인고시",
+      "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=645741",
+      "source_as_of": "2026-11-26",
+      "evidence": "승인고시 4쪽의 최고높이 72m, 5쪽의 450세대. 층수는 미기재."
+    },
+    "mz-notice-resident-023-a1": {
+      "units": 110,
+      "floors": 18,
+      "kind": "금천구 조합 사업개요",
+      "scope": "시흥3동 972 A1",
+      "source_url": "https://www.geumcheon.go.kr/portal/rebuildWebView.do?key=4266&rebuildId=33",
+      "source_as_of": "2026-11-05",
+      "evidence": "해당 조합의 공개 세대수 및 지상 층수. 동별 높이와 배치는 가상 배치.",
+      "note": "10월 재공람안 사업추진구역을 기준으로 표시."
+    },
+    "mz-notice-resident-023-a2": {
+      "units": 182,
+      "floors": 20,
+      "kind": "금천구 조합 사업개요",
+      "scope": "시흥3동 972 A2",
+      "source_url": "https://www.geumcheon.go.kr/portal/rebuildWebView.do?key=4266&rebuildId=35",
+      "source_as_of": "2026-11-05",
+      "evidence": "해당 조합의 공개 세대수 및 지상 층수. 동별 높이와 배치는 가상 배치.",
+      "note": "10월 재공람안 사업추진구역을 기준으로 표시."
+    },
+    "mz-notice-resident-023-a3": {
+      "units": 294,
+      "floors": 20,
+      "kind": "금천구 조합 사업개요",
+      "scope": "시흥3동 972 A3",
+      "source_url": "https://www.geumcheon.go.kr/portal/rebuildWebView.do?key=4266&rebuildId=36",
+      "source_as_of": "2026-11-05",
+      "evidence": "해당 조합의 공개 세대수 및 지상 층수. 동별 높이와 배치는 가상 배치.",
+      "note": "10월 재공람안 사업추진구역을 기준으로 표시."
     }
   },
   "previous_geometry_programs": {

@@ -8,9 +8,9 @@
   "license": "공공누리 제1유형 (출처표시)",
   "license_url": "https://www.kogl.or.kr/info/licenseType1.do",
   "source_as_of": "2024-12-31",
-  "checked_on": "2026-11-25",
-  "snapshot_date": "2026-11-24",
-  "boundary_sha256": "582934b75186f3f58d8c3728900de9da2c65f9210658a7c6fb4c5a113afc4db7",
+  "checked_on": "2026-11-27",
+  "snapshot_date": "2026-11-27",
+  "boundary_sha256": "2966bd049ea1d774114c7375ca0b50522a62cc5b7fe3c38c874e85d2e58ac6c7",
   "buffer_m": 150,
   "source_fields": {
     "geom": "건물 전체 도형 (EPSG:5179, m)",
@@ -5064,6 +5064,47 @@
         "withheld": []
       }
     },
+    "mt-202603-resident-010": {
+      "source_as_of": "2024-12-31",
+      "files": [
+        {
+          "path": "mt-202603-resident-010.geojson",
+          "sha256": "afd93f23217d1e58aba27b1fa428f97bcf4a0e4faf276c727bba1110d61528e1",
+          "bytes": 271292,
+          "gzip_bytes": 33585,
+          "count": 643
+        }
+      ],
+      "stats": {
+        "total": 643,
+        "inside": 83,
+        "crossing": 13,
+        "nearby": 547,
+        "inside_known_year": 83,
+        "inside_unknown_year": 0,
+        "inside_30_plus": 73,
+        "registry_linked": 617,
+        "official_height": 212,
+        "estimated_height": 405,
+        "unknown_height": 26
+      },
+      "audit": {
+        "bbox_count": 815,
+        "wfs_pages": [
+          {
+            "start_index": 0,
+            "number_returned": 815,
+            "timestamp": "2026-11-27T04:08:27.991Z",
+            "sha256": "a33677cf6f239e47a1cdc41435f8bb13809adfafca7793aeb9278fece0972dde"
+          }
+        ],
+        "matched_unique_ids": 643,
+        "duplicate_ids_outside_buffer": [],
+        "matched_ids_sha256": "bfd576435d93109e350eb866be2f613581d836d79aa88500590f3b1c0f145a7b",
+        "rounded_geometry_reviews": [],
+        "withheld": []
+      }
+    },
     "mt-202603-resident-011": {
       "source_as_of": "2024-12-31",
       "files": [
@@ -5405,22 +5446,22 @@
       "files": [
         {
           "path": "mt-202603-resident-023.geojson",
-          "sha256": "8f2d920d8a17728cb76cb6c3c7e70dd16998823db2103aa626ada38d3a43488e",
-          "bytes": 82072,
-          "gzip_bytes": 9984,
-          "count": 187
+          "sha256": "cd4318ade1479363288ec37defbeb0f68145fe14fb4ec00c24b561e19dee85b9",
+          "bytes": 82622,
+          "gzip_bytes": 10082,
+          "count": 188
         }
       ],
       "stats": {
-        "total": 187,
-        "inside": 28,
-        "crossing": 5,
-        "nearby": 154,
-        "inside_known_year": 26,
+        "total": 188,
+        "inside": 27,
+        "crossing": 6,
+        "nearby": 155,
+        "inside_known_year": 25,
         "inside_unknown_year": 2,
-        "inside_30_plus": 22,
-        "registry_linked": 89,
-        "official_height": 36,
+        "inside_30_plus": 21,
+        "registry_linked": 90,
+        "official_height": 37,
         "estimated_height": 53,
         "unknown_height": 98
       },
@@ -5430,13 +5471,13 @@
           {
             "start_index": 0,
             "number_returned": 205,
-            "timestamp": "2026-11-25T02:27:12.888Z",
-            "sha256": "51759594f926a9dfdea5be97e1065b0b89db7d9420d9d8aced43af04f89c476f"
+            "timestamp": "2026-11-27T04:08:27.951Z",
+            "sha256": "03f5cf12c35db92acc63426e08cfefdad6c8e5e72a70b57a269c6fa2f18b57c7"
           }
         ],
-        "matched_unique_ids": 187,
+        "matched_unique_ids": 188,
         "duplicate_ids_outside_buffer": [],
-        "matched_ids_sha256": "9a276b4c9351f45b5f8d3c5653970481ecb17f94c0701f6a49df2393a4055381",
+        "matched_ids_sha256": "423c7ee029eb6c778c25182c10adbb2ecd76824893ba879d898664e94c5a35b1",
         "rounded_geometry_reviews": [],
         "withheld": []
       }
@@ -5560,6 +5601,99 @@
         "matched_unique_ids": 441,
         "duplicate_ids_outside_buffer": [],
         "matched_ids_sha256": "483129f8da3afbd057e92518becf2e69c59f8b6ae3675ad4316ad57824818781",
+        "rounded_geometry_reviews": [],
+        "withheld": []
+      }
+    },
+    "mt-202603-resident-028": {
+      "source_as_of": "2024-12-31",
+      "files": [
+        {
+          "path": "mt-202603-resident-028.geojson",
+          "sha256": "70c9d9879b8a3c6c4fecf041f9ccfa8c0f5a2d1fb1c557353c857c8902083292",
+          "bytes": 139619,
+          "gzip_bytes": 17176,
+          "count": 343
+        }
+      ],
+      "stats": {
+        "total": 343,
+        "inside": 124,
+        "crossing": 24,
+        "nearby": 195,
+        "inside_known_year": 104,
+        "inside_unknown_year": 20,
+        "inside_30_plus": 77,
+        "registry_linked": 293,
+        "official_height": 153,
+        "estimated_height": 140,
+        "unknown_height": 50
+      },
+      "audit": {
+        "bbox_count": 399,
+        "wfs_pages": [
+          {
+            "start_index": 0,
+            "number_returned": 399,
+            "timestamp": "2026-11-27T04:08:27.985Z",
+            "sha256": "52a1375fa67b3ffcab7ca7a8d477bc4c54f1b52846bc7de7f2abb52a068f3037"
+          }
+        ],
+        "matched_unique_ids": 343,
+        "duplicate_ids_outside_buffer": [],
+        "matched_ids_sha256": "4fbe09d4e5b351be999a82d0ba087fdf188e16208e14ce3f6fbc3331fdba6b05",
+        "rounded_geometry_reviews": [
+          {
+            "id": "2018203668084555622200000000",
+            "reason": "Self-intersection[127.042251170265 37.6024010209747]",
+            "resolution": "topology_preserving_grid_snap"
+          },
+          {
+            "id": "2020203653534553998700000000",
+            "reason": "Self-intersection[127.042081139496 37.600936124977]",
+            "resolution": "topology_preserving_grid_snap"
+          }
+        ],
+        "withheld": []
+      }
+    },
+    "mt-202603-resident-031": {
+      "source_as_of": "2024-12-31",
+      "files": [
+        {
+          "path": "mt-202603-resident-031.geojson",
+          "sha256": "b4527f82e030f0b77a3f8243914d4258c1c079d855d5457b7dda85f1231872fe",
+          "bytes": 297522,
+          "gzip_bytes": 36708,
+          "count": 714
+        }
+      ],
+      "stats": {
+        "total": 714,
+        "inside": 128,
+        "crossing": 10,
+        "nearby": 576,
+        "inside_known_year": 123,
+        "inside_unknown_year": 5,
+        "inside_30_plus": 88,
+        "registry_linked": 640,
+        "official_height": 309,
+        "estimated_height": 331,
+        "unknown_height": 74
+      },
+      "audit": {
+        "bbox_count": 937,
+        "wfs_pages": [
+          {
+            "start_index": 0,
+            "number_returned": 937,
+            "timestamp": "2026-11-27T04:08:29.603Z",
+            "sha256": "9fc22013ea5f35b4fe290c6376c67932877f292ad25531778b9e1e1a667eb2c1"
+          }
+        ],
+        "matched_unique_ids": 714,
+        "duplicate_ids_outside_buffer": [],
+        "matched_ids_sha256": "8eacbfc6d2e30fc0642e5627e6a453a60ea26d440d1b03fbfe1ebc96a064a5fd",
         "rounded_geometry_reviews": [],
         "withheld": []
       }

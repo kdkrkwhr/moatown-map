@@ -472,11 +472,12 @@
     "mt-202603-resident-010": {
       "floors": null,
       "units": 450,
-      "kind": "관리계획 통합심의",
+      "kind": "관리계획 승인고시",
       "scope": "망우동 509 일대",
-      "source_url": "https://www.seoul.go.kr/news/news_report.do?nttNo=467891",
-      "source_as_of": "2026-10-09",
-      "evidence": "관리지역을 16,304.7㎡로 확대해 1개 단지에 임대 85세대를 포함한 공동주택 450세대를 계획했다."
+      "source_url": "https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=645741",
+      "source_as_of": "2026-11-26",
+      "evidence": "서울특별시 고시 제2026-671호. 관리지역 16,304.7㎡, 단일 구역에 공동주택 450세대(임대 85세대).",
+      "note": "공동주택용지 A-1에는 최고높이 72m 제한이 있다. 동별 설계 높이와 층수는 고시에 기재되지 않았다."
     },
     "mt-202603-resident-012": {
       "floors": null,

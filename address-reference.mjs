@@ -1,4 +1,4 @@
-import booleanPointInPolygon from './vendor/turf/boolean-point-in-polygon.mjs?v=e5ec1d1f8c10';
+import booleanPointInPolygon from './vendor/turf/boolean-point-in-polygon.mjs?v=5518809422cb';
 export function parseLot(value){
   const match=/^(?:서울(?:특별시|시)?\s+)?(?:([가-힣]+구)\s+)?([가-힣\d·.]+(?:동|가|로))\s+(산\s*)?(\d{1,4})(?:-(\d{1,4}))?(?:번지)?$/.exec(value.trim());
   if(!match || Number(match[4])===0)return null;

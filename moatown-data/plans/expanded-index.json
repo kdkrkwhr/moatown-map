@@ -898,6 +898,17 @@
         "mt-202603-resident-009"
       ]
     },
+    "mt-202603-resident-010": {
+      "path": "plans/scenes/mt-202603-resident-010.json",
+      "sha256": "92ab67bc45507f5856e1cb4dd00787a8d04768128ce680d0ede02f35856e95f5",
+      "modes": [
+        "town",
+        "zones"
+      ],
+      "zone_ids": [
+        "mz-notice-resident-010-a-1"
+      ]
+    },
     "mt-202603-resident-011": {
       "path": "plans/scenes/mt-202603-resident-011.json",
       "sha256": "94c3a1b42588637d2ee3e438b546cec309068e5c30eb96d364cba19a26553f20",
@@ -987,11 +998,16 @@
     },
     "mt-202603-resident-023": {
       "path": "plans/scenes/mt-202603-resident-023.json",
-      "sha256": "cf897e17ed7ce7245037cd13d2d45db6e328ff26398ee2ae4ab819e73039b3cc",
+      "sha256": "57cd594971ea7f15ba29a71fb5ce7f40046d031515bc1fc62ba3a68c8235d70e",
       "modes": [
-        "town"
+        "town",
+        "zones"
       ],
-      "zone_ids": []
+      "zone_ids": [
+        "mz-notice-resident-023-a1",
+        "mz-notice-resident-023-a2",
+        "mz-notice-resident-023-a3"
+      ]
     },
     "mt-202603-resident-025": {
       "path": "plans/scenes/mt-202603-resident-025.json",
@@ -1015,6 +1031,28 @@
         "town"
       ],
       "zone_ids": []
+    },
+    "mt-202603-resident-028": {
+      "path": "plans/scenes/mt-202603-resident-028.json",
+      "sha256": "41ec4c740c2a516ab232458bc6d036c4d34fb08cd5fa202fd08f8d9ad5f38563",
+      "modes": [
+        "town",
+        "zones"
+      ],
+      "zone_ids": [
+        "mz-notice-resident-028-a-1"
+      ]
+    },
+    "mt-202603-resident-031": {
+      "path": "plans/scenes/mt-202603-resident-031.json",
+      "sha256": "acdf7db4daada30d4c7e10be1db4d74b25084ec0e5447f3f6a07c437bb535f3a",
+      "modes": [
+        "town",
+        "zones"
+      ],
+      "zone_ids": [
+        "mz-notice-resident-031-a1"
+      ]
     }
   }
 }

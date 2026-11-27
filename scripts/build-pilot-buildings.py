@@ -268,8 +268,9 @@ def main():
     previous = {"towns": {}}
     if args.extend and existing.is_file():
         previous = json.loads(existing.read_bytes())
-        if previous["snapshot_date"] != snapshot.isoformat():
-            raise ValueError("Snapshot changed. Rebuild without --extend.")
+        previous_date = date.fromisoformat(previous["snapshot_date"])
+        if previous_date > snapshot or previous_date.year != snapshot.year:
+            raise ValueError("The age reference year changed or the snapshot moved back. Rebuild without --extend.")
         reusable = set(boundaries)
         if previous["boundary_sha256"] != boundary_digest:
             if not args.previous_boundaries:

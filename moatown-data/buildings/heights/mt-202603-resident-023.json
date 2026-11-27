@@ -4,7 +4,7 @@
   "source_url": "https://land.seoul.go.kr/land/map/land/map.do",
   "wfs_url": "https://land.seoul.go.kr/land/geoserver/wfs.do",
   "source_as_of": null,
-  "checked_on": "2026-11-25",
+  "checked_on": "2026-11-27",
   "date_note": "source_record_date는 원천 도형의 h_date이다. 지도 전체의 기준일은 확인되지 않았다.",
   "method_note": "EPSG:5179에서 두 건물 도형의 교집합 면적을 합집합 면적으로 나눈 값(IoU)이 0.9 이상이어야 한다. 양방향에서 IoU 0.1 초과 후보가 하나여야 하며 도로명주소 건물(gro_flo_co, IoU 0.6 이상)과 층수가 다르면 보류한다. 지도 층수에 3m를 곱한 추정 높이다.",
   "coverage": {
@@ -380,25 +380,25 @@
   },
   "audit": {
     "building_chunks": [
-      "8f2d920d8a17728cb76cb6c3c7e70dd16998823db2103aa626ada38d3a43488e"
+      "cd4318ade1479363288ec37defbeb0f68145fe14fb4ec00c24b561e19dee85b9"
     ],
     "bbox_epsg_5179": [
-      947120,
-      1937113,
-      947802,
-      1937863
+      947119,
+      1937114,
+      947803,
+      1937871
     ],
     "wfs_pages_sha256": {
       "landbiz:tl_nrm_buld": [
-        "9ce2a6af5b520bf6e59ff15fab563186aef14b6c4d57bd38ef8e592ef73c4bfb"
+        "2369f1ae5c5a19f9a78a20a55bbfb1cce13cf1deca9f662e7099b346c631186d"
       ],
       "landbiz:tl_sdw_buld": [
-        "c9a9ef533512b99b97febdca90c73fadcd2ea2aad5a84891763f726f936328e8"
+        "b4e2f5be18a9e3a5c254d0f1272e6243de92c589d293b37ebf709977b2d8edef"
       ]
     },
     "method_version": 1,
-    "topographic_rows": 390,
-    "road_rows": 136,
+    "topographic_rows": 396,
+    "road_rows": 139,
     "nonunique_source_ids": [],
     "originally_missing_by_area": {
       "inside": 2,

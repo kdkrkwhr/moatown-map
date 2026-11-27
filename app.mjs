@@ -1,15 +1,15 @@
-import {projectUrl,renderProjectDetail,showUnplacedProgram,procedureScheduleLine} from './detail-view.mjs?v=e5ec1d1f8c10';
-import {durationSamples,elapsedMonths,formatValue,projectMetadata,contractorProcedure,procedureParticipants,procedureSchedule} from './detail-format.mjs?v=e5ec1d1f8c10';
-import {projectParams,setProjectPath} from './project-url.mjs?v=e5ec1d1f8c10';
+import {projectUrl,renderProjectDetail,showUnplacedProgram,procedureScheduleLine} from './detail-view.mjs?v=5518809422cb';
+import {durationSamples,elapsedMonths,formatValue,projectMetadata,contractorProcedure,procedureParticipants,procedureSchedule} from './detail-format.mjs?v=5518809422cb';
+import {projectParams,setProjectPath} from './project-url.mjs?v=5518809422cb';
 export {elapsedMonths};
-import {loadMaps,createProjectMap} from './map-engine.mjs?v=e5ec1d1f8c10';
-export {showReferencePin} from './map-engine.mjs?v=e5ec1d1f8c10';
-import {loadNews,matchNews,newsCard,sourceLabels} from './news.mjs?v=e5ec1d1f8c10';
-import {searchProjects,managementFilters,progressFilters,recentProjectDates,contractorName,associationReviewKey} from './project-search.mjs?v=e5ec1d1f8c10';
-import {mountAddressLookup} from './address-reference.mjs?v=e5ec1d1f8c10';
-import {hasPublicLayout,mountPilotViewer} from './pilot-viewer.mjs?v=e5ec1d1f8c10';
-import {metricGlossary,translateStage} from './glossary-translator.mjs?v=e5ec1d1f8c10';
-import {decorativeEmoji,toolIcon} from './ui-icons.mjs?v=e5ec1d1f8c10';
+import {loadMaps,createProjectMap} from './map-engine.mjs?v=5518809422cb';
+export {showReferencePin} from './map-engine.mjs?v=5518809422cb';
+import {loadNews,matchNews,newsCard,sourceLabels} from './news.mjs?v=5518809422cb';
+import {searchProjects,managementFilters,progressFilters,recentProjectDates,contractorName,associationReviewKey} from './project-search.mjs?v=5518809422cb';
+import {mountAddressLookup} from './address-reference.mjs?v=5518809422cb';
+import {hasPublicLayout,mountPilotViewer} from './pilot-viewer.mjs?v=5518809422cb';
+import {metricGlossary,translateStage} from './glossary-translator.mjs?v=5518809422cb';
+import {decorativeEmoji,toolIcon} from './ui-icons.mjs?v=5518809422cb';
 const mobileMapQuery='(max-width: 768px)';
 function initialSheetHeight(selection,hasFilters,mobile){
   if(!mobile)return 1;

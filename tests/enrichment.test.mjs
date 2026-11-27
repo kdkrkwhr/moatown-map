@@ -183,6 +183,29 @@ test('plan zoning coverage counts each town with a published planned area once',
   assert.equal(coverage.towns_with_plan_zoning,withPlanAreas.length);
 });
 
+test('November management drawings link six separate areas and retain the limits of association awards',()=>{
+  const path='snapshots/2026-11-27/management-plans/';
+  const release=read(path+'zones.json');
+  const outlines=new Map(read(path+'boundaries.geojson').features.map(f=>[f.properties.entity_id,f]));
+  const areas=id=>release.filter(z=>z.town_id==='mt-202603-resident-'+id);
+  assert.deepEqual(areas('023').map(z=>[z.drawing_code,z.planned_units_total,z.housing_allocation.rental,z.max_floors_above_ground]),[
+    ['A1',110,22,18],['A2',182,37,20],['A3',294,59,20]
+  ]);
+  for(const id of ['010','023','028','031']){
+    for(const zone of areas(id)){
+      const feature=outlines.get(zone.id);
+      assert.ok(feature?.geometry && feature.properties.source_url && feature.properties.source_page);
+      assert.equal(feature.properties.parent_town_id,zone.town_id);
+      assert.ok(zone.representative_point && zone.field_evidence.plan.source_url);
+      assert.equal(zone.contractor_projects.length,1);
+      assert.ok(zone.contractor_projects[0].scope_note && !zone.selected_contractor);
+    }
+  }
+  assert.equal(areas('010')[0].representative_point_evidence.address,'망우동 509-1');
+  assert.equal(areas('031')[0].contractor_projects[0].owner_count,107);
+  assert.equal(areas('028')[0].stage,null);
+});
+
 test('each Seoul district can resolve a lot without loading any other district file',()=>{
   assert.equal(new Set(index.districts.map(d=>d.code)).size,25);
   let count=0;

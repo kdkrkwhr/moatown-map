@@ -11,45 +11,45 @@
     "districts_with_records": 24,
     "official_cancellations_reviewed": 11,
     "baseline_rows_removed_by_confirmed_cancellation": 1,
-    "zone_records": 283,
-    "boundary_features": 183,
-    "representative_points": 137,
+    "zone_records": 289,
+    "boundary_features": 192,
+    "representative_points": 138,
     "limitations": [
       "2026-03-31 명부와 확인된 취소 자료에 근거한 초기 자료이며, 현재 전체 명부가 아닙니다.",
       "확인된 후속 공식 선정 일부를 추가했습니다. 최신 전체 선정·정정, 전체 사업구역 상세와 경계는 전수 확인하지 못했습니다.",
       "서울시 공간자료와 고시 도면에서 확인한 참고 경계를 표시합니다. 개별 필지의 법정 구역 포함 여부는 관할 기관의 최신 고시로 확인해야 합니다."
     ],
-    "representative_points_unmatched_or_unchecked": 5,
+    "representative_points_unmatched_or_unchecked": 4,
     "representative_points_by_kind": {
       "official_project_geometry_reference_point": 100,
-      "representative_parcel_interior": 37
+      "representative_parcel_interior": 38
     },
-    "town_reference_boundaries": 108,
-    "zone_reference_boundaries": 75,
+    "town_reference_boundaries": 111,
+    "zone_reference_boundaries": 81,
     "legal_boundary_features": 0,
-    "zone_records_with_plan_numbers": 283,
-    "towns_with_management_plan_notices": 88,
-    "management_plan_notice_records": 166,
+    "zone_records_with_plan_numbers": 289,
+    "towns_with_management_plan_notices": 89,
+    "management_plan_notice_records": 167,
     "zones_with_contractor": 69,
     "zones_with_unit_types": 2,
     "indexed_parcels": 896467,
     "indexed_districts": 25,
-    "towns_with_linked_zones": 92,
-    "zones_with_stage": 209,
-    "zones_with_owner_count": 139,
+    "towns_with_linked_zones": 96,
+    "zones_with_stage": 214,
+    "zones_with_owner_count": 142,
     "towns_with_cutoff_history": 135,
     "towns_with_single_cutoff_date": 13,
     "towns_with_permit_notice": 53,
-    "towns_with_zoning": 128,
-    "zones_with_zoning": 28,
-    "zones_with_allocation": 240,
-    "zones_with_planned_units_per_owner": 114,
+    "towns_with_zoning": 129,
+    "zones_with_zoning": 30,
+    "zones_with_allocation": 246,
+    "zones_with_planned_units_per_owner": 117,
     "zones_with_member_general_rental": 2,
-    "zone_representative_points": 255,
+    "zone_representative_points": 261,
     "zone_point_only": 188,
     "towns_with_permit_legal_dong_notice": 81,
     "towns_with_permit_record": 134,
-    "towns_with_plan_zoning": 36,
+    "towns_with_plan_zoning": 37,
     "towns_with_permit_site_notice": 53,
     "towns_with_planned_units": 103,
     "towns_with_existing_units": 60,
@@ -57,11 +57,11 @@
     "towns_with_aging_ratio": 96,
     "towns_with_plan_floors": 61,
     "towns_with_rental_units": 91,
-    "towns_with_association_contractor_records": 8,
-    "association_contractor_records_without_zone_cards": 10,
+    "towns_with_association_contractor_records": 4,
+    "association_contractor_records_without_zone_cards": 4,
     "zones_with_contractor_procedure": 9,
-    "association_contractor_records_within_zones": 11,
-    "association_contractor_records_at_town_level": 12
+    "association_contractor_records_within_zones": 17,
+    "association_contractor_records_at_town_level": 6
   },
   "source_urls": {
     "official_baseline": "https://news.seoul.go.kr/citybuild/moa-housing-town/policy/status",
@@ -80,9 +80,9 @@
     "seoul_gazette_4016": "https://event.seoul.go.kr/seoulsibo/fileDownload.do?fileName=seoulsibo_20241017085543_69127.pdf"
   },
   "files": {
-    "towns": "snapshots/2026-11-27/towns.json",
-    "zones": "snapshots/2026-11-27/zones.json",
-    "boundaries": "snapshots/2026-11-27/boundaries.geojson",
+    "towns": "snapshots/2026-11-27/management-plans/towns.json",
+    "zones": "snapshots/2026-11-27/management-plans/zones.json",
+    "boundaries": "snapshots/2026-11-27/management-plans/boundaries.geojson",
     "excluded": "snapshots/2026-11-24/excluded.json",
     "parcel_index": "addresses/index.json",
     "buildings": "buildings/index.json",
@@ -105,7 +105,7 @@
     "sinwol_design": "plans/sinwol/design-evidence.json",
     "sinwol_layout": "plans/sinwol/a3-layout.geojson",
     "pilot_plans": "snapshots/2026-11-25/pilot-plans.json",
-    "review": "snapshots/2026-11-27/review.json",
+    "review": "snapshots/2026-11-27/management-plans/review.json",
     "registry_heights": "buildings/registry-heights.json",
     "unplaced_programs": "plans/unplaced-programs.json",
     "beon_public_space": "plans/beon/public-space.geojson",
@@ -292,6 +292,8 @@
     "building_town_heights_mt-202603-resident-008": "buildings/heights/mt-202603-resident-008.json",
     "building_town_details_mt-202603-resident-009": "buildings/details/mt-202603-resident-009.json",
     "building_town_heights_mt-202603-resident-009": "buildings/heights/mt-202603-resident-009.json",
+    "building_town_details_mt-202603-resident-010": "buildings/details/mt-202603-resident-010.json",
+    "building_town_heights_mt-202603-resident-010": "buildings/heights/mt-202603-resident-010.json",
     "building_town_details_mt-202603-resident-011": "buildings/details/mt-202603-resident-011.json",
     "building_town_heights_mt-202603-resident-011": "buildings/heights/mt-202603-resident-011.json",
     "building_town_details_mt-202603-resident-012": "buildings/details/mt-202603-resident-012.json",
@@ -316,6 +318,10 @@
     "building_town_heights_mt-202603-resident-026": "buildings/heights/mt-202603-resident-026.json",
     "building_town_details_mt-202603-resident-027": "buildings/details/mt-202603-resident-027.json",
     "building_town_heights_mt-202603-resident-027": "buildings/heights/mt-202603-resident-027.json",
+    "building_town_details_mt-202603-resident-028": "buildings/details/mt-202603-resident-028.json",
+    "building_town_heights_mt-202603-resident-028": "buildings/heights/mt-202603-resident-028.json",
+    "building_town_details_mt-202603-resident-031": "buildings/details/mt-202603-resident-031.json",
+    "building_town_heights_mt-202603-resident-031": "buildings/heights/mt-202603-resident-031.json",
     "building_town_details_mt-202603-resident-036": "buildings/details/mt-202603-resident-036.json",
     "building_town_heights_mt-202603-resident-036": "buildings/heights/mt-202603-resident-036.json",
     "building_town_details_mt-202603-resident-044": "buildings/details/mt-202603-resident-044.json",
@@ -430,6 +436,7 @@
       "mt-202603-resident-006",
       "mt-202603-resident-008",
       "mt-202603-resident-009",
+      "mt-202603-resident-010",
       "mt-202603-resident-011",
       "mt-202603-resident-012",
       "mt-202603-resident-013",
@@ -442,6 +449,8 @@
       "mt-202603-resident-025",
       "mt-202603-resident-026",
       "mt-202603-resident-027",
+      "mt-202603-resident-028",
+      "mt-202603-resident-031",
       "mt-202603-resident-036",
       "mt-202603-resident-044"
     ],
@@ -531,6 +540,7 @@
       "mt-202603-resident-006",
       "mt-202603-resident-008",
       "mt-202603-resident-009",
+      "mt-202603-resident-010",
       "mt-202603-resident-011",
       "mt-202603-resident-012",
       "mt-202603-resident-013",
@@ -541,17 +551,19 @@
       "mt-202603-resident-022",
       "mt-202603-resident-023",
       "mt-202603-resident-025",
-      "mt-202603-resident-027"
+      "mt-202603-resident-027",
+      "mt-202603-resident-028",
+      "mt-202603-resident-031"
     ],
     "hashes": {
-      "towns": "9b526662fd17f1e8ac65459e51945f2d5217880310977b3c133c7906462c4b70",
-      "zones": "869e66f0b38fb08381c10b90899de363890a9d1ac37845be91aefe04e26733a3",
-      "boundaries": "582934b75186f3f58d8c3728900de9da2c65f9210658a7c6fb4c5a113afc4db7",
-      "buildings": "456f7c9c771a3089dd24cd479f42da949afc39fd8997893cd7978e1e428e13f5",
+      "towns": "6005ef577e524c73b1a22afb766b779f18e79f3937e738bad36f9457eb363565",
+      "zones": "04cd9b367b136ca35ece62cfa7dace2086b6a2ed391bad44b6546959147c925e",
+      "boundaries": "2966bd049ea1d774114c7375ca0b50522a62cc5b7fe3c38c874e85d2e58ac6c7",
+      "buildings": "51cc868a0adf465237230f77ec16f60d14c4f85e61409cc29129e3bc9cf1cb1d",
       "pilot_plans": "356e909dd659cc5046716573b8e5ef30ee1a1f14fa5b1d1297245d6389d2c633",
       "building_height_review": "7e49579a271b7bddde35b0b3cce600592d01b3721c1d0abadc73965c4595637d",
       "registry_heights": "8a682c9f625e80dfc837fbf64390d583daae4a57ad8a735b13702e351829245c",
-      "unplaced_programs": "607331b988fa400133e9c5ea943f2963bdc13a6c1e949c92ef945a84d0c79e35",
+      "unplaced_programs": "aa3ff16b28c583825c532261d1531c48315fe392f2a8a12a7d3edc690f686968",
       "beon_design": "5021c7f9a009d4e1d24d70faa334a827402e900ad21ae312acff5bb74c873f91",
       "myeonmok_design": "f6ce114c85fc8e6e56282cd14a0a0b756db4730c5498acbc6d9da578241a0231",
       "sinwol_design": "66e8e6c28451472105e64bb292299fbd4afe815900d3cdced928e2057a192bfa",
@@ -658,6 +670,7 @@
       "building_town_details_mt-202603-resident-006": "108cfcfc400ead1d61c23afc89e8f4fd3db9b2396dc53e827fe472a10676afda",
       "building_town_details_mt-202603-resident-008": "a77a94b91bcaafa5a23ae755a4686b423e7cad19c7ec683f7ecbaaae19570819",
       "building_town_details_mt-202603-resident-009": "c9ee364c02a75e4483c44a3a02f9d6b9d83cd3f3a5c875239184f91987e15202",
+      "building_town_details_mt-202603-resident-010": "1cc6dc6ab3adf011f405fff5e0a4eddd9336b89497110a5d0d1b1c18579f1361",
       "building_town_details_mt-202603-resident-011": "18d4dab1f39ab29b43b30de73ee6c975502b8a03b54c91c1e09c46ef7138f58a",
       "building_town_details_mt-202603-resident-012": "5bdb2457219c89df65cb5e700b00b49b5db4633a608a9ed231d88e86431beb44",
       "building_town_details_mt-202603-resident-013": "afccca164532aa42ce1b25987f2d548a903faefe9b64e6b10f7b413946bf9b6c",
@@ -666,10 +679,12 @@
       "building_town_details_mt-202603-resident-018": "733d960d1e30dd1d997e9eb2842c84b89d0ec58c65b1d24859f02bfbb1a6ef0a",
       "building_town_details_mt-202603-resident-020": "958a3b845b8cfb9d11004394b4dbe0a53bacae8ff38b390e568607830cfdd1fd",
       "building_town_details_mt-202603-resident-022": "8845a4efad66fb2b1c5f80e9bea5572b7da9132428bad05e12235f77a594e0c8",
-      "building_town_details_mt-202603-resident-023": "932acd8cb4a55de0199c1dd3095ce6d387bc0f44734610af7c8b930d3ae9d644",
+      "building_town_details_mt-202603-resident-023": "4fa2644c0443ebbd18c214fac0db58b2ad2541047efeae0652bafc93f2a42e89",
       "building_town_details_mt-202603-resident-025": "1d26c1f5dce5967a0e595194e05a8a3a47ebecf3e7d4ef5ec4f566e365d59d9d",
       "building_town_details_mt-202603-resident-026": "48cd8eccc8c081a37218a4a66c5d2852c6673abb9929a51ba681d6c0d45a6401",
       "building_town_details_mt-202603-resident-027": "04709638960438845de00fba096db9a095ac5e55bdb282f88786c4f11862b82a",
+      "building_town_details_mt-202603-resident-028": "c47194327a49bef3162f8dd234d3682340054042ba94108bd8c7600175f672e1",
+      "building_town_details_mt-202603-resident-031": "a7570d4ba113bdf92557e0581a61588f1a51166b24215d436244dfae6718f924",
       "building_town_details_mt-202603-resident-036": "959fb08caeb1121c124726cc3e708ba1944b8dd1fcee46a4887e1f028739d977",
       "building_town_details_mt-202603-resident-044": "d0e0dafc2e294959cd820354d9adec1f7f9f30a0bd3badcb401e7fcf53644eec",
       "beon_height_evidence": "9bd1f42064ac6979fb697e717d46a0e081ea5fd3c0315fc269ea864c9be06919",
@@ -766,6 +781,7 @@
       "building_town_heights_mt-202603-resident-006": "eb70b0089d0bec9cf6e47c4f50468150e8a6c1206613e50b4d2ed87a6eef8950",
       "building_town_heights_mt-202603-resident-008": "f2ab41f7a57cdf39033588b4bcee1532c27ab6d41f7864cd369b8eefcf0e7cad",
       "building_town_heights_mt-202603-resident-009": "dbc1056b030339ace55032f80b549753d51da7e429884c7a6caee21491dd7c00",
+      "building_town_heights_mt-202603-resident-010": "e63f93e92dda453b6713046838887272a9cd79d01807417c57fc3ff85ef03b8f",
       "building_town_heights_mt-202603-resident-011": "7416edd80061fa7303300202d0112831211fe57f11bcb9cf4763e84ff814b3bd",
       "building_town_heights_mt-202603-resident-012": "5527b432fb0d7c255a96d78a182674eb86e9cba591adb5c4ee8221ebc1403446",
       "building_town_heights_mt-202603-resident-013": "abd5f39777d31802ee44d0753ceffac9fe4fb9a0850b6644704096a16bcfdfcc",
@@ -774,10 +790,12 @@
       "building_town_heights_mt-202603-resident-018": "ff85cfce038e4ea85ec8483e7b584d5a4ed3061aa3991b6f813a57b315dbb1f4",
       "building_town_heights_mt-202603-resident-020": "7f8d9469947fe481c0f5f171a83971e1c66cf25526763f6860fdc67d4f9c2448",
       "building_town_heights_mt-202603-resident-022": "a407a75d5ac12a7c93c94080e1af5cd26e8b6bce4fddf6d9ab52870e1b4e99fd",
-      "building_town_heights_mt-202603-resident-023": "c38b63464cf86b3ad4ee29320167b9da2fe07419129c8ea4db5d977e631a2a24",
+      "building_town_heights_mt-202603-resident-023": "7dee85e710d97653461b6f234a916d63415ba8a974d15a9580d31d3725a82815",
       "building_town_heights_mt-202603-resident-025": "e3ab66d9fd29719d2ed58e82129b607e10497975dea28e3d99c4d1994e7e960b",
       "building_town_heights_mt-202603-resident-026": "51943f4fa6b81e7722412c7a4fffc818c3b84a8cae210ccf2b71f157b2cf6fb3",
       "building_town_heights_mt-202603-resident-027": "e2c325b8471c72158edf14ce6fd9fcf9836e1c60bf9fc7e60c6b72adb7a5fe0a",
+      "building_town_heights_mt-202603-resident-028": "b2d7347412dfa418afdf637a414943f95f6e6b5860f488a7a706a14ec6243292",
+      "building_town_heights_mt-202603-resident-031": "74fd8be7ce68f70523d55758730e19690ee4ab8399dab6a1f3be9c3d3fcf94c8",
       "building_town_heights_mt-202603-resident-036": "ea9b6ef767afb759d63b2701c1220c18ae06a31f88d1005da3e8acffb332fea6",
       "building_town_heights_mt-202603-resident-044": "e249199a8be8545e1ff3f043788edbea899f8fe2bb483dee7d3f8bbeca3a628a",
       "current_site_sources": "33b7f555e3837a705e0fabc95e4a4d6fe5c1a5dfc15fb84d3344c85a92f958c0"
@@ -873,6 +891,7 @@
       "mt-202603-resident-006",
       "mt-202603-resident-008",
       "mt-202603-resident-009",
+      "mt-202603-resident-010",
       "mt-202603-resident-011",
       "mt-202603-resident-012",
       "mt-202603-resident-013",
@@ -883,7 +902,9 @@
       "mt-202603-resident-022",
       "mt-202603-resident-023",
       "mt-202603-resident-025",
-      "mt-202603-resident-027"
+      "mt-202603-resident-027",
+      "mt-202603-resident-028",
+      "mt-202603-resident-031"
     ],
     "simulation_inputs": {
       "mt-202603-public-010": {
@@ -1817,6 +1838,17 @@
           "mt-202603-resident-009"
         ]
       },
+      "mt-202603-resident-010": {
+        "path": "plans/scenes/mt-202603-resident-010.json",
+        "sha256": "92ab67bc45507f5856e1cb4dd00787a8d04768128ce680d0ede02f35856e95f5",
+        "modes": [
+          "town",
+          "zones"
+        ],
+        "zone_ids": [
+          "mz-notice-resident-010-a-1"
+        ]
+      },
       "mt-202603-resident-011": {
         "path": "plans/scenes/mt-202603-resident-011.json",
         "sha256": "94c3a1b42588637d2ee3e438b546cec309068e5c30eb96d364cba19a26553f20",
@@ -1906,11 +1938,16 @@
       },
       "mt-202603-resident-023": {
         "path": "plans/scenes/mt-202603-resident-023.json",
-        "sha256": "cf897e17ed7ce7245037cd13d2d45db6e328ff26398ee2ae4ab819e73039b3cc",
+        "sha256": "57cd594971ea7f15ba29a71fb5ce7f40046d031515bc1fc62ba3a68c8235d70e",
         "modes": [
-          "town"
+          "town",
+          "zones"
         ],
-        "zone_ids": []
+        "zone_ids": [
+          "mz-notice-resident-023-a1",
+          "mz-notice-resident-023-a2",
+          "mz-notice-resident-023-a3"
+        ]
       },
       "mt-202603-resident-025": {
         "path": "plans/scenes/mt-202603-resident-025.json",
@@ -1934,6 +1971,28 @@
           "town"
         ],
         "zone_ids": []
+      },
+      "mt-202603-resident-028": {
+        "path": "plans/scenes/mt-202603-resident-028.json",
+        "sha256": "41ec4c740c2a516ab232458bc6d036c4d34fb08cd5fa202fd08f8d9ad5f38563",
+        "modes": [
+          "town",
+          "zones"
+        ],
+        "zone_ids": [
+          "mz-notice-resident-028-a-1"
+        ]
+      },
+      "mt-202603-resident-031": {
+        "path": "plans/scenes/mt-202603-resident-031.json",
+        "sha256": "acdf7db4daada30d4c7e10be1db4d74b25084ec0e5447f3f6a07c437bb535f3a",
+        "modes": [
+          "town",
+          "zones"
+        ],
+        "zone_ids": [
+          "mz-notice-resident-031-a1"
+        ]
       }
     },
     "current_details": {
@@ -2031,6 +2090,7 @@
       "mt-202603-resident-006": "building_town_details_mt-202603-resident-006",
       "mt-202603-resident-008": "building_town_details_mt-202603-resident-008",
       "mt-202603-resident-009": "building_town_details_mt-202603-resident-009",
+      "mt-202603-resident-010": "building_town_details_mt-202603-resident-010",
       "mt-202603-resident-011": "building_town_details_mt-202603-resident-011",
       "mt-202603-resident-012": "building_town_details_mt-202603-resident-012",
       "mt-202603-resident-013": "building_town_details_mt-202603-resident-013",
@@ -2043,6 +2103,8 @@
       "mt-202603-resident-025": "building_town_details_mt-202603-resident-025",
       "mt-202603-resident-026": "building_town_details_mt-202603-resident-026",
       "mt-202603-resident-027": "building_town_details_mt-202603-resident-027",
+      "mt-202603-resident-028": "building_town_details_mt-202603-resident-028",
+      "mt-202603-resident-031": "building_town_details_mt-202603-resident-031",
       "mt-202603-resident-036": "building_town_details_mt-202603-resident-036",
       "mt-202603-resident-044": "building_town_details_mt-202603-resident-044"
     },
@@ -2141,6 +2203,7 @@
       "mt-202603-resident-006": "building_town_heights_mt-202603-resident-006",
       "mt-202603-resident-008": "building_town_heights_mt-202603-resident-008",
       "mt-202603-resident-009": "building_town_heights_mt-202603-resident-009",
+      "mt-202603-resident-010": "building_town_heights_mt-202603-resident-010",
       "mt-202603-resident-011": "building_town_heights_mt-202603-resident-011",
       "mt-202603-resident-012": "building_town_heights_mt-202603-resident-012",
       "mt-202603-resident-013": "building_town_heights_mt-202603-resident-013",
@@ -2153,6 +2216,8 @@
       "mt-202603-resident-025": "building_town_heights_mt-202603-resident-025",
       "mt-202603-resident-026": "building_town_heights_mt-202603-resident-026",
       "mt-202603-resident-027": "building_town_heights_mt-202603-resident-027",
+      "mt-202603-resident-028": "building_town_heights_mt-202603-resident-028",
+      "mt-202603-resident-031": "building_town_heights_mt-202603-resident-031",
       "mt-202603-resident-036": "building_town_heights_mt-202603-resident-036",
       "mt-202603-resident-044": "building_town_heights_mt-202603-resident-044"
     },
