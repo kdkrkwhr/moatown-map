@@ -1,7 +1,7 @@
-import {formatValue,unitsChange,projectIntervals,compareInterval,projectStage,awardHistories,contractorProcedure,procedureParticipants,procedureSchedule} from './detail-format.mjs?v=6ba5aa72988c';
-import {projectUrl} from './project-url.mjs?v=6ba5aa72988c';
-import {metricGlossary,translateStage} from './glossary-translator.mjs?v=6ba5aa72988c';
-import {decorativeEmoji,toolIcon} from './ui-icons.mjs?v=6ba5aa72988c';
+import {formatValue,unitsChange,projectIntervals,compareInterval,projectStage,awardHistories,contractorProcedure,procedureParticipants,procedureSchedule} from './detail-format.mjs?v=fd958c8cd39e';
+import {projectUrl} from './project-url.mjs?v=fd958c8cd39e';
+import {metricGlossary,translateStage} from './glossary-translator.mjs?v=fd958c8cd39e';
+import {decorativeEmoji,toolIcon} from './ui-icons.mjs?v=fd958c8cd39e';
 export {projectUrl};
 
 const pending='미고시';
@@ -545,6 +545,10 @@ function subAreas(panel,town,zone,children,boundaries,select,badge){
       const source=link(proof.source_url,[proof.source_label,date(proof.source_as_of),formatValue(proof.source_area_m2,'㎡')].join(' · '));
       if(source)info.append(el('br'),source);
       if(proof.display_note)info.append(el('br'),proof.display_note);
+      const tracedArea=proof.registration?.digitized_area_m2;
+      if(Number.isFinite(tracedArea)){
+        info.append(el('br'),'도면에서 판독한 참고 면적 '+formatValue(Math.round(tracedArea*10)/10,'㎡'));
+      }
     }
     panel.append(info);
   }
