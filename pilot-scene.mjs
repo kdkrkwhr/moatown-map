@@ -1,4 +1,4 @@
-﻿import earcut from './vendor/earcut-3.0.2/earcut.mjs?v=fd958c8cd39e';
+﻿import earcut from './vendor/earcut-3.0.2/earcut.mjs?v=9cd048534ed6';
 
 const DEG = Math.PI / 180;
 const GROUND = '#f1f3ef';
@@ -997,25 +997,25 @@ const SCENE_STYLE = `
 .pilot-world[data-dragging="true"] {cursor:grabbing}
 .pilot-world canvas,.pilot-world-labels {position:absolute;inset:0;display:block;width:100%;height:100%}
 .pilot-world-labels {pointer-events:none;overflow:hidden}
-.pilot-space-label {position:absolute;top:0;left:0;pointer-events:none;color:#425344;
-  font-family:inherit;font-size:10px;font-weight:650;line-height:1.3;white-space:nowrap;
+.pilot-space-label {position:absolute;top:0;left:0;pointer-events:none;color:#334839;
+  font-family:var(--font-ui,Pretendard,sans-serif);font-size:var(--type-caption,13px);font-weight:650;line-height:1.3;white-space:nowrap;
   text-shadow:-1px -1px 1px #f7f7eb,1px 1px 1px #f7f7eb,1px -1px 1px #f7f7eb,-1px 1px 1px #f7f7eb}
 .pilot-space-label.pilot-drawing-space {pointer-events:auto;cursor:pointer;border:0;padding:3px 4px;margin:0;background:transparent}
 .pilot-drawing-space[aria-pressed="true"] {text-decoration:underline}
 .pilot-world-label {position:absolute;left:0;top:0;display:grid;place-items:center;gap:1px;pointer-events:auto;
-  min-height:24px;max-width:145px;margin:0;padding:3px 8px;border:1px solid #a0b2a9;border-radius:5px;
-  background:#ffffffed;color:#314d42;box-shadow:0 1px 4px #1b45371a;font:inherit;line-height:1.25;white-space:nowrap;
-  font-size:11px;font-weight:700;cursor:pointer;letter-spacing:-.025em}
-.pilot-world-label::before {content:'';position:absolute;inset:-7px -4px}
+  min-height:30px;min-width:38px;max-width:145px;margin:0;padding:3px 8px;border:1px solid #a0b2a9;border-radius:5px;
+  background:#fffffff5;color:#254338;box-shadow:0 1px 4px #1b45371a;
+  font:700 var(--type-label,14px)/1.25 var(--font-ui,Pretendard,sans-serif);white-space:nowrap;cursor:pointer}
+.pilot-world-label::before {content:'';position:absolute;inset:-7px -3px}
 .pilot-world-label[aria-pressed="true"] {z-index:2;background:#175b4e;color:#fff;border-color:#104e42}
 .pilot-world-label[hidden] {display:none}
 .pilot-world-label span {max-width:100%;overflow:hidden;text-overflow:ellipsis}
-.pilot-world-label small {font-size:10px;font-weight:550;color:#486458}
+.pilot-world-label small {font-size:var(--type-caption,13px);font-weight:550;color:#405c50}
 .pilot-world-label[aria-pressed="true"] small {color:#e5f4eb}
 .pilot-world[data-mode="plan"] .pilot-world-label {padding:5px 8px}
 .pilot-world-measure {position:absolute;left:13px;bottom:10px;display:flex;align-items:flex-end;gap:11px;pointer-events:none;
   color:#3a5449;text-shadow:0 1px 2px #fff;font-variant-numeric:tabular-nums}
-.pilot-world-north,.pilot-world-scale {display:grid;justify-items:center;gap:2px;font-family:inherit;font-size:10px;line-height:1.15;font-weight:700}
+.pilot-world-north,.pilot-world-scale {display:grid;justify-items:center;gap:2px;font-family:var(--font-ui,Pretendard,sans-serif);font-size:12px;line-height:1.15;font-weight:700}
 .pilot-world-north i {position:relative;display:block;width:12px;height:16px;transform-origin:50% 55%}
 .pilot-world-north i::before,.pilot-world-north i::after {content:"";position:absolute;inset:0;background:#36584c;clip-path:polygon(50% 0,50% 74%,8% 100%)}
 .pilot-world-north i::after {background:#83a494;clip-path:polygon(50% 0,92% 100%,50% 74%)}

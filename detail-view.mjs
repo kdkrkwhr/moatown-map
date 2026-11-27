@@ -1,7 +1,7 @@
-import {formatValue,unitsChange,projectIntervals,compareInterval,projectStage,awardHistories,contractorProcedure,procedureParticipants,procedureSchedule} from './detail-format.mjs?v=fd958c8cd39e';
-import {projectUrl} from './project-url.mjs?v=fd958c8cd39e';
-import {metricGlossary,translateStage} from './glossary-translator.mjs?v=fd958c8cd39e';
-import {decorativeEmoji,toolIcon} from './ui-icons.mjs?v=fd958c8cd39e';
+import {formatValue,unitsChange,projectIntervals,compareInterval,projectStage,awardHistories,contractorProcedure,procedureParticipants,procedureSchedule} from './detail-format.mjs?v=9cd048534ed6';
+import {projectUrl} from './project-url.mjs?v=9cd048534ed6';
+import {metricGlossary,translateStage} from './glossary-translator.mjs?v=9cd048534ed6';
+import {decorativeEmoji,toolIcon} from './ui-icons.mjs?v=9cd048534ed6';
 export {projectUrl};
 
 const pending='미고시';
@@ -300,9 +300,15 @@ function metrics(panel,r,children){
   const {area,existing,planned,owners}=values(r),m=r.metrics??{},e=r.field_evidence??{};
   const scale=section(panel,'scale','규모·세대'),grid=el('dl',null,'metrics');
   scale.append(grid);
-  citedField(grid,r.project_area_label??'구역 면적',formatValue(area,'㎡'),e['metrics.area_sqm']??e.area_m2??e.project_area_m2);
+  function areaField(label,sqm,evidence){
+    const formatted=formatValue(sqm,'㎡');
+    const [metric,pyeong]=formatted.split(' (');
+    const row=citedField(grid,label,metric,evidence);
+    if(pyeong)row.querySelector('dd').append(el('small','('+pyeong,'area-conversion'));
+  }
+  areaField(r.project_area_label??'구역 면적',area,e['metrics.area_sqm']??e.area_m2??e.project_area_m2);
   if(Number.isFinite(r.housing_site_area_m2) && r.housing_site_area_m2!==area){
-    citedField(grid,'공동주택용지 면적',formatValue(r.housing_site_area_m2,'㎡'),e.housing_site_area_m2);
+    areaField('공동주택용지 면적',r.housing_site_area_m2,e.housing_site_area_m2);
   }
   if(r.project_name)citedField(grid,'등록 사업장명',r.project_name,e.project_name);
   field(grid,'필지 수',formatValue(m.parcel_count??r.parcel_count,'필지'));

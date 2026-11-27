@@ -15,15 +15,14 @@
   <meta property="og:image" content="https://moatownmap.com/assets/seoul-panorama.webp">
   <meta property="og:image:alt" content="서울 시가지 전경">
   <link rel="sitemap" type="application/xml" href="/sitemap.xml">
-  <link rel="stylesheet" href="./styles.css?v=fd958c8cd39e">
-  <script type="module" src="./news-page.mjs?v=fd958c8cd39e"></script>
+  <link rel="stylesheet" href="./styles.css?v=9cd048534ed6">
+  <script type="module" src="./news-page.mjs?v=9cd048534ed6"></script>
 </head>
 <body class="reader-page">
 <a class="skip" href="#news-main">사업 소식으로 바로가기</a>
 <header class="topbar">
   <a class="brand-link" href="./"><img class="brand-mark" src="/assets/moatownmap-logo.png" width="36" height="36" alt="">모아타운 현황지도</a>
   <nav class="main-nav" aria-label="주 메뉴"><a href="./">지도 탐색</a><a href="./news.html" aria-current="page">사업 소식</a><a href="./qa.html">모아타운 Q&amp;A</a></nav>
-  <div class="top-meta"><span class="updated">자료 수집 <time id="news-date">확인 중</time></span></div>
 </header>
 <main id="news-main" class="reader" tabindex="-1">
   <header class="news-masthead">
@@ -37,10 +36,10 @@
         <button type="button" data-source="official" aria-pressed="false">공식 자료 <b></b></button>
         <button type="button" data-source="media" aria-pressed="false">언론 보도 <b></b></button>
       </div>
-      <label class="news-area"><span class="sr-only">소식 지역</span><select id="news-region"><option value="">서울 전체</option><option value="common">서울 공통 정책</option></select></label>
+      <label class="news-area"><span>지역</span><select id="news-region"><option value="">서울 전체</option><option value="common">서울 공통 정책</option></select></label>
     </div>
     <p id="news-warning" role="status" hidden></p>
-    <div class="reader-list-head"><h2>최신순</h2><span id="news-count" role="status">불러오는 중</span></div>
+    <div class="reader-list-head"><h2>최신순 <span id="news-count" role="status">불러오는 중</span></h2><span>자료 수집 <time id="news-date">확인 중</time></span></div>
     <div id="news-list"></div>
     <noscript>소식을 보려면 JavaScript를 켜 주세요.</noscript>
   </section>

@@ -1,4 +1,4 @@
-import {projectParams,setProjectPath} from './project-url.mjs?v=fd958c8cd39e';
+import {projectParams,setProjectPath} from './project-url.mjs?v=9cd048534ed6';
 
 const collection=features=>({type:'FeatureCollection',features});
 const count=value=>value.toLocaleString('ko-KR');
@@ -788,7 +788,7 @@ export function mountPilotViewer({manifest,boundaries,townById,groups}){
       const indexUrl=new URL(manifest.files.buildings,base),planUrl=new URL(manifest.files.pilot_plans,base);
       const inputsForTown=config.simulation_inputs?.[town.id];
       const [index,planBook,{createPilotScene},expanded,pilotAssociations]=await Promise.all([fetchJson(indexUrl,signal,config.hashes.buildings),
-        session.hasPlan && !inputsForTown?.path?fetchJson(planUrl,signal,config.hashes.pilot_plans):null,import('./pilot-scene.mjs?v=fd958c8cd39e'),
+        session.hasPlan && !inputsForTown?.path?fetchJson(planUrl,signal,config.hashes.pilot_plans):null,import('./pilot-scene.mjs?v=9cd048534ed6'),
         inputsForTown?.path?fetchJson(new URL(inputsForTown.path,base),signal,inputsForTown.sha256):null,
         inputsForTown?.association_path?fetchJson(new URL(inputsForTown.association_path,base),signal,inputsForTown.association_sha256):null]);
       if(expanded && expanded.town_id!==town.id)throw Error('예상 배치의 대상지 ID가 다릅니다.');
@@ -831,7 +831,7 @@ export function mountPilotViewer({manifest,boundaries,townById,groups}){
         session.simulate=key=>expanded.modes[key];
       }else if(session.canSimulate){
         const modelAreas=areas.filter(a=>inputsForTown.zone_ids.includes(a.properties.entity_id));
-        const [module,inputs]=await Promise.all([import('./pilot-simulation.mjs?v=fd958c8cd39e'),
+        const [module,inputs]=await Promise.all([import('./pilot-simulation.mjs?v=9cd048534ed6'),
           Promise.all([inputsForTown.design,inputsForTown.public_space,inputsForTown.layout].map(key=>key?fetchInput(key):null)).catch(error=>{designError=error;return null;})]);
         if(active!==session)return;
         const layout=inputs?.[2];
