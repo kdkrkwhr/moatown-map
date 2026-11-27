@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import {compareInterval,durationSamples,formatValue,intervalBadge,projectEvents,projectIntervals,projectStage,unitsChange} from '../detail-format.mjs';
 import {groupSubAreas} from '../app.mjs';
-import {boundaryLabel,comparePlans,reportIssueUrl} from '../detail-view.mjs';
+import {boundaryDrawingTitle,boundaryLabel,comparePlans,reportIssueUrl} from '../detail-view.mjs';
 import {searchProjects} from '../project-search.mjs';
 import {positionInGeometry} from '../address-reference.mjs';
 import {projectHtml} from '../scripts/project-html.mjs';
@@ -36,6 +36,15 @@ test('boundary descriptions retain the source distinction between selected and a
   assert.equal(boundaryLabel({scope:'management_plan_project_area'}),'관리계획도 참고 경계');
   assert.equal(boundaryLabel({boundary_status:'legal'}),'법정 경계');
   assert.equal(boundaryLabel(null),null);
+});
+
+test('drawing references support the different page fields used by notices and public inspections',()=>{
+  for(const key of ['pdf_page','source_page','page']){
+    assert.equal(boundaryDrawingTitle({notice_number:'서울특별시 고시 제2026-122호',[key]:175}),'서울특별시 고시 제2026-122호 · 경계 도면 · 175쪽');
+  }
+  assert.equal(boundaryDrawingTitle({source_label:'주민공람안',source_page:'별첨 3쪽 아래'}),'주민공람안 · 경계 도면 · 별첨 3쪽 아래');
+  assert.equal(boundaryDrawingTitle({source_url:'https://seoul.go.kr/drawing.pdf#page=13'}),'경계 도면 · 13쪽');
+  assert.equal(boundaryDrawingTitle({}),'경계 도면');
 });
 
 test('child plan totals require comparable sources for every figure',()=>{

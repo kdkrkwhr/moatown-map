@@ -1,7 +1,7 @@
-import {formatValue,unitsChange,projectIntervals,compareInterval,projectStage,awardHistories,contractorProcedure,procedureParticipants,procedureSchedule} from './detail-format.mjs?v=49b66672088f';
-import {projectUrl} from './project-url.mjs?v=49b66672088f';
-import {metricGlossary,translateStage} from './glossary-translator.mjs?v=49b66672088f';
-import {decorativeEmoji,toolIcon} from './ui-icons.mjs?v=49b66672088f';
+import {formatValue,unitsChange,projectIntervals,compareInterval,projectStage,awardHistories,contractorProcedure,procedureParticipants,procedureSchedule} from './detail-format.mjs?v=e87064fc6888';
+import {projectUrl} from './project-url.mjs?v=e87064fc6888';
+import {metricGlossary,translateStage} from './glossary-translator.mjs?v=e87064fc6888';
+import {decorativeEmoji,toolIcon} from './ui-icons.mjs?v=e87064fc6888';
 export {projectUrl};
 
 const pending='미고시';
@@ -90,6 +90,11 @@ export function boundaryLabel(boundary){
   if(boundary.scope==='management_plan_project_area')return '관리계획도 참고 경계';
   return boundary.boundary_status==='legal'?'법정 경계':'참고 경계';
 }
+export function boundaryDrawingTitle(boundary){
+  const page=boundary.pdf_page??boundary.source_page??boundary.page??boundary.source_url?.match(/#page=(\d+)$/)?.[1];
+  const location=page && /^\d+$/.test(page)?page+'쪽':page;
+  return [boundary.notice_number??boundary.source_label,'경계 도면',location].filter(Boolean).join(' · ');
+}
 const values=r=>({
   area:r.metrics?.area_sqm??r.area_sqm??r.project_area_m2??r.area_m2,
   planned:r.metrics?.planned_units??r.planned_units??r.planned_units_total,
@@ -177,8 +182,8 @@ function regulations(card,r,town,zone,boundary,cityRule,openTownRules){
     box.append(el('br'),button);card.append(box);
   }
   if(boundary?.kind==='official_notice_drawing'){
-    const box=notice('점선은 고시 도면의 구역선을 지도에 옮긴 것입니다. 개별 필지의 포함 여부는 원문에서 확인하세요.');
-    const source=link(boundary.source_url,boundary.notice_number+' · 도면 '+boundary.pdf_page+'쪽');
+    const box=notice('점선은 공개 도면의 구역선을 지도에 옮긴 것입니다. 개별 필지의 포함 여부는 원문에서 확인하세요.');
+    const source=link(boundary.source_url,boundaryDrawingTitle(boundary));
     if(source)box.append(document.createElement('br'),source);
     card.append(box);
   }
@@ -604,7 +609,7 @@ function sources(card,r,snapshot,boundary,events,registryUrl,reportUrl){
     if(!link(url,'원문'))return;
     if(!collection.has(url))collection.set(url,{name:title||publisher(url),asOf});
   }
-  if(boundary?.kind==='official_notice_drawing')add(boundary.source_url,boundary.notice_number+' · 경계 도면 '+boundary.pdf_page+'쪽',boundary.source_as_of,docs);
+  if(boundary?.kind==='official_notice_drawing')add(boundary.source_url,boundaryDrawingTitle(boundary),boundary.source_as_of,docs);
   for(const item of listOf(r.official_links))add(item?.url,item?.title,item?.date,docs);
   for(const n of listOf(r.management_plan_notices)){
     add(n.notice_url??n.archive_url??n.source_url,n.notice_number??n.site+' 관리계획 자료',n.notice_date,docs);
