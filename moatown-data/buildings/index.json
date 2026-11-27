@@ -10,7 +10,7 @@
   "source_as_of": "2024-12-31",
   "checked_on": "2026-11-27",
   "snapshot_date": "2026-11-27",
-  "boundary_sha256": "fc520afdb135fffd981425a5247f9bb31a867ed79cc3534ff9431f3725342105",
+  "boundary_sha256": "8f3f93497a6ae285aff7c84be195334af15459036e00c87b8b1b355ce0c52398",
   "buffer_m": 150,
   "source_fields": {
     "geom": "건물 전체 도형 (EPSG:5179, m)",

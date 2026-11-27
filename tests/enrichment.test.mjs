@@ -8,6 +8,73 @@ const read=file=>JSON.parse(readFileSync(new URL('../moatown-data/'+file,import.
 const {files,coverage}=read('latest.json');
 const towns=read(files.towns),zones=read(files.zones),index=read(files.parcel_index);
 
+test('all previously unplaced zones have a documented location review and drawing labels stay inside their own zone',()=>{
+  const path='snapshots/2026-11-27/zone-locations/';
+  const audit=read(path+'review.json').zone_location_review;
+  const oldIds=new Set(read(audit.baseline_boundaries).features.map(f=>f.properties.entity_id));
+  const expected=read(audit.baseline_zones).filter(z=>!oldIds.has(z.id) && !z.representative_point).map(z=>z.id);
+  assert.deepEqual(audit.results.map(r=>r.zone_id).sort(),expected.sort());
+  const byId=new Map(read(path+'zones.json').map(z=>[z.id,z]));
+  const features=new Map(read(path+'boundaries.geojson').features.map(f=>[f.properties.entity_id,f]));
+  for(const row of audit.results){
+    const zone=byId.get(row.zone_id),feature=features.get(row.zone_id);
+    assert.equal(row.town_id,zone.town_id);
+    assert.match(row.source_url,/^https:\/\//);
+    assert.match(row.source_as_of,/^\d{4}-\d{2}-\d{2}$/);
+    if(row.outcome==='reference_boundary'){
+      assert.equal(feature.properties.boundary_status,'reference_only');
+      assert.equal(feature.properties.parent_town_id,zone.town_id);
+      assert.equal(feature.properties.source_url,zone.boundary_evidence.source_url);
+      assert.equal(positionInGeometry(feature.properties.label_point.coordinates,feature.geometry,0),'inside',zone.id);
+    }else if(row.outcome==='parcel_point'){
+      assert.equal(zone.representative_point.type,'Point');
+      assert.ok(zone.representative_point_evidence.source_url);
+    }else{
+      assert.equal(row.outcome,'withheld');assert.equal(feature,undefined);assert.ok(!zone.representative_point);
+      assert.equal(zone.field_evidence.location_review.note,row.reason);assert.ok(row.reason);
+    }
+  }
+});
+
+test('Cheongnyong district figures keep the approval and later inspection rental schedules separate',()=>{
+  const release=read('snapshots/2026-11-27/zone-locations/zones.json');
+  const rows=release.filter(z=>z.town_id==='mt-202603-public-073');
+  const sum=pick=>rows.reduce((total,z)=>total+pick(z),0);
+  assert.equal(sum(z=>z.metrics.owner_count),247);
+  assert.equal(sum(z=>z.metrics.existing_units),387);
+  assert.equal(sum(z=>z.planned_units_total),507);
+  assert.equal(sum(z=>z.approved_supply_history[0].rental),92);
+  assert.equal(sum(z=>z.housing_allocation.rental),71);
+  for(const z of rows){
+    assert.equal(z.approved_supply_history[0].evidence.source_as_of,'2026-02-05');
+    assert.equal(z.field_evidence['housing_allocation.rental'].source_as_of,'2026-02-12');
+  }
+});
+
+test('Dunchon association notices retain their own boundaries and the 448-unit tender uses its matching site',()=>{
+  const townId='mt-202603-public-056';
+  const release=read('snapshots/2026-11-27/zone-locations/zones.json').filter(z=>z.town_id===townId);
+  const scene=read('plans/scenes/'+townId+'.json');
+  const expectedAreas={'A-1':14531.75,'A-2':15592.87,'B-1':14095.77};
+  for(const z of release){
+    const [boundary]=z.association_boundaries;
+    assert.equal(boundary.properties.source_area_m2,expectedAreas[z.drawing_code]);
+    assert.equal(boundary.properties.source_page,2);
+    assert.equal(boundary.properties.plan_overlap.published_plan_zone,z.drawing_code);
+    assert.equal(z.stage,'조합설립인가');
+    if(z.drawing_code!=='B-1')continue;
+    const program=scene.zones[z.id];
+    assert.equal(program.association_notice_number,boundary.properties.notice_number);
+    assert.deepEqual([program.units,program.floors],[448,29]);
+    const blocks=scene.modes.zones.features.filter(f=>f.properties.zone_id===z.id);
+    assert.ok(blocks.length>0);
+    for(const block of blocks)for(const point of block.geometry.coordinates[0]){
+      assert.equal(positionInGeometry(point,boundary.geometry,0),'inside');
+    }
+  }
+  assert.equal(release.length,3);
+});
+
 test('November review preserves the three town totals and dates the earlier allocations separately',()=>{
   const boundaries=new Map(read(files.boundaries).features.map(f=>[f.properties.entity_id,f.geometry]));
   for(const [suffix,n,latest,draft,rental] of [['039',6,2441,2447,441],['048',2,1485,1489,240],['069',3,1786,1788,284]]){

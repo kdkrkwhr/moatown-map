@@ -257,3 +257,7 @@
 | 서대문 홍은동 10-18 A-1 | 조합 공개목록에서 우선협상대상자 선정 통보를 확인했다. 통보 대상 업체명과 총회일은 미확인이다. [조합 공개문서 목록](https://cleanup.seoul.go.kr/service/opendata/othbcDocInput/RecentlscrOpen.do?cafeId=410900001523C46&cpage=1&pageSize=200) |
 | 관악난곡 A2 | 제일건설·두산건설·남광토건이 2차 현장설명회에 참석했다. 공고된 입찰 마감일은 11월 3일이다. [주민대표회의 설명회·마감일 보도](https://www.arunews.com/news/articleView.html?idxno=68065) |
 | 강동 둔촌동 A-1·A-2·B-1 | 세 구역이 유찰 이후 수의계약을 추진했다. 현장설명회 참석 업체와 확인된 절차를 구역별로 표시했다. [강동구 추진 현황](https://www.gangdong.go.kr/web/newportal/bbs/b_140) · [수의계약 추진](https://m.wikileaks-kr.org/news/articleView.html?idxno=193321) · [1·3구역 설명회](https://www.g-enews.com/article/Real-Estate/2026/08/2026082115485692414b1077807_1) · [2구역 설명회](https://www.arunews.com/news/articleView.html?idxno=65857) |
+
+## 2026-11-27 세부구역 위치 대조
+
+개별 핀과 경계가 없던 26곳을 서울시보, 토지이음에 등재된 관리계획 고시와 자치구 공람 도면에서 대조했다. 참고 경계 21곳은 구역별 발행일과 출처를 기록했다. 지도 표시를 보류한 곳은 확인한 원문과 사유를 상세 화면에 제공한다. [구역별 도면과 검수 근거](zone-locations-2026-11-27.md)

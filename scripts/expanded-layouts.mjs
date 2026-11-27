@@ -74,7 +74,13 @@ export function buildExpandedLayouts(town,children,shapes,whole,zoneSources,prev
     modes[key]=result;
   }
   const siteShape=z=>{
-    const boundary=shapes.get(z.id),site=zones[z.id]?.residential_site;
+    const boundary=shapes.get(z.id),program=zones[z.id];
+    if(program.association_notice_number){
+      const site=z.association_boundaries?.find(f=>f.properties.notice_number===program.association_notice_number);
+      if(!site?.geometry)throw Error('조합 사업 범위를 확인할 수 없습니다 '+z.id);
+      return {...boundary,geometry:site.geometry};
+    }
+    const site=program.residential_site;
     return site?{...boundary,geometry:site.geometry}:boundary;
   };
   if(plan&&!plan.scope_geometry_mismatch){

@@ -1,7 +1,7 @@
-import {formatValue,unitsChange,projectIntervals,compareInterval,projectStage,awardHistories,contractorProcedure,procedureParticipants,procedureSchedule} from './detail-format.mjs?v=e87064fc6888';
-import {projectUrl} from './project-url.mjs?v=e87064fc6888';
-import {metricGlossary,translateStage} from './glossary-translator.mjs?v=e87064fc6888';
-import {decorativeEmoji,toolIcon} from './ui-icons.mjs?v=e87064fc6888';
+import {formatValue,unitsChange,projectIntervals,compareInterval,projectStage,awardHistories,contractorProcedure,procedureParticipants,procedureSchedule} from './detail-format.mjs?v=f09d43984ad6';
+import {projectUrl} from './project-url.mjs?v=f09d43984ad6';
+import {metricGlossary,translateStage} from './glossary-translator.mjs?v=f09d43984ad6';
+import {decorativeEmoji,toolIcon} from './ui-icons.mjs?v=f09d43984ad6';
 export {projectUrl};
 
 const pending='미고시';
@@ -182,7 +182,7 @@ function regulations(card,r,town,zone,boundary,cityRule,openTownRules){
     box.append(el('br'),button);card.append(box);
   }
   if(boundary?.kind==='official_notice_drawing'){
-    const box=notice('점선은 공개 도면의 구역선을 지도에 옮긴 것입니다. 개별 필지의 포함 여부는 원문에서 확인하세요.');
+    const box=notice(boundary.display_note??'점선은 공개 도면의 구역선을 지도에 옮긴 것입니다. 개별 필지의 포함 여부는 원문에서 확인하세요.');
     const source=link(boundary.source_url,boundaryDrawingTitle(boundary));
     if(source)box.append(document.createElement('br'),source);
     card.append(box);
@@ -332,7 +332,12 @@ function metrics(panel,r,children){
   const allocation=r.housing_allocation??{},approved=r.approved_allocation??{},c=r.contract_scope??{};
   for(const [label,value] of [['조합원 분양',approved.member??allocation.members],['일반 분양',approved.general??allocation.general],['계획 임대',allocation.rental],['분양 합계',allocation.sale_total],['보류지',approved.reserve??allocation.reserve],['계약 당시 공사 규모',c.units]]){
     const key={'계획 임대':'rental','분양 합계':'sale_total'}[label];
-    citedField(grid,label,formatValue(value,'세대'),e['housing_allocation.'+key]??e.housing_allocation);
+    const proof=e['housing_allocation.'+key]??e.housing_allocation;
+    const title=key==='rental' && proof?.kind==='management_plan_public_inspection'?'계획 임대 (주민공람안)':label;
+    citedField(grid,title,formatValue(value,'세대'),proof);
+  }
+  for(const published of listOf(r.approved_supply_history)){
+    citedField(grid,'승인고시 당시 임대',formatValue(published.rental,'세대'),published.evidence);
   }
   contractorField(grid,r,children);
   const contract=e.selected_contractor??{};
@@ -526,6 +531,23 @@ function subAreas(panel,town,zone,children,boundaries,select,badge){
     }
     panel.append(info);
   }
+  const locationReview=zone?.field_evidence?.location_review;
+  if(locationReview?.note){
+    const info=notice(locationReview.note);
+    const source=link(locationReview.source_url,locationReview.source_label??'지도 위치 확인 원문');
+    if(source)info.append(el('br'),source);
+    panel.append(info);
+  }
+  if(zone?.association_boundaries?.length){
+    const info=notice('지도에서 보라색 파선은 조합설립인가 당시 사업구역을 표시합니다. 관리계획의 구역선과 범위를 비교할 수 있습니다.');
+    for(const record of zone.association_boundaries){
+      const proof=record.properties;
+      const source=link(proof.source_url,[proof.source_label,date(proof.source_as_of),formatValue(proof.source_area_m2,'㎡')].join(' · '));
+      if(source)info.append(el('br'),source);
+      if(proof.display_note)info.append(el('br'),proof.display_note);
+    }
+    panel.append(info);
+  }
   const refs=(zone??town).registered_project_references;
   if(refs?.length){
     const block=el('details',null,'pilot-evidence');
@@ -563,7 +585,7 @@ function subAreas(panel,town,zone,children,boundaries,select,badge){
     button.append(head);
     const sizes=values(child);
     const siteOnly=sizes.area==null && Number.isFinite(child.housing_site_area_m2);
-    const entries=[['대표 지번',child.registered_address],['계획',sizes.planned==null && child.previous_plan?'최신 배분 미확인':formatValue(sizes.planned,'세대')],[siteOnly?'공동주택용지':child.project_area_label??'면적',formatValue(siteOnly?child.housing_site_area_m2:sizes.area,'㎡')],['시공사',zoneContractorText(child)??contractorProcedure(child)?.stage],['지도 위치',boundaryLabel(boundaries.get(child.id))??(child.representative_point?'대표 지번 핀':null)]];
+    const entries=[['대표 지번',child.registered_address],['계획',sizes.planned==null && child.previous_plan?'최신 배분 미확인':formatValue(sizes.planned,'세대')],[siteOnly?'공동주택용지':child.project_area_label??'면적',formatValue(siteOnly?child.housing_site_area_m2:sizes.area,'㎡')],['시공사',zoneContractorText(child)??contractorProcedure(child)?.stage],['지도 위치',boundaryLabel(boundaries.get(child.id))??(child.representative_point?'대표 지번 핀':child.field_evidence?.location_review?'세부구역 위치 미확인':null)]];
     if(sizes.planned==null && child.previous_plan)entries.push(['이전 계획',previousPlanLabel(child)]);
     if(!child.registered_address && child.representative_point_evidence?.address)entries.push(['지도 표시용 필지',child.representative_point_evidence.address]);
     for(const [label,value] of entries.sort((a,b)=>Number(!a[1]||a[1]===pending)-Number(!b[1]||b[1]===pending))){
