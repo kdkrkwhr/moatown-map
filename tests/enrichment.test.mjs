@@ -117,6 +117,38 @@ test('missing-field lists and published coverage describe the same snapshot',()=
   }
 });
 
+test('notice tables cover exactly the reviewed towns and owner records match the baseline cohort',()=>{
+  const release='snapshots/2026-11-27/';
+  const audit=read(release+'review.json').notice_zone_owner_audit;
+  const before=read(audit.baseline_zones),after=new Map(read(release+'zones.json').map(z=>[z.id,z]));
+  const linked=new Set(before.map(z=>z.town_id));
+  const targets=read(audit.baseline_towns).filter(t=>!linked.has(t.id) && t.management_plan_notices?.length);
+  assert.deepEqual(audit.towns.map(r=>r.town_id).sort(),targets.map(t=>t.id).sort());
+  const ids=audit.towns.flatMap(t=>t.zones.map(r=>r.id));
+  assert.equal(new Set(ids).size,59);
+  for(const r of audit.towns)for(const row of r.zones){
+    const z=after.get(row.id);
+    assert.equal(z.town_id,r.town_id);
+    assert.ok(z.registered_address && z.project_area_m2>0 && z.planned_units_total>0);
+    assert.ok(z.field_evidence.plan.notice_number && z.field_evidence.registered_address.source_url);
+    assert.equal(row.point,Boolean(z.representative_point));
+    assert.equal(row.boundary,z.boundary_evidence?.source_feature_id??null);
+  }
+  const previous=before.filter(z=>z.stage==='조합설립인가' && z.metrics?.owner_count==null);
+  assert.deepEqual(audit.owner_reviews.map(r=>r.id).sort(),previous.map(z=>z.id).sort());
+  for(const r of [...audit.owner_reviews,...audit.additional_owner_reviews]){
+    const z=after.get(r.id);
+    assert.equal(z.metrics?.owner_count??null,r.owners);
+    if(r.owners==null)continue;
+    assert.equal(z.field_evidence['metrics.owner_count'].source_url,r.source_url);
+    if(!r.same_plan_units || z.stage==='조합설립인가 취소')continue;
+    const e=z.field_evidence.planned_units_per_owner;
+    assert.equal(e.numerator_planned_units,r.same_plan_units);
+    assert.equal(e.denominator_owner_count,r.owners);
+    assert.equal(z.metrics.planned_units_per_owner,Math.round(100*r.same_plan_units/r.owners)/100);
+  }
+});
+
 test('published town metrics retain field sources and allocations reconcile within their own plan',()=>{
   for(const t of towns){
     for(const key of Object.keys(t.metrics??{})){

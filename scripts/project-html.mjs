@@ -52,12 +52,16 @@ export function projectHtml(template,town,zone,children,snapshot,root){
   const stageDate=stageFact?.milestone_date??stageFact?.approval_date??stageFact?.review_date;
   const stageRef=stageEvidence?.source_url?.startsWith('https://')?list([[stageEvidence.source_url,'단계 확인 원문']]):'';
   const scoped=stageEvidence?.scoped_events??[];
+  const owners=record.metrics?.owner_count;
+  const ownerProof=record.field_evidence?.['metrics.owner_count'];
+  const ownerScope=ownerProof?.display_scope?'<small>'+escape(ownerProof.display_scope)+'</small>':'';
+  const ownerHtml=Number.isInteger(owners)?'<div><dt>토지등소유자 수</dt><dd>'+formatValue(owners,'명')+ownerScope+(ownerProof?.source_url?list([[ownerProof.source_url,'소유자 수 확인 근거']]):'')+'</dd></div>':'';
   const scopedHtml=scoped.map(e=>'<div><dt>'+escape(e.project_name)+'</dt><dd>'+escape(e.stage)+(e.date?' · '+escape(formatValue(e.date,'date')):'')+list([[e.source_url,'이력 원문']])+'</dd></div>').join('');
   const awardHtml=awardHistories(record).map(h=>'<div><dt>'+escape([h.scope,'시공사 선정·계약 이력'].filter(Boolean).join(' · '))+'</dt><dd>'+escape(h.company)+h.events.map(e=>'<small>'+escape(e.label+' · '+formatValue(e.date,'date'))+'</small>').join('')+list(h.sources.filter(s=>s.url).map(s=>[s.url,s.title]))+'</dd></div>').join('');
   const summary='<article class="published-project"><p>'+escape(zone?town.district+' · '+town.name:town.district)+'</p><h2>'+escape(record.name)+'</h2>'
     +'<dl class="facts"><div><dt>'+(zone?'추진 단계':'관리계획 단계')+'</dt><dd>'+escape(stage)+(term?'<small>'+escape(term.summary)+'</small>':'')+'</dd></div>'
     +(stageEvidence?.note?'<div><dt>'+(stageFact?'최근 확인된 행정 단계':'구역 대조 결과')+'</dt><dd>'+escape(stageEvidence.note)+(stageDate?'<small>'+escape((stageFact.milestone_label??stage)+' · '+formatValue(stageDate,'date'))+'</small>':'')+(stageEvidence.source_as_of?'<small>자료 기준 '+escape(formatValue(stageEvidence.source_as_of,'date'))+'</small>':'')+stageRef+'</dd></div>':'')
-    +scopedHtml+contractors+awardHtml
+    +scopedHtml+contractors+awardHtml+ownerHtml
     +'<div><dt>대표 지번</dt><dd>'+escape(zone?zone.registered_address??'미확인':town.address??town.name)+'</dd></div>'
     +'<div><dt>자료 기준일</dt><dd><time datetime="'+escape(snapshot)+'">'+escape(formatValue(snapshot,'date'))+'</time></dd></div></dl>'
     +'<h3>공식 출처</h3>'+(sources.length?list(sources):'<p>구역별 원문 미확인</p>')

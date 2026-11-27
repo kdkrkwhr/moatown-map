@@ -1,15 +1,15 @@
-import {projectUrl,renderProjectDetail,showUnplacedProgram,procedureScheduleLine} from './detail-view.mjs?v=0bc4fef5da11';
-import {durationSamples,elapsedMonths,formatValue,projectMetadata,contractorProcedure,procedureParticipants,procedureSchedule} from './detail-format.mjs?v=0bc4fef5da11';
-import {projectParams,setProjectPath} from './project-url.mjs?v=0bc4fef5da11';
+import {projectUrl,renderProjectDetail,showUnplacedProgram,procedureScheduleLine} from './detail-view.mjs?v=e5ec1d1f8c10';
+import {durationSamples,elapsedMonths,formatValue,projectMetadata,contractorProcedure,procedureParticipants,procedureSchedule} from './detail-format.mjs?v=e5ec1d1f8c10';
+import {projectParams,setProjectPath} from './project-url.mjs?v=e5ec1d1f8c10';
 export {elapsedMonths};
-import {loadMaps,createProjectMap} from './map-engine.mjs?v=0bc4fef5da11';
-export {showReferencePin} from './map-engine.mjs?v=0bc4fef5da11';
-import {loadNews,matchNews,newsCard,sourceLabels} from './news.mjs?v=0bc4fef5da11';
-import {searchProjects,managementFilters,progressFilters,recentProjectDates,contractorName,associationReviewKey} from './project-search.mjs?v=0bc4fef5da11';
-import {mountAddressLookup} from './address-reference.mjs?v=0bc4fef5da11';
-import {hasPublicLayout,mountPilotViewer} from './pilot-viewer.mjs?v=0bc4fef5da11';
-import {metricGlossary,translateStage} from './glossary-translator.mjs?v=0bc4fef5da11';
-import {decorativeEmoji,toolIcon} from './ui-icons.mjs?v=0bc4fef5da11';
+import {loadMaps,createProjectMap} from './map-engine.mjs?v=e5ec1d1f8c10';
+export {showReferencePin} from './map-engine.mjs?v=e5ec1d1f8c10';
+import {loadNews,matchNews,newsCard,sourceLabels} from './news.mjs?v=e5ec1d1f8c10';
+import {searchProjects,managementFilters,progressFilters,recentProjectDates,contractorName,associationReviewKey} from './project-search.mjs?v=e5ec1d1f8c10';
+import {mountAddressLookup} from './address-reference.mjs?v=e5ec1d1f8c10';
+import {hasPublicLayout,mountPilotViewer} from './pilot-viewer.mjs?v=e5ec1d1f8c10';
+import {metricGlossary,translateStage} from './glossary-translator.mjs?v=e5ec1d1f8c10';
+import {decorativeEmoji,toolIcon} from './ui-icons.mjs?v=e5ec1d1f8c10';
 const mobileMapQuery='(max-width: 768px)';
 function initialSheetHeight(selection,hasFilters,mobile){
   if(!mobile)return 1;
@@ -94,6 +94,7 @@ const stages=[
   {label:'통합심의 신청',short:'통합심의 신청',ink:'#845820',fill:'#e9c08a',shape:'diamond'},
   {label:'동의서 징구',short:'동의서 징구',ink:'#66547b',fill:'#baabcd',shape:'circle'},
   {label:'조합설립인가 반려',short:'조합인가 반려',ink:'#924f6a',fill:'#d89aaf',shape:'diamond'},
+  {label:'조합설립인가 취소',short:'조합인가 취소',ink:'#973952',fill:'#db9daa',shape:'diamond'},
   {label:'사업시행자 지정',short:'시행자 지정',ink:'#4a618e',fill:'#94aacf',shape:'circle'},
   {label:'조합설립 진행 중',short:'조합설립 중',ink:'#6746a3',fill:'#aa8bd9',shape:'circle'},
   {label:'조합설립인가',short:'조합설립인가',ink:'#523394',fill:'#9572ce',shape:'circle'},
@@ -102,6 +103,7 @@ const stages=[
   {label:'사업시행계획인가 진행 중',short:'사업인가 진행 중',ink:'#995117',fill:'#edac56',shape:'diamond'},
   {label:'사업시행계획인가',short:'사업인가 완료',ink:'#265d99',fill:'#80a9dd',shape:'triangle'},
   {label:'착공',short:'착공',ink:'#006e62',fill:'#4bb8a1',shape:'square'},
+  {label:'철거신고',short:'철거신고',ink:'#286b78',fill:'#83bbc6',shape:'triangle'},
   {label:'사업시행계획 폐지',short:'시행계획 폐지',ink:'#98463e',fill:'#cf938b',shape:'square'},
   {label:'미확인',short:'미확인',ink:'#586474',fill:'#a4adb8',shape:'ring'}
 ].map(stage=>({...stage,description:translateStage(stage.label).detail}));
@@ -250,6 +252,10 @@ export function mount({manifest,towns,zones,boundaries,excluded=[]},sdk,mapSigna
     }
     else if(award==='procedure' && contractorProcedure(zone))current.award=award;
     else if((zone??townById.get(current.townId))?.contractor_projects?.some(p=>p.project_name===award))current.award=award;
+    else if(!zone && award && current.townId){
+      const matches=(groups.get(current.townId)??[]).filter(child=>child.contractor_projects?.some(p=>p.project_name===award));
+      if(matches.length===1){current.zoneId=matches[0].id;current.award=award;}
+    }
     if(!current.townId && cancellations.has(params.get('cancellation'))){
       current.cancellation=params.get('cancellation');chosen.plan='canceled';chosen.progress='';contractor='';
     }

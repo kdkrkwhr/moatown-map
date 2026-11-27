@@ -1,4 +1,4 @@
-import {dayNumber,projectEvents,contractorProcedure} from './detail-format.mjs?v=0bc4fef5da11';
+import {dayNumber,projectEvents,contractorProcedure} from './detail-format.mjs?v=e5ec1d1f8c10';
 
 export const managementFilters=[
   ['selected','선정 대상지 전체'],['draft','관리계획 수립 중'],['approved','관리계획 승인'],
@@ -15,6 +15,7 @@ export const progressFilters=[
   ['implementer','사업시행자 지정','시행자 지정'],
   ['association','조합설립 진행 중','조합설립 중'],
   ['association-approved','조합설립인가','조합설립인가 완료'],
+  ['association-revoked','조합설립인가 취소','조합인가 취소'],['demolition-reported','철거신고','철거신고'],
   ['architecture-review','건축심의','건축심의'],['integrated-review','통합심의 완료','통합심의'],
   ['approval-pending','사업시행계획인가 진행 중','사업인가 진행 중'],
   ['approved','사업시행계획인가','사업인가 완료'],
@@ -91,7 +92,7 @@ export function searchProjects(towns,groups,excluded,{query='',district='',plan=
       if(matches(terms,[...fields,...local]))rows.push(zone?{town,zone,association}:{town,association});
     }
   }
-  if(plan==='canceled' || (!plan && !progress && /취소|철회/.test(query))){
+  if(plan==='canceled' || (!plan && !progress && /취소|철회/.test(query) && !/조합/.test(query))){
     if(company)return rows;
     for(const record of excluded){
       if(recentDates && !recentDates.has(record.address_raw))continue;
@@ -120,7 +121,7 @@ export function searchProjects(towns,groups,excluded,{query='',district='',plan=
       const def=progressFilters.find(([,label])=>label===stage);
       if(progress && progress!==def?.[0])continue;
       const code=zone.drawing_code?.replace(/^([A-Z])-?(?=\d)/,'$1');
-      const zoneFields=[zone.name,zone.registered_address,zone.drawing_code,code,code?.replace(/^([A-Z])(?=\d)/,'$1-'),stage,def?.[2],...contractorTerms(zone.selected_contractor)];
+      const zoneFields=[zone.name,zone.project_name,zone.registered_address,zone.drawing_code,code,code?.replace(/^([A-Z])(?=\d)/,'$1-'),stage,zone.field_evidence?.stage?.source_label,def?.[2],...contractorTerms(zone.selected_contractor)];
       if(procedure && (!contractor || contractor==='pending')){
         zoneFields.push(procedure.stage,...procedure.participants.flatMap(p=>[p.role,...p.names]));
       }

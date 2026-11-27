@@ -1,7 +1,7 @@
-import {formatValue,unitsChange,projectIntervals,compareInterval,projectStage,awardHistories,contractorProcedure,procedureParticipants,procedureSchedule} from './detail-format.mjs?v=0bc4fef5da11';
-import {projectUrl} from './project-url.mjs?v=0bc4fef5da11';
-import {metricGlossary,translateStage} from './glossary-translator.mjs?v=0bc4fef5da11';
-import {decorativeEmoji,toolIcon} from './ui-icons.mjs?v=0bc4fef5da11';
+import {formatValue,unitsChange,projectIntervals,compareInterval,projectStage,awardHistories,contractorProcedure,procedureParticipants,procedureSchedule} from './detail-format.mjs?v=e5ec1d1f8c10';
+import {projectUrl} from './project-url.mjs?v=e5ec1d1f8c10';
+import {metricGlossary,translateStage} from './glossary-translator.mjs?v=e5ec1d1f8c10';
+import {decorativeEmoji,toolIcon} from './ui-icons.mjs?v=e5ec1d1f8c10';
 export {projectUrl};
 
 const pending='미고시';
@@ -101,7 +101,8 @@ function citedField(grid,label,value,evidence){
   const row=field(grid,label,value);
   if(!evidence?.source_url || value===pending || value==null)return row;
   const page=evidence.source_page??evidence.pdf_page;
-  const caption=[evidence.source_as_of && date(evidence.source_as_of),page && page+'쪽','근거'].filter(Boolean).join(' · ');
+  const asOf=evidence.source_as_of?date(evidence.source_as_of):evidence.checked_on && '열람 '+date(evidence.checked_on);
+  const caption=[asOf,page && page+'쪽','근거'].filter(Boolean).join(' · ');
   const source=link(evidence.source_url,caption);
   if(source){
     source.title=[evidence.scope,evidence.note].filter(Boolean).join(' · ');
@@ -281,6 +282,7 @@ function metrics(panel,r,children){
   const scale=section(panel,'scale','규모·세대'),grid=el('dl',null,'metrics');
   scale.append(grid);
   citedField(grid,'구역 면적',formatValue(area,'㎡'),e['metrics.area_sqm']??e.area_m2??e.project_area_m2);
+  if(r.project_name)citedField(grid,'등록 사업장명',r.project_name,e.project_name);
   field(grid,'필지 수',formatValue(m.parcel_count??r.parcel_count,'필지'));
   citedField(grid,'기존 세대수',formatValue(existing,'세대'),e['metrics.existing_units']);
   const plan=citedField(grid,'계획 세대수',formatValue(planned,'세대'),e['metrics.planned_units']??e.plan);
@@ -289,9 +291,22 @@ function metrics(panel,r,children){
   if(r.plan_scenario)plan.append(el('small',r.plan_scenario));
   if(r.stage==='사업시행계획 폐지')plan.append(el('small','폐지 전 공표 수치'));
   if(comparablePlan(r,'existing_units') && Number.isFinite(existing)&&Number.isFinite(planned))plan.append(el('small',unitsChange(existing,planned)));
-  citedField(grid,'토지등소유자 수',formatValue(owners,'명'),e['metrics.owner_count']);
-  const ratio=m.planned_units_per_owner??(owners>0 && Number.isFinite(planned) && comparablePlan(r,'owner_count')?Number((planned/owners).toFixed(2)):null);
-  field(grid,'소유자 1명당 계획 세대수',formatValue(ratio,'세대'));
+  const ownerRow=citedField(grid,'토지등소유자 수',formatValue(owners,'명'),e['metrics.owner_count']);
+  if(e['metrics.owner_count']?.display_scope)ownerRow.append(el('small',e['metrics.owner_count'].display_scope));
+  if(owners==null && e.owner_count_review){
+    const review=el('details'),source=link(e.owner_count_review.source_url,'검토한 원문');
+    review.append(el('summary','미확인 사유'),el('small',e.owner_count_review.note));
+    if(source)review.append(source);
+    ownerRow.append(review);
+  }
+  const ratio=r.stage==='조합설립인가 취소'?null:m.planned_units_per_owner??(owners>0 && Number.isFinite(planned) && comparablePlan(r,'owner_count')?Number((planned/owners).toFixed(2)):null);
+  const ratioEvidence=e.planned_units_per_owner;
+  const ratioRow=citedField(grid,'소유자 1명당 계획 세대수',formatValue(ratio,'세대'),ratioEvidence);
+  if(ratio!=null && ratioEvidence?.denominator_owner_count===owners && Number.isFinite(ratioEvidence.numerator_planned_units)){
+    if(ratioEvidence.display_scope)ratioRow.append(el('small',ratioEvidence.display_scope));
+    ratioRow.append(el('small','같은 자료의 계획 '+formatValue(ratioEvidence.numerator_planned_units,'세대')+' ÷ 소유자 '+formatValue(owners,'명')));
+  }
+  if(r.owner_count_note)scale.append(notice(r.owner_count_note));
   const allocation=r.housing_allocation??{},approved=r.approved_allocation??{},c=r.contract_scope??{};
   for(const [label,value] of [['조합원 분양',approved.member??allocation.members],['일반 분양',approved.general??allocation.general],['계획 임대',allocation.rental],['분양 합계',allocation.sale_total],['보류지',approved.reserve??allocation.reserve],['계약 당시 공사 규모',c.units]]){
     const key={'계획 임대':'rental','분양 합계':'sale_total'}[label];
@@ -424,7 +439,7 @@ export function comparePlans(children){
     return Number.isSafeInteger(n) && n>=0;
   });
   const first=known[0],plan=first?.field_evidence?.plan;
-  const samePlan=known.length===children.length && plan?.kind==='management_plan_notice' && !plan.state?.includes('not_latest') &&
+  const samePlan=known.length===children.length && plan?.kind==='management_plan_notice' && !plan.state?.includes('not_latest') && plan.state!=='conflicting_published_units' &&
     plan.source_url && plan.source_as_of && plan.notice_number && known.every(child=>{
       const evidence=child.field_evidence?.plan;
       return evidence?.kind===plan.kind && evidence.source_url===plan.source_url &&
@@ -463,12 +478,12 @@ function comparisonTable(town,children,zone,select,badge){
 }
 
 function subAreas(panel,town,zone,children,boundaries,select,badge){
-  if(!children.length && town.contractor_projects?.length){
+  if(town.contractor_projects?.length){
     const card=section(panel,'association-contractors','조합별 시공사');
     const facts=el('dl',null,'metrics');
     card.append(el('p','조합이 발주한 사업별로 선정 업체와 대표 지번을 표시합니다.'),facts);
     associationFields(facts,town.contractor_projects);
-    return;
+    if(!children.length)return;
   }
   if(!children.length){panel.append(notice(town.risk_info?.is_canceled?'세부 구역 미고시 · 대상지 선정 취소':'대상지 단위 추진 중 (세부 구역 미고시)'));return;}
   const ordered=[...children].sort((a,b)=>(a.drawing_code??a.name).localeCompare(b.drawing_code??b.name,'ko',{numeric:true}));

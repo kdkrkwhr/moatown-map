@@ -1,5 +1,5 @@
 {
-  "checked_on": "2026-11-25",
+  "checked_on": "2026-11-27",
   "zones": {
     "mz-junghwa-2-2": {
       "floors": 35,
@@ -936,6 +936,25 @@
       "source_url": "https://www.geumcheon.go.kr/portal/tblSeolGosiDetailView.do?key=294&notAncmtMgtNo=38311",
       "source_as_of": "2026-04-16",
       "evidence": "금천구 고시 제2026-51호 제8~10항. 사업시행계획 인가일은 4월 10일, 고시일은 4월 16일이다."
+    },
+    "mz-notice-public-021-4": {
+      "units": 219,
+      "floors": 20,
+      "height_m": 57,
+      "building_count": 2,
+      "scope": "중화동 296-44 세광하니타운 (4구역)",
+      "kind": "관리계획 공급표 및 조합 건축계획",
+      "source_url": "https://event.seoul.go.kr/snews/data/CN_MST/seoulsibo_20260910094304_20028.pdf#page=70",
+      "source_as_of": "2026-09-10",
+      "evidence": "서울시 고시 제2026-509호 공급표 219세대. 정비사업 정보몽땅 건축계획 20층·57m, 분양표 2개 동.",
+      "note": "계획 세대수는 9월 승인 고시 기준. 건축 규모는 기준일이 표시되지 않은 조합 사업개요를 2026.11.27 확인.",
+      "related_record": {
+        "scope": "세광하니타운 건축 규모",
+        "kind": "조합 사업개요",
+        "source_url": "https://cleanup.seoul.go.kr/cafe/mastr-cleanup-bsnsSumry/execute.do?cafeId=260900000682e02&stepSeCode=102&div=sumry",
+        "source_as_of": null,
+        "checked_on": "2026-11-27"
+      }
     }
   },
   "previous_geometry_programs": {

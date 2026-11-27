@@ -179,6 +179,17 @@ test('Sinwol drawing numbers and superseding review remain searchable',()=>{
   assert.deepEqual(groupSubAreas([{id:'legacy'}],[{id:'old',town_id:'legacy'}]).get('legacy').map(z=>z.id),['old']);
 });
 
+test('a revoked association approval ends its permit timeline without closing the parent town',()=>{
+  const zone=zones.find(z=>z.id==='mz-notice-public-026-a-4');
+  const town=towns.find(t=>t.id===zone.town_id);
+  assert.equal(zone.stage,'조합설립인가 취소');
+  assert.ok(!town.risk_info?.is_canceled);
+  const segment=projectIntervals(town,zone,'2026-11-27').at(-1);
+  assert.equal(segment.event.date,'2026-10-20');
+  assert.equal(segment.label,'조합설립인가 취소');
+  assert.ok(searchProjects(towns,groups,[],{query:'시흥 조합설립인가 취소'}).some(r=>r.zone===zone));
+});
+
 test('both Sinwol towns have four separately selectable reference polygons tied to their official sources',()=>{
   const features=read(files.boundaries).features;
   const bounds=new Map(features.map(f=>[f.properties.entity_id,f]));

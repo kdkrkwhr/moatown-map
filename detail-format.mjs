@@ -105,6 +105,7 @@ export function projectIntervals(town,zone,snapshot){
     const reached=next && (next.date || next.reached || next.completed || events.slice(i+2).some(e=>e.date));
     const terminal=!next && ((zone??town).risk_info?.is_canceled===true || /준공|사업종료|취소|철회|폐지/.test(event.stage));
     let label=intervalBadge(event.date,next?.date,snapshot,{ongoing:!reached,terminal});
+    if(terminal && event.stage==='조합설립인가 취소')label='조합설립인가 취소';
     const monthOf=date=>date?.length===7 || dayNumber(date)!==null?date.slice(0,7):null;
     if(label===missing && (event.date?.length===7 || next?.date?.length===7)){
       const months=elapsedMonths(monthOf(event.date),monthOf(next?.date));
