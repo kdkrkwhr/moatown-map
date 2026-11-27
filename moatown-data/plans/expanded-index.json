@@ -294,13 +294,20 @@
     },
     "mt-202603-public-026": {
       "path": "plans/scenes/mt-202603-public-026.json",
-      "sha256": "8cb20a5745ed224b7dea4b60bb54615c23c39603b17614af3376440a1d5e9256",
+      "sha256": "6b6748f985dc8f1a34ed43a5c486c24551c16ed7382ea01e37c3e37ba45b4b80",
       "modes": [
         "association",
         "town",
         "zones"
       ],
       "zone_ids": [
+        "mz-notice-public-026-a-1",
+        "mz-notice-public-026-a-2",
+        "mz-notice-public-026-a-3",
+        "mz-notice-public-026-a-4",
+        "mz-notice-public-026-a-5",
+        "mz-notice-public-026-a-6",
+        "mz-notice-public-026-a-7",
         "mz-notice-public-026-a-8"
       ],
       "association_zone_ids": [
@@ -465,11 +472,19 @@
     },
     "mt-202603-public-042": {
       "path": "plans/scenes/mt-202603-public-042.json",
-      "sha256": "2431fec39ebb79ff52b0bd21c3395b9bff7333c43367e54ce0d4742fddfbb5fd",
+      "sha256": "ec2cc36e01e31fae44a0477bf5be39d1f82895f04ac1b2f37fbd574c50449173",
       "modes": [
-        "town"
+        "town",
+        "zones"
       ],
-      "zone_ids": []
+      "zone_ids": [
+        "mz-plan-607655-a1",
+        "mz-plan-607655-a2",
+        "mz-plan-607655-a3",
+        "mz-plan-607655-a4",
+        "mz-plan-607655-a5",
+        "mz-plan-607655-a6"
+      ]
     },
     "mt-202603-public-043": {
       "path": "plans/scenes/mt-202603-public-043.json",
@@ -481,14 +496,21 @@
     },
     "mt-202603-public-044": {
       "path": "plans/scenes/mt-202603-public-044.json",
-      "sha256": "2647a0cb9c98f98c8dad27efe2a838044635aefc3831347624f0371aa2f6766d",
+      "sha256": "36b0bf92c767bae3a2977563125d1bffd844733c52a1dba35ae048ddeb95c09f",
       "modes": [
         "association",
         "town",
         "zones"
       ],
       "zone_ids": [
-        "mz-plan-601972-a-4"
+        "mz-plan-601972-a-1",
+        "mz-plan-601972-a-2",
+        "mz-plan-601972-a-3",
+        "mz-plan-601972-a-4",
+        "mz-plan-601972-a-5",
+        "mz-plan-601972-a-6",
+        "mz-plan-601972-a-7",
+        "mz-plan-601972-a-8"
       ],
       "association_zone_ids": [
         "mt-202603-public-044"
@@ -659,13 +681,19 @@
     },
     "mt-202603-public-059": {
       "path": "plans/scenes/mt-202603-public-059.json",
-      "sha256": "23f9fff64c066756393d91825dedc71c1a4d1e8f4f03c6cf301cf3626c6b27f5",
+      "sha256": "3ef3b00e25b1ca68133ac809727e5286d1035efabd021c226d25c9247a1fd9d9",
       "modes": [
         "association",
         "town",
         "zones"
       ],
       "zone_ids": [
+        "mz-notice-public-059-a-1",
+        "mz-notice-public-059-a-2-1",
+        "mz-notice-public-059-a-2-2",
+        "mz-notice-public-059-a-2-3",
+        "mz-notice-public-059-a-3",
+        "mz-notice-public-059-a-4",
         "mz-notice-public-059-a-5",
         "mz-notice-public-059-a-6"
       ],

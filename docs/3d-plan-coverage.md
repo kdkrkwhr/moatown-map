@@ -2,7 +2,7 @@
 
 계획 자료 대조일 2026-11-27. 143개 대상지 중 117곳에서 건축 후 3D를 제공한다. 시범 대상지 3곳과 확장 대상지 114곳을 포함한다.
 
-구역별 계획 모형은 70개 대상지의 140개 세부구역에 있다. 대상지 전체 예시를 제공하는 곳은 100곳이다. 한 가지 이상의 보기에서 층수 기본 가정을 사용하는 대상지는 62곳이다.
+구역별 계획 모형은 71개 대상지의 166개 세부구역에 있다. 대상지 전체 예시를 제공하는 곳은 100곳이다. 한 가지 이상의 보기에서 층수 기본 가정을 사용하는 대상지는 63곳이다.
 
 건축 후 3D를 보류한 26곳 중 0곳은 참고 외곽을 기다리고 있다. 나머지는 공개 규모나 그 수치에 맞는 사업 범위의 확인이 필요하다.
 
@@ -41,7 +41,7 @@
 | [중랑구 면목3·8동 453-1](https://moatownmap.com/?town=mt-202603-public-023&view=3d&mode=after) | 공개 배치도 (대상지 통합, 31동) / 대상지 전체 | 0 | — | 21 | 아니오 |
 | [금천구 시흥3동 1005](https://moatownmap.com/?town=mt-202603-public-024&view=3d&mode=after) | 구역별 / 대상지 전체 | 1 | 6 | 36 | 아니오 |
 | [금천구 시흥4동 817](https://moatownmap.com/?town=mt-202603-public-025&view=3d&mode=after) | 공개 배치도 (시흥동 817번지 일대 가로주택정비사업, 12동) / 구역별 / 대상지 전체 | 1 | 12 | 6 | 아니오 |
-| [금천구 시흥5동 922-61](https://moatownmap.com/?town=mt-202603-public-026&view=3d&mode=after) | 공개 배치도 (대상지 통합, 17동) / 구역별 / 대상지 전체 | 1 | 4 | 27 | 예 |
+| [금천구 시흥5동 922-61](https://moatownmap.com/?town=mt-202603-public-026&view=3d&mode=after) | 공개 배치도 (대상지 통합, 17동) / 구역별 / 대상지 전체 | 8 | 31 | 27 | 예 |
 | [금천구 시흥1동 864](https://moatownmap.com/?town=mt-202603-public-027&view=3d&mode=after) | 구역별 / 대상지 전체 | 1 | 1 | 14 | 아니오 |
 | [금천구 시흥3동 950](https://moatownmap.com/?town=mt-202603-public-028&view=3d&mode=after) | 대상지 전체 | 0 | — | 15 | 아니오 |
 | [마포구 대흥동 535-2](https://moatownmap.com/?town=mt-202603-public-029&view=3d&mode=after) | 대상지 전체 | 0 | — | 4 | 예 |
@@ -57,9 +57,9 @@
 | [강북구 수유동 141](https://moatownmap.com/?town=mt-202603-public-039&view=3d&mode=after) | 구역별 / 대상지 전체 | 6 | 34 | 31 | 예 |
 | 강북구 번동 469 | 배치에 쓸 공개 계획 수치·적용 범위 추가 대조 | — | — | — | — |
 | [강북구 수유동 31-10](https://moatownmap.com/?town=mt-202603-public-041&view=3d&mode=after) | 구역별 | 1 | 3 | — | 예 |
-| [성동구 마장동 457](https://moatownmap.com/?town=mt-202603-public-042&view=3d&mode=after) | 대상지 전체 | 0 | — | 20 | 예 |
+| [성동구 마장동 457](https://moatownmap.com/?town=mt-202603-public-042&view=3d&mode=after) | 구역별 / 대상지 전체 | 6 | 22 | 20 | 예 |
 | [성동구 응봉동 265](https://moatownmap.com/?town=mt-202603-public-043&view=3d&mode=after) | 대상지 전체 | 0 | — | 18 | 예 |
-| [구로구 고척동 241](https://moatownmap.com/?town=mt-202603-public-044&view=3d&mode=after) | 공개 배치도 (대상지 통합, 30동) / 구역별 / 대상지 전체 | 1 | 1 | 23 | 아니오 |
+| [구로구 고척동 241](https://moatownmap.com/?town=mt-202603-public-044&view=3d&mode=after) | 공개 배치도 (대상지 통합, 30동) / 구역별 / 대상지 전체 | 8 | 33 | 23 | 예 |
 | [구로구 구로동 728](https://moatownmap.com/?town=mt-202603-public-045&view=3d&mode=after) | 공개 배치도 (대상지 통합, 17동) / 구역별 / 대상지 전체 | 1 | 9 | 13 | 예 |
 | [구로구 개봉동 270-38](https://moatownmap.com/?town=mt-202603-public-046&view=3d&mode=after) | 구역별 / 대상지 전체 | 2 | 9 | 9 | 아니오 |
 | [구로구 구로동 511](https://moatownmap.com/?town=mt-202603-public-047&view=3d&mode=after) | 공개 배치도 (구로동 511번지 일원 가로주택정비사업, 3동) / 구역별 / 대상지 전체 | 1 | 3 | 12 | 아니오 |
@@ -74,7 +74,7 @@
 | [강동구 둔촌동 77-41](https://moatownmap.com/?town=mt-202603-public-056&view=3d&mode=after) | 구역별 | 3 | 20 | — | 예 |
 | [강동구 천호동 113-2](https://moatownmap.com/?town=mt-202603-public-057&view=3d&mode=after) | 대상지 전체 | 0 | — | 13 | 예 |
 | [동작구 노량진동 221-24](https://moatownmap.com/?town=mt-202603-public-058&view=3d&mode=after) | 대상지 전체 | 0 | — | 8 | 아니오 |
-| [동작구 사당동 202-29](https://moatownmap.com/?town=mt-202603-public-059&view=3d&mode=after) | 공개 배치도 (대상지 통합, 9동) / 구역별 / 대상지 전체 | 2 | 4 | 17 | 예 |
+| [동작구 사당동 202-29](https://moatownmap.com/?town=mt-202603-public-059&view=3d&mode=after) | 공개 배치도 (대상지 통합, 9동) / 구역별 / 대상지 전체 | 8 | 23 | 17 | 예 |
 | [동작구 상도동 242](https://moatownmap.com/?town=mt-202603-public-060&view=3d&mode=after) | 대상지 전체 | 0 | — | 11 | 아니오 |
 | [동작구 상도동 279](https://moatownmap.com/?town=mt-202603-public-061&view=3d&mode=after) | 구역별 / 대상지 전체 | 1 | 16 | 16 | 예 |
 | [송파구 풍납동 483-10](https://moatownmap.com/?town=mt-202603-public-062&view=3d&mode=after) | 공개 배치도 (대상지 통합, 11동) / 대상지 전체 | 0 | — | 12 | 아니오 |
@@ -170,7 +170,7 @@
 
 ## 세부구역 3D 배치를 보류한 공개 계획
 
-아래 186곳의 수치와 원문은 지도 상세 화면의 사업성·규제 탭에서 열 수 있다.
+아래 164곳의 수치와 원문은 지도 상세 화면의 사업성·규제 탭에서 열 수 있다.
 
 | 대상지 | 세부구역 | 공개 세대수 | 공개 최고 층수 | 보류 사유 | 원문 |
 | --- | --- | ---: | ---: | --- | --- |
@@ -202,22 +202,13 @@
 | 금천구 시흥1동 864 | 시흥동 A-2구역 | 204 | — | 세부구역 참고 경계 미수록 | [출처](https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=601822) |
 | 금천구 시흥1동 864 | 시흥동 A-3구역 | 450 | — | 세부구역 참고 경계 미수록 | [출처](https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=601822) |
 | 금천구 시흥1동 864 | 시흥동 A-4구역 | 367 | — | 세부구역 참고 경계 미수록 | [출처](https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=601822) |
-| 구로구 고척동 241 | 고척동 A-1구역 | 295 | 20 | 세부구역 참고 경계 미수록 | [출처](https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260917800214) |
-| 구로구 고척동 241 | 고척동 A-2구역 | 374 | 20 | 세부구역 참고 경계 미수록 | [출처](https://kind.krx.co.kr/external/2026/02/25/001091/20260225002184/91370.htm) |
-| 구로구 고척동 241 | 고척동 A-3구역 | 183 | — | 세부구역 참고 경계 미수록 | [출처](https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=601972) |
-| 구로구 고척동 241 | 고척동 A-5구역 | 216 | 15 | 세부구역 참고 경계 미수록 | [출처](https://cleanup.seoul.go.kr/cafe/mastr-cleanup-bsnsSumry/execute.do?cafeId=530900001157K30&stepSeCode=102&div=sumry) |
-| 구로구 고척동 241 | 고척동 A-6구역 | 210 | 15 | 세부구역 참고 경계 미수록 | [출처](https://cleanup.seoul.go.kr/cafe/mastr-cleanup-bsnsSumry/execute.do?cafeId=530900001208X14&stepSeCode=102&div=sumry) |
-| 구로구 고척동 241 | 고척동 A-7구역 | 521 | — | 세부구역 참고 경계 미수록 | [출처](https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=601972) |
-| 구로구 고척동 241 | 개봉동 A-8구역 | 448 | — | 세부구역 참고 경계 미수록 | [출처](https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=601972) |
+| 구로구 고척동 241 | 고척동 A-1구역 | 295 | 20 | 공개 계획과 수록 도형의 사업 범위가 다름 | [출처](https://dart.fss.or.kr/dsaf001/main.do?rcpNo=20260917800214) |
+| 구로구 고척동 241 | 고척동 A-2구역 | 374 | 20 | 공개 계획과 수록 도형의 사업 범위가 다름 | [출처](https://kind.krx.co.kr/external/2026/02/25/001091/20260225002184/91370.htm) |
+| 구로구 고척동 241 | 고척동 A-5구역 | 216 | 15 | 공개 계획과 수록 도형의 사업 범위가 다름 | [출처](https://cleanup.seoul.go.kr/cafe/mastr-cleanup-bsnsSumry/execute.do?cafeId=530900001157K30&stepSeCode=102&div=sumry) |
+| 구로구 고척동 241 | 고척동 A-6구역 | 210 | 15 | 공개 계획과 수록 도형의 사업 범위가 다름 | [출처](https://cleanup.seoul.go.kr/cafe/mastr-cleanup-bsnsSumry/execute.do?cafeId=530900001208X14&stepSeCode=102&div=sumry) |
 | 구로구 구로동 728 | 구로동 A-1구역 | 463 | — | 세부구역 참고 경계 미수록 | [출처](https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=602403) |
 | 구로구 구로동 728 | 구로동 A-2구역 | 574 | — | 세부구역 참고 경계 미수록 | [출처](https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=602403) |
 | 서대문구 천연동 89-16 | 천연동 A-1구역 | 506 | 22 | 세부구역 참고 경계 미수록 | [출처](https://cleanup.seoul.go.kr/cafe/mastr-cleanup-bsnsSumry/execute.do?cafeId=410900001351X74&stepSeCode=102&div=sumry) |
-| 성동구 마장동 457 | 마장동 A1구역 | 191 | — | 세부구역 참고 경계 미수록 | [출처](https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=607655) |
-| 성동구 마장동 457 | 마장동 A2구역 | 326 | — | 세부구역 참고 경계 미수록 | [출처](https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=607655) |
-| 성동구 마장동 457 | 마장동 A3구역 | 352 | — | 세부구역 참고 경계 미수록 | [출처](https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=607655) |
-| 성동구 마장동 457 | 마장동 A4구역 | 356 | — | 세부구역 참고 경계 미수록 | [출처](https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=607655) |
-| 성동구 마장동 457 | 마장동 A5구역 | 158 | — | 세부구역 참고 경계 미수록 | [출처](https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=607655) |
-| 성동구 마장동 457 | 마장동 A6구역 | 234 | — | 세부구역 참고 경계 미수록 | [출처](https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=607655) |
 | 성북구 석관동 261-22 | 석관동 C1구역 | 688 | — | 세부구역 참고 경계 미수록 | [출처](https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=607899) |
 | 성북구 석관동 261-22 | 석관동 C2구역 | 490 | — | 세부구역 참고 경계 미수록 | [출처](https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=607899) |
 | 성북구 석관동 334-69 | 석관동 A2구역 | 374 | — | 세부구역 참고 경계 미수록 | [출처](https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=607900) |
@@ -301,13 +292,6 @@
 | 중랑구 중화1동 4-30 | 중화1동 사업추진구역2 | 496 | — | 세부구역 참고 경계 미수록 | [출처](https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=587169) |
 | 중랑구 중화1동 4-30 | 중화1동 사업추진구역3 | 308 | — | 세부구역 참고 경계 미수록 | [출처](https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=587169) |
 | 중랑구 중화1동 4-30 | 중화1동 사업추진구역4 | 512 | — | 세부구역 참고 경계 미수록 | [출처](https://www.eum.go.kr/web/gs/gv/gvGosiDet.jsp?seq=587169) |
-| 금천구 시흥5동 922-61 | 시흥동 A-1구역 | 393 | — | 세부구역 참고 경계 미수록 | [출처](https://event.seoul.go.kr/seoulsibo/fileDownload.do?fileName=seoulsibo_20260828163709_74413.pdf#page=47) |
-| 금천구 시흥5동 922-61 | 시흥동 A-2구역 | 255 | — | 세부구역 참고 경계 미수록 | [출처](https://event.seoul.go.kr/seoulsibo/fileDownload.do?fileName=seoulsibo_20260828163709_74413.pdf#page=47) |
-| 금천구 시흥5동 922-61 | 시흥동 A-3구역 | 293 | — | 세부구역 참고 경계 미수록 | [출처](https://event.seoul.go.kr/seoulsibo/fileDownload.do?fileName=seoulsibo_20260828163709_74413.pdf#page=47) |
-| 금천구 시흥5동 922-61 | 시흥동 A-4구역 | 133 | — | 세부구역 참고 경계 미수록 | [출처](https://event.seoul.go.kr/seoulsibo/fileDownload.do?fileName=seoulsibo_20260828163709_74413.pdf#page=47) |
-| 금천구 시흥5동 922-61 | 시흥동 A-5구역 | 171 | — | 세부구역 참고 경계 미수록 | [출처](https://event.seoul.go.kr/seoulsibo/fileDownload.do?fileName=seoulsibo_20260828163709_74413.pdf#page=47) |
-| 금천구 시흥5동 922-61 | 시흥동 A-6구역 | 281 | — | 세부구역 참고 경계 미수록 | [출처](https://event.seoul.go.kr/seoulsibo/fileDownload.do?fileName=seoulsibo_20260828163709_74413.pdf#page=47) |
-| 금천구 시흥5동 922-61 | 시흥동 A-7구역 | 307 | — | 세부구역 참고 경계 미수록 | [출처](https://event.seoul.go.kr/seoulsibo/fileDownload.do?fileName=seoulsibo_20260828163709_74413.pdf#page=47) |
 | 강서구 화곡6동 1130-7 | 화곡동 A-1구역 | 515 | — | 세부구역 참고 경계 미수록 | [출처](https://news.seoul.go.kr/citybuild/archives/542643#:~:text=2026-1628) |
 | 강서구 화곡6동 1130-7 | 화곡동 A-2구역 | 114 | — | 세부구역 참고 경계 미수록 | [출처](https://news.seoul.go.kr/citybuild/archives/542643#:~:text=2026-1628) |
 | 강서구 화곡6동 1130-7 | 화곡동 A-4구역 | 59 | — | 세부구역 참고 경계 미수록 | [출처](https://news.seoul.go.kr/citybuild/archives/542643#:~:text=2026-1628) |
@@ -353,12 +337,6 @@
 | 동대문구 답십리동 489 | 답십리동 A-1구역 | 227 | — | 세부구역 참고 경계 미수록 | [출처](https://urban.seoul.go.kr/UpisArchive/DATA/PM/pdf/11230NTC202609170020/%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C_%EC%A0%9C2026-288%ED%98%B8_%EA%B3%A0%EC%8B%9C.pdf#page=8) |
 | 동대문구 답십리동 489 | 답십리동 A-2구역 | 365 | — | 세부구역 참고 경계 미수록 | [출처](https://urban.seoul.go.kr/UpisArchive/DATA/PM/pdf/11230NTC202609170020/%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C_%EC%A0%9C2026-288%ED%98%B8_%EA%B3%A0%EC%8B%9C.pdf#page=8) |
 | 동대문구 답십리동 489 | 답십리동 A-3구역 | 387 | — | 세부구역 참고 경계 미수록 | [출처](https://urban.seoul.go.kr/UpisArchive/DATA/PM/pdf/11230NTC202609170020/%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C_%EC%A0%9C2026-288%ED%98%B8_%EA%B3%A0%EC%8B%9C.pdf#page=8) |
-| 동작구 사당동 202-29 | 사당동 A-1구역 | 372 | — | 세부구역 참고 경계 미수록 | [출처](https://event.seoul.go.kr/snews/data/CN_MST/seoulsibo_20260520112133_47006.pdf#page=149) |
-| 동작구 사당동 202-29 | 사당동 A-2-1구역 | 215 | — | 세부구역 참고 경계 미수록 | [출처](https://event.seoul.go.kr/snews/data/CN_MST/seoulsibo_20260520112133_47006.pdf#page=149) |
-| 동작구 사당동 202-29 | 사당동 A-2-2구역 | 139 | — | 세부구역 참고 경계 미수록 | [출처](https://event.seoul.go.kr/snews/data/CN_MST/seoulsibo_20260520112133_47006.pdf#page=149) |
-| 동작구 사당동 202-29 | 사당동 A-2-3구역 | 131 | — | 세부구역 참고 경계 미수록 | [출처](https://event.seoul.go.kr/snews/data/CN_MST/seoulsibo_20260520112133_47006.pdf#page=149) |
-| 동작구 사당동 202-29 | 사당동 A-3구역 | 330 | — | 세부구역 참고 경계 미수록 | [출처](https://event.seoul.go.kr/snews/data/CN_MST/seoulsibo_20260520112133_47006.pdf#page=149) |
-| 동작구 사당동 202-29 | 사당동 A-4구역 | 237 | — | 세부구역 참고 경계 미수록 | [출처](https://event.seoul.go.kr/snews/data/CN_MST/seoulsibo_20260520112133_47006.pdf#page=149) |
 | 성동구 응봉동 265 | 응봉동 265 일대 모아타운 사업구역 | 1397 | — | 세부구역 참고 경계 미수록 | [출처](https://seoulboard.seoul.go.kr/comm/getFile?srvcId=BBSTY1&upperNo=446181&fileTy=ATTACH&fileNo=2&bbsNo=158) |
 
 각 장면에는 수치의 출처·범위·자료 기준일을 기록했다. [대상지별 파일 색인](../moatown-data/plans/expanded-index.json) · [기존 시범 3곳의 산출 근거](3d-pilot-results.md)

@@ -1,6 +1,6 @@
-import {createMarkerClusters} from './marker-clusters.mjs?v=f09d43984ad6';
-import {contractorName} from './project-search.mjs?v=f09d43984ad6';
-import {contractorProcedure} from './detail-format.mjs?v=f09d43984ad6';
+import {createMarkerClusters} from './marker-clusters.mjs?v=6ba5aa72988c';
+import {contractorName} from './project-search.mjs?v=6ba5aa72988c';
+import {contractorProcedure} from './detail-format.mjs?v=6ba5aa72988c';
 const SDK='https://oapi.map.naver.com/openapi/v3/maps.js';
 export function loadMaps(onAuthError){
   window.navermap_authFailure=onAuthError;
@@ -89,17 +89,19 @@ export function createProjectMap(m,container,{townById,zoneById,boundaries,distr
     const position=point?.type==='Point' && point.coordinates?.length===2 && point.coordinates.every(Number.isFinite)?ll(point.coordinates):bounds.getCenter();
     const pin=marker(position,label,isTown?80:90,record.name,true);
     on(pin,'click',e=>{if(measuring)measure(e.coord??pin.getPosition());else selectLayer(townId,isTown?null:id);});
-    const associationPolygons=[];
-    for(const association of record.association_boundaries??[]){
-      const geom=association.geometry;
+    const comparisonPolygons=[];
+    for(const feature of [...(record.association_boundaries??[]),...(record.plan_overlays??[])]){
+      const geom=feature.geometry;
+      const inspection=feature.properties.kind==='public_inspection_road';
+      const color=inspection?'#a45113':'#6438a8';
       const rings=geom.type==='Polygon'?[geom.coordinates]:geom.coordinates;
       for(const part of rings){
         const paths=part.map(ring=>ring.map(pair=>{const point=ll(pair);bounds.extend(point);return point;}));
-        associationPolygons.push(new m.Polygon({paths,clickable:false,zIndex:7,strokeColor:'#6438a8',
-          strokeOpacity:1,strokeWeight:3,strokeStyle:'longdash',fillColor:'#6438a8',fillOpacity:.09}));
+        comparisonPolygons.push(new m.Polygon({paths,clickable:false,zIndex:7,strokeColor:color,
+          strokeOpacity:1,strokeWeight:3,strokeStyle:'longdash',fillColor:color,fillOpacity:inspection ? .24 : .09}));
       }
     }
-    shapes.set(id,{isTown,townId,polygons,bounds,stage,pin,label,associationPolygons});
+    shapes.set(id,{isTown,townId,polygons,bounds,stage,pin,label,comparisonPolygons});
   }
   for(const zone of zoneById.values()){
     const point=zone.representative_point;
@@ -189,7 +191,7 @@ export function createProjectMap(m,container,{townById,zoneById,boundaries,distr
         setVisible(poly,show);
         if(show)poly.setStyles(style);
       }
-      for(const poly of shape.associationPolygons)setVisible(poly,show && selected && !wide);
+      for(const poly of shape.comparisonPolygons)setVisible(poly,show && selected && !wide);
       shape.pin.setZIndex(selected?140:isTown?80:90);
       shape.label.classList.toggle('selected-caption',selected);
       projectPin(shape.pin,isTown?townHits.has(id)||selected||hit:show,townId,isTown?null:id);

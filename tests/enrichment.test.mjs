@@ -8,6 +8,53 @@ const read=file=>JSON.parse(readFileSync(new URL('../moatown-data/'+file,import.
 const {files,coverage}=read('latest.json');
 const towns=read(files.towns),zones=read(files.zones),index=read(files.parcel_index);
 
+test('the four-town boundary review accounts for every previously pin-only zone and preserves its parcel point',()=>{
+  const dir='snapshots/2026-11-27/four-town-boundaries/';
+  const audit=read(dir+'review.json').zone_pin_boundary_review;
+  const before=new Set(read(audit.baseline_boundaries).features.map(f=>f.properties.entity_id));
+  const original=read(audit.baseline_zones).filter(z=>audit.town_ids.includes(z.town_id)&&z.representative_point&&!before.has(z.id));
+  const records=new Map(read(dir+'zones.json').map(z=>[z.id,z]));
+  const features=new Map(read(dir+'boundaries.geojson').features.map(f=>[f.properties.entity_id,f]));
+  const outcomes=new Map(audit.results.map(r=>[r.zone_id,r]));
+  assert.deepEqual(original.map(z=>z.id).sort(),[...outcomes.keys()].sort());
+  assert.equal(original.length,26);
+  for(const z of original){
+    const after=records.get(z.id),review=outcomes.get(z.id);
+    assert.deepEqual(after.representative_point,z.representative_point,z.id);
+    if(review.outcome==='parcel_point_retained'){
+      assert.ok(review.reason);assert.ok(!features.has(z.id));continue;
+    }
+    const f=features.get(z.id);
+    assert.equal(review.outcome,'reference_boundary');
+    assert.equal(f.properties.parent_town_id,z.town_id);
+    assert.equal(f.properties.boundary_status,'reference_only');
+    assert.equal(f.properties.source_url,after.boundary_evidence.source_url);
+    assert.match(review.source_as_of,/^\d{4}-\d{2}-\d{2}$/);
+    assert.equal(positionInGeometry(f.properties.label_point.coordinates,f.geometry,0),'inside',z.id);
+  }
+});
+
+test('approval boundaries, housing sites and draft road connections retain their own scope',()=>{
+  const release=read('snapshots/2026-11-27/four-town-boundaries/zones.json');
+  const byId=new Map(release.map(z=>[z.id,z]));
+  const siheung=byId.get('mz-notice-public-026-a-1');
+  assert.equal(siheung.project_area_m2,14010.7);
+  assert.equal(siheung.housing_site_area_m2,13092.1);
+  assert.equal(siheung.housing_allocation.sale_total+siheung.housing_allocation.rental,siheung.planned_units_total);
+  const sadang=byId.get('mz-notice-public-059-a-2-1');
+  assert.equal(sadang.project_area_m2,sadang.housing_site_area_m2+682.4);
+  const gocheok=byId.get('mz-plan-601972-a-2');
+  assert.equal(gocheok.project_area_m2,13983.3);
+  assert.equal(gocheok.association_boundaries[0].properties.source_area_m2,13915);
+  const majang=byId.get('mz-plan-607655-a2');
+  assert.equal(majang.boundary_evidence.source_as_of,'2024-12-26');
+  assert.deepEqual(majang.plan_overlays.map(f=>f.properties.published_area_m2).sort((a,b)=>a-b),[551.5,867.3]);
+  for(const road of majang.plan_overlays){
+    assert.equal(road.properties.kind,'public_inspection_road');
+    assert.equal(road.properties.source_as_of,'2026-11-05');
+  }
+});
+
 test('all previously unplaced zones have a documented location review and drawing labels stay inside their own zone',()=>{
   const path='snapshots/2026-11-27/zone-locations/';
   const audit=read(path+'review.json').zone_location_review;

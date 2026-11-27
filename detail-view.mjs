@@ -1,7 +1,7 @@
-import {formatValue,unitsChange,projectIntervals,compareInterval,projectStage,awardHistories,contractorProcedure,procedureParticipants,procedureSchedule} from './detail-format.mjs?v=f09d43984ad6';
-import {projectUrl} from './project-url.mjs?v=f09d43984ad6';
-import {metricGlossary,translateStage} from './glossary-translator.mjs?v=f09d43984ad6';
-import {decorativeEmoji,toolIcon} from './ui-icons.mjs?v=f09d43984ad6';
+import {formatValue,unitsChange,projectIntervals,compareInterval,projectStage,awardHistories,contractorProcedure,procedureParticipants,procedureSchedule} from './detail-format.mjs?v=6ba5aa72988c';
+import {projectUrl} from './project-url.mjs?v=6ba5aa72988c';
+import {metricGlossary,translateStage} from './glossary-translator.mjs?v=6ba5aa72988c';
+import {decorativeEmoji,toolIcon} from './ui-icons.mjs?v=6ba5aa72988c';
 export {projectUrl};
 
 const pending='미고시';
@@ -539,7 +539,7 @@ function subAreas(panel,town,zone,children,boundaries,select,badge){
     panel.append(info);
   }
   if(zone?.association_boundaries?.length){
-    const info=notice('지도에서 보라색 파선은 조합설립인가 당시 사업구역을 표시합니다. 관리계획의 구역선과 범위를 비교할 수 있습니다.');
+    const info=notice('보라색 파선은 아래 고시에 실린 사업시행구역입니다. 관리계획의 구역선과 범위를 비교할 수 있습니다.');
     for(const record of zone.association_boundaries){
       const proof=record.properties;
       const source=link(proof.source_url,[proof.source_label,date(proof.source_as_of),formatValue(proof.source_area_m2,'㎡')].join(' · '));
@@ -547,6 +547,23 @@ function subAreas(panel,town,zone,children,boundaries,select,badge){
       if(proof.display_note)info.append(el('br'),proof.display_note);
     }
     panel.append(info);
+  }
+  if(zone?.plan_overlays?.length){
+    const info=notice('주황색 파선은 주민공람안에서 지하주차장 연결을 계획한 도로입니다. 지도에는 승인된 개별 사업구역 경계를 함께 표시합니다.');
+    for(const {properties} of zone.plan_overlays){
+      const source=link(properties.source_url,[properties.name,date(properties.source_as_of),'공람 도면'].join(' · '));
+      if(source)info.append(el('br'),source);
+    }
+    panel.append(info);
+  }
+  const selectedBoundary=zone && boundaries.get(zone.id);
+  if(selectedBoundary?.kind==='official_notice_drawing'){
+    const details=el('details',null,'pilot-evidence');
+    details.append(el('summary','지도 경계의 기준과 원문'));
+    if(selectedBoundary.display_note)details.append(el('p',selectedBoundary.display_note));
+    const source=link(selectedBoundary.source_url,boundaryDrawingTitle(selectedBoundary));
+    if(source)details.append(source);
+    panel.append(details);
   }
   const refs=(zone??town).registered_project_references;
   if(refs?.length){
